@@ -1,0 +1,19 @@
+{
+  "name": "cookbook",
+  "version": "0.0.1",
+  "description": "A collection of little developer guides to build on the permaweb",
+  "main": "index.js",
+  "authors": {
+    "name": "Permaweb Builders",
+    "email": "tom@hyper.io"
+  },
+  "repository": "twilson63/permaweb-cookbook/cookbook",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
