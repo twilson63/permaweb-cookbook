@@ -12,8 +12,4 @@ export default ({
   siteData // site metadata
 }) => {
   // ...apply enhancements for the site.
-  router = new VueRouter({
-    ...router.options,
-    mode: 'hash'
-  })
 }
