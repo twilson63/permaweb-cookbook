@@ -1,10 +1,11 @@
 const { description } = require('../../package')
 
 module.exports = {
+  base: "",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'Cooking with the Permaweb',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -16,7 +17,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'theme-color', content: '#663399' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
@@ -34,20 +35,24 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: 'Contribute',
+        link: 'https://github.com/twilson63/permaweb-cookbook'
       },
       {
-        text: 'Config',
-        link: '/config/'
-      },
-      {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        text: 'Starters',
+        link: '/kits/'
       }
     ],
     sidebar: {
-      '/guide/': [
+      '/': [
+        {
+          text: 'Getting Started',
+          children: ['/', '/getting-started/installation.md']
+        },
+        {
+          text: 'Core Concepts',
+          children: ['/concepts/README.md', '/concepts/tags.md']
+        },
         {
           title: 'Guide',
           collapsable: false,
@@ -57,6 +62,7 @@ module.exports = {
           ]
         }
       ],
+
     }
   },
 
