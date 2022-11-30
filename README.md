@@ -1,7 +1,7 @@
 # Permaweb Cookbook
 
 The Permaweb Cookbook is meant to house small digestible code snippets
-for someone that has no experience with blockchain or Solana to be able
+for someone that has no experience with blockchain or Permaweb to be able
 to grab and go.
 
 ## Contributing
@@ -58,7 +58,7 @@ for this repository.
 
 To choose a task or make your own, do the following:
 
-1. [Add an issue](https://github.com/solana-developers/solana-cookbook/issues/new) for the task and assign it to yourself or comment on the issue
+1. [Add an issue](https://github.com/twilson63/permaweb-cookbook/issues/new) for the task and assign it to yourself or comment on the issue
 2. Make a draft PR referencing the issue.
 
 The general flow for making a contribution:
