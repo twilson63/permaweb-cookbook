@@ -1,6 +1,47 @@
 # Permaweb Cookbook
 
-## Developer Instructions
+The Permaweb Cookbook is meant to house small digestible code snippets
+for someone that has no experience with blockchain or Solana to be able
+to grab and go.
+
+## Contributing
+
+The Cookbook is welcome to any and all contributions. Please refer to
+the project's style when contributing new snippets of code.
+
+### Structure
+
+Currently we have "topics" under `/docs` and the code for those topics.
+
+### References
+
+References are an overarching topic with a list of references of how to do
+things under that topic. The general structure is the following:
+
+```
+Code Reference Title
+
+Short Summary
+
+Code Snippet
+```
+
+### Guides
+
+Guides are longer form informational documentation on various topics.
+The general structure for writing a guide is the following:
+
+```
+Brief Summary/TLDR
+
+Fact Sheet
+
+Deep Dive
+
+Other Resources
+```
+
+### Building
 
 You need to have node v16 installed - https://nodejs.org
 
@@ -10,23 +51,28 @@ yarn
 yarn dev
 ```
 
-## Styles and Config
+### Committing
 
-The config and styles are located in the `src/.vuepress` folder
+We are using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+for this repository.
 
-For more information on vuepress check out the vuepress site:
+To choose a task or make your own, do the following:
 
-https://vuepress.vuejs.org/
+1. [Add an issue](https://github.com/solana-developers/solana-cookbook/issues/new) for the task and assign it to yourself or comment on the issue
+2. Make a draft PR referencing the issue.
 
-To create a theme read this guide
+The general flow for making a contribution:
 
-https://vuepress.vuejs.org/theme/
+1. Fork the repo on GitHub
+2. Clone the project to your own machine
+3. Commit changes to your own branch
+4. Push your work back up to your fork
+5. Submit a Pull request so that we can review your changes
 
-## Goverence
+**NOTE**: Be sure to merge the latest from "upstream" before making a
+pull request!
 
-TODO
+You can find tasks on the [project board](https://github.com/twilson63/permaweb-cookbook/projects/1)
+or create an issue and assign it to yourself.
 
-## Taxonomy 
-
-TODO
-
+Happy Cooking!
