@@ -62,7 +62,7 @@ at (http://localhost:8080/)
 
 ### Adding Content
 
-There's a list of needed content tracked on the [project board](https://github.com/twilson63/permaweb-cookbook/projects/2) of this repository.
+There's a list of needed content tracked on the [project board](https://github.com/users/twilson63/projects/2) of this repository.
 The board is kept up to date with all work being worked on.
 
 To start work, do the following:

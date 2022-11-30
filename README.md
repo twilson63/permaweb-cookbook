@@ -72,7 +72,7 @@ The general flow for making a contribution:
 **NOTE**: Be sure to merge the latest from "upstream" before making a
 pull request!
 
-You can find tasks on the [project board](https://github.com/twilson63/permaweb-cookbook/projects/2)
+You can find tasks on the [project board](https://github.com/users/twilson63/projects/2)
 or create an issue and assign it to yourself.
 
 Happy Cooking!
