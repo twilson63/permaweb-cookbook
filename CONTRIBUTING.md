@@ -16,6 +16,7 @@ The cookbook is layed out in 4 different sections.
 | Core Concepts   | Building blocks of Permaweb that are good to know for development |
 | Guides          | Snack-sized guides about different tools for development        |
 | References      | References to commonly needed code snippets                     |
+| Kits            | Starter Kits with development frameworks                        |
 
 Depending on what you are writing, it will live in one of these sections
 
