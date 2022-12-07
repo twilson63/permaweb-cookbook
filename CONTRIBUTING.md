@@ -28,7 +28,7 @@ things under that topic. The general structure is the following:
 ```
 Code Reference Title
 
-Short Summary
+Short Summary (Include why to use this ref)
 
 Code Snippet
 ```
