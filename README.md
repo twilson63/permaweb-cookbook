@@ -51,6 +51,10 @@ yarn
 yarn dev
 ```
 
+### Audit 
+
+If you find a tool or guide out of date, please create an issue on the project board so that it can be removed or updated.
+
 ### Committing
 
 We are using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
