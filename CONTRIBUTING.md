@@ -41,6 +41,8 @@ The general structure for writing a guide is the following:
 ```
 Brief Summary/TLDR
 
+Why should I use this guide
+
 Fact Sheet
 
 Deep Dive
