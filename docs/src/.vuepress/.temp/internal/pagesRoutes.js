@@ -7,7 +7,7 @@ export const pagesRoutes = [
   ["v-4e672bff","/getting-started/contributing.html",{"title":"Contributing Workflow"},["/getting-started/contributing","/getting-started/contributing.md"]],
   ["v-ff762602","/guides/",{"title":"Guides"},["/guides/index.html","/guides/README.md"]],
   ["v-19cbf8fb","/guides/using-vue.html",{"title":"Using Vue in Markdown"},["/guides/using-vue","/guides/using-vue.md"]],
-  ["v-31bc4e0e","/references/",{"title":"References"},["/references/index.html","/references/README.md"]],
   ["v-14d85019","/kits/",{"title":"Starter Kits"},["/kits/index.html","/kits/README.md"]],
+  ["v-31bc4e0e","/references/",{"title":"References"},["/references/index.html","/references/README.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]

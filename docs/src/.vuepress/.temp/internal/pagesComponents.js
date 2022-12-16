@@ -17,10 +17,10 @@ export const pagesComponents = {
   "v-ff762602": defineAsyncComponent(() => import(/* webpackChunkName: "v-ff762602" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/guides/index.html.vue")),
   // path: /guides/using-vue.html
   "v-19cbf8fb": defineAsyncComponent(() => import(/* webpackChunkName: "v-19cbf8fb" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/guides/using-vue.html.vue")),
-  // path: /references/
-  "v-31bc4e0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-31bc4e0e" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/references/index.html.vue")),
   // path: /kits/
   "v-14d85019": defineAsyncComponent(() => import(/* webpackChunkName: "v-14d85019" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/kits/index.html.vue")),
+  // path: /references/
+  "v-31bc4e0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-31bc4e0e" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/references/index.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/404.html.vue")),
 }

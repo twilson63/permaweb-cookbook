@@ -15,10 +15,10 @@ export const pagesData = {
   "v-ff762602": () => import(/* webpackChunkName: "v-ff762602" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/guides/index.html.js").then(({ data }) => data),
   // path: /guides/using-vue.html
   "v-19cbf8fb": () => import(/* webpackChunkName: "v-19cbf8fb" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/guides/using-vue.html.js").then(({ data }) => data),
-  // path: /references/
-  "v-31bc4e0e": () => import(/* webpackChunkName: "v-31bc4e0e" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/references/index.html.js").then(({ data }) => data),
   // path: /kits/
   "v-14d85019": () => import(/* webpackChunkName: "v-14d85019" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/kits/index.html.js").then(({ data }) => data),
+  // path: /references/
+  "v-31bc4e0e": () => import(/* webpackChunkName: "v-31bc4e0e" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/references/index.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
 }
