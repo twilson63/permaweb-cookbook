@@ -24,6 +24,12 @@ module.exports = {
   ],
 
   theme: defaultTheme({
+    navbar: [
+      {
+        text: 'Starter Kits',
+        link: '/kits/'
+      }
+    ],
     sidebar: [
       {
         text: 'Getting Started',
