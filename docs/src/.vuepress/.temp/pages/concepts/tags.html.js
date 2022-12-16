@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-dc487dd6\",\"path\":\"/concepts/tags.html\",\"title\":\"Tags\",\"lang\":\"en-US\",\"frontmatter\":{},\"headers\":[],\"git\":{\"updatedTime\":1669814457000,\"contributors\":[{\"name\":\"Tom Wilson\",\"email\":\"tom@hyper.io\",\"commits\":1}]},\"filePathRelative\":\"concepts/tags.md\"}")

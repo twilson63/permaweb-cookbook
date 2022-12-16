@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-14d85019\",\"path\":\"/kits/\",\"title\":\"Starter Kits\",\"lang\":\"en-US\",\"frontmatter\":{},\"headers\":[],\"git\":{\"updatedTime\":1669814457000,\"contributors\":[{\"name\":\"Tom Wilson\",\"email\":\"tom@hyper.io\",\"commits\":1}]},\"filePathRelative\":\"kits/README.md\"}")

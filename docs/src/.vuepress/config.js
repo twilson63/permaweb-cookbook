@@ -1,7 +1,8 @@
 const { description } = require('../../package')
+import { defaultTheme } from '@vuepress/theme-default'
 
 module.exports = {
-  base: "",
+  base: "/",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
@@ -22,49 +23,34 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
 
-  /**
-   * Theme configuration, here is the default theme configuration for VuePress.
-   *
-   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
-   */
-  themeConfig: {
-    repo: '',
-    editLinks: false,
-    docsDir: '',
-    editLinkText: '',
-    lastUpdated: false,
-    nav: [
+  theme: defaultTheme({
+    sidebar: [
       {
-        text: 'Contribute',
-        link: 'https://github.com/twilson63/permaweb-cookbook'
+        text: 'Getting Started',
+        link: '/getting-started/',
+        children: [{
+          text: 'Contributing',
+          link: '/getting-started/contributing'
+        }]
       },
       {
-        text: 'Starters',
+        text: 'Core Concepts',
+        link: '/concepts/'
+      },
+      {
+        text: 'Guides',
+        link: '/guides/'
+      },
+      {
+        text: 'References',
+        link: '/references/'
+      },
+      {
+        text: 'Starter Kits',
         link: '/kits/'
       }
-    ],
-    sidebar: {
-      '/': [
-        {
-          text: 'Getting Started',
-          children: ['/', '/getting-started/installation.md']
-        },
-        {
-          text: 'Core Concepts',
-          children: ['/concepts/README.md', '/concepts/tags.md']
-        },
-        {
-          title: 'Guide',
-          collapsable: false,
-          children: [
-            '',
-            'using-vue',
-          ]
-        }
-      ],
-
-    }
-  },
+    ]
+  }),
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
