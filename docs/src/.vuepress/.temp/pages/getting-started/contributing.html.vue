@@ -6,18 +6,25 @@
 <li>Markdown - Markdown is a text based markup language that can be transformed into HTML</li>
 <li>Arweave and the Permaweb - Have some knowledge about the Permaweb that should be shared</li>
 </ul>
-<div class="language-markdown line-numbers-mode" data-ext="md"><pre v-pre class="language-markdown"><code>title Contributing to Permaweb Cookbook
-
-Contributor -> Repo : Check Out of Fork Repository
-note over Contributor : Create Markdown Document
-note over Contributor : Commit Changes
-Contributor -> Repo : Push Branch
-note over Contributor : create Pull Request
-note over Contributor : assign reviewer(s)
-Reviewer -> Repo : Review Pull Request
-note over Reviewer : Approve PR
-Contributor -> Repo : merge to main
-
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+<h2 id="steps-to-contribute" tabindex="-1"><a class="header-anchor" href="#steps-to-contribute" aria-hidden="true">#</a> Steps to Contribute</h2>
+<p><img src="https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ29udHJpYnV0aW5nIHRvIFBlcm1hd2ViIENvb2tib29rCgoAGglvciAtPiBSZXBvIDogQ2hlY2sgT3V0IG9mIEZvcmsAFAVzaXRvcnkKbm90ZSBvdmVyAFYKb3IgOiBDcmVhdGUgTWFya2Rvd24gRG9jdW1lbnQAFxpvbW1pdCBDaGFuZ2VzAHQXUHVzaCBCcmFuY2gAYRljAHQGUHVsbCBSZXF1ZXMAWxphc3NpZ24gcmV2aWV3ZXIocykKUgAFBwCBdgsADQYAOhgAKAk6IEFwcHJvdmUgUFIAgjQXbWVyZ2UgdG8gbWFpbg&amp;s=mscgen" alt="diagram"></p>
+<h2 id="need-help" tabindex="-1"><a class="header-anchor" href="#need-help" aria-hidden="true">#</a> Need Help?</h2>
+<p>Join our <a href="https://discord.gg/haCAX3shxF" target="_blank" rel="noopener noreferrer">discord channel<ExternalLinkIcon/></a> and post a note.</p>
+<h2 id="commiting-work" tabindex="-1"><a class="header-anchor" href="#commiting-work" aria-hidden="true">#</a> Commiting work</h2>
+<p>We are using <a href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank" rel="noopener noreferrer">conventional commits<ExternalLinkIcon/></a>
+for this repository.</p>
+<p>General flow for making a contribution:</p>
+<ol>
+<li>Fork the repo on GitHub</li>
+<li>Clone the project to your own machine</li>
+<li>Commit changes to your own branch</li>
+<li>Push your work back up to your fork</li>
+<li>Submit a Pull request so that we can review your changes</li>
+</ol>
+<p><strong>NOTE</strong>: Be sure to merge the latest from &quot;upstream&quot; before making a
+pull request!</p>
+<h2 id="more-information-about-contributing-check-out-the-repo-style-guide" tabindex="-1"><a class="header-anchor" href="#more-information-about-contributing-check-out-the-repo-style-guide" aria-hidden="true">#</a> More information about contributing check out the repo style guide</h2>
+<p><a href="https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING<ExternalLinkIcon/></a></p>
+</div></template>
 
 
