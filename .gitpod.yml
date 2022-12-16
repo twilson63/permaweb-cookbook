@@ -6,5 +6,5 @@ tasks:
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 3000
-    onOpen:open-browser
+    onOpen: open-browser
     visibility: public
