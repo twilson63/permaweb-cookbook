@@ -37,22 +37,16 @@ Below is an example of an ANT contract State:
 
 ```JSON
 {
-balances:{
-    QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ:1
-         }
-controller:"QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ"
-evolve:null
-name:"ArDrive OG Logo"
-owner:"QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ"
-records:{
-    @:{
-        transactionId:"xWQ7UmbP0ZHDY7OLCxJsuPCN3wSUk0jCTJvOG1etCRo"
-      },
-    undername1:{
-        transactionId:"usOLUmbP0ZHDY7OLCxJsuPCN3wSUk0jkdlvOG1etCRo"
-      }
-}
-ticker:"ANT-ARDRIVE-OG-LOGO"
+  balances:{ QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ : 1 },
+  controller: "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+  evolve: null,
+  name: "ArDrive OG Logo",
+  owner: "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",
+  records:{
+    @:{ transactionId: "xWQ7UmbP0ZHDY7OLCxJsuPCN3wSUk0jCTJvOG1etCRo" },
+    undername1:{ transactionId: "usOLUmbP0ZHDY7OLCxJsuPCN3wSUk0jkdlvOG1etCRo" }
+  },
+  ticker:"ANT-ARDRIVE-OG-LOGO"
 }
 ```
 the base "@" record is the initial routing id for the ANT. if you registered 'my-name' to this ANT, and tried to access it via my-name.arweave.net, you would be redirected to the @ record's transactionId.
