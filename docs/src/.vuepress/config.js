@@ -25,8 +25,12 @@ module.exports = {
   ],
 
   theme: defaultTheme({
-    navbar:[
-      { text: 'GitHub', link: 'https://github.com/twilson63/permaweb-cookbook' }
+    navbar: [
+     { text: 'GitHub', link: 'https://github.com/twilson63/permaweb-cookbook' },
+      {
+        text: 'Starter Kits',
+        link: '/kits/'
+      }
     ],
     sidebar: [
       {
