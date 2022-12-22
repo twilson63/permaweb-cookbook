@@ -28,8 +28,8 @@ SmartWeave contracts, at their core, are built from an initial contract state, w
 
 SmartWeave SDK's such as `Warp` (previously `RedStone`), are used to query for these transactions to build contract state locally, modifying the contract state with each transaction. The Evaluator (`Warp`) uses tags to query for a contracts transactions; It knows a transaction is part of the contract by way of the App-Name tag, and the Contract tag.  
 
-Here is an example of a contract ==interaction== .
-- The `App-Name` says its a Smartweave ==ACTION== . 
+Here is an example of a contract **interaction** .
+- The `App-Name` says its a Smartweave **ACTION** . 
 - The `Contract` tag gives the specific transaction ID of the initial contract state. 
 - The `Input` tag gives the contract its function to execute and any other data it needs: 
 
@@ -57,8 +57,8 @@ Here is an example of a contract ==interaction== .
     }
 ]
 ```
-And here is an example of a ==contract== . 
-- The `App-Name` says its a Smartweave ==CONTRACT==
+And here is an example of a **contract** . 
+- The `App-Name` says its a Smartweave **CONTRACT**
 - The `Contract-Src` tag points to the source code of the contract:
 
 ```json
