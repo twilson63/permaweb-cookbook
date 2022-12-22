@@ -2,7 +2,7 @@
 
 ## What is SmartWeave?
 
-The SmartWeave protocol is the smartcontract protocol for Arweave. The major difference from other blockchains - namely Ethereum, one of the leaders in smartcontract ecosystems - is Arweave nodes do not validate smartcontracts, but rather the user themselves when they interact with the contract, thru the use of "lazy-evaluation". SmartWeave contracts currently support JavaScript, TypeScript, Rust, Go, AssemblyScript, and WASM (WebAssembly).
+SmartWeave is the name given to the dominant SmartContract paradigm on Arweave. A unique property of SmartWeave contracts is that the current state of the contract is provided by a process of "lazy evaluation". This means that instead of Arweave mining nodes constantly evaluating the current state of all contracts, a client reading a contract evaluates the state for themselves. SmartWeave contracts currently support JavaScript, TypeScript, Rust, Go, AssemblyScript, and WASM (WebAssembly).
 
 ## Why is SmartWeave important?
 
@@ -10,11 +10,11 @@ SmartWeave is an important part of the Arweave ecosystem - it allows transfer of
 
 ## How does SmartWeave Work?
 
-SmartWeave contracts, at their core, are built from an initial contract state, with edits and additions using transaction tags. SmartWeave SDK's (such as Warp {previously RedStone} and the legacy SmartWeave SDK) are used to query for these transactions to build contract state locally, adding or subtracting from the contract state with each transaction in order from oldest to newest. The resulting state is the current contract state, which the SDK on the client side can use to calculate user balances, contract owners, and other contract specific details. Once the Dapp has a validated contract state they can build an interaction for the user to deploy to the chain, which upon mining or indexing on a gateway (see gateway Core Concept) will be included the next time someone builds the contract state. 
+SmartWeave contracts, at their core, are built from an initial contract state, with edits and additions using transaction tags. SmartWeave SDK's (such as Warp {previously RedStone} and the legacy SmartWeave SDK) are used to query for these transactions to build contract state locally, adding or subtracting from the contract state with each transaction in order from oldest to newest. The resulting state is the current contract state, which the SDK on the client side can use to calculate user balances, contract owners, and other contract specific details. Once the caller has a validated contract state they can build an interaction for the user to deploy to the chain, which upon mining or indexing on a gateway (see gateway Core Concept) will be included the next time someone builds the contract state. 
 
 ## Smartweave ecosystem projects
 
-Theres quite a few ecosystem projects leveraging the smartweave protocol, but here are some of note:
+Theres quite a few ecosystem projects leveraging SmartWeave SmartContracts, but here are some of note:
 
 - [Warp](https://warp.cc/) | Main provider of SmartWeave SDK's, tutorials, and helps maintain the SmartWeave protocol.
 - [SonAr](https://sonar.warp.cc/#/app/contracts)| SmartWeave contract explorer, created and hosted by Warp.
