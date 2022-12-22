@@ -92,19 +92,24 @@ The resulting state is the current contract state, which the SDK on the client s
 
 Theres quite a few ecosystem projects leveraging SmartWeave SmartContracts, but here are some of note:
 
+### Implementations
 - [Warp](https://warp.cc/) | Main provider of SmartWeave SDK's, tutorials, and helps maintain the SmartWeave protocol.
+- [EXM](https://docs.exm.dev/) | Execution Machine (EXM) is a developer platform that powers the creation and usage of highly available and highly performant applications within a decentralized environment.
 
-- [Permapages](https://permapages.app/) | Permanent webpage creation tool, ArNS purchase portal, and ANT creation portal. Your profile on the permaweb.
-
-- [ArNS](/concepts/arns.html) // todo: update to arns portal when portal is released
-
+### Tools
 - [SonAr](https://sonar.warp.cc/#/app/contracts)| SmartWeave contract explorer, created and hosted by Warp.
 
-- [See more Ecosystem Projects](/references/ecosystem-projects)
-
-
-
-<!-- - [WeaveDB](https://weavedb.dev/) | NoSQL Database as a Smart Contract.
+### Apps
+- [Permapages](https://permapages.app/) | Permanent webpage creation tool, ArNS purchase portal, and ANT creation portal. Your profile on the permaweb.
+- [ArNS](/concepts/arns.html) // todo: update to arns portal when portal is released
+- [WeaveDB](https://weavedb.dev/) | NoSQL Database as a Smart Contract.
 - [KwilDB](https://docs.kwil.com/)| SQL Database as a Smart Contract.
+
+
+
+
+
+
+
 - [ArDrive Inferno](https://ardrive.io/inferno/) | Get PST's for uploading thru Ardrive. 
-- [EXM](https://docs.exm.dev/) | Execution Machine (EXM) is a developer platform that powers the creation and usage of highly available and highly performant applications within a decentralized environment. -->
+
