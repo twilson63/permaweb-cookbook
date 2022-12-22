@@ -6,7 +6,7 @@ SmartWeave is the name given to the dominant SmartContract paradigm on Arweave. 
 
 ## Why is SmartWeave important?
 
-To build decentralized applications, you need to have business logic stored in a persistent layer that is guaranteed not to change over time and is cryptographically verified on the chain. This business logic is called a "Smart Contract"; this "Contract" defines the business rules for some functionality for a protocol or application. Additionally, you need to be able to store the state or data of the contract on chain; SmartWeave provides an immutable append-only pattern that leverages permanent storage to hold this state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way.
+To build decentralized applications, you need to have business logic stored in a persistent layer that is guaranteed not to change over time and is cryptographically verified on the chain. This business logic is called a smartcontract; this contract defines the business rules for some functionality for a protocol or application. Additionally, you need to be able to store the state or data of the contract on chain; SmartWeave provides an immutable append-only pattern that leverages permanent storage to hold this state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way.
 
 By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build [Permaweb applications](/concepts/permaweb-apps) with dynamic functionality that can be used in a permissionless and trustless manner.
 
@@ -28,8 +28,8 @@ SmartWeave contracts, at their core, are built from an initial contract state, w
 
 SmartWeave SDK's such as `Warp` (previously `RedStone`), are used to query for these transactions to build contract state locally, modifying the contract state with each transaction. The Evaluator (`Warp`) uses tags to query for a contracts transactions; It knows a transaction is part of the contract by way of the App-Name tag, and the Contract tag.  
 
-Here is an example of a contract ==interaction== .
-- The `App-Name` says its a Smartweave ==ACTION== . 
+Here is an example of a contract **interaction** .
+- The `App-Name` says its a Smartweave **ACTION** . 
 - The `Contract` tag gives the specific transaction ID of the initial contract state. 
 - The `Input` tag gives the contract its function to execute and any other data it needs: 
 
@@ -57,8 +57,8 @@ Here is an example of a contract ==interaction== .
     }
 ]
 ```
-And here is an example of a ==contract== . 
-- The `App-Name` says its a Smartweave ==CONTRACT==
+And here is an example of a **contract** . 
+- The `App-Name` says its a Smartweave **CONTRACT**
 - The `Contract-Src` tag points to the source code of the contract:
 
 ```json
