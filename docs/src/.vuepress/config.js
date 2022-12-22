@@ -56,7 +56,10 @@ module.exports = {
           text: 'Tags',
           link: '/concepts/tags'
         },
-        
+        {
+         text: 'Path Manifests',
+         link: '/concepts/manifests'
+        }
       ]
       },
       {
