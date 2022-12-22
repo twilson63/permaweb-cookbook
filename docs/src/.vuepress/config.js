@@ -36,6 +36,7 @@ module.exports = {
       {
         text: 'Getting Started',
         link: '/getting-started/',
+        collapsible:true,
         children: [{
           text: 'Contributing',
           link: '/getting-started/contributing'
@@ -44,13 +45,18 @@ module.exports = {
       {
         text: 'Core Concepts',
         link: '/concepts/',
-        children: [{
-          text: 'ArNS - Arweave Name System',
-          link: '/concepts/arns'
-        },
+        collapsible:true,
+        children: [
         {
           text: 'SmartWeave',
-          link: '/concepts/smartweave'
+          link: '/concepts/smartweave',
+          collapsible:true,
+          children:[
+            {
+              text: 'ArNS - Arweave Name System',
+              link: '/concepts/arns'
+            },
+          ]
         },
         {
           text: 'Tags',
@@ -61,15 +67,19 @@ module.exports = {
       },
       {
         text: 'Guides',
-        link: '/guides/'
+        link: '/guides/',
+        collapsible:true,
+  
       },
       {
         text: 'References',
-        link: '/references/'
+        link: '/references/',
+        collapsible:true,
       },
       {
         text: 'Starter Kits',
-        link: '/kits/'
+        link: '/kits/',
+        collapsible:true,
       }
     ]
   }),
