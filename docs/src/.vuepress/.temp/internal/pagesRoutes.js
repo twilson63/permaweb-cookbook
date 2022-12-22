@@ -1,6 +1,8 @@
 export const pagesRoutes = [
   ["v-8daa1a0e","/",{"title":"Cooking with the Permaweb"},["/index.html","/index.md"]],
   ["v-6da238aa","/concepts/",{"title":"Core Concepts"},["/concepts/index.html","/concepts/README.md"]],
+  ["v-2df1c4d0","/concepts/arns.html",{"title":"ArNS - Arweave Name System"},["/concepts/arns","/concepts/arns.md"]],
+  ["v-41470855","/concepts/smartweave.html",{"title":"SmartWeave"},["/concepts/smartweave","/concepts/smartweave.md"]],
   ["v-dc487dd6","/concepts/tags.html",{"title":"Tags"},["/concepts/tags","/concepts/tags.md"]],
   ["v-ba934fd8","/config/",{"title":"Config"},["/config/index.html","/config/README.md"]],
   ["v-ccdc4da0","/getting-started/",{"title":"Cooking with the Permaweb"},["/getting-started/index.html","/getting-started/README.md"]],

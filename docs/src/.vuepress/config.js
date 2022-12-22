@@ -47,11 +47,17 @@ module.exports = {
         children: [{
           text: 'ArNS - Arweave Name System',
           link: '/concepts/arns'
-        }, 
+        },
+        {
+          text: 'SmartWeave',
+          link: '/concepts/smartweave'
+        },
         {
           text: 'Tags',
           link: '/concepts/tags'
-        }]
+        },
+        
+      ]
       },
       {
         text: 'Guides',

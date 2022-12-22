@@ -5,6 +5,10 @@ export const pagesComponents = {
   "v-8daa1a0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-8daa1a0e" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/index.html.vue")),
   // path: /concepts/
   "v-6da238aa": defineAsyncComponent(() => import(/* webpackChunkName: "v-6da238aa" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/concepts/index.html.vue")),
+  // path: /concepts/arns.html
+  "v-2df1c4d0": defineAsyncComponent(() => import(/* webpackChunkName: "v-2df1c4d0" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/concepts/arns.html.vue")),
+  // path: /concepts/smartweave.html
+  "v-41470855": defineAsyncComponent(() => import(/* webpackChunkName: "v-41470855" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/concepts/smartweave.html.vue")),
   // path: /concepts/tags.html
   "v-dc487dd6": defineAsyncComponent(() => import(/* webpackChunkName: "v-dc487dd6" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/concepts/tags.html.vue")),
   // path: /config/

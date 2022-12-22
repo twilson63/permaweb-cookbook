@@ -3,6 +3,10 @@ export const pagesData = {
   "v-8daa1a0e": () => import(/* webpackChunkName: "v-8daa1a0e" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/index.html.js").then(({ data }) => data),
   // path: /concepts/
   "v-6da238aa": () => import(/* webpackChunkName: "v-6da238aa" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/concepts/index.html.js").then(({ data }) => data),
+  // path: /concepts/arns.html
+  "v-2df1c4d0": () => import(/* webpackChunkName: "v-2df1c4d0" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/concepts/arns.html.js").then(({ data }) => data),
+  // path: /concepts/smartweave.html
+  "v-41470855": () => import(/* webpackChunkName: "v-41470855" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/concepts/smartweave.html.js").then(({ data }) => data),
   // path: /concepts/tags.html
   "v-dc487dd6": () => import(/* webpackChunkName: "v-dc487dd6" */"/workspace/permaweb-cookbook/docs/src/.vuepress/.temp/pages/concepts/tags.html.js").then(({ data }) => data),
   // path: /config/
