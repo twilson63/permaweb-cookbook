@@ -2,7 +2,7 @@ const { description } = require('../../package')
 import { defaultTheme } from '@vuepress/theme-default'
 
 module.exports = {
-  
+
   base: "/",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -26,7 +26,7 @@ module.exports = {
 
   theme: defaultTheme({
     navbar: [
-     { text: 'GitHub', link: 'https://github.com/twilson63/permaweb-cookbook' },
+      { text: 'GitHub', link: 'https://github.com/twilson63/permaweb-cookbook' },
       {
         text: 'Starter Kits',
         link: '/kits/'
@@ -44,14 +44,20 @@ module.exports = {
       {
         text: 'Core Concepts',
         link: '/concepts/',
-        children: [{
-          text: 'ArNS - Arweave Name System',
-          link: '/concepts/arns'
-        }, 
-        {
-          text: 'Tags',
-          link: '/concepts/tags'
-        }]
+        children: [
+          {
+            text: `Posting Transactions`,
+            link: `/concepts/postTransaction`
+          },
+          {
+            text: 'ArNS - Arweave Name System',
+            link: '/concepts/arns'
+          },
+          {
+            text: 'Tags',
+            link: '/concepts/tags'
+          }
+        ]
       },
       {
         text: 'Guides',
