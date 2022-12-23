@@ -50,7 +50,7 @@ module.exports = {
         {
           text: `Posting Transactions`,
           link: `/concepts/postTransaction`
-        }
+        },
         {
           text: 'SmartWeave',
           link: '/concepts/smartweave',
@@ -76,7 +76,27 @@ module.exports = {
         text: 'Guides',
         link: '/guides/',
         collapsible:true,
-  
+        children: [
+          {
+            text: `Posting Transactions`,
+            collapsible:false,
+            children:[
+              {
+                text: 'arweave-js',
+                link: '/guides/posting-transactions/arweave-js'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/posting-transactions/bundlr'
+              },
+              {
+                text: 'dispatch',
+                link: '/guides/posting-transactions/dispatch'
+              },
+          ]
+          },
+        ]
+
       },
       {
         text: 'References',
