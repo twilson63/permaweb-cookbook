@@ -1,15 +1,17 @@
 ## Installing the bundlr.network/client
-using npm:
+Layer 2 transactions are posted using `bundlr-network/client`. 
+
+Add the package using npm:
 ```console
 npm install @bundlr-network/client
 ```
-or using yarn:
+or yarn:
 ```console
 yarn add @bundlr-network/client
 ```
 
 ## Initializing Bundlr Network Client
-Layer 2 transactions are posted using `bundlr-network/client`.
+A difference between posting Layer 1 and bundled Layer 2 transactions is that when using bundlr you must make a deposit on the bundlr node ahead of time. This deposit can be made using AR tokens or a variety of other crypto currencies. Another difference is that the bundlr service guarantees your data will arrive on chain.
 
 ```js
 import Bundlr from '@bundlr-network/client';
@@ -23,7 +25,7 @@ const bundlr = new Bundlr("http://node1.bundlr.network", "arweave", key);
 ```
 
 ## Posting a Bundled Transaction
-A difference between posting Layer 1 and bundled Layer 2 transactions is that when using bundlr you must make a deposit on the bundlr node ahead of time. This deposit can be made using AR tokens or a variety of other crypto currencies. Another difference is that the bundlr service guarantees your data will arrive on chain.
+
 ```js
 // load the data from disk
 const imageData = fs.readFileSync(`iamges/myImage.png`);
@@ -41,6 +43,8 @@ await tx.sign();
 await tx.upload();
 ```
 ## Resources
-The full bundlr client docs can be found on the [bundlr.network website](https://docs.bundlr.network/docs/overview)
+* For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/postTransaction.md) section of the cookbook.
 
-A tutorial and workshop for [uploading an NFT collection](https://github.com/DanMacDonald/nft-uploader) using bundlr.
+* The full bundlr client docs can be found on the [bundlr.network website](https://docs.bundlr.network/docs/overview)
+
+* A tutorial and workshop for [uploading an NFT collection](https://github.com/DanMacDonald/nft-uploader) using bundlr.

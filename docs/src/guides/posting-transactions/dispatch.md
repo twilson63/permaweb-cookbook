@@ -17,3 +17,6 @@ let result = await window.arweaveWallet.dispatch(tx);
 // log out the transactino id
 console.log(result.id);
 ```
+
+## Resources
+* For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/postTransaction.md) section of the cookbook.
