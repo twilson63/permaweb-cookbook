@@ -2,7 +2,7 @@ const { description } = require('../../package')
 import { defaultTheme } from '@vuepress/theme-default'
 
 module.exports = {
-  
+
   base: "/",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -26,7 +26,7 @@ module.exports = {
 
   theme: defaultTheme({
     navbar: [
-     { text: 'GitHub', link: 'https://github.com/twilson63/permaweb-cookbook' },
+      { text: 'GitHub', link: 'https://github.com/twilson63/permaweb-cookbook' },
       {
         text: 'Starter Kits',
         link: '/kits/'
@@ -47,6 +47,10 @@ module.exports = {
         link: '/concepts/',
         collapsible:true,
         children: [
+        {
+          text: `Posting Transactions`,
+          link: `/concepts/postTransaction`
+        },
         {
           text: 'SmartWeave',
           link: '/concepts/smartweave',
@@ -72,7 +76,27 @@ module.exports = {
         text: 'Guides',
         link: '/guides/',
         collapsible:true,
-  
+        children: [
+          {
+            text: `Posting Transactions`,
+            collapsible:false,
+            children:[
+              {
+                text: 'arweave-js',
+                link: '/guides/posting-transactions/arweave-js'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/posting-transactions/bundlr'
+              },
+              {
+                text: 'dispatch',
+                link: '/guides/posting-transactions/dispatch'
+              },
+          ]
+          },
+        ]
+
       },
       {
         text: 'References',
