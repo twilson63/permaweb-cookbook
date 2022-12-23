@@ -44,24 +44,27 @@ module.exports = {
       {
         text: 'Core Concepts',
         link: '/concepts/',
-        children: [
-          {
-            text: `Posting Transactions`,
-            link: `/concepts/postTransaction`
-          },
-          {
-            text: 'ArNS - Arweave Name System',
-            link: '/concepts/arns'
-          },
-          {
-            text: 'Tags',
-            link: '/concepts/tags'
-          },
-          {
-            text: 'Path Manifests',
-            link: '/concepts/manifests'
-          }
-        ]
+        children: [{
+          text: 'ArNS - Arweave Name System',
+          link: '/concepts/arns'
+        },
+        {
+          text: `Posting Transactions`,
+          link: `/concepts/postTransaction`
+        }
+        {
+          text: 'SmartWeave',
+          link: '/concepts/smartweave'
+        },
+        {
+          text: 'Tags',
+          link: '/concepts/tags'
+        },
+        {
+         text: 'Path Manifests',
+         link: '/concepts/manifests'
+        }
+      ]
       },
       {
         text: 'Guides',
