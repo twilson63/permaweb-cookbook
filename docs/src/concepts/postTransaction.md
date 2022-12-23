@@ -1,118 +1,42 @@
-## Transaction Types
-Arweave transactions come in two varieties. `Wallet-to-wallet` transactions that transfer AR tokens from one wallet to another and `data` transactions that charge a fee to permanently store data on the Arweave network.
+# Posting Transactions
+There are several ways to post transactions to the Arweave network. Each way has its own unque constraints and affordances. The diagram below illustrates the four main pathways for posting transactions.
 
-Interestingly, `data` transactions may also transfer tokens to a target wallet and pay the data storage fee all in a single transaction. Both transaction types support up to 2KB worth of user generated custom tags that get indexed and can be used to query for the transaction at a later date.
+<img src="https://arweave.net/qy97_UEV1vEDasGLeaXSwKJi2lnCcg_aggDFxN1jPB8" width="550">
 
-## Layer 1 Transactions
-Arweave produces new blocks approximately every two minutes with a protocol limit of 1000 transactions per block. As a consequence the maximum transaction at the base layer (Layer 1) is ~8 transactions per second. If your application exceeds this threshold consider posting your transactions to Layer 2 which scales to a virtually unlimited volume of transactions.
+## Direct Transactions
+Transactions posted directly to Arweave (Layer 1) come in two varieties **wallet-to-walet** transactions and **data** transactions. The first is used to transfer AR tokens between wallet addresses. The second is used to store data on the network and pay the associated storage costs.
 
-Note: It's possible when posting a Layer 1 transaction that it does not get included in a block. This is referred to as a "dropped" transaction and can happen for a variety of reasons. Always be sure to verify your transactions have several confirmations before considering them permanent.
+Interestingly, **data** transactions may also transfer AR tokens to a target wallet while paying storage costs at the same time. All transactions allow the user to specify up to 2KB worth of metadata in the form of [custom tags](./tags.md).
 
-### Initializing arweave-js
-Layer 1 transactions are posted using the `arweave-js` library.
-```js
-import Arweave from 'arweave';
-import fs from "fs";
+::: warning
+ <img src="https://arweave.net/oCB5CRFUk0HeLQ97Xqb5Msty4EppmB6zG5ScsS84-Nw" width="20" /> **Dropped Transactions:** When posting transactions directly to Layer 1 there is the possiblity of these transactions being dropped. This can happen for a variety of reasons. Always be sure to verify your direct transactions have several confirmations before considering them permanent. Once posted a transaction must be included in one of the subsequent 30 blocks or it is considered dropped.
+ :::
+ ::: tip
+<img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> **Guaranteed Transactions:** When transactions are posted via a bundling service, the service holds onto the transaction and its data until it is confirmed and re-posts the transaction for each new block until it is confirmed. 
+ :::
 
-// load the JWK wallet key file from disk
-let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
+ ### Direct to Peer
+ It is possible to post transactions directly to an Arweave Peer though by default `arweave-js` will post to a user configurable gateway. There are a few reasons for this, one is that peers come and go, secondly by posting it directly to a peer gateways will only find out about the transaction and data after it has been included in a block and mined. As a result it may tak several minutes before the data is queryable at the gateway.
 
-// initalize an arweave instance
-const arweave = Arweave.init({});
-```
+  ### Direct to Gateway
+  This the default pathway for `arweave-js`. Gateways sit between the user and Arweaves network of peers.  One of the primary functions of the gateway is to index transactions and optimistically cache the data posted to the network while waiting for it to be included in a block. This makes the transaction queryiable in a "Pending" state almost instantly which allows applications built ontop of a gateway to be more responsive. There is still a risk of transactions dropping out of the optimistic cache if they are not included in a block by the peers.
 
-### Posting a wallet-to-wallet Transaction
+  An example of how to post a direct transaction using `arwaeve-js` can be found [in this guide](../guides/posting-transactions/arweave-js.md).
 
-```js
-//  create a wallet-to-wallet transaction sending 10.5AR to the target address
-let transaction = await arweave.createTransaction({
-  target: '1seRanklLU_1VTGkEk7P0xAwMJfA7owA1JHW5KyZKlY',
-  quantity: arweave.ar.arToWinston('10.5')
-}, key);
+## Bundled Transactions
+Services that increase the scaleability and performance of the underlying Arweave protocol are referred to as Layer 2 solutions. A bundler is one such service. Bundlers take multiple individual transactions and bundle them together into a single transaction that is posted to Layer 1. In this way a single transaction at the protocol level can contain tens of thousands of bundled transactions. There is one restriction, however, only **data** transactions can be included in a bundle. **Wallet-to-wallet** transactions (that transfer AR tokens between wallets) must be done at the protocol level (Layer 1).
 
-// you must sign the transaction with your key before posting
-await arweave.transactions.sign(transaction, key);
+Another difference when using a bundling service like [bundlr.network](https://bundlr.network) is that you must make a small depost on the bundler you intend to use prior to posting transactions. This enables the bundler service to charge for small transactions without resorting to posting a Layer 1 transaction to transfer AR each time.
 
-// post the transaction
-const response = await arweave.transactions.post(transaction);
-```
+Bundlr.network allows clients to make deposts in a number of [supported crypto currencies](https://docs.bundlr.network/docs/currencies).
 
-### Posting a Data Transaction
-```js
-// load the data from disk
-const imageData = fs.readFileSync(`iamges/myImage.png`);
+::: tip
+When transactions are posted to bundlr.network they are also appear in the cache of connected gateways so they are available to query in a matter of miliseconds.
+:::
 
-// create a data transaction
-let transaction = await arweave.createTransaction({
-  data: imageData
-}, key);
+ An example of how to post bundled transactions using `bundlr.network/client` can be found [in this guide](../guides/posting-transactions/bundlr.md).
 
-// add a custom tag that tells the gateway how to serve this data in the browser
-transaction.addTag('Content-Type', 'image/png');
+## Dispatched Transactions
+Another way to post layer 2 transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to Layer 2. Arweave browser wallets implement a `dispatch()` API method. If you are posting small transactions (100KB or less) you can use the wallets `dispatch()` method to take advantage of bundled transactions even if `bundlr.network/client` isn't packaged with your application.
 
-// you must sign the transaction with your key before posting
-await arweave.transactions.sign(transaction, key);
-
-// create an uploader that will seed your data to the network
-let uploader = await arweave.transactions.getUploader(transaction);
-
-// run the uploader until it completes the upload.
-while (!uploader.isComplete) {
-  await uploader.uploadChunk();
-}
-```
-
-## Layer 2 Transactions
-Services that increase the scaleability and performance of the underlying Arweave protocol are referred to as Layer 2 solutions. A bundler is one such service that takes multiple individual transactions and bundles them together into a single transaction that is posted to Layer 1. In this way a single transaction at the protocol level can contain tens of thousands of bundled transactions. With only one restriction, bundled transactions cannot transfer AR tokens.
-
-### Initializing Bundlr Network Client
-Layer 2 transactions are posted using `bundlr-network/client`.
-```js
-import Bundlr from '@bundlr-network/client';
-import fs from "fs";
-
-// load the JWK wallet key file from disk
-let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
-
-// initailze the bundlr SDK
-const bundlr = new Bundlr("http://node1.bundlr.network", "arweave", key);
-```
-
-### Posting a Bundled Transaction
-A difference between posting Layer 1 and bundled Layer 2 transactions is that when using bundlr you must make a deposit on the bundlr node ahead of time. This deposit can be made using AR tokens or a wide variety of other crypto currencies. Another difference is that the bundlr service guarantees your data will arrive on chain.
-```js
-// load the data from disk
-const imageData = fs.readFileSync(`iamges/myImage.png`);
-
-// add a custom tag that tells the gateway how to serve this data in the browser
-const tags = [
-  {name: "Content-Type", value: "image/png"},
-];
-
-// create the bundled transaction and sign it
-const tx = bundlr.createTransaction(imageData, { tags });
-await tx.sign();
-
-// upload the transaction to bundlr for inclusion in a bundle to be posted
-await tx.upload();
-```
-
-## Layer 2 Dispatch
-Another way to post layer 2 transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to Layer 2. Arweave browser wallets impllment a `dispatch()` method. An interesting property of this `dispatch()` method is that if the transaction data is < 100KB, the transaction is free.
-```js
-// use arweave-js to create a transaction
-let tx = await arweave.createTransaction({ data:"Hello World!" })
-
-// add some custom tags to the transaction
-tx.addTag('App-Name', 'PublicSquare')
-tx.addTag('Content-Type', 'text/plain')
-tx.addTag('Version', '1.0.1')
-tx.addTag('Type', 'post')
-
-// use the browser wallet to dispatch() the transaction
-let result = await window.arweaveWallet.dispatch(tx);
-
-// log out the transactino id
-console.log(result.id);
-```
-
+ An example of how to post a 100KB or less bundled transaction with an Arweave wallets `dispatch()` method can be found [in this guide](../guides/posting-transactions/dispatch.md).
