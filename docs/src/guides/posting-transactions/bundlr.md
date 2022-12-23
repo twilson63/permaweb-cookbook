@@ -28,7 +28,7 @@ const bundlr = new Bundlr("http://node1.bundlr.network", "arweave", key);
 
 ```js
 // load the data from disk
-const imageData = fs.readFileSync(`iamges/myImage.png`);
+const imageData = fs.readFileSync(`images/myImage.png`);
 
 // add a custom tag that tells the gateway how to serve this data to a browser
 const tags = [
