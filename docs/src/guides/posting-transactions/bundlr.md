@@ -2,18 +2,18 @@
 Layer 2 transactions are posted using `bundlr-network/client`. 
 
 Add the package using npm:
-```console
+```console:no-line-numbers
 npm install @bundlr-network/client
 ```
 or yarn:
-```console
+```console:no-line-numbers
 yarn add @bundlr-network/client
 ```
 
 ## Initializing Bundlr Network Client
 A difference between posting Layer 1 and bundled Layer 2 transactions is that when using bundlr you must make a deposit on the bundlr node ahead of time. This deposit can be made using AR tokens or a variety of other crypto currencies. Another difference is that the bundlr service guarantees your data will arrive on chain.
 
-```js
+```js:no-line-numbers
 import Bundlr from '@bundlr-network/client';
 import fs from "fs";
 
@@ -26,7 +26,7 @@ const bundlr = new Bundlr("http://node1.bundlr.network", "arweave", key);
 
 ## Posting a Bundled Transaction
 
-```js
+```js:no-line-numbers
 // load the data from disk
 const imageData = fs.readFileSync(`images/myImage.png`);
 
