@@ -80,3 +80,12 @@ You can find tasks on the [project board](https://github.com/users/twilson63/pro
 or create an issue and assign it to yourself.
 
 Happy Cooking!
+
+## Deploy Instructions
+
+```sh
+touch wallet.json
+# add wallet info
+cd docs
+yarn deploy
+```
