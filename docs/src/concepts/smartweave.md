@@ -6,21 +6,21 @@ SmartWeave is the name given to the dominant SmartContract paradigm on Arweave. 
 
 ## Why is SmartWeave important?
 
-To build decentralized applications, you need to have business logic stored in a persistent layer that is guaranteed not to change over time and is cryptographically verified on the chain. This business logic is called a smartcontract; this contract defines the business rules for some functionality for a protocol or application. Additionally, you need to be able to store the state or data of the contract on chain; SmartWeave provides an immutable append-only pattern that leverages permanent storage to hold this state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way.
+The state and logic of decentralized applications needs to be as censorship resistant, permanent and verifiable as the rest of their data. SmartWeave enables developers to write smart contracts that encapsulate their apps state and logic on-chain and execute it in a trustless verifiable way. This is no small feat as the Arweave protocol does not include incentives for nodes to evaluate smart contract state for the network.
 
-By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build [Permaweb applications](/concepts/permaweb-apps) with dynamic functionality that can be used in a permissionless and trustless manner.
+SmartWeave provides an immutable append-only pattern for contract interactions that leverages permanent storage to hold onto their state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way. By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build [Permaweb applications](/concepts/permaweb-apps) with dynamic functionality that can be used in a permissionless and trustless manner.
 
-There are several reasons why developers might choose to use SmartWeave to create permaweb applications:
+There are several reasons why developers might choose to use SmartWeave to implement the logic for their permaweb applications:
 
-- Decentralized storage: SmartWeave is built on Arweave, which means that applications created using SmartWeave will be stored on a distributed network of nodes rather than on a central server. This can make them more resistant to censorship, tampering, and other forms of interference.
+- **Decentralized storage:** SmartWeave is built on Arweave, which means that applications created using SmartWeave will be stored on a distributed network of nodes rather than on a centralized server. This can make them more resistant to censorship, tampering, and other forms of interference.
 
-- Lazy evaluation: The lazy evaluation feature of SmartWeave contracts allows for efficient and scalable execution. Instead of constantly evaluating the state of a contract, the client reading the contract is responsible for evaluating the state, leveraging the users processing power instead of the network nodes.
+- **Lazy evaluation:** The lazy evaluation feature of SmartWeave contracts allows for efficient and scaleable execution. Instead of Arweave nodes constantly evaluating the state of a contract, the client reading the contract is responsible for evaluating the state, leveraging the users processing power instead of the networks nodes.
 
-- Language support: SmartWeave supports a range of programming languages, including JavaScript, TypeScript, Rust, Go, AssemblyScript, and WASM (WebAssembly). This allows developers to use the language they are most familiar with when creating SmartWeave applications.
+- **Language support:** SmartWeave supports a range of programming languages, including JavaScript, TypeScript, Rust, Go, AssemblyScript, and WASM (WebAssembly). This allows developers to use the language they are most familiar with when creating SmartWeave applications.
 
-- Data durability: Arweave is designed to store data in a way that makes it highly durable and long-lasting. This can be useful for applications that need to store data over a long period of time, such as historical records or scientific data.
+- **Data durability:** Arweave is designed to store data in a way that makes it highly durable and long-lasting. This can be useful for applications that need to store data over a long period of time, such as historical records or scientific data.
 
-- Economic model: Arweave uses a unique economic model based on the concept of "data forever" that incentivizes miners to store data indefinitely. This can help ensure the long-term viability and durability of permaweb applications created using SmartWeave.
+- **Economic model:** Arweave uses a unique economic model based on the concept of permanent storage that incentivizes miners to store data indefinitely. This can help ensure the long-term viability and durability of permaweb applications created using SmartWeave.
 
 ## How does SmartWeave Work?
 
@@ -53,7 +53,7 @@ Here is an example of a contract **interaction** .
             "function":"setRecord",
             "subDomain":"@",
             "transactionId":"lfaFgcoBT8auBrFJepLV1hyiUjtlKwVwn5MTjPnTDcs"
-            }"
+        }"
     }
 ]
 ```
@@ -104,12 +104,5 @@ Theres quite a few ecosystem projects leveraging SmartWeave SmartContracts, but 
 - [ArNS](/concepts/arns.html) // todo: update to arns portal when portal is released
 - [WeaveDB](https://weavedb.dev/) | NoSQL Database as a Smart Contract.
 - [KwilDB](https://docs.kwil.com/)| SQL Database as a Smart Contract.
-
-
-
-
-
-
-
 - [ArDrive Inferno](https://ardrive.io/inferno/) | Get PST's for uploading thru Ardrive. 
 
