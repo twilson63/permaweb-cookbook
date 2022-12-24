@@ -36,7 +36,7 @@ module.exports = {
       {
         text: 'Getting Started',
         link: '/getting-started/',
-        collapsible:true,
+        collapsible: true,
         children: [{
           text: 'Contributing',
           link: '/getting-started/contributing'
@@ -45,42 +45,42 @@ module.exports = {
       {
         text: 'Core Concepts',
         link: '/concepts/',
-        collapsible:true,
+        collapsible: true,
         children: [
-        {
-          text: `Posting Transactions`,
-          link: `/concepts/postTransaction`
-        },
-        {
-          text: 'SmartWeave',
-          link: '/concepts/smartweave',
-          collapsible:true,
-          children:[
-            {
-              text: 'ArNS - Arweave Name System',
-              link: '/concepts/arns'
-            },
-          ]
-        },
-        {
-          text: 'Tags',
-          link: '/concepts/tags'
-        },
-        {
-         text: 'Path Manifests',
-         link: '/concepts/manifests'
-        }
-      ]
+          {
+            text: 'Path Manifests',
+            link: '/concepts/manifests'
+          },
+          {
+            text: `Posting Transactions`,
+            link: `/concepts/postTransaction`
+          },
+          {
+            text: 'SmartWeave',
+            link: '/concepts/smartweave',
+            collapsible: true,
+            children: [
+              {
+                text: 'Arweave Name System (ArNS)',
+                link: '/concepts/arns'
+              },
+            ]
+          },
+          {
+            text: 'Transaction Tags',
+            link: '/concepts/tags'
+          }
+        ]
       },
       {
         text: 'Guides',
         link: '/guides/',
-        collapsible:true,
+        collapsible: true,
         children: [
           {
             text: `Posting Transactions`,
-            collapsible:false,
-            children:[
+            collapsible: false,
+            children: [
               {
                 text: 'arweave-js',
                 link: '/guides/posting-transactions/arweave-js'
@@ -93,7 +93,7 @@ module.exports = {
                 text: 'dispatch',
                 link: '/guides/posting-transactions/dispatch'
               },
-          ]
+            ]
           },
         ]
 
@@ -101,12 +101,12 @@ module.exports = {
       {
         text: 'References',
         link: '/references/',
-        collapsible:true,
+        collapsible: true,
       },
       {
         text: 'Starter Kits',
         link: '/kits/',
-        collapsible:true,
+        collapsible: true,
       }
     ]
   }),
