@@ -1,13 +1,13 @@
 ## Installing the arweave-js Package
 
-```console
+```console:no-line-numbers
 npm install --save arweave
 ```
 
 ## Initializing arweave-js
 Direct Layer 1 transactions are posted using the `arweave-js` library.
 
-```js
+```js:no-line-numbers
 import Arweave from 'arweave';
 import fs from "fs";
 
@@ -20,7 +20,7 @@ const arweave = Arweave.init({});
 
 ## Posting a wallet-to-wallet Transaction
 A basic transaction to move AR tokens from one wallet address to another.
-```js
+```js:no-line-numbers
 //  create a wallet-to-wallet transaction sending 10.5AR to the target address
 let transaction = await arweave.createTransaction({
   target: '1seRanklLU_1VTGkEk7P0xAwMJfA7owA1JHW5KyZKlY',
@@ -36,7 +36,7 @@ const response = await arweave.transactions.post(transaction);
 
 ## Posting a Data Transaction
 This example illustrates how load a file from disk and create a transaction to store its data on the network. You can find the current price the network is charging at [https://ar-fees.arweave.dev](https://ar-fees.arweave.dev)
-```js
+```js:no-line-numbers
 // load the data from disk
 const imageData = fs.readFileSync(`iamges/myImage.png`);
 

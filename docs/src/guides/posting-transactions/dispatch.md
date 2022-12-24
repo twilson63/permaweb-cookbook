@@ -1,7 +1,7 @@
 ## Dispatching a Transaction
 This can be done without any package dependences for the client app. As long as the user has a browser wallet active and the data is less than 100KB, dispatched transactions are free and guaranteed to be confirmed on the network.
 
-```js
+```js:no-line-numbers
 // use arweave-js to create a transaction
 let tx = await arweave.createTransaction({ data:"Hello World!" })
 
