@@ -29,7 +29,7 @@ Below is an example of a static site. To deploy this to the Permaweb, the `build
 ## Deploying
 
 ```console
-bundlr upload-dir [path to folder] -w [path to wallet] -c [currency] -h [bundlr node]
+bundlr upload-dir [path to folder] -w  --index-file [index.html] [path to wallet] -c [currency] -h [bundlr node]
 ```
 
 <br/>
