@@ -78,6 +78,20 @@ module.exports = {
         collapsible: true,
         children: [
           {
+            text: `CLI Deployment`,
+            collapsible: false,
+            children: [
+              {
+                text: 'arkb',
+                link: '/guides/deployment/arkb'
+              },
+              {
+                text: 'Bundlr',
+                link: '/guides/deployment/bundlr-cli'
+              }
+            ]
+          },
+          {
             text: `Posting Transactions`,
             collapsible: false,
             children: [
@@ -94,7 +108,7 @@ module.exports = {
                 link: '/guides/posting-transactions/dispatch'
               },
             ]
-          },
+          }
         ]
 
       },
