@@ -1,5 +1,9 @@
 # Github Action
 
+::: danger
+This guide is for educational purposes only, and you should use to learn options of how you might want to deploy your application. In this guide, we are trusting a 3rd party resource `github` owned by `microsoft` to protect our secret information, in their documentation they encrypt secrets in their store using `libsodium sealed box`, you can find more information about their security practices here. https://docs.github.com/en/actions/security-guides/encrypted-secrets 
+:::
+
 Github Actions are CI/CD pipelines that allows developers to trigger automated tasks via events generated from the github workflow system. These tasks can be just about anything, in this guide we will show how you can use github actions to deploy your permaweb application to the permaweb using bundlr and ArNS.
 
 ::: tip
