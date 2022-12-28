@@ -8,6 +8,7 @@ Snack-sized guides about different tools for development
 
 - [Deployment: arkb](deployment/arkb.md)
 - [Deployment: bundlr-cli](deployment/bundlr-cli.md)
+- [Deployment: github-action](deployment/github-action.md)
 - [Posting Transactions: arweave-js](posting-transactions/arweave-js.md)
 - [Posting Transactions: bundlr](posting-transactions/bundlr.md)
 - [Posting Transactions: dispatch](posting-transactions/dispatch.md)
