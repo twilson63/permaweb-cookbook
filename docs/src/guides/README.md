@@ -6,4 +6,11 @@ title: Permaweb Cookbook - Guides
 
 Snack-sized guides about different tools for development
 
+- [Deployment: arkb](deployment/arkb.md)
+- [Deployment: bundlr-cli](deployment/bundlr-cli.md)
+- [Posting Transactions: arweave-js](posting-transactions/arweave-js.md)
+- [Posting Transactions: bundlr](posting-transactions/bundlr.md)
+- [Posting Transactions: dispatch](posting-transactions/dispatch.md)
+
+
 > Do you think a permaweb guide is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md) 
