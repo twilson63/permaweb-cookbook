@@ -93,6 +93,10 @@ module.exports = {
               {
                 text: 'Bundlr',
                 link: '/guides/deployment/bundlr-cli'
+              },
+              {
+                text: 'Github Action',
+                link: '/guides/deployment/github-action'
               }
             ]
           },
