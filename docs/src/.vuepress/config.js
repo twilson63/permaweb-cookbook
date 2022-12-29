@@ -101,6 +101,14 @@ module.exports = {
             ]
           },
           {
+            text: 'DNS Integration',
+            collaspsible: false,
+            children: [{
+              text: 'Server Side',
+              link: '/guides/dns-integration/server-side'
+            }]
+          },
+          {
             text: `Posting Transactions`,
             collapsible: false,
             children: [
