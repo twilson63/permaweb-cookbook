@@ -13,6 +13,7 @@ Snack-sized guides about different tools for development
 - [Posting Transactions: arweave-js](posting-transactions/arweave-js.md)
 - [Posting Transactions: bundlr](posting-transactions/bundlr.md)
 - [Posting Transactions: dispatch](posting-transactions/dispatch.md)
+- [SmartWeave: Warp](smartweave/warp/README.md)
 
 
 > Do you think a permaweb guide is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md) 
