@@ -5,7 +5,7 @@ An Arweave wallet is required to deploy. If the size of the directory is greater
 
 ## Installation
 
-To install arkb run 
+To install the Bundlr CLI run 
 ```console
 yarn global add @bundlr-network/client
 ```
