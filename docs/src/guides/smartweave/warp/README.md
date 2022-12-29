@@ -7,7 +7,7 @@ Warp is a popular SmartWeave Protocol SDK. With Warp and Bundlr your SmartWeave 
 This guide is a short introduction to the Warp SDK and some of its API methods, if you want to learn more about SmartWeave Contracts in general visit [Core Concepts: SmartWeave](/concepts/smartweave.html).
 
 ::: tip
-You can find the Warp SDK on [github](https://github.com/warp-contracts).
+You can find the Warp SDK on [github](https://github.com/warp-contracts). For a deeper dive on Warp SmartWeave visit [Warp Website](https://warp.cc)
 :::
 
 To use the SDK on the server, you will need access to a wallet.json file, to use the SDK in the browser you will need to connect to an arweave supported wallet.
@@ -86,6 +86,17 @@ const warp = WarpFactory.forTestnet()
 
 ```js
 const warp = WarpFactory.forLocal()
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="Custom">
+
+```js
+const warp = WarpFactory.custom(
+  arweave, // arweave-js
+  cacheOptions, // { ...defaultCacheOptions, inMemory: true}
+  environment // 'local', 'testnet', 'mainnet'
+)
 ```
 
   </CodeGroupItem>
