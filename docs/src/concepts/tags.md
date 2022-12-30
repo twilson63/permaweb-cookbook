@@ -7,6 +7,9 @@ Like an immutable hard drive, Arweave storage is made up of data-items or transa
 Transaction tags are key-value pairs, where the combination of base64 keys and values must be less than the maxium of 2048 bytes for a layer 1 transaction and less than a maxiumu of 4096 for a layer 2 data-item. Some common examples of transaction tags include:
 
 * `Content-Type`: Used to specify the MIME type of content for render on the permaweb.
+* `App-Name`: This tag describes the app that is writing the data
+* `App-Version`: This tag is the version of the app, paired with App-Name
+* `Unix-Time`: This tag is the a unix timestamp, **seconds** since epoch.
 * `Title`: Used to give a name or brief description of the content stored in the transaction.
 * `Description`: Used to provide a longer description of the content.
 
@@ -29,6 +32,7 @@ Transaction tags can be used in GraphQL queries to return a filtered set of tran
 | App-Name | Most commonly used for SmartWeave Identifiers | Common values are SmartWeaveContract, SmartWeaveAction, and SmartWeaveContractSource |
 | App-Version | The version of this data, it may represent the app consuming this information | 0.3.0 is the current SmartWeave Version |
 | Content-Type | MIME Type to identify the data contained in the transaction | text/html, application/json, image/png |
+| Unix-Time | This tag is the a unix timestamp, **seconds** since epoch | The time the transaction is submitted |
 | Title | ANS-110 Standard for describing content | Providing a name for an Atomic Asset |
 | Type | ANS-110 Standard for categorization of data | a type can classify a permaweb asset | 
 
