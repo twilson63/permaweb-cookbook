@@ -88,7 +88,7 @@ module.exports = {
         children: [
           {
             text: `CLI Deployment`,
-            collapsible: false,
+            collapsible: true,
             children: [
               {
                 text: 'arkb',
@@ -106,7 +106,7 @@ module.exports = {
           },
           {
             text: 'DNS Integration',
-            collaspsible: false,
+            collapsible: true,
             children: [{
               text: 'Server Side',
               link: '/guides/dns-integration/server-side'
@@ -114,7 +114,7 @@ module.exports = {
           },
           {
             text: `Posting Transactions`,
-            collapsible: false,
+            collapsible: true,
             children: [
               {
                 text: 'arweave-js',
@@ -133,6 +133,7 @@ module.exports = {
           {
             text: "Querying Arweave",
             link: "/guides/querying-arweave/queryingArweave",
+            collapsible: true,
             children: [
               {
                 text:"ArDB",
@@ -146,7 +147,7 @@ module.exports = {
           },
           {
             text: 'SmartWeave',
-            collapsible: false,
+            collapsible: true,
             children: [
               {
                 text: 'warp',
