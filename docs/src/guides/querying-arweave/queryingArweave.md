@@ -75,7 +75,7 @@ First install the `arweave-js` package for easy access to a GraphQL endpoint.
 npm install --save arweave
 ```
 
-Create an post a slightly more advanced version of the example query from above and `await` its results.
+Then enter a slightly more advanced version of the example query from above and `await` the results of posting it.
 ```js:no-line-numbers
 import Arweave from 'arweave';
 
