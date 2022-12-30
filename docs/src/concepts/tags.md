@@ -4,7 +4,7 @@ Like an immutable hard drive, Arweave storage is made up of data-items or transa
 
 ## What are Transaction Tags?
 
-Transaction tags are key-value pairs, where the key is a string of up to 32 characters and the value is a string of up to 512 characters. Some common examples of transaction tags include:
+Transaction tags are key-value pairs, where the combination of base64 keys and values must be less than the maxium of 2048 bytes for a layer 1 transaction and less than a maxiumu of 4096 for a layer 2 data-item. Some common examples of transaction tags include:
 
 * `Content-Type`: Used to specify the MIME type of content for render on the permaweb.
 * `Title`: Used to give a name or brief description of the content stored in the transaction.
@@ -18,7 +18,7 @@ Transaction tags are encoded into 64 byte strings for both the key and value, th
 
 The max total size of Transaction tags for a Layer 1 transaction is 2048 bytes, this is the concatenation of all keys and all values of the transaction tags.
 
-Transaction tags on a data-item in a bundle can exeed this maxium.
+Transaction tags on a data-item in a bundle must be less than 4096 bytes.
 
 Transaction tags can be used in GraphQL queries to return a filtered set of transaction items.
 
