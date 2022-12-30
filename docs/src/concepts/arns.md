@@ -35,7 +35,7 @@ now: my_ undername is accessable on newName - my_newName.arweave.net.
 
 Below is an example of an ANT contract State:
 
-```JSON
+```json
 {
   balances:{ QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ : 1 },
   controller: "QGWqtJdLLgm2ehFWiiPzMaoFLD50CnGuzZIPEdoDRGQ",

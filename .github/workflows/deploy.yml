@@ -1,0 +1,19 @@
+name: publish cookbook
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+      - run: cd docs && yarn
+      - run: cd docs && yarn deploy
+        env:
+          COOKBOOK: ${{ secrets.COOKBOOK }}

@@ -23,6 +23,11 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
+  markdown: {
+    code: {
+      lineNumbers: false
+    }
+  },
 
   theme: defaultTheme({
     navbar: [
@@ -82,6 +87,32 @@ module.exports = {
         collapsible: true,
         children: [
           {
+            text: `CLI Deployment`,
+            collapsible: false,
+            children: [
+              {
+                text: 'arkb',
+                link: '/guides/deployment/arkb'
+              },
+              {
+                text: 'Bundlr',
+                link: '/guides/deployment/bundlr-cli'
+              },
+              {
+                text: 'Github Action',
+                link: '/guides/deployment/github-action'
+              }
+            ]
+          },
+          {
+            text: 'DNS Integration',
+            collaspsible: false,
+            children: [{
+              text: 'Server Side',
+              link: '/guides/dns-integration/server-side'
+            }]
+          },
+          {
             text: `Posting Transactions`,
             collapsible: false,
             children: [
@@ -110,6 +141,20 @@ module.exports = {
               {
                 text:"ar-gql",
                 link: "/guides/querying-arweave/ar-gql"
+              }
+            ]
+          },
+          {
+            text: 'SmartWeave',
+            collapsible: false,
+            children: [
+              {
+                text: 'warp',
+                collapsible: false,
+                children: [{
+                  text: 'Intro',
+                  link: '/guides/smartweave/warp/readme.md'
+                }]
               }
             ]
           }
