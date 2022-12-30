@@ -1,6 +1,6 @@
 # Transaction Tags
 
-Like an immutable hard drive, Arweave storage is made up of transactions, these units of data are similar to files on a computer. Every transaction has defined identification information. A unique identifier, a signature, the wallet address that signed the transaction, the block height. There is an additional need or a mechanism to categorize these transactions for retrieval. This is where the concept of `Tags` come into existence. In the Arweave decentralized storage network, each transaction can have one or more tags associated with it. These tags are used to categorize and label transactions, and they can be used to query for specific transactions or groups of transactions within the network.
+Arweave is like a permanent append-only hard drive where each entry on the hard drive is its own unique transaction. Transactions have a unique transaction id, signature, and owner wallet address for the wallet that signed and paid for the transaction to be posted.  When the transaction is mined it is added to a block with a specific block height. Along with the above properties Arweave provides a means of tagging transactions with user specified data.  This allows users to assign a collection name value pairs in the form of custom tags to a transaction . This makes it possible to query Arweave later and find all the Transactions with a certain set of tags.  The ability to filter transactions this way ends up being critical to supporting apps built on Arweave.
 
 ## What are Transaction Tags?
 
