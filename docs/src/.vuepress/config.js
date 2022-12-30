@@ -125,6 +125,20 @@ module.exports = {
                 link: '/guides/posting-transactions/dispatch'
               },
             ]
+          },
+          {
+            text: 'SmartWeave',
+            collapsible: false,
+            children: [
+              {
+                text: 'warp',
+                collapsible: false,
+                children: [{
+                  text: 'Intro',
+                  link: '/guides/smartweave/warp/readme.md'
+                }]
+              }
+            ]
           }
         ]
 
