@@ -61,6 +61,10 @@ module.exports = {
             link: `/concepts/postTransaction`
           },
           {
+            text: `Querying Transactions`,
+            link: `/concepts/queryTransactions`
+          },
+          {
             text: 'SmartWeave',
             link: '/concepts/smartweave',
             collapsible: true,
@@ -127,6 +131,20 @@ module.exports = {
             ]
           },
           {
+            text: "Querying Arweave",
+            link: "/guides/querying-arweave/queryingArweave",
+            children: [
+              {
+                text:"ArDB",
+                link: "/guides/querying-arweave/ardb"
+              },
+              {
+                text:"ar-gql",
+                link: "/guides/querying-arweave/ar-gql"
+              }
+            ]
+          },
+          {
             text: 'SmartWeave',
             collapsible: false,
             children: [
@@ -147,6 +165,13 @@ module.exports = {
         text: 'References',
         link: '/references/',
         collapsible: true,
+        children: [
+          {
+            text: "GraphQL",
+            collapsible: false,
+            link: "/references/gql",
+          }
+        ]
       },
       {
         text: 'Starter Kits',
