@@ -1,5 +1,5 @@
-# Arweave GraphQL Guide
-Arweave provides a simple way of querying for transactions by using tags. The https://arweave.net gateway exposes an [endpoint](https://arweave.net/graphql) for posting GraphQL queries to. It also provides a playground for trying queries.
+# Querying Arweave
+Arweave provides a simple way of querying for transactions and filtering them by [tags](../concepts/tags.md). The `https://arweave.net` gateway exposes an [endpoint](https://arweave.net/graphql) for posting GraphQL queries to. It also provides a playground for trying queries.
 
 [GraphQL](https://graphql.org) is a flexible query language that services can use to build a customized data schema for clients to query. GraphQL also allows clients to specify which elements of the available data structure they would like to see in the results.
 
@@ -166,7 +166,7 @@ query {
 
 
 ## Resources
-* [Arweave GQL Reference](../references/graphql/gql.md)
-* [ArDB package](../references/graphql/ardb.md)
-* [ar-gql package](../references//graphql/ar-gql.md)
+* [Arweave GQL Reference](../../references/gql.md)
+* [ArDB package](./ardb.md)
+* [ar-gql package](./ar-gql.md)
 

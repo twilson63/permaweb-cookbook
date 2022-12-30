@@ -146,5 +146,5 @@ Indexing services will implement rate limiting to prevent attacks and abuse of t
 
 ## Resources
 * For a more complete listing of the Arweave GraphQL schema see the [Arweave GraphQL Guide](https://gql-guide.arweave.dev)
-* [ArDB package](../references/graphql/ardb.md)
-* [ar-gql package](../references//graphql/ar-gql.md)
+* [ArDB package](../guides/querying-arweave/ardb.md)
+* [ar-gql package](../guides/querying-arweave/ar-gql.md)

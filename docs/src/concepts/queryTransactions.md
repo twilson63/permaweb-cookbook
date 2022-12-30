@@ -69,9 +69,9 @@ This approach to querying was sufficient the weave dataset was small and easy to
 There is a pathway back to being able to query data directly from peers however. The [Permaweb Payments Protocol (P3)](https://arweave.net/UoDCeYYmamvnc0mrElUxr5rMKUYRaujo9nmci206WjQ) is a specification developed by the community to enable clients to pay for service. Using P3, peers wishing to offer indexing service could afford to operate it profitably it by charing for the service.
 
 ## Resources
-* [Querying Arweave Guide](../guides/queryingArweave.md)
-* [GraphQL Reference](../references/graphql/gql.md)
-* [ardb package](../references/graphql/ardb.md)
-* [ar-gql package](../references/graphql/ar-gql.md)
+* [Querying Arweave Guide](../guides/querying-arweave/queryingArweave.md)
+* [ArDB package](../guides/querying-arweave/ardb.md)
+* [ar-gql package](../guides/querying-arweave/ar-gql.md)
+* [GraphQL Reference](../references/gql.md)
 
 
