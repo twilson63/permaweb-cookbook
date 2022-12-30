@@ -14,7 +14,7 @@ import fs from "fs";
 // load the JWK wallet key file from disk
 let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
 
-// initalize an arweave instance
+// initialize an arweave instance
 const arweave = Arweave.init({});
 ```
 
