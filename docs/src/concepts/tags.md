@@ -6,9 +6,10 @@ Like an immutable hard drive, Arweave storage is made up of transactions, these 
 
 Transaction tags are key-value pairs, where the combination of base64 keys and values must be less than the maxium of 2048 bytes for a layer 1 transaction. 
 
-::: Tip
+::: tip
 Layer 2 solutions like bundles can support longer transaction tags, like Bundlr-Network supports up to 4096 bytes for transaction tags.
 :::
+
 
 Some common examples of transaction tags include:
 
