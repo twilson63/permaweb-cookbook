@@ -131,7 +131,7 @@ module.exports = {
             ]
           },
           {
-            text: "Querying Arewave",
+            text: "Querying Arweave",
             link: "/guides/querying-arweave/queryingArweave",
             children: [
               {

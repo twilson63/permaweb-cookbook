@@ -13,6 +13,9 @@ Snack-sized guides about different tools for development
 - [Posting Transactions: arweave-js](posting-transactions/arweave-js.md)
 - [Posting Transactions: bundlr](posting-transactions/bundlr.md)
 - [Posting Transactions: dispatch](posting-transactions/dispatch.md)
+- [Querying Transactions](querying-arweave/queryingArweave.md)
+- [Querying Transactions: ArDB](querying-arweave/ardb.md)
+- [Querying Transactions: ar-gql](querying-arweave/ar-gql.md)
 - [SmartWeave: Warp](smartweave/warp/README.md)
 
 
