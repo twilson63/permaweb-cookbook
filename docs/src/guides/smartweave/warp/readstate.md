@@ -1,6 +1,6 @@
 # Warp Readstate 
 
-SmartWeave Contract state is calulated via lazy evaluation, which means, the state evaluation occurs on reads not writes. When reading contracts, the SDK gathers all state interactions, sorts them, and executes them against the source contract using a reduce or fold pattern.
+SmartWeave Contract state is calculated via lazy evaluation, which means, the state evaluation occurs on reads not writes. When reading contracts, the SDK gathers all state interactions, sorts them, and executes them against the source contract using a reduce or fold pattern.
 
 ## Basic Readstate
 
