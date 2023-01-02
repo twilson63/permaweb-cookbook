@@ -1,6 +1,6 @@
 # Warp: Deploying SmartWeave Contracts
 
-SmartWeave Contracts are made up of two transactions, a Source Transaction and a Initial State Transaction, the source transaction contains the source code the contract will use to determine the current state. The initial state transaction provides a contract identifer to reference as well as the initial seed data the contract should use as the starting point to evaluate the current state. The current state is calculated by accessing actions that are transactions written to the network that contain input parameters to execute using the evaluated and instanciated source code. Warp Contracts can be created using many different languages and can be evaluated using the Warp SDK. This guide will show the many different ways you can deploy a Warp Contract.
+SmartWeave Contracts are created by posting two transactions to the network, a Source Transaction and a Initial State Transaction, the source transaction contains the source code the contract will use to determine the current state. The initial state transaction provides a contract identifer to reference as well as the initial seed data the contract should use as the starting point to evaluate the current state. The current state is calculated by accessing actions that are transactions written to the network that contain input parameters to execute using the evaluated and instantiated source code. Warp Contracts can be created using many different languages and can be evaluated using the Warp SDK. This guide will show the many different ways you can deploy a Warp Contract.
 
 ::: tip
 If you would like to learn more about authoring Warp SmartWeaveContracts, checkout the Warp Academy! [https://academy.warp.cc/](https://academy.warp.cc/)
@@ -13,14 +13,14 @@ There are 4 ways you can deploy a SmartWeaveContract via the Warp SDK, these opt
 * Need to deploy the contract with the source at the same time
 * Need to deploy a contract where the source is already on the permaweb
 * Need to deploy a contract through the sequencer and point it to some data using a path manifest
-* Need to deploy a contract via bundlr and register that contract on the sequencer
+* Need to deploy a contract via Bundlr and register that contract on the sequencer
 
 ::: tip
 For more information about Warp deployments check out the github Readme for the project. [https://github.com/warp-contracts/warp#deployment](https://github.com/warp-contracts/warp#deployment). 
 :::
 
 ::: warning
-This project is in rapid development, so the documentation here could be out of data quickly, if you discover it is out of date, please let us know on the [discord channel](https://discord.gg/haCAX3shxF).
+This project is in rapid development, so the documentation here could be out of data quickly, if you discover it is out of date, please let us know on the [Permaweb Cookbook Discord Channel](https://discord.gg/haCAX3shxF).
 :::
 
 ## Examples
@@ -43,11 +43,11 @@ const { contractTxId, srcTxId } = await warp.createContract.deploy({
 })
 ```
 
-* wallet - should be a wallet.json object
+* wallet - should be Arweave keyfile (wallet.json) parsed as a JSON object implementing the [JWK Interface](https://rfc-editor.org/rfc/rfc7517) or the string 'use_wallet'
 * initState - is a stringified JSON object
 * data - is optional if you want to write data as part of your deployment
 * src - is the string or Uint8Array value of the source code for the contract
-* tags - is an array of name/value objects `{name: string, value: string}[]`
+* tags - is an array of name/value objects `{name: string, value: string}[]`, [Learn more about tags](../../../concepts/tags.md)
 
 **deployFromSourceTx**
 
@@ -88,7 +88,7 @@ const { contractTxId } = await warp.createContract.deployBundled(dataItem.getRaw
 
 **register**
 
-Uses Warp Gateway Sequencer's endpoint to index a contract that has been uploaded with bundlr.
+Uses Warp Gateway Sequencer's endpoint to index a contract that has been uploaded with Bundlr.
 
 ```ts
 import Bundlr from '@bundlr-network/client'
@@ -102,5 +102,5 @@ const { contractTxId } = await warp.createContract.register(id, 'node2')
 
 ## Summary
 
-Why are there so many options to deploy contracts? To reduce duplication, why deploy the same source code for each contract you deploy, also a concept called Atomic Assets. The permaweb is very unique in its architecture, it provides a feature where you can deploy both digital data and the contract to manage that data generating the same transaction identifier. The result is dynamic data paired with an immutable set of data. Deploying contracts is just one piece of the Warp SDK, to learn more keep reading this guide!
+Why are there so many options to deploy contracts? These methods exist to reduce duplication, enable advanced contract interactions, and allow for flexibility for testing and usage of the smartweave protocol. The permaweb is very unique in its architecture, it provides a feature where you can deploy both digital data and the contract to manage that data generating the same transaction identifier. The result is dynamic data paired with an immutable set of data. Deploying contracts is just one piece of the Warp SDK, to learn more keep reading this guide!
 
