@@ -3,9 +3,6 @@
 
 No $AR tokens are required to use and transactions are instant.
 
-::: warning
-Test results from L1 transactions may differ from L2 transactions
-:::
 ## CLI
 You must have node and npm installed on your machine to use the arlocal CLI
 
@@ -92,7 +89,9 @@ test('test transaction', async () => {
 })
 ```
 
-:tada: You have setup local testing for Arweave
+::: warning
+Test results from L1 transactions may differ from L2 transactions
+:::
 
 ## Resources
 [arlocal docs](https://github.com/textury/arlocal)
