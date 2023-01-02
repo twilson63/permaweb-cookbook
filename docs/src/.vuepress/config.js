@@ -136,11 +136,11 @@ module.exports = {
             collapsible: true,
             children: [
               {
-                text:"ArDB",
+                text: "ArDB",
                 link: "/guides/querying-arweave/ardb"
               },
               {
-                text:"ar-gql",
+                text: "ar-gql",
                 link: "/guides/querying-arweave/ar-gql"
               }
             ]
@@ -158,7 +158,21 @@ module.exports = {
                 }, {
                   text: 'Deploying Contracts',
                   link: '/guides/smartweave/warp/deploying-contracts.md'
+                }, {
+                  text: 'Readstate',
+                  link: '/guides/smartweave/warp/readstate.md'
                 }]
+              }
+            ]
+          },
+          {
+            text: `Testing`,
+            collapsible: true,
+            children: [
+              {
+                text: 'arlocal',
+                collapsible: false,
+                link: '/guides/testing/arlocal'
               }
             ]
           }
