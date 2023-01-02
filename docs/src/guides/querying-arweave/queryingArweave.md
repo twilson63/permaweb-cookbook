@@ -76,6 +76,7 @@ npm install --save arweave
 ```
 
 Then enter a slightly more advanced version of the example query from above and `await` the results of posting it.
+
 ```js:no-line-numbers
 import Arweave from 'arweave';
 

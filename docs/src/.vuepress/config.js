@@ -156,6 +156,9 @@ module.exports = {
                   text: 'Intro',
                   link: '/guides/smartweave/warp/readme.md'
                 }, {
+                  text: 'Deploying Contracts',
+                  link: '/guides/smartweave/warp/deploying-contracts.md'
+                }, {
                   text: 'Readstate',
                   link: '/guides/smartweave/warp/readstate.md'
                 }]
