@@ -17,3 +17,9 @@ jobs:
       - run: cd docs && yarn deploy
         env:
           COOKBOOK: ${{ secrets.COOKBOOK }}
+      - uses: Ilshidur/action-discord@master
+        name: Discord Notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: "The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed."
