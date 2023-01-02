@@ -156,8 +156,11 @@ module.exports = {
                   text: 'Intro',
                   link: '/guides/smartweave/warp/readme.md'
                 }, {
-                  text: 'Readstate',
+                  text: 'ReadState',
                   link: '/guides/smartweave/warp/readstate.md'
+                }, {
+                  text: 'WriteInteractions',
+                  link: '/guides/smartweave/warp/write-interactions.md'
                 }]
               }
             ]
