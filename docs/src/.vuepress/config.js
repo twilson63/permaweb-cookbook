@@ -161,6 +161,17 @@ module.exports = {
                 }]
               }
             ]
+          },
+          {
+            text: `Testing`,
+            collapsible: true,
+            children: [
+              {
+                text: 'arlocal',
+                collapsible: false,
+                link: '/guides/testing/arlocal'
+              }
+            ]
           }
         ]
 
