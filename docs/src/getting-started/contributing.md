@@ -33,6 +33,28 @@ General flow for making a contribution:
 **NOTE**: Be sure to merge the latest from "upstream" before making a
 pull request!
 
+## Style
+
+Here are some suggestions on tone and style from some contributors:
+
+::: tip
+In writing them, I'm getting a feeling for the tone that's appropriate for each.
+CoreConcepts should be rather textbook like, neutral voice, objective.  "This is how Arweave works"
+For Guides, I think it's ok to have a more personal voice. Refer to the reader as "you" and speak in the collaborative voice "next we'll take a look at..."
+This may just be personal preference, but in general I feel this tone much more supportive and accessible when following a longer form guide.
+Indeed, its the voice that most popular tutorials from other ecosystems are written in.
+For Resources, I think it shares the same voice as core concepts, with a preference for brevity.
+
+dmac
+:::
+
+
+::: tip
+Conceptual and referencial data should have a more cold scientific tone and guides should be a supportive or even humorous tone. Longer form content needs to pull readers in without them zoning out.
+
+Arch_Druid
+:::
+
 ## More information about contributing check out the repo style guide
 
 [CONTRIBUTING](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md)
