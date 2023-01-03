@@ -1,6 +1,6 @@
 # Warp WriteInteractions
 
-SmartWeave contracts contain a current state and the ability to modify that state via function calls, the way you call a function on a SmartWeave Contract is by creating a transaction known as a SmartWeave Action. This action contains the function name you would like to call and the input parameters required by the SmartWeave Contract function. `contract.writeInteraction` is a function that creates a SmartWeave Action.
+To call a function on a SmartWeave contract, you can create a transaction known as a SmartWeave action. This action includes the function name and the necessary input parameters for the function on the SmartWeave contract. You can create a SmartWeave action using the contract.writeInteraction function.
 
 ## Code
 
@@ -30,7 +30,7 @@ Since SmartWeave contracts are evaluated in a lazy flow, you do not know if your
 
 ## Dry Write
 
-Dry write is the feature you can use to apply your interaction to the current state in a simulated interaction, the interaction does not run on the permaweb, it runs locally. This is an opportunity to verify your interaction will be successful before you apply your interaction. 
+`DryWrite` allows you to test and verify an interaction on the current state without actually executing it on the permaweb. This feature allows you to simulate the interaction locally and ensure that it will be successful before applying it.
 
 ```ts
 import { WarpFactory } from 'warp-contracts'
@@ -67,4 +67,9 @@ const result = await contract.writeInteraction({
 
 ## Summary
 
-The SmartWeave Protocol is designed to enable dynamic data changes on an immutable append-only storage system. Using writeInteractions you can interact with these contracts in a trustless and permissionless way. The writeInteractions functionality is a key feature to the SmartWeave Protocol and the Warp SDK gives developers an easy to use API to interact with the SmartWeave Protocol.
+The SmartWeave Protocol allows for the modification of dynamic data on an immutable, append-only storage system using writeInteractions. These interactions enable trustless and permissionless communication with SmartWeave contracts. The Warp SDK provides developers with a user-friendly API for interacting with the SmartWeave Protocol and its writeInteractions feature.
+
+For additional resources:
+
+* Warp SDK [https://github.com/warp-contracts/warp](https://github.com/warp-contracts/warp)
+* Warp Docs [https://warp.cc](https://warp.cc)
