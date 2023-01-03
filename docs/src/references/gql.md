@@ -142,9 +142,10 @@ query
 To retrieve the entire results set, repeat the `after` query with an updated `cursor` value from the last item of each page until `hasNextPage` is `false`.
 
 ## Rate Limiting
-Indexing services will implement rate limiting to prevent attacks and abuse of their services. The `arweave.net/graphql` service limits GraphQL queries to 600 queries every 5 minutes (per IP address). Always check the results of your queries to see if they have a status code in the 200s before parsing the response. A HTTP Status code of 503 will indicate rate limiting is being enforced.
+Indexing services will implement rate limiting to prevent attacks and abuse of their services. The `arweave.net/graphql` service limits GraphQL queries to 600 queries every 5 minutes (per IP address). Always check the results of your queries to see if they have a status code in the 200s before parsing the response. A HTTP Status code of 429 will indicate rate limiting is being enforced. A HTTP Status code of 503 usually indicates that the query result set is too large for `arweave.net/graphql`.
 
 ## Resources
 * For a more complete listing of the Arweave GraphQL schema see the [Arweave GraphQL Guide](https://gql-guide.arweave.dev)
 * [ArDB package](../guides/querying-arweave/ardb.md)
 * [ar-gql package](../guides/querying-arweave/ar-gql.md)
+* For a general guide to graphql [graphql.org/learn](https://graphql.org/learn) is a good starting point
