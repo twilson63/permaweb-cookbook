@@ -161,6 +161,9 @@ module.exports = {
                 }, {
                   text: 'Readstate',
                   link: '/guides/smartweave/warp/readstate.md'
+                }, {
+                  text: 'Evolve',
+                  link: '/guides/smartweave/warp/evolve.md'
                 }]
               }
             ]
