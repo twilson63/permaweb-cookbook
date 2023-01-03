@@ -1,10 +1,10 @@
 # Warp (SmartWeave) SDK - Evolve
 
-Evolve is a feature that allows developers to update the source code of a smart contract without having to deploy a new contract. To evolve a contract you must first pose the source code which can be done using the `save` function. Once you have a new source code for the contract confirmed on the Permaweb, then you can call `evolve` to point the contract to the new contract source code id.
+Evolve is a feature that allows developers to update the source code of a smart contract without deploying a new contract. To use this feature, you must first submit the new source code using the save function. Once the updated code has been confirmed on the Permaweb, you can use the evolve function to point the contract to the new source code ID. This allows you to update the contract's behavior without creating a new contract instance.
 
 ## Why?
 
-Writing SmartWeave Contracts is hard to get right the first go, or you may need to add a new feature or function to your contract over time. Evolve allows you to correct/improve your contract without having to create a new contract from scratch. In order to use evolve your contract state object must have a property `evolve` on it and set to the new contract source transaction identifier.
+Writing SmartWeave contracts can be difficult and sometimes requires updates or new features to be added over time. Evolve allows you to make changes to your contract without having to create a new contract instance from scratch. To use this feature, your contract state object must include an evolve property that is set to the new contract source transaction identifier. This enables you to modify and improve your existing contract without starting from scratch.
 
 ```json
 {
@@ -59,7 +59,7 @@ main()
 ```
 
 ::: tip
-It is also important to note, evolve source is future forward only, which means that you can not apply new source code to actions that occured before the contract was evolved.
+It's worth noting that the evolve feature is only applicable to future actions, meaning you cannot use it to apply new source code to actions that occurred before the contract was evolved.
 :::
 
 
