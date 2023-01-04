@@ -78,6 +78,10 @@ module.exports = {
           {
             text: 'Transaction Tags',
             link: '/concepts/tags'
+          },
+          {
+            text: 'Vouch',
+            link: '/concepts/vouch'
           }
         ]
       },
@@ -181,6 +185,11 @@ module.exports = {
                 link: '/guides/testing/arlocal'
               }
             ]
+          },
+          {
+            text: 'Vouch',
+            collapsible: false,
+            link: '/guides/vouch'
           }
         ]
 
