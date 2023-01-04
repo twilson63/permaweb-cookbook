@@ -164,6 +164,9 @@ module.exports = {
                 }, {
                   text: 'WriteInteractions',
                   link: '/guides/smartweave/warp/write-interactions.md'
+                }, {
+                  text: 'Evolve',
+                  link: '/guides/smartweave/warp/evolve.md'
                 }]
               }
             ]
