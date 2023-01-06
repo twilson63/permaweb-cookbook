@@ -113,6 +113,11 @@ module.exports = {
             ]
           },
           {
+            text: 'Deploying PSTs',
+            collapsible: false,
+            link: '/guides/deploying-psts'
+          },
+          {
             text: 'DNS Integration',
             collapsible: true,
             children: [{
