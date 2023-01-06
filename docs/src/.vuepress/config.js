@@ -135,6 +135,25 @@ module.exports = {
             ]
           },
           {
+            text: `Deploying Path Manifests`,
+            link: "/guides/deploying-manifests/deployingManifests",
+            collapsible: true,
+            children: [
+              {
+                text: 'arweave.app',
+                link: '/guides/deploying-manifests/arweave-app'
+              },
+              {
+                text: 'ardrive',
+                link: '/guides/deploying-manifests/ardrive'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/deploying-manifests/bundlr'
+              },
+            ]
+          },
+          {
             text: "Querying Arweave",
             link: "/guides/querying-arweave/queryingArweave",
             collapsible: true,
