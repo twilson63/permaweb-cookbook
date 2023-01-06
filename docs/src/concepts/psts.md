@@ -2,9 +2,17 @@
 
 ---
 
-Profit Sharing Tokens (PSTs) are tokens issued by a community or protocol created on the permaweb. The protocol issuing a PST is often referred to as a ‘Profit Sharing Community’ (PSC).
+Profit Sharing Tokens (PSTs) are a type of SmartWeaveToken which include the following structure:
 
-PSTs are used to govern a protocol similar to DAOs, but with some differences.
+| property    | type        |
+| ----------- | ----------- |
+| balances    | object      |
+| name        | string      |
+| ticker      | string      |
+| transfer    | method      |
+| balance     | method      |
+
+PSTs are typically used to govern a protocol or "Profit Sharing Community" (PSC) - similar to a DAO.
 
 ### How are PSTs Distributed?
 
