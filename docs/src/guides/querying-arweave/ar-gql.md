@@ -2,14 +2,22 @@
 This package is a minimal layer on top of GraphQL, it supports parameterized queries with query variables. It also implements management of paged results. 
 
 ## Installation
-Add the package using npm:
+
+To install `ar-gql run
+<CodeGroup>
+ <CodeGroupItem title="NPM">
+
 ```console:no-line-numbers
 npm i ar-gql
 ```
-or yarn:
+ </CodeGroupItem>
+ <CodeGroupItem title="YARN">
+
 ```console:no-line-numbers
 yarn add ar-gql
 ```
+  </CodeGroupItem>
+</CodeGroup>
 
 ## Example
 ```js:no-line-numbers
