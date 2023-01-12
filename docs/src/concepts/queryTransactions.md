@@ -66,7 +66,7 @@ const res = await this.arweave.api.post(`arql`, get_mail_query)
 ```
 This approach to querying was sufficient the weave dataset was small and easy to index. As Arweave adoption accelerated, indexing the data set and responding to ARQL queries resulted in increasing computational costs. Over time as mining became more and more competitive, peers became less and less likely to be able to afford to offer the ARQL service. This ultimately became the impetus for indexing services and the [GraphQL querying](#graphql) common on Arweave today.
 
-There is a pathway back to being able to query data directly from peers however. The [Permaweb Payments Protocol (P3)](https://arweave.net/UoDCeYYmamvnc0mrElUxr5rMKUYRaujo9nmci206WjQ) is a specification developed by the community to enable clients to pay for service. Using P3, peers wishing to offer indexing service could afford to operate it profitably it by charing for the service.
+There is a pathway back to being able to query data directly from peers however. The [Permaweb Payments Protocol (P3)](https://arweave.net/UoDCeYYmamvnc0mrElUxr5rMKUYRaujo9nmci206WjQ) is a specification developed by the community to enable clients to pay for service. Using P3, peers wishing to offer indexing service could afford to operate it profitably it by charging for the service.
 
 ## Resources
 * [Querying Arweave Guide](../guides/querying-arweave/queryingArweave.md)
