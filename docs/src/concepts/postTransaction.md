@@ -5,9 +5,10 @@ There are several ways to post transactions to Arweave. Each has its own unique 
 
 <img src="https://arweave.net/PQnMySn9x7vHhrlkBRZhwH93bZfeehPzp_c03diLmjk" width="550">
 
-::: warning
- <img src="https://arweave.net/UO8dtoT9P0txwVR9HrHDTVVLWDtMANpzszWl7b8KdP0" width="20" /> **Dropped Transactions:** When posting directly to Arweave there is the possibility of dropped transactions. Always verify direct transactions have several confirmations before considering them permanent. Once posted if a transaction is not included in the subsequent ~30 blocks it is considered dropped.
+::: info INFORMATION
+ <img src="https://arweave.net/UO8dtoT9P0txwVR9HrHDTVVLWDtMANpzszWl7b8KdP0" width="20" /> **Dropped Transactions:** When posting directly to Arweave there is the possiblity of dropped transactions. Always verify direct transactions have several confirmations before considering them permanent. Once posted if a transaction is not included in the subsequent ~30 blocks it is considered dropped.
  :::
+
  ::: tip
 <img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> **Guaranteed Transactions:** When a transaction is posted to a bundling service, the service holds onto it until it is confirmed on-chain. If a transaction is not included in the current block the service re-posts the transaction with each new block until it is confirmed. 
  :::
