@@ -7,6 +7,7 @@ title: Permaweb Cookbook - Core Concepts
 Building blocks of the Permaweb that are good to know for development
 
 - [Path Manifests](manifests.md)
+- [Permaweb Applications](permawebApplications.md)
 - [Post Transactions](postTransactions.md)
 - [SmartWeave](smartweave.md)
 - [Transaction Tags](tags.md)

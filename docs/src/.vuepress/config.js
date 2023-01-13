@@ -57,6 +57,10 @@ module.exports = {
             link: '/concepts/manifests'
           },
           {
+            text: 'Permaweb Application',
+            link: '/concepts/permawebApplications'
+          },
+          {
             text: 'Profit Sharing Tokens (PSTs)',
             link: '/concepts/psts'
           },
