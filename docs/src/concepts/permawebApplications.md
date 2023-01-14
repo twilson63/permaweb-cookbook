@@ -26,7 +26,7 @@ The Bundlr is a service that allows many Arweave data-items to be grouped togeth
 
 The Sequencer is a service that enables high performance for SmartWeave Contracts to calculate business logic stored on the Arweave network.
 
-![arweave image](https://arweave.net/qy97_UEV1vEDasGLeaXSwKJi2lnCcg_aggDFxN1jPB8)
+![permaweb image](https://arweave.net/FQayQfdDhpk_LfpWOR0qCAtbGUfY98n5EVx_CGCrsFM/)
 
 These services work together to form the permaweb and gives developers the power to build fully decentralized applications on the permaweb.
 
