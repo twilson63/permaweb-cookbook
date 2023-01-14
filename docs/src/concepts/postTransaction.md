@@ -32,7 +32,7 @@ For the above reasons, developers tend to configure `arweave-js` to point to a g
 ### Direct to Gateway
 Gateways sit between clients and Arweave's network of peers. One of the primary functions of the gateway is to index transactions and optimistically cache the data posted to the network while waiting for it to be included in a block. This makes the transaction queryable in a "Pending" state almost instantly which allows applications built on top of a gateway to be more responsive. There is still a risk of transactions dropping out of the optimistic cache if they are not mined in a block by the peers.
 
-An example of how to post a direct transaction using `arwaeve-js` can be found [in this guide](../guides/posting-transactions/arweave-js.md).
+An example of how to post a direct transaction using `arweave-js` can be found [in this guide](../guides/posting-transactions/arweave-js.md).
 
 ## Bundled Transactions
 Services built on top of Arweave that provide additional utility for Permaweb builders are sometimes called Permaweb Services. A bundler is one such service. Bundlers take multiple individual transactions and bundle them together into a single transaction that is posted directly to Arweave. In this way a single transaction at the protocol level can contain tens of thousands of bundled transactions. There is one restriction, however, only **data** transactions can be included in a bundle. **Wallet-to-wallet** transactions (that transfer **AR** tokens between wallet addresses) must be done as individual transactions posted directly to Arweave.
