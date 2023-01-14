@@ -6,7 +6,7 @@ There are several ways to post transactions to Arweave. Each has its own unique 
 <img src="https://arweave.net/PQnMySn9x7vHhrlkBRZhwH93bZfeehPzp_c03diLmjk" width="550">
 
 ::: info INFORMATION
- <img src="https://arweave.net/UO8dtoT9P0txwVR9HrHDTVVLWDtMANpzszWl7b8KdP0" width="20" /> **Dropped Transactions:** Like with all blockchains, there is a small possibility that a transaction posted directly to the network will drop. Bundling services implement processes to reliably settle all transaction on chain, eliminating the risk of dropped transactions.
+ <img src="https://arweave.net/UO8dtoT9P0txwVR9HrHDTVVLWDtMANpzszWl7b8KdP0" width="20" /> **Dropped Transactions:** Like with all blockchains, it's possible for transaction posted directly to the network drop. Bundling services implement processes to reliably settle all transaction on chain, eliminating the risk of dropped transactions.
  :::
 
  ::: tip

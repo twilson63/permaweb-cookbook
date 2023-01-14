@@ -4,12 +4,16 @@ title: Permaweb Cookbook - Core Concepts
 
 # Core Concepts
 
-Building blocks of the Permaweb that are good to know for development
+Describing the building blocks of the permaweb.
 
 - [Path Manifests](manifests.md)
-- [Post Transactions](postTransactions.md)
+- [Profit Sharing Tokens (PSTs)](psts.md)
+- [Posting Transactions](postTransaction.md)
+- [Querying Transactions](queryTransations.md)
 - [SmartWeave](smartweave.md)
+  - [ArNS](arns.md)
 - [Transaction Tags](tags.md)
+- [Vouch](vouch.md)
 
  
 > Do you think a permaweb core concept is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md) 
