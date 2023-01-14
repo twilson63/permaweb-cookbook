@@ -7,11 +7,12 @@ title: Permaweb Cookbook - Core Concepts
 Describing the building blocks of the permaweb.
 
 - [Path Manifests](manifests.md)
-- [Profit Sharing Tokens (PSTs)](psts.md)
-- [Posting Transactions](postTransaction.md)
+- [Permaweb Applications](permawebApplications.md)
+- [Post Transactions](postTransactions.md)
+- [Profit Sharing Tokens](psts.md)
 - [Querying Transactions](queryTransations.md)
 - [SmartWeave](smartweave.md)
-  - [ArNS](arns.md)
+- [ArNS](arns.md)
 - [Transaction Tags](tags.md)
 - [Vouch](vouch.md)
 
