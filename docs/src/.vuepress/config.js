@@ -58,6 +58,10 @@ module.exports = {
             link: '/concepts/manifests'
           },
           {
+            text: 'Permaweb',
+            link: '/concepts/permaweb'
+          },
+          {
             text: 'Permaweb Applications',
             link: '/concepts/permawebApplications'
           },
