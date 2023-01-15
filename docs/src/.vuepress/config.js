@@ -238,6 +238,10 @@ module.exports = {
         text: 'Starter Kits',
         link: '/kits/',
         collapsible: true,
+        children: [{
+          text: 'Svelte',
+          link: '/kits/svelte/'
+        }]
       }
     ]
   }),
