@@ -41,7 +41,7 @@ Another difference when using a bundling service like [bundlr.network](https://b
 
 [bundlr.network](https://bundlr.network) allows clients to make deposits in a number of [supported crypto currencies](https://docs.bundlr.network/docs/currencies).
 
-::: tip
+::: info
 When transactions are posted to bundlr.network they are also appear in the optimistic cache of connected gateways so they are available to query in a matter of milliseconds.
 :::
 
