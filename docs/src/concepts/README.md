@@ -7,6 +7,7 @@ title: Permaweb Cookbook - Core Concepts
 Describing the building blocks of the permaweb.
 
 - [Path Manifests](manifests.md)
+- [Permaweb](permaweb.md)
 - [Permaweb Applications](permawebApplications.md)
 - [Posting Transactions](postTransaction.md)
 - [Profit Sharing Tokens](psts.md)
