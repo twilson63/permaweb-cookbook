@@ -181,7 +181,7 @@ yarn add -D @bundlr-network/client
 yarn deploy
 ```
 
-::: info Success 
+::: tip SUCCESS 
 You should now have a Svelte Application on the Permaweb! Great Job!
 :::
 
