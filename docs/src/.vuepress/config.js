@@ -91,6 +91,10 @@ module.exports = {
         collapsible: true,
         children: [
           {
+            text: 'ArProfile',
+            link: '/guides/arprofile'
+          },
+          {
             text: `CLI Deployment`,
             collapsible: true,
             children: [
