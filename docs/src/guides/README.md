@@ -6,6 +6,7 @@ title: Permaweb Cookbook - Guides
 
 Snack-sized guides about different tools for development
 
+- [Atomic Assets](atomic-assets/index.md)
 - [Deployment: arkb](deployment/arkb.md)
 - [Deployment: bundlr-cli](deployment/bundlr-cli.md)
 - [Deployment: github-action](deployment/github-action.md)

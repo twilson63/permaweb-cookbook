@@ -100,6 +100,10 @@ module.exports = {
         collapsible: true,
         children: [
           {
+            text: 'Atomic Assets',
+            link: '/guides/atomic-assets'
+          },
+          {
             text: `CLI Deployment`,
             collapsible: true,
             children: [
