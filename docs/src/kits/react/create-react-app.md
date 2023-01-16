@@ -1,4 +1,4 @@
-# Minimal React Starter Kit
+# Create React App Starter Kit
 
 This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb application.
 
