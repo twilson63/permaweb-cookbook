@@ -103,7 +103,7 @@ new App({
 
 ## app.svelte
 
-```svelte
+```html
 <script lang="ts">
 import { Route, router } from 'tinro'
 import Counter from './counter.svelte'
@@ -127,7 +127,7 @@ You will notice the `router.mode.hash()` setting in the script session, this is 
 
 ## counter.svelte
 
-```svelte
+```html
 <script lang="ts">
 let count = 0
 
@@ -142,7 +142,7 @@ function inc() {
 
 ## about.svelte
 
-```svelte
+```html
 <h1>About Page</h1>
 <p>Minimal About Page</p>
 <a href="/">Home</a>
