@@ -5,13 +5,13 @@ There are several ways to post transactions to Arweave. Each has its own unique 
 
 <img src="https://arweave.net/PQnMySn9x7vHhrlkBRZhwH93bZfeehPzp_c03diLmjk" width="550">
 
-::: info INFORMATION
- <img src="https://arweave.net/UO8dtoT9P0txwVR9HrHDTVVLWDtMANpzszWl7b8KdP0" width="20" /> **Dropped Transactions:** Like with all blockchains, it's possible for transaction posted directly to the network drop. Bundling services implement processes to reliably settle all transaction on chain, eliminating the risk of dropped transactions.
- :::
+::: info <img src="https://arweave.net/UO8dtoT9P0txwVR9HrHDTVVLWDtMANpzszWl7b8KdP0" width="20" />  Info
+Transactions posted directly to the Arweave network may take 2 or more minutes to confirm.
+:::
 
- ::: tip
-<img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> **Guaranteed Transactions:** When a transaction is posted to a bundling service, the service holds onto it until it is confirmed on-chain. If a transaction is not included in the most recent block the service re-posts the transaction with each new block until it is confirmed. 
- :::
+::: tip <img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> Guaranteed Transactions
+ When a transaction is posted via a bundling service, it is confirmed immediately. The service holds onto the transaction until it is confirmed on-chain. If a transaction is not included in the most recent block the bundling service re-posts it with each new block until it is confirmed. 
+:::
 
 ## Direct Transactions
 Transactions posted directly to Arweave come in two varieties **wallet-to-wallet** transactions and **data** transactions. The first transfers **AR** tokens between wallet addresses. The second posts data to Arweave and pays the associated storage costs.
