@@ -4,9 +4,9 @@ This guide will walk you through in a step by step flow to configure your develo
 
 ## Prerequisites
 
-- Basic Typescript Knowledge - [https://www.typescriptlang.org/docs/](Learn Typescript)
-- NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
-- Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
+- Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/] (Learn Typescript)
+- NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/] (Download NodeJS)
+- Knowledge of ReactJS - [https://reactjs.org/] (Learn ReactJS)
 - Know git and common terminal commands
 
 ## Development Dependencies
@@ -18,16 +18,22 @@ This guide will walk you through in a step by step flow to configure your develo
 
 ### Create Project
 
+if you are not familiar with typescript you can exclude the extra check `--template typescript`
+
 <CodeGroup>
   <CodeGroupItem title="NPM">
+  
 ```console:no-line-numbers
 npx create-react-app permaweb-create-react-app --template typescript
 ```
+
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
+  
 ```console:no-line-numbers
 yarn create react-app permaweb-create-react-app --template typescript
 ```
+
   </CodeGroupItem>
 </CodeGroup>
 
@@ -37,22 +43,28 @@ yarn create react-app permaweb-create-react-app --template typescript
 cd permaweb-create-react-app
 ```
 
+
 ### Install react-router-dom
 
 You have to install this package to manage routing between different pages
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
+  
 ```console:no-line-numbers
 npm install react-router-dom --save
 ```
+
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
+  
 ```console:no-line-numbers
 yarn add react-router-dom -D
 ```
+
   </CodeGroupItem>
 </CodeGroup>
+
 
 ### Run the App
 
@@ -66,13 +78,16 @@ npm start
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
+  
 ```console:no-line-numbers
 yarn start
 ```
+
   </CodeGroupItem>
 </CodeGroup>
 it will start a new development server locally on your machine by default it uses `PORT 3000` if this PORT is already in use
 it may ask you to switch to another available PORT in Terminal
+
 
 ### Modify the package.json to contain the following config
 
@@ -83,9 +98,10 @@ it may ask you to switch to another available PORT in Terminal
 }
 ```
 
+
 ### Setup Routing
 
-Now modify the application and add a new routes such as an about page, first create 2 more .tsx files
+Now modify the application and add a new routes such as an about page, first create 2 more .tsx files. (if you have exluceded the extra check `--template typescript` then make sure your component file extension should be `.jsx or .js`)
 
 ```sh
 touch src/HomePage.tsx
@@ -176,9 +192,11 @@ npm install --save arweave
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
+  
 ```console:no-line-numbers
 yarn add arweave -D
 ```
+
   </CodeGroupItem>
 </CodeGroup>
 
@@ -194,14 +212,18 @@ We need Bundlr to deploy our app to Permaweb it provides instant data upload and
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
+  
 ```console:no-line-numbers
 npm install --global @bundlr-network/client
 ```
+
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
+  
 ```console:no-line-numbers
 yarn global add @bundlr-network/client
 ```
+
   </CodeGroupItem>
 </CodeGroup>
 
@@ -228,14 +250,18 @@ Now its time to Generate Build
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
+  
 ```console:no-line-numbers
 npm run build
 ```
+
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
+  
 ```console:no-line-numbers
 yarn build
 ```
+
   </CodeGroupItem>
 </CodeGroup>
 
@@ -244,14 +270,18 @@ Finally we are good to deploy our First Permaweb Application
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
+  
 ```console:no-line-numbers
 npm run deploy
 ```
+
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
+  
 ```console:no-line-numbers
 yarn deploy
 ```
+
   </CodeGroupItem>
 </CodeGroup>
 
