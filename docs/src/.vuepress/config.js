@@ -246,10 +246,17 @@ module.exports = {
         text: 'Starter Kits',
         link: '/kits/',
         collapsible: true,
-        children: [{
-          text: 'Svelte',
-          link: '/kits/svelte/'
-        }]
+        children: [
+          {
+            text: 'React',
+            link: '/kits/react/'
+          },
+          {
+            text: 'Svelte',
+            link: '/kits/svelte/'
+          }
+          
+        ]
       }
     ]
   }),
