@@ -248,13 +248,14 @@ module.exports = {
         collapsible: true,
         children: [
           {
-            text: 'Svelte',
-            link: '/kits/svelte/'
-          },
-          {
             text: 'React',
             link: '/kits/react/'
+          },
+          {
+            text: 'Svelte',
+            link: '/kits/svelte/'
           }
+          
         ]
       }
     ]
