@@ -1,48 +1,81 @@
 # Create React App Starter Kit
 
-This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb application.
+This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb react application.
 
-## Prerequisites 
+## Prerequisites
 
-* Know typescript
-* NodeJS v16.15.0 or greater
-* Know React - [https://reactjs.org/](https://reactjs.org/)
-* Know git and common terminal commands
+- Basic Typescript Knowledge - [https://www.typescriptlang.org/docs/](Learn Typescript)
+- NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
+- Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
+- Know git and common terminal commands
 
 ## Development Dependencies
 
-* TypeScript
-* npm
+- TypeScript
+- NPM or Yarn Package Manager
 
 ## Steps
 
-## Create Project
+### Create Project
 
-```sh
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+```console:no-line-numbers
 npx create-react-app permaweb-create-react-app --template typescript
 ```
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+```console:no-line-numbers
+yarn create react-app permaweb-create-react-app --template typescript
+```
+  </CodeGroupItem>
+</CodeGroup>
 
-
-## Change into the directory created above
+### Change into the Project Directory
 
 ```sh
 cd permaweb-create-react-app
 ```
 
-## Install react-router-dom
+### Install react-router-dom
 
-```sh
+You have to install this package to manage routing between different pages
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+```console:no-line-numbers
 npm install react-router-dom --save
 ```
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+```console:no-line-numbers
+yarn add react-router-dom -D
+```
+  </CodeGroupItem>
+</CodeGroup>
 
-## Run the app to make sure it words
-```sh
+### Run the App
+
+Now we need to check if everything is going Perfect before jumping into next Step, Run
+<CodeGroup>
+<CodeGroupItem title="NPM">
+
+```console:no-line-numbers
 npm start
 ```
 
-visit http://localhost:3000 to see your app working
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+```console:no-line-numbers
+yarn start
+```
+  </CodeGroupItem>
+</CodeGroup>
+it will start a new development server locally on your machine by default it uses `PORT 3000` if this PORT is already in use
+it may ask you to switch to another available PORT in Terminal
 
-## Modify the package.json to contain the following config
+### Modify the package.json to contain the following config
+
 ```json
 {
   ...
@@ -50,32 +83,35 @@ visit http://localhost:3000 to see your app working
 }
 ```
 
-## Now modify the application and add a new route such as an about page, first create 2 more .tsx files
+### Setup Routing
+
+Now modify the application and add a new routes such as an about page, first create 2 more .tsx files
 
 ```sh
 touch src/HomePage.tsx
 touch src/About.tsx
 ```
 
-## HomePage.tsx
+#### HomePage.tsx
+
 ```ts
 import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
     <div>
-      Welcome to the Permaweb! 
+      Welcome to the Permaweb!
       <Link to={"/about/"}>
-         <div>About</div>
+        <div>About</div>
       </Link>
     </div>
   );
 }
-  
+
 export default HomePage;
 ```
 
-## About.tsx
+#### About.tsx
 
 ```ts
 import { Link } from "react-router-dom";
@@ -85,19 +121,19 @@ function About() {
     <div>
       Welcome to the About page!
       <Link to={"/"}>
-         <div>Home</div>
+        <div>Home</div>
       </Link>
     </div>
   );
 }
 
 export default About;
-
 ```
 
-## Modify App.tsx to route to both files
+#### Modify App.tsx
 
-## App.tsx
+We need to update the App.tsx to manage different pages
+
 ```ts
 import { HashRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
@@ -109,12 +145,8 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path={"/"} element={
-          <HomePage></HomePage>
-        } />
-        <Route path={"/about/"} element={
-          <About></About>
-        } />
+        <Route path={"/"} element={<HomePage />} />
+        <Route path={"/about/"} element={<About />} />
       </Routes>
     </HashRouter>
   );
@@ -123,34 +155,61 @@ function App() {
 export default App;
 ```
 
-
-
 ::: info Hash Routing
 Note that we are wrapping the routes in a HashRouter and using the react-router-dom Link component to build links.
 This is important on the permaweb in its current state, it will ensure the routes work properly because applications
-are served on a path like `https://[gateway]/[TX]` 
+are served on a path like `https://[gateway]/[TX]`
 :::
 
-
-
-## Deploy 
+## Deploy Permanently
 
 ### Generate Wallet
 
-```sh
+We need the `arweave` package to generate a wallet
+
+<CodeGroup>
+<CodeGroupItem title="NPM">
+
+```console:no-line-numbers
 npm install --save arweave
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+```console:no-line-numbers
+yarn add arweave -D
+```
+  </CodeGroupItem>
+</CodeGroup>
+
+then run this command in the terminal
+
+```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### install bundlr
+### Setup bundlr
 
-```sh
+We need Bundlr to deploy our app to Permaweb it provides instant data upload and retrieval
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+```console:no-line-numbers
 npm install --global @bundlr-network/client
 ```
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+```console:no-line-numbers
+yarn global add @bundlr-network/client
+```
+  </CodeGroupItem>
+</CodeGroup>
 
-### You will need to add AR to this wallet and fund your bundlr wallet to be able to upload this app. See [https://bundlr.network](https://bundlr.network) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
+:::
+You will need to add AR to this wallet and fund your bundlr wallet to be able to upload this app. See [https://bundlr.network](https://bundlr.network) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
+:::
 
-### update package.json
+### Update package.json
 
 ```json
 {
@@ -159,22 +218,49 @@ npm install --global @bundlr-network/client
     ...
     "deploy": "bundlr upload-dir ./build -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
+  ...
 }
 ```
 
 ### Run build
-```
+
+Now its time to Generate Build
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+```console:no-line-numbers
 npm run build
 ```
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+```console:no-line-numbers
+yarn build
+```
+  </CodeGroupItem>
+</CodeGroup>
 
 ### Run deploy
+Finally we are good to deploy our First Permaweb Application
 
-```sh
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+```console:no-line-numbers
 npm run deploy
 ```
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+```console:no-line-numbers
+yarn deploy
+```
+  </CodeGroupItem>
+</CodeGroup>
 
-::: tip SUCCESS 
+::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!
+:::
+
+::: info
+If you receive this error `Not enough funds to send data`, you have to fund some AR into your wallet, and then try to deploy it again.
 :::
 
 ## Repository
