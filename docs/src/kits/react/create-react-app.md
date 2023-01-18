@@ -4,9 +4,9 @@ This guide will walk you through in a step by step flow to configure your develo
 
 ## Prerequisites
 
-- Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/] (Learn Typescript)
-- NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/] (Download NodeJS)
-- Knowledge of ReactJS - [https://reactjs.org/] (Learn ReactJS)
+- Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
+- NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
+- Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
 - Know git and common terminal commands
 
 ## Development Dependencies
@@ -227,7 +227,7 @@ yarn global add @bundlr-network/client
   </CodeGroupItem>
 </CodeGroup>
 
-:::
+::: info
 You will need to add AR to this wallet and fund your bundlr wallet to be able to upload this app. See [https://bundlr.network](https://bundlr.network) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
 :::
 
@@ -289,7 +289,7 @@ yarn deploy
 You should now have a React Application on the Permaweb! Great Job!
 :::
 
-::: info
+::: error
 If you receive this error `Not enough funds to send data`, you have to fund some AR into your wallet, and then try to deploy it again.
 :::
 
