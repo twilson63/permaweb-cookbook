@@ -6,7 +6,7 @@ There are several ways to post transactions to Arweave. Each has its own unique 
 <img src="https://arweave.net/PQnMySn9x7vHhrlkBRZhwH93bZfeehPzp_c03diLmjk" width="550">
 
 ::: info <img src="https://arweave.net/UO8dtoT9P0txwVR9HrHDTVVLWDtMANpzszWl7b8KdP0" width="20" />  Info
-Transactions posted directly to the Arweave network may take 2 or more minutes to confirm.
+Transactions posted directly to the Arweave network may take 2 or more minutes to confirm. Arweave has a protocol limit of 1000 transactions per block. If your transaction needs exceed this capacity, please consider using a bundling service.
 :::
 
 ::: tip <img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> Guaranteed Transactions
@@ -51,3 +51,9 @@ When transactions are posted to bundlr.network they are also appear in the optim
 Another way to post bundled transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to bundlers. Arweave browser wallets implement a `dispatch()` API method. If you are posting small transactions (100KB or less) you can use the wallets `dispatch()` method to take advantage of bundled transactions even if `bundlr.network/client` isn't packaged with your application.
 
  An example of how to post a 100KB or less bundled transaction with an Arweave wallets `dispatch()` method can be found [in this guide](../guides/posting-transactions/dispatch.md).
+
+## Resources
+* [arweave-js](../guides/posting-transactions/arweave-js.md) example
+* [bundlr.network](../guides/posting-transactions/bundlr.md) example
+* [dispatch](../guides//posting-transactions/dispatch.md) example
+
