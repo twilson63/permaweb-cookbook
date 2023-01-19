@@ -70,10 +70,6 @@ module.exports = {
             link: `/concepts/postTransaction`
           },
           {
-            text: 'Profit Sharing Tokens (PSTs)',
-            link: '/concepts/psts'
-          },
-          {
             text: `Querying Transactions`,
             link: `/concepts/queryTransactions`
           },
@@ -86,6 +82,10 @@ module.exports = {
                 text: 'Arweave Name System (ArNS)',
                 link: '/concepts/arns'
               },
+              {
+                text: 'Profit Sharing Tokens (PSTs)',
+                link: '/concepts/psts'
+              }
             ]
           },
           {
