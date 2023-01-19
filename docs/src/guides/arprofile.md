@@ -36,6 +36,10 @@ const opts = {
 };
 ```
 
+::: tip
+Caching will store the relevant profile information in your local storage so that future requests for such data can be fulfilled much faster. The duration that is stored is specified in the options passed in 
+:::
+
 #### Get Profile by Address
 To retrieve account information using an Arweave address, inside an async function pass the user address to the `get` function
 
@@ -122,3 +126,8 @@ await account.search("cromatikap#aIUdog")
   }
 }
 ```
+
+## Summary
+With just 3 lines of code needed to implement, ArProfile is a straight-forward way for adding additional Arweave user information such as avatars, bio's and social links to your applications.
+
+[ArProfile](https://arprofile.arweave.dev)
