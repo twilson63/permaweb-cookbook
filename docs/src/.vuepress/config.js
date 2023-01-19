@@ -123,7 +123,7 @@ module.exports = {
             link: '/guides/atomic-assets'
           },
           {
-            text: `CLI Deployment`,
+            text: `App Deployment`,
             collapsible: true,
             children: [
               {
@@ -150,21 +150,7 @@ module.exports = {
           },
           {
             text: `Posting Transactions`,
-            collapsible: true,
-            children: [
-              {
-                text: 'arweave-js',
-                link: '/guides/posting-transactions/arweave-js'
-              },
-              {
-                text: 'bundlr.network',
-                link: '/guides/posting-transactions/bundlr'
-              },
-              {
-                text: 'dispatch',
-                link: '/guides/posting-transactions/dispatch'
-              },
-            ]
+            link: `/guides/posting-transactions`
           },
           {
             text: `Deploying Path Manifests`,
