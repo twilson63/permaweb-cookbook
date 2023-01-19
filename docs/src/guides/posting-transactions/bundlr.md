@@ -1,14 +1,25 @@
-## Installing the bundlr.network/client
-Layer 2 transactions are posted using `bundlr-network/client`. 
+# Posting Transactions using bundlr.network
+Posting transactions to bundlr.network can be accomplished using the `bundlr.network/client` javascript package. Bundling services enable guaranteed confirmation of posted transactions as well as supporting many thousands of transactions per block though the use of transaction bundles.
 
-Add the package using npm:
+## Installing the bundlr.network/client
+To install `bundlr.network/client` run
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+
 ```console:no-line-numbers
 npm install @bundlr-network/client
 ```
-or yarn:
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+
 ```console:no-line-numbers
 yarn add @bundlr-network/client
 ```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 ## Initializing Bundlr Network Client
 A difference between posting Layer 1 and bundled Layer 2 transactions is that when using bundlr you must make a deposit on the bundlr node ahead of time. This deposit can be made using AR tokens or a variety of other crypto currencies. Another difference is that the bundlr service guarantees your data will arrive on chain.

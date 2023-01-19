@@ -6,13 +6,21 @@ An Arweave wallet is required to deploy. If the size of the directory is greater
 ## Installation
 
 To install the Bundlr CLI run 
-```console
-yarn global add @bundlr-network/client
-```
-or 
-```console
+<CodeGroup>
+ <CodeGroupItem title="NPM">
+
+```console:no-line-numbers
 npm install -g @bundlr-network/client
 ```
+ </CodeGroupItem>
+ <CodeGroupItem title="YARN">
+
+```console:no-line-numbers
+yarn global add @bundlr-network/client
+```
+  </CodeGroupItem>
+</CodeGroup>
+
 
 ## Static Build
 Permaweb applications are statically generated, meaning that the code and content are generated ahead of time and stored on the network.

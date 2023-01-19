@@ -1,8 +1,24 @@
+# Posting Transactions using arweave-js
+Arweave native transactions can be posted directly to a node or gateway using the `arweave-js` package.
 ## Installing the arweave-js Package
+
+To install `arweave-js` run
+<CodeGroup>
+  <CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
 npm install --save arweave
 ```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+
+```console:no-line-numbers
+yarn add arweave
+```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 ## Initializing arweave-js
 Direct Layer 1 transactions are posted using the `arweave-js` library.

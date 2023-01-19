@@ -5,14 +5,21 @@ An Arweave wallet is required to deploy using `arkb` for covering the data trans
 
 ## Installation
 
-To install arkb run 
-```console
-yarn global add arkb
-```
-or 
-```console
+To install `arkb` run 
+<CodeGroup>
+ <CodeGroupItem title="NPM">
+
+```console:no-line-numbers
 npm install -g arkb
 ```
+ </CodeGroupItem>
+ <CodeGroupItem title="YARN">
+
+```console:no-line-numbers
+yarn add ar-gql
+```
+  </CodeGroupItem>
+</CodeGroup>
 
 ## Deploying
 

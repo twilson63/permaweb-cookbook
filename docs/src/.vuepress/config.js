@@ -1,5 +1,6 @@
 const { description } = require('../../package')
 import { defaultTheme } from '@vuepress/theme-default'
+import { containerPlugin } from '@vuepress/plugin-container'
 
 module.exports = {
 
@@ -57,8 +58,31 @@ module.exports = {
             link: '/concepts/manifests'
           },
           {
+            text: 'Permaweb',
+            link: '/concepts/permaweb'
+          },
+          {
+            text: 'Permaweb Applications',
+            link: '/concepts/permawebApplications'
+          },
+          {
             text: `Posting Transactions`,
-            link: `/concepts/postTransaction`
+            link: `/concepts/post-transactions`,
+            collapsible: true,
+            children: [
+              {
+                text: 'arweave-js',
+                link: '/guides/posting-transactions/arweave-js'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/posting-transactions/bundlr'
+              },
+              {
+                text: 'dispatch',
+                link: '/guides/posting-transactions/dispatch'
+              }
+            ]
           },
           {
             text: `Querying Transactions`,
@@ -73,6 +97,10 @@ module.exports = {
                 text: 'Arweave Name System (ArNS)',
                 link: '/concepts/arns'
               },
+              {
+                text: 'Profit Sharing Tokens (PSTs)',
+                link: '/concepts/psts'
+              }
             ]
           },
           {
@@ -93,6 +121,10 @@ module.exports = {
           {
             text: 'ArProfile',
             link: '/guides/arprofile'
+           },
+           {
+            text: 'Atomic Assets',
+            link: '/guides/atomic-assets'
           },
           {
             text: `CLI Deployment`,
@@ -135,6 +167,25 @@ module.exports = {
               {
                 text: 'dispatch',
                 link: '/guides/posting-transactions/dispatch'
+              },
+            ]
+          },
+          {
+            text: `Deploying Path Manifests`,
+            link: "/guides/deploying-manifests/deployingManifests",
+            collapsible: true,
+            children: [
+              {
+                text: 'arweave.app',
+                link: '/guides/deploying-manifests/arweave-app'
+              },
+              {
+                text: 'ardrive',
+                link: '/guides/deploying-manifests/ardrive'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/deploying-manifests/bundlr'
               },
             ]
           },
@@ -214,6 +265,17 @@ module.exports = {
         text: 'Starter Kits',
         link: '/kits/',
         collapsible: true,
+        children: [
+          {
+            text: 'React',
+            link: '/kits/react/'
+          },
+          {
+            text: 'Svelte',
+            link: '/kits/svelte/'
+          }
+          
+        ]
       }
     ]
   }),
@@ -224,5 +286,8 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
+    containerPlugin({
+      type: 'info'
+    })
   ]
 }
