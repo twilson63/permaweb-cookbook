@@ -3,14 +3,10 @@ There are several ways to post transactions to Arweave. Each has its own unique 
 
 `Direct to Peer`,`Direct to Gateway`, `Bundled`, and `Dispatched`.
 
-<img src="https://arweave.net/PQnMySn9x7vHhrlkBRZhwH93bZfeehPzp_c03diLmjk" width="550">
-
-::: info <img src="https://arweave.net/UO8dtoT9P0txwVR9HrHDTVVLWDtMANpzszWl7b8KdP0" width="20" />  Info
-Transactions posted directly to the Arweave network may take 2 or more minutes to confirm. Arweave has a protocol limit of 1000 transactions per block. If your transaction needs exceed this capacity, please consider using a bundling service.
-:::
+<img src="https://arweave.net/Z1eDDnz4kqxAkkzy6p5elMz-jKnlaVIletp-Tm6W8kQ" width="550">
 
 ::: tip <img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> Guaranteed Transactions
- When a transaction is posted via a bundling service, it is confirmed immediately. The service holds onto the transaction until it is confirmed on-chain. If a transaction is not included in the most recent block the bundling service re-posts it with each new block until it is confirmed. 
+If you are posting a high volume of transactions or you want your transactions to be confirmed immediately consider using a bundling service. Transactions posted via a bundler are confirmed immediately and available within milliseconds. The service holds onto the transactions until they are confirmed on-chain. If the transactions are not included in the most recent block the bundling service re-posts them with each new block until tye are confirmed. 
 :::
 
 ## Direct Transactions
