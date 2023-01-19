@@ -9,7 +9,7 @@ Describing the building blocks of the permaweb.
 - [Path Manifests](manifests.md)
 - [Permaweb](permaweb.md)
 - [Permaweb Applications](permawebApplications.md)
-- [Posting Transactions](postTransaction.md)
+- [Posting Transactions](post-transactions.md)
 - [Querying Transactions](queryTransations.md)
 - [SmartWeave](smartweave.md)
 - - [Arweave Name System](arns.md)
