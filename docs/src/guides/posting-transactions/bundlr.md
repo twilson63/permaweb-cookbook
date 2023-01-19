@@ -1,3 +1,6 @@
+# Posting Transactions using bundlr.network
+Posting transactions to bundlr.network can be accomplished using the `bundlr.network/client` javascript package. Bundling services enable guaranteed confirmation of posted transactions as well as supporting many thousands of transactions per block though the use of transaction bundles.
+
 ## Installing the bundlr.network/client
 To install `bundlr.network/client` run
 

@@ -1,3 +1,5 @@
+# Posting Transactions using arweave-js
+Arweave native transactions can be posted directly to a node or gateway using the `arweave-js` package.
 ## Installing the arweave-js Package
 
 To install `arweave-js` run

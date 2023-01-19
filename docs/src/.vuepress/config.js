@@ -67,7 +67,22 @@ module.exports = {
           },
           {
             text: `Posting Transactions`,
-            link: `/concepts/postTransaction`
+            link: `/concepts/post-transactions`,
+            collapsible: true,
+            children: [
+              {
+                text: 'arweave-js',
+                link: '/guides/posting-transactions/arweave-js'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/posting-transactions/bundlr'
+              },
+              {
+                text: 'dispatch',
+                link: '/guides/posting-transactions/dispatch'
+              }
+            ]
           },
           {
             text: 'Profit Sharing Tokens (PSTs)',
