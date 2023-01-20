@@ -119,6 +119,10 @@ module.exports = {
         collapsible: true,
         children: [
           {
+            text: 'ArProfile',
+            link: '/guides/arprofile'
+           },
+           {
             text: 'Atomic Assets',
             link: '/guides/atomic-assets'
           },
