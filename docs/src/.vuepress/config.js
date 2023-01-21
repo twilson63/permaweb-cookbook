@@ -121,10 +121,10 @@ module.exports = {
           {
             text: 'ArProfile',
             link: '/guides/arprofile'
-           },
-           {
+          },
+          {
             text: 'Atomic Assets',
-            link: '/guides/atomic-assets'
+            link: '/guides/atomic-assets/intro'
           },
           {
             text: `App Deployment`,
@@ -260,7 +260,7 @@ module.exports = {
             text: 'Svelte',
             link: '/kits/svelte/'
           }
-          
+
         ]
       }
     ]
