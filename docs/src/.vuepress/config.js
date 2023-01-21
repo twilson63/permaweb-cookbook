@@ -98,6 +98,10 @@ module.exports = {
                 link: '/concepts/arns'
               },
               {
+                text: 'Atomic Assets',
+                link: '/concepts/atomic-assets.md'
+              },
+              {
                 text: 'Profit Sharing Tokens (PSTs)',
                 link: '/concepts/psts'
               }
@@ -121,8 +125,8 @@ module.exports = {
           {
             text: 'ArProfile',
             link: '/guides/arprofile'
-           },
-           {
+          },
+          {
             text: 'Atomic Assets',
             link: '/guides/atomic-assets'
           },
@@ -260,7 +264,7 @@ module.exports = {
             text: 'Svelte',
             link: '/kits/svelte/'
           }
-          
+
         ]
       }
     ]
