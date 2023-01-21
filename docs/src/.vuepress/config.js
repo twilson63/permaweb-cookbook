@@ -44,6 +44,12 @@ module.exports = {
         link: '/getting-started/',
         collapsible: true,
         children: [{
+          text: 'Welcome',
+          link: '/getting-started/welcome'
+        }, {
+          text: 'Hello World (No Code)',
+          link: '/getting-started/quick-starts/hw-no-code'
+        }, {
           text: 'Contributing',
           link: '/getting-started/contributing'
         }]
@@ -121,8 +127,8 @@ module.exports = {
           {
             text: 'ArProfile',
             link: '/guides/arprofile'
-           },
-           {
+          },
+          {
             text: 'Atomic Assets',
             link: '/guides/atomic-assets'
           },
@@ -260,7 +266,7 @@ module.exports = {
             text: 'Svelte',
             link: '/kits/svelte/'
           }
-          
+
         ]
       }
     ]
