@@ -4,10 +4,7 @@
 
 ---
 
-Before you begin creating your PST, you will need:
-
-- NodeJS/NPM
-- An Arweave Wallet
+Before you begin creating your PST, you will need **NodeJS/NPM** installed.
 
 ### **Getting Started**
 
@@ -18,15 +15,13 @@ SmartWeave contracts can be broken down into two parts:
 - **The Contract** (the actual logic behind the token)
 - **Initial State** (some settings or configuration we want our token to have)
 
-**Installing Smartweave**
+In this guide we will create both.
 
-Install the **`smartweave`** node package from Arweave, which will provide functions to create and deploy a PST.
+**Setting Up a Local Environment**
 
-Open up a command prompt (you may need to run it as administrator if you're using PowerShell), and enter the following command:
+Run `npm install arweave arlocal warp-contracts`. 
 
-**`npm install -g smartweave`**
-
-This will install SmartWeave globally on your system so you can use the `smartweave` CLI tool.
+This will provide functions to create and deploy a PST.
 
 ### **Configuring The Contract**
 
@@ -34,64 +29,203 @@ This will install SmartWeave globally on your system so you can use the `smartwe
 
 The PST requires some initial state setup before deployment, e.g. the token name, and token quantity.
 
-Arweave provide a template configuration file that looks something like this:
+Create a configuration file that looks something like this:
 
 ```json
-// token-pst.json
+// initial-state.json
 {
   "ticker": "TEST_PST",
+  "name": "Test PST",
   "owner": "G1mQ4_jjcca46JqR1kEt0yKvhaw6EUrXLiEwebMvSwo",
-  "canEvolve": true,
   "balances": {
-      "G1mQ4_jjcca46JqR1kEt0yKvhaw6EUrXLiEwebMvSwo": 10
+      "G1mQ4_jjcca46JqR1kEt0yKvhaw6EUrXLiEwebMvSwo": 1000,
+      "Jo9BZOaIVBDIhyKDiSnJ1bIU4usT1ZZJ5Kl6M-rBFdI": 1000,
   }
 }
 
 ```
 
-Which sets some initial options for the PST.
+Which sets some initial options for the PST. Save it as `initial-state.json`.
 
-- **`ticker`** - symbol or name of the token
+- **`ticker`** - symbol of the token (e.g. BTC, ETH)
+- **`name`** - name of the token
 - **`owner`** - address of the contract owner
 - **`balances`** - addresses to distribute the initial tokens to
 
-For example, if you want 100,000 total tokens split between two founders, you would enter both founder addresses in `**balances**` with the value of **`50000`** on each address.
+### Writing The Contract
 
-You can download or copy the template file [here](https://github.com/ArweaveTeam/SmartWeave/blob/master/examples/token-pst.json).
+The PST contract should have a single function, `handle`, which takes two arguments:
+
+`state`, which is the current state of the contract, and `action`, which is the action you want to perform (e.g. transferring tokens).
+
+When making a call to the PST contract, it should return one of two things:
+- **`state`** - if the call to the contract changes the state (e.g. making a transfer).
+- **`result`** - if the call does **not** change the state (e.g. viewing a balance).
+
+Otherwise it should throw **`error`** if the call is invalid or fails. 
+
+First, let's define the main `handle` function.
+```js
+//contract.js
+export function handle(state, action) {
+  let balances = state.balances;
+  let input = action.input;
+  let caller = action.caller;
+}
+```
+This sets up some variables for common interactions the smart contract uses.
+
+Now let's add the first type of input which will change the state. This allows the owner of the contract to mint new PSTs to their wallet address.
+
+```js
+  if (input.function == 'mint') {
+    let qty = input.qty;
+
+  if (qty <= 0) {
+    throw new ContractError('Invalid token mint');
+  }
+
+  if (!Number.isInteger(qty)) {
+    throw new ContractError('Invalid value for "qty". Must be an integer');
+  }
+
+  if(caller != state.owner) {
+    throw new ContractError('Only the owner of the contract can mint new tokens.');
+  }
+
+  balances[caller] ? (balances[caller] += qty) : (balances[caller] = qty);
+  return { state };
+  }
+```
+The next function will handle transfers of PSTs between wallets.
+
+```js
+if (input.function == 'transfer') {
+
+    let target = input.target;
+    let qty = input.qty;
+
+    if (!Number.isInteger(qty)) {
+      throw new ContractError(`Invalid value for "qty". Must be an integer`);
+    }
+
+    if (!target) {
+      throw new ContractError(`No target specified`);
+    }
+
+    if (qty <= 0 || caller == target) {
+      throw new ContractError('Invalid token transfer');
+    }
+
+    if (balances[caller] < qty) {
+      throw new ContractError(`Caller balance not high enough to send ${qty} token(s)!`);
+    }
+
+    // Lower the token balance of the caller
+    balances[caller] -= qty;
+    if (target in balances) {
+      // Wallet already exists in state, add new tokens
+      balances[target] += qty;
+    } else {
+      // Wallet is new, set starting balance
+      balances[target] = qty;
+    }
+
+    return { state };
+  }
+```
+Let's also add a way to view the PST balance of a target wallet.
+
+```js
+if (input.function == 'balance') {
+
+    let target = input.target;
+    let ticker = state.ticker;
+    
+    if (typeof target !== 'string') {
+      throw new ContractError(`Must specificy target to get balance for`);
+    }
+
+    if (typeof balances[target] !== 'number') {
+      throw new ContractError(`Cannnot get balance, target does not exist`);
+    }
+
+    return { result: { target, ticker, balance: balances[target] } };
+  }
+```
+And finally, let's throw an error if the input given is not the `mint`, `transfer`, or `balance` function.
+
+```js
+throw new ContractError(`No function supplied or function not recognised: "${input.function}"`);
+```
 
 ### **Deploying The Contract**
 
----
+To deploy a contract, we need to write a NodeJS script which will work with Warp to deploy our contract.
 
-To deploy a contract, use the following command:
+Create a file called `deploy-contract.js`, and begin by importing `WarpFactory`.
 
-`smartweave create CONTRACT_FILE CONFIG_FILE --key-file keyfile.json`
+```js
+import { WarpFactory } from 'warp-contracts/mjs'
+```
+Next, initialize an instance of Warp.
 
-where `CONTRACT_FILE` is the smart contract file, `CONFIG_FILE` is the `token-pst.json` just created, and `keyfile.json` is our keyfile.
+You can replace `forMainnet()` with `forLocal()`, or `forTestnet()`, depending on where you want to deploy your contract.
+```js
+const warp = WarpFactory.forMainnet();
+```
 
-#### The Smart Contract
+Now we have Warp setup, you'll need a wallet to deploy the contract from. You can either use your own local keyfile:
 
-The contract file does **not** have to be a local file on your system. Instead, you can leverage an already deployed PST Arweave have provided for us - making creation and deployment incredibly easy.
+```js
+const walletAddress = "path/to/wallet.json"
+```
+ or, generate a new wallet through Warp using the following code:
 
-The contract has the id **`ff8wOKWGIS6xKlhA8U6t70ydZOozixF5jQMp4yjoTc8`** and is available **[here](https://px7taoffqyqs5mjklbapctvn55gj2zhkgofrc6mnamu6gkhijxhq.arweave.net/ff8wOKWGIS6xKlhA8U6t70ydZOozixF5jQMp4yjoTc8)**. 
-
-This template contract is also useful to look at if you want to deploy a PST contract manually, or adjust/customize the logic of the contract.
-
-The final command to deploy will look something like:
-
-**`smartweave create ff8wOKWGIS6xKlhA8U6t70ydZOozixF5jQMp4yjoTc8 token-pst.json --key-file G1mQ4_jjcca46JqR1kEt0yKvhaw6EUrXLiEwebMvSwo.json`**
-
-Keep in mind that if you aren't working on a terminal within a folder, you may need to use the absolute path name for your files.
-
-E.g. **`C:\Users\YourName\Desktop\G1mQ4...MvSwo.json`**
-
-Once you hit enter, you should be prompted with a screen like the one below, and your contract will be successfully deployed!🥳
-![Smartweave CLI Result on PST Deployment](~@source/images/pst-deployment.png)
-
----
-
-### Next Steps
+```js
+const jwk = await warp.arweave.wallets.generate();
+const walletAddress = await warp.arweave.wallets.jwkToAddress(jwk);
+```
+Transactions under 100KB are free, so you don't even have to fund the wallet!
 
 ---
 
-Make a note of the contract ID to use that in the front-end of your application.
+Before deploying the contract, we need to read in the initial state file and the contract file.
+
+```js
+const contract = fs.readFileSync(path.join(__dirname, 'contract.js'), 'utf8');
+const state = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'initial-state.json'), 'utf8')
+);
+```
+If you generated a new wallet to deploy from, you'll need to override the `owner` in the initial state. You can do this with the following code:
+```js
+const initialState = {
+  ...stateFromFile,
+  ...{
+    owner: walletAddress,
+  },
+};
+```
+If you're using wallet, you can instead edit the `initial-state.json` file directly to use your wallet address.
+
+The following code handles the deployment of the contract:
+
+```js
+const contractTxId = await warp.createContract.deploy({
+  wallet,
+  initState: JSON.stringify(initialState),
+  src: contractSrc,
+});
+
+console.log('Deployment completed: ', {
+  ...result,
+  sonar: `https://sonar.warp.cc/#/app/contract/${result.contractTxId}`
+});
+```
+
+Run the script with `node deploy-contract.js` which will deoply your contract and log the contract transaction ID in the terminal for you to use.
+
+---
+
+**Source and Further Reading**: [Warp Docs](https://academy.warp.cc/tutorials/pst/introduction/intro)
