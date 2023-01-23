@@ -6,6 +6,11 @@ When uploading files to Arweave, transactions aren’t grouped or organized by d
 
 One picture of your cat might be stored at [bVLEkL1SOPFCzIYi8T_QNnh17VlDp4RylU6YTwCMVRw](https://arweave.net/bVLEkL1SOPFCzIYi8T_QNnh17VlDp4RylU6YTwCMVRw), while another is stored at [FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0](https://arweave.net/FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0). 
 
+| Cat1 | Cat2 |
+|------|------|
+| <img src="https://arweave.net/bVLEkL1SOPFCzIYi8T_QNnh17VlDp4RylU6YTwCMVRw" width="300">|<img src="https://arweave.net/FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0" width="360"> |
+| bVLEkL1SOPFCzIYi8T_QNnh17VlDp4... | FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0 |
+
 This isn’t very readable and makes it difficult to find all of your relevant files. Without a manifest, if you uploaded 100 pictures of your cat you would need to keep track of **100 different links**! 
 
 Path Manifests are a way to link other transactions together under one ID, and give them more readable names. In relation to the cat example, you could have one link to remember and use it like a folder - accessing your files with [6dRh/cat1.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/cat1.jpg), [6dRh/cat2.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/cat2.jpg), etc. 
