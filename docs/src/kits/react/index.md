@@ -6,6 +6,7 @@ can be uploaded as a transaction to the permaweb where it will serve as a single
 
 React Starter Kit Guides:
 
+* [Vite](./vite.md) - utilize Vite to build a React permaweb app
 * [Create React App](./create-react-app.md) - utilize Create React App to build a React permaweb app
 
 ::: info Permaweb Application Constraints
