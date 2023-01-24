@@ -1,13 +1,13 @@
 # Transaction Tags
 
-Arweave is like a permanent append-only hard drive where each entry on the hard drive is its own unique transaction. Transactions have a unique transaction id, signature, and owner wallet address for the wallet that signed and paid for the transaction to be posted.  When the transaction is mined it is added to a block with a specific block height. Along with the above properties Arweave provides a means of tagging transactions with user specified data.  This allows users to assign a collection name value pairs in the form of custom tags to a transaction . This makes it possible to query Arweave later and find all the Transactions with a certain set of tags.  The ability to filter transactions this way ends up being critical to supporting apps built on Arweave.
+Arweave can be thought of as a permanent append-only hard drive where each entry on the drive is its own unique transaction. Transactions have a unique ID, signature, and owner address for the address that signed and paid for the transaction to be posted. Along with those header values, the Arweave protocol allows users to tag transactions with custom tags. These are specified as a collection name value pairs appended to the transaction. These tags make it possible to query Arweave and find all the Transactions that include a particular tag or tags.  The ability to query and filter transactions is critical to supporting apps built on Arweave.
 
 ## What are Transaction Tags?
 
-Transaction tags are key-value pairs, where the combination of base64 keys and values must be less than the maxium of 2048 bytes for a layer 1 transaction. 
+Transaction tags are key-value pairs, where the combination of base64URL keys and values must be less than the maximum of 2048 bytes for an arweave native transaction. 
 
 ::: tip
-Layer 2 solutions like bundles can support longer transaction tags, like Bundlr-Network supports up to 4096 bytes for transaction tags.
+Bundled transactions have support for more tag space. Transactions posted via bundler.network have up to 4096 bytes of tag space.
 :::
 
 
@@ -24,15 +24,15 @@ Transaction tags can be used for a variety of purposes, such as indexing transac
 
 ## Some good things to know about Transaction Tags
 
-Transaction tags are encoded into 64 byte strings for both the key and value, this does not mean they are encrypted anyone can easily decode them.
+Transaction tags are encoded as Base64URL encoded strings for both the key and value. This makes it possible to post arrays of bytes as keys or values and transfer them safely over http. While it's not human readable without decoding, it shouldn't be considered encryption.
 
-The max total size of Transaction tags for a Layer 1 transaction is 2048 bytes, this is the concatenation of all keys and all values of the transaction tags.
+The max total size of Transaction tags for transaction posted directly to Arweave is 2048 bytes. This size is determined by the concatenation of all keys and all values of the transaction tags.
 
 Transaction tags can be used in GraphQL queries to return a filtered set of transaction items.
 
 ## Common Tags used in the community
 
-| Tag Name | Description | Use Cases |
+| <div style="width:100px">Tag Name</div>  | Description | Use Cases |
 | -------- | ----------- | --------- |
 | App-Name | Most commonly used for SmartWeave Identifiers | Common values are SmartWeaveContract, SmartWeaveAction, and SmartWeaveContractSource |
 | App-Version | The version of this data, it may represent the app consuming this information | 0.3.0 is the current SmartWeave Version |
@@ -77,4 +77,4 @@ await bundlr.upload(mydata, [
 
 ## Summary
 
-Understanding how Transaction Tags work in the permaweb ecosystem can provide context on how to solve problems using the permaweb as an application platform. Tags provide a tool to consume and create common data standards and patterns to encourage a non-rivalous data experience on the permaweb. The result gives users of the ecosystem the choice of applications to consume and create content as their data is always with the user not the application.
+Understanding how Transaction Tags factor into the Arweave tech stack can provide context on how to solve problems using the Permaweb as an application platform. Tags provide a tool to consume and create common data standards and patterns to encourage a non-rivalous data experience on the Permaweb. The result gives users of the ecosystem the choice of applications to consume and create content as their data is always with the user not the application.
