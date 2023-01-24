@@ -130,7 +130,7 @@ module.exports = {
           },
           {
             text: 'Atomic Assets',
-            link: '/guides/atomic-assets'
+            link: '/guides/atomic-assets/intro'
           },
           {
             text: `App Deployment`,
