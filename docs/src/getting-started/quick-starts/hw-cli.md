@@ -1,6 +1,6 @@
 # Hello World (CLI)
 
-This guide walks you through the most simple way to get data on to the permaweb using a comand-line interface (CLI).
+This guide walks you through the most simple way to get data on to the permaweb using a command-line interface (CLI).
 
 ## Requirements
 
