@@ -50,6 +50,9 @@ module.exports = {
           text: 'Hello World (No Code)',
           link: '/getting-started/quick-starts/hw-no-code'
         }, {
+          text: 'Hello World (CLI)',
+          link: '/getting-started/quick-starts/hw-cli'
+        }, {
           text: 'Contributing',
           link: '/getting-started/contributing'
         }]
