@@ -5,6 +5,7 @@ Svelte is a framework that compiles to a JavaScript bundle and in the process re
 Svelte Starter Kit Guides:
 
 * [Minimal](./minimal.md) - the minimum required to build a svelte permaweb app
+* [Vite](./vite.md) - Svelte, Typescript and Vite
 
 ::: info Permaweb Application Constraints
 * 100% Front-end application (No Server-Side Backend)
