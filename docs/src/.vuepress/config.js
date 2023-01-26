@@ -121,8 +121,8 @@ module.exports = {
           {
             text: 'ArProfile',
             link: '/guides/arprofile'
-           },
-           {
+          },
+          {
             text: 'Atomic Assets',
             link: '/guides/atomic-assets'
           },
@@ -151,6 +151,11 @@ module.exports = {
               text: 'Server Side',
               link: '/guides/dns-integration/server-side'
             }]
+          },
+          {
+            text: 'HTTP API',
+            collapsible: false,
+            link: '/guides/http-api'
           },
           {
             text: `Posting Transactions`,
@@ -260,7 +265,7 @@ module.exports = {
             text: 'Svelte',
             link: '/kits/svelte/'
           }
-          
+
         ]
       }
     ]
