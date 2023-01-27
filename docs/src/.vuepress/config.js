@@ -162,6 +162,11 @@ module.exports = {
             }]
           },
           {
+            text: 'HTTP API',
+            collapsible: false,
+            link: '/guides/http-api'
+          },
+          {
             text: `Posting Transactions`,
             link: `/guides/posting-transactions`
           },
