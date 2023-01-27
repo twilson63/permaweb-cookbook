@@ -6,14 +6,14 @@ sidebar: false
 
 <div class="home-header">
 <div>
-<h1 style="font-family: Inter; font-weight: 400;font-size: 40px;">Build on the Permaweb</h1>
-<p style="font-family: Inter; font-weight: 400;font-size: 22.5px;">A curated collection of developer guides & more to build on the Permaweb. All in one place.</p>
+<h1 class="title">Build on the Permaweb</h1>
+<p class="slug">A curated collection of developer guides & more to build on the Permaweb. All in one place.</p>
 </div>
-<div>
+<div class="btn-container">
 <a class="home-btn" href="/getting-started/welcome.html">Welcome</a>
 </div>
 </div>
-<div style="display: flex;gap: 16px;">
+<div class="home-row">
   <div class="home-box">
     <div style="display: flex;justify-content: space-between;align-items: start;">
       <img src="/hello-world.svg" alt="hello-world" />
@@ -26,7 +26,7 @@ sidebar: false
 If you haven’t built on Arweave yet, this is the place to start. A great intro.
     </div>
     <div style="">
-      <a href="/getting-started/" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Lets Go <img src="/lets-go.svg" /></a>
+      <a href="/getting-started/quick-starts/hw-no-code.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Lets Go <img src="/lets-go.svg" /></a>
     </div>
   </div>
   <div class="home-box">
@@ -41,7 +41,7 @@ If you haven’t built on Arweave yet, this is the place to start. A great intro
 Get the lay of the land for building on arweave, this is must know stuff.
     </div>
     <div style="">
-      <a href="/concepts/" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Getting Started <img src="/lets-go.svg" /></a>
+      <a href="/concepts/index.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Getting Started <img src="/lets-go.svg" /></a>
     </div>
   </div>
   <div class="home-box">
@@ -56,12 +56,12 @@ Get the lay of the land for building on arweave, this is must know stuff.
 Snack-sized guides, focused on most widely used tools for devs.
     </div>
     <div style="">
-      <a href="/guides/" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Get started <img src="/lets-go.svg" /></a>
+      <a href="/guides/index.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Get started <img src="/lets-go.svg" /></a>
     </div>
   </div>
   
 </div>
-<div style="margin-top: 16px; display: flex;gap: 16px;">
+<div  class="home-row" style="margin-top: 16px;">
   <div class="double-box">
     <div style="display: flex;justify-content: space-between;align-items: start;">
       <img src="/featured.svg" alt="hello-world" />
@@ -93,7 +93,7 @@ Snack-sized guides, focused on most widely used tools for devs.
 This is a grassroots project to make it easy to build on Arweave. Add to the knowledgebase via github.
     </div>
     <div style="">
-      <a href="/getting-started/contribute.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Github repo here I come <img src="/lets-go.svg" /></a>
+      <a href="/getting-started/contributing.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Github repo here I come <img src="/lets-go.svg" /></a>
     </div>
   </div>
   </div>

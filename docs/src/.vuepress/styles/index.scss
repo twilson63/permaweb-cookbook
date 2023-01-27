@@ -1,3 +1,101 @@
+@media (min-width: 480px) {
+  .home-row {
+    display: flex;
+    gap: 16px;
+  }
+
+  .double-box {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 640px;
+    height: 320px;
+
+    background: #FFFFFF;
+    border: 1px solid #FCFAFE;
+    /* Subtle */
+
+    box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 40px;
+  }
+
+  .slug {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 22.5px;
+  }
+
+  .home-header {
+    display: flex;
+
+  }
+}
+
+// mobile
+@media (max-width: 480px) {
+  .title {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .slug {
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .home-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .double-box {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 320px;
+    height: 320px;
+
+    background: #FFFFFF;
+    border: 1px solid #FCFAFE;
+    /* Subtle */
+
+    box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .home-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-container {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .background-image {
+    background-size: cover;
+  }
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -13,17 +111,14 @@ a:hover {
 }
 
 .background-image {
-  background-image: url("background.svg");
+  background: url("background.svg") no-repeat center center fixed;
   margin: 0;
   padding: 0;
   font-family: Inter;
   font-weight: 200
 }
 
-.home-header {
-  display: flex;
 
-}
 
 .home-btn {
   display: flex;
@@ -44,24 +139,6 @@ a:hover {
   box-sizing: border-box;
   padding: 30px;
   width: 320px;
-  height: 320px;
-
-  background: #FFFFFF;
-  border: 1px solid #FCFAFE;
-  /* Subtle */
-
-  box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
-  border-radius: 20px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.double-box {
-  box-sizing: border-box;
-  padding: 30px;
-  width: 640px;
   height: 320px;
 
   background: #FFFFFF;
