@@ -4,7 +4,7 @@
 <path d="M1512 0H0V1032H1512V0Z" fill="white"/>
 </mask>
 <g mask="url(#mask0_2_460)">
-<path d="M1512 0H0.00012207V1032H1512V0Z" fill="#DEF6FF" fill-opacity="0.75"/>
+<path d="M1512 0H0.00012207V1032H1512V0Z" fill="" fill-opacity="0.75"/>
 <g filter="url(#filter0_f_2_460)">
 <path d="M-217.481 608.624L-568.335 940.292L-612.088 1367.35L1395.86 1463.18L1472.53 714.773L1094.26 556.516L290.726 887.818L-217.481 608.624Z" fill="#F2E9FF" fill-opacity="0.75"/>
 </g>
