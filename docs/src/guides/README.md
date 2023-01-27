@@ -21,7 +21,4 @@ Snack-sized guides about different tools for development
 - [Testing](testing/arlocal.md)
 - [Vouch](vouch.md)
 
-
-
-
 > Do you think a permaweb guide is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md) 
