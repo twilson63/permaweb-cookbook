@@ -75,7 +75,7 @@ console.log(res)
 <hr />
 
 ::: tip
-This endpoint only supports native arweave transctions. Arweave and Bundlr transactions must be confirmed before getting a successful response.
+This endpoint only supports native Arweave transactions. Transactions must be confirmed before getting a successful response.
 :::
 
 ### Get raw transaction
