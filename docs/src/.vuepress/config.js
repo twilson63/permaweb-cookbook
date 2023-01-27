@@ -110,6 +110,10 @@ module.exports = {
                 link: '/concepts/arns'
               },
               {
+                text: 'Atomic Assets',
+                link: '/concepts/atomic-assets.md'
+              },
+              {
                 text: 'Profit Sharing Tokens (PSTs)',
                 link: '/concepts/psts'
               }
