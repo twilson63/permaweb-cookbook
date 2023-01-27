@@ -58,6 +58,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    justify-content: center;
   }
 
   .double-box {
@@ -151,4 +152,72 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.home-box-title {
+  font-family: Inter;
+  font-size: 22.65px;
+  font-weight: 500;
+}
+
+.home-box-slug {
+  margin: 0;
+  padding: 0;
+  padding-top: 4px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+}
+
+.home-box-note {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1D1D1D;
+}
+
+.double-box-feature-user {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1D1D1D;
+
+}
+
+.double-box-feature-text {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1D1D1D;
+}
+
+html.dark {
+  .home-box {
+    background: #2D3648;
+    box-shadow: none;
+  }
+
+  .double-box {
+    background: #2D3648;
+    box-shadow: none;
+  }
+
+  .home-box-title {}
+
+  .home-box-slug {
+    color: #999999;
+  }
+
+  .home-box-note {
+    color: #F8F8F8;
+  }
+
+  .double-box-feature-user {
+    color: #F8F8F8;
+  }
+
+  .double-box-feature-text {
+    color: #F8F8F8;
+  }
 }
