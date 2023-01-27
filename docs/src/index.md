@@ -26,7 +26,7 @@ sidebar: false
 If you haven’t built on Arweave yet, this is the place to start. A great intro.
     </div>
     <div style="">
-      <a href="/getting-started/" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Lets Go <img src="/lets-go.svg" /></a>
+      <a href="/getting-started/index.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Lets Go <img src="/lets-go.svg" /></a>
     </div>
   </div>
   <div class="home-box">
@@ -41,7 +41,7 @@ If you haven’t built on Arweave yet, this is the place to start. A great intro
 Get the lay of the land for building on arweave, this is must know stuff.
     </div>
     <div style="">
-      <a href="/concepts/" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Getting Started <img src="/lets-go.svg" /></a>
+      <a href="/concepts/index.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Getting Started <img src="/lets-go.svg" /></a>
     </div>
   </div>
   <div class="home-box">
@@ -56,7 +56,7 @@ Get the lay of the land for building on arweave, this is must know stuff.
 Snack-sized guides, focused on most widely used tools for devs.
     </div>
     <div style="">
-      <a href="/guides/" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Get started <img src="/lets-go.svg" /></a>
+      <a href="/guides/index.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Get started <img src="/lets-go.svg" /></a>
     </div>
   </div>
   
@@ -90,7 +90,7 @@ Snack-sized guides, focused on most widely used tools for devs.
       </div>
     </div>
     <div style="font-family: Inter; font-size: 14px;font-weight: 400;color: #1D1D1D;">
-This is a grassroots project to make it easy to build on Arweave. Add to the knowledgebase via github.
+This is a grassroots project to make it easy to build on Arweave. Add to the knowledge base via github.
     </div>
     <div style="">
       <a href="/getting-started/contribute.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Github repo here I come <img src="/lets-go.svg" /></a>
