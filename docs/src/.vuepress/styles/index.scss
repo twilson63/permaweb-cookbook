@@ -1,4 +1,8 @@
 @media (min-width: 480px) {
+  .theme-default-content:not(.custom) {
+    max-width: 80%;
+  }
+
   .home-row {
     display: flex;
     gap: 16px;
