@@ -74,6 +74,10 @@ console.log(res)
 </details>
 <hr />
 
+::: tip
+This endpoint only supports native arweave transctions. Arweave and Bundlr transactions must be confirmed before getting a successful response.
+:::
+
 ### Get raw transaction
 `https://arweave.net/raw/TX_ID`
 ```js
