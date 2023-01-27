@@ -71,7 +71,7 @@ Snack-sized guides, focused on most widely used tools for devs.
       </div>
     </div>
     <div style="display:flex;justify-content:start;gap:16px;align-items: center;">
-      <img style="border-radius: 999px;" src="https://avatars.githubusercontent.com/u/85306700?s=60&v=4" alt="avatar" />
+      <img style="border-radius: 999px;height: 40px;width:40px;" src="https://avatars.githubusercontent.com/u/85306700?s=60&v=4" alt="avatar" />
       <div style="display:flex;flex-direction: column; gap: 8px">
         <div class="double-box-feature-user">atticusofsparta</div>
         <div class="double-box-feature-text" >Expanding the frontier of decentralization</div>
