@@ -10,7 +10,7 @@ sidebar: false
 <p class="slug">A curated collection of developer guides & more to build on the Permaweb. All in one place.</p>
 </div>
 <div class="btn-container">
-<a class="home-btn" href="/getting-started/welcome.html">Welcome</a>
+<a class="home-btn" href="/getting-started/welcome.html">Read Now</a>
 </div>
 </div>
 <div class="home-row">
