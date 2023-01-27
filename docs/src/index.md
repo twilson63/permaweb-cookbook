@@ -90,7 +90,7 @@ Snack-sized guides, focused on most widely used tools for devs.
       </div>
     </div>
     <div style="font-family: Inter; font-size: 14px;font-weight: 400;color: #1D1D1D;">
-This is a grassroots project to make it easy to build on Arweave. Add to the knowledgebase via github.
+This is a grassroots project to make it easy to build on Arweave. Add to the knowledge base via github.
     </div>
     <div style="">
       <a href="/getting-started/contributing.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Github repo here I come <img src="/lets-go.svg" /></a>
