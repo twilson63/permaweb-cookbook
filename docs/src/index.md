@@ -4,12 +4,12 @@ pageClass: background-image
 sidebar: false
 ---
 
-<div class="home-header">
-<div>
+<div class="home-header" style="max-width=727px;gap:32px;">
+<div style="flex: none;width:60%">
 <h1 class="title">Build on the Permaweb</h1>
 <p class="slug">A curated collection of developer guides & more to build on the Permaweb. All in one place.</p>
 </div>
-<div class="btn-container">
+<div class="btn-container" style="flex: 0 1 auto;">
 <a class="home-btn" href="/getting-started/welcome.html">Read Now</a>
 </div>
 </div>
