@@ -311,7 +311,7 @@ bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
 </CodeGroup>
 
 ::: info
-This will take some time to propagate to your Bundlr wallet. Come back in 10-20 minutes and try to run the deployment again.
+The above number 1479016 is an amount of AR expressed in winston, the smallest unit of AR. This will take some time to propagate to your Bundlr wallet. Come back in 10-20 minutes and try to run the deployment again.
 :::
 
 ## Repository
