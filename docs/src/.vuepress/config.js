@@ -285,8 +285,11 @@ module.exports = {
           {
             text: 'Svelte',
             link: '/kits/svelte/'
+          },
+          {
+            text: 'Vue',
+            link: '/kits/vue/'
           }
-
         ]
       }
     ]
