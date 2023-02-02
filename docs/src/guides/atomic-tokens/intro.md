@@ -1,12 +1,10 @@
-# Atomic Assets
+# Atomic Tokens
 
-Permaweb Atomic Assets are digital assets that are stored on the Permaweb, a decentralized, permanent data storage layer built on top of the Arweave blockchain. They are unique, non-fungible assets that can represent a wide variety of things, such as collectible items, artwork, or even web-pages, sites, and applications.
+## What is an Atomic Token? 
 
-Permaweb Atomic Assets are created using a [SmartWeave Token Contract](../../concepts/psts.md), [ANS-110 Transaction Tags](../../tags.md), and digital data.
+[Check out the concept](../../concepts/atomic-tokens)
 
-![Atomic Asset Visual](https://arweave.net/6QMAqO4ONrSn15qVJKcAjeMpFQqSRVfAY95JGQBZFXQ)
-
-## Creating an Atomic Asset
+## Creating an Atomic Token
 
 ::: info INFORMATION
 For this example, we are using a SWT Contract Source that is already published on the network. [x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) - 
@@ -42,8 +40,8 @@ async function main() {
         balances: {
           'cHB6D8oNeXxbQCsKcmOyjUX3UkL8cc3FbJmzbaj3-Nc': 1000000
         },
-        name: 'AtomicAsset',
-        ticker: 'ATOMIC',
+        name: 'AtomicToken',
+        ticker: 'ATOMIC-TOKEN',
         pairs: [],
         creator: 'cHB6D8oNeXxbQCsKcmOyjUX3UkL8cc3FbJmzbaj3-Nc',
         settings: [['isTradeable', true]]
@@ -53,7 +51,7 @@ async function main() {
 
   const { id } = await bundlr.upload(data, { tags })
   await warp.createContract.register(id, 'node2')
-  console.log('Atomic Asset: ', id)
+  console.log('Atomic Token: ', id)
 }
 
 main()

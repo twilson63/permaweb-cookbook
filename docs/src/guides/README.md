@@ -7,7 +7,7 @@ title: Permaweb Cookbook - Guides
 Snack-sized guides about different tools for development
 
 - [ArProfile](arprofile.md)
-- [Atomic Assets](atomic-assets/intro.md)
+- [Atomic Tokens](atomic-tokens/intro.md)
 - [App Deployment: arkb](deployment/arkb.md)
 - [App Deployment: bundlr-cli](deployment/bundlr-cli.md)
 - [app Deployment: github-action](deployment/github-action.md)
