@@ -66,6 +66,10 @@ module.exports = {
         collapsible: true,
         children: [
           {
+            text: 'Atomic Tokens',
+            link: '/concepts/atomic-tokens'
+          },
+          {
             text: 'Path Manifests',
             link: '/concepts/manifests'
           },
@@ -139,8 +143,8 @@ module.exports = {
             link: '/guides/arprofile'
           },
           {
-            text: 'Atomic Assets',
-            link: '/guides/atomic-assets/intro'
+            text: 'Atomic Tokens',
+            link: '/guides/atomic-tokens/intro'
           },
           {
             text: `App Deployment`,
