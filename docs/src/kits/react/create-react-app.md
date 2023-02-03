@@ -18,7 +18,7 @@ This guide will walk you through in a step by step flow to configure your develo
 
 ### Create Project
 
-if you are not familiar with typescript you can exclude the extra check `--template typescript`
+If you are not familiar with typescript you can exclude the extra check `--template typescript`
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -68,7 +68,7 @@ yarn add react-router-dom -D
 
 ### Run the App
 
-Now we need to check if everything is going Perfect before jumping into next Step, Run
+Now we need to check if everything is working before jumping into next step, run
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -85,7 +85,7 @@ yarn start
 
   </CodeGroupItem>
 </CodeGroup>
-it will start a new development server locally on your machine by default it uses `PORT 3000` if this PORT is already in use
+This will start a new development server locally on your machine. By default it uses `PORT 3000`, if this PORT is already in use
 it may ask you to switch to another available PORT in Terminal
 
 
@@ -101,7 +101,7 @@ it may ask you to switch to another available PORT in Terminal
 
 ### Setup Routing
 
-Now modify the application and add a new routes such as an about page, first create 2 more .tsx files. (if you have exluceded the extra check `--template typescript` then make sure your component file extension should be `.jsx or .js`)
+Now modify the application and add a new route such as an about page, first create 2 more .tsx files. (if you have exluceded the extra check `--template typescript`, then your component file extension should be `.jsx or .js`)
 
 ```sh
 touch src/HomePage.tsx
@@ -148,7 +148,7 @@ export default About;
 
 #### Modify App.tsx
 
-We need to update the App.tsx to manage different pages
+We need to update the App.tsx to manage the different pages
 
 ```ts
 import { HashRouter } from "react-router-dom";
@@ -246,7 +246,7 @@ You will need to add AR to this wallet and fund your bundlr wallet to be able to
 
 ### Run build
 
-Now its time to Generate Build
+Now it is time to generate a build, run
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -266,7 +266,7 @@ yarn build
 </CodeGroup>
 
 ### Run deploy
-Finally we are good to deploy our First Permaweb Application
+Finally we are good to deploy our first Permaweb Application
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -289,8 +289,29 @@ yarn deploy
 You should now have a React Application on the Permaweb! Great Job!
 :::
 
-::: error
-If you receive this error `Not enough funds to send data`, you have to fund some AR into your wallet, and then try to deploy it again.
+::: info ERROR
+If you receive this error `Not enough funds to send data`, you have to fund some AR into your Bundlr wallet, and then try to deploy it again, run
+:::
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+::: info
+The above number 1479016 is an amount of AR expressed in winston, the smallest unit of AR. This will take some time to propagate to your Bundlr wallet. Come back in 10-20 minutes and try to run the deployment again.
 :::
 
 ## Repository
