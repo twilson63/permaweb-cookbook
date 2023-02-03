@@ -36,4 +36,5 @@ You just published some data on Arweave using zero code.
 
 ## See it in action!
 
+- [Arcademy](https://arcademy.arweave.dev/#/AtomicPlayground/xMVuQ5BKy__EccnMu0Ji_0rPk3f6yCtIRdHwvjSweB4)
 - [Youtube](https://youtu.be/T6wJ3m5ABSU)
