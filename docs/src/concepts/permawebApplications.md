@@ -45,8 +45,8 @@ By leveraging modern web application frameworks and the [Path Manifest](./manife
 
 To learn more about creating and deploying Permaweb Apps, check out our starter kits in your favorite framework:
 
-* [React](../kits/react.md)
-* [Svelte](../kits/svelte.md)
+* [React](../kits/react/index.md)
+* [Svelte](../kits/svelte/index.md)
 
 ::: tip Missing my framework?
 Can't find your framework, why don't you contribute? [How to contribute to the cookbook](../getting-started/contributing.md)
