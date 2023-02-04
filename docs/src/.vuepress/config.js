@@ -175,7 +175,12 @@ module.exports = {
             children: [{
               text: 'Server Side',
               link: '/guides/dns-integration/server-side'
-            }]
+            },
+            {
+              text: 'Spheron',
+              link: '/guides/dns-integration/spheron'
+            }
+            ]
           },
           {
             text: 'HTTP API',
