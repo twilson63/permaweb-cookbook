@@ -55,7 +55,12 @@ module.exports = {
         }, {
           text: 'Hello World (CLI)',
           link: '/getting-started/quick-starts/hw-cli'
-        }, {
+        },
+        {
+          text: 'Hello World (With Code)',
+          link: '/getting-started/quick-starts/hw-code'
+        },
+        {
           text: 'Contributing',
           link: '/getting-started/contributing'
         }]
@@ -312,6 +317,6 @@ module.exports = {
     '@vuepress/plugin-medium-zoom',
     containerPlugin({
       type: 'info'
-    })
+    }),
   ]
 }
