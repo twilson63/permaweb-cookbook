@@ -75,6 +75,10 @@ module.exports = {
             link: '/concepts/atomic-tokens'
           },
           {
+              text: 'Bundles and Bundling',
+              link: '/concepts/bundles'
+          },
+          {
             text: 'Path Manifests',
             link: '/concepts/manifests'
           },
