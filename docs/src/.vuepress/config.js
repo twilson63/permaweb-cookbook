@@ -25,7 +25,8 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap' }]
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap' }],
+    ['script', { src: 'https://ackee-l09o.onrender.com/tracker.js', async: true, 'data-ackee-domain-id': 'a6bf4de4-a529-452d-a611-6296c8af1b58' }]
   ],
   markdown: {
     code: {
@@ -75,8 +76,8 @@ module.exports = {
             link: '/concepts/atomic-tokens'
           },
           {
-              text: 'Bundles and Bundling',
-              link: '/concepts/bundles'
+            text: 'Bundles and Bundling',
+            link: '/concepts/bundles'
           },
           {
             text: 'Path Manifests',
