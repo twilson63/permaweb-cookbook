@@ -28,3 +28,15 @@ to sign transactions and/or recover your wallet.
 
 Your private key must be kept confidential at all times as it has the ability to transfer funds from your wallet. As a developer,
 make sure not to include your keyfile in any public GitHub repositories or host it anywhere else publicly.
+
+### Wallets
+[Arweave.app](https://arweave.app/welcome) - Arweave web wallet to deploy permanent data, connect your accounts securely to decentralized applications, and navigate the weave.
+
+[ArConnect](https://www.arconnect.io/) - Arweave Wallet Browser Extension
+
+### Sources and Further Reading:
+[Arweave Docs](https://docs.arweave.org/developers/server/http-api#key-format)
+
+[JSON Web Key Format (RFC 7517)](https://www.rfc-editor.org/rfc/rfc7517)
+
+### Wallets
