@@ -1,7 +1,5 @@
 ---
 home: false
-pageClass: background-image
-sidebar: false
 ---
 
 <div class="home-header" style="max-width=727px;gap:32px;">

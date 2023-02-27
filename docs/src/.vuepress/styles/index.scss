@@ -1,8 +1,25 @@
+@import "bootstrap/scss/functions";
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1280px
+);
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+@import 'bootstrap/scss/bootstrap-grid';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 @media (min-width: 480px) {
-  .theme-default-content:not(.custom) {
-    min-width: 65%;
-    max-width: 65%;
-  }
 
   .home-row {
     display: flex;

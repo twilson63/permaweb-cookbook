@@ -1,8 +1,9 @@
 const { description } = require('../../package')
+
 import { defaultTheme } from '@vuepress/theme-default'
 import { containerPlugin } from '@vuepress/plugin-container'
 
-module.exports = {
+export default {
 
   base: "/",
   /**
@@ -322,8 +323,6 @@ module.exports = {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
     containerPlugin({
       type: 'info'
     }),
