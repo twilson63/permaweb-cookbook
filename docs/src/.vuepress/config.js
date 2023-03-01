@@ -2,6 +2,7 @@ const { description } = require('../../package')
 
 import { defaultTheme } from '@vuepress/theme-default'
 import { containerPlugin } from '@vuepress/plugin-container'
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 
 export default {
 
@@ -323,6 +324,9 @@ export default {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
+    mediumZoomPlugin({
+      selector: ':not(.not-zoomable)'
+    }),
     containerPlugin({
       type: 'info'
     }),

@@ -3,6 +3,7 @@ import Home from '@theme/Home.vue'
 import Navbar from '../components/Navbar.vue'
 import Page from '../components/Page.vue'
 import Sidebar from '../components/Sidebar.vue'
+import Onboarding from '../components/Onboarding.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -15,6 +16,11 @@ import {
 const page = usePageData()
 const frontmatter = usePageFrontmatter()
 const themeLocale = useThemeLocaleData()
+
+// onboardig
+const shouldShowOnboarding = computed(
+  () => frontmatter.value.onboarding === true
+)
 
 // navbar
 const shouldShowNavbar = computed(
@@ -79,23 +85,29 @@ const onBeforeLeave = scrollPromise.pending
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
-        <template #before>
-          <slot name="navbar-before" />
-        </template>
-        <template #after>
-          <slot name="navbar-after" />
-        </template>
-      </Navbar>
-    </slot>
 
-    <div class="sidebar-mask" @click="toggleSidebar(false)" />
+    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
+      <template #before>
+        <slot name="navbar-before" />
+      </template>
+      <template #after>
+        <slot name="navbar-after" />
+      </template>
+    </Navbar>
+
+    <Navbar v-if="shouldShowNavbar" class="d-md-none fixed" :fixed="true" @toggle-sidebar="toggleSidebar" />
+
+
+    <Onboarding v-if="shouldShowOnboarding" />
 
     <div class="row">
 
-      <div class="col-3">
-        <Sidebar>
+      <div class="col-12">
+        <h2 class="header" style="border: none;margin: 50px 0 25px;">Documentation.</h2>
+      </div>
+
+      <div class="col-md-3">
+        <Sidebar @close-sidebar="toggleSidebar(false)">
           <template #top>
             <slot name="sidebar-top" />
           </template>
@@ -105,7 +117,7 @@ const onBeforeLeave = scrollPromise.pending
         </Sidebar>
       </div>
 
-      <div class="col-8 offset-1">
+      <div class="col-12 col-md-9 col-lg-8 offset-lg-1">
         <slot name="page">
           <Home v-if="frontmatter.home" />
 
@@ -136,6 +148,16 @@ const onBeforeLeave = scrollPromise.pending
       
     </div>
 
-    
   </div>
 </template>
+
+<style lang="scss">
+@import "../styles/bootstrap.scss";
+
+.cookbook-theme-container {
+  @include media-breakpoint-up(md) { 
+    padding-left: var(--bs-gutter-x);
+    padding-right: var(--bs-gutter-x);
+  }
+}
+</style>

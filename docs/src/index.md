@@ -1,97 +1,39 @@
 ---
-home: false
+onboarding: true
 ---
 
-<div class="home-header" style="max-width=727px;gap:32px;">
-<div style="flex: none;width:60%">
-<h1 class="title">Build on the Permaweb</h1>
-<p class="slug">A curated collection of developer guides & more to build on the Permaweb. All in one place.</p>
-</div>
-<div class="btn-container" style="flex: 0 1 auto;">
-<a class="home-btn" href="/getting-started/welcome.html">Read Now</a>
-</div>
-</div>
-<div class="home-row">
-  <div class="home-box">
-    <div style="display: flex;justify-content: space-between;align-items: start;">
-      <img src="/hello-world.svg" alt="hello-world" />
-      <div style="margin-left: 8px;">
-        <div class="home-box-title">Hello World</div>
-        <p class="home-box-slug">Getting started with the Permaweb</p>
-      </div>
-    </div>
-    <div class="home-box-note">
-If you haven’t built on Arweave yet, this is the place to start. A great intro.
-    </div>
-    <div style="">
-      <a href="/getting-started/quick-starts/hw-no-code.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Lets Go <img src="/lets-go.svg" /></a>
-    </div>
-  </div>
-  <div class="home-box">
-    <div style="display: flex;justify-content: space-between;align-items: start;">
-      <img src="/core-concept.svg" alt="hello-world" />
-      <div style="margin-left: 8px;">
-        <div class="home-box-title">Concepts</div>
-        <p class="home-box-slug">Comprehensive building blocks for developers</p>
-      </div>
-    </div>
-    <div class="home-box-note">
-Get the lay of the land for building on arweave, this is must know stuff.
-    </div>
-    <div style="">
-      <a href="/concepts/index.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Getting Started <img src="/lets-go.svg" /></a>
-    </div>
-  </div>
-  <div class="home-box">
-    <div style="display: flex;justify-content: space-between;align-items: start;">
-      <img src="/guides.svg" alt="hello-world" />
-      <div style="margin-left: 8px;">
-        <div class="home-box-title">Guides</div>
-        <p class="home-box-slug">Specific deployments made easy</p>
-      </div>
-    </div>
-    <div class="home-box-note">
-Snack-sized guides, focused on most widely used tools for devs.
-    </div>
-    <div style="">
-      <a href="/guides/index.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Get started <img src="/lets-go.svg" /></a>
-    </div>
-  </div>
-  
-</div>
-<div  class="home-row" style="margin-top: 16px;">
-  <div class="double-box">
-    <div style="display: flex;justify-content: space-between;align-items: start;">
-      <img src="/featured.svg" alt="hello-world" />
-      <div style="margin-left: 8px;">
-        <div class="home-box-title">Featured Contributor</div>
-        <p class="home-box-slug">The resources are created by and for the Arweave Community.</p>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:start;gap:16px;align-items: center;">
-      <img style="border-radius: 999px;" src="https://avatars.githubusercontent.com/u/85306700?s=60&v=4" alt="avatar" />
-      <div style="display:flex;flex-direction: column; gap: 8px">
-        <div class="double-box-feature-user">atticusofsparta</div>
-        <div class="double-box-feature-text" >Expanding the frontier of decentralization</div>
-      </div>
-    </div>
-    <div style="">
-      <a target="_blank" href="https://github.com/twilson63/permaweb-cookbook/graphs/contributors" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">See all contributors <img src="/lets-go.svg" /></a>
-    </div>
-  </div>
-  <div class="home-box">
-    <div style="display: flex;justify-content: space-between;align-items: start;">
-      <img src="/contribute.svg" alt="hello-world" />
-      <div style="margin-left: 8px;">
-        <div class="home-box-title">Contribute</div>
-        <p class="home-box-slug">Share your knowledge</p>
-      </div>
-    </div>
-    <div class="home-box-note">
-This is a grassroots project to make it easy to build on Arweave. Add to the knowledge base via github.
-    </div>
-    <div style="">
-      <a href="/getting-started/contributing.html" style="display:flex;gap:8px;font-family: Inter; font-size: 14px; font-weight: 400;color: #0E7CFF;">Github repo here I come <img src="/lets-go.svg" /></a>
-    </div>
-  </div>
-  </div>
+# Cooking with the Permaweb
+
+The Permaweb Cookbook is a developer resource that provides the essential concepts and references for buiding applications on the Permaweb. Each concept and reference will focus on specific aspects of the Permaweb development ecosystem while providing additional details and usage examples.
+
+## Developers
+
+Welcome to the Arweave development community, where the past is forever etched in the blockchain and the future is full of endless possibilities. Let's build the decentralized web together!
+
+[Read More](welcome.md)
+
+## Contributing
+
+The Cookbook is designed in a way that makes it easy for new Permaweb developers to contribute. Even if you don't know how to do something, contributing to the cookbook is a great way to learn!
+
+Check out all open issues here. Contribution guidelines here. if you find the cookbook is missing a concept, guide or reference, please add an issue.
+
+[Read More](contributing.md)
+
+
+## How to Read the Cookbook
+
+The Permaweb Cookbook is split into different sections, each aimed at a different goal.
+
+| Section | Description |
+| ------- | ----------- |
+| Core Concepts | Building blocks of the Permaweb that are good to know for development |
+| Guides | Snack-sized guides about different tools for development |
+| References | References to commonly needed code snippets | 
+| Starter Kits | Front-end Framework Starters to get you started building on the Permaweb in no time | 
+
+## Quick Starts
+
+These are small guides to help developers from every experience level to ship code the the permaweb.
+
+- [Hello World (No Code)](quick-starts/hw-no-code.md)

@@ -1,22 +1,93 @@
-@import "bootstrap/scss/functions";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans&display=swap');
 
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1280px
-);
-
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
-
+@import "./bootstrap.scss";
 @import 'bootstrap/scss/bootstrap-grid';
+
+// theme variables
+:root {
+  --font-family: Work Sans,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  --font-family-alt: Roboto Mono,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+
+  --c-brand: #ff5f15;
+  --c-text: #242424;
+  --c-bg: #f2f2f2;
+  --c-bg-rgb: 242, 242, 242;
+  --c-card-bg: #E7E7E7;
+  --c-card-border-color: #CBCBCB;
+  --c-card-shadow-inset: inset 0px 2px 0px rgba(255, 255, 255, 0.5);
+}
+
+html.dark {
+  --c-brand: #ff5f15;
+  --c-text: #ffffff;
+  --c-bg: #242424;
+  --c-bg-rgb: 36, 36, 36;
+  --c-card-bg: rgba(255,255,255,.08);
+  --c-card-border-color: rgba(35, 35, 35, 0.5);
+  --c-card-shadow-inset: inset 0px 1px 0px rgba(225, 199, 184, 0.15);
+}
+
+html {
+  @include media-breakpoint-down(lg) {
+    font-size: 14px;
+  }
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+.text-fill {
+  fill: var(--c-text);
+}
+
+.text-stroke {
+  stroke: var(--c-text);
+}
+
+.hero-title {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+
+  font-size: 3.5rem;
+  line-height: 4.6rem;
+  letter-spacing: -0.05em;
+}
+
+.hero-body-text {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  letter-spacing: -0.025em;
+}
+
+.header {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  letter-spacing: -0.05em;
+}
+
+.title {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+
+  font-size: 1.75rem;
+  line-height: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.body-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+.subtext {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: -0.025em;
 }
 
 @media (min-width: 480px) {
@@ -44,12 +115,6 @@ $container-max-widths: (
     justify-content: space-between;
   }
 
-  .title {
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 40px;
-  }
-
   .slug {
     font-family: Inter;
     font-weight: 400;
@@ -64,12 +129,6 @@ $container-max-widths: (
 
 // mobile
 @media (max-width: 480px) {
-  .title {
-    font-family: Inter;
-    font-weight: 700;
-    font-size: 20px;
-  }
-
   .slug {
     font-family: Inter;
     font-weight: 300;

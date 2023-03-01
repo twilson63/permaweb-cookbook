@@ -1167,7 +1167,7 @@
     "@vuepress/utils" "2.0.0-beta.61"
     execa "^7.0.0"
 
-"@vuepress/plugin-medium-zoom@2.0.0-beta.61":
+"@vuepress/plugin-medium-zoom@2.0.0-beta.61", "@vuepress/plugin-medium-zoom@^2.0.0-beta.61":
   version "2.0.0-beta.61"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-medium-zoom/-/plugin-medium-zoom-2.0.0-beta.61.tgz#14dba3228b9b50ef1b170a8a1c94d858a7d2331f"
   integrity sha512-mFY2vHXeqC8dizFVlFO7HIzirb79Z8sudKWPVfZmq0Qmlttyhxlns8GjrsPQl1mnz2NlYUY1ztUasikPwsYjAw==

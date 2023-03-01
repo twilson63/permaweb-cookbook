@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@vuepress/plugin-container": "^2.0.0-beta.8",
+    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.61",
     "bootstrap": "5.2.3"
   }
 }
