@@ -1,6 +1,4 @@
-# Arweave HTTP API
-
-## Fetching Data
+# Fetching Transaction Data
 The Arweave protocol is based on HTTP. This allows developers to leverage the API to retrieve data from transactions, wallets, the network itself, and more.
 
 Any existing HTTP clients/libraries can be used to interface with the network, for example Axios or Fetch for JavaScript, Guzzle for PHP, etc. Requests and queries can be sent to any Arweave node directly using their IP address, for example `http://159.65.213.43:1984/info`

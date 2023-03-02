@@ -72,10 +72,6 @@ module.exports = {
         collapsible: true,
         children: [
           {
-            text: 'Atomic Tokens',
-            link: '/concepts/atomic-tokens'
-          },
-          {
             text: 'Bundles and Bundling',
             link: '/concepts/bundles'
           },
@@ -89,14 +85,44 @@ module.exports = {
           },
           {
             text: 'Permaweb',
-            link: '/concepts/permaweb'
+            link: '/concepts/permaweb',
+            collapsible: true,
+            children: [
+              {
+                text: 'Permaweb Applications',
+                link: '/concepts/permawebApplications',
+              }
+            ]
           },
           {
-            text: 'Permaweb Applications',
-            link: '/concepts/permawebApplications'
+            text: 'SmartWeave',
+            link: '/concepts/smartweave',
+            collapsible: true,
+            children: [
+              {
+                text: 'Arweave Name System (ArNS)',
+                link: '/concepts/arns'
+              },
+              {
+                text: 'Atomic Assets',
+                link: '/concepts/atomic-tokens.md'
+              },
+              {
+                text: 'Profit Sharing Tokens (PSTs)',
+                link: '/concepts/psts'
+              },
+              {
+                text: 'Vouch',
+                link: '/concepts/vouch'
+              }
+            ]
           },
           {
-            text: `Posting Transactions`,
+            text: `Transaction Data`,
+            link: `/guides/http-api.md`,
+          },
+          {
+            text: `Transaction Posting`,
             link: `/concepts/post-transactions`,
             collapsible: true,
             children: [
@@ -115,35 +141,12 @@ module.exports = {
             ]
           },
           {
-            text: `Querying Transactions`,
+            text: `Transaction Querying`,
             link: `/concepts/queryTransactions`
-          },
-          {
-            text: 'SmartWeave',
-            link: '/concepts/smartweave',
-            collapsible: true,
-            children: [
-              {
-                text: 'Arweave Name System (ArNS)',
-                link: '/concepts/arns'
-              },
-              {
-                text: 'Atomic Assets',
-                link: '/concepts/atomic-assets.md'
-              },
-              {
-                text: 'Profit Sharing Tokens (PSTs)',
-                link: '/concepts/psts'
-              }
-            ]
           },
           {
             text: 'Transaction Tags',
             link: '/concepts/tags'
-          },
-          {
-            text: 'Vouch',
-            link: '/concepts/vouch'
           }
         ]
       },
@@ -157,11 +160,20 @@ module.exports = {
             link: '/guides/arprofile'
           },
           {
-            text: 'Atomic Tokens',
-            link: '/guides/atomic-tokens/intro'
+            text: 'DNS Integration',
+            collapsible: true,
+            children: [{
+              text: 'Server Side',
+              link: '/guides/dns-integration/server-side'
+            },
+            {
+              text: 'Spheron',
+              link: '/guides/dns-integration/spheron'
+            }
+            ]
           },
           {
-            text: `App Deployment`,
+            text: `Deploying Apps`,
             collapsible: true,
             children: [
               {
@@ -179,34 +191,7 @@ module.exports = {
             ]
           },
           {
-            text: 'Deploying PSTs',
-            collapsible: false,
-            link: '/guides/deploying-psts'
-          },
-          {
-            text: 'DNS Integration',
-            collapsible: true,
-            children: [{
-              text: 'Server Side',
-              link: '/guides/dns-integration/server-side'
-            },
-            {
-              text: 'Spheron',
-              link: '/guides/dns-integration/spheron'
-            }
-            ]
-          },
-          {
-            text: 'HTTP API',
-            collapsible: false,
-            link: '/guides/http-api'
-          },
-          {
-            text: `Posting Transactions`,
-            link: `/guides/posting-transactions`
-          },
-          {
-            text: `Deploying Path Manifests`,
+            text: `Deploying PathManifests`,
             link: "/guides/deploying-manifests/deployingManifests",
             collapsible: true,
             children: [
@@ -225,7 +210,12 @@ module.exports = {
             ]
           },
           {
-            text: "Querying Arweave",
+            text: 'Deploying PSTs',
+            collapsible: false,
+            link: '/guides/deploying-psts'
+          },
+          {
+            text: "GraphQL",
             link: "/guides/querying-arweave/queryingArweave",
             collapsible: true,
             children: [
@@ -244,7 +234,15 @@ module.exports = {
             collapsible: true,
             children: [
               {
-                text: 'warp',
+                text: 'Atomic Tokens',
+                link: '/guides/atomic-tokens/intro'
+              },
+              {
+                text: 'Vouch',
+                link: '/guides/vouch'
+              },
+              {
+                text: 'Warp',
                 collapsible: false,
                 children: [{
                   text: 'Intro',
@@ -275,11 +273,6 @@ module.exports = {
                 link: '/guides/testing/arlocal'
               }
             ]
-          },
-          {
-            text: 'Vouch',
-            collapsible: false,
-            link: '/guides/vouch'
           }
         ]
 
