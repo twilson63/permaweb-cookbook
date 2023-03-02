@@ -10,7 +10,7 @@ The Permaweb Cookbook is a developer resource that provides the essential concep
 
 Welcome to the Arweave development community, where the past is forever etched in the blockchain and the future is full of endless possibilities. Let's build the decentralized web together!
 
-[Read More](welcome.md)
+[Read More](getting-started/welcome.md)
 
 ## Contributing
 
@@ -18,7 +18,7 @@ The Cookbook is designed in a way that makes it easy for new Permaweb developers
 
 Check out all open issues here. Contribution guidelines here. if you find the cookbook is missing a concept, guide or reference, please add an issue.
 
-[Read More](contributing.md)
+[Read More](getting-started/contributing.md)
 
 
 ## How to Read the Cookbook
@@ -36,4 +36,4 @@ The Permaweb Cookbook is split into different sections, each aimed at a differen
 
 These are small guides to help developers from every experience level to ship code the the permaweb.
 
-- [Hello World (No Code)](quick-starts/hw-no-code.md)
+- [Hello World (No Code)](getting-started/quick-starts/hw-no-code.md)

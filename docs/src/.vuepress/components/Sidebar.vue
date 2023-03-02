@@ -27,7 +27,6 @@ export default {
     }
 
     .cookbook-sidebar {
-      transition: transform .3s;
       transform: translateX(0);
     }
   }
@@ -67,6 +66,7 @@ export default {
     padding-top: 70px;
     background: var(--c-bg);
 
+    transition: transform .3s;
     transform: translateX(-100%);
   }
 
@@ -81,12 +81,13 @@ export default {
 
     }
 
-    .sidebar-item {
-      padding: 0.35rem 0;
+    .sidebar-item:not(p.collapsible):not(.sidebar-heading) {
+      padding: 0.35rem 0 !important;
     }
 
     .sidebar-item.sidebar-heading {
       padding: 0.5rem 0;
+      display: block;
     }
 
     .sidebar-item.active:not(p.sidebar-heading) {
