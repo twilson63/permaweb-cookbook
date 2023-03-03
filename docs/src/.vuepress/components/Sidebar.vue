@@ -1,5 +1,5 @@
 <script setup>
-// import NavbarItems from '@theme/NavbarItems.vue'
+import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue'
 import SidebarItems from '@theme/SidebarItems.vue'
 </script>
 
@@ -12,6 +12,8 @@ export default {
 <template>
   <aside class="cookbook-sidebar">
     <SidebarItems />
+
+    <ToggleColorModeButton class="d-block d-md-none" style="margin: 16px 0 0 auto;font-size: 0;" />
   </aside>
   <div @click="$emit('close-sidebar')" class="cookbook-sidebar-overlay"></div>
 </template>
