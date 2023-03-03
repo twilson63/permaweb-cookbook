@@ -65,7 +65,7 @@
             <p class="body-text">Getting started with the Permaweb</p>
           </div>
 
-          <RouterLink style="color: #397BC5;" class="body-text card-action" to="/">Go to Docs</RouterLink>
+          <RouterLink style="color: #397BC5;" class="body-text card-action" to="/">Let's Go</RouterLink>
         </div>
       </div>
       
@@ -80,7 +80,7 @@
             <p class="body-text">Comprehensive building blocks for developers</p>
           </div>
 
-          <RouterLink style="color: #DDB44A;" class="body-text card-action" to="/">Go to Docs</RouterLink>
+          <RouterLink style="color: #DDB44A;" class="body-text card-action" to="/">Get Started</RouterLink>
         </div>
       </div>
 
@@ -95,7 +95,7 @@
             <p class="body-text">Specific deployments made easy</p>
           </div>
 
-          <RouterLink style="color: #3DA36B;" class="body-text card-action" to="/">Go to Docs</RouterLink>
+          <RouterLink style="color: #3DA36B;" class="body-text card-action" to="/">Get Started</RouterLink>
         </div>
       </div>
 
@@ -110,7 +110,7 @@
             <p class="body-text">Share your knowledge</p>
           </div>
 
-          <RouterLink style="color: #AB54D3;" class="body-text card-action" to="/">Go to Docs</RouterLink>
+          <a target="_blank" href="https://github.com/twilson63/permaweb-cookbook" style="color: #AB54D3;" class="body-text card-action" to="/">Go to Github repo</a>
         </div>
       </div>
     </div>

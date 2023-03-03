@@ -59,11 +59,10 @@ export default {
     
     position: fixed;
     left: 0;
-    top: 0;
+    top: var(--navbar-height);
     bottom: 0;
 
     padding: 24px;
-    padding-top: 70px;
     background: var(--c-bg);
 
     transition: transform .3s;

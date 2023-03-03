@@ -24,6 +24,8 @@ import PageNav from '@theme/PageNav.vue'
 <style lang="scss">
 .cookbook-content {
 
+  padding-bottom: 1rem;
+
   img {
     max-width: 100%;
   }
@@ -51,6 +53,10 @@ import PageNav from '@theme/PageNav.vue'
     margin-top: calc(0rem - var(--navbar-height));
     padding-top: calc(1rem + var(--navbar-height));
     margin-bottom: 0;
+  }
+
+  .page-meta, .page-nav {
+    padding: 1rem 0;
   }
 }
 </style>

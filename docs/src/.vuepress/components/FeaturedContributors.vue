@@ -6,10 +6,12 @@
     </div>
 
     <div class="bottom">
-      <div v-for="contributor in contributors" class="contributor" :style="{'transform': `translatex(${-(current * 100)}%)`}">
-        <div class="avatar" :style="{'background-image': `url('${contributor.avatar_url}')`}"></div>
-        <div class="contributor-detail">
-          <p class="subtext">{{ contributor.login }}</p>
+      <div class="bottom-inner" :style="{'transform': `translateX(${-(current * 100)}%)`}">
+        <div v-for="contributor in contributors" class="contributor">
+          <div class="avatar" :style="{'background-image': `url('${contributor.avatar_url}')`}"></div>
+          <div class="contributor-detail">
+            <a target="_blank" :href="contributor.html_url" class="subtext">{{ contributor.login }}</a>
+          </div>
         </div>
       </div>
     </div>
@@ -35,10 +37,12 @@ export default {
   },
   mounted() {
     fetch("https://api.github.com/repos/twilson63/permaweb-cookbook/contributors?q=contributions&order=desc")
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) return res.json();
+        else return [];
+      })
       .then(result => {
         this.contributors = result;
-
         setInterval(this.nextContributor, 3000);
       })
   }
@@ -60,7 +64,12 @@ export default {
 
   .bottom {
     overflow: hidden;
+  }
+
+  .bottom-inner {
+    width: 100%;
     white-space: nowrap;
+    transition: transform .3s;
   }
 
   .contributor {
@@ -69,8 +78,6 @@ export default {
 
     display: inline-flex;
     align-items: center;
-
-    transition: transform .3s;
   }
 
   .avatar {
