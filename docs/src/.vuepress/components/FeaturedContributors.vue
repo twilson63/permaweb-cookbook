@@ -69,7 +69,7 @@ export default {
   .bottom-inner {
     width: 100%;
     white-space: nowrap;
-    transition: transform .3s;
+    transition: transform .6s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   .contributor {
