@@ -1,8 +1,5 @@
 <script setup>
 import Home from '@theme/Home.vue'
-// import Navbar from '@theme/Navbar.vue'
-// import Page from '@theme/Page.vue'
-// import Sidebar from '@theme/Sidebar.vue'
 import Navbar from '../components/Navbar.vue'
 import Page from '../components/Page.vue'
 import Sidebar from '../components/Sidebar.vue'
@@ -14,7 +11,7 @@ import {
   useScrollPromise,
   useSidebarItems,
   useThemeLocaleData,
-} from '@vuepress/theme-default'
+} from '@vuepress/theme-default/lib/client/composables/index.js'
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter()
