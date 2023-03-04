@@ -16,13 +16,13 @@
   "license": "MIT",
   "devDependencies": {
     "@bundlr-network/client": "^0.9.11",
-    "@vuepress/plugin-container": "2.0.0-beta.8",
-    "@vuepress/plugin-medium-zoom": "next",
     "arweave": "^1.11.8",
-    "vuepress": "next",
     "warp-contracts": "^1.2.37"
   },
   "dependencies": {
+    "@vuepress/plugin-container": "^2.0.0-beta.8",
+    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.61",
+    "vuepress": "^2.0.0-beta.59",
     "bootstrap": "5.2.3"
   }
 }
