@@ -1,4 +1,4 @@
-const { description } = require('../../package')
+import { description } from '../../package'
 
 import { defaultTheme } from '@vuepress/theme-default'
 import { containerPlugin } from '@vuepress/plugin-container'
@@ -30,6 +30,7 @@ export default {
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap' }],
     ['script', { defer: true, src: 'https://ackee-l09o.onrender.com/tracker.js', 'data-ackee-server': 'https://ackee-l09o.onrender.com', async: true, 'data-ackee-domain-id': 'a6bf4de4-a529-452d-a611-6296c8af1b58' }],
   ],
+
   markdown: {
     code: {
       lineNumbers: false
@@ -314,7 +315,7 @@ export default {
   }),
 
   /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   * Apply plugins
    */
   plugins: [
     mediumZoomPlugin({

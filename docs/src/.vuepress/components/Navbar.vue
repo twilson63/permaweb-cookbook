@@ -1,7 +1,7 @@
 <script setup>
 import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue'
-import ToggleSidebarButton from './ToggleSidebarButton.vue'
-import { computed, onMounted, ref } from 'vue'
+import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue'
+import { ref } from 'vue'
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js'
 defineEmits(['toggle-sidebar'])
 const themeLocale = useThemeLocaleData()
