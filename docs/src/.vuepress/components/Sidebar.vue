@@ -87,7 +87,7 @@ export default {
     }
 
     .sidebar-item:not(.sidebar-heading) {
-      padding: 0.35rem 0 !important;
+      padding: .35rem 0 .35rem 1rem !important
     }
 
     .sidebar-item.sidebar-heading {
