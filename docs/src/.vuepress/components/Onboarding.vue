@@ -11,7 +11,7 @@
           </p>
           <RouterLink
             class="hero-body-text"
-            :to="'/getting-started/'">
+            to="/getting-started/">
             Get Started
           </RouterLink>
         </div>
