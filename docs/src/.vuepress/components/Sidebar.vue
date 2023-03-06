@@ -72,17 +72,21 @@ export default {
   }
 
   .sidebar-items {
-    text-align: right;
+    text-align: left;
 
     .sidebar-item-children {
 
       .sidebar-item:not(.active) {
-        opacity: 0.5;
+        opacity: 0.68;
       }
 
     }
 
-    .sidebar-item:not(p.collapsible):not(.sidebar-heading) {
+    .sidebar-item {
+      border: none;
+    }
+
+    .sidebar-item:not(.sidebar-heading) {
       padding: 0.35rem 0 !important;
     }
 

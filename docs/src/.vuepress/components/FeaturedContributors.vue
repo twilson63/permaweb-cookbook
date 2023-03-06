@@ -43,7 +43,7 @@ export default {
       })
       .then(result => {
         this.contributors = result;
-        setInterval(this.nextContributor, 3000);
+        setInterval(this.nextContributor, 4000);
       })
   }
 }
@@ -67,13 +67,15 @@ export default {
   }
 
   .bottom-inner {
+    font-size: 0px;
     width: 100%;
     white-space: nowrap;
     transition: transform .6s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   .contributor {
-    font-size: 0;
+    padding: 0 4px;
+    font-size: 0px;
     width: 100%;
 
     display: inline-flex;

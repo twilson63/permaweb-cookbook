@@ -55,7 +55,7 @@
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <div class="onboard-card">
+        <RouterLink to="/getting-started/quick-starts/hw-no-code" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon hello_world"></div>
@@ -65,12 +65,12 @@
             <p class="body-text">Getting started with the Permaweb</p>
           </div>
 
-          <RouterLink style="color: #397BC5;" class="body-text card-action" to="/">Let's Go</RouterLink>
-        </div>
+          <span style="color: #397BC5;" class="body-text card-action">Let's Go</span>
+        </RouterLink>
       </div>
       
       <div class="col-12 col-md-6 col-xl-3">
-        <div class="onboard-card">
+        <RouterLink to="/concepts" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon key"></div>
@@ -80,12 +80,12 @@
             <p class="body-text">Comprehensive building blocks for developers</p>
           </div>
 
-          <RouterLink style="color: #DDB44A;" class="body-text card-action" to="/">Get Started</RouterLink>
-        </div>
+          <span style="color: #DDB44A;" class="body-text card-action">Get Started</span>
+        </RouterLink>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <div class="onboard-card">
+        <RouterLink to="/guides" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon guides"></div>
@@ -95,12 +95,12 @@
             <p class="body-text">Specific deployments made easy</p>
           </div>
 
-          <RouterLink style="color: #3DA36B;" class="body-text card-action" to="/">Get Started</RouterLink>
-        </div>
+          <span style="color: #3DA36B;" class="body-text card-action">Get Started</span>
+        </RouterLink>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <div class="onboard-card">
+        <a target="_blank" href="https://github.com/twilson63/permaweb-cookbook" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon code"></div>
@@ -110,8 +110,8 @@
             <p class="body-text">Share your knowledge</p>
           </div>
 
-          <a target="_blank" href="https://github.com/twilson63/permaweb-cookbook" style="color: #AB54D3;" class="body-text card-action" to="/">Go to Github repo</a>
-        </div>
+          <span style="color: #AB54D3;" class="body-text card-action">Go to Github repo</span>
+        </a>
       </div>
     </div>
   </div>
@@ -153,7 +153,7 @@ import FeaturedContributors from './FeaturedContributors.vue';
   }
 
   .hero {
-    margin-bottom: 150px;
+    margin-bottom: 110px;
   }
 
   .header {
@@ -205,10 +205,14 @@ import FeaturedContributors from './FeaturedContributors.vue';
   }
 
   .onboard-card {
+    text-decoration: none;
+
     flex: 1;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
+
+    transition: .18s all;
     
     background: var(--c-card-bg);
     border: 1px solid var(--c-card-border-color);
@@ -218,6 +222,11 @@ import FeaturedContributors from './FeaturedContributors.vue';
     padding: 36px 24px 24px;
 
     margin-bottom: var(--bs-gutter-x);
+
+    &:hover {
+      transform: scale(1.02);
+      background: var(--c-card-hover-bg);
+    }
 
     .icon-container {
       margin-bottom: 30px;
@@ -246,8 +255,6 @@ import FeaturedContributors from './FeaturedContributors.vue';
         background-image: url('/code.png');
       }
     }
-
-    
 
     .card-content {
       .title {

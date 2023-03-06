@@ -117,7 +117,7 @@ const onBeforeLeave = scrollPromise.pending
         </Sidebar>
       </div>
 
-      <div class="col-12 col-md-9 col-lg-8 offset-lg-1">
+      <div class="col-12 col-md-9">
         <slot name="page">
           <Home v-if="frontmatter.home" />
 
