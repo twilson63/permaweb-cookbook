@@ -2,7 +2,7 @@
   <div v-if="contributors.length > 0" class="featured-contributor">
     <div class="top">
       <p class="subtext">Featured Contributor</p>
-      <a class="subtext" href="javascript: void(0);">See all contributors</a>
+      <a class="subtext" target="_blank" href="https://github.com/twilson63/permaweb-cookbook/graphs/contributors">See all contributors</a>
     </div>
 
     <div class="bottom">

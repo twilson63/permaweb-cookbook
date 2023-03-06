@@ -103,7 +103,7 @@ const onBeforeLeave = scrollPromise.pending
     <div class="row">
 
       <div class="col-12">
-        <h2 class="header" style="border: none;margin: 50px 0 25px;">Documentation.</h2>
+        <h2 id="documentation" class="header" style="border: none;padding-top: 30px;margin: 20px 0 25px;">Documentation.</h2>
       </div>
 
       <div class="col-md-3">
