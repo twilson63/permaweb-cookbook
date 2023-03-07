@@ -1,5 +1,6 @@
 <script setup>
 import Home from '@theme/Home.vue'
+import Topbar from '../components/Topbar.vue'
 import Navbar from '../components/Navbar.vue'
 import Page from '../components/Page.vue'
 import Sidebar from '../components/Sidebar.vue'
@@ -79,13 +80,14 @@ const onBeforeLeave = scrollPromise.pending
 </script>
 
 <template>
+  <Topbar />
   <div
     class="cookbook-theme-container container-xxl"
     :class="containerClass"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-
+  
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
       <template #before>
         <slot name="navbar-before" />
@@ -96,7 +98,6 @@ const onBeforeLeave = scrollPromise.pending
     </Navbar>
 
     <Navbar v-if="shouldShowNavbar" class="d-md-none fixed" :fixed="true" @toggle-sidebar="toggleSidebar" />
-
 
     <Onboarding v-if="shouldShowOnboarding" />
 
@@ -145,8 +146,9 @@ const onBeforeLeave = scrollPromise.pending
           </Transition>
         </slot>
       </div>
-      
     </div>
+
+    <p class="footer-text"><span>Built with</span> <span class="heart">&#10084;&#65039;</span> <span>by the Arweave community. Learn more at</span> <a target="_blank" href="https://arweave.org">Arweave.org</a></p>
 
   </div>
 </template>
@@ -158,6 +160,16 @@ const onBeforeLeave = scrollPromise.pending
   @include media-breakpoint-up(md) { 
     padding-left: var(--bs-gutter-x);
     padding-right: var(--bs-gutter-x);
+  }
+
+  .footer-text {
+    margin: var(--bs-gutter-x) 0 calc(var(--bs-gutter-x) * 0.5);
+    text-align: center;
+    color: var(--c-text);
+
+    *:not(.heart):not(a) {
+      opacity: 0.3;
+    }
   }
 }
 </style>

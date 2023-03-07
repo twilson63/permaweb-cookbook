@@ -78,7 +78,7 @@
               <div class="icon key"></div>
             </div>
 
-            <h2 class="title">Concept</h2>
+            <h2 class="title">Core Concept</h2>
             <p class="body-text">Comprehensive building blocks for developers</p>
           </div>
 
