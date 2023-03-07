@@ -80,6 +80,10 @@ module.exports = {
             link: '/concepts/bundles'
           },
           {
+            text: 'Gateways',
+            link: '/concepts/gateways'
+          },
+          {
             text: 'Keyfiles and Wallets',
             link: '/concepts/keyfiles-and-wallets'
           },
