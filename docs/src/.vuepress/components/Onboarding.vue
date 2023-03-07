@@ -241,19 +241,19 @@ import FeaturedContributors from './FeaturedContributors.vue';
       }
 
       .icon.hello_world {
-        background-image: url('/hello_world.png');
+        background-image: url('https://arweave.net/yDLNl01wdFyTLpA2Ye1HvEO06YDoIP54s1KfVOLUpV8');
       }
 
       .icon.key {
-        background-image: url('/key.png');
+        background-image: url('https://arweave.net/oC6qhjx68j12tnCXnzRZYRvlmNJnoT5ClsNV78NauqI');
       }
 
       .icon.guides {
-        background-image: url('/guides.png');
+        background-image: url('https://arweave.net/72gHKRr0PCvNtQSFLb6P2y8zKjuKxeY1TJUcZarl2vI');
       }
 
       .icon.code {
-        background-image: url('/code.png');
+        background-image: url('https://arweave.net/5AEQQ8_j-gEoJziYRSPJgaYBXTHNKI8Z8mmnTUyUk3M');
       }
     }
 
