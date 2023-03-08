@@ -8,13 +8,14 @@
 .topbar {
   background: var(--c-topbar-bg);
   text-align: center;
-  padding: 15px 0;
+  padding: 15px;
 
   p {
     line-height: 1.35rem;
     margin: 0;
 
     .action {
+      white-space: nowrap;
       text-decoration: underline;
       margin-left: 15px;
     }
