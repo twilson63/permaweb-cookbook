@@ -6,6 +6,8 @@
 
 <style lang="scss">
 .topbar {
+  position: relative;
+  z-index: 12;
   background: var(--c-topbar-bg);
   text-align: center;
   padding: 15px;
