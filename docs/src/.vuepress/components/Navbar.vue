@@ -74,14 +74,14 @@ const navbar = ref(null)
   }
 
   &.fixed {
-    z-index: 1000;
+    z-index: 11;
 
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
 
-    padding: calc(0.5 * var(--bs-gutter-x));
+    padding: calc(0.5 * var(--bs-gutter-x)) 0;
 
     border-bottom: 1px solid var(--c-bg);
     background-color: rgba(var(--c-bg-rgb), 0.6);

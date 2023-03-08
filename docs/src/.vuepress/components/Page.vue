@@ -48,7 +48,6 @@ import PageNav from '@theme/PageNav.vue'
     -moz-osx-font-smoothing: auto;
   }
 
-
   h1, h2, h3, h4, h5, h6 {
     margin-top: calc(0rem - var(--navbar-height));
     padding-top: calc(1rem + var(--navbar-height));
@@ -57,6 +56,20 @@ import PageNav from '@theme/PageNav.vue'
 
   .page-meta, .page-nav {
     padding: 1rem 0;
+  }
+
+  @media (max-width: 419px){
+
+    div[class*=language-] {
+      margin: 0.85rem calc(var(--bs-gutter-x) * -0.5);
+      border-radius: 0;
+    }
+
+    .code-group__nav {
+      margin-left: calc(var(--bs-gutter-x) * -0.5);
+      margin-right: calc(var(--bs-gutter-x) * -0.5);
+    }
+
   }
 }
 </style>

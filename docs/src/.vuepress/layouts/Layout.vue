@@ -88,7 +88,7 @@ const onBeforeLeave = scrollPromise.pending
     @touchend="onTouchEnd"
   >
   
-    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
+    <Navbar v-if="shouldShowNavbar" class="d-none d-md-flex" @toggle-sidebar="toggleSidebar">
       <template #before>
         <slot name="navbar-before" />
       </template>
