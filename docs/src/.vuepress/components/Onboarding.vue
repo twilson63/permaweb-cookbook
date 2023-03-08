@@ -130,7 +130,7 @@ import FeaturedContributors from './FeaturedContributors.vue';
   padding: 150px 0 60px;
 
   @include media-breakpoint-down(md) { 
-    padding: 60px 0;
+    padding: 30px 0;
   }
 
   @include media-breakpoint-down(lg) {
