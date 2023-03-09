@@ -1,8 +1,10 @@
-const { description } = require('../../package')
+import { description } from '../../package'
+
 import { defaultTheme } from '@vuepress/theme-default'
 import { containerPlugin } from '@vuepress/plugin-container'
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 
-module.exports = {
+export default {
 
   base: "/",
   /**
@@ -20,14 +22,15 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ['meta', { name: 'theme-color', content: '#663399' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "http://arweave.net/DCn3QJ7zzqsFNiqMj7XdQZKyZz73NaXybf_V4wlpMTI"}],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap' }],
     ['script', { defer: true, src: 'https://ackee-l09o.onrender.com/tracker.js', 'data-ackee-server': 'https://ackee-l09o.onrender.com', async: true, 'data-ackee-domain-id': 'a6bf4de4-a529-452d-a611-6296c8af1b58' }],
   ],
+
   markdown: {
     code: {
       lineNumbers: false
@@ -35,13 +38,6 @@ module.exports = {
   },
 
   theme: defaultTheme({
-    navbar: [
-      { text: 'GitHub', link: 'https://github.com/twilson63/permaweb-cookbook' },
-      {
-        text: 'Starter Kits',
-        link: '/kits/'
-      }
-    ],
     sidebar: [
       {
         text: 'Getting Started',
@@ -323,11 +319,12 @@ module.exports = {
   }),
 
   /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   * Apply plugins
    */
   plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
+    mediumZoomPlugin({
+      selector: ':not(.not-zoomable)'
+    }),
     containerPlugin({
       type: 'info'
     }),
