@@ -97,14 +97,14 @@ module.exports = {
           {
             text: 'SmartWeave',
             link: '/concepts/smartweave',
-            collapsible: true,
+            collapsible: false,
             children: [
               {
                 text: 'Arweave Name System (ArNS)',
                 link: '/concepts/arns'
               },
               {
-                text: 'Atomic Assets',
+                text: 'Atomic Tokens',
                 link: '/concepts/atomic-tokens.md'
               },
               {
