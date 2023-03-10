@@ -197,6 +197,27 @@ module.exports = {
             ]
           },
           {
+            text: 'Execution Machine',
+            collapsible: true,
+            children: [{
+              text: 'Introduction',
+              link: '/guides/exm/intro.md'
+            },
+            {
+              text: 'JS SDK',
+              collapsible: true,
+              children: [{
+                text: 'Execution Machine SDK',
+                link: '/guides/exm/js-sdk/sdk-intro.md'
+              },
+              {
+                text: 'Deploying Serverless Functions',
+                link: '/guides/exm/js-sdk/sdk-deploy.md'
+              }
+              ]
+            }]
+          },
+          {
             text: 'HTTP API',
             collapsible: false,
             link: '/guides/http-api'
