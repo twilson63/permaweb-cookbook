@@ -9,7 +9,7 @@ This system works similarly to traditional DNS, where a user can purchase a name
 With ArNS, the registry is decentralized, permanent and stored on Arweave (with Smartweave) and each AR.IO gateway acts as both cache and name resolver. Users can register a name within the ArNS Registry, like "my-name" and set a pointer to any Arweave Transaction ID. AR.IO Gateways will resolve that name as one of their own subdomains, eg. https://laserilla.arweave.net and proxy all requests to the associated Arweave Transaction ID.  Each registered name can also have under names associated with it that each point to an Arweave Transaction ID, like https://v1_laserilla.arweave.net, giving even more flexibility and control to its owner.
 
 ## The ArNS Registry
-// TODO: link to smartweave concept //
+<!-- // TODO: link to smartweave concept // -->
 
 ArNS uses the Smartweave protocol manage its name records. Each record, or name, is leased by a user and tied to an ANT token. You can register multiple ArNS names to a single ANT, but you cannot register multiple ANTs to a single ArNS name - the gateways would'nt know where to point the routing ID.
 
