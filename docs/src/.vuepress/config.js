@@ -161,6 +161,7 @@ export default {
           },
           {
             text: 'DNS Integration',
+            link: '/guides/dns-integration/',
             collapsible: true,
             children: [{
               text: 'Server Side',
@@ -174,6 +175,7 @@ export default {
           },
           {
             text: `Deploying Apps`,
+            link: '/guides/deployment/',
             collapsible: true,
             children: [
               {
@@ -231,6 +233,7 @@ export default {
           },
           {
             text: 'SmartWeave',
+            link: '/guides/smartweave/',
             collapsible: true,
             children: [
               {
@@ -265,6 +268,7 @@ export default {
           },
           {
             text: `Testing`,
+            link: '/guides/testing/',
             collapsible: true,
             children: [
               {
