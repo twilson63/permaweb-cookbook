@@ -53,6 +53,7 @@ const data = await exm.functions.deploy(functionSource, { users: [] }, ContractT
 // write the function id to a local file
 writeFileSync('./functionId.js', `export const functionId = "${data.id}"`)
 ```
+
   </CodeGroupItem>
 </CodeGroup>
 

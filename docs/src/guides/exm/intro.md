@@ -6,7 +6,7 @@ This further enables the creation of **composable**, **immutable** and **trustle
 
 ## Serverless Functions on Arweave
 
-Serverless functions are stored on Arweave through the intermediary EXM that also stores a copy as cache to rapidly serve applications at any time.
+Serverless functions are stored on Arweave through the intermediary EXM that also stores a copy as cache to rapidly serve applications at any time. The functions are stateful (store data) and hence, a single function id points to some data as well as the logic for interacting and updating this data.
 
 EXM handles the storage and execution, eliminating the need for maintaining a dedicated server, reducing upkeep costs and adding a layer of modularity.
 
