@@ -69,6 +69,10 @@ EXM seeks to be crypto agnostic and requires only an API token (also known as ke
 
 - Copy the token that has been generated and use it with the SDK or CLI.
 
+## Handling API Token safely
+
+The token is an identifier to our account and lets us access functions associated with it. Hence, it is vital to ensure this token is kept secret to prevent any spams and attacks to our functions. The best way to do so is using environment variables.
+
 ## Advantages of using Serverless Functions
 
 - Serverless functions add a layer of modularity and can be composed as per various application requirements.

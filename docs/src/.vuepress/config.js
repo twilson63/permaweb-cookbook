@@ -204,6 +204,10 @@ module.exports = {
               link: '/guides/exm/intro.md'
             },
             {
+              text: 'API Token',
+              link: '/guides/exm/api.md'
+            },
+            {
               text: 'JS SDK',
               collapsible: true,
               children: [{
@@ -213,6 +217,10 @@ module.exports = {
               {
                 text: 'Deploying Serverless Functions',
                 link: '/guides/exm/js-sdk/sdk-deploy.md'
+              },
+              {
+                text: 'Read from Serverless Functions',
+                link: '/guides/exm/js-sdk/sdk-read.md'
               }
               ]
             }]
