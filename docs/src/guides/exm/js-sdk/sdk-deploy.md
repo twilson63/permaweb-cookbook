@@ -5,7 +5,10 @@ For deploying serverless functions with the SDK in JavaScript, we create a scrip
 <details>
 <summary><strong>Function Logic Example</strong></summary>
 
-After installing the package we create a file named `function.js` in our repository and write the logic of our function within it.
+After installing the package we need a file defining the logic of the function within the project.
+
+<CodeGroup>
+  <CodeGroupItem title="function.js">
 
 ```js
 export async function handle(state, action) {
@@ -14,9 +17,12 @@ export async function handle(state, action) {
 }
 ```
 
+  </CodeGroupItem>
+</CodeGroup>
+
 The syntax for defining functions is based off of the standard implemented by SmartWeave for smart contracts in JavaScript. Every function has a `state` which is a JSON object of values stored in it and `actions` to interact with these values. 
 
-In our function, we want to add names to a users array which is done using the following line:
+The function above adds names to a users array which is done using the following line:
 
 ```js
 state.users.push(action.input.name);
