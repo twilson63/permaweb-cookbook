@@ -13,6 +13,7 @@ Describing the building blocks of the permaweb.
 - [Querying Transactions](queryTransations.md)
 - [SmartWeave](smartweave.md)
 - - [Arweave Name System](arns.md)
+- - [Atomic Assets](atomic-assets.md)
 - - [Profit Sharing Tokens](psts.md)
 - [ArNS](arns.md)
 - [Transaction Tags](tags.md)

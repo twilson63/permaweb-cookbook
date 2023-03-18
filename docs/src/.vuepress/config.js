@@ -1,8 +1,10 @@
-const { description } = require("../../package");
+import { description } from "../../package";
+
 import { defaultTheme } from "@vuepress/theme-default";
 import { containerPlugin } from "@vuepress/plugin-container";
+import { mediumZoomPlugin } from "@vuepress/plugin-medium-zoom";
 
-module.exports = {
+export default {
   base: "/",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -19,11 +21,19 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ["meta", { name: "theme-color", content: "#663399" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
     [
       "meta",
       { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+    ],
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "http://arweave.net/DCn3QJ7zzqsFNiqMj7XdQZKyZz73NaXybf_V4wlpMTI",
+      },
     ],
     ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
     ["link", { rel: "preconnect", href: "https://fonts.gstatic.com" }],
@@ -34,7 +44,18 @@ module.exports = {
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap",
       },
     ],
+    [
+      "script",
+      {
+        defer: true,
+        src: "https://ackee-l09o.onrender.com/tracker.js",
+        "data-ackee-server": "https://ackee-l09o.onrender.com",
+        async: true,
+        "data-ackee-domain-id": "a6bf4de4-a529-452d-a611-6296c8af1b58",
+      },
+    ],
   ],
+
   markdown: {
     code: {
       lineNumbers: false,
@@ -42,16 +63,6 @@ module.exports = {
   },
 
   theme: defaultTheme({
-    navbar: [
-      {
-        text: "GitHub",
-        link: "https://github.com/twilson63/permaweb-cookbook",
-      },
-      {
-        text: "Starter Kits",
-        link: "/kits/",
-      },
-    ],
     sidebar: [
       {
         text: "Getting Started",
@@ -71,8 +82,8 @@ module.exports = {
             link: "/getting-started/quick-starts/hw-cli",
           },
           {
-            text: "Hello World (NodeJS)",
-            link: "/getting-started/quick-starts/hw-nodejs",
+            text: "Hello World (With Code)",
+            link: "/getting-started/quick-starts/hw-code",
           },
           {
             text: "Contributing",
@@ -86,19 +97,61 @@ module.exports = {
         collapsible: true,
         children: [
           {
+            text: "Bundles and Bundling",
+            link: "/concepts/bundles",
+          },
+          {
+            text: "Gateways",
+            link: "/concepts/gateways",
+          },
+          {
+            text: "Keyfiles and Wallets",
+            link: "/concepts/keyfiles-and-wallets",
+          },
+          {
             text: "Path Manifests",
             link: "/concepts/manifests",
           },
           {
             text: "Permaweb",
             link: "/concepts/permaweb",
+            collapsible: true,
+            children: [
+              {
+                text: "Permaweb Applications",
+                link: "/concepts/permawebApplications",
+              },
+            ],
           },
           {
-            text: "Permaweb Applications",
-            link: "/concepts/permawebApplications",
+            text: "SmartWeave",
+            link: "/concepts/smartweave",
+            collapsible: false,
+            children: [
+              {
+                text: "Arweave Name System (ArNS)",
+                link: "/concepts/arns",
+              },
+              {
+                text: "Atomic Tokens",
+                link: "/concepts/atomic-tokens.md",
+              },
+              {
+                text: "Profit Sharing Tokens (PSTs)",
+                link: "/concepts/psts",
+              },
+              {
+                text: "Vouch",
+                link: "/concepts/vouch",
+              },
+            ],
           },
           {
-            text: `Posting Transactions`,
+            text: `Transaction Data`,
+            link: `/guides/http-api.md`,
+          },
+          {
+            text: `Transaction Posting`,
             link: `/concepts/post-transactions`,
             collapsible: true,
             children: [
@@ -117,31 +170,12 @@ module.exports = {
             ],
           },
           {
-            text: `Querying Transactions`,
+            text: `Transaction Querying`,
             link: `/concepts/queryTransactions`,
-          },
-          {
-            text: "SmartWeave",
-            link: "/concepts/smartweave",
-            collapsible: true,
-            children: [
-              {
-                text: "Arweave Name System (ArNS)",
-                link: "/concepts/arns",
-              },
-              {
-                text: "Profit Sharing Tokens (PSTs)",
-                link: "/concepts/psts",
-              },
-            ],
           },
           {
             text: "Transaction Tags",
             link: "/concepts/tags",
-          },
-          {
-            text: "Vouch",
-            link: "/concepts/vouch",
           },
         ],
       },
@@ -155,11 +189,23 @@ module.exports = {
             link: "/guides/arprofile",
           },
           {
-            text: "Atomic Assets",
-            link: "/guides/atomic-assets/intro",
+            text: "DNS Integration",
+            link: "/guides/dns-integration/",
+            collapsible: true,
+            children: [
+              {
+                text: "Server Side",
+                link: "/guides/dns-integration/server-side",
+              },
+              {
+                text: "Spheron",
+                link: "/guides/dns-integration/spheron",
+              },
+            ],
           },
           {
-            text: `App Deployment`,
+            text: `Deploying Apps`,
+            link: "/guides/deployment/",
             collapsible: true,
             children: [
               {
@@ -177,26 +223,7 @@ module.exports = {
             ],
           },
           {
-            text: "DNS Integration",
-            collapsible: true,
-            children: [
-              {
-                text: "Server Side",
-                link: "/guides/dns-integration/server-side",
-              },
-            ],
-          },
-          {
-            text: "HTTP API",
-            collapsible: false,
-            link: "/guides/http-api",
-          },
-          {
-            text: `Posting Transactions`,
-            link: `/guides/posting-transactions`,
-          },
-          {
-            text: `Deploying Path Manifests`,
+            text: `Deploying PathManifests`,
             link: "/guides/deploying-manifests/deployingManifests",
             collapsible: true,
             children: [
@@ -215,7 +242,12 @@ module.exports = {
             ],
           },
           {
-            text: "Querying Arweave",
+            text: "Deploying PSTs",
+            collapsible: false,
+            link: "/guides/deploying-psts",
+          },
+          {
+            text: "GraphQL",
             link: "/guides/querying-arweave/queryingArweave",
             collapsible: true,
             children: [
@@ -231,10 +263,19 @@ module.exports = {
           },
           {
             text: "SmartWeave",
+            link: "/guides/smartweave/",
             collapsible: true,
             children: [
               {
-                text: "warp",
+                text: "Atomic Tokens",
+                link: "/guides/atomic-tokens/intro",
+              },
+              {
+                text: "Vouch",
+                link: "/guides/vouch",
+              },
+              {
+                text: "Warp",
                 collapsible: false,
                 children: [
                   {
@@ -263,6 +304,7 @@ module.exports = {
           },
           {
             text: `Testing`,
+            link: "/guides/testing/",
             collapsible: true,
             children: [
               {
@@ -271,11 +313,6 @@ module.exports = {
                 link: "/guides/testing/arlocal",
               },
             ],
-          },
-          {
-            text: "Vouch",
-            collapsible: false,
-            link: "/guides/vouch",
           },
         ],
       },
@@ -304,17 +341,22 @@ module.exports = {
             text: "Svelte",
             link: "/kits/svelte/",
           },
+          {
+            text: "Vue",
+            link: "/kits/vue/",
+          },
         ],
       },
     ],
   }),
 
   /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   * Apply plugins
    */
   plugins: [
-    "@vuepress/plugin-back-to-top",
-    "@vuepress/plugin-medium-zoom",
+    mediumZoomPlugin({
+      selector: ":not(.not-zoomable)",
+    }),
     containerPlugin({
       type: "info",
     }),

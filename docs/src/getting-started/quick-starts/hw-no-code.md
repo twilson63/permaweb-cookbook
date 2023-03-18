@@ -10,7 +10,7 @@ In this quick start we are going to upload an image to the permaweb with no code
 
 ## Create a wallet with some AR
 
-https://faucet.arweave.net/
+[https://faucet.arweave.net/](https://faucet.arweave.net/)
 
 Go to the arweave faucet and generate a wallet with AR, this requires a twitter account. You will be prompted to download your keyfile as file.json.
 
@@ -34,4 +34,7 @@ When your keyfile is imported, you will be directed to the wallet view, click th
 
 You just published some data on Arweave using zero code.
 
+## See it in action!
 
+- [Arcademy](https://arcademy.arweave.dev/#/AtomicPlayground/xMVuQ5BKy__EccnMu0Ji_0rPk3f6yCtIRdHwvjSweB4)
+- [Youtube](https://youtu.be/T6wJ3m5ABSU)

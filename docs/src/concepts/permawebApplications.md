@@ -1,38 +1,43 @@
 # Permaweb Applications
 
-A permaweb application is a type of computer program that runs on the internet. But, it is special because it is saved forever, even if the team who made it stops working on it. It is a special kind of website that is always there for you to use.
+A permaweb application is a type of web page or web app that runs in you browser. What makes it a permaweb app is that it is deployed to Arweave and saved forever. Even if the team that developed it moves on users can rest assured the permaweb app will stay online and available. A huge advantage to permaweb apps is that they save their data on Arweave which means it can easily be imported into other apps that might improve on the one your currently using.
 
 ## What is the permaweb?
 
 ::: info INFORMATION
-For a deeper dive into the permaweb check out this medium post [Welcome to the Permaweb](https://arweave.medium.com/welcome-to-the-permaweb-ce0e6c73ddfb)
+For a deeper dive into the permaweb check out this article on [The Permaweb](./permaweb.md)
 :::
 
-The permaweb is a platform built on top of the [Arweave decentralized network](https://arweave.org), which serves internet web apps and sites that are published on Arweave. The core parts of the Permaweb are the following:
+The permaweb is a collection of sites, apps, and SmartContracts built on top of the [Arweave's Permaweb Services](./permaweb.md). The core parts of the Permaweb are the following:
 
-* Gateway (ex. arweave.net, arweave.live, ar.io)
-* Bundlr (ex. bundlr.network)
-* Sequencer (ex. warp.cc)
+* Gateway Service (ex. arweave.net, arweave.live, ar.io)
+* Bundling Service (ex. bundlr.network)
+* Sequencer Service (ex. warp.cc)
+* Index Service (ex goldsky)
 
-### Gateway
+<img src="https://arweave.net/xzg9H90vvfLFxc67Z_c9tWilFTz32gKnKNF6JqbTeRc" width="700">
 
-The Gateway is a service that provides the web server semantics to enable browsers to interact with the site or application. The Gateway also contains a GraphQL query server that developers can use to query/lookup data stored on Arweave.
+### Gateway Services
 
-### Bundlr 
+Gateway services are are the bridge between data on Arweave and displaying data in the browser. Gateways often provide indexing service along side serving transaction data, exposing graphQL endpoints for querying Arewave transactions. 
 
-The Bundlr is a service that allows many Arweave data-items to be grouped together and posted on to arweave in batches, then updates the gateway via a cache mechanism to provide immediate access to the bundled data via direct reference and GraphQL queries.
+### Bundling Services 
 
-### Sequencer
+Bundling services aggregate transactions into transaction bundles and make sure those bundles are posted directly to Arewave. By using a bundling service like bundlr.network you can post hundreds of thousands of transactions in a single Arweave block.
 
-The Sequencer is a service that enables high performance for SmartWeave Contracts to calculate business logic stored on the Arweave network.
+### Sequencing Services
 
-![permaweb image](https://arweave.net/FQayQfdDhpk_LfpWOR0qCAtbGUfY98n5EVx_CGCrsFM/)
+Sequencers enables high performance for SmartWeave Contracts to calculate business logic stored on the Arweave network.
 
-These services work together to form the permaweb and gives developers the power to build fully decentralized applications on the permaweb.
+### Indexing Services
+Indexing services listen to all the transactions on Arweave and import them into an indexed database suitble for fast querying. They then expose
+a graphQL endpoint so permaweb apps can make optimized queries for Arweave data.
+
+These services work together to form the Permaweb Services Layer and gives developers the power to build fully decentralized applications on the permaweb.
 
 ## Application Development
 
-Approaching application development with the permaweb is similar to `Single Page Application` development, the application consists of frontend functionality that is executed in a web browser, and uses GraphQL (Read/Query), Bundlr (Write), and SmartWeave (Process) to make up the business logic and persisten layer of the application. 
+Approaching application development with the permaweb is similar to `Single Page Application` development, the application consists of frontend functionality that is executed in a web browser, and uses GraphQL (Read/Query), Bundlr (Write), and SmartWeave (Decentralized computation) to make up the business logic and persistance layer of the application. 
 
 ![common permaweb app](https://arweave.net/UjbgAk8duudDc97lOYIt7rBVtRHp2Z9F6Ua5OcvwNCk/)
 
@@ -40,8 +45,8 @@ By leveraging modern web application frameworks and the [Path Manifest](./manife
 
 To learn more about creating and deploying Permaweb Apps, check out our starter kits in your favorite framework:
 
-* [React](../kits/react.md)
-* [Svelte](../kits/svelte.md)
+* [React](../kits/react/index.md)
+* [Svelte](../kits/svelte/index.md)
 
 ::: tip Missing my framework?
 Can't find your framework, why don't you contribute? [How to contribute to the cookbook](../getting-started/contributing.md)

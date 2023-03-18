@@ -39,7 +39,7 @@ const { contractTxId, srcTxId } = await warp.createContract.deploy({
   initState,
   data: { 'Content-Type': 'text/html', body: '<h1>Hello World</h1>' },
   src: contractSrc,
-  tags
+  tags: [{"name":"AppName", "value":"HelloWorld"}],
 })
 ```
 
