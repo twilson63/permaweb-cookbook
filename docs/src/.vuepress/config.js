@@ -86,6 +86,10 @@ export default {
             link: "/getting-started/quick-starts/hw-code",
           },
           {
+            text: "Hello World (NodeJS)",
+            link: "/getting-started/quick-starts/hw-nodejs",
+          },
+          {
             text: "Contributing",
             link: "/getting-started/contributing",
           },
