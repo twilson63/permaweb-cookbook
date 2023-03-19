@@ -8,7 +8,6 @@ Before we begin, make sure you have the following:
 
 -   Basic knowledge of JavaScript, HTML, and CSS
 -   An Arweave wallet with a small amount of AR to deploy the renderer and the text file
--   [Arweave Deploy CLI](https://github.com/ArweaveTeam/arweave-deploy) installed and configured
 -   [Bundlr CLI](https://www.npmjs.com/package/@bundlr-network/cli) installed and configured
 
 ### Step 1: Create the "Hello, World!" text file
