@@ -1,12 +1,11 @@
-import { description } from '../../package'
+import { description } from '../../package';
 
-import { defaultTheme } from '@vuepress/theme-default'
-import { containerPlugin } from '@vuepress/plugin-container'
-import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
+import { defaultTheme } from '@vuepress/theme-default';
+import { containerPlugin } from '@vuepress/plugin-container';
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
 
 export default {
-
-  base: "/",
+  base: '/',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
@@ -23,12 +22,38 @@ export default {
    */
   head: [
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "http://arweave.net/DCn3QJ7zzqsFNiqMj7XdQZKyZz73NaXybf_V4wlpMTI"}],
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
+    ],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: 'http://arweave.net/DCn3QJ7zzqsFNiqMj7XdQZKyZz73NaXybf_V4wlpMTI'
+      }
+    ],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap' }],
-    ['script', { defer: true, src: 'https://ackee-l09o.onrender.com/tracker.js', 'data-ackee-server': 'https://ackee-l09o.onrender.com', async: true, 'data-ackee-domain-id': 'a6bf4de4-a529-452d-a611-6296c8af1b58' }],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap'
+      }
+    ],
+    [
+      'script',
+      {
+        defer: true,
+        src: 'https://ackee-l09o.onrender.com/tracker.js',
+        'data-ackee-server': 'https://ackee-l09o.onrender.com',
+        async: true,
+        'data-ackee-domain-id': 'a6bf4de4-a529-452d-a611-6296c8af1b58'
+      }
+    ]
   ],
 
   markdown: {
@@ -43,24 +68,28 @@ export default {
         text: 'Getting Started',
         link: '/getting-started/',
         collapsible: true,
-        children: [{
-          text: 'Welcome',
-          link: '/getting-started/welcome'
-        }, {
-          text: 'Hello World (No Code)',
-          link: '/getting-started/quick-starts/hw-no-code'
-        }, {
-          text: 'Hello World (CLI)',
-          link: '/getting-started/quick-starts/hw-cli'
-        },
-        {
-          text: 'Hello World (With Code)',
-          link: '/getting-started/quick-starts/hw-code'
-        },
-        {
-          text: 'Contributing',
-          link: '/getting-started/contributing'
-        }]
+        children: [
+          {
+            text: 'Welcome',
+            link: '/getting-started/welcome'
+          },
+          {
+            text: 'Hello World (No Code)',
+            link: '/getting-started/quick-starts/hw-no-code'
+          },
+          {
+            text: 'Hello World (CLI)',
+            link: '/getting-started/quick-starts/hw-cli'
+          },
+          {
+            text: 'Hello World (With Code)',
+            link: '/getting-started/quick-starts/hw-code'
+          },
+          {
+            text: 'Contributing',
+            link: '/getting-started/contributing'
+          }
+        ]
       },
       {
         text: 'Core Concepts',
@@ -90,7 +119,7 @@ export default {
             children: [
               {
                 text: 'Permaweb Applications',
-                link: '/concepts/permawebApplications',
+                link: '/concepts/permawebApplications'
               }
             ]
           },
@@ -119,7 +148,7 @@ export default {
           },
           {
             text: `Transaction Data`,
-            link: `/guides/http-api.md`,
+            link: `/guides/http-api.md`
           },
           {
             text: `Transaction Posting`,
@@ -162,14 +191,15 @@ export default {
           {
             text: 'DNS Integration',
             collapsible: true,
-            children: [{
-              text: 'Server Side',
-              link: '/guides/dns-integration/server-side'
-            },
-            {
-              text: 'Spheron',
-              link: '/guides/dns-integration/spheron'
-            }
+            children: [
+              {
+                text: 'Server Side',
+                link: '/guides/dns-integration/server-side'
+              },
+              {
+                text: 'Spheron',
+                link: '/guides/dns-integration/spheron'
+              }
             ]
           },
           {
@@ -192,7 +222,7 @@ export default {
           },
           {
             text: `Deploying PathManifests`,
-            link: "/guides/deploying-manifests/deployingManifests",
+            link: '/guides/deploying-manifests/deployingManifests',
             collapsible: true,
             children: [
               {
@@ -206,7 +236,7 @@ export default {
               {
                 text: 'bundlr.network',
                 link: '/guides/deploying-manifests/bundlr'
-              },
+              }
             ]
           },
           {
@@ -215,17 +245,17 @@ export default {
             link: '/guides/deploying-psts'
           },
           {
-            text: "GraphQL",
-            link: "/guides/querying-arweave/queryingArweave",
+            text: 'GraphQL',
+            link: '/guides/querying-arweave/queryingArweave',
             collapsible: true,
             children: [
               {
-                text: "ArDB",
-                link: "/guides/querying-arweave/ardb"
+                text: 'ArDB',
+                link: '/guides/querying-arweave/ardb'
               },
               {
-                text: "ar-gql",
-                link: "/guides/querying-arweave/ar-gql"
+                text: 'ar-gql',
+                link: '/guides/querying-arweave/ar-gql'
               }
             ]
           },
@@ -244,22 +274,28 @@ export default {
               {
                 text: 'Warp',
                 collapsible: false,
-                children: [{
-                  text: 'Intro',
-                  link: '/guides/smartweave/warp/intro.md'
-                }, {
-                  text: 'Deploying Contracts',
-                  link: '/guides/smartweave/warp/deploying-contracts.md'
-                }, {
-                  text: 'ReadState',
-                  link: '/guides/smartweave/warp/readstate.md'
-                }, {
-                  text: 'WriteInteractions',
-                  link: '/guides/smartweave/warp/write-interactions.md'
-                }, {
-                  text: 'Evolve',
-                  link: '/guides/smartweave/warp/evolve.md'
-                }]
+                children: [
+                  {
+                    text: 'Intro',
+                    link: '/guides/smartweave/warp/intro.md'
+                  },
+                  {
+                    text: 'Deploying Contracts',
+                    link: '/guides/smartweave/warp/deploying-contracts.md'
+                  },
+                  {
+                    text: 'ReadState',
+                    link: '/guides/smartweave/warp/readstate.md'
+                  },
+                  {
+                    text: 'WriteInteractions',
+                    link: '/guides/smartweave/warp/write-interactions.md'
+                  },
+                  {
+                    text: 'Evolve',
+                    link: '/guides/smartweave/warp/evolve.md'
+                  }
+                ]
               }
             ]
           },
@@ -275,7 +311,6 @@ export default {
             ]
           }
         ]
-
       },
       {
         text: 'References',
@@ -283,9 +318,9 @@ export default {
         collapsible: true,
         children: [
           {
-            text: "GraphQL",
+            text: 'GraphQL',
             collapsible: false,
-            link: "/references/gql",
+            link: '/references/gql'
           }
         ]
       },
@@ -320,6 +355,6 @@ export default {
     }),
     containerPlugin({
       type: 'info'
-    }),
+    })
   ]
-}
+};
