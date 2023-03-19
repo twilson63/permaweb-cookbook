@@ -7,7 +7,6 @@ In this tutorial, you'll learn how to deploy a renderer on the Arweave network t
 Before we begin, make sure you have the following:
 
 -   Basic knowledge of JavaScript, HTML, and CSS
--   An Arweave wallet with a small amount of AR to deploy the renderer and the text file
 -   [Bundlr CLI](https://www.npmjs.com/package/@bundlr-network/cli) installed and configured
 
 ### Step 1: Create the "Hello, World!" text file
