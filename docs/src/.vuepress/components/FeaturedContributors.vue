@@ -2,15 +2,28 @@
   <div v-if="contributors.length > 0" class="featured-contributor">
     <div class="top">
       <p class="subtext">Featured Contributor</p>
-      <a class="subtext" target="_blank" href="https://github.com/twilson63/permaweb-cookbook/graphs/contributors">See all contributors</a>
+      <a
+        class="subtext"
+        target="_blank"
+        href="https://github.com/twilson63/permaweb-cookbook/graphs/contributors"
+        >See all contributors</a
+      >
     </div>
 
     <div class="bottom">
-      <div class="bottom-inner" :style="{'transform': `translateX(${-(current * 100)}%)`}">
+      <div
+        class="bottom-inner"
+        :style="{ transform: `translateX(${-(current * 100)}%)` }"
+      >
         <div v-for="contributor in contributors" class="contributor">
-          <div class="avatar" :style="{'background-image': `url('${contributor.avatar_url}')`}"></div>
+          <div
+            class="avatar"
+            :style="{ 'background-image': `url('${contributor.avatar_url}')` }"
+          ></div>
           <div class="contributor-detail">
-            <a target="_blank" :href="contributor.html_url" class="subtext">{{ contributor.login }}</a>
+            <a target="_blank" :href="contributor.html_url" class="subtext">{{
+              contributor.login
+            }}</a>
           </div>
         </div>
       </div>
@@ -23,7 +36,7 @@ export default {
   data() {
     return {
       current: 0,
-      contributors: [],
+      contributors: []
     };
   },
   methods: {
@@ -36,22 +49,25 @@ export default {
     }
   },
   mounted() {
-    fetch("https://api.github.com/repos/twilson63/permaweb-cookbook/contributors?q=contributions&order=desc")
-      .then(res => {
+    fetch(
+      'https://api.github.com/repos/twilson63/permaweb-cookbook/contributors?q=contributions&order=desc'
+    )
+      .then((res) => {
         if (res.ok) return res.json();
         else return [];
       })
-      .then(result => {
+      .then((result) => {
         this.contributors = result;
         setInterval(this.nextContributor, 4000);
-      })
+      });
   }
-}
+};
 </script>
 
 <style lang="scss">
 .featured-contributor {
-  p, a {
+  p,
+  a {
     opacity: 0.5;
   }
 
@@ -70,7 +86,7 @@ export default {
     font-size: 0px;
     width: 100%;
     white-space: nowrap;
-    transition: transform .6s cubic-bezier(0.65, 0, 0.35, 1);
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   .contributor {

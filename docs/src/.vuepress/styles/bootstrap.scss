@@ -1,4 +1,4 @@
-@import "bootstrap/scss/functions";
+@import 'bootstrap/scss/functions';
 
 $grid-breakpoints: (
   xs: 0,
@@ -13,11 +13,11 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1360px,
-  xxl: 1440px,
+  xxl: 1440px
 );
 $grid-gutter-width: 40px;
 
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';

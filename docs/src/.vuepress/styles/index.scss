@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans:wght@400;500;600&display=swap');
 
-@import "./bootstrap.scss";
+@import './bootstrap.scss';
 @import 'bootstrap/scss/bootstrap-grid';
 
 // theme variables
 :root {
-  --font-family: Work Sans,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  --font-family-alt: Roboto Mono,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  --font-family: Work Sans, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  --font-family-alt: Roboto Mono, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
 
   --c-brand: #ff5f15;
   --c-text: #242424;
@@ -15,14 +21,14 @@
   --c-bg-dark: #d2d2d4;
   --c-bg-rgb: 242, 242, 242;
 
-  --c-topbar-bg: #DCDCDC;
+  --c-topbar-bg: #dcdcdc;
 
   --c-border: #c7c9cc;
   --c-border-dark: #9da0a3;
 
-  --c-card-bg: #E7E7E7;
+  --c-card-bg: #e7e7e7;
   --c-card-hover-bg: #dedede;
-  --c-card-border-color: #CBCBCB;
+  --c-card-border-color: #cbcbcb;
   --c-card-shadow-inset: inset 0px 2px 0px rgba(255, 255, 255, 0.5);
 }
 
@@ -34,7 +40,7 @@ html.dark {
   --c-bg-dark: #424141;
   --c-bg-rgb: 36, 36, 36;
 
-  --c-topbar-bg: #2E2E2E;
+  --c-topbar-bg: #2e2e2e;
 
   --c-border: #585858;
   --c-border-dark: #414141;
@@ -51,7 +57,9 @@ html {
   }
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -109,7 +117,6 @@ html {
 }
 
 @media (min-width: 480px) {
-
   .home-row {
     display: flex;
     gap: 16px;
@@ -121,8 +128,8 @@ html {
     width: 640px;
     height: 320px;
 
-    background: #FFFFFF;
-    border: 1px solid #FCFAFE;
+    background: #ffffff;
+    border: 1px solid #fcfafe;
     /* Subtle */
 
     box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
@@ -141,7 +148,6 @@ html {
 
   .home-header {
     display: flex;
-
   }
 }
 
@@ -166,8 +172,8 @@ html {
     width: 320px;
     height: 320px;
 
-    background: #FFFFFF;
-    border: 1px solid #FCFAFE;
+    background: #ffffff;
+    border: 1px solid #fcfafe;
     /* Subtle */
 
     box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
@@ -201,7 +207,7 @@ a:hover {
 }
 
 .custom-container.info {
-  border-color: #5288EF;
+  border-color: #5288ef;
   padding: 0.1rem 1.5rem;
   border-left-width: 0.5rem;
   border-left-style: solid;
