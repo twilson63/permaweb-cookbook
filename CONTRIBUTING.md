@@ -8,15 +8,15 @@ The following is a set of guidelines on how to contribute
 
 ### Permaweb Cookbook Layout
 
-The cookbook is layed out in 4 different sections.
+The cookbook is layed out in 5 different sections.
 
-| Section         | Description                                                     |
-| --------------- | --------------------------------------------------------------- |
+| Section         | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
 | Getting Started | Resources for starting development on Permaweb                    |
 | Core Concepts   | Building blocks of Permaweb that are good to know for development |
-| Guides          | Snack-sized guides about different tools for development        |
-| References      | References to commonly needed code snippets                     |
-| Kits            | Starter Kits with development frameworks                        |
+| Guides          | Snack-sized guides about different tools for development          |
+| References      | References to commonly needed code snippets                       |
+| Kits            | Starter Kits with development frameworks                          |
 
 Depending on what you are writing, it will live in one of these sections
 
@@ -54,7 +54,7 @@ Other Resources
 
 ```
 cd docs
-yarn 
+yarn
 yarn dev
 ```
 
@@ -92,5 +92,3 @@ General flow for making a contribution:
 
 **NOTE**: Be sure to merge the latest from "upstream" before making a
 pull request!
-
-
