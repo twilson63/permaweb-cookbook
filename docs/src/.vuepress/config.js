@@ -58,8 +58,8 @@ export default {
 
   markdown: {
     code: {
-      lineNumbers: false,
-    },
+      lineNumbers: false
+    }
   },
 
   theme: defaultTheme({
@@ -98,19 +98,19 @@ export default {
         children: [
           {
             text: 'Bundles and Bundling',
-            link: '/concepts/bundles',
+            link: '/concepts/bundles'
           },
           {
             text: 'Gateways',
-            link: '/concepts/gateways',
+            link: '/concepts/gateways'
           },
           {
             text: 'Keyfiles and Wallets',
-            link: '/concepts/keyfiles-and-wallets',
+            link: '/concepts/keyfiles-and-wallets'
           },
           {
             text: 'Path Manifests',
-            link: '/concepts/manifests',
+            link: '/concepts/manifests'
           },
           {
             text: 'Permaweb',
@@ -130,21 +130,21 @@ export default {
             children: [
               {
                 text: 'Arweave Name System (ArNS)',
-                link: '/concepts/arns',
+                link: '/concepts/arns'
               },
               {
                 text: 'Atomic Tokens',
-                link: '/concepts/atomic-tokens.md',
+                link: '/concepts/atomic-tokens.md'
               },
               {
                 text: 'Profit Sharing Tokens (PSTs)',
-                link: '/concepts/psts',
+                link: '/concepts/psts'
               },
               {
                 text: 'Vouch',
-                link: '/concepts/vouch',
-              },
-            ],
+                link: '/concepts/vouch'
+              }
+            ]
           },
           {
             text: `Transaction Data`,
@@ -157,27 +157,27 @@ export default {
             children: [
               {
                 text: 'arweave-js',
-                link: '/guides/posting-transactions/arweave-js',
+                link: '/guides/posting-transactions/arweave-js'
               },
               {
                 text: 'bundlr.network',
-                link: '/guides/posting-transactions/bundlr',
+                link: '/guides/posting-transactions/bundlr'
               },
               {
                 text: 'dispatch',
-                link: '/guides/posting-transactions/dispatch',
-              },
-            ],
+                link: '/guides/posting-transactions/dispatch'
+              }
+            ]
           },
           {
             text: `Transaction Querying`,
-            link: `/concepts/queryTransactions`,
+            link: `/concepts/queryTransactions`
           },
           {
             text: 'Transaction Tags',
-            link: '/concepts/tags',
-          },
-        ],
+            link: '/concepts/tags'
+          }
+        ]
       },
       {
         text: 'Guides',
@@ -186,7 +186,7 @@ export default {
         children: [
           {
             text: 'ArProfile',
-            link: '/guides/arprofile',
+            link: '/guides/arprofile'
           },
           {
             text: 'DNS Integration',
@@ -208,17 +208,17 @@ export default {
             children: [
               {
                 text: 'arkb',
-                link: '/guides/deployment/arkb',
+                link: '/guides/deployment/arkb'
               },
               {
                 text: 'Bundlr',
-                link: '/guides/deployment/bundlr-cli',
+                link: '/guides/deployment/bundlr-cli'
               },
               {
                 text: 'Github Action',
-                link: '/guides/deployment/github-action',
-              },
-            ],
+                link: '/guides/deployment/github-action'
+              }
+            ]
           },
           {
             text: `Deploying PathManifests`,
@@ -227,11 +227,11 @@ export default {
             children: [
               {
                 text: 'arweave.app',
-                link: '/guides/deploying-manifests/arweave-app',
+                link: '/guides/deploying-manifests/arweave-app'
               },
               {
                 text: 'ardrive',
-                link: '/guides/deploying-manifests/ardrive',
+                link: '/guides/deploying-manifests/ardrive'
               },
               {
                 text: 'bundlr.network',
@@ -242,7 +242,7 @@ export default {
           {
             text: 'Deploying PSTs',
             collapsible: false,
-            link: '/guides/deploying-psts',
+            link: '/guides/deploying-psts'
           },
           {
             text: 'GraphQL',
@@ -265,11 +265,11 @@ export default {
             children: [
               {
                 text: 'Atomic Tokens',
-                link: '/guides/atomic-tokens/intro',
+                link: '/guides/atomic-tokens/intro'
               },
               {
                 text: 'Vouch',
-                link: '/guides/vouch',
+                link: '/guides/vouch'
               },
               {
                 text: 'Warp',
@@ -331,19 +331,19 @@ export default {
         children: [
           {
             text: 'React',
-            link: '/kits/react/',
+            link: '/kits/react/'
           },
           {
             text: 'Svelte',
-            link: '/kits/svelte/',
+            link: '/kits/svelte/'
           },
           {
             text: 'Vue',
-            link: '/kits/vue/',
-          },
-        ],
-      },
-    ],
+            link: '/kits/vue/'
+          }
+        ]
+      }
+    ]
   }),
 
   /**
@@ -351,7 +351,7 @@ export default {
    */
   plugins: [
     mediumZoomPlugin({
-      selector: ':not(.not-zoomable)',
+      selector: ':not(.not-zoomable)'
     }),
     containerPlugin({
       type: 'info'
