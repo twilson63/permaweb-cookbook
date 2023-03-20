@@ -119,7 +119,7 @@ export default {
           {
             text: 'Permaweb',
             link: '/concepts/permaweb',
-            collapsible: true,
+            collapsible: false,
             children: [
               {
                 text: 'Permaweb Applications',
