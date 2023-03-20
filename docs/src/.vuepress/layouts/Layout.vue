@@ -1,82 +1,82 @@
 <script setup>
-import Home from '@theme/Home.vue'
-import Topbar from '../components/Topbar.vue'
-import Navbar from '../components/Navbar.vue'
-import Page from '../components/Page.vue'
-import Sidebar from '../components/Sidebar.vue'
-import Onboarding from '../components/Onboarding.vue'
-import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import Home from '@theme/Home.vue';
+import Topbar from '../components/Topbar.vue';
+import Navbar from '../components/Navbar.vue';
+import Page from '../components/Page.vue';
+import Sidebar from '../components/Sidebar.vue';
+import Onboarding from '../components/Onboarding.vue';
+import { usePageData, usePageFrontmatter } from '@vuepress/client';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
 import {
   useScrollPromise,
   useSidebarItems,
-  useThemeLocaleData,
-} from '@vuepress/theme-default/lib/client/composables/index.js'
+  useThemeLocaleData
+} from '@vuepress/theme-default/lib/client/composables/index.js';
 
-const page = usePageData()
-const frontmatter = usePageFrontmatter()
-const themeLocale = useThemeLocaleData()
+const page = usePageData();
+const frontmatter = usePageFrontmatter();
+const themeLocale = useThemeLocaleData();
 
 // onboardig
 const shouldShowOnboarding = computed(
   () => frontmatter.value.onboarding === true
-)
+);
 
 // navbar
 const shouldShowNavbar = computed(
   () => frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
-)
+);
 
 // sidebar
-const sidebarItems = useSidebarItems()
-const isSidebarOpen = ref(false)
+const sidebarItems = useSidebarItems();
+const isSidebarOpen = ref(false);
 const toggleSidebar = (to) => {
-  isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value
-}
-const touchStart = { x: 0, y: 0 }
+  isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value;
+};
+const touchStart = { x: 0, y: 0 };
 const onTouchStart = (e) => {
-  touchStart.x = e.changedTouches[0].clientX
-  touchStart.y = e.changedTouches[0].clientY
-}
+  touchStart.x = e.changedTouches[0].clientX;
+  touchStart.y = e.changedTouches[0].clientY;
+};
 const onTouchEnd = (e) => {
-  const dx = e.changedTouches[0].clientX - touchStart.x
-  const dy = e.changedTouches[0].clientY - touchStart.y
+  const dx = e.changedTouches[0].clientX - touchStart.x;
+  const dy = e.changedTouches[0].clientY - touchStart.y;
   if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
     if (dx > 0 && touchStart.x <= 80) {
-      toggleSidebar(true)
+      toggleSidebar(true);
     } else {
-      toggleSidebar(false)
+      toggleSidebar(false);
     }
   }
-}
+};
 
 // classes
 const containerClass = computed(() => [
   {
     'no-navbar': !shouldShowNavbar.value,
     'no-sidebar': !sidebarItems.value.length,
-    'sidebar-open': isSidebarOpen.value,
+    'sidebar-open': isSidebarOpen.value
   },
-  frontmatter.value.pageClass,
-])
+  frontmatter.value.pageClass
+]);
 
 // close sidebar after navigation
-let unregisterRouterHook
+let unregisterRouterHook;
 onMounted(() => {
-  const router = useRouter()
+  const router = useRouter();
   unregisterRouterHook = router.afterEach(() => {
-    toggleSidebar(false)
-  })
-})
+    toggleSidebar(false);
+  });
+});
 onUnmounted(() => {
-  unregisterRouterHook()
-})
+  unregisterRouterHook();
+});
 
 // handle scrollBehavior with transition
-const scrollPromise = useScrollPromise()
-const onBeforeEnter = scrollPromise.resolve
-const onBeforeLeave = scrollPromise.pending
+const scrollPromise = useScrollPromise();
+const onBeforeEnter = scrollPromise.resolve;
+const onBeforeLeave = scrollPromise.pending;
 </script>
 
 <template>
@@ -87,8 +87,11 @@ const onBeforeLeave = scrollPromise.pending
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-  
-    <Navbar v-if="shouldShowNavbar" class="d-none d-md-flex" @toggle-sidebar="toggleSidebar">
+    <Navbar
+      v-if="shouldShowNavbar"
+      class="d-none d-md-flex"
+      @toggle-sidebar="toggleSidebar"
+    >
       <template #before>
         <slot name="navbar-before" />
       </template>
@@ -97,14 +100,24 @@ const onBeforeLeave = scrollPromise.pending
       </template>
     </Navbar>
 
-    <Navbar v-if="shouldShowNavbar" class="d-md-none fixed" :fixed="true" @toggle-sidebar="toggleSidebar" />
+    <Navbar
+      v-if="shouldShowNavbar"
+      class="d-md-none fixed"
+      :fixed="true"
+      @toggle-sidebar="toggleSidebar"
+    />
 
     <Onboarding v-if="shouldShowOnboarding" />
 
     <div class="row">
-
       <div class="col-12">
-        <h2 id="documentation" class="header" style="border: none;padding-top: 30px;margin: 20px 0 25px;">Documentation.</h2>
+        <h2
+          id="documentation"
+          class="header"
+          style="border: none; padding-top: 30px; margin: 20px 0 25px"
+        >
+          Documentation.
+        </h2>
       </div>
 
       <div class="col-md-3">
@@ -148,16 +161,19 @@ const onBeforeLeave = scrollPromise.pending
       </div>
     </div>
 
-    <p class="footer-text"><span>Built with</span> <span class="heart">&#10084;&#65039;</span> <span>by the Arweave community. Learn more at</span> <a target="_blank" href="https://arweave.org">Arweave.org</a></p>
-
+    <p class="footer-text">
+      <span>Built with</span> <span class="heart">&#10084;&#65039;</span>
+      <span>by the Arweave community. Learn more at</span>
+      <a target="_blank" href="https://arweave.org">Arweave.org</a>
+    </p>
   </div>
 </template>
 
 <style lang="scss">
-@import "../styles/bootstrap.scss";
+@import '../styles/bootstrap.scss';
 
 .cookbook-theme-container {
-  @include media-breakpoint-up(md) { 
+  @include media-breakpoint-up(md) {
     padding-left: var(--bs-gutter-x);
     padding-right: var(--bs-gutter-x);
   }

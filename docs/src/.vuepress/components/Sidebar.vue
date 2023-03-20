@@ -1,25 +1,28 @@
 <script setup>
-import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue'
-import SidebarItems from '@theme/SidebarItems.vue'
+import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue';
+import SidebarItems from '@theme/SidebarItems.vue';
 </script>
 
 <script>
 export default {
-  emits: ["close-sidebar"]
-}
+  emits: ['close-sidebar']
+};
 </script>
 
 <template>
   <aside class="cookbook-sidebar">
     <SidebarItems />
 
-    <ToggleColorModeButton class="d-block d-md-none" style="margin: 16px 0 0 auto;font-size: 0;" />
+    <ToggleColorModeButton
+      class="d-block d-md-none"
+      style="margin: 16px 0 0 auto; font-size: 0"
+    />
   </aside>
   <div @click="$emit('close-sidebar')" class="cookbook-sidebar-overlay"></div>
 </template>
 
 <style lang="scss">
-@import "../styles/bootstrap.scss";
+@import '../styles/bootstrap.scss';
 
 .cookbook-theme-container.sidebar-open {
   @include media-breakpoint-down(md) {
@@ -43,22 +46,22 @@ export default {
   top: 0;
   bottom: 0;
 
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
 
   opacity: 0;
   pointer-events: none;
 
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 .cookbook-sidebar {
   position: sticky;
   top: 30px;
 
-  @include media-breakpoint-down(md) { 
+  @include media-breakpoint-down(md) {
     z-index: 10;
     overflow-y: auto;
-    
+
     position: fixed;
     left: 0;
     top: var(--navbar-height);
@@ -67,7 +70,7 @@ export default {
     padding: 24px;
     background: var(--c-bg);
 
-    transition: transform .3s;
+    transition: transform 0.3s;
     transform: translateX(-100%);
   }
 
@@ -75,11 +78,9 @@ export default {
     text-align: left;
 
     .sidebar-item-children {
-
       .sidebar-item:not(.active) {
         opacity: 0.68;
       }
-
     }
 
     .sidebar-item {
@@ -87,7 +88,7 @@ export default {
     }
 
     .sidebar-item:not(.sidebar-heading) {
-      padding: .35rem 0 .35rem 1rem !important
+      padding: 0.35rem 0 0.35rem 1rem !important;
     }
 
     .sidebar-item.sidebar-heading {

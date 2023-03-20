@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js'
+import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js';
 
-defineEmits(['toggle'])
+defineEmits(['toggle']);
 
-const themeLocale = useThemeLocaleData()
+const themeLocale = useThemeLocaleData();
 </script>
 
 <template>
