@@ -163,7 +163,7 @@ const onBeforeLeave = scrollPromise.pending;
 
     <p class="footer-text">
       <span>Built with</span> <span class="heart">&#10084;&#65039;</span>
-      <span>by the Arweave community. Learn more at</span>
+      <span> by the Arweave community. Learn more at </span>
       <a target="_blank" href="https://arweave.org">Arweave.org</a>
     </p>
   </div>
