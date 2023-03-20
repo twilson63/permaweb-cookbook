@@ -227,7 +227,7 @@ export default {
           {
             text: `Deploying PathManifests`,
             link: '/guides/deploying-manifests/deployingManifests',
-            collapsible: true,
+            collapsible: false,
             children: [
               {
                 text: 'arweave.app',
@@ -251,7 +251,7 @@ export default {
           {
             text: 'GraphQL',
             link: '/guides/querying-arweave/queryingArweave',
-            collapsible: true,
+            collapsible: false,
             children: [
               {
                 text: 'ArDB',
@@ -288,15 +288,15 @@ export default {
                     link: '/guides/smartweave/warp/deploying-contracts.md'
                   },
                   {
-                    text: 'ReadState',
+                    text: 'Read Contract State',
                     link: '/guides/smartweave/warp/readstate.md'
                   },
                   {
-                    text: 'WriteInteractions',
+                    text: 'Write Contract Interactions',
                     link: '/guides/smartweave/warp/write-interactions.md'
                   },
                   {
-                    text: 'Evolve',
+                    text: 'Evolve Contract',
                     link: '/guides/smartweave/warp/evolve.md'
                   }
                 ]
