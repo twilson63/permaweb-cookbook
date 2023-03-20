@@ -14,12 +14,12 @@ Foundations of Arweave and the Permaweb.
   - [Permaweb Applications](permawebApplications.md)
 - [SmartWeave](smartweave.md)
   - [Arweave Name System (ArNS)](arns.md) 
-  - [Atomic Tokens](atomic-assets.md)
+  - [Atomic Tokens](atomic-tokens.md)
   - [Profit Sharing Tokens (PSTs)](psts.md)
   - [Vouch](vouch.md)
 - [Transaction Data](/guides/http-api.md)
 - [Transaction Posting](post-transactions.md)
-- [Transaction Querying](queryTransations.md)
+- [Transaction Querying](queryTransactions.md)
 - [Transaction Tags](tags.md)
 
 
