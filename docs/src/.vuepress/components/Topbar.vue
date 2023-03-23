@@ -1,8 +1,7 @@
 <template>
   <div class="topbar">
     <p>
-      Cookbook Community Meetup - 12pm ET / 5pm GMT every week on
-      Wednesdays
+      Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays
       <a
         target="_blank"
         class="action"

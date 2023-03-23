@@ -5,8 +5,8 @@
         <div class="hero-text">
           <h1 class="hero-title">Build on the Permaweb.</h1>
           <p class="hero-body-text">
-            A curated collection of developer guides & more to build
-            on the Permaweb. All in one place.
+            A curated collection of developer guides & more to build on the
+            Permaweb. All in one place.
           </p>
           <RouterLink
             style="color: var(--c-accent-rose)"
@@ -58,9 +58,7 @@
       </div>
 
       <div class="col-12 order-3">
-        <div
-          style="text-align: center; margin-top: 80px; opacity: 0.1"
-        >
+        <div style="text-align: center; margin-top: 80px; opacity: 0.1">
           <svg
             width="33"
             height="17"
@@ -117,10 +115,7 @@
                       filterUnits="userSpaceOnUse"
                       color-interpolation-filters="sRGB"
                     >
-                      <feFlood
-                        flood-opacity="0"
-                        result="BackgroundImageFix"
-                      />
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
                       <feColorMatrix
                         in="SourceAlpha"
                         type="matrix"
@@ -177,11 +172,7 @@
                       gradientUnits="userSpaceOnUse"
                     >
                       <stop stop-color="white" stop-opacity="0" />
-                      <stop
-                        offset="1"
-                        stop-color="white"
-                        stop-opacity="0.38"
-                      />
+                      <stop offset="1" stop-color="white" stop-opacity="0.38" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -236,10 +227,7 @@
                       filterUnits="userSpaceOnUse"
                       color-interpolation-filters="sRGB"
                     >
-                      <feFlood
-                        flood-opacity="0"
-                        result="BackgroundImageFix"
-                      />
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
                       <feColorMatrix
                         in="SourceAlpha"
                         type="matrix"
@@ -296,11 +284,7 @@
                       gradientUnits="userSpaceOnUse"
                     >
                       <stop stop-color="white" stop-opacity="0" />
-                      <stop
-                        offset="1"
-                        stop-color="white"
-                        stop-opacity="0.38"
-                      />
+                      <stop offset="1" stop-color="white" stop-opacity="0.38" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -367,10 +351,7 @@
                       filterUnits="userSpaceOnUse"
                       color-interpolation-filters="sRGB"
                     >
-                      <feFlood
-                        flood-opacity="0"
-                        result="BackgroundImageFix"
-                      />
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
                       <feColorMatrix
                         in="SourceAlpha"
                         type="matrix"
@@ -427,11 +408,7 @@
                       gradientUnits="userSpaceOnUse"
                     >
                       <stop stop-color="white" stop-opacity="0" />
-                      <stop
-                        offset="1"
-                        stop-color="white"
-                        stop-opacity="0.38"
-                      />
+                      <stop offset="1" stop-color="white" stop-opacity="0.38" />
                     </linearGradient>
                     <linearGradient
                       id="paint1_linear_201_146"
@@ -442,11 +419,7 @@
                       gradientUnits="userSpaceOnUse"
                     >
                       <stop stop-color="white" stop-opacity="0" />
-                      <stop
-                        offset="1"
-                        stop-color="white"
-                        stop-opacity="0.38"
-                      />
+                      <stop offset="1" stop-color="white" stop-opacity="0.38" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -509,10 +482,7 @@
                       filterUnits="userSpaceOnUse"
                       color-interpolation-filters="sRGB"
                     >
-                      <feFlood
-                        flood-opacity="0"
-                        result="BackgroundImageFix"
-                      />
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
                       <feColorMatrix
                         in="SourceAlpha"
                         type="matrix"
@@ -569,11 +539,7 @@
                       gradientUnits="userSpaceOnUse"
                     >
                       <stop stop-color="white" stop-opacity="0" />
-                      <stop
-                        offset="1"
-                        stop-color="white"
-                        stop-opacity="0.38"
-                      />
+                      <stop offset="1" stop-color="white" stop-opacity="0.38" />
                     </linearGradient>
                     <linearGradient
                       id="paint1_linear_201_153"
@@ -584,11 +550,7 @@
                       gradientUnits="userSpaceOnUse"
                     >
                       <stop stop-color="white" stop-opacity="0" />
-                      <stop
-                        offset="1"
-                        stop-color="white"
-                        stop-opacity="0.38"
-                      />
+                      <stop offset="1" stop-color="white" stop-opacity="0.38" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -722,9 +684,8 @@ import FeaturedContributors from './FeaturedContributors.vue';
 
     background: var(--c-card-bg);
     border: 1px solid var(--c-card-border-color);
-    box-shadow: var(--c-card-shadow-inset),
-      0 14px 66px rgb(0 0 0 / 7%), 0 10px 17px rgb(0 0 0 / 3%),
-      0 4px 7px rgb(0 0 0 / 5%);
+    box-shadow: var(--c-card-shadow-inset), 0 14px 66px rgb(0 0 0 / 7%),
+      0 10px 17px rgb(0 0 0 / 3%), 0 4px 7px rgb(0 0 0 / 5%);
     border-radius: 8px;
 
     padding: 36px 24px 24px;
