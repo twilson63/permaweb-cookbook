@@ -84,6 +84,7 @@ html {
   font-size: 1.25rem;
   line-height: 2rem;
   letter-spacing: -0.025em;
+  transition: all 200ms ease-in-out;
 }
 
 .header {
@@ -202,8 +203,14 @@ html {
   }
 }
 
-a:hover {
+a {
   text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 85%;
 }
 
 .custom-container.info {
@@ -215,3 +222,8 @@ a:hover {
   background-color: var(--c-tip-bg);
   color: var(--c-tip-text);
 }
+
+.hero-body-text:hover {
+  opacity: 85%;
+}
+
