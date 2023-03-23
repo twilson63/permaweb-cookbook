@@ -21,28 +21,40 @@ export default {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     [
       'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+    ],
+    [
+      'meta',
+      {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black',
+      },
     ],
     [
       'link',
       {
         rel: 'icon',
-        type: 'image/png',
+        type: 'image/ico',
         sizes: '16x16',
-        href: 'http://arweave.net/DCn3QJ7zzqsFNiqMj7XdQZKyZz73NaXybf_V4wlpMTI'
-      }
+        href: '/Permaweb_Cookbook.ico',
+      },
     ],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
+    [
+      'link',
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    ],
+    [
+      'link',
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+    ],
     [
       'link',
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap'
-      }
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap',
+      },
     ],
     [
       'script',
@@ -51,15 +63,16 @@ export default {
         src: 'https://ackee-l09o.onrender.com/tracker.js',
         'data-ackee-server': 'https://ackee-l09o.onrender.com',
         async: true,
-        'data-ackee-domain-id': 'a6bf4de4-a529-452d-a611-6296c8af1b58'
-      }
-    ]
+        'data-ackee-domain-id':
+          'a6bf4de4-a529-452d-a611-6296c8af1b58',
+      },
+    ],
   ],
 
   markdown: {
     code: {
-      lineNumbers: false
-    }
+      lineNumbers: false,
+    },
   },
 
   theme: defaultTheme({
@@ -71,29 +84,29 @@ export default {
         children: [
           {
             text: 'Welcome',
-            link: '/getting-started/welcome'
+            link: '/getting-started/welcome',
           },
           {
             text: 'Hello World (No Code)',
-            link: '/getting-started/quick-starts/hw-no-code'
+            link: '/getting-started/quick-starts/hw-no-code',
           },
           {
             text: 'Hello World (CLI)',
-            link: '/getting-started/quick-starts/hw-cli'
+            link: '/getting-started/quick-starts/hw-cli',
           },
           {
             text: 'Hello World (With Code)',
-            link: '/getting-started/quick-starts/hw-code'
+            link: '/getting-started/quick-starts/hw-code',
           },
           {
             text: 'Hello World (NodeJS)',
-            link: '/getting-started/quick-starts/hw-nodejs'
+            link: '/getting-started/quick-starts/hw-nodejs',
           },
           {
             text: 'Contributing',
-            link: '/getting-started/contributing'
-          }
-        ]
+            link: '/getting-started/contributing',
+          },
+        ],
       },
       {
         text: 'Core Concepts',
@@ -102,19 +115,19 @@ export default {
         children: [
           {
             text: 'Bundles and Bundling',
-            link: '/concepts/bundles'
+            link: '/concepts/bundles',
           },
           {
             text: 'Gateways',
-            link: '/concepts/gateways'
+            link: '/concepts/gateways',
           },
           {
             text: 'Keyfiles and Wallets',
-            link: '/concepts/keyfiles-and-wallets'
+            link: '/concepts/keyfiles-and-wallets',
           },
           {
             text: 'Path Manifests',
-            link: '/concepts/manifests'
+            link: '/concepts/manifests',
           },
           {
             text: 'Permaweb',
@@ -123,9 +136,9 @@ export default {
             children: [
               {
                 text: 'Permaweb Applications',
-                link: '/concepts/permawebApplications'
-              }
-            ]
+                link: '/concepts/permawebApplications',
+              },
+            ],
           },
           {
             text: 'SmartWeave',
@@ -134,25 +147,25 @@ export default {
             children: [
               {
                 text: 'Arweave Name System (ArNS)',
-                link: '/concepts/arns'
+                link: '/concepts/arns',
               },
               {
                 text: 'Atomic Tokens',
-                link: '/concepts/atomic-tokens.md'
+                link: '/concepts/atomic-tokens.md',
               },
               {
                 text: 'Profit Sharing Tokens (PSTs)',
-                link: '/concepts/psts'
+                link: '/concepts/psts',
               },
               {
                 text: 'Vouch',
-                link: '/concepts/vouch'
-              }
-            ]
+                link: '/concepts/vouch',
+              },
+            ],
           },
           {
             text: `Transaction Data`,
-            link: `/guides/http-api.md`
+            link: `/guides/http-api.md`,
           },
           {
             text: `Transaction Posting`,
@@ -161,27 +174,27 @@ export default {
             children: [
               {
                 text: 'arweave-js',
-                link: '/guides/posting-transactions/arweave-js'
+                link: '/guides/posting-transactions/arweave-js',
               },
               {
                 text: 'bundlr.network',
-                link: '/guides/posting-transactions/bundlr'
+                link: '/guides/posting-transactions/bundlr',
               },
               {
                 text: 'dispatch',
-                link: '/guides/posting-transactions/dispatch'
-              }
-            ]
+                link: '/guides/posting-transactions/dispatch',
+              },
+            ],
           },
           {
             text: `Transaction Querying`,
-            link: `/concepts/queryTransactions`
+            link: `/concepts/queryTransactions`,
           },
           {
             text: 'Transaction Tags',
-            link: '/concepts/tags'
-          }
-        ]
+            link: '/concepts/tags',
+          },
+        ],
       },
       {
         text: 'Guides',
@@ -190,7 +203,7 @@ export default {
         children: [
           {
             text: 'ArProfile',
-            link: '/guides/arprofile'
+            link: '/guides/arprofile',
           },
           {
             text: 'DNS Integration',
@@ -198,13 +211,13 @@ export default {
             children: [
               {
                 text: 'Server Side',
-                link: '/guides/dns-integration/server-side'
+                link: '/guides/dns-integration/server-side',
               },
               {
                 text: 'Spheron',
-                link: '/guides/dns-integration/spheron'
-              }
-            ]
+                link: '/guides/dns-integration/spheron',
+              },
+            ],
           },
           {
             text: `Deploying Apps`,
@@ -212,17 +225,17 @@ export default {
             children: [
               {
                 text: 'arkb',
-                link: '/guides/deployment/arkb'
+                link: '/guides/deployment/arkb',
               },
               {
                 text: 'Bundlr',
-                link: '/guides/deployment/bundlr-cli'
+                link: '/guides/deployment/bundlr-cli',
               },
               {
                 text: 'Github Action',
-                link: '/guides/deployment/github-action'
-              }
-            ]
+                link: '/guides/deployment/github-action',
+              },
+            ],
           },
           {
             text: `Deploying PathManifests`,
@@ -231,22 +244,22 @@ export default {
             children: [
               {
                 text: 'arweave.app',
-                link: '/guides/deploying-manifests/arweave-app'
+                link: '/guides/deploying-manifests/arweave-app',
               },
               {
                 text: 'ardrive',
-                link: '/guides/deploying-manifests/ardrive'
+                link: '/guides/deploying-manifests/ardrive',
               },
               {
                 text: 'bundlr.network',
-                link: '/guides/deploying-manifests/bundlr'
-              }
-            ]
+                link: '/guides/deploying-manifests/bundlr',
+              },
+            ],
           },
           {
             text: 'Deploying PSTs',
             collapsible: false,
-            link: '/guides/deploying-psts'
+            link: '/guides/deploying-psts',
           },
           {
             text: 'GraphQL',
@@ -255,13 +268,13 @@ export default {
             children: [
               {
                 text: 'ArDB',
-                link: '/guides/querying-arweave/ardb'
+                link: '/guides/querying-arweave/ardb',
               },
               {
                 text: 'ar-gql',
-                link: '/guides/querying-arweave/ar-gql'
-              }
-            ]
+                link: '/guides/querying-arweave/ar-gql',
+              },
+            ],
           },
           {
             text: 'SmartWeave',
@@ -269,11 +282,11 @@ export default {
             children: [
               {
                 text: 'Atomic Tokens',
-                link: '/guides/atomic-tokens/intro'
+                link: '/guides/atomic-tokens/intro',
               },
               {
                 text: 'Vouch',
-                link: '/guides/vouch'
+                link: '/guides/vouch',
               },
               {
                 text: 'Warp',
@@ -281,27 +294,27 @@ export default {
                 children: [
                   {
                     text: 'Intro',
-                    link: '/guides/smartweave/warp/intro.md'
+                    link: '/guides/smartweave/warp/intro.md',
                   },
                   {
                     text: 'Deploying Contracts',
-                    link: '/guides/smartweave/warp/deploying-contracts.md'
+                    link: '/guides/smartweave/warp/deploying-contracts.md',
                   },
                   {
                     text: 'Read Contract State',
-                    link: '/guides/smartweave/warp/readstate.md'
+                    link: '/guides/smartweave/warp/readstate.md',
                   },
                   {
                     text: 'Write Contract Interactions',
-                    link: '/guides/smartweave/warp/write-interactions.md'
+                    link: '/guides/smartweave/warp/write-interactions.md',
                   },
                   {
                     text: 'Evolve Contract',
-                    link: '/guides/smartweave/warp/evolve.md'
-                  }
-                ]
-              }
-            ]
+                    link: '/guides/smartweave/warp/evolve.md',
+                  },
+                ],
+              },
+            ],
           },
           {
             text: `Testing`,
@@ -310,11 +323,11 @@ export default {
               {
                 text: 'arlocal',
                 collapsible: false,
-                link: '/guides/testing/arlocal'
-              }
-            ]
-          }
-        ]
+                link: '/guides/testing/arlocal',
+              },
+            ],
+          },
+        ],
       },
       {
         text: 'References',
@@ -324,9 +337,9 @@ export default {
           {
             text: 'GraphQL',
             collapsible: false,
-            link: '/references/gql'
-          }
-        ]
+            link: '/references/gql',
+          },
+        ],
       },
       {
         text: 'Starter Kits',
@@ -335,19 +348,19 @@ export default {
         children: [
           {
             text: 'React',
-            link: '/kits/react/'
+            link: '/kits/react/',
           },
           {
             text: 'Svelte',
-            link: '/kits/svelte/'
+            link: '/kits/svelte/',
           },
           {
             text: 'Vue',
-            link: '/kits/vue/'
-          }
-        ]
-      }
-    ]
+            link: '/kits/vue/',
+          },
+        ],
+      },
+    ],
   }),
 
   /**
@@ -355,10 +368,10 @@ export default {
    */
   plugins: [
     mediumZoomPlugin({
-      selector: ':not(.not-zoomable)'
+      selector: ':not(.not-zoomable)',
     }),
     containerPlugin({
-      type: 'info'
-    })
-  ]
+      type: 'info',
+    }),
+  ],
 };
