@@ -24,15 +24,18 @@ export default {
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     [
       'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
+      {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black'
+      }
     ],
     [
       'link',
       {
         rel: 'icon',
-        type: 'image/png',
+        type: 'image/ico',
         sizes: '16x16',
-        href: 'http://arweave.net/DCn3QJ7zzqsFNiqMj7XdQZKyZz73NaXybf_V4wlpMTI'
+        href: '/Permaweb_Cookbook.ico'
       }
     ],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],

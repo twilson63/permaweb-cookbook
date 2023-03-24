@@ -25,8 +25,8 @@
     margin: 0;
 
     .action {
+      color: var(--c-accent-rose);
       white-space: nowrap;
-      text-decoration: underline;
       margin-left: 15px;
     }
   }

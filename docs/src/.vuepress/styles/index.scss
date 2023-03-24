@@ -21,6 +21,12 @@
   --c-bg-dark: #d2d2d4;
   --c-bg-rgb: 242, 242, 242;
 
+  --c-accent-peach: #e1c7b8;
+  --c-accent-violet: #9555f1;
+  --c-accent-rose: #da7373;
+  --c-accent-sunny: #f6b865;
+  --c-accent-pinky: #e14ca8;
+
   --c-topbar-bg: #dcdcdc;
 
   --c-border: #c7c9cc;
@@ -84,6 +90,7 @@ html {
   font-size: 1.25rem;
   line-height: 2rem;
   letter-spacing: -0.025em;
+  transition: all 200ms ease-in-out;
 }
 
 .header {
@@ -202,8 +209,14 @@ html {
   }
 }
 
-a:hover {
+a {
   text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 85%;
 }
 
 .custom-container.info {
@@ -214,4 +227,8 @@ a:hover {
   margin: 1rem 0;
   background-color: var(--c-tip-bg);
   color: var(--c-tip-text);
+}
+
+.hero-body-text:hover {
+  opacity: 85%;
 }
