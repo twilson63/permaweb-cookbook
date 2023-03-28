@@ -1,6 +1,6 @@
 # Permaweb Applications
 
-A permaweb application is a type of web page or web app that runs in you browser. What makes it a permaweb app is that it is deployed to Arweave and saved forever. Even if the team that developed it moves on users can rest assured the permaweb app will stay online and available. A huge advantage to permaweb apps is that they save their data on Arweave which means it can easily be imported into other apps that might improve on the one your currently using.
+A permaweb application is a type of web page or web app that runs in your browser. What makes it a permaweb app is that it is deployed to Arweave and saved forever. Even if the team that developed it moves on users can rest assured the permaweb app will stay online and available. A huge advantage to permaweb apps is that they save their data on Arweave which means it can easily be imported into other apps that might improve on the one your currently using.
 
 ## What is the permaweb?
 
@@ -19,7 +19,7 @@ The permaweb is a collection of sites, apps, and SmartContracts built on top of 
 
 ### Gateway Services
 
-Gateway services are are the bridge between data on Arweave and displaying data in the browser. Gateways often provide indexing service along side serving transaction data, exposing graphQL endpoints for querying Arewave transactions. 
+Gateway services are the bridge between data on Arweave and displaying data in the browser. Gateways often provide indexing service along side serving transaction data, exposing graphQL endpoints for querying Arewave transactions. 
 
 ### Bundling Services 
 
