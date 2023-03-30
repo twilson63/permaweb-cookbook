@@ -75,3 +75,7 @@ npx ts-node example.ts
 
 This is a simple example of deploying an Atomic Asset, for more detailed examples check out: [https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)
 
+
+## Working with Tokens
+
+SmartWeave Contracts can not hold AR the native coin of the Arweave Network. AR is used to purchase storage for data on the Arweave Network and it can be transferred from a source wallet to a target wallet on the Arweave network, but it can not be held in a SmartWeave contract.

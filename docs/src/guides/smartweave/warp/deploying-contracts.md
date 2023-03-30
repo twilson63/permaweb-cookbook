@@ -6,6 +6,32 @@ SmartWeave Contracts are created by posting two transactions to the network, a S
 If you would like to learn more about authoring Warp SmartWeaveContracts, checkout the Warp Academy! [https://academy.warp.cc/](https://academy.warp.cc/)
 :::
 
+As of Warp version 1.3.0 you willl need a plugin to deploy contracts with Warp. This plugin will enable you to add different wallet signatures.
+
+```js
+import { DeployPlugin, InjectedArweaveSigner } from 'warp-contracts-plugin-deploy'
+import { WarpFactory } from 'warp-contracts'
+
+const warp = WarpFactory.forMainnet().use(new DeployPlugin())
+
+...
+
+function deploy(initState, src) {
+  if (window.arweaveWallet) {
+    await window.arweaveWallet.connect(['ACCESS_ADDRESS', 'SIGN_TRANSACTION', 'ACCESS_PUBLIC_KEY', 'SIGNATURE']);
+  }
+  const userSigner = new InjectedArweaveSigner(window.arweaveWallet);
+  await userSigner.setPublicKey();
+
+  return warp.deploy({
+    wallet: userSigner,
+    src,
+    initState: JSON.stringify(initState)
+  })
+}
+```
+
+
 ## The Four ways to deploy a Warp SmartWeave Contract
 
 There are 4 ways you can deploy a SmartWeaveContract via the Warp SDK, these options handle different use cases that a developer may encounter.
@@ -34,7 +60,7 @@ By default all deploy functions are published to Arweave via Bundlr-Network, eac
 Deploys contract plus source code to Warp Sequencer, to Bundlr (L2), to Arweave.
 
 ```ts
-const { contractTxId, srcTxId } = await warp.createContract.deploy({
+const { contractTxId, srcTxId } = await warp.deploy({
   wallet,
   initState,
   data: { 'Content-Type': 'text/html', body: '<h1>Hello World</h1>' },
@@ -54,7 +80,7 @@ const { contractTxId, srcTxId } = await warp.createContract.deploy({
 Already have the source on the permaweb? Then deployFromSourceTx is your tool of choice! With the permaweb you never have to worry about data changing so re-using source code for contracts is a no brainer.
 
 ```ts
-const { contractTxId, srcTxId } = await warp.createContract.deployFromSourceTx({
+const { contractTxId, srcTxId } = await warp.deployFromSourceTx({
   wallet,
   initState,
   srcTxId: 'SRC_TX_ID'
@@ -82,7 +108,7 @@ const dataItem = createData(
     }
   })
   , { tags: [{'Content-Type': 'application/x.arweave-manifest+json' }]})
-const { contractTxId } = await warp.createContract.deployBundled(dataItem.getRaw());
+const { contractTxId } = await warp.deployBundled(dataItem.getRaw());
 ```
 
 
@@ -97,7 +123,7 @@ const bundlr = new Bundlr('https://node2.bundlr.network', 'arweave', wallet)
 const { id } = await bundlr.upload('Some Awesome Atomic Asset',  { 
   tags: [{'Content-Type': 'text/plain' }]
 })
-const { contractTxId } = await warp.createContract.register(id, 'node2') 
+const { contractTxId } = await warp.register(id, 'node2') 
 ```
 
 ## Summary
