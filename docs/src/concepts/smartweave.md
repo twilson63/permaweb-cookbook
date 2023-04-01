@@ -101,7 +101,7 @@ Theres quite a few ecosystem projects leveraging SmartWeave SmartContracts, but 
 
 ### Apps
 - [Permapages](https://permapages.app/) | Permanent webpage creation tool, ArNS purchase portal, and ANT creation portal. Your profile on the permaweb.
-- [ArNS](/concepts/arns.html) | Arweave Name System <!-- // todo: update to arns portal when portal is released -->
+- [ArNS](arns.md) | Arweave Name System <!-- // todo: update to arns portal when portal is released -->
 - [WeaveDB](https://weavedb.dev/) | NoSQL Database as a Smart Contract.
 - [KwilDB](https://docs.kwil.com/)| SQL Database as a Smart Contract.
 - [ArDrive Inferno](https://ardrive.io/inferno/) | Get PST's for uploading thru Ardrive. 
