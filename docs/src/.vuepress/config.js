@@ -215,15 +215,15 @@ module.exports = {
                 link: '/guides/exm/js-sdk/sdk-intro.md'
               },
               {
-                text: 'Deploying Serverless Functions',
+                text: 'Deploy with SDK',
                 link: '/guides/exm/js-sdk/sdk-deploy.md'
               },
               {
-                text: 'Write to Serverless Functions',
+                text: 'Write with SDK',
                 link: '/guides/exm/js-sdk/sdk-write.md'
               },
               {
-                text: 'Read from Serverless Functions',
+                text: 'Read with SDK',
                 link: '/guides/exm/js-sdk/sdk-read.md'
               }
               ]
