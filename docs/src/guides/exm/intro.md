@@ -54,25 +54,6 @@ As everyone has access to the same data, everyone will interpret the it in the s
 </details>
 <br/>
 
-## Creating an API Token
-
-EXM seeks to be crypto agnostic and requires only an API token (also known as key) to interact with. This API key is required for most actions in EXM like deployments and write operations. For creating an API token, the following steps must be performed:
-
-- Go to the [main page](https://exm.dev/).
-- Choose the preferred method to Sign-Up/ Sign-In.
-
-![EXM Sign In Options](~@source/images/exm-sign-in-options.png)
-
-- After being redirected to the dashboard, click on "New Token".
-
-![Create New API Token](~@source/images/exm-create-token.png)
-
-- Copy the token that has been generated and use it with the SDK or CLI.
-
-## Handling API Token safely
-
-The token is an identifier to our account and lets us access functions associated with it. Hence, it is vital to ensure this token is kept secret to prevent any spams and attacks to our functions. The best way to do so is using environment variables.
-
 ## Advantages of using Serverless Functions
 
 - Serverless functions add a layer of modularity and can be composed as per various application requirements.
