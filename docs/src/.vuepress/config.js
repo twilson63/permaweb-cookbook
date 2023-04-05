@@ -328,6 +328,11 @@ export default {
             text: 'GraphQL',
             collapsible: false,
             link: '/references/gql'
+          },
+          {
+            text: 'Bundling',
+            collapsible: false,
+            link: '/references/bundling'
           }
         ]
       },
