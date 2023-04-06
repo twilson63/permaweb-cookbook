@@ -157,11 +157,21 @@ module.exports = {
             link: '/guides/arprofile'
           },
           {
-            text: 'Atomic Tokens',
-            link: '/guides/atomic-tokens/intro'
+            text: 'DNS Integration',
+            collapsible: true,
+            children: [
+              {
+                text: 'Server Side',
+                link: '/guides/dns-integration/server-side'
+              },
+              {
+                text: 'Spheron',
+                link: '/guides/dns-integration/spheron'
+              }
+            ]
           },
           {
-            text: `App Deployment`,
+            text: `Deploying Apps`,
             collapsible: true,
             children: [
               {
@@ -179,22 +189,28 @@ module.exports = {
             ]
           },
           {
+            text: `Deploying PathManifests`,
+            link: '/guides/deploying-manifests/deployingManifests',
+            collapsible: false,
+            children: [
+              {
+                text: 'arweave.app',
+                link: '/guides/deploying-manifests/arweave-app'
+              },
+              {
+                text: 'ardrive',
+                link: '/guides/deploying-manifests/ardrive'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/deploying-manifests/bundlr'
+              }
+            ]
+          },
+          {
             text: 'Deploying PSTs',
             collapsible: false,
             link: '/guides/deploying-psts'
-          },
-          {
-            text: 'DNS Integration',
-            collapsible: true,
-            children: [{
-              text: 'Server Side',
-              link: '/guides/dns-integration/server-side'
-            },
-            {
-              text: 'Spheron',
-              link: '/guides/dns-integration/spheron'
-            }
-            ]
           },
           {
             text: 'Execution Machine',
@@ -230,45 +246,17 @@ module.exports = {
             }]
           },
           {
-            text: 'HTTP API',
+            text: 'GraphQL',
+            link: '/guides/querying-arweave/queryingArweave',
             collapsible: false,
-            link: '/guides/http-api'
-          },
-          {
-            text: `Posting Transactions`,
-            link: `/guides/posting-transactions`
-          },
-          {
-            text: `Deploying Path Manifests`,
-            link: "/guides/deploying-manifests/deployingManifests",
-            collapsible: true,
             children: [
               {
-                text: 'arweave.app',
-                link: '/guides/deploying-manifests/arweave-app'
+                text: 'ArDB',
+                link: '/guides/querying-arweave/ardb'
               },
               {
-                text: 'ardrive',
-                link: '/guides/deploying-manifests/ardrive'
-              },
-              {
-                text: 'bundlr.network',
-                link: '/guides/deploying-manifests/bundlr'
-              },
-            ]
-          },
-          {
-            text: "Querying Arweave",
-            link: "/guides/querying-arweave/queryingArweave",
-            collapsible: true,
-            children: [
-              {
-                text: "ArDB",
-                link: "/guides/querying-arweave/ardb"
-              },
-              {
-                text: "ar-gql",
-                link: "/guides/querying-arweave/ar-gql"
+                text: 'ar-gql',
+                link: '/guides/querying-arweave/ar-gql'
               }
             ]
           },
@@ -277,24 +265,38 @@ module.exports = {
             collapsible: true,
             children: [
               {
-                text: 'warp',
+                text: 'Atomic Tokens',
+                link: '/guides/atomic-tokens/intro'
+              },
+              {
+                text: 'Vouch',
+                link: '/guides/vouch'
+              },
+              {
+                text: 'Warp',
                 collapsible: false,
-                children: [{
-                  text: 'Intro',
-                  link: '/guides/smartweave/warp/intro.md'
-                }, {
-                  text: 'Deploying Contracts',
-                  link: '/guides/smartweave/warp/deploying-contracts.md'
-                }, {
-                  text: 'ReadState',
-                  link: '/guides/smartweave/warp/readstate.md'
-                }, {
-                  text: 'WriteInteractions',
-                  link: '/guides/smartweave/warp/write-interactions.md'
-                }, {
-                  text: 'Evolve',
-                  link: '/guides/smartweave/warp/evolve.md'
-                }]
+                children: [
+                  {
+                    text: 'Intro',
+                    link: '/guides/smartweave/warp/intro.md'
+                  },
+                  {
+                    text: 'Deploying Contracts',
+                    link: '/guides/smartweave/warp/deploying-contracts.md'
+                  },
+                  {
+                    text: 'Read Contract State',
+                    link: '/guides/smartweave/warp/readstate.md'
+                  },
+                  {
+                    text: 'Write Contract Interactions',
+                    link: '/guides/smartweave/warp/write-interactions.md'
+                  },
+                  {
+                    text: 'Evolve Contract',
+                    link: '/guides/smartweave/warp/evolve.md'
+                  }
+                ]
               }
             ]
           },
@@ -308,14 +310,8 @@ module.exports = {
                 link: '/guides/testing/arlocal'
               }
             ]
-          },
-          {
-            text: 'Vouch',
-            collapsible: false,
-            link: '/guides/vouch'
           }
         ]
-
       },
       {
         text: 'References',
