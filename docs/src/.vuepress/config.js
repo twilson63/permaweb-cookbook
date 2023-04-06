@@ -1,10 +1,11 @@
-const { description } = require('../../package')
-import { defaultTheme } from '@vuepress/theme-default'
-import { containerPlugin } from '@vuepress/plugin-container'
+import { description } from '../../package';
 
-module.exports = {
+import { defaultTheme } from '@vuepress/theme-default';
+import { containerPlugin } from '@vuepress/plugin-container';
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
 
-  base: "/",
+export default {
+  base: '/',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
@@ -20,14 +21,44 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ['meta', { name: 'theme-color', content: '#663399' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    [
+      'meta',
+      {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black'
+      }
+    ],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/ico',
+        sizes: '16x16',
+        href: '/Permaweb_Cookbook.ico'
+      }
+    ],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap' }],
-    ['script', { defer: true, src: 'https://ackee-l09o.onrender.com/tracker.js', 'data-ackee-server': 'https://ackee-l09o.onrender.com', async: true, 'data-ackee-domain-id': 'a6bf4de4-a529-452d-a611-6296c8af1b58' }],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap'
+      }
+    ],
+    [
+      'script',
+      {
+        defer: true,
+        src: 'https://ackee-l09o.onrender.com/tracker.js',
+        'data-ackee-server': 'https://ackee-l09o.onrender.com',
+        async: true,
+        'data-ackee-domain-id': 'a6bf4de4-a529-452d-a611-6296c8af1b58'
+      }
+    ]
   ],
+
   markdown: {
     code: {
       lineNumbers: false
@@ -35,36 +66,37 @@ module.exports = {
   },
 
   theme: defaultTheme({
-    navbar: [
-      { text: 'GitHub', link: 'https://github.com/twilson63/permaweb-cookbook' },
-      {
-        text: 'Starter Kits',
-        link: '/kits/'
-      }
-    ],
     sidebar: [
       {
         text: 'Getting Started',
         link: '/getting-started/',
         collapsible: true,
-        children: [{
-          text: 'Welcome',
-          link: '/getting-started/welcome'
-        }, {
-          text: 'Hello World (No Code)',
-          link: '/getting-started/quick-starts/hw-no-code'
-        }, {
-          text: 'Hello World (CLI)',
-          link: '/getting-started/quick-starts/hw-cli'
-        },
-        {
-          text: 'Hello World (With Code)',
-          link: '/getting-started/quick-starts/hw-code'
-        },
-        {
-          text: 'Contributing',
-          link: '/getting-started/contributing'
-        }]
+        children: [
+          {
+            text: 'Welcome',
+            link: '/getting-started/welcome'
+          },
+          {
+            text: 'Hello World (No Code)',
+            link: '/getting-started/quick-starts/hw-no-code'
+          },
+          {
+            text: 'Hello World (CLI)',
+            link: '/getting-started/quick-starts/hw-cli'
+          },
+          {
+            text: 'Hello World (With Code)',
+            link: '/getting-started/quick-starts/hw-code'
+          },
+          {
+            text: 'Hello World (NodeJS)',
+            link: '/getting-started/quick-starts/hw-nodejs'
+          },
+          {
+            text: 'Contributing',
+            link: '/getting-started/contributing'
+          }
+        ]
       },
       {
         text: 'Core Concepts',
@@ -72,12 +104,12 @@ module.exports = {
         collapsible: true,
         children: [
           {
-            text: 'Atomic Tokens',
-            link: '/concepts/atomic-tokens'
-          },
-          {
             text: 'Bundles and Bundling',
             link: '/concepts/bundles'
+          },
+          {
+            text: 'Gateways',
+            link: '/concepts/gateways'
           },
           {
             text: 'Keyfiles and Wallets',
@@ -89,14 +121,44 @@ module.exports = {
           },
           {
             text: 'Permaweb',
-            link: '/concepts/permaweb'
+            link: '/concepts/permaweb',
+            collapsible: false,
+            children: [
+              {
+                text: 'Permaweb Applications',
+                link: '/concepts/permawebApplications'
+              }
+            ]
           },
           {
-            text: 'Permaweb Applications',
-            link: '/concepts/permawebApplications'
+            text: 'SmartWeave',
+            link: '/concepts/smartweave',
+            collapsible: false,
+            children: [
+              {
+                text: 'Arweave Name System (ArNS)',
+                link: '/concepts/arns'
+              },
+              {
+                text: 'Atomic Tokens',
+                link: '/concepts/atomic-tokens.md'
+              },
+              {
+                text: 'Profit Sharing Tokens (PSTs)',
+                link: '/concepts/psts'
+              },
+              {
+                text: 'Vouch',
+                link: '/concepts/vouch'
+              }
+            ]
           },
           {
-            text: `Posting Transactions`,
+            text: `Transaction Data`,
+            link: `/guides/http-api.md`
+          },
+          {
+            text: `Transaction Posting`,
             link: `/concepts/post-transactions`,
             collapsible: true,
             children: [
@@ -115,35 +177,12 @@ module.exports = {
             ]
           },
           {
-            text: `Querying Transactions`,
+            text: `Transaction Querying`,
             link: `/concepts/queryTransactions`
-          },
-          {
-            text: 'SmartWeave',
-            link: '/concepts/smartweave',
-            collapsible: true,
-            children: [
-              {
-                text: 'Arweave Name System (ArNS)',
-                link: '/concepts/arns'
-              },
-              {
-                text: 'Atomic Assets',
-                link: '/concepts/atomic-assets.md'
-              },
-              {
-                text: 'Profit Sharing Tokens (PSTs)',
-                link: '/concepts/psts'
-              }
-            ]
           },
           {
             text: 'Transaction Tags',
             link: '/concepts/tags'
-          },
-          {
-            text: 'Vouch',
-            link: '/concepts/vouch'
           }
         ]
       },
@@ -319,9 +358,9 @@ module.exports = {
         collapsible: true,
         children: [
           {
-            text: "GraphQL",
+            text: 'GraphQL',
             collapsible: false,
-            link: "/references/gql",
+            link: '/references/gql'
           }
         ]
       },
@@ -348,13 +387,14 @@ module.exports = {
   }),
 
   /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   * Apply plugins
    */
   plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
+    mediumZoomPlugin({
+      selector: ':not(.not-zoomable)'
+    }),
     containerPlugin({
       type: 'info'
-    }),
+    })
   ]
-}
+};
