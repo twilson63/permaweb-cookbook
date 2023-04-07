@@ -104,20 +104,52 @@ export default {
         collapsible: true,
         children: [
           {
-            text: 'Bundles and Bundling',
-            link: '/concepts/bundles'
+            text: `Posting Transactions`,
+            link: `/concepts/post-transactions`,
+            collapsible: true,
+            children: [
+              {
+                text: 'arweave-js',
+                link: '/guides/posting-transactions/arweave-js'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/posting-transactions/bundlr'
+              },
+              {
+                text: 'dispatch',
+                link: '/guides/posting-transactions/dispatch'
+              }
+            ]
           },
           {
-            text: 'Gateways',
-            link: '/concepts/gateways'
+            text: 'Transaction Metadata (Tags)',
+            link: '/concepts/tags'
           },
           {
-            text: 'Keyfiles and Wallets',
+            text: `Querying Transactions`,
+            link: `/concepts/queryTransactions`
+          },
+          {
+            text: `Fetching Transaction Data`,
+            link: `/guides/http-api.md`
+          },
+          {
+            text: 'Transaction Types',
+            children: [
+              {
+                text: 'Transaction Bundles',
+                link: '/concepts/bundles'
+              },
+              {
+                text: 'Path Manifests',
+                link: '/concepts/manifests'
+              }
+            ]
+          },
+          {
+            text: 'Wallets and Keys',
             link: '/concepts/keyfiles-and-wallets'
-          },
-          {
-            text: 'Path Manifests',
-            link: '/concepts/manifests'
           },
           {
             text: 'Permaweb',
@@ -127,7 +159,15 @@ export default {
               {
                 text: 'Permaweb Applications',
                 link: '/concepts/permawebApplications'
-              }
+              },
+              {
+                text: 'Gateway Service',
+                link: '/concepts/gateways'
+              },
+              {
+                text: 'Bundling Service',
+                link: '/concepts/bundlers'
+              },
             ]
           },
           {
@@ -152,37 +192,6 @@ export default {
                 link: '/concepts/vouch'
               }
             ]
-          },
-          {
-            text: `Transaction Data`,
-            link: `/guides/http-api.md`
-          },
-          {
-            text: `Transaction Posting`,
-            link: `/concepts/post-transactions`,
-            collapsible: true,
-            children: [
-              {
-                text: 'arweave-js',
-                link: '/guides/posting-transactions/arweave-js'
-              },
-              {
-                text: 'bundlr.network',
-                link: '/guides/posting-transactions/bundlr'
-              },
-              {
-                text: 'dispatch',
-                link: '/guides/posting-transactions/dispatch'
-              }
-            ]
-          },
-          {
-            text: `Transaction Querying`,
-            link: `/concepts/queryTransactions`
-          },
-          {
-            text: 'Transaction Tags',
-            link: '/concepts/tags'
           }
         ]
       },
