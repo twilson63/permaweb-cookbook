@@ -66,6 +66,7 @@ export default {
   },
 
   theme: defaultTheme({
+    colorMode: 'dark',
     sidebar: [
       {
         text: 'Getting Started',
