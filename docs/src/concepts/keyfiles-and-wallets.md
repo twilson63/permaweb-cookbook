@@ -1,4 +1,4 @@
-# Keyfiles and Wallets
+# Wallets and Keys
 
 ---
 

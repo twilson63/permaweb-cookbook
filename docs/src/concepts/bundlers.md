@@ -1,3 +1,3 @@
 # Bundling Services
 
-<coming soon>
+coming soon

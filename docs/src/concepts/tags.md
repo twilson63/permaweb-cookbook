@@ -1,4 +1,4 @@
-# Transaction Tags
+# Transaction Metadata (Tags)
 
 Arweave can be thought of as a permanent append-only hard drive where each entry on the drive is its own unique transaction. Transactions have a unique ID, signature, and owner address for the address that signed and paid for the transaction to be posted. Along with those header values, the Arweave protocol allows users to tag transactions with custom tags. These are specified as a collection name value pairs appended to the transaction. These tags make it possible to query Arweave and find all the Transactions that include a particular tag or tags.  The ability to query and filter transactions is critical to supporting apps built on Arweave.
 
