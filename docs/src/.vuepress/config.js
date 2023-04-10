@@ -124,22 +124,22 @@ export default {
             ]
           },
           {
-            text: 'Transaction Metadata (Tags)',
+            text: 'Metadata (Tags)',
             link: '/concepts/tags'
           },
           {
-            text: `Querying Transactions`,
+            text: `Querying`,
             link: `/concepts/queryTransactions`
           },
           {
-            text: `Fetching Transaction Data`,
+            text: `Fetching Data`,
             link: `/guides/http-api.md`
           },
           {
             text: 'Transaction Types',
             children: [
               {
-                text: 'Transaction Bundles',
+                text: 'Bundles',
                 link: '/concepts/bundles'
               },
               {

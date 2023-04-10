@@ -7,11 +7,11 @@ title: Permaweb Cookbook - Core Concepts
 Foundations of Arweave and the Permaweb.
 
 - [Posting Transactions](post-transactions.md)
-- [Transaction Metadata (Tags)](tags.md)
-- [Querying Transactions](queryTransactions.md)
-- [Fetching Transaction Data](/guides/http-api.md)
+- [Metadata (Tags)](tags.md)
+- [Querying](queryTransactions.md)
+- [Fetching Data](/guides/http-api.md)
 - [Transaction Types](bundles.md)
-  - [Transaction Bundles](bundles.md)
+  - [Bundles](bundles.md)
   - [Path Manifests](manifests.md)
 - [Wallets and Keys](keyfiles-and-wallets.md)
 - [Permaweb](permaweb.md)
