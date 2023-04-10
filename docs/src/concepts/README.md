@@ -6,23 +6,22 @@ title: Permaweb Cookbook - Core Concepts
 
 Foundations of Arweave and the Permaweb.
 
-- [Bundles and Bundling](bundles.md)
-- [Gateways](gateways.md)
-- [Keyfiles and Wallets](keyfiles-and-wallets.md)
-- [Path Manifests](manifests.md)
+- [Posting Transactions](post-transactions.md)
+- [Transaction Metadata (Tags)](tags.md)
+- [Querying Transactions](queryTransactions.md)
+- [Fetching Transaction Data](/guides/http-api.md)
+- [Transaction Types](bundles.md)
+  - [Transaction Bundles](bundles.md)
+  - [Path Manifests](manifests.md)
+- [Wallets and Keys](keyfiles-and-wallets.md)
 - [Permaweb](permaweb.md)
   - [Permaweb Applications](permawebApplications.md)
+  - [Gateway Service](gateways.md)
+  - [Bundling Service](bundlers.md)
 - [SmartWeave](smartweave.md)
-  - [Arweave Name System (ArNS)](arns.md) 
+  - [Arweave Name System (ArNS)](arns.md)
   - [Atomic Tokens](atomic-tokens.md)
   - [Profit Sharing Tokens (PSTs)](psts.md)
-  - [Vouch](vouch.md)
-- [Transaction Data](/guides/http-api.md)
-- [Transaction Posting](post-transactions.md)
-- [Transaction Querying](queryTransactions.md)
-- [Transaction Tags](tags.md)
 
-
- 
 > Do you think a permaweb core concept is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md) 
 

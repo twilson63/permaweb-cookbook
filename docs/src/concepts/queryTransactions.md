@@ -1,4 +1,4 @@
-# Querying Arweave
+# Querying Transactions
 It isn't enough to store data permanently, for Arweave to be useful the data also needs to be discoverable and retrievable. This guide summarizes the different approaches to querying data on Arweave.
 
 ## GraphQL
