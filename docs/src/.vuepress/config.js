@@ -133,7 +133,7 @@ export default {
           },
           {
             text: `Fetching Transaction Data`,
-            link: `/guides/http-api.md`
+            link: `/concepts/transaction-data`
           },
           {
             text: 'Transaction Types',
@@ -371,6 +371,11 @@ export default {
             text: 'GraphQL',
             collapsible: false,
             link: '/references/gql'
+          },
+          {
+            text: 'HTTP API',
+            collapsible: false,
+            link: '/references/http-api'
           }
         ]
       },

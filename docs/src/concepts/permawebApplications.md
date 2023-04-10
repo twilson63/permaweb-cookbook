@@ -15,7 +15,7 @@ The permaweb is a collection of sites, apps, and SmartContracts built on top of 
 * Sequencer Service (ex. warp.cc)
 * Index Service (ex goldsky)
 
-<img src="https://arweave.net/xzg9H90vvfLFxc67Z_c9tWilFTz32gKnKNF6JqbTeRc" width="700">
+<img src="https://arweave.net/ycQzutVToTtVT_vT4811ByswtZ-KjqmifNSehSb1-eg" width="700">
 
 ### Gateway Services
 
