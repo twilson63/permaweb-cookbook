@@ -1,5 +1,5 @@
 # Querying Arweave with GraphQL
-Arweave provides a simple way of querying for transactions and filtering them by [tags](../concepts/tags.md). Arweave GraphQL-compatible gateways provide endpoints users can post GraphQL queries to, and also provide a playground for trying queries.
+Arweave provides a simple way of querying for transactions and filtering them by [tags](../concepts/tags.md). Arweave GraphQL-compatible indexing services provide endpoints users can post GraphQL queries to, and also provide a playground for trying queries.
 
 [GraphQL](https://graphql.org) is a flexible query language that services can use to build a customized data schema for clients to query. GraphQL also allows clients to specify which elements of the available data structure they would like to see in the results.
 
@@ -10,7 +10,7 @@ Arweave provides a simple way of querying for transactions and filtering them by
 - [ar.io decentralized indexing](https://ar-io.dev/graphql) A decentralized network for indexing services. Currently in testing with L1 transactions available.
 
 ## Executing a GraphQL Query
-To query arweave we’ll need to access it through a gateway that supports GraphQL. Use one of the gateway playgrounds listed above to get started!
+To query arweave we’ll need to access it through an indexing service that supports GraphQL. Use one of the GraphQL playgrounds listed above to get started!
 
 Copy and paste in the following query
 ```graphql:no-line-numbers
