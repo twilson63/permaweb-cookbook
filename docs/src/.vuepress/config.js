@@ -124,22 +124,22 @@ export default {
             ]
           },
           {
-            text: 'Transaction Metadata (Tags)',
+            text: 'Metadata (Tags)',
             link: '/concepts/tags'
           },
           {
-            text: `Querying Transactions`,
+            text: `Querying`,
             link: `/concepts/queryTransactions`
           },
           {
-            text: `Fetching Transaction Data`,
-            link: `/concepts/transaction-data`
+            text: `Fetching Data`,
+            link: `/guides/http-api.md`
           },
           {
             text: 'Transaction Types',
             children: [
               {
-                text: 'Transaction Bundles',
+                text: 'Bundles',
                 link: '/concepts/bundles'
               },
               {
@@ -162,11 +162,11 @@ export default {
                 link: '/concepts/permawebApplications'
               },
               {
-                text: 'Gateway Service',
+                text: 'Gateway Services',
                 link: '/concepts/gateways'
               },
               {
-                text: 'Bundling Service',
+                text: 'Bundling Services',
                 link: '/concepts/bundlers'
               },
             ]
