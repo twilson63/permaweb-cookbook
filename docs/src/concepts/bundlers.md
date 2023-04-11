@@ -26,4 +26,4 @@ Which make sure the data is persisted until it is uploaded to Arweave.
 
 ### Supporting multiple currencies
 ---
-A key feature of bundling services is that because they pay for the base Arweave transaction to be posted (using AR tokens) they can choose to enable payments of storage fees on a variety of different tokens. This is a the main entry point for other chains to enable Arweave's permanent storage for their users.
+A key feature of bundling services is that because they pay for the base Arweave transaction to be posted (using AR tokens) they can choose to enable payments of storage fees on a variety of different tokens. This is the main entry point for other chains to enable Arweave's permanent storage for their users.
