@@ -3,11 +3,11 @@ Arweave provides a simple way of querying for transactions and filtering them by
 
 [GraphQL](https://graphql.org) is a flexible query language that services can use to build a customized data schema for clients to query. GraphQL also allows clients to specify which elements of the available data structure they would like to see in the results.
 
-## Public Gateways
+## Public Indexing Services
 
-- [arweave.net gateway](https://arweave.net/graphql) the original graphql gateway, managed by [ar.io](https://ar.io)
-- [goldsky search gateway](https://arweave-search.goldsky.com/graphql) a specifically gateway optimized for search using a superset graphql syntax, managed by [goldsky](https://goldsky.com)
-- [ar.io decentralized gateway network](https://ar-io.dev/graphql) A decentralized network for gateways. Currently in testing with L1 transactions available.
+- [arweave.net graphql](https://arweave.net/graphql) the original graphql endpoint, managed by [ar.io](https://ar.io)
+- [goldsky search service](https://arweave-search.goldsky.com/graphql) a public service specifically optimized for search using a superset of the graphql syntax, managed by [goldsky](https://goldsky.com)
+- [ar.io decentralized indexing](https://ar-io.dev/graphql) A decentralized network for indexing services. Currently in testing with L1 transactions available.
 
 ## Executing a GraphQL Query
 To query arweave we’ll need to access it through a gateway that supports GraphQL. Use one of the gateway playgrounds listed above to get started!
@@ -176,5 +176,5 @@ query {
 * [Arweave GQL Reference](../../references/gql.md)
 * [ArDB package](./ardb.md)
 * [ar-gql package](./ar-gql.md)
-* [Search Gateway](./search-gateway.md)
+* [Search Indexing Service](./search-indexing-service.md)
 
