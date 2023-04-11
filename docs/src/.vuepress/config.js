@@ -371,6 +371,11 @@ export default {
             text: 'GraphQL',
             collapsible: false,
             link: '/references/gql'
+          },
+          {
+            text: 'HTTP API',
+            collapsible: false,
+            link: '/references/http-api'
           }
         ]
       },
