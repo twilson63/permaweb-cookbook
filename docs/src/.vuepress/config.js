@@ -306,6 +306,10 @@ export default {
               {
                 text: 'ar-gql',
                 link: '/guides/querying-arweave/ar-gql'
+              },
+              {
+                text: 'Search Indexing Service',
+                link: '/guides/querying-arweave/search-indexing-service'
               }
             ]
           },
