@@ -1,10 +1,16 @@
 # Querying Arweave with GraphQL
-Arweave provides a simple way of querying for transactions and filtering them by [tags](../concepts/tags.md). The `https://arweave.net` gateway exposes an [endpoint](https://arweave.net/graphql) for posting GraphQL queries to. It also provides a playground for trying queries.
+Arweave provides a simple way of querying for transactions and filtering them by [tags](../concepts/tags.md). Arweave GraphQL-compatible gateways provide endpoints users can post GraphQL queries to, and also provide a playground for trying queries.
 
 [GraphQL](https://graphql.org) is a flexible query language that services can use to build a customized data schema for clients to query. GraphQL also allows clients to specify which elements of the available data structure they would like to see in the results.
 
+## Public Gateways
+
+- [arweave.net gateway](https://arweave.net/graphql) the original graphql gateway, managed by [ar.io](https://ar.io)
+- [goldsky search gateway](https://arweave-search.goldsky.com/graphql) a specifically gateway optimized for search using a superset graphql syntax, managed by [goldsky](https://goldsky.com)
+- [ar.io decentralized gateway network](https://ar-io.dev/graphql) A decentralized network for gateways. Currently in testing with L1 transactions available.
+
 ## Executing a GraphQL Query
-To query arweave we’ll need to access it through a gateway that supports GraphQL. Let’s head over to the GraphQL Playground over at [https://arweave.net/graphql](https://arweave.net/graphql). (You could also use the GraphQL Playground at [https://arweave-search.goldsky.com/graphql](https://arweave-search.goldsky.com/graphql))
+To query arweave we’ll need to access it through a gateway that supports GraphQL. Use one of the gateway playgrounds listed above to get started!
 
 Copy and paste in the following query
 ```graphql:no-line-numbers
@@ -170,4 +176,5 @@ query {
 * [Arweave GQL Reference](../../references/gql.md)
 * [ArDB package](./ardb.md)
 * [ar-gql package](./ar-gql.md)
+* [Search Gateway](./search-gateway.md)
 
