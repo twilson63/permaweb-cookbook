@@ -22,6 +22,7 @@ Snack-sized guides for the building blocks of the Permaweb
 - [GraphQL](querying-arweave/queryingArweave.md)
   - [ArDB](querying-arweave/ardb.md)
   - [ar-gql](querying-arweave/ar-gql.md)
+  - [Search Service](querying-arweave/search-indexing-service.md)
 - SmartWeave
   - [Atomic Tokens](atomic-tokens/intro.md)
   - [Vouch](vouch.md)

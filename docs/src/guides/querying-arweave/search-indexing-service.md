@@ -12,10 +12,10 @@ tl;dr
 The Search GraphQL syntax is a superset of the [Arweave GraphQL syntax](./queryingArweave.md). It's fully backwards compatible and will return the same results for the same queries, but has some additional modifiers that can be useful. 
 
 - Flexible tag filters
-	- Search for just a tag name or value
+  - Search for just a tag name or value
 - Advanced tag filters
-	- Fuzzy search
-	- Wildcard search
+  - Fuzzy search
+  - Wildcard search
 - Filter for L1 transactions only
 
 For any custom needs or feature ideas, feel free to contact the Goldsky team through email or on discord! 
@@ -38,25 +38,25 @@ Search for transactions with the tag value 'cat'
 
 ```graphql:no-line-numbers
 query just_values {
-	transactions(
-		first: 10,
-		tags: [
-			{
-				values: ["cat"]
-			}
-		]
-	) 
-	{
-		edges {
-			node {
-				id
-				tags {
-					name
-					value
-				}
-			}
-		}
-	}
+  transactions(
+    first: 10,
+    tags: [
+      {
+        values: ["cat"]
+      }
+    ]
+  ) 
+  {
+    edges {
+      node {
+        id
+        tags {
+          name
+          value
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -64,25 +64,25 @@ Search for transactions that have an `In-Response-To-ID`
 
 ```graphql:no-line-numbers
 query just_name {
-	transactions(
-		first: 10,
-		tags: [
-			{
-				name: "In-Response-To-ID"
-			}
-		]
-	) 
-	{
-		edges {
-			node {
-				id
-				tags {
-					name
-					value
-				}
-			}
-		}
-	}
+  transactions(
+    first: 10,
+    tags: [
+      {
+        name: "In-Response-To-ID"
+      }
+    ]
+  ) 
+  {
+    edges {
+      node {
+        id
+        tags {
+          name
+          value
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -187,14 +187,14 @@ Simply set `bundledIn: NULL`
 
 ```graphql:no-line-numbers
 query just_l1 {
-	transactions(
-		first: 10,
-		bundledIn: null
-	) 
-	{
-		edges {
-			node {
-				id
+  transactions(
+    first: 10,
+    bundledIn: null
+  ) 
+  {
+    edges {
+      node {
+        id
         signature
         owner {
           address
@@ -202,8 +202,8 @@ query just_l1 {
         block {
           height
         }
-			}
-		}
-	}
+      }
+    }
+  }
 }
 ```
