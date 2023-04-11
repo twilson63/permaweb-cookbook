@@ -162,11 +162,11 @@ export default {
                 link: '/concepts/permawebApplications'
               },
               {
-                text: 'Gateway Service',
+                text: 'Gateway Services',
                 link: '/concepts/gateways'
               },
               {
-                text: 'Bundling Service',
+                text: 'Bundling Services',
                 link: '/concepts/bundlers'
               },
             ]
