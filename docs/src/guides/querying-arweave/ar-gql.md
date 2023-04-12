@@ -21,7 +21,9 @@ yarn add ar-gql
 
 ## Example
 ```js:no-line-numbers
-import * as argql from "ar-gql"
+import { arGql } from "ar-gql"
+
+const argql = arGql()
 
 (async () => {
 	let results = await argql.run(`query( $count: Int ){
