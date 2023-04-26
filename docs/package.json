@@ -26,6 +26,7 @@
   "dependencies": {
     "@vuepress/plugin-container": "2.0.0-beta.61",
     "@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
+    "add-to-calendar-button": "^2.2.5",
     "bootstrap": "5.2.3"
   }
 }
