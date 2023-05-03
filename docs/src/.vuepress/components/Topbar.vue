@@ -16,6 +16,7 @@
         timeZone="America/New_York"
         recurrence="weekly"
         buttonStyle="round"
+        size="1"
       ></add-to-calendar-button>
     </p>
   </div>
