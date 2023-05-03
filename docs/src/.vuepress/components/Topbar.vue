@@ -1,11 +1,13 @@
 <script>
-  import 'add-to-calendar-button'
-
+import 'add-to-calendar-button';
 </script>
 <template>
   <div class="topbar">
     <p>
-      <span>Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays</span>
+      <span
+        >Cookbook Community Meetup - 12pm ET / 5pm GMT every week on
+        Wednesdays</span
+      >
       <add-to-calendar-button
         name="Permaweb Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
         options="'Apple','Google'"
