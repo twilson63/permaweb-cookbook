@@ -168,7 +168,7 @@ export default {
               {
                 text: 'Bundling Services',
                 link: '/concepts/bundlers'
-              },
+              }
             ]
           },
           {
@@ -264,35 +264,38 @@ export default {
           {
             text: 'Execution Machine',
             collapsible: true,
-            children: [{
-              text: 'Introduction',
-              link: '/guides/exm/intro.md'
-            },
-            {
-              text: 'API Token',
-              link: '/guides/exm/api.md'
-            },
-            {
-              text: 'JS SDK',
-              collapsible: true,
-              children: [{
-                text: 'Execution Machine SDK',
-                link: '/guides/exm/js-sdk/sdk-intro.md'
+            children: [
+              {
+                text: 'Introduction',
+                link: '/guides/exm/intro.md'
               },
               {
-                text: 'Deploy with SDK',
-                link: '/guides/exm/js-sdk/sdk-deploy.md'
+                text: 'API Token',
+                link: '/guides/exm/api.md'
               },
               {
-                text: 'Write with SDK',
-                link: '/guides/exm/js-sdk/sdk-write.md'
-              },
-              {
-                text: 'Read with SDK',
-                link: '/guides/exm/js-sdk/sdk-read.md'
+                text: 'JS SDK',
+                collapsible: true,
+                children: [
+                  {
+                    text: 'Execution Machine SDK',
+                    link: '/guides/exm/js-sdk/sdk-intro.md'
+                  },
+                  {
+                    text: 'Deploy with SDK',
+                    link: '/guides/exm/js-sdk/sdk-deploy.md'
+                  },
+                  {
+                    text: 'Write with SDK',
+                    link: '/guides/exm/js-sdk/sdk-write.md'
+                  },
+                  {
+                    text: 'Read with SDK',
+                    link: '/guides/exm/js-sdk/sdk-read.md'
+                  }
+                ]
               }
-              ]
-            }]
+            ]
           },
           {
             text: 'GraphQL',
