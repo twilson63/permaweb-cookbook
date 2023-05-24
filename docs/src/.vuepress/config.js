@@ -78,10 +78,6 @@ export default {
             link: '/getting-started/welcome'
           },
           {
-            text: 'Hello World (No Code)',
-            link: '/getting-started/quick-starts/hw-no-code'
-          },
-          {
             text: 'Hello World (CLI)',
             link: '/getting-started/quick-starts/hw-cli'
           },
