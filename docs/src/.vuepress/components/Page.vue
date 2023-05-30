@@ -11,8 +11,8 @@ import PageNav from '@theme/PageNav.vue';
     <div class="cookbook-content row">
       <div class="col-12 col-xl-9"> 
         <PageMeta />
+        
         <Content />
-
 
         <PageNav />
       </div>
