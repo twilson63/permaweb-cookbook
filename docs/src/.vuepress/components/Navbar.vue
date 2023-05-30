@@ -83,17 +83,12 @@ const navbar = ref(null);
           </svg>
         </a>
 
-        <SearchBox />
+        <div class="search-box-container">
+          <div class="search-box-bg"></div>
+          <SearchBox />
+        </div>
       </div>
     </div>
-
-    <!-- <div class=" navbar-items-wrapper" :style="linksWrapperStyle">
-      <slot name="before" />
-      
-      <slot name="after" />
-      <ToggleColorModeButton v-if="themeLocale.colorModeSwitch" />
-      <NavbarSearch />
-    </div> -->
   </header>
 </template>
 
@@ -133,10 +128,10 @@ const navbar = ref(null);
 
   .search-box {
     --search-input-width: 10rem;
-    
     margin-left: 2.5rem;
 
     @include media-breakpoint-down(md) {
+      --search-input-width: 100%;
       margin-left: 1.5rem;
     }
 
@@ -151,5 +146,27 @@ const navbar = ref(null);
       display:block;
     }
   }
+
+  .search-box-bg {
+    opacity: 0;
+
+    transition: opacity .2s;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--c-bg-light);
+  }
+
+  @include media-breakpoint-down(md) {
+    .search-box-container:focus-within  {
+      .search-box-bg {
+        opacity: 1;
+      }
+    }
+  }
+  
 }
 </style>
