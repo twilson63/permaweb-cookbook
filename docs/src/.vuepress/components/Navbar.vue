@@ -1,9 +1,12 @@
 <script setup>
-import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue';
-import ToggleSidebarButton from './ToggleSidebarButton.vue';
 import { ref } from 'vue';
+
+import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue';
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js';
+import ToggleSidebarButton from './ToggleSidebarButton.vue';
+
 defineEmits(['toggle-sidebar']);
+
 const themeLocale = useThemeLocaleData();
 const navbar = ref(null);
 </script>
@@ -79,6 +82,8 @@ const navbar = ref(null);
             />
           </svg>
         </a>
+
+        <SearchBox />
       </div>
     </div>
 
@@ -135,6 +140,14 @@ const navbar = ref(null);
   &:not(.fixed) {
     @include media-breakpoint-down(md) {
       opacity: 0;
+    }
+  }
+
+  .search-box {
+    margin-left: 2.5rem;
+    
+    input {
+      border-radius: 8px;
     }
   }
 }

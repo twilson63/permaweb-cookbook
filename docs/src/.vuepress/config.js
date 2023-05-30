@@ -3,6 +3,7 @@ import { description } from '../../package';
 import { defaultTheme } from '@vuepress/theme-default';
 import { containerPlugin } from '@vuepress/plugin-container';
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
+import { searchPlugin } from '@vuepress/plugin-search';
 
 export default {
   base: '/',
@@ -417,6 +418,7 @@ export default {
     }),
     containerPlugin({
       type: 'info'
-    })
+    }),
+    searchPlugin({}),
   ]
 };
