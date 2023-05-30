@@ -13,7 +13,7 @@
     <div class="bottom">
       <div
         class="bottom-inner"
-        :style="{ transform: `translateX(${-(currentContributor * 100)}%)` }"
+        :style="{ transform: `translateX(${-(current * 100)}%)` }"
       >
         <div v-for="contributor in contributors" class="contributor">
           <div
@@ -31,20 +31,37 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-import { useContributors } from '../composables/useContributors';
-
-const currentContributor = ref(0);
-const contributors = useContributors();
-
-const nextContributor = () =>{
-  if (currentContributor.value + 1 >= contributors.value.length) {
-    currentContributor.value = 0;
-  } else {
-    currentContributor.value++;
+<script>
+export default {
+  data() {
+    return {
+      current: 0,
+      contributors: []
+    };
+  },
+  methods: {
+    nextContributor() {
+      if (this.current + 1 >= this.contributors.length) {
+        this.current = 0;
+      } else {
+        this.current++;
+      }
+    }
+  },
+  mounted() {
+    fetch(
+      'https://api.github.com/repos/twilson63/permaweb-cookbook/contributors?q=contributions&order=desc'
+    )
+      .then((res) => {
+        if (res.ok) return res.json();
+        else return [];
+      })
+      .then((result) => {
+        this.contributors = result;
+        setInterval(this.nextContributor, 4000);
+      });
   }
-}
+};
 </script>
 
 <style lang="scss">

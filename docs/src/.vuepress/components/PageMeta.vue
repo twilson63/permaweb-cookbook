@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AutoLink from '@theme/AutoLink.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client';
 
 import { computed, ref } from 'vue'
@@ -11,11 +10,6 @@ import type {
 } from '@vuepress/theme-default/lib/shared/index.js'
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js'
 import { resolveEditLink } from '@vuepress/theme-default/lib/client/utils/index.js'
-
-import { useContributors as useGithubContributors } from '../composables/useContributors';
-
-// fetch github contributors
-// const githubContributors = useGithubContributors();
 
 const useEditNavLink = (): ComputedRef<null | NavLink> => {
   const themeLocale = useThemeLocaleData()
