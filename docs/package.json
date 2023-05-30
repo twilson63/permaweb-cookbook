@@ -20,10 +20,10 @@
     "@bundlr-network/client": "^0.9.11",
     "arweave": "^1.11.8",
     "prettier": "^2.8.4",
-    "vuepress": "2.0.0-beta.62",
-    "@vuepress/plugin-container": "2.0.0-beta.62",
-    "@vuepress/plugin-medium-zoom": "2.0.0-beta.62",
-    "@vuepress/plugin-search": "2.0.0-beta.62",
+    "vuepress": "2.0.0-beta.61",
+    "@vuepress/plugin-container": "2.0.0-beta.61",
+    "@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
+    "@vuepress/plugin-search": "2.0.0-beta.61",
     "warp-contracts": "^1.2.37"
   },
   "dependencies": {
