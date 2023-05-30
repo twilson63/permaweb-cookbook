@@ -136,7 +136,7 @@ const contributors = useContributors()
     <div v-if="editNavLink">
       <a :href="editNavLink.link" target="_blank" class="edit-link">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Edit / Edit_Pencil_01"> <path class="text-stroke" id="Vector" d="M12 8.00012L4 16.0001V20.0001L8 20.0001L16 12.0001M12 8.00012L14.8686 5.13146L14.8704 5.12976C15.2652 4.73488 15.463 4.53709 15.691 4.46301C15.8919 4.39775 16.1082 4.39775 16.3091 4.46301C16.5369 4.53704 16.7345 4.7346 17.1288 5.12892L18.8686 6.86872C19.2646 7.26474 19.4627 7.46284 19.5369 7.69117C19.6022 7.89201 19.6021 8.10835 19.5369 8.3092C19.4628 8.53736 19.265 8.73516 18.8695 9.13061L18.8686 9.13146L16 12.0001M12 8.00012L16 12.0001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
-        Edit Page
+        Edit
       </a>
     </div>
   </footer>
@@ -145,7 +145,6 @@ const contributors = useContributors()
 <style lang="scss" scoped>
 .page-meta {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   .contributor {
@@ -156,9 +155,9 @@ const contributors = useContributors()
 
     border-radius: 50%;
     border: 1px solid var(--c-border-dark);
-    height: 28px;
-    width: 28px;
-    font-size: 14px;
+    height: 24px;
+    width: 24px;
+    font-size: 12px;
     font-weight: bold;
     
     &:not(:last-child) {
@@ -176,13 +175,13 @@ const contributors = useContributors()
       margin: 0;
     }
     
-    @media (max-width: 419px) {
-      flex-direction: column;
+    // @media (max-width: 419px) {
+    //   flex-direction: column;
       
-      .meta-item {
-        margin-bottom: 10px;
-      }
-    }
+    //   .meta-item {
+    //     margin-bottom: 10px;
+    //   }
+    // }
   }
 
   .meta-item {
@@ -194,7 +193,6 @@ const contributors = useContributors()
     margin-bottom: 10px;
     color: var(--c-text);
     font-weight: 500;
-    text-decoration: underline;
   }
 
   .edit-link {
