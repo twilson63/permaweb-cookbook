@@ -56,7 +56,7 @@ export default {
 
 .cookbook-sidebar {
   position: sticky;
-  top: 30px;
+  top: calc(var(--nav-h) + 20px);
 
   @include media-breakpoint-down(md) {
     z-index: 10;

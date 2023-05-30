@@ -32,7 +32,7 @@ const themeLocale = useThemeLocaleData();
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 1.25rem;
+    width: 1rem;
     height: 1.25rem;
     cursor: inherit;
 
@@ -45,7 +45,7 @@ const themeLocale = useThemeLocaleData();
       transition: transform var(--t-transform);
 
       &:nth-child(2) {
-        margin: 4px 0;
+        margin: 3px 0;
       }
     }
   }

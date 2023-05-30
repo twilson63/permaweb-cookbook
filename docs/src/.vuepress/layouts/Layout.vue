@@ -89,7 +89,8 @@ const onBeforeLeave = scrollPromise.pending;
   >
     <Navbar
       v-if="shouldShowNavbar"
-      class="d-none d-md-flex"
+      class="fixed"
+      :fixed="true"
       @toggle-sidebar="toggleSidebar"
     >
       <template #before>
@@ -99,13 +100,6 @@ const onBeforeLeave = scrollPromise.pending;
         <slot name="navbar-after" />
       </template>
     </Navbar>
-
-    <Navbar
-      v-if="shouldShowNavbar"
-      class="d-md-none fixed"
-      :fixed="true"
-      @toggle-sidebar="toggleSidebar"
-    />
 
     <Onboarding v-if="shouldShowOnboarding" />
 

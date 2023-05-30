@@ -71,8 +71,8 @@ const navbar = ref(null);
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 98 96"
-            width="22"
-            height="22"
+            width="20"
+            height="20"
           >
             <path
               class="text-fill"
@@ -101,19 +101,15 @@ const navbar = ref(null);
 @import '../styles/bootstrap.scss';
 
 :root {
-  --navbar-height: 16px;
+  --nav-h: 100px;
 
   @include media-breakpoint-down(md) {
-    --navbar-height: 60px;
+    --nav-h: 60px;
   }
 }
 
 .cookbook-navbar {
-  padding-top: calc(0.5 * var(--bs-gutter-x));
-
-  @include media-breakpoint-up(md) {
-    padding-top: var(--bs-gutter-x);
-  }
+  height: var(--nav-h);
 
   .cookbook-navbar-items {
     display: flex;
@@ -130,24 +126,29 @@ const navbar = ref(null);
     left: 0;
     right: 0;
 
-    padding: calc(0.5 * var(--bs-gutter-x)) 0;
-
     border-bottom: 1px solid var(--c-bg);
     background-color: rgba(var(--c-bg-rgb), 0.6);
-    backdrop-filter: blur(10px);
-  }
-
-  &:not(.fixed) {
-    @include media-breakpoint-down(md) {
-      opacity: 0;
-    }
+    backdrop-filter: blur(16px);
   }
 
   .search-box {
-    margin-left: 2.5rem;
+    --search-input-width: 10rem;
     
+    margin-left: 2.5rem;
+
+    @include media-breakpoint-down(md) {
+      margin-left: 1.5rem;
+    }
+
     input {
       border-radius: 8px;
+
+      background-position-y: 0.4rem;
+    }
+
+    .suggestions {
+      z-index: 100;
+      display:block;
     }
   }
 }

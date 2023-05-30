@@ -549,7 +549,7 @@ import FeaturedContributors from './FeaturedContributors.vue';
 @import '../styles/bootstrap.scss';
 
 .onboarding {
-  padding: 150px 0 60px;
+  padding: 120px 0 60px;
 
   @include media-breakpoint-down(md) {
     padding: 30px 0;
@@ -581,8 +581,7 @@ import FeaturedContributors from './FeaturedContributors.vue';
   .onboard-illustration {
     display: block;
 
-    padding: 2
-    0px;
+    padding: 20px;
     margin-bottom: 30px;
     
     .illustration {

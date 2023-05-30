@@ -419,6 +419,12 @@ export default {
     containerPlugin({
       type: 'info'
     }),
-    searchPlugin({}),
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+      },
+    }),
   ]
 };
