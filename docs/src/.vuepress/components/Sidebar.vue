@@ -64,10 +64,10 @@ export default {
 
     position: fixed;
     left: 0;
-    top: var(--navbar-height);
+    top: 0;
     bottom: 0;
 
-    padding: 24px;
+    padding: calc(var(--navbar-height) + 53px) 20px 20px;
     background: var(--c-bg);
 
     transition: transform 0.3s;
