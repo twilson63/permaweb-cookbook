@@ -375,6 +375,11 @@ export default {
         collapsible: true,
         children: [
           {
+            text: 'Bundling',
+            collapsible: false,
+            link: '/references/bundling'
+          },
+          {
             text: 'GraphQL',
             collapsible: false,
             link: '/references/gql'

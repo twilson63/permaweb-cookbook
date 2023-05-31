@@ -3,9 +3,15 @@
 Before getting started with any of the below references, make sure you've read
 [Bundles and Bundling](/concepts/bundles) from [Core Concepts](/concepts).
 
+## Setup
+
 We'll be using the [arbundles](https://github.com/bundlr-Network/arbundles)
 library which is a JavaScript implementation of the
-[ANS-104 specification](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md).  This library comes with TypeScript support.
+[ANS-104 specification](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md).  ArBundles comes with TypeScript support.
+
+**Note:** This reference assumes a NodeJS environment.  Browser compatibility
+with ArBundles is possible but currently requires wrangling `Buffer` polyfills.
+This will be addressed in a future version of ArBundles.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -24,24 +30,17 @@ yarn add arbundles
   </CodeGroupItem>
 </CodeGroup>
 
-TODO -> link to github browser
-
 ## Create a `Signer`
 
-TODO -> browser injected arweave signer, check warp docs for differences
-
 In order to create Data Items, we need to first create a `Signer`.
-
-Note: for Typescript, you can also import the `JWKInterface` from the `arweave` library.
 
 <CodeGroup>
   <CodeGroupItem title="TS">
 
 ```ts:no-line-numbers
-import { ArweaveSigner } from 'arbundles/src/signing'
-import type { JWKInterface } from 'arbundles/src/interface-jwk'
+import { ArweaveSigner, JWKInterface } from 'arbundles'
 
-const jwk: JWKInterface = { /* your jwk */ }
+const jwk: JWKInterface = { /* your Arweave jwk keyfile */ }
 const signer = new ArweaveSigner(jwk)
 ```
 
@@ -53,8 +52,8 @@ const signer = new ArweaveSigner(jwk)
 To create a `DataItem`, we pass some data along with a `Signer` to the
 `createData()` utility function.
 
-Note: while the `createData()` utility function requires a `Signer`, the
-returned `DataItem` is not yet signed and contains a placeholder ID.
+**Note:** While the `createData()` utility function requires a `Signer`, the
+returned `DataItem` is **not yet signed** and contains a placeholder ID.
 
 <CodeGroup>
   <CodeGroupItem title="TS">
@@ -81,7 +80,7 @@ const myOtherDataItem = createData(myBufferData, signer)
 To create a Bundle, we pass our `DataItem` to the `bundleAndSignData` utility
 function and `await` the result.
 
-Note: `DataItem` passed to this utility function can
+**Note:** A `DataItem` passed to this utility function can
 be pre-signed as detailed in a later section.
 
 <CodeGroup>
@@ -91,7 +90,7 @@ be pre-signed as detailed in a later section.
 import { bundleAndSignData } from 'arbundles'
 
 const dataItems = [ myDataItem, myOtherDataItem ]
-const bundle = await bundleAndSignData(dataItems)
+const bundle = await bundleAndSignData(dataItems, signer)
 ```
 
   </CodeGroupItem>
@@ -99,7 +98,7 @@ const bundle = await bundleAndSignData(dataItems)
 
 ## Create a `Transaction` from a `Bundle`
 
-In order to post a `Bundle` to Arweave, there ultimately needs to be a root
+In order to post a `Bundle` to Arweave there ultimately needs to be a root
 Layer 1 `Transaction` containing the `Bundle`.
 
 <CodeGroup>
@@ -108,13 +107,23 @@ Layer 1 `Transaction` containing the `Bundle`.
 ```ts:no-line-numbers
 import Arweave from 'Arweave'
 
-const arweave = new Arweave({})
+// Set up an Arweave client
+const arweave = new Arweave({
+  protocol: 'https',
+  host: 'arweave.net',
+  port: 443
+})
 
 // Create using ArweaveJS
-const tx = arweave.createTransaction({ data: bundle.getRaw() }, jwk)
+const tx = await arweave.createTransaction({ data: bundle.getRaw() }, jwk)
 
-// Create from the Bundle itself
-const tx = bundle.toTransaction({}, arweave, jwk)
+// OR Create from the Bundle itself
+const tx = await bundle.toTransaction({}, arweave, jwk)
+
+// Sign the transaction
+await arweave.transactions.sign(tx, jwk)
+
+// Post tx to Arweave with your preferred method!
 ```
 
   </CodeGroupItem>
@@ -135,6 +144,49 @@ await myOtherDataItem.sign(signer)
 
 const id1 = myDataItem.id
 const id2 = myOtherDataItem.id
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+## Tagging `DataItem`
+
+`DataItem` can themselves have tags just as Layer 1 Arweave Transactions can
+have tags.  Once an Arweave Gateway unbundles and indexes the `Bundle`, these
+`DataItem` tags become queryable the same way a Layer 1 Arweave Transaction's
+tags are queryable.
+
+<CodeGroup>
+  <CodeGroupItem title="TS">
+
+```ts:no-line-numbers
+  const myStringData: string = 'Hello, Permaweb!'
+  const tags = [
+    { name: 'Title', value: 'Hello Permaweb' },
+    { name: 'Content-Type', value: 'text/plain' }
+  ]
+  const myDataItem = createData(myStringData, signer, { tags })
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+## Consuming Bundles
+
+**WARNING:** Be sure that the `Buffer` you pass to `new Bundle(buffer)` does
+contain a `Bundle`, otherwise, very small `Buffer` being passed will crash
+the thread.  **DO NOT** use `new Bundle(buffer)` in a production environment.
+Instead, see the
+[streamable interface](https://github.com/Bundlr-Network/arbundles/blob/master/src/stream)
+in the ArBundles repository.
+
+<CodeGroup>
+  <CodeGroupItem title="TS">
+
+```ts:no-line-numbers
+  const bundle = new Bundle(Buffer.from(tx.data))
+  const myDataItem = bundle.get(0)
+  const myOtherDataItem = bundle.get(1)
 ```
 
   </CodeGroupItem>
