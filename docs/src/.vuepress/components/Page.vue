@@ -1,5 +1,6 @@
 <script setup>
-import PageMeta from '@theme/PageMeta.vue';
+import PageMeta from './PageMeta.vue';
+// import PageMeta from '@theme/PageMeta.vue';
 import PageNav from '@theme/PageNav.vue';
 </script>
 
@@ -8,10 +9,10 @@ import PageNav from '@theme/PageNav.vue';
     <slot name="top" />
 
     <div class="cookbook-content row">
-      <div class="col-12 col-xl-9">
-        <Content />
-
+      <div class="col-12 col-xl-9"> 
         <PageMeta />
+        
+        <Content />
 
         <PageNav />
       </div>
@@ -60,7 +61,7 @@ import PageNav from '@theme/PageNav.vue';
 
   .page-meta,
   .page-nav {
-    padding: 1rem 0;
+    padding: 1rem 0 3rem;
   }
 
   @media (max-width: 419px) {

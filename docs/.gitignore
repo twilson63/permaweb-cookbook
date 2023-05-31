@@ -13,3 +13,4 @@ basement_dist
 .cache
 .temp
 .yarn
+*.lock

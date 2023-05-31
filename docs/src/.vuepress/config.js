@@ -3,6 +3,7 @@ import { description } from '../../package';
 import { defaultTheme } from '@vuepress/theme-default';
 import { containerPlugin } from '@vuepress/plugin-container';
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
+import { searchPlugin } from '@vuepress/plugin-search';
 
 export default {
   base: '/',
@@ -66,6 +67,9 @@ export default {
   },
 
   theme: defaultTheme({
+    repo: "https://github.com/twilson63/permaweb-cookbook",
+    editLink: true,
+    editLinkPattern: ':repo/edit/:branch/docs/src/:path',
     colorMode: 'dark',
     sidebar: [
       {
@@ -417,6 +421,13 @@ export default {
     }),
     containerPlugin({
       type: 'info'
-    })
+    }),
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+      },
+    }),
   ]
 };
