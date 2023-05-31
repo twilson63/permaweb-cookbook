@@ -24,7 +24,11 @@ yarn add arbundles
   </CodeGroupItem>
 </CodeGroup>
 
+TODO -> link to github browser
+
 ## Create a `Signer`
+
+TODO -> browser injected arweave signer, check warp docs for differences
 
 In order to create Data Items, we need to first create a `Signer`.
 
@@ -49,9 +53,8 @@ const signer = new ArweaveSigner(jwk)
 To create a `DataItem`, we pass some data along with a `Signer` to the
 `createData()` utility function.
 
-Note: while the `createData()` utility
-function requires a `Signer`, the returned `DataItem` is not yet signed and
-contains a placeholder ID.
+Note: while the `createData()` utility function requires a `Signer`, the
+returned `DataItem` is not yet signed and contains a placeholder ID.
 
 <CodeGroup>
   <CodeGroupItem title="TS">
