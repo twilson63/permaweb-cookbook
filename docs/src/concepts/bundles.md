@@ -1,4 +1,4 @@
-# Bundles and Bundling
+# Transaction Bundles
 
 ### What is a Bundle?
 
@@ -32,22 +32,6 @@ Bundles can store up to 2^256 transactions, each of which are settled as a singl
 #### Flexibility
 
 As bundles are handled by a layer 2 network, this opens up opportunity for different kinds of payment channels (such as eth, matic, solana) to pay for uploading data to Arweave.
-
-### What is a Bundler?
-
----
-
-A bundler is a node which is responsible for accepting groups of transactions or data items from a user, bundling them, and posting them to the Arweave network (with a guarantee they will be uploaded with a specific transaction ID).
-
-The pioneer of bundles and the largest current bundler network is [Bundlr](https://bundlr.network). Bundlr nodes run:
-
-- A NGINX reverse proxy
-- HTTP API processes
-- A Redis cache
-- A SQL (Postgres) database
-- Worker processes
-
-Which make sure the data is persisted until it is uploaded to Arweave.
 
 ### What are Nested Bundles?
 

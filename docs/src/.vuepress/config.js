@@ -66,6 +66,7 @@ export default {
   },
 
   theme: defaultTheme({
+    colorMode: 'dark',
     sidebar: [
       {
         text: 'Getting Started',
@@ -104,20 +105,52 @@ export default {
         collapsible: true,
         children: [
           {
-            text: 'Bundles and Bundling',
-            link: '/concepts/bundles'
+            text: `Posting Transactions`,
+            link: `/concepts/post-transactions`,
+            collapsible: true,
+            children: [
+              {
+                text: 'arweave-js',
+                link: '/guides/posting-transactions/arweave-js'
+              },
+              {
+                text: 'bundlr.network',
+                link: '/guides/posting-transactions/bundlr'
+              },
+              {
+                text: 'dispatch',
+                link: '/guides/posting-transactions/dispatch'
+              }
+            ]
           },
           {
-            text: 'Gateways',
-            link: '/concepts/gateways'
+            text: 'Metadata (Tags)',
+            link: '/concepts/tags'
           },
           {
-            text: 'Keyfiles and Wallets',
+            text: `Querying`,
+            link: `/concepts/queryTransactions`
+          },
+          {
+            text: `Fetching Data`,
+            link: `/guides/http-api.md`
+          },
+          {
+            text: 'Transaction Types',
+            children: [
+              {
+                text: 'Bundles',
+                link: '/concepts/bundles'
+              },
+              {
+                text: 'Path Manifests',
+                link: '/concepts/manifests'
+              }
+            ]
+          },
+          {
+            text: 'Wallets and Keys',
             link: '/concepts/keyfiles-and-wallets'
-          },
-          {
-            text: 'Path Manifests',
-            link: '/concepts/manifests'
           },
           {
             text: 'Permaweb',
@@ -127,6 +160,14 @@ export default {
               {
                 text: 'Permaweb Applications',
                 link: '/concepts/permawebApplications'
+              },
+              {
+                text: 'Gateway Services',
+                link: '/concepts/gateways'
+              },
+              {
+                text: 'Bundling Services',
+                link: '/concepts/bundlers'
               }
             ]
           },
@@ -152,37 +193,6 @@ export default {
                 link: '/concepts/vouch'
               }
             ]
-          },
-          {
-            text: `Transaction Data`,
-            link: `/guides/http-api.md`
-          },
-          {
-            text: `Transaction Posting`,
-            link: `/concepts/post-transactions`,
-            collapsible: true,
-            children: [
-              {
-                text: 'arweave-js',
-                link: '/guides/posting-transactions/arweave-js'
-              },
-              {
-                text: 'bundlr.network',
-                link: '/guides/posting-transactions/bundlr'
-              },
-              {
-                text: 'dispatch',
-                link: '/guides/posting-transactions/dispatch'
-              }
-            ]
-          },
-          {
-            text: `Transaction Querying`,
-            link: `/concepts/queryTransactions`
-          },
-          {
-            text: 'Transaction Tags',
-            link: '/concepts/tags'
           }
         ]
       },
@@ -252,6 +262,42 @@ export default {
             link: '/guides/deploying-psts'
           },
           {
+            text: 'Execution Machine',
+            collapsible: true,
+            children: [
+              {
+                text: 'Introduction',
+                link: '/guides/exm/intro.md'
+              },
+              {
+                text: 'API Token',
+                link: '/guides/exm/api.md'
+              },
+              {
+                text: 'JS SDK',
+                collapsible: true,
+                children: [
+                  {
+                    text: 'Execution Machine SDK',
+                    link: '/guides/exm/js-sdk/sdk-intro.md'
+                  },
+                  {
+                    text: 'Deploy with SDK',
+                    link: '/guides/exm/js-sdk/sdk-deploy.md'
+                  },
+                  {
+                    text: 'Write with SDK',
+                    link: '/guides/exm/js-sdk/sdk-write.md'
+                  },
+                  {
+                    text: 'Read with SDK',
+                    link: '/guides/exm/js-sdk/sdk-read.md'
+                  }
+                ]
+              }
+            ]
+          },
+          {
             text: 'GraphQL',
             link: '/guides/querying-arweave/queryingArweave',
             collapsible: false,
@@ -263,6 +309,10 @@ export default {
               {
                 text: 'ar-gql',
                 link: '/guides/querying-arweave/ar-gql'
+              },
+              {
+                text: 'Search Indexing Service',
+                link: '/guides/querying-arweave/search-indexing-service'
               }
             ]
           },
@@ -330,9 +380,9 @@ export default {
             link: '/references/gql'
           },
           {
-            text: 'Bundling',
+            text: 'HTTP API',
             collapsible: false,
-            link: '/references/bundling'
+            link: '/references/http-api'
           }
         ]
       },

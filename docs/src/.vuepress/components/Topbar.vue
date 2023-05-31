@@ -1,13 +1,25 @@
+<script>
+import 'add-to-calendar-button';
+</script>
 <template>
   <div class="topbar">
     <p>
-      Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays
-      <a
-        target="_blank"
-        class="action"
-        href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20230308T120000/20230308T130000&ctz=America/New_York&text=Permaweb+Cookbook+Meetup&location=https://app.gather.town/app/VQzhQa280FhWKtuy/permaweb?spawnToken%3Dd8Vy968fQ4eZ1Y44vxFg&uid=23d7fc37-46bd-45d5-b718-6b41d237ea57"
-        >Add to Google Calendar</a
+      <span
+        >Cookbook Community Meetup - 12pm ET / 5pm GMT every week on
+        Wednesdays</span
       >
+      <add-to-calendar-button
+        name="Permaweb Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
+        options="'Apple','Google'"
+        location="https://app.gather.town/app/VQzhQa280FhWKtuy/permaweb?spawnToken=d8Vy968fQ4eZ1Y44vxFg"
+        startDate="2023-04-26"
+        startTime="12:00"
+        endTime="13:00"
+        timeZone="America/New_York"
+        recurrence="weekly"
+        buttonStyle="round"
+        size="1"
+      ></add-to-calendar-button>
     </p>
   </div>
 </template>
@@ -18,11 +30,18 @@
   z-index: 12;
   background: var(--c-topbar-bg);
   text-align: center;
-  padding: 15px;
+  padding: 8px;
 
   p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     line-height: 1.35rem;
     margin: 0;
+
+    span {
+      margin-right: 8px;
+    }
 
     .action {
       color: var(--c-accent-rose);

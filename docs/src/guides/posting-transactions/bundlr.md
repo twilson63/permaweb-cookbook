@@ -54,7 +54,7 @@ await tx.sign();
 await tx.upload();
 ```
 ## Resources
-* For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/postTransaction.md) section of the cookbook.
+* For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/post-transactions.md) section of the cookbook.
 
 * The full bundlr client docs can be found on the [bundlr.network website](https://docs.bundlr.network/docs/overview)
 

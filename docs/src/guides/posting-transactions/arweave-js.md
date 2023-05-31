@@ -81,6 +81,6 @@ while (!uploader.isComplete) {
 }
 ```
 ## Resources
-* For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/postTransaction.md) section of the cookbook.
+* For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/post-transactions.md) section of the cookbook.
 
 * For a more detailed description of all `arweave-js`'s features see the documentation [on github](https://github.com/ArweaveTeam/arweave-js)
