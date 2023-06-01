@@ -1,6 +1,10 @@
-<script>
+<script setup>
 import 'add-to-calendar-button';
+import { useDarkMode } from '@vuepress/theme-default/lib/client/composables/index.js';
+
+const darkMode = useDarkMode();
 </script>
+
 <template>
   <div class="topbar">
     <p>
@@ -9,6 +13,7 @@ import 'add-to-calendar-button';
         Wednesdays</span
       >
       <add-to-calendar-button
+        style="white-space: nowrap;"
         name="Permaweb Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
         options="'Apple','Google'"
         location="https://app.gather.town/app/VQzhQa280FhWKtuy/permaweb?spawnToken=d8Vy968fQ4eZ1Y44vxFg"
@@ -18,6 +23,7 @@ import 'add-to-calendar-button';
         timeZone="America/New_York"
         recurrence="weekly"
         buttonStyle="round"
+        :lightMode="!darkMode ? 'light' : 'dark'"
         size="1"
       ></add-to-calendar-button>
     </p>
@@ -25,12 +31,19 @@ import 'add-to-calendar-button';
 </template>
 
 <style lang="scss">
+@import '../styles/bootstrap.scss';
+
 .topbar {
   position: relative;
   z-index: 12;
   background: var(--c-topbar-bg);
   text-align: center;
   padding: 8px;
+
+  @include media-breakpoint-down(md) {
+    padding: 3px 10px;
+    padding-right: 3px;
+  }
 
   p {
     display: flex;
@@ -40,7 +53,14 @@ import 'add-to-calendar-button';
     margin: 0;
 
     span {
-      margin-right: 8px;
+      margin-right: 12px;
+      line-height: 1.3;
+      text-align: left;
+
+      @include media-breakpoint-down(md) {
+        font-size: 10px;
+        margin: 0;
+      }
     }
 
     .action {
