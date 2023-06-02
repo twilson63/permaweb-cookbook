@@ -34,7 +34,7 @@ import fs from "fs";
 
 const jwk = JSON.parse(fs.readFileSync("wallet.json").toString());
 
-const bundlr = new Bundlr.default(
+const bundlr = new Bundlr(
   "http://node2.bundlr.network",
   "arweave",
   jwk
