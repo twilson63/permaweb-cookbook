@@ -74,16 +74,12 @@ export default {
     sidebar: [
       {
         text: 'Getting Started',
-        link: '/getting-started/',
+        link: '/getting-started/index.html',
         collapsible: true,
         children: [
           {
             text: 'Welcome',
             link: '/getting-started/welcome'
-          },
-          {
-            text: 'Hello World (No Code)',
-            link: '/getting-started/quick-starts/hw-no-code'
           },
           {
             text: 'Hello World (CLI)',
@@ -105,7 +101,7 @@ export default {
       },
       {
         text: 'Core Concepts',
-        link: '/concepts/',
+        link: '/concepts/index.html',
         collapsible: true,
         children: [
           {
@@ -202,7 +198,7 @@ export default {
       },
       {
         text: 'Guides',
-        link: '/guides/',
+        link: '/guides/index.html',
         collapsible: true,
         children: [
           {
@@ -375,9 +371,14 @@ export default {
       },
       {
         text: 'References',
-        link: '/references/',
+        link: '/references/index.html',
         collapsible: true,
         children: [
+          {
+            text: 'Bundling',
+            collapsible: false,
+            link: '/references/bundling'
+          },
           {
             text: 'GraphQL',
             collapsible: false,
