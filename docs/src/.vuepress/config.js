@@ -430,5 +430,11 @@ export default {
         },
       },
     }),
-  ]
+  ],
+
+  async onInitialized(app) {
+    app.pages
+      .filter(page => page.path.slice(-1) === '/' && page.path !== '/')
+      .forEach(page => page.path += 'index.html');
+  },
 };
