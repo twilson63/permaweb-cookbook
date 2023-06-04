@@ -1,6 +1,6 @@
 # Bundling Services
 ---
-With bundling services users can post their data transactions to a centralized service to have it "bundled" together with other users transactions and posted as a single Arweave transaction in an upcoming Arweave block.
+With bundling services users can post their data transactions to a bundling service to have it "bundled" together with other users transactions and posted as a single Arweave transaction in an upcoming Arweave block.
 
 ### Posting to a bundling service
 ---
