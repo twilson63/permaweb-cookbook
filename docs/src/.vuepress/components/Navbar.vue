@@ -39,7 +39,7 @@ onMounted(() => {
 
       <RouterLink to="/">
         <svg
-          style="vertical-align: middle"
+          class="logo"
           width="100%"
           viewBox="0 0 312 33"
           fill="none"
@@ -118,6 +118,14 @@ onMounted(() => {
 .cookbook-navbar {
   height: var(--nav-h);
 
+  .logo {
+    vertical-align: middle;
+    
+    @include media-breakpoint-down(md) {
+      max-width: 200px;
+    }
+  }
+
   .cookbook-navbar-items {
     display: flex;
 
@@ -177,8 +185,10 @@ onMounted(() => {
   }
 
   &.search-expanded {
-    .hidden-on-search {
-      opacity: 0;
+    @include media-breakpoint-down(md) {
+      .hidden-on-search {
+        opacity: 0;
+      }
     }
   }
   
