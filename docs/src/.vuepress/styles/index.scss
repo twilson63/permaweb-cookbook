@@ -16,6 +16,9 @@
 
   --c-brand: #ff5f15;
   --c-text: #242424;
+  --c-text-light: #3a3a3a;
+  --c-text-lighter: #424242;
+  --c-text-lightest: #5c5c5c;
   --c-bg: #f2f2f2;
   --c-bg-light: #e0e2e3;
   --c-bg-dark: #d2d2d4;
@@ -45,6 +48,9 @@
 html.dark {
   --c-brand: #ff5f15;
   --c-text: #ffffff;
+  --c-text-light: #ebebeb;
+  --c-text-lighter: #ddd;
+  --c-text-lightest: #d0d0d0;
   --c-bg: #242424;
   --c-bg-light: #323131;
   --c-bg-dark: #424141;

@@ -61,7 +61,7 @@ import PageNav from '@theme/PageNav.vue';
 
   .page-meta,
   .page-nav {
-    padding: 1rem 0 3rem;
+    padding: 1.5rem 0 3rem;
   }
 
   @media (max-width: 419px) {

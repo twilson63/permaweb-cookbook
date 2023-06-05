@@ -113,8 +113,9 @@ const contributors = useContributors()
         <span class="meta-item-info">
           <template v-for="(contributor, index) in contributors" :key="index">
             <span class="contributor" :title="`email: ${contributor.email}`">
-              {{ contributor.name.substring(0, 1).toUpperCase() }}
+              {{ contributor.name }}
             </span>
+            <template v-if="index !== contributors.length - 1">, </template>
           </template>
         </span>
       </div>
@@ -141,24 +142,6 @@ const contributors = useContributors()
   display: flex;
   justify-content: space-between;
 
-  .contributor {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    border-radius: 50%;
-    border: 1px solid var(--c-border-dark);
-    height: 24px;
-    width: 24px;
-    font-size: 12px;
-    font-weight: bold;
-    
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
   .meta-item-container {
     flex: 1;
     display: flex;
@@ -168,23 +151,15 @@ const contributors = useContributors()
       flex: 1;
       margin: 0;
     }
-    
-    // @media (max-width: 419px) {
-    //   flex-direction: column;
-      
-    //   .meta-item {
-    //     margin-bottom: 10px;
-    //   }
-    // }
-  }
 
-  .meta-item {
-    margin-right: 40px;
+    .contributors {
+      margin-right: 20px;
+    }
   }
 
   .meta-item-label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     color: var(--c-text);
     font-weight: 500;
   }
@@ -195,7 +170,6 @@ const contributors = useContributors()
 
     background: var(--c-text-accent);
     color: var(--c-text);
-    // border: 2px solid var(--c-tip-text-accent);
     border-radius: 8px;
     padding: 7px 10px;
     text-align: center;
