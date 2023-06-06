@@ -12,15 +12,17 @@ Permaweb gateway services are typically backed by one or more full Arweave nodes
 
 ### Get by field
 Retrieves the header fields associated with a transaction directly from an Arweave node. Can be used to retrieve the transaction data as well, if the node 
-stores the chunks.
+stores the chunks, and the data is small enough for the node to serve.
 
 `https://arweave.net/tx/TX_ID/FIELD`
 
 Available fields: id | last_tx | owner | target | quantity | data | reward | signature
 ```js
-const result = await fetch('https://arweave.net/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8/data')
-  .then(res => res.json())
-  console.log(JSON.stringify(result))
+const result = await fetch('https://arweave.net/tx/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8/data')
+// fields are returned in base64url format, so we need to decode
+const base64url = await result.text()
+const jsonData = JSON.parse( Arweave.utils.b64UrlToString(base64url) )
+console.log(jsonData)
 ```
 
 <details>
