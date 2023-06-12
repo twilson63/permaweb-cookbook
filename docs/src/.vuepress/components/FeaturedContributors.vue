@@ -1,12 +1,27 @@
+<script setup>
+import { usePageFrontmatter } from "@vuepress/client";
+
+const frontmatter = usePageFrontmatter();
+</script>
 <template>
   <div v-if="contributors.length > 0" class="featured-contributor">
     <div class="top">
-      <p class="subtext">Featured Contributor</p>
+      <p class="subtext">
+        {{
+          frontmatter.locale === "es"
+            ? "Colaborador destacado"
+            : "Featured Contributor"
+        }}
+      </p>
       <a
         class="subtext"
         target="_blank"
         href="https://github.com/twilson63/permaweb-cookbook/graphs/contributors"
-        >See all contributors</a
+        >{{
+          frontmatter.locale === "es"
+            ? "Ver todos los colaboradores"
+            : "See all contributors"
+        }}</a
       >
     </div>
 
@@ -36,7 +51,7 @@ export default {
   data() {
     return {
       current: 0,
-      contributors: []
+      contributors: [],
     };
   },
   methods: {
@@ -46,11 +61,11 @@ export default {
       } else {
         this.current++;
       }
-    }
+    },
   },
   mounted() {
     fetch(
-      'https://api.github.com/repos/twilson63/permaweb-cookbook/contributors?q=contributions&order=desc'
+      "https://api.github.com/repos/twilson63/permaweb-cookbook/contributors?q=contributions&order=desc"
     )
       .then((res) => {
         if (res.ok) return res.json();
@@ -60,7 +75,7 @@ export default {
         this.contributors = result;
         setInterval(this.nextContributor, 4000);
       });
-  }
+  },
 };
 </script>
 
