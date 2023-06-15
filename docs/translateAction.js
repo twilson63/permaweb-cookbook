@@ -37,13 +37,12 @@ async function main() {
         }
       );
 
-      console.log(
-        `Here's the response: ${fileContent.data.content} for ${file}...`
-      );
-      // const fileContent = await readFileAsync(file, "utf-8");
+      const decodedFileContent = atob(fileContent.data.content);
+
+      console.log(`Here's the response: ${decodedFileContent} for ${file}...`);
 
       // Define the prompt for translation to Spanish
-      const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${fileContent.data.content}`;
+      const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${decodedFileContent}`;
 
       console.log(`Writing translated file...`);
       // Translate the content to Spanish using the OpenAI API client
@@ -66,11 +65,27 @@ async function main() {
         addMarkdownFormatting(translatedContent);
 
       // // Write content to file
-      await writeFileAsync(
-        translatedFilePath,
-        markdownTranslatedContent,
-        "utf-8"
-      );
+      await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
+        owner: "ropats16",
+        repo: "permaweb-cookbook",
+        path: translatedFilePath,
+        message: `Translate ${translatedFilePath.substring(
+          path.lastIndexOf("/") + 1
+        )} to Spanish`,
+        committer: {
+          name: "ropats16",
+          email: "ropats16@github.com",
+        },
+        content: btoa(markdownTranslatedContent),
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+      });
+      // await writeFileAsync(
+      //   translatedFilePath,
+      //   markdownTranslatedContent,
+      //   "utf-8"
+      // );
 
       console.log(`Translation complete for file: ${filePath}`);
     }
