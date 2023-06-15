@@ -48,14 +48,14 @@ async function main() {
       // Translate the content to Spanish using the OpenAI API client
       const translatedContent = await translateTextToSpanish(prompt);
 
-      const { relativePath } = file.split("docs/src");
+      const relativePath = file.split("docs/src");
 
       console.log(
         `This is the relative path: ${relativePath} and its type is ${typeof relativePath}`
       );
 
       // Write the translated file to the "es" subfolder
-      const translatedFilePath = path.join("docs/src/es", relativePath);
+      const translatedFilePath = path.join("docs/src/es", relativePath[1]);
 
       console.log(
         `This is the translated file path: ${translatedFilePath} and its type is ${typeof translatedFilePath}`
