@@ -11,38 +11,56 @@ const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
 
 async function main() {
-  const subfoldersToRead = [
-    "concepts",
-    "getting-started",
-    "guides",
-    "kits",
-    "references",
-  ];
-
+  console.log(`Fetching latest pull request...`);
   // Get the latest push to the main branch
   const pullRequest = await getLatestPullRequest();
 
-  // Read and translate the files
-  const docsPath = path.join(__dirname, "/src");
-
   if (pullRequest) {
+    console.log(`Checking for modified docs files...`);
     //   // Get the modified files from the push
     const modifiedFiles = await getModifiedFiles(pullRequest);
     //   for (const file in modifiedFiles) {
     //     console.log(`This is the file ${file.filename}`);
     //   }
+    for (const file of modifiedFiles) {
+      console.log(`Reading file content for ${file}...`);
+      // Reading file content
+      const fileContent = await readFileAsync(file, "utf-8");
+
+      // Define the prompt for translation to Spanish
+      const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${fileContent}`;
+
+      console.log(`Writing translated file...`);
+      // Translate the content to Spanish using the OpenAI API client
+      const translatedContent = await translateTextToSpanish(prompt);
+
+      const { relativePath } = file.split("docs/src");
+
+      // Write the translated file to the "es" subfolder
+      const translatedFilePath = path.join("docs/src/es", relativePath);
+
+      // Check if path exists
+      ensureDirectoryExists(translatedFilePath);
+
+      // Create path for file
+      // const translatedFilePath = path.join(translatedFolderPath, file);
+
+      console.log(`Writing translated file to ${translatedFilePath}...`);
+
+      const markdownTranslatedContent =
+        addMarkdownFormatting(translatedContent);
+
+      // // Write content to file
+      await writeFileAsync(
+        translatedFilePath,
+        markdownTranslatedContent,
+        "utf-8"
+      );
+
+      console.log(`Translation complete for file: ${filePath}`);
+    }
+    console.log(`Translation of all files completed`);
   }
-
-  // for (const subfolder of subfoldersToRead) {
-  //   const subfolderPath = path.join(docsPath, subfolder);
-
-  //   if (fs.existsSync(subfolderPath)) {
-  //     // Checks whether subfolder has files or further subfolders
-  //     // and processes accordingly
-  //     await processFilesInSubfolder(docsPath, subfolderPath, subfolder);
-  //   }
-  // }
-  console.log(`Translation of all files completed`);
 }
 
 async function getLatestPullRequest() {
@@ -114,74 +132,6 @@ async function getModifiedFiles(pullRequest) {
   return filePaths;
 }
 
-async function processFilesInSubfolder(
-  rootPath,
-  folderPath,
-  relativeFolderPath
-) {
-  const files = fs.readdirSync(folderPath);
-
-  for (const file of files) {
-    const filePath = path.join(folderPath, file);
-    const stat = fs.statSync(filePath);
-
-    if (stat.isFile()) {
-      console.log(`Translating file ${filePath}...`);
-      // Read the content of each file
-      // const fileContent = await readFileAsync(filePath, "utf-8");
-
-      // Define the prompt for translation to Spanish
-      // const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${fileContent}`;
-
-      // Translate the content to Spanish using the OpenAI API client
-      // const translatedContent = await translateTextToSpanish(prompt);
-
-      // Write the translated file to the "es" subfolder
-      const translatedFolderPath = path.join(
-        rootPath,
-        "es",
-        relativeFolderPath
-      );
-
-      // Check if path exists
-      ensureDirectoryExists(translatedFolderPath);
-
-      // Create path for file
-      // const translatedFilePath = path.join(translatedFolderPath, file);
-
-      // console.log(`Writing translated file: ${translatedFilePath}`);
-
-      // const markdownTranslatedContent =
-      // addMarkdownFormatting(translatedContent);
-
-      // // Write content to file
-      // await writeFileAsync(
-      //   translatedFilePath,
-      //   markdownTranslatedContent,
-      //   "utf-8"
-      // );
-
-      console.log(`Translation complete for file: ${filePath}`);
-    } else if (stat.isDirectory()) {
-      // Recursively process files in subfolders
-      const subfolderPath = path.join(folderPath, file);
-      const subfolderRelativePath = path.join(relativeFolderPath, file);
-
-      console.log(`Reading from subfolder ${subfolderPath}...`);
-
-      if (fs.existsSync(subfolderPath)) {
-        // Checks whether subfolder has files or further subfolders
-        // and processes accordingly
-        await processFilesInSubfolder(
-          rootPath,
-          subfolderPath,
-          subfolderRelativePath
-        );
-      }
-    }
-  }
-}
-
 async function translateTextToSpanish(text) {
   // Create config for OpenAi and create instance
   const configuration = new Configuration({
@@ -203,7 +153,8 @@ async function translateTextToSpanish(text) {
   return response.data.choices[0].message.content;
 }
 
-function ensureDirectoryExists(directoryPath) {
+function ensureDirectoryExists(filePath) {
+  const directoryPath = filePath.substring(0, path.lastIndexOf("/") + 1);
   // Create the directory if it doesn't exist
   if (!fs.existsSync(directoryPath)) {
     fs.mkdirSync(directoryPath, { recursive: true });
