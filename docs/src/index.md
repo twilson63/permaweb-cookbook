@@ -36,3 +36,4 @@ The Permaweb Cookbook is split into different sections, each aimed at a differen
 These are small guides to help developers from every experience level to ship code the the permaweb.
 
 - [Hello World (No Code)](getting-started/quick-starts/hw-no-code.md)
+- [Hello World (CLI)](./quick-starts/hw-cli.md)

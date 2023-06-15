@@ -7,9 +7,6 @@ require("dotenv").config();
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
-const readFileAsync = promisify(fs.readFile);
-const writeFileAsync = promisify(fs.writeFile);
-
 async function main() {
   console.log(`Fetching latest pull request...`);
   // Get the latest push to the main branch
@@ -80,7 +77,7 @@ async function main() {
         repo: "permaweb-cookbook",
         path: translatedFilePath,
         message: `Translate ${translatedFilePath.substring(
-          path.lastIndexOf("/") + 1
+          translatedFilePath.lastIndexOf("/") + 1
         )} to Spanish`,
         committer: {
           name: "ropats16",
@@ -194,7 +191,7 @@ async function translateTextToSpanish(text) {
 }
 
 function ensureDirectoryExists(filePath) {
-  const directoryPath = filePath.substring(0, path.lastIndexOf("/") + 1);
+  const directoryPath = filePath.substring(0, filePath.lastIndexOf("/") + 1);
   console.log(`Checking if ${directoryPath} exists...`);
   // Create the directory if it doesn't exist
   if (!fs.existsSync(directoryPath)) {
