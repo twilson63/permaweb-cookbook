@@ -45,10 +45,9 @@ async function main() {
   console.log(`Translation of all files completed`);
 }
 
-async function getLatestPushToMainBranch() {
+async function getLatestPullRequest() {
   const owner = "ropats16";
   const repo = "permaweb-cookbook";
-  const branch = "main";
 
   // Get the latest push to the main branch
   const response = await octokit.request("GET /repos/{owner}/{repo}/pulls", {
@@ -72,22 +71,31 @@ async function getLatestPushToMainBranch() {
   return null;
 }
 
-async function getModifiedFiles(push) {
+async function getModifiedFiles(pullRequest) {
   const owner = "ropats16";
   const repo = "permaweb-cookbook";
-  const { sha } = push;
 
   // Get the files modified in the push
   const response = await octokit.request(
-    "GET /repos/{owner}/{repo}/commits/{ref}/files",
+    "GET /repos/{owner}/{repo}/pulls/{pull_number}/files",
     {
       owner,
       repo,
-      ref: sha,
+      pull_number: pullRequest.number,
     }
   );
 
-  return response.data;
+  const files = response.data.map((file) => ({
+    filename: file.filename,
+    status: file.status,
+  }));
+
+  for (const file of files.filter((file) => file.status === "modified")) {
+    console.log(
+      `//////////////This file was changed: ${file.filename}/////////////`
+    );
+  }
+  return files.filter((file) => file.status === "modified");
 }
 
 async function processFilesInSubfolder(
