@@ -207,23 +207,23 @@ async function translateTextToSpanish(text) {
 async function ensureDirectoryExists(filePath) {
   console.log(`Checking if ${filePath} exists...`);
   // Reading file content
-  const fileContent = await octokit.request(
-    "GET /repos/{owner}/{repo}/contents/{path}",
-    {
-      owner: "ropats16",
-      repo: "permaweb-cookbook",
-      path: filePath,
-      headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-    }
-  );
-
-  if (fileContent.status === 404) {
+  try {
+    const fileContent = await octokit.request(
+      "GET /repos/{owner}/{repo}/contents/{path}",
+      {
+        owner: "ropats16",
+        repo: "permaweb-cookbook",
+        path: filePath,
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+      }
+    );
+    return { exists: true, sha: fileContent.data.sha };
+  } catch (error) {
+    console.log("Error fetching file because:", error.message);
     return { exists: false, sha: null };
   }
-
-  return { exists: true, sha: fileContent.data.sha };
 }
 
 function addMarkdownFormatting(text) {
