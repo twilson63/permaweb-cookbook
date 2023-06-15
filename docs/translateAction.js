@@ -75,6 +75,14 @@ async function getModifiedFiles(pullRequest) {
   const owner = "ropats16";
   const repo = "permaweb-cookbook";
 
+  const subfoldersToRead = [
+    "concepts",
+    "getting-started",
+    "guides",
+    "kits",
+    "references",
+  ];
+
   // Get the files modified in the push
   const response = await octokit.request(
     "GET /repos/{owner}/{repo}/pulls/{pull_number}/files",
@@ -85,17 +93,25 @@ async function getModifiedFiles(pullRequest) {
     }
   );
 
-  const files = response.data.map((file) => ({
-    filename: file.filename,
-    status: file.status,
-  }));
+  let filePaths = [];
 
-  for (const file of files.filter((file) => file.status === "modified")) {
-    console.log(
-      `//////////////This file was changed: ${file.filename}/////////////`
-    );
+  for (const file of response.data.filter(
+    (file) => file.status === "modified"
+  )) {
+    if (
+      file.filename === "docs/src/index.md" ||
+      subfoldersToRead.some((subfolder) =>
+        file.filename.startsWith(`docs/src/${subfolder}`)
+      )
+    ) {
+      filePaths = [...filePaths, file.filename];
+      console.log(
+        `//////////////The file at this path was changed: ${file.filename}/////////////`
+      );
+    }
   }
-  return files.filter((file) => file.status === "modified");
+
+  return filePaths;
 }
 
 async function processFilesInSubfolder(
