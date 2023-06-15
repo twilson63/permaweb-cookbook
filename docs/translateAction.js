@@ -205,7 +205,7 @@ async function translateTextToSpanish(text) {
 }
 
 async function ensureDirectoryExists(filePath) {
-  console.log(`Checking if ${directoryPath} exists...`);
+  console.log(`Checking if ${filePath} exists...`);
   // Reading file content
   const fileContent = await octokit.request(
     "GET /repos/{owner}/{repo}/contents/{path}",
