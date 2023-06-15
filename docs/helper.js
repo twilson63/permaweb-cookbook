@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-import { Octokit } from "@octokit/core";
+const { Octokit } = require("@octokit/core");
 const { promisify } = require("util");
 const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config();
