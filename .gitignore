@@ -1,2 +1,4 @@
 wallet.json
 package-lock.json
+
+.env
