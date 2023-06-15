@@ -25,7 +25,20 @@ async function main() {
     for (const file of modifiedFiles) {
       console.log(`Reading file content for ${file}...`);
       // Reading file content
-      const fileContent = await readFileAsync(file, "utf-8");
+      const fileContent = await octokit.request(
+        "GET /repos/{owner}/{repo}/contents/{path}",
+        {
+          owner: "ropats16",
+          repo: "permaweb-cookbook",
+          path: file,
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        }
+      );
+
+      console.log(`Here's the response: ${fileContent} for ${file}...`);
+      // const fileContent = await readFileAsync(file, "utf-8");
 
       // Define the prompt for translation to Spanish
       const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${fileContent}`;
