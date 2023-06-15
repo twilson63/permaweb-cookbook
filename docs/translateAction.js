@@ -94,7 +94,7 @@ async function main() {
       //   "utf-8"
       // );
 
-      console.log(`Translation complete for file: ${filePath}`);
+      console.log(`Translation complete for file: ${file}`);
     }
     console.log(`Translation of all files completed`);
   }
