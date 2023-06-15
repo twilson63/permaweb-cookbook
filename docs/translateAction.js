@@ -60,39 +60,53 @@ async function main() {
         `This is the translated file path: ${translatedFilePath} and its type is ${typeof translatedFilePath}`
       );
 
-      // Check if path exists
-      // ensureDirectoryExists(translatedFilePath);
-
-      // Create path for file
-      // const translatedFilePath = path.join(translatedFolderPath, file);
-
-      console.log(`Writing translated file to ${translatedFilePath}...`);
-
       const markdownTranslatedContent =
         addMarkdownFormatting(translatedContent);
 
-      // // Write content to file
-      await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
-        owner: "ropats16",
-        repo: "permaweb-cookbook",
-        path: translatedFilePath,
-        message: `Translate ${translatedFilePath.substring(
-          translatedFilePath.lastIndexOf("/") + 1
-        )} to Spanish`,
-        committer: {
-          name: "ropats16",
-          email: "rohitcpathare@gmail.com",
-        },
-        content: btoa(markdownTranslatedContent),
-        headers: {
-          "X-GitHub-Api-Version": "2022-11-28",
-        },
-      });
-      // await writeFileAsync(
-      //   translatedFilePath,
-      //   markdownTranslatedContent,
-      //   "utf-8"
-      // );
+      console.log(`Writing translated file to ${translatedFilePath}...`);
+
+      // Check if path exists
+      const dirStatus = await ensureDirectoryExists(translatedFilePath);
+
+      // Write content to file
+      if (dirStatus.exists === false) {
+        console.log("Creating new file...");
+        await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
+          owner: "ropats16",
+          repo: "permaweb-cookbook",
+          path: translatedFilePath,
+          message: `Translate ${translatedFilePath.substring(
+            translatedFilePath.lastIndexOf("/") + 1
+          )} to Spanish`,
+          committer: {
+            name: "ropats16",
+            email: "rohitcpathare@gmail.com",
+          },
+          content: btoa(markdownTranslatedContent),
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        });
+      } else if (dirStatus.exists === true) {
+        console.log("Overwriting existing file...");
+        await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
+          owner: "ropats16",
+          repo: "permaweb-cookbook",
+          path: translatedFilePath,
+          message: `Translate ${translatedFilePath.substring(
+            translatedFilePath.lastIndexOf("/") + 1
+          )} to Spanish`,
+          committer: {
+            name: "ropats16",
+            email: "rohitcpathare@gmail.com",
+          },
+          content: btoa(markdownTranslatedContent),
+          sha: dirStatus.sha,
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        });
+      }
 
       console.log(`Translation complete for file: ${file}`);
     }
@@ -190,13 +204,26 @@ async function translateTextToSpanish(text) {
   return response.data.choices[0].message.content;
 }
 
-function ensureDirectoryExists(filePath) {
-  const directoryPath = filePath.substring(0, filePath.lastIndexOf("/") + 1);
+async function ensureDirectoryExists(filePath) {
   console.log(`Checking if ${directoryPath} exists...`);
-  // Create the directory if it doesn't exist
-  if (!fs.existsSync(directoryPath)) {
-    fs.mkdirSync(directoryPath, { recursive: true });
+  // Reading file content
+  const fileContent = await octokit.request(
+    "GET /repos/{owner}/{repo}/contents/{path}",
+    {
+      owner: "ropats16",
+      repo: "permaweb-cookbook",
+      path: filePath,
+      headers: {
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+    }
+  );
+
+  if (fileContent.status === 404) {
+    return { exists: false, sha: null };
   }
+
+  return { exists: true, sha: fileContent.data.sha };
 }
 
 function addMarkdownFormatting(text) {
