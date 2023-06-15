@@ -37,11 +37,13 @@ async function main() {
         }
       );
 
-      console.log(`Here's the response: ${fileContent} for ${file}...`);
+      console.log(
+        `Here's the response: ${fileContent.data.content} for ${file}...`
+      );
       // const fileContent = await readFileAsync(file, "utf-8");
 
       // Define the prompt for translation to Spanish
-      const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${fileContent}`;
+      const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${fileContent.data.content}`;
 
       console.log(`Writing translated file...`);
       // Translate the content to Spanish using the OpenAI API client
