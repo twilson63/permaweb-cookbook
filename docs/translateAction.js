@@ -50,8 +50,16 @@ async function main() {
 
       const { relativePath } = file.split("docs/src");
 
+      console.log(
+        `This is the relative path: ${relativePath} and its type is ${typeof relativePath}`
+      );
+
       // Write the translated file to the "es" subfolder
       const translatedFilePath = path.join("docs/src/es", relativePath);
+
+      console.log(
+        `This is the translated file path: ${translatedFilePath} and its type is ${typeof translatedFilePath}`
+      );
 
       // Check if path exists
       ensureDirectoryExists(translatedFilePath);
