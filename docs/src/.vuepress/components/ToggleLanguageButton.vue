@@ -17,27 +17,16 @@ const toggleDropdown = () => {
 };
 
 const updateLanguagePath = (selectedLanguage) => {
-  console.log(
-    selectedLanguage,
-    "Selected language path from updateLanguagePath function"
-  );
   const currentPath = window.location.pathname;
 
   const currentLanguage = getCurrentLanguage();
-  console.log(
-    currentLanguage,
-    "Current language path from updateLanguagePath function"
-  );
 
   if (selectedLanguage === currentLanguage) {
+    isDropdownOpen.value = !isDropdownOpen.value;
     return currentPath;
   }
 
   const selectedLanguagePath = languages[selectedLanguage];
-  console.log(
-    selectedLanguagePath,
-    "selected language path from updateLanguagePath function"
-  );
 
   let newPath;
 
@@ -55,8 +44,6 @@ const updateLanguagePath = (selectedLanguage) => {
     );
   }
 
-  console.log(newPath, "new path from updateLanguagePath function");
-
   location.href = newPath;
 
   return newPath;
@@ -69,6 +56,13 @@ const getCurrentLanguage = () => {
     .filter((segment) => segment !== "");
 
   if (pathSegments.length >= 2) {
+    const language = Object.keys(languages).find(
+      (lang) => `${pathSegments[0]}/` === languages[lang]
+    );
+    if (language) {
+      return language;
+    }
+  } else if (pathSegments.length < 2 && pathSegments[0] !== "") {
     const language = Object.keys(languages).find(
       (lang) => `${pathSegments[0]}/` === languages[lang]
     );
