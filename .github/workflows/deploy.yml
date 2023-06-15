@@ -19,6 +19,7 @@ jobs:
       - run: cd docs && yarn deploy
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SPECIAL_ACCESS_TOKEN: ${{ secrets.SPECIAL_ACCESS_TOKEN }}
           COOKBOOK: ${{ secrets.COOKBOOK }}
       - uses: Ilshidur/action-discord@master
         name: Discord Notification

@@ -5,7 +5,7 @@ const { promisify } = require("util");
 const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config();
 
-const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+const octokit = new Octokit({ auth: process.env.SPECIAL_ACCESS_TOKEN });
 
 async function main() {
   console.log(`Fetching latest pull request...`);
@@ -81,7 +81,7 @@ async function main() {
         )} to Spanish`,
         committer: {
           name: "ropats16",
-          email: "ropats16@github.com",
+          email: "rohitcpathare@gmail.com",
         },
         content: btoa(markdownTranslatedContent),
         headers: {
