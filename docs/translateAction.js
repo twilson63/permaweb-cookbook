@@ -51,7 +51,9 @@ async function main() {
       const relativePath = file.split("docs/src");
 
       console.log(
-        `This is the relative path: ${relativePath} and its type is ${typeof relativePath}`
+        `This is the relative path: ${
+          relativePath[1]
+        } and its type is ${typeof relativePath}`
       );
 
       // Write the translated file to the "es" subfolder
@@ -62,7 +64,7 @@ async function main() {
       );
 
       // Check if path exists
-      ensureDirectoryExists(translatedFilePath);
+      // ensureDirectoryExists(translatedFilePath);
 
       // Create path for file
       // const translatedFilePath = path.join(translatedFolderPath, file);
@@ -193,6 +195,7 @@ async function translateTextToSpanish(text) {
 
 function ensureDirectoryExists(filePath) {
   const directoryPath = filePath.substring(0, path.lastIndexOf("/") + 1);
+  console.log(`Checking if ${directoryPath} exists...`);
   // Create the directory if it doesn't exist
   if (!fs.existsSync(directoryPath)) {
     fs.mkdirSync(directoryPath, { recursive: true });
