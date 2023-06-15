@@ -79,8 +79,8 @@ export default {
     editLink: true,
     editLinkPattern: ":repo/edit/:branch/docs/src/:path",
     layouts: {
-      "/": "./layouts/en/DefaultLayout.vue",
-      "/es/": "./layouts/es/DefaultLayout.vue",
+      "/": "./layouts/DefaultLayout.vue",
+      "/es/": "./layouts/LayoutES.vue",
     },
     colorMode: "dark",
     sidebar: {
