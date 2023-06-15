@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "deploy": "npm run build && node helper.js",
+    "deploy": "npm run build && node translateAction.js",
     "fmt": "prettier --single-quote --trailing-comma none --write src/.vuepress",
     "lint": "prettier --single-quote --trailing-comma none --check src/.vuepress"
   },
