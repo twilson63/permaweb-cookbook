@@ -20,14 +20,14 @@ async function main() {
   ];
 
   // Get the latest push to the main branch
-  const push = await getLatestPushToMainBranch();
+  const pullRequest = await getLatestPullRequest();
 
   // Read and translate the files
   const docsPath = path.join(__dirname, "/src");
 
   // if (push) {
   //   // Get the modified files from the push
-  //   const modifiedFiles = await getModifiedFiles(push);
+  const modifiedFiles = await getModifiedFiles(pullRequest);
   //   for (const file in modifiedFiles) {
   //     console.log(`This is the file ${file.filename}`);
   //   }
