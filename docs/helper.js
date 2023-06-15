@@ -25,13 +25,13 @@ async function main() {
   // Read and translate the files
   const docsPath = path.join(__dirname, "/src");
 
-  if (push) {
-    // Get the modified files from the push
-    const modifiedFiles = await getModifiedFiles(push);
-    for (const file in modifiedFiles) {
-      console.log(`This is the file ${file.filename}`);
-    }
-  }
+  // if (push) {
+  //   // Get the modified files from the push
+  //   const modifiedFiles = await getModifiedFiles(push);
+  //   for (const file in modifiedFiles) {
+  //     console.log(`This is the file ${file.filename}`);
+  //   }
+  // }
 
   // for (const subfolder of subfoldersToRead) {
   //   const subfolderPath = path.join(docsPath, subfolder);
@@ -51,17 +51,22 @@ async function getLatestPushToMainBranch() {
   const branch = "main";
 
   // Get the latest push to the main branch
-  const response = await octokit.request("GET /repos/{owner}/{repo}/commits", {
+  const response = await octokit.request("GET /repos/{owner}/{repo}/pulls", {
     owner,
     repo,
-    sha: branch,
+    state: "closed",
+    sort: "updated",
+    direction: "desc",
     per_page: 1,
   });
 
-  const commits = response.data;
+  const pullRequests = response.data;
 
-  if (commits.length > 0) {
-    return commits[0];
+  if (pullRequests.length > 0 && pullRequests[0].merged_at) {
+    console.log(
+      `**********************This is latest PR number ${pullRequests[0].number} ***************`
+    );
+    return pullRequests[0];
   }
 
   return null;
