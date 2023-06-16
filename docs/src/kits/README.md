@@ -5,5 +5,3 @@ Starter kits are boiler plate repositories for specific frameworks configured an
 - [Svelte](./svelte/index.md)
 - [React](./react/index.md)
 - [Vue](./vue/index.md)
-
-Testing...
