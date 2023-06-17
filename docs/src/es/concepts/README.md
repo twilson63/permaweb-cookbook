@@ -1,9 +1,6 @@
 ---
 locale: es
 ---
----
-título: Libro de cocina Permaweb - Conceptos básicos
----
 
 # Conceptos básicos
 
@@ -26,4 +23,10 @@ Fundamentos de Arweave y el Permaweb.
   - [Fichas atómicas](atomic-tokens.md)
   - [Fichas de Compartición de Beneficios (PSTs)](psts.md)
 
->¿Crees que falta algún concepto básico de Permaweb? Cree una issue en [GitHub](https://github.com/twilson63/permaweb-cookbook/issues) o considere [contribuir](../getting-started/contributing.md)
+> ¿Crees que falta algún concepto básico de Permaweb? Cree una issue en [GitHub](https://github.com/twilson63/permaweb-cookbook/issues) o considere [contribuir](../getting-started/es/contributing.md)
+
+## Recursos
+
+- Ejemplo de [arweave-js](../es/guides/posting-transactions/arweave-js.md)
+- Ejemplo de [bundlr.network](../es/guides/posting-transactions/bundlr.md)
+- Ejemplo de [dispatch](../guides/es/posting-transactions/dispatch.md)
