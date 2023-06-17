@@ -52,7 +52,9 @@ Un ejemplo de cómo publicar transacciones en agrupadas usando `bundlr.network/c
 
 ## Transacciones Enviadas
 
-Otra forma de publicar transacciones en agrupadas es desde el navegador. Si bien los navegadores imponen algunas restricciones sobre el tamaño de los datos que se pueden cargar, las billeteras basadas en navegador pueden publicar transacciones en empaquetadores. Las billeteras de Arweave implementan un método de API `dispatch()`. Si estás publicando transacciones pequeñas (100KB o menos) puedes usar el método `dispatch()
+Otra forma de publicar transacciones agrupadas es desde el navegador. Si bien los navegadores imponen algunas restricciones en cuanto al tamaño de los datos que se pueden cargar, las billeteras basadas en navegador pueden publicar transacciones en los agrupadores. Las billeteras de navegador de Arweave implementan un método de API llamado `dispatch()`. Si estás publicando transacciones pequeñas (de 100KB o menos), puedes utilizar el método `dispatch()` de las billeteras para aprovechar las transacciones agrupadas, incluso si `bundlr.network/client` no está incluido en tu aplicación.
+
+Un ejemplo de cómo publicar una transacción agrupada de 100KB o menos utilizando el método `dispatch()` de las billeteras de Arweave se puede encontrar en esta guía.
 
 ## Recursos
 
