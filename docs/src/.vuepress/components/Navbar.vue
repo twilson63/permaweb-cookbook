@@ -117,7 +117,7 @@ onMounted(() => {
   --nav-h: 100px;
 
   @include media-breakpoint-down(md) {
-    --nav-h: 60px;
+    --nav-h: 50px;
   }
 }
 
