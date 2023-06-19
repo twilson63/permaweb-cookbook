@@ -67,7 +67,7 @@ onMounted(() => {
       <div class="cookbook-navbar-items">
         <ToggleLanguageButton
           style="margin-right: 26px"
-          class="d-block"
+          class="d-none d-md-block"
           @toggle="$emit('toggle-language')"
         />
         <RouterLink
