@@ -318,7 +318,7 @@ export default {
       collapsible: true,
       children: [
         {
-          text: "Empaquetado",
+          text: "Agrupamiento",
           collapsible: false,
           link: "/es/references/bundling",
         },
