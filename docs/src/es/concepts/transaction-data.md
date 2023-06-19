@@ -4,11 +4,12 @@ locale: es
 
 
 # Obtener datos de la transacción
+
 Aunque los servicios de indexación permiten realizar consultas de metadatos de la transacción, no ofrecen acceso a los datos de la transacción en sí. Esto se debe a que almacenar datos de la transacción y indexar metadatos requieren recursos diferentes. Los servicios de indexación principalmente se basan en recursos de computación para realizar consultas en una base de datos, mientras que los datos de la transacción se prestan mejor para su despliegue en una Red de Distribución de Contenidos (CDN) para optimizar el almacenamiento y el ancho de banda.
 
 La mayoría de los gateways ofrece un servicio de Cache de datos de la transacción a través de un conjunto de extremos HTTP. Se puede usar cualquier cliente/paquete HTTP para solicitar datos de transacción de estos extremos. Por ejemplo, Axios o Fetch para JavaScript, Guzzle para PHP, etc.
 
-<img src="https://ar-io.net/VZs292M6mq8LqvjLMdoHGD45qZKDnITQVAmiM9O2KSI" width="700">
+<img src="https://ar-io.net/VZs292M6mq8LqvjLMdoHGD45qZKDnITQVAmiM9O2KSI" width="700" />
 
 Si desea omitir el servicio de caché de datos de transacción y obtener datos directamente de los pares/nodos de Arweave, puede hacerlo, ¡pero es una gran cantidad de trabajo!
 
@@ -121,4 +122,13 @@ const result = await fetch('https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHb
   },
   "paths": {
     "index.html": {
-      "id": "FOPrEoqqk184Bn
+      "id": "FOPrEoqqk184Bnk9KrnQ0MTZFOM1oXb0JZjJqhluv78"
+    }
+  }
+}
+```
+
+</details>
+<hr/>
+
+Cada par/nodo de Arweave también expone algunos puntos finales HTTP que suelen ser gateways replicados. Puedes obtener más información sobre los puntos finales HTTP de los pares de Arweave [aquí](/references/http-api.md).
