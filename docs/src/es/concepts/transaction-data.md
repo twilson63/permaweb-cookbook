@@ -131,4 +131,4 @@ const result = await fetch('https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHb
 </details>
 <hr/>
 
-Each Arweave peer/node also exposes some HTTP endpoints which are often replicated gateways. You can read more about Arweave peer's HTTP endpoints [here](/references/http-api.md).
+Cada par/nodo de Arweave también expone algunos puntos finales HTTP que suelen ser gateways replicados. Puedes obtener más información sobre los puntos finales HTTP de los pares de Arweave [aquí](/references/http-api.md).
