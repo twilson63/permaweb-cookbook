@@ -2,20 +2,19 @@
 locale: es
 ---
 
-
 # Resumen
 
 ---
 
 Los tokens de compartición de beneficios (PSTs) son un tipo de SmartWeaveToken que incluyen la siguiente estructura:
 
-| propiedad | tipo         |
-| --------- | ------------ |
-| balances  | objeto       |
-| nombre    | cadena       |
-| pendiente | cadena       |
-| transfer  | método       |
-| balance   | método       |
+| propiedad | tipo   |
+| --------- | ------ |
+| balances  | objeto |
+| nombre    | cadena |
+| pendiente | cadena |
+| transfer  | método |
+| balance   | método |
 
 Los PST suelen usarse para gobernar un protocolo o una “Comunidad de Compartición de Beneficios” (PSC), similar a un DAO.
 
@@ -66,4 +65,4 @@ Puedes usar [ViewBlock](https://viewblock.io/arweave) para una experiencia simil
 
 Otra opción es Sonar, un explorador de contratos inteligentes de Arweave creado por [RedStone Finance](https://sonar.redstone.tools/#/app/contracts). Ve el mismo contrato [aquí](https://sonar.warp.cc/?#/app/contract/-8A6RexFkpfWwuyVO98wzSFZh0d6VJuI-buTJvlwOJQ).
 
-Algunos miembros de la comunidad han estado discutiendo llamar a los PST “Tokens de Servicio Permavivo”. Aún hay mucho que explorar con los PST-> únete a la discusión [aquí](https://discord.com/channels/999377270701564065/999377270701564068/1055569446481178734) (Discord).
+> Algunos miembros de la comunidad han estado discutiendo llamar a los PST “Tokens de Servicio Permavivo”. Aún hay mucho que explorar con los PST-> únete a la discusión [aquí](https://discord.com/channels/999377270701564065/999377270701564068/1055569446481178734) (Discord).

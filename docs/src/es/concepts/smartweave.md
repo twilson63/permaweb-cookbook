@@ -1,6 +1,7 @@
 ---
 locale: es
 ---
+
 # SmartWeave
 
 ## ¿Qué es SmartWeave?
@@ -31,10 +32,11 @@ Los contratos de SmartWeave, en su núcleo, se construyen a partir de un estado 
 
 Los SDK de SmartWeave, como `Warp` (anteriormente `RedStone`), se usan para consultar estas transacciones para construir el estado del contrato localmente, modificando el estado del contrato con cada transacción. El Evaluador (`Warp`) utiliza etiquetas para consultar las transacciones de un contrato; sabe que una transacción es parte del contrato con la ayuda de la etiqueta App-Name, y la etiqueta Contract.
 
-A continuación hay un ejemplo de una **interacción** del contrato . 
-- La etiqueta `App-Name` dice que se trata de una **ACCION** de Smartweave. 
-- La etiqueta `Contrato` ofrece el ID de transacción específico del estado de contrato inicial. 
-- La etiqueta `Input` le da al contrato su función para ejecutar y cualquier otro dato que necesite: 
+A continuación hay un ejemplo de una **interacción** del contrato .
+
+- La etiqueta `App-Name` dice que se trata de una **ACCION** de Smartweave.
+- La etiqueta `Contrato` ofrece el ID de transacción específico del estado de contrato inicial.
+- La etiqueta `Input` le da al contrato su función para ejecutar y cualquier otro dato que necesite:
 
 ```json
 [
@@ -60,9 +62,11 @@ A continuación hay un ejemplo de una **interacción** del contrato .
     }
 ]
 ```
-Y aquí hay un ejemplo de un **contrato** . 
+
+Y aquí hay un ejemplo de un **contrato** .
+
 - La etiqueta `App-Name` dice que se trata de un **CONTRATO** de Smartweave.
-- La etiqueta `Contract-Src` apunta al código fuente del contrato: 
+- La etiqueta `Contract-Src` apunta al código fuente del contrato:
 
 ```json
 [
@@ -89,4 +93,25 @@ Y aquí hay un ejemplo de un **contrato** .
 ]
 ```
 
-El estado resultante es el estado actual del contrato, que el SDK en el lado del cliente puede usar para calcular los saldos de usuario, los propietarios del contrato y otros
+El estado resultante es el estado actual del contrato, que el SDK en el lado del cliente puede utilizar para calcular los saldos de los usuarios, los propietarios del contrato y otros detalles específicos del contrato. Una vez que el llamador tiene un estado de contrato validado, pueden construir una interacción para que el usuario la implemente en la cadena, la cual, después de ser minada o indexada en una [Gateway](/concepts/gateways), se incluirá la próxima vez que alguien construya el estado del contrato.
+
+## Proyectos del ecosistema Smartweave
+
+Hay varios proyectos del ecosistema que aprovechan los SmartContracts de SmartWeave, pero aquí hay algunos destacados:
+
+### Implementaciones
+
+- [Warp](https://warp.cc/) | Principal proveedor de SDK de SmartWeave, tutoriales y ayuda en el mantenimiento del protocolo SmartWeave.
+- [EXM](https://docs.exm.dev/) | Execution Machine (EXM) es una plataforma para desarrolladores que impulsa la creación y el uso de aplicaciones altamente disponibles y de alto rendimiento dentro de un entorno descentralizado.
+
+### Herramientas
+
+- [SonAr](https://sonar.warp.cc/#/app/contracts) | Explorador de contratos de SmartWeave, creado y alojado por Warp.
+
+### Aplicaciones
+
+- [Permapages](https://permapages.app/) | Herramienta para la creación de páginas web permanentes, portal para la compra de ArNS y portal para la creación de ANT. Tu perfil en la permaweb.
+- [ArNS](arns.md) | Sistema de Nombres de Arweave <!-- // todo: actualizar al portal de ArNS cuando se lance -->
+- [WeaveDB](https://weavedb.dev/) | Base de datos NoSQL como Smart Contract.
+- [KwilDB](https://docs.kwil.com/) | Base de datos SQL como Smart Contract.
+- [ArDrive Inferno](https://ardrive.io/inferno/) | Obtén PST para subir a través de Ardrive.
