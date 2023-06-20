@@ -3,8 +3,8 @@ export const languages = {
   Español: "es/",
 };
 
-export const getCurrentLanguage = () => {
-  const currentPath = window.location.pathname;
+export const getCurrentLanguage = (path) => {
+  const currentPath = path;
   const pathSegments = currentPath
     .split("/")
     .filter((segment) => segment !== "");
@@ -30,7 +30,7 @@ export const getCurrentLanguage = () => {
 
 export const getLanguagePath = (path, selectedLanguage, currentLanguage="English") => {
   if (selectedLanguage === currentLanguage) return path;
-  
+
   const currentPath = path;
   const selectedLanguagePath = languages[selectedLanguage];
 
@@ -49,8 +49,6 @@ export const getLanguagePath = (path, selectedLanguage, currentLanguage="English
       `/${selectedLanguagePath}`
     );
   }
-
-  console.log(path, newPath)
 
   return newPath;
 };

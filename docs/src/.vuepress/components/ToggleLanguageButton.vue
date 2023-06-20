@@ -23,7 +23,7 @@ watch(() => route.path, (path) => {
   // update RouterLink destination after path change
   const links = {};
   for (let lang in languages) {
-    const newPath = getLanguagePath(path, lang, getCurrentLanguage());
+    const newPath = getLanguagePath(path, lang, getCurrentLanguage(path));
     links[lang] = newPath;
   }
   linkItems.value = links;
