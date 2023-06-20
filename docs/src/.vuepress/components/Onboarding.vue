@@ -1,4 +1,5 @@
 <script setup>
+import I18NRouterLink from "./I18NRouterLink.vue";
 import FeaturedContributors from "./FeaturedContributors.vue";
 import { usePageFrontmatter } from "@vuepress/client";
 
@@ -69,7 +70,7 @@ const frontmatter = usePageFrontmatter();
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <RouterLink
+        <I18NRouterLink
           to="/getting-started/quick-starts/hw-no-code"
           class="onboard-card"
         >
@@ -184,11 +185,11 @@ const frontmatter = usePageFrontmatter();
             class="body-text card-action"
             >{{ frontmatter.locale === "es" ? "Vamos" : "Let's Go" }}</span
           >
-        </RouterLink>
+        </I18NRouterLink>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <RouterLink to="/concepts" class="onboard-card">
+        <I18NRouterLink to="/concepts" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon">
@@ -308,11 +309,11 @@ const frontmatter = usePageFrontmatter();
             class="body-text card-action"
             >{{ frontmatter.locale === "es" ? "Empezar" : "Get Started" }}</span
           >
-        </RouterLink>
+        </I18NRouterLink>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <RouterLink to="/guides" class="onboard-card">
+        <I18NRouterLink to="/guides" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon">
@@ -449,7 +450,7 @@ const frontmatter = usePageFrontmatter();
             class="body-text card-action"
             >{{ frontmatter.locale === "es" ? "Empezar" : "Get Started" }}</span
           >
-        </RouterLink>
+        </I18NRouterLink>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
