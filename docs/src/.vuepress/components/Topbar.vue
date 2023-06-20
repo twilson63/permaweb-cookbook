@@ -1,19 +1,25 @@
 <script setup>
-import 'add-to-calendar-button';
-import { useDarkMode } from '@vuepress/theme-default/lib/client/composables/index.js';
+import { useDarkMode } from "@vuepress/theme-default/lib/client/composables/index.js";
+
+import { usePageFrontmatter } from "@vuepress/client";
+import "add-to-calendar-button";
 
 const darkMode = useDarkMode();
+const frontmatter = usePageFrontmatter();
 </script>
 
 <template>
   <div class="topbar">
     <p>
-      <span
-        >Cookbook Community Meetup - 12pm ET / 5pm GMT every week on
-        Wednesdays</span
+      <span>
+        {{
+          frontmatter.locale === "es"
+            ? "Encuentro de la Comunidad del Libro de Recetas: todos los miércoles a las 12pm ET / 5pm GMT."
+            : "Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
+        }}</span
       >
       <add-to-calendar-button
-        style="white-space: nowrap;"
+        style="white-space: nowrap"
         name="Permaweb Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
         options="'Apple','Google'"
         location="https://app.gather.town/app/VQzhQa280FhWKtuy/permaweb?spawnToken=d8Vy968fQ4eZ1Y44vxFg"
@@ -31,7 +37,7 @@ const darkMode = useDarkMode();
 </template>
 
 <style lang="scss">
-@import '../styles/bootstrap.scss';
+@import "../styles/bootstrap.scss";
 
 .topbar {
   position: relative;

@@ -1,19 +1,34 @@
+<script setup>
+import FeaturedContributors from "./FeaturedContributors.vue";
+import { usePageFrontmatter } from "@vuepress/client";
+
+const frontmatter = usePageFrontmatter();
+</script>
 <template>
   <div class="onboarding">
     <div class="row hero">
       <div class="col-12 col-md-6 col-lg-5 order-2 order-md-1">
         <div class="hero-text">
-          <h1 class="hero-title">Build on the Permaweb.</h1>
+          <h1 class="hero-title">
+            {{
+              frontmatter.locale === "es"
+                ? "Construye en la Permaweb."
+                : "Build on the Permaweb."
+            }}
+          </h1>
           <p class="hero-body-text">
-            A curated collection of developer guides & more to build on the
-            Permaweb. All in one place.
+            {{
+              frontmatter.locale === "es"
+                ? "Una colección seleccionada de guías para desarrolladores y más para construir en la Permaweb. Todo en un solo lugar."
+                : "A curated collection of developer guides & more to build on the Permaweb. All in one place."
+            }}
           </p>
           <RouterLink
             style="color: var(--c-accent-rose)"
             class="hero-body-text"
             to="/getting-started/"
           >
-            Get Started
+            {{ frontmatter.locale === "es" ? "Empezar" : "Get Started" }}
           </RouterLink>
         </div>
 
@@ -46,7 +61,11 @@
 
     <div class="row cards">
       <div class="col-12">
-        <h2 class="header">First Time?</h2>
+        <h2 class="header">
+          {{
+            frontmatter.locale === "es" ? "¿Es tu primera vez?" : "First Time?"
+          }}
+        </h2>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
@@ -148,14 +167,22 @@
               </div>
             </div>
 
-            <h2 class="title">Hello World</h2>
-            <p class="body-text">Getting started with the Permaweb</p>
+            <h2 class="title">
+              {{ frontmatter.locale === "es" ? "Hola Mundo" : "Hello World" }}
+            </h2>
+            <p class="body-text">
+              {{
+                frontmatter.locale === "es"
+                  ? "Comenzando con la Permaweb"
+                  : "Getting started with the Permaweb"
+              }}
+            </p>
           </div>
 
           <span
             style="color: var(--c-accent-violet)"
             class="body-text card-action"
-            >Let's Go</span
+            >{{ frontmatter.locale === "es" ? "Vamos" : "Let's Go" }}</span
           >
         </RouterLink>
       </div>
@@ -260,16 +287,26 @@
               </div>
             </div>
 
-            <h2 class="title">Core Concepts</h2>
+            <h2 class="title">
+              {{
+                frontmatter.locale === "es"
+                  ? "Conceptos Clave"
+                  : "Core Concepts"
+              }}
+            </h2>
             <p class="body-text">
-              Comprehensive building blocks for developers
+              {{
+                frontmatter.locale === "es"
+                  ? "Bloques de construcción completos para desarrolladores"
+                  : "Comprehensive building blocks for developers"
+              }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-sunny)"
             class="body-text card-action"
-            >Get Started</span
+            >{{ frontmatter.locale === "es" ? "Empezar" : "Get Started" }}</span
           >
         </RouterLink>
       </div>
@@ -395,14 +432,22 @@
               </div>
             </div>
 
-            <h2 class="title">Guides</h2>
-            <p class="body-text">Specific deployments made easy</p>
+            <h2 class="title">
+              {{ frontmatter.locale === "es" ? "Guías" : "Guides" }}
+            </h2>
+            <p class="body-text">
+              {{
+                frontmatter.locale === "es"
+                  ? "Despliegues específicos hechos fáciles"
+                  : "Specific deployments made easy"
+              }}
+            </p>
           </div>
 
           <span
             style="color: var(--c-accent-rose)"
             class="body-text card-action"
-            >Get Started</span
+            >{{ frontmatter.locale === "es" ? "Empezar" : "Get Started" }}</span
           >
         </RouterLink>
       </div>
@@ -526,14 +571,26 @@
               </div>
             </div>
 
-            <h2 class="title">Contribute</h2>
-            <p class="body-text">Share your knowledge</p>
+            <h2 class="title">
+              {{ frontmatter.locale === "es" ? "Contribuir" : "Contribute" }}
+            </h2>
+            <p class="body-text">
+              {{
+                frontmatter.locale === "es"
+                  ? "Comparte tu conocimiento"
+                  : "Share your knowledge"
+              }}
+            </p>
           </div>
 
           <span
             style="color: var(--c-accent-pinky)"
             class="body-text card-action"
-            >Go to Github repo</span
+            >{{
+              frontmatter.locale === "es"
+                ? "Ir al repositorio de Github"
+                : "Go to Github repo"
+            }}</span
           >
         </a>
       </div>
@@ -541,12 +598,8 @@
   </div>
 </template>
 
-<script setup>
-import FeaturedContributors from './FeaturedContributors.vue';
-</script>
-
 <style lang="scss">
-@import '../styles/bootstrap.scss';
+@import "../styles/bootstrap.scss";
 
 .onboarding {
   padding: 120px 0 60px;

@@ -1,11 +1,12 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
-import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue';
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js';
-import ToggleSidebarButton from './ToggleSidebarButton.vue';
+import ToggleColorModeButton from "@theme/ToggleColorModeButton.vue";
+import { useThemeLocaleData } from "@vuepress/theme-default/lib/client/composables/index.js";
+import ToggleSidebarButton from "./ToggleSidebarButton.vue";
+import ToggleLanguageButton from "./ToggleLanguageButton.vue";
 
-defineEmits(['toggle-sidebar']);
+defineEmits(["toggle-sidebar", "toggle-language"]);
 
 const themeLocale = useThemeLocaleData();
 const navbar = ref(null);
@@ -28,7 +29,7 @@ onMounted(() => {
   <header
     ref="navbar"
     class="cookbook-navbar row justify-content-between align-items-center"
-    :class="{'search-expanded': searchBoxFocused}"
+    :class="{ 'search-expanded': searchBoxFocused }"
   >
     <div class="col-8 col-md-4 col-lg-3 d-flex align-items-center">
       <ToggleSidebarButton
@@ -64,6 +65,11 @@ onMounted(() => {
 
     <div class="col-3 col-md-8 col-lg-9">
       <div class="cookbook-navbar-items">
+        <ToggleLanguageButton
+          style="margin-right: 26px"
+          class="d-none d-md-block"
+          @toggle="$emit('toggle-language')"
+        />
         <RouterLink
           class="d-none d-md-block"
           style="color: var(--c-text)"
@@ -105,13 +111,13 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@import '../styles/bootstrap.scss';
+@import "../styles/bootstrap.scss";
 
 :root {
   --nav-h: 100px;
 
   @include media-breakpoint-down(md) {
-    --nav-h: 60px;
+    --nav-h: 50px;
   }
 }
 
@@ -120,7 +126,7 @@ onMounted(() => {
 
   .logo {
     vertical-align: middle;
-    
+
     @include media-breakpoint-down(md) {
       max-width: 200px;
     }
@@ -163,7 +169,7 @@ onMounted(() => {
 
     .suggestions {
       z-index: 100;
-      display:block;
+      display: block;
     }
 
     .suggestion {
@@ -181,7 +187,7 @@ onMounted(() => {
 
   .hidden-on-search {
     opacity: 1;
-    transition: opacity .18s;
+    transition: opacity 0.18s;
   }
 
   &.search-expanded {
@@ -191,6 +197,5 @@ onMounted(() => {
       }
     }
   }
-  
 }
 </style>

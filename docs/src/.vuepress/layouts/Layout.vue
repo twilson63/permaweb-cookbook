@@ -1,18 +1,18 @@
 <script setup>
-import Home from '@theme/Home.vue';
-import Topbar from '../components/Topbar.vue';
-import Navbar from '../components/Navbar.vue';
-import Page from '../components/Page.vue';
-import Sidebar from '../components/Sidebar.vue';
-import Onboarding from '../components/Onboarding.vue';
-import { usePageData, usePageFrontmatter } from '@vuepress/client';
-import { computed, onMounted, onUnmounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
+import Home from "@theme/Home.vue";
+import Topbar from "../components/Topbar.vue";
+import Navbar from "../components/Navbar.vue";
+import Page from "../components/Page.vue";
+import Sidebar from "../components/Sidebar.vue";
+import Onboarding from "../components/Onboarding.vue";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { computed, onMounted, onUnmounted, ref } from "vue";
+import { useRouter } from "vue-router";
 import {
   useScrollPromise,
   useSidebarItems,
-  useThemeLocaleData
-} from '@vuepress/theme-default/lib/client/composables/index.js';
+  useThemeLocaleData,
+} from "@vuepress/theme-default/lib/client/composables/index.js";
 
 const page = usePageData();
 const frontmatter = usePageFrontmatter();
@@ -32,7 +32,7 @@ const shouldShowNavbar = computed(
 const sidebarItems = useSidebarItems();
 const isSidebarOpen = ref(false);
 const toggleSidebar = (to) => {
-  isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value;
+  isSidebarOpen.value = typeof to === "boolean" ? to : !isSidebarOpen.value;
 };
 const touchStart = { x: 0, y: 0 };
 const onTouchStart = (e) => {
@@ -54,11 +54,11 @@ const onTouchEnd = (e) => {
 // classes
 const containerClass = computed(() => [
   {
-    'no-navbar': !shouldShowNavbar.value,
-    'no-sidebar': !sidebarItems.value.length,
-    'sidebar-open': isSidebarOpen.value
+    "no-navbar": !shouldShowNavbar.value,
+    "no-sidebar": !sidebarItems.value.length,
+    "sidebar-open": isSidebarOpen.value,
   },
-  frontmatter.value.pageClass
+  frontmatter.value.pageClass,
 ]);
 
 // close sidebar after navigation
@@ -110,7 +110,7 @@ const onBeforeLeave = scrollPromise.pending;
           class="header"
           style="border: none; padding-top: 30px; margin: 20px 0 25px"
         >
-          Documentation.
+          {{ frontmatter.locale === "es" ? "Documentación" : "Documentation" }}
         </h2>
       </div>
 
@@ -156,15 +156,22 @@ const onBeforeLeave = scrollPromise.pending;
     </div>
 
     <p class="footer-text">
-      <span>Built with</span> <span class="heart">&#10084;&#65039;</span>
-      <span> by the Arweave community. Learn more at </span>
+      <span>{{
+        frontmatter.locale === "es" ? "Creado con " : "Built with "
+      }}</span>
+      <span class="heart">&#10084;&#65039;</span>
+      <span>{{
+        frontmatter.locale === "es"
+          ? " por la comunidad de Arweave. Obtén más información en "
+          : " by the Arweave community. Learn more at "
+      }}</span>
       <a target="_blank" href="https://arweave.org">Arweave.org</a>
     </p>
   </div>
 </template>
 
 <style lang="scss">
-@import '../styles/bootstrap.scss';
+@import "../styles/bootstrap.scss";
 
 .cookbook-theme-container {
   @include media-breakpoint-up(md) {

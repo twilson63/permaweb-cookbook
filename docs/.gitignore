@@ -14,3 +14,4 @@ basement_dist
 .temp
 .yarn
 *.lock
+.env
