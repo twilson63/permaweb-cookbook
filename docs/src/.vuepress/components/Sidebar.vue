@@ -12,8 +12,7 @@ export default {
 
 <template>
   <aside class="cookbook-sidebar">
-    <SidebarItems />
-    <div class="col-1">
+    <div class="d-flex justify-content-between">
       <ToggleLanguageButton
         style="margin-right: 26px"
         class="d-block d-md-none"
@@ -21,9 +20,11 @@ export default {
       />
       <ToggleColorModeButton
         class="d-block d-md-none"
-        style="margin: 16px 0 0 auto; font-size: 0"
+        style="margin: 0 0.5rem 0 0; font-size: 0"
       />
     </div>
+    <hr class="d-block d-md-none" />
+    <SidebarItems />
   </aside>
   <div @click="$emit('close-sidebar')" class="cookbook-sidebar-overlay"></div>
 </template>
