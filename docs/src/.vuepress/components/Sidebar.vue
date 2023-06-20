@@ -12,14 +12,11 @@ export default {
 
 <template>
   <aside class="cookbook-sidebar">
-    <div class="d-flex justify-content-between">
+    <div class="d-flex d-md-none my-4 justify-content-between">
       <ToggleLanguageButton
-        style="margin-right: 26px"
-        class="d-block d-md-none"
         @toggle="$emit('toggle-language')"
       />
       <ToggleColorModeButton
-        class="d-block d-md-none"
         style="margin: 0 0.5rem 0 0; font-size: 0"
       />
     </div>
