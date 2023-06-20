@@ -4,7 +4,7 @@ With bundling services users can post their data transactions to a bundling serv
 
 ### Posting to a bundling service
 ---
-You can read more about how to post your transactions to a bundling service [here](/guides/posting-transactions/bundlr).
+You can read more about how to post your transactions to a bundling service [here](/guides/posting-transactions/bundlr.md).
 
 ### What is a bundle?
 ---

@@ -12,7 +12,7 @@ SmartWeave es el nombre dado al paradigma dominante de SmartContracts en Arweave
 
 El estado y la lógica de las aplicaciones descentralizadas necesitan ser tan resistentes a la censura, permanentes y verificables como el resto de su información. SmartWeave permite a los desarrolladores escribir contratos inteligentes que encapsulen el estado y la lógica de su app en una cadena, y la ejecuten de una forma fiable y segura. Esto no es tarea sencilla ya que el protocolo Arweave no incluye incentivos para que los nodos evalúen el estado de los smart contracts de la red.
 
-SmartWeave ofrece un patrón en el que solo se agrega de forma inmutable para las interacciones del contrato que usa el almacenamiento permanente para mantener su estado. El resultado es una máquina de estado completamente descentralizada en cadena que puede otorgar al protocolo y a las aplicaciones una funcionalidad dinámica de forma sin permiso y sin confianza. Usando SmartWeave, los desarrolladores pueden crear contratos inteligentes que se almacenan en Arweave y están garantizados para que no cambien con el tiempo. Esto les permite construir [aplicaciones Permaweb](/concepts/permawebApplications) con funcionalidad dinámica que se pueden usar sin permisos y sin confianza.
+SmartWeave ofrece un patrón en el que solo se agrega de forma inmutable para las interacciones del contrato que usa el almacenamiento permanente para mantener su estado. El resultado es una máquina de estado completamente descentralizada en cadena que puede otorgar al protocolo y a las aplicaciones una funcionalidad dinámica de forma sin permiso y sin confianza. Usando SmartWeave, los desarrolladores pueden crear contratos inteligentes que se almacenan en Arweave y están garantizados para que no cambien con el tiempo. Esto les permite construir [aplicaciones Permaweb](/concepts/permawebApplications.md) con funcionalidad dinámica que se pueden usar sin permisos y sin confianza.
 
 Existen varias razones por las que los desarrolladores podrían optar por usar SmartWeave para implementar la lógica para sus aplicaciones permaweb:
 
@@ -93,7 +93,7 @@ Y aquí hay un ejemplo de un **contrato** .
 ]
 ```
 
-El estado resultante es el estado actual del contrato, que el SDK en el lado del cliente puede utilizar para calcular los saldos de los usuarios, los propietarios del contrato y otros detalles específicos del contrato. Una vez que el llamador tiene un estado de contrato validado, pueden construir una interacción para que el usuario la implemente en la cadena, la cual, después de ser minada o indexada en una [Gateway](/concepts/gateways), se incluirá la próxima vez que alguien construya el estado del contrato.
+El estado resultante es el estado actual del contrato, que el SDK en el lado del cliente puede utilizar para calcular los saldos de los usuarios, los propietarios del contrato y otros detalles específicos del contrato. Una vez que el llamador tiene un estado de contrato validado, pueden construir una interacción para que el usuario la implemente en la cadena, la cual, después de ser minada o indexada en una [Gateway](/concepts/gateways.md), se incluirá la próxima vez que alguien construya el estado del contrato.
 
 ## Proyectos del ecosistema Smartweave
 

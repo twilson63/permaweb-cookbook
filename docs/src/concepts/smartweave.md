@@ -8,7 +8,7 @@ SmartWeave is the name given to the dominant SmartContract paradigm on Arweave. 
 
 The state and logic of decentralized applications need to be as censorship resistant, permanent and verifiable as the rest of their data. SmartWeave enables developers to write smart contracts that encapsulate their apps state and logic on-chain and execute it in a trustless verifiable way. This is no small feat as the Arweave protocol does not include incentives for nodes to evaluate smart contract state for the network.
 
-SmartWeave provides an immutable append-only pattern for contract interactions that leverages permanent storage to hold onto their state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way. By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build [Permaweb applications](/concepts/permawebApplications) with dynamic functionality that can be used in a permissionless and trustless manner.
+SmartWeave provides an immutable append-only pattern for contract interactions that leverages permanent storage to hold onto their state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way. By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build [Permaweb applications](/concepts/permawebApplications.md) with dynamic functionality that can be used in a permissionless and trustless manner.
 
 There are several reasons why developers might choose to use SmartWeave to implement the logic for their permaweb applications:
 
@@ -86,7 +86,7 @@ And here is an example of a **contract** .
 ]
 ```
 
-The resulting state is the current contract state, which the SDK on the client side can use to calculate user balances, contract owners, and other contract specific details. Once the caller has a validated contract state they can build an interaction for the user to deploy to the chain, which upon mining or indexing on a [Gateway](/concepts/gateways) will be included the next time someone builds the contract state. 
+The resulting state is the current contract state, which the SDK on the client side can use to calculate user balances, contract owners, and other contract specific details. Once the caller has a validated contract state they can build an interaction for the user to deploy to the chain, which upon mining or indexing on a [Gateway](/concepts/gateways.md) will be included the next time someone builds the contract state. 
 
 ## Smartweave ecosystem projects
 
