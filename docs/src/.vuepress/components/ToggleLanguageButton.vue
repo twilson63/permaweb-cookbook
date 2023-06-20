@@ -1,78 +1,36 @@
 <script setup>
+import { ref, watch } from "vue";
+import { useRoute, useRouter } from 'vue-router'
+import { getLanguagePath, getCurrentLanguage, languages } from '../composables/useI18N';
 import { useThemeLocaleData } from "@vuepress/theme-default/lib/client/composables/index.js";
-import { ref } from "vue";
 
 defineEmits(["toggle"]);
 
+const route = useRoute();
 const themeLocale = useThemeLocaleData();
-const languages = {
-  English: "/",
-  Español: "es/",
-};
 
 const isDropdownOpen = ref(false);
+const linkItems = ref({
+  English: "/",
+  Español: "/es/"
+});
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
 
-const updateLanguagePath = (selectedLanguage) => {
-  const currentPath = window.location.pathname;
-
-  const currentLanguage = getCurrentLanguage();
-
-  if (selectedLanguage === currentLanguage) {
-    isDropdownOpen.value = !isDropdownOpen.value;
-    return currentPath;
+watch(() => route.path, (path) => {
+  // update RouterLink destination after path change
+  const links = {};
+  for (let lang in languages) {
+    const newPath = getLanguagePath(path, lang, getCurrentLanguage(path));
+    links[lang] = newPath;
   }
+  linkItems.value = links;
 
-  const selectedLanguagePath = languages[selectedLanguage];
-
-  let newPath;
-
-  if (currentLanguage === "English") {
-    newPath = currentPath.replace(/^\/(.*)/, `/${selectedLanguagePath}$1`);
-  } else if (selectedLanguage === "English") {
-    newPath = currentPath.replace(
-      new RegExp(`^\/(${Object.values(languages).join("|")})`),
-      `${selectedLanguagePath}`
-    );
-  } else {
-    newPath = currentPath.replace(
-      new RegExp(`^\/(${Object.values(languages).join("|")})`),
-      `/${selectedLanguagePath}`
-    );
-  }
-
-  location.href = newPath;
-
-  return newPath;
-};
-
-const getCurrentLanguage = () => {
-  const currentPath = window.location.pathname;
-  const pathSegments = currentPath
-    .split("/")
-    .filter((segment) => segment !== "");
-
-  if (pathSegments.length >= 2) {
-    const language = Object.keys(languages).find(
-      (lang) => `${pathSegments[0]}/` === languages[lang]
-    );
-    if (language) {
-      return language;
-    }
-  } else if (pathSegments.length < 2 && pathSegments[0] !== "") {
-    const language = Object.keys(languages).find(
-      (lang) => `${pathSegments[0]}/` === languages[lang]
-    );
-    if (language) {
-      return language;
-    }
-  }
-
-  return "English";
-};
+  // collapse dropdown after path change
+  isDropdownOpen.value = false;
+}, { immediate: true });
 </script>
 
 <template>
@@ -87,13 +45,12 @@ const getCurrentLanguage = () => {
       Language
     </div>
     <ul v-if="isDropdownOpen" class="language-dropdown">
-      <li
+      <RouterLink
         v-for="lang in Object.keys(languages)"
         :key="lang"
-        @click="updateLanguagePath(lang)"
-      >
+        :to="linkItems[lang]">
         {{ lang }}
-      </li>
+      </RouterLink>
     </ul>
   </div>
 </template>
@@ -126,14 +83,14 @@ const getCurrentLanguage = () => {
   list-style: none;
   z-index: 1;
   display: inline-block;
-}
 
-.language-dropdown li {
-  cursor: pointer;
-  padding: 5px;
-}
+  & > a {
+    display: block;
+    padding: 5px;
 
-.language-dropdown li:hover {
-  background-color: #f5f5f5;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
 }
 </style>
