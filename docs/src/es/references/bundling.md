@@ -4,7 +4,7 @@ locale: es
 
 # Agrupamiento
 
-Antes de comenzar con las referencias a continuación, asegúrate de haber leído [Bundles y Agrupamiento](/concepts/bundles.md) de [Conceptos Básicos](/concepts).
+Antes de comenzar con las referencias a continuación, asegúrate de haber leído [Bundles y Agrupamiento](/concepts/bundles.md) de [Conceptos Básicos](/concepts/).
 
 ## Configuración
 

@@ -1,7 +1,7 @@
 # Bundling
 
 Before getting started with any of the below references, make sure you've read
-[Bundles and Bundling](/concepts/bundles.md) from [Core Concepts](/concepts).
+[Bundles and Bundling](/concepts/bundles.md) from [Core Concepts](/concepts/).
 
 ## Setup
 
