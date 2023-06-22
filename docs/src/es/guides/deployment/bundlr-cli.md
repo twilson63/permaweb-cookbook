@@ -44,7 +44,7 @@ A continuación se muestra un ejemplo de un sitio estático. Para implementarlo 
 ## Implementación
 
 ```console
-bundlr upload-dir [ruta a la carpeta] -w  --index-file [index.html] [ruta a la billetera] -c [moneda] -h [nodo de Bundlr]
+bundlr upload-dir [ruta a la carpeta] -w [ruta a la billetera] --index-file [index.html] -c [moneda] -h [nodo de Bundlr]
 ```
 
 <br/>
