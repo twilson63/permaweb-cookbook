@@ -12,7 +12,7 @@ Con los servicios de empaquetamiento, los usuarios pueden publicar sus transacci
 
 ---
 
-Puede leer más sobre cómo publicar sus transacciones en un servicio de empaquetamiento [aquí](/guides/posting-transactions/bundlr).
+Puede leer más sobre cómo publicar sus transacciones en un servicio de empaquetamiento [aquí](/guides/posting-transactions/bundlr.md).
 
 ### ¿Qué es un paquete?
 
