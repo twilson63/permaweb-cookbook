@@ -68,10 +68,10 @@ async function processFilesInSubfolder(
 
       console.log(`Writing translated file: ${translatedFilePath}`);
 
-      // const markdownTranslatedContent =
-      addMarkdownFormatting(translatedContent);
+      const markdownTranslatedContent =
+        addMarkdownFormatting(translatedContent);
 
-      // // Write content to file
+      // Write content to file
       await writeFileAsync(
         translatedFilePath,
         markdownTranslatedContent,
