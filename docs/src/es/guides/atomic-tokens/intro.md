@@ -5,7 +5,7 @@ locale: es
 
 ## ¿Qué es un Token Atómico?
 
-[Consulta el concepto](../../concepts/atomic-tokens)
+[Consulta el concepto](../../concepts/atomic-tokens.md)
 
 ## Creación de un Token Atómico
 

@@ -19,6 +19,9 @@ async function main() {
   // Read and translate the files
   const docsPath = path.join(__dirname, "/src");
 
+  // Translate index.md file
+  await processIndexFile(docsPath);
+
   for (const subfolder of subfoldersToRead) {
     const subfolderPath = path.join(docsPath, subfolder);
 
@@ -68,10 +71,10 @@ async function processFilesInSubfolder(
 
       console.log(`Writing translated file: ${translatedFilePath}`);
 
-      // const markdownTranslatedContent =
-      addMarkdownFormatting(translatedContent);
+      const markdownTranslatedContent =
+        addMarkdownFormatting(translatedContent);
 
-      // // Write content to file
+      // Write content to file
       await writeFileAsync(
         translatedFilePath,
         markdownTranslatedContent,
@@ -97,6 +100,33 @@ async function processFilesInSubfolder(
       }
     }
   }
+}
+
+async function processIndexFile(rootPath) {
+  const filePath = path.join(rootPath, "index.md");
+
+  console.log(`Translating file ${filePath}...`);
+
+  // Read the content of each file
+  const fileContent = await readFileAsync(filePath, "utf-8");
+
+  // Define the prompt for translation to Spanish
+  const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${fileContent}`;
+
+  // Translate the content to Spanish using the OpenAI API client
+  const translatedContent = await translateTextToSpanish(prompt);
+
+  // Write the translated file to the "es" subfolder
+  const translatedFilePath = path.join(rootPath, "es", "index.md");
+
+  console.log(`Writing translated file: ${translatedFilePath}`);
+
+  const markdownTranslatedContent = addMarkdownFormatting(translatedContent);
+
+  // Write content to file
+  await writeFileAsync(translatedFilePath, markdownTranslatedContent, "utf-8");
+
+  console.log(`Translation complete for file: ${filePath}`);
 }
 
 async function translateTextToSpanish(text) {
