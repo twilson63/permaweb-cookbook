@@ -23,14 +23,14 @@ Gateway services are the bridge between data on Arweave and displaying data in t
 
 ### Bundling Services 
 
-Bundling services aggregate transactions into transaction bundles and make sure those bundles are posted directly to Arewave. By using a bundling service like bundlr.network you can post hundreds of thousands of transactions in a single Arweave block.
+Bundling services aggregate transactions into transaction bundles and make sure those bundles are posted directly to Arweave. By using a bundling service like bundlr.network you can post hundreds of thousands of transactions in a single Arweave block.
 
 ### Sequencing Services
 
 Sequencers enables high performance for SmartWeave Contracts to calculate business logic stored on the Arweave network.
 
 ### Indexing Services
-Indexing services listen to all the transactions on Arweave and import them into an indexed database suitble for fast querying. They then expose
+Indexing services listen to all the transactions on Arweave and import them into an indexed database suitable for fast querying. They then expose
 a graphQL endpoint so permaweb apps can make optimized queries for Arweave data.
 
 These services work together to form the Permaweb Services Layer and gives developers the power to build fully decentralized applications on the permaweb.
@@ -47,6 +47,7 @@ To learn more about creating and deploying Permaweb Apps, check out our starter 
 
 * [React](../kits/react/index.md)
 * [Svelte](../kits/svelte/index.md)
+* [Vue](../kits/vue/index.md)
 
 ::: tip Missing my framework?
 Can't find your framework, why don't you contribute? [How to contribute to the cookbook](../getting-started/contributing.md)
