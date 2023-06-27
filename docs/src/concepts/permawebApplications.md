@@ -23,7 +23,7 @@ Gateway services are the bridge between data on Arweave and displaying data in t
 
 ### Bundling Services 
 
-Bundling services aggregate transactions into transaction bundles and make sure those bundles are posted directly to Arewave. By using a bundling service like bundlr.network you can post hundreds of thousands of transactions in a single Arweave block.
+Bundling services aggregate transactions into transaction bundles and make sure those bundles are posted directly to Arweave. By using a bundling service like bundlr.network you can post hundreds of thousands of transactions in a single Arweave block.
 
 ### Sequencing Services
 
