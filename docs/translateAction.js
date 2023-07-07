@@ -1,6 +1,6 @@
 const path = require("path");
 const { Octokit } = require("@octokit/core");
-const { Configuration, OpenAIApi } = require("openai");
+const { languages, translateTextToLanguage, addMarkdownFormatting } = require("./languages");
 require("dotenv").config();
 
 // Init Octokit (utility to interact with GitHub API)
@@ -39,21 +39,18 @@ async function main() {
 
       console.log(`Here's the response: ${decodedFileContent} for ${file}...`);
 
-      // Define the prompt for translation to Spanish
-      const prompt = `As a linguistics professor who is an expert in English and Spanish, translate the following markdown text to Spanish while maintaining and translating the context in which the terms, phrases and sections have been created in the original text and keep in mind that the reader is familiar with some initial information about Arweave and blockchain infrastructure:\n\n${decodedFileContent}`;
-
       // Translate the content to Spanish using the OpenAI API client
-      const translatedContent = await translateTextToSpanish(prompt);
+      const translatedContent = await translateTextToLanguage("Spanish", decodedFileContent);
 
       // Getting relative path of file in `src` folder
       const relativePath = file.split("docs/src");
 
       // Creating new file path for translated file using relative path
-      const translatedFilePath = path.join("docs/src/es", relativePath[1]);
+      const translatedFilePath = path.join(`docs/src/${"es"}`, relativePath[1]);
 
       // Adding frontmatter to translation
       const markdownTranslatedContent =
-        addMarkdownFormatting(translatedContent);
+        addMarkdownFormatting("es", translatedContent);
 
       console.log(`Writing translated file to ${translatedFilePath}...`);
 
@@ -68,7 +65,7 @@ async function main() {
           owner: "twilson63",
           repo: "permaweb-cookbook",
           path: translatedFilePath,
-          message: `Translate ${translatedFilePath} to Spanish`,
+          message: `Translate ${translatedFilePath} to ${"Spanish"}`,
           committer: {
             name: "ropats16",
             email: "rohitcpathare@gmail.com",
@@ -84,7 +81,7 @@ async function main() {
           owner: "twilson63",
           repo: "permaweb-cookbook",
           path: translatedFilePath,
-          message: `Translate ${translatedFilePath} to Spanish`,
+          message: `Translate ${translatedFilePath} to ${"Spanish"}`,
           committer: {
             name: "ropats16",
             email: "rohitcpathare@gmail.com",
@@ -168,25 +165,6 @@ async function getModifiedFiles(pullRequest) {
   return filePaths;
 }
 
-// Function to translate text using OpenAI
-async function translateTextToSpanish(text) {
-  // Create config for OpenAi and create instance
-  const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-  const openai = new OpenAIApi(configuration);
-
-  // console.log("OpenAPI instance", openai);
-
-  // Use the OpenAI API client to translate the text to Spanish
-  const response = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo-16k",
-    messages: [{ role: "user", content: text }],
-    max_tokens: 4096,
-  });
-  return response.data.choices[0].message.content;
-}
-
 // Function to check if translated file path already exists
 async function ensureDirectoryExists(filePath) {
   console.log(`Checking if ${filePath} exists...`);
@@ -208,18 +186,6 @@ async function ensureDirectoryExists(filePath) {
     console.log("Error fetching file because:", error.message);
     return { exists: false, sha: null };
   }
-}
-
-// Adds locale frontmatter to text
-function addMarkdownFormatting(text) {
-  const frontmatter = `---
-locale: es
----
-`;
-
-  const markdownContent = `${frontmatter}${text}`;
-
-  return markdownContent;
 }
 
 main().catch((error) => {
