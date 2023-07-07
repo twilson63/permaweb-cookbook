@@ -1,7 +1,19 @@
-export const languages = {
-  English: "/",
-  Español: "es/",
-};
+export const languages = __LANGUAGES__.reduce((langs, currentLang) => {
+  langs[currentLang.display] = `${currentLang.code}/`;
+  return langs;
+}, {
+  "English": "/"
+});
+
+const i18n_strs = __LANGUAGES__.reduce((langs, currentLang) => {
+  langs[currentLang.code] = currentLang.strings;
+  return langs;
+}, {});
+
+export const get_i18n_str = (langCode="en", key, engStr) => {
+  if (langCode === "en") return engStr;
+  return i18n_strs[langCode][key] || engStr;
+}
 
 export const getCurrentLanguage = (path) => {
   const currentPath = path;
