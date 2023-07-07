@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
-const { languages, translateTextToLanguage, addMarkdownFormatting } = require("./languages");
+const { translateTextToLanguage, addMarkdownFormatting } = require("./languages/utils");
+const { languages } = require("./languages/def")
 
 const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);

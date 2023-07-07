@@ -87,6 +87,7 @@ watch(() => route.path, (path) => {
   & > a {
     display: block;
     padding: 5px;
+    white-space: nowrap;
 
     &:hover {
       background-color: #f5f5f5;

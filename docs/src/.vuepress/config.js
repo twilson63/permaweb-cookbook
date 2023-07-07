@@ -8,6 +8,8 @@ import { searchPlugin } from "@vuepress/plugin-search";
 import en from "./locales/en";
 import es from "./locales/es";
 
+import { languages } from "../../languages/def";
+
 export default {
   locales: {
     // The key is the path for the locale to be nested under.
@@ -107,6 +109,11 @@ export default {
       },
     }),
   ],
+
+  // passing languages def to client side
+  define: {
+    __LANGUAGES__: languages,
+  },
 
   async onInitialized(app) {
     app.pages

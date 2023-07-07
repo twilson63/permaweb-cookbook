@@ -1,17 +1,6 @@
 const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config();
 
-const languages = [
-  {
-    name: "Mandarin Chinese",
-    code: "zh",
-  },
-  {
-    name: "Spanish",
-    code: "es",
-  }
-];
-
 // Function to translate text using OpenAI
 async function translateTextToLanguage(lang, content) {
   // Create config for OpenAi and create instance
@@ -46,7 +35,6 @@ locale: ${langCode}
 }
 
 module.exports = {
-  languages,
   translateTextToLanguage,
   addMarkdownFormatting,
 }

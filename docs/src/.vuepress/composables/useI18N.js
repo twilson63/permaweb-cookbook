@@ -1,7 +1,9 @@
-export const languages = {
-  English: "/",
-  Español: "es/",
-};
+export const languages = __LANGUAGES__.reduce((langs, currentLang) => {
+  langs[currentLang.display] = `${currentLang.code}/`;
+  return langs;
+}, {
+  "English": "/"
+});
 
 export const getCurrentLanguage = (path) => {
   const currentPath = path;

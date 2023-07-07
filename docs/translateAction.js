@@ -1,6 +1,7 @@
 const path = require("path");
 const { Octokit } = require("@octokit/core");
-const { languages, translateTextToLanguage, addMarkdownFormatting } = require("./languages");
+const { translateTextToLanguage, addMarkdownFormatting } = require("./languages/utils");
+const { languages } = require("./languages/def");
 require("dotenv").config();
 
 // Init Octokit (utility to interact with GitHub API)
