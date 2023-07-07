@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch } from "vue";
-import { useRoute, useRouter } from 'vue-router'
-import { getLanguagePath, getCurrentLanguage, languages } from '../composables/useI18N';
+import { useRoute } from 'vue-router'
+import { getLanguagePath, getCurrentLanguage, languages, get_i18n_str } from '../composables/useI18N';
 import { useThemeLocaleData } from "@vuepress/theme-default/lib/client/composables/index.js";
 
 defineEmits(["toggle"]);

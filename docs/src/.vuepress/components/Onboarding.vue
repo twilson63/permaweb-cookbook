@@ -2,6 +2,7 @@
 import I18NRouterLink from "./I18NRouterLink.vue";
 import FeaturedContributors from "./FeaturedContributors.vue";
 import { usePageFrontmatter } from "@vuepress/client";
+import { get_i18n_str } from "../composables/useI18N";
 
 const frontmatter = usePageFrontmatter();
 </script>
@@ -11,35 +12,27 @@ const frontmatter = usePageFrontmatter();
       <div class="col-12 col-md-6 col-lg-5 order-2 order-md-1">
         <div class="hero-text">
           <h1 class="hero-title">
-            {{
-              frontmatter.locale === "es"
-                ? "Construye en la Permaweb."
-                : "Build on the Permaweb."
-            }}
+            {{ get_i18n_str(frontmatter.locale, "onboarding-title", "Build on the Permaweb.") }}
           </h1>
           <p class="hero-body-text">
-            {{
-              frontmatter.locale === "es"
-                ? "Una colección seleccionada de guías para desarrolladores y más para construir en la Permaweb. Todo en un solo lugar."
-                : "A curated collection of developer guides & more to build on the Permaweb. All in one place."
-            }}
+            {{ get_i18n_str(frontmatter.locale, "onboarding-desc", "A curated collection of developer guides & more to build on the Permaweb. All in one place.") }}
           </p>
-          <RouterLink
+          <I18NRouterLink
             style="color: var(--c-accent-rose)"
             class="hero-body-text"
             to="/getting-started/"
           >
-            {{ frontmatter.locale === "es" ? "Empezar" : "Get Started" }}
-          </RouterLink>
+            {{ get_i18n_str(frontmatter.locale, "get-started", "Get Started") }}
+          </I18NRouterLink>
         </div>
 
         <FeaturedContributors />
       </div>
 
       <div class="col-12 col-md-6 offset-lg-1 order-1 order-md-2">
-        <RouterLink to="/#documentation" class="onboard-illustration">
+        <I18NRouterLink to="/#documentation" class="onboard-illustration">
           <div class="illustration"></div>
-        </RouterLink>
+        </I18NRouterLink>
       </div>
 
       <div class="col-12 order-3">
@@ -63,9 +56,7 @@ const frontmatter = usePageFrontmatter();
     <div class="row cards">
       <div class="col-12">
         <h2 class="header">
-          {{
-            frontmatter.locale === "es" ? "¿Es tu primera vez?" : "First Time?"
-          }}
+          {{ get_i18n_str(frontmatter.locale, "first-time", "First Time?") }}
         </h2>
       </div>
 
