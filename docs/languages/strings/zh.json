@@ -3,5 +3,12 @@
   
   "onboarding-title": "在Permaweb上烹饪。",
   "get-started": "开始吧",
-  "first-time": "第一次吗？"
+  "first-time": "第一次吗？",
+
+  "hello-world": "你好世界",
+  "core-concepts": "核心概念",
+  "guides": "指南",
+  "contribute": "贡献",
+
+  "documentation": "文档"
 }

@@ -13,6 +13,7 @@ import {
   useSidebarItems,
   useThemeLocaleData,
 } from "@vuepress/theme-default/lib/client/composables/index.js";
+import { get_i18n_str } from "../composables/useI18N";
 
 const page = usePageData();
 const frontmatter = usePageFrontmatter();
@@ -110,7 +111,7 @@ const onBeforeLeave = scrollPromise.pending;
           class="header"
           style="border: none; padding-top: 30px; margin: 20px 0 25px"
         >
-          {{ frontmatter.locale === "es" ? "Documentación" : "Documentation" }}
+          {{ get_i18n_str(frontmatter.locale, "documentation", "Documentation") }}
         </h2>
       </div>
 

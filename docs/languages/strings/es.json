@@ -2,5 +2,12 @@
   "onboarding-title": "Construye en la Permaweb.",
   "onboarding-desc": "Una colección seleccionada de guías para desarrolladores y más para construir en la Permaweb. Todo en un solo lugar.",
   "get-started": "Empezar",
-  "first-time": "¿Es tu primera vez?"
+  "first-time": "¿Es tu primera vez?",
+
+  "hello-world": "Hola Mundo",
+  "core-concepts": "Conceptos Clave",
+  "guides": "Guías",
+  "contribute": "Contribuir",
+
+  "documentation": "Documentación"
 }

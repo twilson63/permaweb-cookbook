@@ -160,7 +160,7 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{ frontmatter.locale === "es" ? "Hola Mundo" : "Hello World" }}
+              {{ get_i18n_str(frontmatter.locale, "hello-world", "Hello World") }}
             </h2>
             <p class="body-text">
               {{
@@ -280,11 +280,7 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{
-                frontmatter.locale === "es"
-                  ? "Conceptos Clave"
-                  : "Core Concepts"
-              }}
+              {{ get_i18n_str(frontmatter.locale, "core-concepts", "Core Concepts") }}
             </h2>
             <p class="body-text">
               {{
@@ -298,7 +294,7 @@ const frontmatter = usePageFrontmatter();
           <span
             style="color: var(--c-accent-sunny)"
             class="body-text card-action"
-            >{{ frontmatter.locale === "es" ? "Empezar" : "Get Started" }}</span
+            >{{ get_i18n_str(frontmatter.locale, "get-started", "Get Started") }}</span
           >
         </I18NRouterLink>
       </div>
@@ -425,7 +421,7 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{ frontmatter.locale === "es" ? "Guías" : "Guides" }}
+              {{ get_i18n_str(frontmatter.locale, "guides", "Guides") }}
             </h2>
             <p class="body-text">
               {{
@@ -439,7 +435,7 @@ const frontmatter = usePageFrontmatter();
           <span
             style="color: var(--c-accent-rose)"
             class="body-text card-action"
-            >{{ frontmatter.locale === "es" ? "Empezar" : "Get Started" }}</span
+            >{{ get_i18n_str(frontmatter.locale, "get-started", "Get Started") }}</span
           >
         </I18NRouterLink>
       </div>
@@ -564,7 +560,7 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{ frontmatter.locale === "es" ? "Contribuir" : "Contribute" }}
+              {{ get_i18n_str(frontmatter.locale, "contribute", "Contribute") }}
             </h2>
             <p class="body-text">
               {{
