@@ -22,17 +22,17 @@ async function main() {
   // Loop through languages and translate all files
   for (const language of languages) {
     // Translate index.md file
-    await processIndexFile(language, docsPath);
+    // await processIndexFile(language, docsPath);
 
-    // for (const subfolder of subfoldersToRead) {
-    //   const subfolderPath = path.join(docsPath, subfolder);
+    for (const subfolder of subfoldersToRead) {
+      const subfolderPath = path.join(docsPath, subfolder);
 
-    //   if (fs.existsSync(subfolderPath)) {
-    //     // Checks whether subfolder has files or further subfolders
-    //     // and processes accordingly
-    //     await processFilesInSubfolder(language, docsPath, subfolderPath, subfolder);
-    //   }
-    // }
+      if (fs.existsSync(subfolderPath)) {
+        // Checks whether subfolder has files or further subfolders
+        // and processes accordingly
+        await processFilesInSubfolder(language, docsPath, subfolderPath, subfolder);
+      }
+    }
 
     console.log(`Translation of all files in ${language.name} completed`);
   }
@@ -53,14 +53,7 @@ async function processFilesInSubfolder(
     const stat = fs.statSync(filePath);
 
     if (stat.isFile()) {
-      console.log(`Translating file ${filePath}...`);
-      // Read the content of each file
-      const fileContent = await readFileAsync(filePath, "utf-8");
-      
-      // Translate the content to Spanish using the OpenAI API client
-      const translatedContent = await translateTextToLanguage(language.name, fileContent);
-
-      // Write the translated file to the "es" subfolder
+      // Write the translated file to the language's subfolder
       const translatedFolderPath = path.join(
         rootPath,
         language.code,
@@ -72,6 +65,19 @@ async function processFilesInSubfolder(
 
       // Create path for file
       const translatedFilePath = path.join(translatedFolderPath, file);
+
+      // check if translated file already exists, skip file if so
+      if (fs.existsSync(translatedFilePath)) {
+        console.log(`${translatedFilePath} already exist. Skipping...`);
+        continue;
+      }
+
+      console.log(`Translating file ${filePath}...`);
+      // Read the content of each file
+      const fileContent = await readFileAsync(filePath, "utf-8");
+      
+      // Translate the content to Spanish using the OpenAI API client
+      const translatedContent = await translateTextToLanguage(language.name, fileContent);
 
       console.log(`Writing translated file: ${translatedFilePath}`);
 
