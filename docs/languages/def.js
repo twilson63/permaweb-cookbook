@@ -7,16 +7,16 @@ const ptStrings = require("./strings/pt.json");
 // Start adding new languages by making a new language object inside the array
 const languages = [
   {
-    display: "Español",
-    name: "Spanish",
-    code: "es",
-    strings: esStrings,
-  },
-  {
     display: "Português",
     name: "Portuguese",
     code: "pt",
     strings: ptStrings,
+  },
+  {
+    display: "Español",
+    name: "Spanish",
+    code: "es",
+    strings: esStrings,
   },
   {
     display: "简体中文",
