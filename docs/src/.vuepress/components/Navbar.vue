@@ -7,8 +7,11 @@ import I18NRouterLink from "./I18NRouterLink.vue";
 import ToggleSidebarButton from "./ToggleSidebarButton.vue";
 import ToggleLanguageButton from "./ToggleLanguageButton.vue";
 
+import { useI18NStr } from "../composables/useI18N";
+
 defineEmits(["toggle-sidebar", "toggle-language"]);
 
+const get_i18n_str = useI18NStr();
 const themeLocale = useThemeLocaleData();
 const navbar = ref(null);
 const searchBox = ref(null);
@@ -75,7 +78,7 @@ onMounted(() => {
           class="d-none d-md-block"
           style="color: var(--c-text)"
           to="/getting-started/"
-          >Docs</I18NRouterLink
+          >{{ get_i18n_str("docs", "Docs") }}</I18NRouterLink
         >
 
         <ToggleColorModeButton

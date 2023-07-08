@@ -1,27 +1,19 @@
 <script setup>
-import { usePageFrontmatter } from "@vuepress/client";
+import { useI18NStr } from "../composables/useI18N";
 
-const frontmatter = usePageFrontmatter();
+const get_i18n_str = useI18NStr();
 </script>
 <template>
   <div v-if="contributors.length > 0" class="featured-contributor">
     <div class="top">
       <p class="subtext">
-        {{
-          frontmatter.locale === "es"
-            ? "Colaborador destacado"
-            : "Featured Contributor"
-        }}
+        {{ get_i18n_str("featured-contributors") }}
       </p>
       <a
         class="subtext"
         target="_blank"
         href="https://github.com/twilson63/permaweb-cookbook/graphs/contributors"
-        >{{
-          frontmatter.locale === "es"
-            ? "Ver todos los colaboradores"
-            : "See all contributors"
-        }}</a
+        >{{ get_i18n_str("featured-contributors-action") }}</a
       >
     </div>
 
