@@ -23,7 +23,6 @@
   "contribute-card-desc": "Comparte tu conocimiento",
   "contribute-card-action": "Ir al repositorio de Github",
   "documentation": "Documentación",
-
   "getting-started": "Comenzando",
   "getting-started-welcome": "Bienvenido",
   "getting-started-hw-cli": "Hola Mundo (CLI)",
@@ -39,8 +38,6 @@
   "concepts-bundles": "Bundles",
   "concepts-path-manifests": "Manifiestos de ruta",
   "concepts-wallets-and-keys": "Billeteras y Claves",
-  "concepts-post-tags": "Metadatos (Etiquetas \"Tags\")",
-  "concepts-query-transactions": "Consultas",
   "concepts-atomic-tokens": "Tokens Atómicos",
   "concepts-vouch": "Vouch",
   "guides-arprofile": "ArProfile",
@@ -55,5 +52,7 @@
   "guides-api-token": "Token de API",
   "guides-testing": "Pruebas",
   "references": "Referencias",
-  "kits": "Kits de Inicio"
+  "kits": "Kits de Inicio",
+  "concepts-post-tags": "Metadatos (Etiquetas \"Tags\")",
+  "concepts-query-transactions": "Consultas"
 }

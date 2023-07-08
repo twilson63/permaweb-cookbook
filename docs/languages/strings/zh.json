@@ -37,5 +37,20 @@
   "concepts-transaction-types": "交易类型",
   "concepts-bundles": "捆绑",
   "concepts-path-manifests": "路径清单",
-  "concepts-wallets-and-keys": "钱包和密钥"
+  "concepts-wallets-and-keys": "钱包和密钥",
+  "concepts-atomic-tokens": "原子令牌",
+  "concepts-vouch": "担保",
+  "guides-arprofile": "ArProfile",
+  "guides-dns-integration": "DNS集成",
+  "guides-server-side": "服务端",
+  "guides-spheron": "Spheron",
+  "guides-deploying-apps": "部署应用",
+  "guides-deploying-manifests": "部署路径清单",
+  "guides-deploying-psts": "部署PSTs",
+  "guides-execution-machine": "执行机制",
+  "guides-intro": "介绍",
+  "guides-api-token": "Api令牌",
+  "guides-testing": "测试",
+  "references": "参考资料",
+  "kits": "入门套件"
 }
