@@ -1,10 +1,11 @@
 {
+  "cookbook-meetup-notification": "Cookbook 社区见面会 - 每周周三美国东部时间下午12点 / 格林尼治标准时间下午5点",
   "edit": "编辑",
   "language": "语言",
   "docs": "文档",
   "contributors": "贡献者",
   "last-updated": "更新时间",
-  "featured-contributors": "特色贡献者",
+  "featured-contributors": "精选贡献者",
   "featured-contributors-action": "查看所有贡献者",
   "onboarding-title": "在Permaweb上烹饪。",
   "onboarding-desc": "开发者指南和更多构建永久网络的内容，一切尽在这里。",
