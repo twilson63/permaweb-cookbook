@@ -108,13 +108,12 @@ const contributors = useContributors()
 <template>
   <footer class="page-meta">
     <div class="meta-item-container">
-      <div
-        v-if="contributors && contributors.length"
-        class="meta-item contributors"
-      >
+      <div class="meta-item contributors">
         <span class="meta-item-label">{{ get_i18n_str("contributors", "Contributors") }}: </span>
         <span class="meta-item-info">
-          <template v-for="(contributor, index) in contributors" :key="index">
+          <template
+            v-if="contributors && contributors.length"
+            v-for="(contributor, index) in contributors" :key="index">
             <span class="contributor" :title="`email: ${contributor.email}`">
               {{ contributor.name }}
             </span>
@@ -123,9 +122,9 @@ const contributors = useContributors()
         </span>
       </div>
 
-      <div v-if="lastUpdated" class="meta-item last-updated">
+      <div class="meta-item last-updated">
         <span class="meta-item-label">{{ get_i18n_str("last-updated", "Last Updated") }}: </span>
-        <ClientOnly>
+        <ClientOnly v-if="lastUpdated">
           <span class="meta-item-info">{{ lastUpdated }}</span>
         </ClientOnly>
       </div>
