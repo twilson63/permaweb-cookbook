@@ -13,16 +13,16 @@ const languages = [
     strings: esStrings,
   },
   {
-    display: "简体中文",
-    name: "Mandarin Chinese",
-    code: "zh",
-    strings: zhStrings,
-  },
-  {
     display: "Português",
     name: "Portuguese",
     code: "pt",
     strings: ptStrings,
+  },
+  {
+    display: "简体中文",
+    name: "Mandarin Chinese",
+    code: "zh",
+    strings: zhStrings,
   },
 ];
 
