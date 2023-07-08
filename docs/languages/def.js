@@ -2,7 +2,7 @@
 const enStrings = require("./strings/en.json");
 const zhStrings = require("./strings/zh.json");
 const esStrings = require("./strings/es.json");
-const jpStrings = require("./strings/jp.json");
+const ptStrings = require("./strings/pt.json");
 
 // Start adding new languages by making a new language object inside the array
 const languages = [
@@ -19,10 +19,10 @@ const languages = [
     strings: zhStrings,
   },
   {
-    display: "日本語",
-    name: "Japanese",
-    code: "jp",
-    strings: jpStrings,
+    display: "Português",
+    name: "Portuguese",
+    code: "pt",
+    strings: ptStrings,
   },
 ];
 
