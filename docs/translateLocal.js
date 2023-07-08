@@ -24,9 +24,24 @@ async function main() {
     // translate strings
     const translatedStringFilePath = path.join(__dirname, `/languages/strings/${language.code}.json`);
     const translatedJson = await translateEnStringJsonFile(language.name);
+    const translateJsonObj = JSON.parse(translatedJson);
+
+    // look for existing string json file
+    let originalJson = {};
+    try {
+      const originalJsonContent = await readFileAsync(translatedStringFilePath, "utf-8");
+      originalJson = JSON.parse(originalJsonContent);
+    } catch (e) {
+      console.error(`Error while reading json file: ${translatedStringFilePath}`);
+      throw e;
+    }
+
+    // merge original and new json object, keep original json values as priority
+    const mergedObj = { ...translateJsonObj, ...originalJson };
+
     await writeFileAsync(
       translatedStringFilePath,
-      translatedJson,
+      JSON.stringify(mergedObj, null, 2),
       "utf-8"
     );
     continue;
