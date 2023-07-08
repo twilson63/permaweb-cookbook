@@ -112,7 +112,7 @@ const getI18NSidebar = (langCode) => [
             link: get_i18n_link(langCode, "/concepts/arns"),
           },
           {
-            text: "Atomic Tokens",
+            text: get_i18n_str(langCode, "concepts-atomic-tokens"),
             link: get_i18n_link(langCode, "/concepts/atomic-tokens.md"),
           },
           {
@@ -120,7 +120,7 @@ const getI18NSidebar = (langCode) => [
             link: get_i18n_link(langCode, "/concepts/psts"),
           },
           {
-            text: "Vouch",
+            text: get_i18n_str(langCode, "concepts-vouch"),
             link: get_i18n_link(langCode, "/concepts/vouch"),
           },
         ],
@@ -128,30 +128,30 @@ const getI18NSidebar = (langCode) => [
     ],
   },
   {
-    text: "Guides",
+    text: get_i18n_str(langCode, "guides"),
     link: get_i18n_link(langCode, "/guides/"),
     collapsible: true,
     children: [
       {
-        text: "ArProfile",
+        text: get_i18n_str(langCode, "guides-arprofile"),
         link: get_i18n_link(langCode, "/guides/arprofile"),
       },
       {
-        text: "DNS Integration",
+        text: get_i18n_str(langCode, "guides-dns-integration"),
         collapsible: true,
         children: [
           {
-            text: "Server Side",
+            text: get_i18n_str(langCode, "guides-server-side"),
             link: get_i18n_link(langCode, "/guides/dns-integration/server-side"),
           },
           {
-            text: "Spheron",
+            text: get_i18n_str(langCode, "guides-spheron"),
             link: get_i18n_link(langCode, "/guides/dns-integration/spheron"),
           },
         ],
       },
       {
-        text: `Deploying Apps`,
+        text: get_i18n_str(langCode, "guides-deploying-apps"),
         collapsible: true,
         children: [
           {
@@ -169,7 +169,7 @@ const getI18NSidebar = (langCode) => [
         ],
       },
       {
-        text: `Deploying PathManifests`,
+        text: get_i18n_str(langCode, "guides-deploying-manifests"),
         link: get_i18n_link(langCode, "/guides/deploying-manifests/deployingManifests"),
         collapsible: false,
         children: [
@@ -188,20 +188,20 @@ const getI18NSidebar = (langCode) => [
         ],
       },
       {
-        text: "Deploying PSTs",
+        text: get_i18n_str(langCode, "guides-deploying-psts"),
         collapsible: false,
         link: get_i18n_link(langCode, "/guides/deploying-psts"),
       },
       {
-        text: "Execution Machine",
+        text: get_i18n_str(langCode, "guides-execution-machine"),
         collapsible: true,
         children: [
           {
-            text: "Introduction",
+            text: get_i18n_str(langCode, "guides-intro"),
             link: get_i18n_link(langCode, "/guides/exm/intro.md"),
           },
           {
-            text: "API Token",
+            text: get_i18n_str(langCode, "guides-api-token"),
             link: get_i18n_link(langCode, "/guides/exm/api.md"),
           },
           {
@@ -264,7 +264,7 @@ const getI18NSidebar = (langCode) => [
             collapsible: false,
             children: [
               {
-                text: "Intro",
+                text: get_i18n_str(langCode, "guides-intro"),
                 link: get_i18n_link(langCode, "/guides/smartweave/warp/intro.md"),
               },
               {
@@ -288,7 +288,7 @@ const getI18NSidebar = (langCode) => [
         ],
       },
       {
-        text: `Testing`,
+        text: get_i18n_str(langCode, "guides-testing"),
         collapsible: true,
         children: [
           {
@@ -301,7 +301,7 @@ const getI18NSidebar = (langCode) => [
     ],
   },
   {
-    text: "References",
+    text: get_i18n_str(langCode, "references"),
     link: get_i18n_link(langCode, "/references/"),
     collapsible: true,
     children: [
@@ -323,7 +323,7 @@ const getI18NSidebar = (langCode) => [
     ],
   },
   {
-    text: "Starter Kits",
+    text: get_i18n_str(langCode, "kits"),
     link: get_i18n_link(langCode, "/kits/"),
     collapsible: true,
     children: [

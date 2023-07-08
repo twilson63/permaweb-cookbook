@@ -41,5 +41,20 @@
   "concepts-transaction-types": "Transaction Types",
   "concepts-bundles": "Bundles",
   "concepts-path-manifests": "Path Manifests",
-  "concepts-wallets-and-keys": "Wallets and Keys"
+  "concepts-wallets-and-keys": "Wallets and Keys",
+  "concepts-atomic-tokens": "Atomic Tokens",
+  "concepts-vouch": "Vouch",
+  "guides-arprofile": "ArProfile",
+  "guides-dns-integration": "DNS Integration",
+  "guides-server-side": "Server Side",
+  "guides-spheron": "Spheron",
+  "guides-deploying-apps": "Deploying Apps",
+  "guides-deploying-manifests": "Deploying PathManifests",
+  "guides-deploying-psts": "Deploying PSTs",
+  "guides-execution-machine": "Execution Machine",
+  "guides-intro": "Introduction",
+  "guides-api-token": "Api Token",
+  "guides-testing": "Testing",
+  "references": "References",
+  "kits": "Starter Kits"
 }

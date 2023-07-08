@@ -23,6 +23,7 @@
   "contribute-card-desc": "Comparte tu conocimiento",
   "contribute-card-action": "Ir al repositorio de Github",
   "documentation": "Documentación",
+
   "getting-started": "Comenzando",
   "getting-started-welcome": "Bienvenido",
   "getting-started-hw-cli": "Hola Mundo (CLI)",
@@ -39,5 +40,20 @@
   "concepts-path-manifests": "Manifiestos de ruta",
   "concepts-wallets-and-keys": "Billeteras y Claves",
   "concepts-post-tags": "Metadatos (Etiquetas \"Tags\")",
-  "concepts-query-transactions": "Consultas"
+  "concepts-query-transactions": "Consultas",
+  "concepts-atomic-tokens": "Tokens Atómicos",
+  "concepts-vouch": "Vouch",
+  "guides-arprofile": "ArProfile",
+  "guides-dns-integration": "Integración DNS",
+  "guides-server-side": "Lado del Servidor",
+  "guides-spheron": "Spheron",
+  "guides-deploying-apps": "Desplegando Aplicaciones",
+  "guides-deploying-manifests": "Desplegando Manifiestos de Ruta",
+  "guides-deploying-psts": "Desplegando PSTs",
+  "guides-execution-machine": "Execution Machine",
+  "guides-intro": "Introducción",
+  "guides-api-token": "Token de API",
+  "guides-testing": "Pruebas",
+  "references": "Referencias",
+  "kits": "Kits de Inicio"
 }
