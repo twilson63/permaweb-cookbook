@@ -44,10 +44,9 @@ async function main() {
       JSON.stringify(mergedObj, null, 2),
       "utf-8"
     );
-    continue;
 
     // Translate index.md file
-    // await processIndexFile(language, docsPath);
+    await processIndexFile(language, docsPath);
 
     for (const subfolder of subfoldersToRead) {
       const subfolderPath = path.join(docsPath, subfolder);
