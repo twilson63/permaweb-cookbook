@@ -11,5 +11,16 @@
   "guides": "Guías",
   "contribute": "Contribuir",
 
-  "documentation": "Documentación"
+  "documentation": "Documentación",
+
+  "getting-started": "Comenzando",
+  "getting-started-welcome": "Bienvenido",
+  "getting-started-hw-cli": "Hola Mundo (CLI)",
+  "getting-started-hw-code": "Hola Mundo (Con Código)",
+  "getting-started-hw-node": "Hola Mundo (NodeJS)",
+  "getting-started-contributing": "Contribuyendo",
+  "concepts": "Conceptos Fundamentales",
+  "concepts-post-transactions": "Publicación de Transacciones",
+  "concepts-post-tags": "Metadatos (Etiquetas \"Tags\")",
+  "concepts-query-transactions": "Consultas"
 }

@@ -163,18 +163,16 @@ const frontmatter = usePageFrontmatter();
               {{ get_i18n_str(frontmatter.locale, "hello-world", "Hello World") }}
             </h2>
             <p class="body-text">
-              {{
-                frontmatter.locale === "es"
-                  ? "Comenzando con la Permaweb"
-                  : "Getting started with the Permaweb"
-              }}
+              {{ get_i18n_str(frontmatter.locale, "hello-world-card-desc") }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-violet)"
             class="body-text card-action"
-            >{{ frontmatter.locale === "es" ? "Vamos" : "Let's Go" }}</span
+            >
+            {{ get_i18n_str(frontmatter.locale, "hello-world-card-action") }}
+            </span
           >
         </I18NRouterLink>
       </div>
@@ -280,21 +278,17 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{ get_i18n_str(frontmatter.locale, "core-concepts", "Core Concepts") }}
+              {{ get_i18n_str(frontmatter.locale, "core-concepts") }}
             </h2>
             <p class="body-text">
-              {{
-                frontmatter.locale === "es"
-                  ? "Bloques de construcción completos para desarrolladores"
-                  : "Comprehensive building blocks for developers"
-              }}
+              {{ get_i18n_str(frontmatter.locale, "core-concepts-card-desc") }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-sunny)"
             class="body-text card-action"
-            >{{ get_i18n_str(frontmatter.locale, "get-started", "Get Started") }}</span
+            >{{ get_i18n_str(frontmatter.locale, "core-concepts-card-action") }}</span
           >
         </I18NRouterLink>
       </div>
@@ -424,18 +418,14 @@ const frontmatter = usePageFrontmatter();
               {{ get_i18n_str(frontmatter.locale, "guides", "Guides") }}
             </h2>
             <p class="body-text">
-              {{
-                frontmatter.locale === "es"
-                  ? "Despliegues específicos hechos fáciles"
-                  : "Specific deployments made easy"
-              }}
+              {{ get_i18n_str(frontmatter.locale, "guides-card-desc") }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-rose)"
             class="body-text card-action"
-            >{{ get_i18n_str(frontmatter.locale, "get-started", "Get Started") }}</span
+            >{{ get_i18n_str(frontmatter.locale, "guides-card-action") }}</span
           >
         </I18NRouterLink>
       </div>
@@ -563,22 +553,14 @@ const frontmatter = usePageFrontmatter();
               {{ get_i18n_str(frontmatter.locale, "contribute", "Contribute") }}
             </h2>
             <p class="body-text">
-              {{
-                frontmatter.locale === "es"
-                  ? "Comparte tu conocimiento"
-                  : "Share your knowledge"
-              }}
+              {{ get_i18n_str(frontmatter.locale, "contribute-card-desc") }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-pinky)"
             class="body-text card-action"
-            >{{
-              frontmatter.locale === "es"
-                ? "Ir al repositorio de Github"
-                : "Go to Github repo"
-            }}</span
+            >{{ get_i18n_str(frontmatter.locale, "contribute-card-action") }}</span
           >
         </a>
       </div>

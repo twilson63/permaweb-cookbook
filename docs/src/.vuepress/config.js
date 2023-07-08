@@ -7,8 +7,9 @@ import { searchPlugin } from "@vuepress/plugin-search";
 
 import en from "./locales/en";
 import es from "./locales/es";
-
 import { languages } from "../../languages/def";
+import enStrings from "../../languages/strings/en.json";
+import createSidebars from "./sidebar";
 
 export default {
   locales: {
@@ -21,7 +22,7 @@ export default {
     },
     "/es/": {
       lang: "es",
-      title: en.title,
+      title: es.title,
       description: description,
     },
   },
@@ -80,15 +81,12 @@ export default {
     repo: "https://github.com/twilson63/permaweb-cookbook",
     editLink: true,
     editLinkPattern: ":repo/edit/:branch/docs/src/:path",
-    layouts: {
-      "/": "./layouts/DefaultLayout.vue",
-      "/es/": "./layouts/LayoutES.vue",
-    },
+    // layouts: {
+    //   "/": "./layouts/DefaultLayout.vue",
+    //   "/es/": "./layouts/LayoutES.vue",
+    // },
     colorMode: "dark",
-    sidebar: {
-      "/": en.sidebar,
-      "/es/": es.sidebar,
-    },
+    sidebar: createSidebars(),
   }),
 
   /**
@@ -113,6 +111,7 @@ export default {
   // passing languages def to client side
   define: {
     __LANGUAGES__: languages,
+    __EN_STRS__: enStrings,
   },
 
   async onInitialized(app) {

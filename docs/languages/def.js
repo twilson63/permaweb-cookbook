@@ -1,4 +1,5 @@
 // add new strings json file for new languages
+const enStrings = require("./strings/en.json");
 const zhStrings = require("./strings/zh.json");
 const esStrings = require("./strings/es.json");
 
@@ -18,6 +19,18 @@ const languages = [
   }
 ];
 
+const i18n_strs = languages.reduce((langs, currentLang) => {
+  langs[currentLang.code] = currentLang.strings;
+  return langs;
+}, {});
+
+const get_i18n_str = (langCode="en", key, fallbackStr) => {
+  const engStr = enStrings[key] || fallbackStr;
+  if (langCode === "en") return engStr;
+  return i18n_strs[langCode][key] || engStr;
+}
+
 module.exports = {
-  languages
+  languages,
+  get_i18n_str
 };
