@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
-const { translateTextToLanguage, addMarkdownFormatting } = require("./languages/utils");
+const { translateTextToLanguage, addMarkdownFormatting, translateEnStringJsonFile } = require("./languages/utils");
 const { languages } = require("./languages/def")
 
 const readFileAsync = promisify(fs.readFile);
@@ -21,6 +21,16 @@ async function main() {
 
   // Loop through languages and translate all files
   for (const language of languages) {
+    // translate strings
+    const translatedStringFilePath = path.join(__dirname, `/languages/strings/${language.code}.json`);
+    const translatedJson = await translateEnStringJsonFile(language.name);
+    await writeFileAsync(
+      translatedStringFilePath,
+      translatedJson,
+      "utf-8"
+    );
+    continue;
+
     // Translate index.md file
     // await processIndexFile(language, docsPath);
 
