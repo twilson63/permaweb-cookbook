@@ -7,9 +7,9 @@ import { searchPlugin } from "@vuepress/plugin-search";
 
 import en from "./locales/en";
 import es from "./locales/es";
+import createSidebars from "./sidebar";
 import { languages } from "../../languages/def";
 import enStrings from "../../languages/strings/en.json";
-import createSidebars from "./sidebar";
 
 export default {
   locales: {
@@ -111,7 +111,7 @@ export default {
   // passing languages def to client side
   define: {
     __LANGUAGES__: languages,
-    __EN_STRS__: enStrings,
+    __ENSTRS__: enStrings,
   },
 
   async onInitialized(app) {

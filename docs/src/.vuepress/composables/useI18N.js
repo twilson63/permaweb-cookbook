@@ -13,7 +13,7 @@ const i18n_strs = __LANGUAGES__.reduce((langs, currentLang) => {
 }, {});
 
 export const get_i18n_str = (langCode="en", key, fallbackStr) => {
-  const engStr = __EN_STRS__[key] || fallbackStr;
+  const engStr = __ENSTRS__[key] || fallbackStr;
   if (langCode === "en") return engStr;
   return i18n_strs[langCode][key] || engStr;
 }
