@@ -13,11 +13,13 @@ import {
   useSidebarItems,
   useThemeLocaleData,
 } from "@vuepress/theme-default/lib/client/composables/index.js";
-import { get_i18n_str } from "../composables/useI18N";
+import { useI18NStr } from "../composables/useI18N";
 
 const page = usePageData();
 const frontmatter = usePageFrontmatter();
 const themeLocale = useThemeLocaleData();
+
+const get_i18n_str = useI18NStr();
 
 // onboardig
 const shouldShowOnboarding = computed(
@@ -111,7 +113,7 @@ const onBeforeLeave = scrollPromise.pending;
           class="header"
           style="border: none; padding-top: 30px; margin: 20px 0 25px"
         >
-          {{ get_i18n_str(frontmatter.locale, "documentation", "Documentation") }}
+          {{ get_i18n_str("documentation", "Documentation") }}
         </h2>
       </div>
 
