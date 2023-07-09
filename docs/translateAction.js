@@ -40,59 +40,63 @@ async function main() {
 
       console.log(`Here's the response: ${decodedFileContent} for ${file}...`);
 
-      // Translate the content to Spanish using the OpenAI API client
-      const translatedContent = await translateTextToLanguage("Spanish", decodedFileContent);
+      for (const language of languages) {
+        // Translate the content to the specified language using the OpenAI API client
+        const translatedContent = await translateTextToLanguage(language.name, decodedFileContent);
 
-      // Getting relative path of file in `src` folder
-      const relativePath = file.split("docs/src");
+        // Getting relative path of file in `src` folder
+        const relativePath = file.split("docs/src");
 
-      // Creating new file path for translated file using relative path
-      const translatedFilePath = path.join(`docs/src/${"es"}`, relativePath[1]);
+        // Creating new file path for translated file using relative path
+        const translatedFilePath = path.join(`docs/src/${language.code}`, relativePath[1]);
 
-      // Adding frontmatter to translation
-      const markdownTranslatedContent =
-        addMarkdownFormatting("es", translatedContent);
+        // Adding frontmatter to translation
+        const markdownTranslatedContent =
+          addMarkdownFormatting(language.code, translatedContent);
 
-      console.log(`Writing translated file to ${translatedFilePath}...`);
+        console.log(`Writing translated file to ${translatedFilePath}...`);
 
-      // Check if file path for translated file already exists
-      const dirStatus = await ensureDirectoryExists(translatedFilePath);
+        // Check if file path for translated file already exists
+        const dirStatus = await ensureDirectoryExists(translatedFilePath);
 
-      // If file path does not exist, create new file
-      // Else, overwrite existing file (linked using the SHA)
-      if (dirStatus.exists === false) {
-        console.log("Creating new file...");
-        await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
-          owner: "twilson63",
-          repo: "permaweb-cookbook",
-          path: translatedFilePath,
-          message: `Translate ${translatedFilePath} to ${"Spanish"}`,
-          committer: {
-            name: "ropats16",
-            email: "rohitcpathare@gmail.com",
-          },
-          content: btoa(markdownTranslatedContent),
-          headers: {
-            "X-GitHub-Api-Version": "2022-11-28",
-          },
-        });
-      } else if (dirStatus.exists === true) {
-        console.log("Overwriting existing file...");
-        await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
-          owner: "twilson63",
-          repo: "permaweb-cookbook",
-          path: translatedFilePath,
-          message: `Translate ${translatedFilePath} to ${"Spanish"}`,
-          committer: {
-            name: "ropats16",
-            email: "rohitcpathare@gmail.com",
-          },
-          content: btoa(markdownTranslatedContent),
-          sha: dirStatus.sha,
-          headers: {
-            "X-GitHub-Api-Version": "2022-11-28",
-          },
-        });
+        // If file path does not exist, create new file
+        // Else, overwrite existing file (linked using the SHA)
+        if (dirStatus.exists === false) {
+          console.log("Creating new file...");
+          await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
+            owner: "twilson63",
+            repo: "permaweb-cookbook",
+            path: translatedFilePath,
+            message: `Translate ${translatedFilePath} to ${language.name}`,
+            committer: {
+              name: "ropats16",
+              email: "rohitcpathare@gmail.com",
+            },
+            content: btoa(markdownTranslatedContent),
+            headers: {
+              "X-GitHub-Api-Version": "2022-11-28",
+            },
+          });
+        } else if (dirStatus.exists === true) {
+          console.log("Overwriting existing file...");
+          await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
+            owner: "twilson63",
+            repo: "permaweb-cookbook",
+            path: translatedFilePath,
+            message: `Translate ${translatedFilePath} to ${language.name}`,
+            committer: {
+              name: "ropats16",
+              email: "rohitcpathare@gmail.com",
+            },
+            content: btoa(markdownTranslatedContent),
+            sha: dirStatus.sha,
+            headers: {
+              "X-GitHub-Api-Version": "2022-11-28",
+            },
+          });
+        }
+
+        console.log(`${language.name} Translation complete for file: ${file}`);
       }
 
       console.log(`Translation complete for file: ${file}`);
