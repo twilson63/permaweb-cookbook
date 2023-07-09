@@ -5,6 +5,10 @@ const esStrings = require("./strings/es.json");
 const ptStrings = require("./strings/pt.json");
 
 // Start adding new languages by making a new language object inside the array
+// display: Name of the language displayed in UI
+// code: Language specific code
+// name: Name of the language in English, used by OpenAI translation
+// strings: JSON object of translated UI element strings
 const languages = [
   {
     display: "Español",
