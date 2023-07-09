@@ -1,4 +1,4 @@
-// add new strings json file for new languages
+// UI elements strings json file for new languages
 const enStrings = require("./strings/en.json");
 const zhStrings = require("./strings/zh.json");
 const esStrings = require("./strings/es.json");
