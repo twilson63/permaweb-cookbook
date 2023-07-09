@@ -89,15 +89,15 @@ const getI18NSidebar = (langCode) => [
         collapsible: false,
         children: [
           {
-            text: "Permaweb Applications",
+            text: get_i18n_str(langCode, "concepts-permaweb-applications"),
             link: get_i18n_link(langCode, "/concepts/permawebApplications"),
           },
           {
-            text: "Gateway Services",
+            text: get_i18n_str(langCode, "concepts-gateways"),
             link: get_i18n_link(langCode, "/concepts/gateways"),
           },
           {
-            text: "Bundling Services",
+            text: get_i18n_str(langCode, "concepts-bundlers"),
             link: get_i18n_link(langCode, "/concepts/bundlers"),
           },
         ],
@@ -163,7 +163,7 @@ const getI18NSidebar = (langCode) => [
             link: get_i18n_link(langCode, "/guides/deployment/bundlr-cli"),
           },
           {
-            text: "Github Action",
+            text: get_i18n_str(langCode, "guides-github-action"),
             link: get_i18n_link(langCode, "/guides/deployment/github-action"),
           },
         ],
@@ -209,19 +209,19 @@ const getI18NSidebar = (langCode) => [
             collapsible: true,
             children: [
               {
-                text: "Execution Machine SDK",
+                text: get_i18n_str(langCode, "guides-sdk-intro"),
                 link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-intro.md"),
               },
               {
-                text: "Deploy with SDK",
+                text: get_i18n_str(langCode, "guides-sdk-deploy"),
                 link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-deploy.md"),
               },
               {
-                text: "Write with SDK",
+                text: get_i18n_str(langCode, "guides-sdk-write"),
                 link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-write.md"),
               },
               {
-                text: "Read with SDK",
+                text: get_i18n_str(langCode, "guides-sdk-read"),
                 link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-read.md"),
               },
             ],
@@ -242,7 +242,7 @@ const getI18NSidebar = (langCode) => [
             link: get_i18n_link(langCode, "/guides/querying-arweave/ar-gql"),
           },
           {
-            text: "Search Indexing Service",
+            text: get_i18n_str(langCode, "guides-search-indexing-service"),
             link: get_i18n_link(langCode, "/guides/querying-arweave/search-indexing-service"),
           },
         ],
@@ -252,7 +252,7 @@ const getI18NSidebar = (langCode) => [
         collapsible: true,
         children: [
           {
-            text: "Atomic Tokens",
+            text: get_i18n_str(langCode, "guides-atomic-token"),
             link: get_i18n_link(langCode, "/guides/atomic-tokens/intro"),
           },
           {
@@ -268,19 +268,19 @@ const getI18NSidebar = (langCode) => [
                 link: get_i18n_link(langCode, "/guides/smartweave/warp/intro.md"),
               },
               {
-                text: "Deploying Contracts",
+                text: get_i18n_str(langCode, "guides-warp-deploying-contracts"),
                 link: get_i18n_link(langCode, "/guides/smartweave/warp/deploying-contracts.md"),
               },
               {
-                text: "Read Contract State",
+                text: get_i18n_str(langCode, "guides-warp-read-state"),
                 link: get_i18n_link(langCode, "/guides/smartweave/warp/readstate.md"),
               },
               {
-                text: "Write Contract Interactions",
+                text: get_i18n_str(langCode, "guides-warp-write-interactions"),
                 link: get_i18n_link(langCode, "/guides/smartweave/warp/write-interactions.md"),
               },
               {
-                text: "Evolve Contract",
+                text: get_i18n_str(langCode, "guides-warp-evolve"),
                 link: get_i18n_link(langCode, "/guides/smartweave/warp/evolve.md"),
               },
             ],
