@@ -1,7 +1,5 @@
 ---
 locale: pt
----
----
 title: Livro de Receitas Permaweb - Guias
 ---
 
