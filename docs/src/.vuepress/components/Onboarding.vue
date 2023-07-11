@@ -36,7 +36,7 @@ const frontmatter = usePageFrontmatter();
       </div>
 
       <div class="col-12 order-3">
-        <div style="text-align: center; margin-top: 80px; opacity: 0.1">
+        <div style="text-align: center; margin-top: 60px; opacity: 0.1">
           <svg
             width="33"
             height="17"
