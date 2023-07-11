@@ -16,7 +16,7 @@ locale: zh
 
 这些交易ID有些笨重，很难找到您所有相关的文件。如果您上传了100张猫的图片，您将需要跟踪**100个不同的ID和链接**！
 
-路径清单是一种将多个交易链接到单个基本交易ID并为它们赋予人类可读的文件名的方法。以猫的例子来说，您可以有一个基本交易ID来记住并像一个文件夹一样使用它 - 使用更容易记住的文件名来访问您的猫图片，例如[{基本ID}/猫1.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/猫1.jpg)，[{基本ID}/猫2.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/猫2.jpg)，等等。
+路径清单是一种将多个交易链接到单个基本交易ID并为它们赋予人类可读的文件名的方法。以猫的例子来说，您可以拥有一个基本交易ID来像文件夹一样保存所有图片 - 使用更容易记住的文件名来访问您的猫图片，例如[{基本ID}/猫1.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/猫1.jpg)，[{基本ID}/猫2.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/猫2.jpg)，等等。
 
 创建分组的可读文件名集合对于在Arweave上创建实用的应用程序至关重要，它还可以解锁托管网站或其他文件集合的能力，如下面的示例所探讨的。
 
