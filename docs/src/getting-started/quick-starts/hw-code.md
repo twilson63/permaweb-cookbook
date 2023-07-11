@@ -101,7 +101,7 @@ Now that there is a static site to deploy, it can be checked to ensure it all fu
 The command below deploys the `src` directory whilst also indicating the `index.html` file as an index for the manifests (relative to the path provided to `upload-dir` flag).
 
 ```sh
-bundlr upload-dir src -h https://node2.bundlr.network --index-file index.html -c arweave -w ./wallet.json
+npx bundlr upload-dir src -h https://node2.bundlr.network --index-file index.html -c arweave -w ./wallet.json
 ```
 
 ## Congrats!!
