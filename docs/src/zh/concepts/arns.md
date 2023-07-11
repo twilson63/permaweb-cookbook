@@ -3,7 +3,7 @@ locale: zh
 ---
 # ArNS - Arweave命名系统
 ## 概述
-Arweave命名系统（ArNS）是PermaWeb的Smartweave驱动电话簿。
+Arweave命名系统（ArNS）是建立在Permaweb上由Smartweave所驱动的电话簿。
 
 它是一个去中心化且抗审查的命名系统，由AR.IO Gateways驱动，用于将友好名称连接到PermaWeb的应用程序、页面和数据。
 
