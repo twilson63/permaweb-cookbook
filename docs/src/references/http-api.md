@@ -64,7 +64,8 @@ This endpoint only supports base Arweave transactions not bundled transactions. 
 :::
 
 ```js
-  const result = await fetch('https://arweave.net/tx/EiRSQExb5HvSynpn0S7_dDnwcws1AJMxoYx4x7nWoho/status').then(res => res.json())
+  const response = await fetch('https://arweave.net/tx/EiRSQExb5HvSynpn0S7_dDnwcws1AJMxoYx4x7nWoho/status')
+  const result = await response.json()
   console.log(JSON.stringify(result))
 ```
 <details>
