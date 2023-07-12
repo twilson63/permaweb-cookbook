@@ -5,8 +5,6 @@ import { containerPlugin } from "@vuepress/plugin-container";
 import { mediumZoomPlugin } from "@vuepress/plugin-medium-zoom";
 import { searchPlugin } from "@vuepress/plugin-search";
 
-import en from "./locales/en";
-import es from "./locales/es";
 import createSidebars from "./sidebar";
 import { languages } from "../../languages/def";
 import enStrings from "../../languages/strings/en.json";
@@ -17,12 +15,7 @@ export default {
     // As a special case, the default locale can use '/' as its path.
     "/": {
       lang: "en", // this will be set as the lang attribute on <html>
-      title: en.title,
-      description: description,
-    },
-    "/es/": {
-      lang: "es",
-      title: es.title,
+      title: "Cooking with the Permaweb",
       description: description,
     },
   },
