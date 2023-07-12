@@ -572,7 +572,7 @@ const frontmatter = usePageFrontmatter();
 @import "../styles/bootstrap.scss";
 
 .onboarding {
-  padding: 120px 0 60px;
+  padding: 100px 0 60px;
 
   @include media-breakpoint-down(md) {
     padding: 30px 0;

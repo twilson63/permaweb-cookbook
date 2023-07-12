@@ -84,26 +84,25 @@ const onBeforeLeave = scrollPromise.pending;
 
 <template>
   <Topbar />
+  <Navbar
+    v-if="shouldShowNavbar"
+    class="fixed"
+    :fixed="true"
+    @toggle-sidebar="toggleSidebar"
+  >
+    <template #before>
+      <slot name="navbar-before" />
+    </template>
+    <template #after>
+      <slot name="navbar-after" />
+    </template>
+  </Navbar>
   <div
     class="cookbook-theme-container container-xxl"
     :class="containerClass"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <Navbar
-      v-if="shouldShowNavbar"
-      class="fixed"
-      :fixed="true"
-      @toggle-sidebar="toggleSidebar"
-    >
-      <template #before>
-        <slot name="navbar-before" />
-      </template>
-      <template #after>
-        <slot name="navbar-after" />
-      </template>
-    </Navbar>
-
     <Onboarding v-if="shouldShowOnboarding" />
 
     <div class="row">
