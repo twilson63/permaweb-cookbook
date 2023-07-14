@@ -1,6 +1,26 @@
-export const languages = {
-  English: "/",
-  Español: "es/",
+import { usePageFrontmatter } from '@vuepress/client';
+
+export const languages = __LANGUAGES__.reduce((langs, currentLang) => {
+  langs[currentLang.display] = `${currentLang.code}/`;
+  return langs;
+}, {
+  "English": "/"
+});
+
+const i18n_strs = __LANGUAGES__.reduce((langs, currentLang) => {
+  langs[currentLang.code] = currentLang.strings;
+  return langs;
+}, {});
+
+export const get_i18n_str = (langCode="en", key, fallbackStr) => {
+  const engStr = __ENSTRS__[key] || fallbackStr;
+  if (langCode === "en") return engStr;
+  return i18n_strs[langCode][key] || engStr;
+}
+
+export const useI18NStr = () => {
+  const frontmatter = usePageFrontmatter();
+  return (key, fallbackStr) => get_i18n_str(frontmatter.value.locale, key, fallbackStr);
 };
 
 export const getCurrentLanguage = (path) => {

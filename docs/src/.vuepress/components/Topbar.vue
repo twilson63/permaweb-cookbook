@@ -1,22 +1,17 @@
 <script setup>
 import { useDarkMode } from "@vuepress/theme-default/lib/client/composables/index.js";
 
-import { usePageFrontmatter } from "@vuepress/client";
+import { useI18NStr } from "../composables/useI18N";
 import "add-to-calendar-button";
 
 const darkMode = useDarkMode();
-const frontmatter = usePageFrontmatter();
+const get_i18n_str = useI18NStr();
 </script>
 
 <template>
   <div class="topbar">
     <p>
-      <span>
-        {{
-          frontmatter.locale === "es"
-            ? "Encuentro de la Comunidad del Libro de Recetas: todos los miércoles a las 12pm ET / 5pm GMT."
-            : "Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
-        }}</span
+      <span>{{ get_i18n_str("cookbook-meetup-notification") }}</span
       >
       <add-to-calendar-button
         style="white-space: nowrap"

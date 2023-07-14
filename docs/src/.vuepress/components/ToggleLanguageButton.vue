@@ -1,13 +1,14 @@
 <script setup>
 import { ref, watch } from "vue";
-import { useRoute, useRouter } from 'vue-router'
-import { getLanguagePath, getCurrentLanguage, languages } from '../composables/useI18N';
+import { useRoute } from 'vue-router'
+import { getLanguagePath, getCurrentLanguage, languages, useI18NStr } from '../composables/useI18N';
 import { useThemeLocaleData } from "@vuepress/theme-default/lib/client/composables/index.js";
 
 defineEmits(["toggle"]);
 
 const route = useRoute();
 const themeLocale = useThemeLocaleData();
+const get_i18n_str = useI18NStr();
 
 const isDropdownOpen = ref(false);
 const linkItems = ref({
@@ -42,7 +43,7 @@ watch(() => route.path, (path) => {
       tabindex="0"
       @click="toggleDropdown"
     >
-      Language
+      {{ get_i18n_str("language", "Language") }}
     </div>
     <ul v-if="isDropdownOpen" class="language-dropdown">
       <RouterLink
@@ -74,7 +75,7 @@ watch(() => route.path, (path) => {
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 5px;
+  margin-top: 10px;
   padding: 5px;
   color: #000;
   background-color: #fff;
@@ -86,7 +87,8 @@ watch(() => route.path, (path) => {
 
   & > a {
     display: block;
-    padding: 5px;
+    padding: 5px 10px;
+    white-space: nowrap;
 
     &:hover {
       background-color: #f5f5f5;

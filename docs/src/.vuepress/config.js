@@ -5,8 +5,9 @@ import { containerPlugin } from "@vuepress/plugin-container";
 import { mediumZoomPlugin } from "@vuepress/plugin-medium-zoom";
 import { searchPlugin } from "@vuepress/plugin-search";
 
-import en from "./locales/en";
-import es from "./locales/es";
+import createSidebars from "./sidebar";
+import { languages } from "../../languages/def";
+import enStrings from "../../languages/strings/en.json";
 
 export default {
   locales: {
@@ -14,12 +15,7 @@ export default {
     // As a special case, the default locale can use '/' as its path.
     "/": {
       lang: "en", // this will be set as the lang attribute on <html>
-      title: en.title,
-      description: description,
-    },
-    "/es/": {
-      lang: "es",
-      title: en.title,
+      title: "Cooking with the Permaweb",
       description: description,
     },
   },
@@ -78,15 +74,12 @@ export default {
     repo: "https://github.com/twilson63/permaweb-cookbook",
     editLink: true,
     editLinkPattern: ":repo/edit/:branch/docs/src/:path",
-    layouts: {
-      "/": "./layouts/DefaultLayout.vue",
-      "/es/": "./layouts/LayoutES.vue",
-    },
+    // layouts: {
+    //   "/": "./layouts/DefaultLayout.vue",
+    //   "/es/": "./layouts/LayoutES.vue",
+    // },
     colorMode: "dark",
-    sidebar: {
-      "/": en.sidebar,
-      "/es/": es.sidebar,
-    },
+    sidebar: createSidebars(),
   }),
 
   /**
@@ -107,6 +100,12 @@ export default {
       },
     }),
   ],
+
+  // passing languages def to client side
+  define: {
+    __LANGUAGES__: languages,
+    __ENSTRS__: enStrings,
+  },
 
   async onInitialized(app) {
     app.pages
