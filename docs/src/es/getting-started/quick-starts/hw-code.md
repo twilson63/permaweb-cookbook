@@ -106,7 +106,7 @@ Ahora que hay un sitio estático para desplegar, se puede comprobar para asegura
 El comando a continuación despliega el directorio `src` mientras también indica el archivo `index.html` como índice para los manifiestos (relativo a la ruta proporcionada al indicador `upload-dir`).
 
 ```sh
-bundlr upload-dir src -h https://node2.bundlr.network --index-file index.html -c arweave -w ./wallet.json
+npx bundlr upload-dir src -h https://node2.bundlr.network --index-file index.html -c arweave -w ./wallet.json
 ```
 
 ## ¡¡Felicidades!!
