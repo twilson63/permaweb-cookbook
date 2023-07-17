@@ -4,7 +4,7 @@ The permaweb is like the web, but permanent. Developers build on top of permaweb
 
 ![Permaweb](https://arweave.net/lK3mptAgC2cijnPvogKaLCOsKSuPlvLu_6opnEOrpT0)
 
-Benifits of the permaweb.
+Benefits of the permaweb.
 
 1. Sites and apps are permanent, you never have to worry about them going away (even if the team supporting them moves on)
 1. App developers have to make sure every new version of the app actually adds value, otherwise, why would you switch off the old one.
