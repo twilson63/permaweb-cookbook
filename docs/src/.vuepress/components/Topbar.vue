@@ -31,7 +31,7 @@ const get_i18n_str = useI18NStr();
       </p> -->
 
       <p>
-      <span>Join the Arweave Community Hackathon for $25k bounties and more!</span>
+      <span>Join the Arweave Community Hackathon for $25k+ in bounties, workshops, and more!</span>
       </p>
     </div>
   </a>
