@@ -17,13 +17,14 @@ The Search GraphQL syntax is a superset of the [Arweave GraphQL syntax](./queryi
   - Fuzzy search
   - Wildcard search
 - Filter for L1 transactions only
+- Result set total counts
 
 For any custom needs or feature ideas, feel free to contact the Goldsky team through email or on discord! 
 
 
 ## Search Gateway Endpoints
 
-Currently, the only version of this syntax is hosted Goldsky. If anybody is interested in hosting their own gateway with the same syntax, feel free to contact the [Goldsky](https://goldsky.com) for help.
+Currently, the only service with this syntax is hosted Goldsky. If anybody is interested in hosting their own gateway with the same syntax, feel free to contact the [Goldsky](https://goldsky.com) for help.
 
 - [Goldsky Search Service](https://arweave-search.goldsky.com/graphql)
 
@@ -204,6 +205,22 @@ query just_l1 {
         }
       }
     }
+  }
+}
+```
+
+
+### Getting total counts given a query
+
+If you'd like to understand how many transactions fit a certain set of filters, just use the `count` field. This will trigger an additional optimized count operation. This will likely double the time it would take to return the query, so use only when needed. 
+
+```graphql:no-line-numbers
+query count_mirror {
+  {
+  	transactions(tags:{values:["MirrorXYZ"]})
+      {
+        count
+      }
   }
 }
 ```
