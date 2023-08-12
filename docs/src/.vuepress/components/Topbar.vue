@@ -10,8 +10,8 @@ const get_i18n_str = useI18NStr();
 
 <template>
   <a href="https://arweavehub.com/#/hackathon" target="blank">
-    <div class="topbar hackathon">
-      <!-- <p>
+    <div class="topbar">
+      <p>
         <span>{{ get_i18n_str("cookbook-meetup-notification") }}</span
         >
         <add-to-calendar-button
@@ -28,10 +28,6 @@ const get_i18n_str = useI18NStr();
           :lightMode="!darkMode ? 'light' : 'dark'"
           size="1"
         ></add-to-calendar-button>
-      </p> -->
-
-      <p>
-      <span>Join the Arweave Community Hackathon for $25k+ in bounties, workshops, and more!</span>
       </p>
     </div>
   </a>
@@ -49,6 +45,7 @@ a {
   position: relative;
   z-index: 12;
   background: var(--c-topbar-bg);
+  color: var(--c-text);
   text-align: center;
   padding: 8px;
 
