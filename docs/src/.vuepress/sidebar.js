@@ -13,6 +13,10 @@ const getI18NSidebar = (langCode) => [
         link: get_i18n_link(langCode, "/getting-started/welcome"),
       },
       {
+        text: get_i18n_str(langCode, "getting-started-hw-no-code", "Hello World (No Code)"),
+        link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-no-code"),
+      },
+      {
         text: get_i18n_str(langCode, "getting-started-hw-cli", "Hello World (CLI)"),
         link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-cli"),
       },
@@ -75,7 +79,7 @@ const getI18NSidebar = (langCode) => [
           },
           {
             text: get_i18n_str(langCode, "concepts-path-manifests"),
-            link:get_i18n_link(langCode, "/concepts/manifests"),
+            link: get_i18n_link(langCode, "/concepts/manifests"),
           },
         ],
       },
