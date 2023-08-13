@@ -4,11 +4,12 @@ The following GraphQL query returns all of the properties of a transaction captu
 ```graphql:no-line-numbers
 query {
     transactions {
-        cursor
+        
         pageInfo { 
           hasNextPage
         }
         edges {
+            cursor
             node {
                 id
                 anchor
