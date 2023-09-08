@@ -1,33 +1,42 @@
+<script setup>
+import I18NRouterLink from "./I18NRouterLink.vue";
+import FeaturedContributors from "./FeaturedContributors.vue";
+import { usePageFrontmatter } from "@vuepress/client";
+import { get_i18n_str } from "../composables/useI18N";
+
+const frontmatter = usePageFrontmatter();
+</script>
 <template>
   <div class="onboarding">
     <div class="row hero">
       <div class="col-12 col-md-6 col-lg-5 order-2 order-md-1">
         <div class="hero-text">
-          <h1 class="hero-title">Build on the Permaweb.</h1>
+          <h1 class="hero-title">
+            {{ get_i18n_str(frontmatter.locale, "onboarding-title", "Build on the Permaweb.") }}
+          </h1>
           <p class="hero-body-text">
-            A curated collection of developer guides & more to build on the
-            Permaweb. All in one place.
+            {{ get_i18n_str(frontmatter.locale, "onboarding-desc", "A curated collection of developer guides & more to build on the Permaweb. All in one place.") }}
           </p>
-          <RouterLink
+          <I18NRouterLink
             style="color: var(--c-accent-rose)"
             class="hero-body-text"
             to="/getting-started/"
           >
-            Get Started
-          </RouterLink>
+            {{ get_i18n_str(frontmatter.locale, "get-started", "Get Started") }}
+          </I18NRouterLink>
         </div>
 
         <FeaturedContributors />
       </div>
 
       <div class="col-12 col-md-6 offset-lg-1 order-1 order-md-2">
-        <RouterLink to="/#documentation" class="onboard-illustration">
+        <I18NRouterLink to="/#documentation" class="onboard-illustration">
           <div class="illustration"></div>
-        </RouterLink>
+        </I18NRouterLink>
       </div>
 
       <div class="col-12 order-3">
-        <div style="text-align: center; margin-top: 80px; opacity: 0.1">
+        <div style="text-align: center; margin-top: 60px; opacity: 0.1">
           <svg
             width="33"
             height="17"
@@ -46,11 +55,13 @@
 
     <div class="row cards">
       <div class="col-12">
-        <h2 class="header">First Time?</h2>
+        <h2 class="header">
+          {{ get_i18n_str(frontmatter.locale, "first-time", "First Time?") }}
+        </h2>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <RouterLink
+        <I18NRouterLink
           to="/getting-started/quick-starts/hw-no-code"
           class="onboard-card"
         >
@@ -148,20 +159,26 @@
               </div>
             </div>
 
-            <h2 class="title">Hello World</h2>
-            <p class="body-text">Getting started with the Permaweb</p>
+            <h2 class="title">
+              {{ get_i18n_str(frontmatter.locale, "hello-world", "Hello World") }}
+            </h2>
+            <p class="body-text">
+              {{ get_i18n_str(frontmatter.locale, "hello-world-card-desc") }}
+            </p>
           </div>
 
           <span
             style="color: var(--c-accent-violet)"
             class="body-text card-action"
-            >Let's Go</span
+            >
+            {{ get_i18n_str(frontmatter.locale, "hello-world-card-action") }}
+            </span
           >
-        </RouterLink>
+        </I18NRouterLink>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <RouterLink to="/concepts" class="onboard-card">
+        <I18NRouterLink to="/concepts" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon">
@@ -260,22 +277,24 @@
               </div>
             </div>
 
-            <h2 class="title">Core Concepts</h2>
+            <h2 class="title">
+              {{ get_i18n_str(frontmatter.locale, "core-concepts") }}
+            </h2>
             <p class="body-text">
-              Comprehensive building blocks for developers
+              {{ get_i18n_str(frontmatter.locale, "core-concepts-card-desc") }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-sunny)"
             class="body-text card-action"
-            >Get Started</span
+            >{{ get_i18n_str(frontmatter.locale, "core-concepts-card-action") }}</span
           >
-        </RouterLink>
+        </I18NRouterLink>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <RouterLink to="/guides" class="onboard-card">
+        <I18NRouterLink to="/guides" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon">
@@ -395,16 +414,20 @@
               </div>
             </div>
 
-            <h2 class="title">Guides</h2>
-            <p class="body-text">Specific deployments made easy</p>
+            <h2 class="title">
+              {{ get_i18n_str(frontmatter.locale, "guides", "Guides") }}
+            </h2>
+            <p class="body-text">
+              {{ get_i18n_str(frontmatter.locale, "guides-card-desc") }}
+            </p>
           </div>
 
           <span
             style="color: var(--c-accent-rose)"
             class="body-text card-action"
-            >Get Started</span
+            >{{ get_i18n_str(frontmatter.locale, "guides-card-action") }}</span
           >
-        </RouterLink>
+        </I18NRouterLink>
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
@@ -526,14 +549,18 @@
               </div>
             </div>
 
-            <h2 class="title">Contribute</h2>
-            <p class="body-text">Share your knowledge</p>
+            <h2 class="title">
+              {{ get_i18n_str(frontmatter.locale, "contribute", "Contribute") }}
+            </h2>
+            <p class="body-text">
+              {{ get_i18n_str(frontmatter.locale, "contribute-card-desc") }}
+            </p>
           </div>
 
           <span
             style="color: var(--c-accent-pinky)"
             class="body-text card-action"
-            >Go to Github repo</span
+            >{{ get_i18n_str(frontmatter.locale, "contribute-card-action") }}</span
           >
         </a>
       </div>
@@ -541,15 +568,11 @@
   </div>
 </template>
 
-<script setup>
-import FeaturedContributors from './FeaturedContributors.vue';
-</script>
-
 <style lang="scss">
-@import '../styles/bootstrap.scss';
+@import "../styles/bootstrap.scss";
 
 .onboarding {
-  padding: 120px 0 60px;
+  padding: 100px 0 60px;
 
   @include media-breakpoint-down(md) {
     padding: 30px 0;

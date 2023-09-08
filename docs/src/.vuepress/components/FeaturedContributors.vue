@@ -1,12 +1,19 @@
+<script setup>
+import { useI18NStr } from "../composables/useI18N";
+
+const get_i18n_str = useI18NStr();
+</script>
 <template>
   <div v-if="contributors.length > 0" class="featured-contributor">
     <div class="top">
-      <p class="subtext">Featured Contributor</p>
+      <p class="subtext">
+        {{ get_i18n_str("featured-contributors") }}
+      </p>
       <a
         class="subtext"
         target="_blank"
         href="https://github.com/twilson63/permaweb-cookbook/graphs/contributors"
-        >See all contributors</a
+        >{{ get_i18n_str("featured-contributors-action") }}</a
       >
     </div>
 
@@ -36,7 +43,7 @@ export default {
   data() {
     return {
       current: 0,
-      contributors: []
+      contributors: [],
     };
   },
   methods: {
@@ -46,11 +53,11 @@ export default {
       } else {
         this.current++;
       }
-    }
+    },
   },
   mounted() {
     fetch(
-      'https://api.github.com/repos/twilson63/permaweb-cookbook/contributors?q=contributions&order=desc'
+      "https://api.github.com/repos/twilson63/permaweb-cookbook/contributors?q=contributions&order=desc"
     )
       .then((res) => {
         if (res.ok) return res.json();
@@ -60,7 +67,7 @@ export default {
         this.contributors = result;
         setInterval(this.nextContributor, 4000);
       });
-  }
+  },
 };
 </script>
 

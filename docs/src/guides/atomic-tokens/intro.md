@@ -2,7 +2,7 @@
 
 ## What is an Atomic Token? 
 
-[Check out the concept](../../concepts/atomic-tokens)
+[Check out the concept](../../concepts/atomic-tokens.md)
 
 ## Creating an Atomic Token
 

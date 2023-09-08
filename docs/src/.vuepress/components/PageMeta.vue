@@ -11,6 +11,8 @@ import type {
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js'
 import { resolveEditLink } from '@vuepress/theme-default/lib/client/utils/index.js'
 
+import { useI18NStr } from "../composables/useI18N";
+
 const useEditNavLink = (): ComputedRef<null | NavLink> => {
   const themeLocale = useThemeLocaleData()
   const page = usePageData<DefaultThemePageData>()
@@ -96,6 +98,7 @@ const useContributors = () => {
   })
 }
 
+const get_i18n_str = useI18NStr();
 const themeLocale = useThemeLocaleData()
 const editNavLink = useEditNavLink()
 const lastUpdated = useLastUpdated()
@@ -105,23 +108,23 @@ const contributors = useContributors()
 <template>
   <footer class="page-meta">
     <div class="meta-item-container">
-      <div
-        v-if="contributors && contributors.length"
-        class="meta-item contributors"
-      >
-        <span class="meta-item-label">{{ themeLocale.contributorsText }}: </span>
+      <div class="meta-item contributors">
+        <span class="meta-item-label">{{ get_i18n_str("contributors", "Contributors") }}: </span>
         <span class="meta-item-info">
-          <template v-for="(contributor, index) in contributors" :key="index">
+          <template
+            v-if="contributors && contributors.length"
+            v-for="(contributor, index) in contributors" :key="index">
             <span class="contributor" :title="`email: ${contributor.email}`">
-              {{ contributor.name.substring(0, 1).toUpperCase() }}
+              {{ contributor.name }}
             </span>
+            <template v-if="index !== contributors.length - 1">, </template>
           </template>
         </span>
       </div>
 
-      <div v-if="lastUpdated" class="meta-item last-updated">
-        <span class="meta-item-label">{{ themeLocale.lastUpdatedText }}: </span>
-        <ClientOnly>
+      <div class="meta-item last-updated">
+        <span class="meta-item-label">{{ get_i18n_str("last-updated", "Last Updated") }}: </span>
+        <ClientOnly v-if="lastUpdated">
           <span class="meta-item-info">{{ lastUpdated }}</span>
         </ClientOnly>
       </div>
@@ -130,7 +133,7 @@ const contributors = useContributors()
     <div v-if="editNavLink">
       <a :href="editNavLink.link" target="_blank" class="edit-link">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Edit / Edit_Pencil_01"> <path class="text-stroke" id="Vector" d="M12 8.00012L4 16.0001V20.0001L8 20.0001L16 12.0001M12 8.00012L14.8686 5.13146L14.8704 5.12976C15.2652 4.73488 15.463 4.53709 15.691 4.46301C15.8919 4.39775 16.1082 4.39775 16.3091 4.46301C16.5369 4.53704 16.7345 4.7346 17.1288 5.12892L18.8686 6.86872C19.2646 7.26474 19.4627 7.46284 19.5369 7.69117C19.6022 7.89201 19.6021 8.10835 19.5369 8.3092C19.4628 8.53736 19.265 8.73516 18.8695 9.13061L18.8686 9.13146L16 12.0001M12 8.00012L16 12.0001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
-        Edit
+        {{ get_i18n_str("edit", "Edit") }}
       </a>
     </div>
   </footer>
@@ -141,24 +144,6 @@ const contributors = useContributors()
   display: flex;
   justify-content: space-between;
 
-  .contributor {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    border-radius: 50%;
-    border: 1px solid var(--c-border-dark);
-    height: 24px;
-    width: 24px;
-    font-size: 12px;
-    font-weight: bold;
-    
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
   .meta-item-container {
     flex: 1;
     display: flex;
@@ -168,23 +153,15 @@ const contributors = useContributors()
       flex: 1;
       margin: 0;
     }
-    
-    // @media (max-width: 419px) {
-    //   flex-direction: column;
-      
-    //   .meta-item {
-    //     margin-bottom: 10px;
-    //   }
-    // }
-  }
 
-  .meta-item {
-    margin-right: 40px;
+    .contributors {
+      margin-right: 20px;
+    }
   }
 
   .meta-item-label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     color: var(--c-text);
     font-weight: 500;
   }
@@ -195,7 +172,6 @@ const contributors = useContributors()
 
     background: var(--c-text-accent);
     color: var(--c-text);
-    // border: 2px solid var(--c-tip-text-accent);
     border-radius: 8px;
     padding: 7px 10px;
     text-align: center;
