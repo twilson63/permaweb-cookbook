@@ -1,6 +1,7 @@
 // UI elements strings json file for new languages
 const enStrings = require("./strings/en.json");
 const esStrings = require("./strings/es.json");
+const zhStrings = require("./strings/zh.json");
 
 // Start adding new languages by making a new language object inside the array
 // display: Name of the language displayed in UI
@@ -13,6 +14,12 @@ const languages = [
     name: "Spanish",
     code: "es",
     strings: esStrings,
+  },
+  {
+    display: "简体中文",
+    name: "Mandarin Chinese",
+    code: "zh",
+    strings: zhStrings,
   },
 ];
 
