@@ -1,5 +1,5 @@
 {
-    "cookbook-meetup-notification": "Pemberitahuan Pertemuan Komunitas Cookbook - Setiap minggu pada hari Rabu pukul 22:00 WIB / 17:00 GMT",
+    "cookbook-meetup-notification": "Pertemuan Komunitas Cookbook - Setiap minggu pada hari Rabu pukul 22:00 WIB / 17:00 GMT",
     
     "edit": "Edit",
     "language": "Bahasa",
@@ -12,7 +12,7 @@
     "onboarding-title": "Build di Permaweb.",
     "onboarding-desc": "Kumpulan panduan pengembang yang dikurasi & lebih banyak lagi untuk membangun di Permaweb. Semuanya dalam satu tempat.",
     "get-started": "Mulai",
-    "first-time": "Pertama Kali?",
+    "first-time": "Pertama Kali kesini?",
     
     "hello-world": "Hello World",
     "hello-world-card-desc": "Memulai dengan Permaweb",
@@ -49,7 +49,7 @@
     "concepts-bundlers": "Layanan Bundling",
     "concepts-atomic-tokens": "Token Atomic",
     "concepts-vouch": "Memberi Jaminan",
-    "guides-arprofile": "Profil Ar",
+    "guides-arprofile": "ArProfile",
     "guides-dns-integration": "Integrasi DNS",
     "guides-server-side": "Sisi Server",
     "guides-spheron": "Spheron",
@@ -57,9 +57,9 @@
     "guides-deploying-apps": "Mengunggah Aplikasi",
     "guides-github-action": "Github Action",
     "guides-deploying-manifests": "Mengunggah PathManifests",
-    "guides-deploying-psts": "Deploy PSTs",
-    "guides-execution-machine": "Execution Machine ",
-    "guides-sdk-intro": "Pengantar Mesin Eksekusi SDK",
+    "guides-deploying-psts": "Mengunggah PSTs",
+    "guides-execution-machine": "Execution Machine",
+    "guides-sdk-intro": "Pengantar SDK Execution Machine",
     "guides-sdk-deploy": "Mengunggah dengan SDK",
     "guides-sdk-write": "Menulis dengan SDK",
     "guides-sdk-read": "Membaca dengan SDK",

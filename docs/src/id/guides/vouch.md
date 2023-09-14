@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Vouch
 Ada beberapa cara untuk melakukan kueri pada alamat Arweave untuk memverifikasi apakah sudah mendapatkan vouch dari layanan tertentu. Berikut dua dari metode-metode tersebut.
 

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Vouch
 ## Ikhtisar
 #### Protokol Vouch

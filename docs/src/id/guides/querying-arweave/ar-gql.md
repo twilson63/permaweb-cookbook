@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # ar-gql
 Paket ini adalah lapisan minimal di atas GraphQL, mendukung kueri berparameter dengan variabel kueri. Ini juga mengimplementasikan pengelolaan hasil berhalaman.
 

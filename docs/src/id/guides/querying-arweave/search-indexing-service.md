@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Layanan Indeks Pencarian
 
 tl;dr

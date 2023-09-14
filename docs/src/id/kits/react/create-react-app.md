@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Create React App Starter Kit
 
 ## Panduan Memulai

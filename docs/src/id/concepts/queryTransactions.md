@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Meminta Data Transaksi
 Tidak cukup hanya menyimpan data secara permanen, untuk membuat Arweave berguna, data juga perlu dapat ditemukan dan diambil. Panduan ini merangkum berbagai pendekatan dalam meminta data di Arweave.
 

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # ArDB
 Sebuah perpustakaan yang dibangun di atas GraphQL yang memungkinkan Anda untuk mengambil data transaksi dan blok dari Arweave tanpa harus menghafal nama parameter GraphQL. Cukup bangun kueri dengan menggunakan fitur otomatisasi lengkap di editor kode favorit Anda.
 

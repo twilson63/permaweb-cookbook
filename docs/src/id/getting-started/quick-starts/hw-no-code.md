@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Hello World (No Code)
 
 Dalam panduan cepat ini, kita akan mengunggah gambar ke permaweb tanpa perlu menulis kode apa pun!

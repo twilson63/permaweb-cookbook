@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Mengirimkan Transaksi menggunakan arweave-js
 Transaksi asli Arweave dapat diposting langsung ke node atau gateway menggunakan paket `arweave-js`.
 

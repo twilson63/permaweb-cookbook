@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Bundling
 
 Sebelum memulai dengan referensi di bawah ini, pastikan Anda telah membaca [Bundles and Bundling](/concepts/bundles.md) dari [Core Concepts](/concepts/).

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Posting Transaksi
 
 Ada beberapa cara untuk memposting transaksi ke Arweave. Setiap cara memiliki kelebihan dan kendala uniknya sendiri. Diagram di bawah ini mengilustrasikan empat pendekatan utama untuk memposting transaksi.

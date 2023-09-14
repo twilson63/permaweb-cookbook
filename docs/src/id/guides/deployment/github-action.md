@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Github Action
 
 ::: danger

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Mengambil Data Transaksi
 Sementara layanan pengindeksan memungkinkan pengajuan permintaan metadata transaksi, mereka tidak memberikan akses ke data transaksi itu sendiri. Hal ini disebabkan karena penyimpanan data transaksi dan pengindeksan metadata memiliki persyaratan sumber daya yang berbeda. Layanan pengindeksan utamanya mengandalkan sumber daya komputasi untuk melakukan kueri pada database, sementara data transaksi lebih cocok untuk ditempatkan di Jaringan Pengiriman Konten (CDN) untuk mengoptimalkan penyimpanan dan bandwidth.
 

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Svelte/Vite Starter Kit
 
 ## Panduan Memulai

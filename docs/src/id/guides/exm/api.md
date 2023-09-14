@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Execution Machine API Token
 
 EXM berusaha menjadi agnostik kripto dan hanya memerlukan satu token API (juga dikenal sebagai kunci) untuk berinteraksi. Token API ini diperlukan untuk sebagian besar tindakan di EXM seperti penyebaran dan operasi tulis.

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Spheron
 
 Protokol Spheron adalah platform terdesentralisasi yang dirancang untuk menyederhanakan pembuatan dapp modern. Ini menawarkan pengalaman yang mulus bagi para pengembang, memungkinkan pengunggahan cepat, penskalaan otomatis, dan pengiriman konten yang disesuaikan pada jaringan terdesentralisasi.

@@ -1,3 +1,6 @@
+---
+locale: id
+---
 
 # Struktur GraphQL Lengkap untuk Transaksi
 Permintaan GraphQL berikut mengembalikan semua properti dari sebuah transaksi yang ditangkap oleh layanan indeks.

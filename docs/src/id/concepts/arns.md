@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # ArNS - Arweave Name System
 ## Gambaran
 Sistem Nama Arweave (ArNS) adalah buku telepon yang didukung oleh Smartweave dari PermaWeb.

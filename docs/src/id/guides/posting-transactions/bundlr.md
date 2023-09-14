@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Mengirimkan Transaksi menggunakan bundlr.network
 Mengirimkan transaksi ke bundlr.network dapat dilakukan dengan menggunakan paket javascript `bundlr.network/client`. Layanan bundling memungkinkan konfirmasi transaksi yang diposting dan mendukung banyak ribu transaksi per blok melalui penggunaan bundel transaksi.
 

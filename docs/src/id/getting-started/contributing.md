@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Alur Kontribusi
 
 Semua anggota komunitas dipersilakan untuk berkontribusi pada Permaweb Cookbook, sebagai anggota komunitas, kami ingin memiliki panduan referensi berkualitas tinggi yang berisi informasi singkat dan bermanfaat. Di bawah ini adalah langkah-langkah alur kerja tentang bagaimana siapa pun dapat berkontribusi pada proyek ini.

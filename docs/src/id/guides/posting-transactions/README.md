@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 Silakan lihat contoh yang terlampir pada Konsep Inti Posting Transaksi.
 
 * Contoh [arweave-js](/guides/posting-transactions/arweave-js.md)

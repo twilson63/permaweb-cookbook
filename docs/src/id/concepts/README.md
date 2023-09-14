@@ -1,6 +1,8 @@
 ---
-title: Permaweb Cookbook - Konsep Inti
+locale: id
 ---
+
+#  Permaweb Cookbook - Konsep Inti
 
 # Konsep Inti
 

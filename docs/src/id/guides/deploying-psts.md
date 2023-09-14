@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Membuat dan Mengunggah PST
 
 ### **Prasyarat**

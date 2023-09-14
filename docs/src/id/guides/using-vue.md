@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Menggunakan Vue di Markdown
 
 ## Pembatasan Akses API Browser

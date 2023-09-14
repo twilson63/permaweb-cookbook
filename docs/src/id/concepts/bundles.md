@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Bundle Transaksi
 
 ### Apa Itu Bundle?

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 ## Apa itu SmartWeave?
 
 SmartWeave adalah nama yang diberikan untuk paradigma SmartContract dominan di Arweave. Sifat unik dari kontrak SmartWeave adalah bahwa keadaan saat ini dari kontrak diberikan oleh proses "evaluasi malas" (lazy evaluation). Ini berarti bahwa daripada node penambangan Arweave terus-menerus mengevaluasi keadaan saat ini dari semua kontrak, seorang klien yang membaca kontrak mengevaluasi keadaan itu sendiri.

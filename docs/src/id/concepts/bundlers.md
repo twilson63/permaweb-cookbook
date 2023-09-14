@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Layanan Bundling
 ---
 Dengan layanan bundling, pengguna dapat mengirimkan transaksi data mereka ke layanan bundling untuk "dibundle" bersama dengan transaksi pengguna lain dan dikirimkan sebagai satu transaksi Arweave tunggal dalam blok Arweave yang akan datang.

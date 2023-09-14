@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Hello World (Code)
 
 Panduan ini akan membimbing Anda untuk dengan cepat mendapatkan halaman web statis HTML, CSS, dan JavaScript ke permaweb menggunakan beberapa baris kode dan antarmuka baris perintah (CLI).

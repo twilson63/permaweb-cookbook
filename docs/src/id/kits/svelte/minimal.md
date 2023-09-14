@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Minimal Svelte Starter Kit
 
 ## Panduan Memulai

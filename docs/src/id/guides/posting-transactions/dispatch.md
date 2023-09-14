@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Mengirimkan Transaksi dengan Menggunakan Dispatch
 Dompet Arweave di peramban memiliki konsep pengiriman transaksi. Jika ukuran transaksi kurang dari 100KB, maka transaksi tersebut dapat diposting secara gratis!
 ## Mengirimkan Transaksi

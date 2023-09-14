@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Bundlr CLI
 
 ## Prasyarat

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Selamat datang di Permaweb
 
 Permaweb mirip dengan web, tetapi bersifat permanen. Para pengembang membangun di atas layanan Permaweb untuk menciptakan aplikasi dan situs yang akan ada selamanya di Arweave.

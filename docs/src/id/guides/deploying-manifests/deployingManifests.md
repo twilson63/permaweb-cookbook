@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Creating and Deploying Manifests
 
 ---

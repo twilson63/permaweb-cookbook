@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # arkb
 
 ## Prasyarat

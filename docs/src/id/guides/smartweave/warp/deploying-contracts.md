@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # SDK Warp (SmartWeave) - Penyelenggaraan Kontrak
 
 Kontrak SmartWeave dibuat dengan mengirimkan dua transaksi ke jaringan, yaitu Transaksi Sumber (Source Transaction) dan Transaksi Awal Status (Initial State Transaction). Transaksi sumber berisi kode sumber yang akan digunakan oleh kontrak untuk menentukan status saat ini. Transaksi awal status menyediakan pengidentifikasi kontrak sebagai referensi serta data benih awal yang akan digunakan oleh kontrak sebagai titik awal untuk mengevaluasi status saat ini. Status saat ini dihitung dengan mengakses tindakan-tindakan yang merupakan transaksi yang ditulis ke jaringan dan berisi parameter masukan untuk dieksekusi menggunakan kode sumber yang dievaluasi dan diinisialisasi. Kontrak Warp dapat dibuat menggunakan banyak bahasa yang berbeda dan dapat dievaluasi menggunakan SDK Warp. Panduan ini akan menunjukkan berbagai cara yang dapat Anda gunakan untuk menyelenggarakan Kontrak Warp.

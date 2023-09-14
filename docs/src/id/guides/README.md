@@ -1,5 +1,5 @@
 ---
-title: Permaweb Cookbook - Panduan
+locale: id
 ---
 
 # Panduan

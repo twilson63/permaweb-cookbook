@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Hello World (NodeJS)
 
 Panduan ini akan memandu Anda melalui cara paling sederhana untuk mengunggah data ke permaweb menggunakan `arweave-js` dan `bundlr`.

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # ArProfile
 ArProfile adalah Arweave native DID (Decentralized Identifier).
 

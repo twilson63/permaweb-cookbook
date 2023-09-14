@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Vue Starter Kits
 
 Vue.js adalah kerangka kerja JavaScript progresif yang memungkinkan pembuatan antarmuka pengguna. Berbeda dengan kerangka kerja lainnya, Vue.js mengompilasi template menjadi JavaScript saat runtime, sehingga menghasilkan ukuran berkas yang lebih kecil dan kinerja yang lebih cepat. Vue sangat ideal untuk membangun aplikasi satu halaman (single-page applications) yang performa dan skalabilitasnya baik, sehingga membuatnya menjadi pilihan yang populer di kalangan pengembang front-end.

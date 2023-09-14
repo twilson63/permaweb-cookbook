@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Menggunakan GraphQL untuk Mengambil Data dari Arweave
 Arweave menyediakan cara sederhana untuk mengambil transaksi dan menyaringnya berdasarkan [tag](../concepts/tags.md). Layanan indeks kompatibel dengan GraphQL dari Arweave menyediakan titik akhir yang dapat digunakan pengguna untuk mengirim kueri GraphQL, dan juga menyediakan playground untuk mencoba kueri.
 

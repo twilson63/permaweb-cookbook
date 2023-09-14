@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # SDK Execution Machine
 
 SDK JavaScript memungkinkan penggunaan Execution Machine (EXM) dalam aplikasi JavaScript dan TypeScript. Untuk menggunakan SDK, langkah-langkah pengaturan berikut diperlukan.

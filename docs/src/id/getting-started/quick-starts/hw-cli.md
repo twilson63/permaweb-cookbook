@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Hello World (CLI)
 
 Panduan ini akan membantu Anda untuk melakukan hal yang paling sederhana, yaitu mengunggah data ke permaweb menggunakan antarmuka baris perintah (CLI).

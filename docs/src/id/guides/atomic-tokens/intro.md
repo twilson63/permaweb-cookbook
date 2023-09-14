@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Atomic Tokens
 
 ## Apa itu Token Atomic?

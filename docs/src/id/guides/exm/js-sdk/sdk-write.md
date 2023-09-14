@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Menulis ke Fungsi Tanpa Server dengan SDK Execution Machine
 
 Setelah suatu fungsi dideploy, statusnya dapat diperbarui dengan bantuan interaksi tulis. Karena arsitektur unik fungsi tanpa server EXM, logika untuk memperbarui status disimpan bersama dengan status itu sendiri, dan keduanya dapat dirujuk menggunakan `functionId` yang sama. Fungsi dapat memiliki satu operasi atau beberapa operasi untuk memperbarui status sesuai dengan kebutuhan aplikasi, dan argumen untuk panggilan tulis berbeda sesuai dengan itu.

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Aplikasi Permaweb 
 
 Sebuah aplikasi permaweb adalah jenis halaman web atau aplikasi web yang berjalan di peramban Anda. Yang membuatnya menjadi aplikasi permaweb adalah bahwa ia diimplementasikan di Arweave dan disimpan selamanya. Bahkan jika tim yang mengembangkannya berpindah, pengguna dapat yakin bahwa aplikasi permaweb akan tetap online dan tersedia. Keuntungan besar dari aplikasi permaweb adalah bahwa mereka menyimpan data mereka di Arweave, yang berarti data tersebut dengan mudah dapat diimpor ke aplikasi lain yang mungkin lebih baik dari yang Anda gunakan saat ini.

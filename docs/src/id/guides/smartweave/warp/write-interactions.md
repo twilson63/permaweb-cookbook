@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Warp WriteInteractions
 
 Untuk memanggil fungsi pada kontrak SmartWeave, Anda dapat membuat transaksi yang dikenal sebagai SmartWeave action. Tindakan ini mencakup nama fungsi dan parameter input yang diperlukan untuk fungsi pada kontrak SmartWeave. Anda dapat membuat tindakan SmartWeave menggunakan fungsi contract.writeInteraction.

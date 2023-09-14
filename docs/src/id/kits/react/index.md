@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # React Starter Kits
 
 React adalah sebuah library populer yang digunakan untuk membangun antarmuka pengguna. Bersama dengan alat-alat populer lainnya seperti create-react-app, sebuah proyek React dapat dikompilasi menjadi bundel. Bundel ini dapat diunggah sebagai transaksi ke permaweb di mana ia akan berfungsi sebagai aplikasi satu halaman.

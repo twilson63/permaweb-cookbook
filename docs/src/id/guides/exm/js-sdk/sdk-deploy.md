@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Mendeploy Fungsi Tanpa Server dengan Execution Machine SDK
 
 Untuk mendeploy fungsi tanpa server dengan SDK dalam JavaScript, kami membuat script di sini yang memberi tahu komputer kami cara mendeploy fungsi kami ke jaringan.

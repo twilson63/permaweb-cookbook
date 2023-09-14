@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Pengantar SDK Warp (SmartWeave)
 
 Warp adalah SDK Populer untuk Protokol SmartWeave. Dengan Warp dan Bundlr, penyebaran dan interaksi SmartWeave Anda dapat sangat cepat.

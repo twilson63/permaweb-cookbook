@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Membaca dari Fungsi Tanpa Server dengan SDK Execution Machine
 
 Ada dua cara untuk membaca status dari fungsi tanpa server EXM. Seperti yang dijelaskan dalam [pengantar](../intro.md#serverless-functions-on-arweave), EXM menyimpan salinan fungsi pada lapisan cache untuk melayani aplikasi dengan cepat tetapi juga mengunggah fungsi ke Arweave untuk menjaga desentralisasi dan manfaat yang terkait dengannya. Akibatnya, status fungsi dapat dibaca baik dari lapisan cache EXM maupun langsung dari Arweave.

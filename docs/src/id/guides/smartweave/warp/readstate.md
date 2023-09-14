@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # SDK Warp (SmartWeave) - ReadState
 
 Status kontrak SmartWeave dihitung melalui evaluasi malas, yang berarti evaluasi status terjadi saat membaca, bukan saat menulis. Saat membaca kontrak, SDK mengumpulkan semua interaksi status, mengurutkannya, dan menjalankannya terhadap kontrak sumber menggunakan pola reduce atau fold.

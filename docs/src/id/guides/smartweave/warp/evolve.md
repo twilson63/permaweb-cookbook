@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Warp (SmartWeave) SDK - Evolve
 
 Evolve adalah fitur yang memungkinkan pengembang untuk memperbarui kode sumber kontrak pintar tanpa harus mendeploy kontrak baru. Untuk menggunakan fitur ini, Anda harus pertama-tama mengirimkan kode sumber baru menggunakan fungsi `save`. Setelah kode yang diperbarui telah dikonfirmasi di Permaweb, Anda dapat menggunakan fungsi `evolve` untuk mengarahkan kontrak ke ID kode sumber baru. Hal ini memungkinkan Anda untuk memperbarui perilaku kontrak tanpa membuat instansi kontrak baru.

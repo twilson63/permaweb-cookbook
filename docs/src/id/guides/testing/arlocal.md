@@ -1,4 +1,9 @@
+---
+locale: id
+---
+
 # arlocal
+
 `arlocal` adalah alat untuk dengan cepat menyiapkan dan menjalankan lingkungan pengujian Arweave lokal. Ini memungkinkan Anda untuk menguji transaksi pada server mirip gateway Arweave. Ini memungkinkan pengembang menguji aplikasi mereka dalam lingkungan yang disimulasikan sebelum mendeploy mereka ke jaringan Arweave
 
 Tidak ada token $AR yang diperlukan untuk digunakan dan transaksi instan.

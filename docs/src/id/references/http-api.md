@@ -1,3 +1,6 @@
+---
+locale: id
+---
 
 # Arweave peer HTTP API
 Di bawah ini adalah informasi lebih lanjut tentang beberapa endpoint Arweave peer HTTP API yang tidak ada di [panduan terkait](https://docs.arweave.org/developers/server/http-api).

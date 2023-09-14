@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Metadata Transaksi (Tag)
 
 Arweave dapat dianggap sebagai hard drive permanen yang hanya dapat di-append, di mana setiap entri di drive tersebut adalah transaksi uniknya sendiri. Transaksi memiliki ID, tanda tangan, dan alamat pemilik yang melakukan tanda tangan dan membayar untuk transaksi tersebut diposting. Bersama dengan nilai-nilai header tersebut, protokol Arweave memungkinkan pengguna untuk menandai transaksi dengan tag kustom. Tag ini dijelaskan sebagai pasangan nama dan nilai yang ditambahkan ke transaksi. Tag ini membuatnya memungkinkan untuk mengkueri Arweave dan menemukan semua Transaksi yang termasuk tag atau tag tertentu. Kemampuan untuk mengkueri dan menyaring transaksi sangat penting untuk mendukung aplikasi yang dibangun di atas Arweave.

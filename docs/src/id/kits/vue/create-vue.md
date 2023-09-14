@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Create Vue Starter Kit
 
 ## Panduan Memulai

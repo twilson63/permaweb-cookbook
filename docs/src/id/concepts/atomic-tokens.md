@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Konsep dan Prinsip Atomic Token
 
 ![https://arweave.net/bcHI0TW_nH-iTfZnobD9Wt6d0Qe6thWfPrGhnvi1m1A](https://arweave.net/bcHI0TW_nH-iTfZnobD9Wt6d0Qe6thWfPrGhnvi1m1A)

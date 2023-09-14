@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Pengembangan di Permaweb
 
 ## Selamat datang di Permaweb

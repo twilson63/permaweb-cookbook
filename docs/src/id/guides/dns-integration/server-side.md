@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Integrasi DNS ServerSide
 
 Jadi, Anda memiliki aplikasi Permaweb dan itu ada di Permaweb, tetapi Anda juga memiliki domain tertentu yang ingin digunakan pengguna untuk mengakses aplikasi ini. mydomain.com, untuk menghubungkan domain Anda ke aplikasi Permaweb, Anda memiliki beberapa opsi, opsi yang akan kami tunjukkan di sini disebut sebagai pengalihan server-side. Pengalihan ini terjadi sebagai proxy terbalik sehingga pengguna tetap berada di mydomain.com di peramban mereka, sementara di balik layar aplikasi disajikan dari Permaweb.

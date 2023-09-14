@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Execution Machine (EXM)
 
 **Execution Machine (EXM)** adalah platform pengembang yang memberikan kemampuan untuk membuat dan memanfaatkan **fungsi serverless berbasis blockchain (permanent)** tanpa perlu pengetahuan atau akses ke teknologi blockchain seperti dompet dan token.

@@ -1,3 +1,7 @@
+---
+locale: id
+---
+
 # Vite Starter Kit
 
 ## Panduan Memulai
