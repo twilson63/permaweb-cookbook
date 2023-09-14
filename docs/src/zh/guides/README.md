@@ -23,7 +23,7 @@ Permaweb建设模块的简明指南
   - [ar-gql](querying-arweave/ar-gql.md)
   - [搜索服务](querying-arweave/search-indexing-service.md)
 - SmartWeave
-  - [原子令牌](atomic-tokens/intro.md)
+  - [原子代币](atomic-tokens/intro.md)
   - [担保](vouch.md)
   - Warp Contracts
     - [介绍](smartweave/warp/intro.md)
