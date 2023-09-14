@@ -27,7 +27,7 @@ This means hosting and running gateways is separate to running a node securing t
 
 As gateways are not part of the core protocol, there is no built-in incentive structure like the rewards or incentives for mining. This allows gateway operators or external services to choose how they want to structure their incentive system, leading to a more decentralized and democratic model. Individual applications could even operate their own gateway to allow for better caching and performance of their permaweb applications.
 
-Some popular gateways include [arweave.net](https://arweave.net/) ran by the Arweave team, and others like [arweave.live](https://arweave.live/), and [g8way.io](https://g8way.io). However, operating gateways is being made easier and more accessible through teams such as [AR.IO](https://ar.io/). 
+Some popular gateways include [arweave.net](https://arweave.net/) ran by the Arweave team, and others like [arweave.world](https://cookbook.arweave.world/) [arweave.asia](https://cookbook.arweave.asia) [arweave.live](https://arweave.live/), and [g8way.io](https://g8way.io). However, operating gateways is being made easier and more accessible through teams such as [AR.IO](https://ar.io/). 
 
 ### Sources and Further Reading
 
