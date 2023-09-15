@@ -2,8 +2,6 @@
 locale: id
 ---
 
-#  Permaweb Cookbook - Konsep Inti
-
 # Konsep Inti
 
 Dasar-dasar Arweave dan Permaweb.
