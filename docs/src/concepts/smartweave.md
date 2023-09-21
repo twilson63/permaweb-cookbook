@@ -6,9 +6,9 @@ SmartWeave is the name given to the dominant SmartContract paradigm on Arweave. 
 
 ## Why is SmartWeave important?
 
-The state and logic of decentralized applications need to be as censorship resistant, permanent and verifiable as the rest of their data. SmartWeave enables developers to write smart contracts that encapsulate their apps state and logic on-chain and execute it in a trustless verifiable way. This is no small feat as the Arweave protocol does not include incentives for nodes to evaluate smart contract state for the network.
+The state and logic of decentralized applications need to be as censorship-resistant, permanent, and verifiable as the rest of their data. SmartWeave enables developers to write smart contracts that encapsulate their apps state and logic on-chain and execute it in a trustless verifiable way. This is no small feat as the Arweave protocol does not include incentives for nodes to evaluate smart contract state for the network.
 
-SmartWeave provides an immutable append-only pattern for contract interactions that leverages permanent storage to hold onto their state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way. By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build [Permaweb applications](/concepts/permawebApplications.md) with dynamic functionality that can be used in a permissionless and trustless manner.
+SmartWeave provides an immutable append-only pattern for contract interactions that leverage permanent storage to hold onto their state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way. By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build [Permaweb applications](/concepts/permawebApplications.md) with dynamic functionality that can be used in a permissionless and trustless manner.
 
 There are several reasons why developers might choose to use SmartWeave to implement the logic for their permaweb applications:
 
@@ -86,23 +86,34 @@ And here is an example of a **contract** .
 ]
 ```
 
-The resulting state is the current contract state, which the SDK on the client side can use to calculate user balances, contract owners, and other contract specific details. Once the caller has a validated contract state they can build an interaction for the user to deploy to the chain, which upon mining or indexing on a [Gateway](/concepts/gateways.md) will be included the next time someone builds the contract state. 
+The resulting state is the current contract state, which the SDK on the client side can use to calculate user balances, contract owners, and other contract specific details. Once the caller has a validated contract state they can build an interaction for the user to deploy to the chain, which upon mining or indexing on a [Gateway](/concepts/gateways.md) will be included the next time someone builds the contract state.
+
+For a comprehensive overview of the SmartWeave Protocol, its leading implementation Warp Contracts, and more, head to [Warp Academy](https://academy.warp.cc/). Dive into step-by-step tutorials, explore advanced concepts, and uncover how SmartWeave power up the permaweb!
 
 ## Smartweave ecosystem projects
 
-Theres quite a few ecosystem projects leveraging SmartWeave SmartContracts, but here are some of note:
+There's quite a few ecosystem projects leveraging SmartWeave SmartContracts, but here are some of notes:
 
 ### Implementations
 - [Warp](https://warp.cc/) | Main provider of SmartWeave SDK's, tutorials, and helps maintain the SmartWeave protocol.
-- [EXM](https://docs.exm.dev/) | Execution Machine (EXM) is a developer platform that powers the creation and usage of highly available and highly performant applications within a decentralized environment.
+- [MEM](https://www.mem.tech/) | Molecular Execution Machine (MEM) is a developer platform that powers the creation and usage of highly available and highly performant applications within a decentralized environment.
 
 ### Tools
 - [SonAr](https://sonar.warp.cc/#/app/contracts)| SmartWeave contract explorer, created and hosted by Warp.
+
+### Resources
+- [Warp Academy] (https://academy.warp.cc/) | A one-stop shop for all things SmartWeave
 
 ### Apps
 - [Permapages](https://permapages.app/) | Permanent webpage creation tool, ArNS purchase portal, and ANT creation portal. Your profile on the permaweb.
 - [ArNS](arns.md) | Arweave Name System <!-- // todo: update to arns portal when portal is released -->
 - [WeaveDB](https://weavedb.dev/) | NoSQL Database as a Smart Contract.
 - [KwilDB](https://docs.kwil.com/)| SQL Database as a Smart Contract.
-- [ArDrive Inferno](https://ardrive.io/inferno/) | Get PST's for uploading thru Ardrive. 
+- [ArDrive Inferno](https://ardrive.io/inferno/) | Get PST's for uploading thru Ardrive.
+- [Akord](https://akord.com/) | A protocol offering secure storage on Arweave with a seamless UX.
+- [FirstBatch](https://www.firstbatch.xyz/) | FirstBatch aids developers and enterprises in creating personalized, private, and distortion-free AI applications.
+- [Othent](https://othent.io/) | Web3 transactions with existing traditional social logins.
+- [BazAR](https://bazar.arweave.dev/) | Digital content marketplace with real-world rights.
+- [Alex the Archieve](https://alex.arweave.dev/) | A decentralized archival platform utilizing Arweave's immutable storage.
 
+and so much more.
