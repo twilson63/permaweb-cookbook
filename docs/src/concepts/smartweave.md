@@ -102,7 +102,7 @@ There's quite a few ecosystem projects leveraging SmartWeave SmartContracts, but
 - [SonAr](https://sonar.warp.cc/#/app/contracts)| SmartWeave contract explorer, created and hosted by Warp.
 
 ### Resources
-- [Warp Academy] (https://academy.warp.cc/) | A one-stop shop for all things SmartWeave
+- [Warp Academy](https://academy.warp.cc/) | A one-stop shop for all things SmartWeave
 
 ### Apps
 - [Permapages](https://permapages.app/) | Permanent webpage creation tool, ArNS purchase portal, and ANT creation portal. Your profile on the permaweb.
