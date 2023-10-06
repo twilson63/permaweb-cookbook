@@ -1,18 +1,20 @@
 ---
 locale: es
 ---
+
 # Publicación de transacciones usando arweave-js
+
 Las transacciones nativas de Arweave se pueden publicar directamente en un nodo o una puerta de enlace utilizando el paquete `arweave-js`.
 
 ::: info
-Arweave escala a través del uso de paquetes de transacciones. Estos paquetes hacen posible que cada bloque contenga una cantidad casi ilimitada de transacciones. Sin el uso de paquetes, los bloques de Arweave están limitados a 1000 transacciones por bloque (con nuevos bloques producidos cada ~2 minutos). Si su caso de uso excede esta capacidad, es posible que experimente transacciones eliminadas. En estas circunstancias, considere utilizar [bundlr.network](./bundlr.md) u otros servicios similares para agrupar sus transacciones.
+Arweave escala a través del uso de paquetes de transacciones. Estos paquetes hacen posible que cada bloque contenga una cantidad casi ilimitada de transacciones. Sin el uso de paquetes, los bloques de Arweave están limitados a 1000 transacciones por bloque (con nuevos bloques producidos cada ~2 minutos). Si su caso de uso excede esta capacidad, es posible que experimente transacciones eliminadas. En estas circunstancias, considere utilizar [irys.xyz](./irys.md) u otros servicios similares para agrupar sus transacciones.
 :::
 
 ## Instalando el paquete arweave-js
 
 Para instalar `arweave-js`, ejecute:
 <CodeGroup>
-  <CodeGroupItem title="NPM">
+<CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
 npm install --save arweave
@@ -29,6 +31,7 @@ yarn add arweave
 </CodeGroup>
 
 ## Inicializando arweave-js
+
 Las transacciones directas de Capa 1 se publican utilizando la biblioteca `arweave-js`.
 
 ```js:no-line-numbers
@@ -43,7 +46,9 @@ const arweave = Arweave.init({});
 ```
 
 ## Publicar una transacción de billetera a billetera
+
 Una transacción básica para mover tokens AR de una dirección de billetera a otra.
+
 ```js:no-line-numbers
 // crear una transacción de billetera a billetera enviando 10.5AR a la dirección de destino
 let transaction = await arweave.createTransaction({
@@ -59,7 +64,9 @@ const response = await arweave.transactions.post(transaction);
 ```
 
 ## Publicar una transacción de datos
+
 Este ejemplo ilustra cómo cargar un archivo desde el disco y crear una transacción para almacenar sus datos en la red. Puede encontrar el precio actual que la red está cobrando en [https://ar-fees.arweave.dev](https://ar-fees.arweave.dev)
+
 ```js:no-line-numbers
 // cargar los datos desde el disco
 const imageData = fs.readFileSync(`iamges/myImage.png`);
@@ -83,7 +90,9 @@ while (!uploader.isComplete) {
   await uploader.uploadChunk();
 }
 ```
-## Recursos
-* Para obtener una visión general de todas las formas en que puedes publicar transacciones, consulta la sección [Publicación de transacciones](../../concepts/post-transactions.md) del libro de cocina.
 
-* Para obtener una descripción más detallada de las características de `arweave-js`, consulta la documentación [en github](https://github.com/ArweaveTeam/arweave-js).
+## Recursos
+
+-   Para obtener una visión general de todas las formas en que puedes publicar transacciones, consulta la sección [Publicación de transacciones](../../concepts/post-transactions.md) del libro de cocina.
+
+-   Para obtener una descripción más detallada de las características de `arweave-js`, consulta la documentación [en github](https://github.com/ArweaveTeam/arweave-js).

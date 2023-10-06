@@ -8,9 +8,9 @@ Esta guía le ayudará a lograr de forma rápida una página web estática HTML,
 
 ## Requisitos
 
-- [NodeJS](https://nodejs.org) LTS o superior
-- Conocimientos básicos de HTML, CSS y JavaScript
-- Un editor de texto (VS Code, Sublime, u otro similar)
+-   [NodeJS](https://nodejs.org) LTS o superior
+-   Conocimientos básicos de HTML, CSS y JavaScript
+-   Un editor de texto (VS Code, Sublime, u otro similar)
 
 ## Descripción
 
@@ -21,7 +21,7 @@ Usar una terminal/ventana de consola para crear una nueva carpeta llamada `hola-
 ```sh
 cd hola-mundo
 npm init -y
-npm install arweave @bundlr-network/client
+npm install arweave @irys/sdk
 mkdir src && cd src
 touch index.js index.html style.css
 ```
@@ -36,7 +36,7 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 
 ## Crear una página web
 
-Esta página web usa HTML, CSS y JavaScript básicos para crear un botón con estilo que cambia el color del texto del encabezado cuando se hace clic. Una vez completado, usaremos Bundlr y nuestra cartera previamente generada para desplegar una página web completamente funcional, estática y permanente en Arweave.
+Esta página web usa HTML, CSS y JavaScript básicos para crear un botón con estilo que cambia el color del texto del encabezado cuando se hace clic. Una vez completado, usaremos Irys y nuestra cartera previamente generada para desplegar una página web completamente funcional, estática y permanente en Arweave.
 
 Copie el código de los siguientes bloques de código y péguelos en sus archivos:
 
@@ -48,19 +48,19 @@ Copie el código de los siguientes bloques de código y péguelos en sus archivo
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="index.js"></script>
-    <title>¡Cookbook Hola Mundo!</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="index.js"></script>
+		<title>¡Cookbook Hola Mundo!</title>
+	</head>
 
-  <body>
-    <button onclick="changeColor()" class="button">¡Haz clic aquí!</button>
-    <h1 id="main">¡Hola Mundo!</h1>
-  </body>
+	<body>
+		<button onclick="changeColor()" class="button">¡Haz clic aquí!</button>
+		<h1 id="main">¡Hola Mundo!</h1>
+	</body>
 </html>
 ```
 
@@ -74,8 +74,8 @@ Copie el código de los siguientes bloques de código y péguelos en sus archivo
 
 ```css
 .button {
-  padding: "10px";
-  background-color: #4caf50;
+	padding: "10px";
+	background-color: #4caf50;
 }
 ```
 
@@ -89,10 +89,8 @@ Copie el código de los siguientes bloques de código y péguelos en sus archivo
 
 ```javascript
 function changeColor() {
-  const header = document.getElementById("main");
-  header.style.color === ""
-    ? (header.style.color = "red")
-    : (header.style.color = "");
+	const header = document.getElementById("main");
+	header.style.color === "" ? (header.style.color = "red") : (header.style.color = "");
 }
 ```
 
@@ -101,12 +99,12 @@ function changeColor() {
 
 Ahora que hay un sitio estático para desplegar, se puede comprobar para asegurarse de que todo funcione correctamente escribiendo `open src/index.html` en su consola/terminal. Si todo funciona como se espera, ¡es hora de desplegar en Arweave!
 
-## Subir con bundlr
+## Subir con Irys
 
 El comando a continuación despliega el directorio `src` mientras también indica el archivo `index.html` como índice para los manifiestos (relativo a la ruta proporcionada al indicador `upload-dir`).
 
 ```sh
-npx bundlr upload-dir src -h https://node2.bundlr.network --index-file index.html -c arweave -w ./wallet.json
+irys upload-dir src -h https://node2.irys.xyz --index-file index.html -c arweave -w ./wallet.json
 ```
 
 ## ¡¡Felicidades!!

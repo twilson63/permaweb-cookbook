@@ -1,21 +1,22 @@
 ---
 locale: es
 ---
+
 # Kit de Inicio Vite
 
 Esta guía te guiará paso a paso para configurar tu entorno de desarrollo y construir y implementar una aplicación permaweb de React.
 
 ## Requisitos previos
 
-- Conocimientos básicos de TypeScript (no obligatorio) - [https://www.typescriptlang.org/docs/](Aprende TypeScript)
-- NodeJS v16.15.0 o superior - [https://nodejs.org/en/download/](Descargar NodeJS)
-- Conocimientos de ReactJS - [https://reactjs.org/](Aprende ReactJS)
-- Conocimiento de git y comandos de terminal comunes
+-   Conocimientos básicos de TypeScript (no obligatorio) - [https://www.typescriptlang.org/docs/](Aprende TypeScript)
+-   NodeJS v16.15.0 o superior - [https://nodejs.org/en/download/](Descargar NodeJS)
+-   Conocimientos de ReactJS - [https://reactjs.org/](Aprende ReactJS)
+-   Conocimiento de git y comandos de terminal comunes
 
 ## Dependencias de desarrollo
 
-- TypeScript
-- NPM o Yarn Package Manager
+-   TypeScript
+-   NPM o Yarn Package Manager
 
 ## Pasos
 
@@ -132,14 +133,14 @@ touch src/About.tsx
 import { Link } from "react-router-dom";
 
 function HomePage() {
-  return (
-    <div>
-      ¡Bienvenido(a) al Permaweb!
-      <Link to={"/about/"}>
-        <div>Acerca de</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			¡Bienvenido(a) al Permaweb!
+			<Link to={"/about/"}>
+				<div>Acerca de</div>
+			</Link>
+		</div>
+	);
 }
 
 export default HomePage;
@@ -151,14 +152,14 @@ export default HomePage;
 import { Link } from "react-router-dom";
 
 function About() {
-  return (
-    <div>
-      ¡Bienvenido(a) a la página "Acerca de"!
-      <Link to={"/"}>
-        <div>Inicio</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			¡Bienvenido(a) a la página "Acerca de"!
+			<Link to={"/"}>
+				<div>Inicio</div>
+			</Link>
+		</div>
+	);
 }
 
 export default About;
@@ -176,14 +177,14 @@ import HomePage from "./HomePage";
 import About from "./About";
 
 function App() {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/about/"} element={<About />} />
-      </Routes>
-    </HashRouter>
-  );
+	return (
+		<HashRouter>
+			<Routes>
+				<Route path={"/"} element={<HomePage />} />
+				<Route path={"/about/"} element={<About />} />
+			</Routes>
+		</HashRouter>
+	);
 }
 
 export default App;
@@ -222,29 +223,29 @@ Luego, ejecuta este comando en la terminal.
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Configurar Bundlr
+### Configurar Irys
 
-Necesitamos Bundlr para implementar nuestra aplicación en Permaweb, ya que proporciona una carga y recuperación instantáneas de datos.
+Necesitamos Irys para implementar nuestra aplicación en Permaweb, ya que proporciona una carga y recuperación instantáneas de datos.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global @bundlr-network/client
+npm install --global @irys/sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add @bundlr-network/client
+yarn global add @irys/sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-Necesitarás agregar AR a esta billetera y fondear tu billetera de Bundlr para poder cargar esta aplicación. Consulta [https://bundlr.network](https://bundlr.network) y [https://www.arweave.org/](https://www.arweave.org/) para obtener más información.
+Necesitarás agregar AR a esta billetera y fondear tu billetera de Irys para poder cargar esta aplicación. Consulta [https://irys.xyz](https://irys.xyz) y [https://www.arweave.org/](https://www.arweave.org/) para obtener más información.
 :::
 
 ### Actualizar package.json
@@ -254,7 +255,7 @@ Necesitarás agregar AR a esta billetera y fondear tu billetera de Bundlr para p
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir ./dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }

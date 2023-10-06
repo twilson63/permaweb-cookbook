@@ -16,12 +16,12 @@ Transaksi yang dibundle memiliki dukungan untuk lebih banyak ruang tag. Transaks
 
 Beberapa contoh umum dari tag transaksi termasuk:
 
-* `Content-Type`: Digunakan untuk menentukan tipe MIME dari konten untuk ditampilkan di permaweb.
-* `App-Name`: Tag ini menggambarkan aplikasi yang menulis data tersebut.
-* `App-Version`: Tag ini adalah versi aplikasi, dipasangkan dengan App-Name.
-* `Unix-Time`: Tag ini adalah penanda waktu Unix, **detik** sejak epoch.
-* `Title`: Digunakan untuk memberi nama atau deskripsi singkat dari konten yang disimpan dalam transaksi.
-* `Description`: Digunakan untuk memberikan deskripsi yang lebih panjang tentang kontennya.
+-   `Content-Type`: Digunakan untuk menentukan tipe MIME dari konten untuk ditampilkan di permaweb.
+-   `App-Name`: Tag ini menggambarkan aplikasi yang menulis data tersebut.
+-   `App-Version`: Tag ini adalah versi aplikasi, dipasangkan dengan App-Name.
+-   `Unix-Time`: Tag ini adalah penanda waktu Unix, **detik** sejak epoch.
+-   `Title`: Digunakan untuk memberi nama atau deskripsi singkat dari konten yang disimpan dalam transaksi.
+-   `Description`: Digunakan untuk memberikan deskripsi yang lebih panjang tentang kontennya.
 
 Tag transaksi dapat digunakan untuk berbagai tujuan, seperti mengindeks transaksi untuk pencarian, mengorganisir transaksi ke dalam kategori, atau memberikan metadata tentang konten yang disimpan dalam transaksi.
 
@@ -35,14 +35,14 @@ Tag transaksi dapat digunakan dalam kueri GraphQL untuk mengembalikan seperangka
 
 ## Tag Umum yang Digunakan dalam Komunitas
 
-| Nama Tag | Deskripsi | Kasus Penggunaan |
-| -------- | ----------- | --------- |
-| App-Name | Paling sering digunakan untuk Identifier SmartWeave | Nilai umum adalah SmartWeaveContract, SmartWeaveAction, dan SmartWeaveContractSource |
-| App-Version | Versi data ini, bisa merepresentasikan aplikasi yang mengonsumsi informasi ini | 0.3.0 adalah Versi SmartWeave saat ini |
-| Content-Type | Tipe MIME untuk mengidentifikasi data yang terkandung dalam transaksi | text/html, application/json, image/png |
-| Unix-Time | Tag ini adalah penanda waktu Unix, **detik** sejak epoch | Waktu transaksi dikirimkan |
-| Title | Standar ANS-110 untuk mendeskripsikan konten | Memberikan nama untuk Aset Atomic |
-| Type | Standar ANS-110 untuk kategorisasi data | tipe dapat mengelompokkan aset permaweb |
+| Nama Tag     | Deskripsi                                                                      | Kasus Penggunaan                                                                     |
+| ------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| App-Name     | Paling sering digunakan untuk Identifier SmartWeave                            | Nilai umum adalah SmartWeaveContract, SmartWeaveAction, dan SmartWeaveContractSource |
+| App-Version  | Versi data ini, bisa merepresentasikan aplikasi yang mengonsumsi informasi ini | 0.3.0 adalah Versi SmartWeave saat ini                                               |
+| Content-Type | Tipe MIME untuk mengidentifikasi data yang terkandung dalam transaksi          | text/html, application/json, image/png                                               |
+| Unix-Time    | Tag ini adalah penanda waktu Unix, **detik** sejak epoch                       | Waktu transaksi dikirimkan                                                           |
+| Title        | Standar ANS-110 untuk mendeskripsikan konten                                   | Memberikan nama untuk Aset Atomic                                                    |
+| Type         | Standar ANS-110 untuk kategorisasi data                                        | tipe dapat mengelompokkan aset permaweb                                              |
 
 ## Contoh
 
@@ -50,29 +50,28 @@ Tag transaksi dapat digunakan dalam kueri GraphQL untuk mengembalikan seperangka
   <CodeGroupItem title="arweave">
 
 ```ts
-const tx = await arweave.createTransaction({ data: mydata })
-tx.addTag('Content-Type', 'text/html')
-tx.addTag('Title', 'Posting luar biasa saya tentang Tag Transaksi')
-tx.addTag('Description', 'Ini adalah satu posting yang tidak boleh Anda lewatkan!')
-tx.addTag('Topic:Amazing', 'Luar Biasa')
-tx.addTag('Type', 'blog-post')
+const tx = await arweave.createTransaction({ data: mydata });
+tx.addTag("Content-Type", "text/html");
+tx.addTag("Title", "Posting luar biasa saya tentang Tag Transaksi");
+tx.addTag("Description", "Ini adalah satu posting yang tidak boleh Anda lewatkan!");
+tx.addTag("Topic:Amazing", "Luar Biasa");
+tx.addTag("Type", "blog-post");
 
-
-await arweave.transactions.sign(tx, jwk)
-await arweave.transactions.post(tx)
+await arweave.transactions.sign(tx, jwk);
+await arweave.transactions.post(tx);
 ```
 
   </CodeGroupItem>
-  <CodeGroupItem title="@bundlr-network/client">
+  <CodeGroupItem title="@irys/sdk">
 
 ```js
-await bundlr.upload(mydata, [
-  { name: 'Content-Type', value: 'text/html' },
-  { name: 'Title', value: 'Posting luar biasa saya tentang Tag Transaksi' },
-  { name: 'Description', value: 'Ini adalah satu posting yang tidak boleh Anda lewatkan!' },
-  { name: 'Topic:Amazing', value: 'Luar Biasa' },
-  { name: 'Type', value: 'blog-post' }
-])
+await irys.upload(mydata, [
+	{ name: "Content-Type", value: "text/html" },
+	{ name: "Title", value: "Posting luar biasa saya tentang Tag Transaksi" },
+	{ name: "Description", value: "Ini adalah satu posting yang tidak boleh Anda lewatkan!" },
+	{ name: "Topic:Amazing", value: "Luar Biasa" },
+	{ name: "Type", value: "blog-post" },
+]);
 ```
 
   </CodeGroupItem>

@@ -10,7 +10,7 @@ locale: id
 
 Bundle transaksi adalah jenis khusus dari transaksi Arweave. Ini memungkinkan beberapa transaksi dan/atau item data lainnya untuk dibundle di dalamnya. Karena bundle transaksi mengandung banyak transaksi bersarang, mereka merupakan kunci dari kemampuan Arweave untuk melakukan ribuan transaksi per detik.
 
-Pengguna mengirimkan transaksi ke layanan bundling, seperti [Bundlr.network](https://bundlr.network), yang menggabungkannya ke dalam 'bundle' dengan transaksi lainnya dan mengirimkannya ke jaringan.
+Pengguna mengirimkan transaksi ke layanan bundling, seperti [irys.xyz](https://irys.xyz), yang menggabungkannya ke dalam 'bundle' dengan transaksi lainnya dan mengirimkannya ke jaringan.
 
 ### Bagaimana Bundle Membantu Arweave?
 
@@ -34,7 +34,7 @@ Bundle dapat menyimpan hingga 2<sup>256</sup> transaksi, masing-masing dari mere
 
 #### Fleksibilitas
 
-Karena bundling ditangani oleh layanan bundling yang dibangun di atas Arweave, itu membuka kemungkinan untuk membayar penyimpanan dengan mata uang yang berbeda. [Bundlr.network](https://bundlr.network) mendukung pembayaran dalam berbagai token (seperti ETH, MATIC, dan SOL) untuk mengunggah data ke Arweave.
+Karena bundling ditangani oleh layanan bundling yang dibangun di atas Arweave, itu membuka kemungkinan untuk membayar penyimpanan dengan mata uang yang berbeda. [irys.xyz](https://irys.xyz) mendukung pembayaran dalam berbagai token (seperti ETH, MATIC, dan SOL) untuk mengunggah data ke Arweave.
 
 ### Apa Itu Nested Bundle?
 
@@ -50,6 +50,6 @@ Bundle bersarang mungkin berguna ketika Anda memiliki kelompok data yang dibundl
 
 Sumber dan Bacaan Lanjutan:
 
-[Dokumentasi Bundlr](https://docs.bundlr.network)
+[Dokumentasi Irys](https://docs.irys.xyz)
 
 [Standar ANS-104](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md)

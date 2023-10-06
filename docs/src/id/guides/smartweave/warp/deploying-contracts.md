@@ -35,15 +35,14 @@ async function deploy(initState, src) {
 }
 ```
 
-
 ## Empat Cara untuk Menyelenggarakan Kontrak SmartWeave Warp
 
 Ada 4 cara Anda dapat menyelenggarakan Kontrak SmartWeave menggunakan SDK Warp, pilihan-pilihan ini menangani berbagai kasus penggunaan yang mungkin dihadapi oleh pengembang.
 
-* Perlu menyelenggarakan kontrak dengan sumber kode pada saat yang sama.
-* Perlu menyelenggarakan kontrak di mana sumber kode sudah ada di Permaweb.
-* Perlu menyelenggarakan kontrak melalui pengurutan (sequencer) dan mengarahkannya ke beberapa data menggunakan manifes jalur (path manifest).
-* Perlu menyelenggarakan kontrak melalui Bundlr dan mendaftarkan kontrak tersebut pada pengurutan (sequencer).
+-   Perlu menyelenggarakan kontrak dengan sumber kode pada saat yang sama.
+-   Perlu menyelenggarakan kontrak di mana sumber kode sudah ada di Permaweb.
+-   Perlu menyelenggarakan kontrak melalui pengurutan (sequencer) dan mengarahkannya ke beberapa data menggunakan manifes jalur (path manifest).
+-   Perlu menyelenggarakan kontrak melalui Irys dan mendaftarkan kontrak tersebut pada pengurutan (sequencer).
 
 ::: tip
 Untuk informasi lebih lanjut tentang penyelenggaraan Warp, lihat Readme di GitHub untuk proyek ini. [https://github.com/warp-contracts/warp#deployment](https://github.com/warp-contracts/warp#deployment).
@@ -56,28 +55,28 @@ Proyek ini dalam pengembangan cepat, sehingga dokumentasi di sini bisa menjadi u
 ## Contoh
 
 ::: tip
-Secara default, semua fungsi penyelenggaraan akan dipublikasikan ke Arweave melalui Bundlr-Network. Setiap opsi memiliki flag yang dapat diatur untuk tidak menggunakan Bundlr, tetapi mungkin memerlukan banyak konfirmasi untuk jaringan untuk sepenuhnya mengonfirmasi transaksi.
+Secara default, semua fungsi penyelenggaraan akan dipublikasikan ke Arweave melalui Irys. Setiap opsi memiliki flag yang dapat diatur untuk tidak menggunakan Irys, tetapi mungkin memerlukan banyak konfirmasi untuk jaringan untuk sepenuhnya mengonfirmasi transaksi.
 :::
 
 **deploy**
 
-Menyelenggarakan kontrak beserta kode sumber ke Warp Sequencer, ke Bundlr (L2), ke Arweave.
+Menyelenggarakan kontrak beserta kode sumber ke Warp Sequencer, ke Irys (L2), ke Arweave.
 
 ```ts
 const { contractTxId, srcTxId } = await warp.deploy({
-  wallet,
-  initState,
-  data: { 'Content-Type': 'text/html', body: '<h1>Hello World</h1>' },
-  src: contractSrc,
-  tags: [{"name":"AppName", "value":"HelloWorld"}],
-})
+	wallet,
+	initState,
+	data: { "Content-Type": "text/html", body: "<h1>Hello World</h1>" },
+	src: contractSrc,
+	tags: [{ name: "AppName", value: "HelloWorld" }],
+});
 ```
 
-* wallet - seharusnya berupa keyfile Arweave (wallet.json) yang diurai sebagai objek JSON yang mengimplementasikan [JWK Interface](https://rfc-editor.org/rfc/rfc7517) atau string 'use_wallet'.
-* initState - adalah objek JSON yang telah diubah menjadi string.
-* data - opsional jika Anda ingin menulis data sebagai bagian dari penyelenggaraan Anda.
-* src - adalah nilai string atau Uint8Array dari kode sumber kontrak.
-* tags - adalah array dari objek nama/nilai `{name: string, value: string}[]`, [Pelajari lebih lanjut tentang tags](../../../concepts/tags.md).
+-   wallet - seharusnya berupa keyfile Arweave (wallet.json) yang diurai sebagai objek JSON yang mengimplementasikan [JWK Interface](https://rfc-editor.org/rfc/rfc7517) atau string 'use_wallet'.
+-   initState - adalah objek JSON yang telah diubah menjadi string.
+-   data - opsional jika Anda ingin menulis data sebagai bagian dari penyelenggaraan Anda.
+-   src - adalah nilai string atau Uint8Array dari kode sumber kontrak.
+-   tags - adalah array dari objek nama/nilai `{name: string, value: string}[]`, [Pelajari lebih lanjut tentang tags](../../../concepts/tags.md).
 
 **deployFromSourceTx**
 
@@ -85,51 +84,50 @@ Sudah memiliki sumber kode di Permaweb? Maka deployFromSourceTx adalah alat pili
 
 ```ts
 const { contractTxId, srcTxId } = await warp.deployFromSourceTx({
-  wallet,
-  initState,
-  srcTxId: 'SRC_TX_ID'
-})
+	wallet,
+	initState,
+	srcTxId: "SRC_TX_ID",
+});
 ```
 
 **deployBundled**
 
-Menggunakan endpoint Sequencer Warp Gateway untuk mengunggah item data mentah ke Bundlr dan mengindekskannya.
+Menggunakan endpoint Sequencer Warp Gateway untuk mengunggah item data mentah ke Irys dan mengindekskannya.
 
 ```ts
-import { createData } from 'arbundles'
+import { createData } from "arbundles";
 
 const dataItem = createData(
-  JSON.stringify({
-    "manifest": "arweave/paths",
-    "version": "0.1.0",
-    "index": {
-      "path": "index.html"
-    },
-    "paths": {
-      "index.html": {
-        "id": "cG7Hdi_iTQPoEYgQJFqJ8NMpN4KoZ-vH_j7pG4iP7NI"
-      }
-    }
-  })
-  , { tags: [{'Content-Type': 'application/x.arweave-manifest+json' }]})
+	JSON.stringify({
+		manifest: "arweave/paths",
+		version: "0.1.0",
+		index: {
+			path: "index.html",
+		},
+		paths: {
+			"index.html": {
+				id: "cG7Hdi_iTQPoEYgQJFqJ8NMpN4KoZ-vH_j7pG4iP7NI",
+			},
+		},
+	}),
+	{ tags: [{ "Content-Type": "application/x.arweave-manifest+json" }] },
+);
 const { contractTxId } = await warp.deployBundled(dataItem.getRaw());
 ```
 
-
 **register**
 
-Menggunakan endpoint Sequencer Warp Gateway untuk mengindekskan kontrak yang telah diunggah dengan Bundlr.
+Menggunakan endpoint Sequencer Warp Gateway untuk mengindekskan kontrak yang telah diunggah dengan Irys.
 
 ```ts
-import Bundlr from '@bundlr-network/client'
+import Irys from '@irys/sdk'
 
-const bundlr = new Bundlr('https://node2.bundlr.network', 'arweave', wallet)
-const { id } = await bundlr.upload('Some Awesome Atomic Asset',  { 
+const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
+const { id } = await irys.upload('Some Awesome Atomic Asset',  {
   tags: [{'Content-Type': 'text/plain' }]
 })
 const {
-
- contractTxId } = await warp.register(id, 'node2') 
+ contractTxId } = await warp.register(id, 'node2')
 ```
 
 ## Ringkasan

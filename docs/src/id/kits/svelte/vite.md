@@ -72,13 +72,11 @@ Di file `src/App.svelte`, Anda ingin mengkonfigurasi router untuk menggunakan mo
 
 ```html
 <script lang="ts">
-  import { Route, router } from "tinro";
-  router.mode.hash();
-  router.subscribe((_) => window.scrollTo(0, 0));
+	import { Route, router } from "tinro";
+	router.mode.hash();
+	router.subscribe((_) => window.scrollTo(0, 0));
 </script>
-<main>
-
-</main>
+<main></main>
 ```
 
 Fungsi `router.mode.hash` mengaktifkan mode router hash.
@@ -94,28 +92,24 @@ announcer.svelte
 
 ```html
 <script>
-  import { router } from "tinro";
-  $: current = $router.path === "/" ? "Home" : $router.path.slice(1);
+	import { router } from "tinro";
+	$: current = $router.path === "/" ? "Home" : $router.path.slice(1);
 </script>
 
-<div aria-live="assertive" aria-atomic="true">
-  {#key current}
-    Navigated to {current}
-  {/key}
-</div>
+<div aria-live="assertive" aria-atomic="true">{#key current} Navigated to {current} {/key}</div>
 
 <style>
-  div {
-    position: absolute;
-    left: 0;
-    top: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-  }
+	div {
+		position: absolute;
+		left: 0;
+		top: 0;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		overflow: hidden;
+		white-space: nowrap;
+		width: 1px;
+		height: 1px;
+	}
 </style>
 ```
 
@@ -142,19 +136,19 @@ transition.svelte
 
 ```html
 <script lang="ts">
-  ...
-  import Announcer from "./components/announcer.svelte";
-  import Transition from "./components/transition.svelte";
-  ...
+	...
+	import Announcer from "./components/announcer.svelte";
+	import Transition from "./components/transition.svelte";
+	...
 </script>
 <Announcer />
 <Transition>
-  <Route path="/">
-    <Home />
-  </Route>
-  <Route path="/about">
-    <About />
-  </Route>
+	<Route path="/">
+		<Home />
+	</Route>
+	<Route path="/about">
+		<About />
+	</Route>
 </Transition>
 ```
 
@@ -166,14 +160,14 @@ Menambahkan komponen Announcer dan Transition ke sistem routing kita akan menang
 
 ```html
 <script lang="ts">
-let count = 0
+	let count = 0;
 
-function inc() {
-  count += 1
-}
+	function inc() {
+		count += 1;
+	}
 </script>
 <h1>Hello Permaweb</h1>
-<button on:click={inc}>Inc</button>
+<button on:click="{inc}">Inc</button>
 <p>Count: {count}</p>
 <a href="/about">About</a>
 ```
@@ -190,10 +184,9 @@ function inc() {
 
 ```html
 <script lang="ts">
-  ...
-  import Home from './home.svelte'
-  import About from './about.svelte'
-  
+	...
+	import Home from './home.svelte'
+	import About from './about.svelte'
 </script>
 ...
 ```
@@ -207,10 +200,10 @@ yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Instalasi bundlr
+### Instalasi Irys
 
 ```sh
-yarn add -D @bundlr-network/client
+yarn add -D @irys/sdk
 ```
 
 ### Update package.json
@@ -220,7 +213,7 @@ yarn add -D @bundlr-network/client
   ...
   "scripts": {
     ...
-    "deploy": "yarn build && bundlr upload-dir dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "yarn build && irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -231,13 +224,13 @@ yarn add -D @bundlr-network/client
 yarn deploy
 ```
 
-::: tip SUKSES 
+::: tip SUKSES
 Anda sekarang memiliki Aplikasi Svelte di Permaweb! Selamat!
 :::
 
 ::: warning Isi Wallet
-Jika aplikasi Anda lebih dari 120 KB, Anda harus mengisi wallet bundlr Anda. Lihat [https://bundlr.network](https://bundlr.network) untuk informasi lebih lanjut.
-::: 
+Jika aplikasi Anda lebih dari 120 KB, Anda harus mengisi wallet Irys Anda. Lihat [https://irys.xyz](https://irys.xyz) untuk informasi lebih lanjut.
+:::
 
 ## Repositori
 
@@ -247,4 +240,4 @@ Versi lengkap dari contoh ini tersedia di sini: [https://github.com/twilson63/sv
 
 Ini adalah versi minimal dari cara mempublikasikan aplikasi Svelte di Permaweb, tetapi Anda mungkin ingin
 
- memiliki lebih banyak fitur, seperti hot-reloading dan tailwind, dll. Lihat `hypar` untuk starter kit yang sudah jadi. [HypAR](https://github.com/twilson63/hypar)
+memiliki lebih banyak fitur, seperti hot-reloading dan tailwind, dll. Lihat `hypar` untuk starter kit yang sudah jadi. [HypAR](https://github.com/twilson63/hypar)

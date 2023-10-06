@@ -4,13 +4,13 @@ locale: id
 
 # Hello World (NodeJS)
 
-Panduan ini akan memandu Anda melalui cara paling sederhana untuk mengunggah data ke permaweb menggunakan `arweave-js` dan `bundlr`.
+Panduan ini akan memandu Anda melalui cara paling sederhana untuk mengunggah data ke permaweb menggunakan `arweave-js` dan `Irys`.
 
 Dengan Arweave 2.6 hanya memungkinkan 1000 item per blok, pengunggahan langsung ke gateway (misalnya dengan menggunakan `arweave-js`) kemungkinan akan jarang terjadi.
 
 ## Persyaratan
 
-- [NodeJS](https://nodejs.org) LTS atau yang lebih baru
+-   [NodeJS](https://nodejs.org) LTS atau yang lebih baru
 
 ## Deskripsi
 
@@ -21,7 +21,7 @@ Dengan menggunakan jendela terminal atau konsol, buat folder baru bernama `hw-no
 ```sh
 cd hw-nodejs
 npm init -y
-npm install arweave @bundlr-network/client
+npm install arweave @irys/sdk
 ```
 
 ## Membuat sebuah dompet (wallet)
@@ -30,24 +30,30 @@ npm install arweave @bundlr-network/client
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-## Mengunggah menggunakan bundlr (Transaksi Gratis)
+## Mengunggah menggunakan Irys (Transaksi Gratis)
 
 ```js:no-line-numbers
-import Bundlr from "@bundlr-network/client";
+import Irys from "@irys/sdk";
 import fs from "fs";
 
 const jwk = JSON.parse(fs.readFileSync("wallet.json").toString());
+const url = "https://node2.irys.xyz";
+const token = "arweave";
 
-const bundlr = new Bundlr(
-  "http://node2.bundlr.network",
-  "arweave",
-  jwk
-);
+const irys = new Irys({
+	url, // URL of the node you want to connect to
+	token, // Token used for payment and signing
+	jwk, // Arweave wallet
+});
 
-bundlr
-  .upload("Hello world")
-  .then((r) => console.log(`https://arweave.net/${r.id}`))
-  .catch(console.log);
+const dataToUpload = "GM world.";
+
+try {
+	const receipt = await irys.upload(dataToUpload);
+	console.log(`Data uploaded ==> https://arweave.net/${receipt.id}`);
+} catch (e) {
+	console.log("Error uploading data ", e);
+}
 ```
 
 ## Mengunggah menggunakan ArweaveJS
@@ -83,6 +89,6 @@ console.log(`https://arweave.net/${tx.id}`);
 
 ## Sumber Daya
 
-- [SDK Bundlr](https://github.com/Bundlr-Network/js-sdk)
-- [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
-- [Dokumentasi Bundlr: Unggahan Gratis](https://docs.bundlr.network/FAQs/general-faq#does-bundlr-offer-free-uploads)
+-   [SDK Irys](https://github.com/irys-xyz/js-sdk)
+-   [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
+-   [Dokumentasi Irys: Unggahan Gratis](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)

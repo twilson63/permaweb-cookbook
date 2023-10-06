@@ -10,15 +10,15 @@ Panduan ini akan membimbing Anda melalui langkah demi langkah untuk mengonfigura
 
 ## Prasyarat
 
-- Pengetahuan Dasar Typescript (Tidak Wajib) - [Pelajari Typescript](https://www.typescriptlang.org/docs/)
-- NodeJS v16.15.0 atau lebih baru - [Unduh NodeJS](https://nodejs.org/en/download/)
-- Pengetahuan tentang ReactJS - [Pelajari ReactJS](https://reactjs.org/)
-- Mengenal git dan perintah terminal umum
+-   Pengetahuan Dasar Typescript (Tidak Wajib) - [Pelajari Typescript](https://www.typescriptlang.org/docs/)
+-   NodeJS v16.15.0 atau lebih baru - [Unduh NodeJS](https://nodejs.org/en/download/)
+-   Pengetahuan tentang ReactJS - [Pelajari ReactJS](https://reactjs.org/)
+-   Mengenal git dan perintah terminal umum
 
 ## Dependensi Pengembangan
 
-- TypeScript
-- Manajer Paket NPM atau Yarn
+-   TypeScript
+-   Manajer Paket NPM atau Yarn
 
 ## Langkah-Langkah
 
@@ -49,7 +49,6 @@ yarn create react-app permaweb-create-react-app --template typescript
 cd permaweb-create-react-app
 ```
 
-
 ### Pasang react-router-dom
 
 Anda harus menginstal paket ini untuk mengelola routing antara halaman-halaman yang berbeda.
@@ -70,7 +69,6 @@ yarn add react-router-dom -D
 
   </CodeGroupItem>
 </CodeGroup>
-
 
 ### Jalankan Aplikasi
 
@@ -94,7 +92,6 @@ yarn start
 Ini akan memulai server pengembangan baru secara lokal di mesin Anda. Secara default, ini menggunakan `PORT 3000`, jika PORT ini sudah digunakan,
 mungkin Anda akan diminta untuk beralih ke PORT lain yang tersedia di Terminal
 
-
 ### Modifikasi package.json untuk mengandung konfigurasi berikut
 
 ```json
@@ -103,7 +100,6 @@ mungkin Anda akan diminta untuk beralih ke PORT lain yang tersedia di Terminal
   "homepage": ".",
 }
 ```
-
 
 ### Menyiapkan Routing
 
@@ -120,14 +116,14 @@ touch src/About.tsx
 import { Link } from "react-router-dom";
 
 function HomePage() {
-  return (
-    <div>
-      Selamat datang di Permaweb!
-      <Link to={"/about/"}>
-        <div>Tentang</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			Selamat datang di Permaweb!
+			<Link to={"/about/"}>
+				<div>Tentang</div>
+			</Link>
+		</div>
+	);
 }
 
 export default HomePage;
@@ -139,14 +135,14 @@ export default HomePage;
 import { Link } from "react-router-dom";
 
 function About() {
-  return (
-    <div>
-      Selamat datang di halaman About!
-      <Link to={"/"}>
-        <div>Beranda</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			Selamat datang di halaman About!
+			<Link to={"/"}>
+				<div>Beranda</div>
+			</Link>
+		</div>
+	);
 }
 
 export default About;
@@ -164,14 +160,14 @@ import HomePage from "./HomePage";
 import About from "./About";
 
 function App() {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/about/"} element={<About />} />
-      </Routes>
-    </HashRouter>
-  );
+	return (
+		<HashRouter>
+			<Routes>
+				<Route path={"/"} element={<HomePage />} />
+				<Route path={"/about/"} element={<About />} />
+			</Routes>
+		</HashRouter>
+	);
 }
 
 export default App;
@@ -211,29 +207,29 @@ lalu jalankan perintah ini di terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Menyiapkan bundlr
+### Menyiapkan Irys
 
-Kita memerlukan Bundlr untuk mendeploy aplikasi kita ke Permaweb karena Bundlr menyediakan pengunggahan dan pengambilan data instan.
+Kita memerlukan Irys untuk mendeploy aplikasi kita ke Permaweb karena Irys menyediakan pengunggahan dan pengambilan data instan.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global @bundlr-network/client
+npm install --global @irys/sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add @bundlr-network/client
+yarn global add @irys/sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-Anda harus menambahkan AR ke dompet ini dan mendanai dompet Bundlr Anda agar dapat mengunggah aplikasi ini. Lihat [https://bundlr.network](https://bundlr.network) dan [https://www.arweave.org/](https://www.arweave.org/) untuk informasi lebih lanjut.
+Anda harus menambahkan AR ke dompet ini dan mendanai dompet Irys Anda agar dapat mengunggah aplikasi ini. Lihat [https://irys.xyz](https://irys.xyz) dan [https://www.arweave.org/](https://www.arweave.org/) untuk informasi lebih lanjut.
 :::
 
 ### Memperbarui package.json
@@ -243,9 +239,7 @@ Anda harus menambahkan AR ke dompet ini dan mendanai dompet Bundlr Anda agar dap
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir ./build -h https://node2.bundlr
-
-.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./build -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -273,6 +267,7 @@ yarn build
 </CodeGroup>
 
 ### Menjalankan deploy
+
 Akhirnya, kita siap untuk mendeploy aplikasi Permaweb pertama kita
 
 <CodeGroup>
@@ -297,28 +292,28 @@ Sekarang Anda harus memiliki Aplikasi React di Permaweb! Kerja Bagus!
 :::
 
 ::: info ERROR
-Jika Anda menerima kesalahan ini `Not enough funds to send data`, Anda harus mendanai beberapa AR ke dompet Bundlr Anda, dan kemudian coba mendeploynya lagi, jalankan
+Jika Anda menerima kesalahan ini `Not enough funds to send data`, Anda harus mendanai beberapa AR ke dompet Irys Anda, dan kemudian coba mendeploynya lagi, jalankan
 :::
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
+irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
+iryz fund 1479016 -h https://node1.iryz.xyz -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-Nomor 1479016 di atas adalah jumlah AR yang dinyatakan dalam winston, unit terkecil dari AR. Ini akan memakan waktu untuk menyebar ke dompet Bundlr Anda. Kembali dalam 10-20 menit dan coba jalankan lagi proses deployment.
+Nomor 1479016 di atas adalah jumlah AR yang dinyatakan dalam winston, unit terkecil dari AR. Ini akan memakan waktu untuk menyebar ke dompet Irys Anda. Kembali dalam 10-20 menit dan coba jalankan lagi proses deployment.
 :::
 
 ## Repositori
@@ -328,4 +323,3 @@ Versi lengkap dari contoh ini tersedia di sini: [https://github.com/VinceJuliano
 ## Ringkasan
 
 Ini adalah versi Create React App dari cara mempublikasikan aplikasi React di permaweb. Anda mungkin menemukan cara baru untuk mendeploy aplikasi di permaweb atau memeriksa starter kit lain dalam panduan ini!
-

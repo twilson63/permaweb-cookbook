@@ -8,7 +8,7 @@ Panduan ini akan membantu Anda untuk melakukan hal yang paling sederhana, yaitu 
 
 ## Persyaratan
 
-* [NodeJS](https://nodejs.org) LTS atau yang lebih baru
+-   [NodeJS](https://nodejs.org) LTS atau yang lebih baru
 
 ## Deskripsi
 
@@ -19,7 +19,7 @@ Dengan menggunakan jendela terminal atau konsol, buat folder baru bernama `hw-pe
 ```sh
 cd hw-permaweb-1
 npm init -y
-npm install arweave @bundlr-network/client
+npm install arweave @irys/sdk
 ```
 
 ## Membuat sebuah dompet (wallet)
@@ -34,9 +34,8 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 echo "<h1>Halo Permaweb</h1>" > index.html
 ```
 
-## Mengunggah menggunakan bundlr
+## Mengunggah menggunakan Irys
 
 ```sh
-npx bundlr upload index.html -c arweave -h https://node2.bundlr.network -w ./wallet.json
+irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
 ```
-
