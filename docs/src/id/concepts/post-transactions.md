@@ -40,24 +40,24 @@ Contoh cara memposting transaksi langsung menggunakan `arweave-js` dapat ditemuk
 
 Layanan yang dibangun di atas Arweave yang menyediakan utilitas tambahan untuk pembangun Permaweb kadang disebut Layanan Permaweb. Bundler adalah salah satu layanan tersebut. Bundler mengambil beberapa transaksi individu dan menggabungkannya menjadi satu transaksi yang diposting langsung ke Arweave. Dengan cara ini, satu transaksi pada tingkat protokol dapat berisi puluhan ribu transaksi yang digabungkan. Namun, ada satu batasan, hanya transaksi **data** yang dapat dimasukkan dalam bundel. Transaksi **dompet-ke-dompet** (yang mentransfer token **AR** antara alamat dompet) harus dilakukan sebagai transaksi individu yang diposting langsung ke Arweave.
 
-Perbedaan lainnya ketika menggunakan layanan bundling seperti [bundlr.network](https://bundlr.network) adalah Anda harus melakukan deposit kecil pada node bundler yang ingin Anda gunakan sebelum memposting transaksi. Ini memungkinkan layanan bundler untuk mengenakan biaya untuk banyak pengunggahan kecil (atau besar) tanpa overhead penyelesaian transfer token **AR** langsung di Arweave setiap kali.
+Perbedaan lainnya ketika menggunakan layanan bundling seperti [irys.xyz](https://irys.xyz) adalah Anda harus melakukan deposit kecil pada node bundler yang ingin Anda gunakan sebelum memposting transaksi. Ini memungkinkan layanan bundler untuk mengenakan biaya untuk banyak pengunggahan kecil (atau besar) tanpa overhead penyelesaian transfer token **AR** langsung di Arweave setiap kali.
 
-[bundlr.network](https://bundlr.network) memungkinkan klien untuk melakukan deposit dalam sejumlah [mata uang kripto yang didukung](https://docs.bundlr.network/docs/currencies).
+[irys.xyz](https://irys.xyz) memungkinkan klien untuk melakukan deposit dalam sejumlah [mata uang kripto yang didukung](https://docs.irys.xyz/docs/currencies).
 
 ::: info
-Ketika transaksi diposting ke bundlr.network, mereka juga muncul dalam cache optimis gateway yang terhubung sehingga mereka dapat diquery dalam hitungan milidetik.
+Ketika transaksi diposting ke irys.xyz, mereka juga muncul dalam cache optimis gateway yang terhubung sehingga mereka dapat diquery dalam hitungan milidetik.
 :::
 
-Contoh cara memposting transaksi yang dibundel menggunakan `bundlr.network/client` dapat ditemukan [di panduan ini](../guides/posting-transactions/bundlr.md).
+Contoh cara memposting transaksi yang dibundel menggunakan `irys/sdk` dapat ditemukan [di panduan ini](../guides/posting-transactions/irys.md).
 
 ## Transaksi yang Dikirimkan
 
-Cara lain untuk memposting transaksi yang dibundel adalah dari browser. Meskipun browser memberlakukan beberapa kendala seputar ukuran data yang dapat diunggah, dompet berbasis browser mampu memposting transaksi ke bundler. Dompet browser Arweave mengimplementasikan metode API `dispatch()`. Jika Anda memposting transaksi kecil (100KB atau kurang), Anda dapat menggunakan metode `dispatch()` dompet untuk memanfaatkan transaksi yang dibundel bahkan jika `bundlr.network/client` tidak diikutkan dalam aplikasi Anda.
+Cara lain untuk memposting transaksi yang dibundel adalah dari browser. Meskipun browser memberlakukan beberapa kendala seputar ukuran data yang dapat diunggah, dompet berbasis browser mampu memposting transaksi ke bundler. Dompet browser Arweave mengimplementasikan metode API `dispatch()`. Jika Anda memposting transaksi kecil (100KB atau kurang), Anda dapat menggunakan metode `dispatch()` dompet untuk memanfaatkan transaksi yang dibundel bahkan jika `irys/sdk` tidak diikutkan dalam aplikasi Anda.
 
 Contoh cara memposting transaksi yang dibundel sebesar 100KB atau kurang dengan metode `dispatch()` dompet Arweave dapat ditemukan [di panduan ini](../guides/posting-transactions/dispatch.md).
 
 ## Sumber Daya
 
-- Contoh [arweave-js](../guides/posting-transactions/arweave-js.md)
-- Contoh [bundlr.network](../guides/posting-transactions/bundlr.md)
-- Contoh [dispatch](../guides/posting-transactions/dispatch.md)
+-   Contoh [arweave-js](../guides/posting-transactions/arweave-js.md)
+-   Contoh [irys.xyz](../guides/posting-transactions/irys.md)
+-   Contoh [dispatch](../guides/posting-transactions/dispatch.md)

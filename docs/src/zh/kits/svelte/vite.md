@@ -1,6 +1,7 @@
 ---
 locale: zh
 ---
+
 # Svelte/Vite 起始套件
 
 Svelte 是一个可以编译成小型套件的框架，非常适合用于永久网页。作为开发者，我们重视开发体验和使用者体验。此套件使用 `vite` 打包系统，为开发者提供优秀的开发体验。
@@ -46,7 +47,7 @@ Vite 构建后将 index.html 文件放在根目录中，这是您可以添加任
 
 为了建立 hash-router，我们将使用 [tinro](https://github.com/AlexxNB/tinro)。tinro 是一个小型的声明式路由库，类似于 React Router。
 <CodeGroup>
-  <CodeGroupItem title="NPM">
+<CodeGroupItem title="NPM">
 
 ```console
 npm install --save-dev tinro
@@ -68,13 +69,11 @@ yarn add -D tinro
 
 ```html
 <script lang="ts">
-  import { Route, router } from "tinro";
-  router.mode.hash();
-  router.subscribe((_) => window.scrollTo(0, 0));
+	import { Route, router } from "tinro";
+	router.mode.hash();
+	router.subscribe((_) => window.scrollTo(0, 0));
 </script>
-<main>
-
-</main>
+<main></main>
 ```
 
 `router.mode.hash` 函数打开 hash 路由模式。
@@ -90,28 +89,24 @@ announcer.svelte
 
 ```html
 <script>
-  import { router } from "tinro";
-  $: current = $router.path === "/" ? "Home" : $router.path.slice(1);
+	import { router } from "tinro";
+	$: current = $router.path === "/" ? "Home" : $router.path.slice(1);
 </script>
 
-<div aria-live="assertive" aria-atomic="true">
-  {#key current}
-    Navigated to {current}
-  {/key}
-</div>
+<div aria-live="assertive" aria-atomic="true">{#key current} Navigated to {current} {/key}</div>
 
 <style>
-  div {
-    position: absolute;
-    left: 0;
-    top: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-  }
+	div {
+		position: absolute;
+		left: 0;
+		top: 0;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		overflow: hidden;
+		white-space: nowrap;
+		width: 1px;
+		height: 1px;
+	}
 </style>
 ```
 
@@ -138,19 +133,19 @@ transition.svelte
 
 ```html
 <script lang="ts">
-  ...
-  import Announcer from "./components/announcer.svelte";
-  import Transition from "./components/transition.svelte";
-  ...
+	...
+	import Announcer from "./components/announcer.svelte";
+	import Transition from "./components/transition.svelte";
+	...
 </script>
 <Announcer />
 <Transition>
-  <Route path="/">
-    <Home />
-  </Route>
-  <Route path="/about">
-    <About />
-  </Route>
+	<Route path="/">
+		<Home />
+	</Route>
+	<Route path="/about">
+		<About />
+	</Route>
 </Transition>
 ```
 
@@ -162,14 +157,14 @@ transition.svelte
 
 ```html
 <script lang="ts">
-let count = 0
+	let count = 0;
 
-function inc() {
-  count += 1
-}
+	function inc() {
+		count += 1;
+	}
 </script>
 <h1>Hello Permaweb</h1>
-<button on:click={inc}>Inc</button>
+<button on:click="{inc}">Inc</button>
 <p>Count: {count}</p>
 <a href="/about">About</a>
 ```
@@ -186,10 +181,9 @@ function inc() {
 
 ```html
 <script lang="ts">
-  ...
-  import Home from './home.svelte'
-  import About from './about.svelte'
-  
+	...
+	import Home from './home.svelte'
+	import About from './about.svelte'
 </script>
 ...
 ```
@@ -203,10 +197,10 @@ yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### 安裝 bundlr
+### 安裝 Irys
 
 ```sh
-yarn add -D @bundlr-network/client
+yarn add -D @irys/sdk
 ```
 
 ### 更新 package.json
@@ -216,7 +210,7 @@ yarn add -D @bundlr-network/client
   ...
   "scripts": {
     ...
-    "deploy": "yarn build && bundlr upload-dir dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "yarn build && irys upload-dir dist -h https://node2.irys.sdk --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -227,12 +221,12 @@ yarn add -D @bundlr-network/client
 yarn deploy
 ```
 
-::: tip 成功 
+::: tip 成功
 您现在在永久网页上拥有一个 Svelte 应用程序！做得好！
 :::
 
 ::: warning 為錢包充值資金
-如果您的应用程序大小超过 120 KB，您需要为 bundlr 钱包充值资金。请参考  [https://bundlr.network](https://bundlr.network) 以获取更多信息。
+如果您的应用程序大小超过 120 KB，您需要为 Irys 钱包充值资金。请参考 [https://irys.sdk](https://irys.sdk) 以获取更多信息。
 :::
 
 ## 代码库

@@ -8,7 +8,7 @@ Esta guía le guiará a través de la forma más simple de obtener datos en el p
 
 ## Requerimientos
 
-- [NodeJS](https://nodejs.org) LTS o superior
+-   [NodeJS](https://nodejs.org) LTS o superior
 
 ## Descripción
 
@@ -19,7 +19,7 @@ Usando una ventana de terminal / consola, cree una nueva carpeta llamada `hw-per
 ```sh
 cd hw-permaweb-1
 npm init -y
-npm installar arweave @bundlr-network/client
+npm installar arweave @irys/sdk
 ```
 
 ## Generar una billetera
@@ -34,8 +34,8 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 echo "<h1>Hola Permaweb</h1>" > index.html
 ```
 
-## Subir utilizando bundlr
+## Subir utilizando Irys
 
 ```sh
-npx bundlr upload index.html -c arweave -h https://node2.bundlr.network -w ./wallet.json
+irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
 ```

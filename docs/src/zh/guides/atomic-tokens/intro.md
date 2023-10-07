@@ -1,6 +1,7 @@
 ---
 locale: zh
 ---
+
 # 原子代币
 
 ## 什么是原子代币？
@@ -10,20 +11,20 @@ locale: zh
 ## 创建原子代币
 
 ::: info 信息
-在这个示例中，我们使用的是已经在网络上发布的 SWT 合约源代码。[x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) - 
+在这个示例中，我们使用的是已经在网络上发布的 SWT 合约源代码。[x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) -
 :::
 
 example.ts
 
 ```ts
-import Bundlr from '@bundlr-network/client'
+import Irys from '@irys/sdk'
 import { WarpFactory } from 'warp-contracts'
 
 async function main() {
   const wallet = JSON.parse(await import('fs')
     .then(fs => fs.readFileSync('./wallet.json', 'utf-8')))
 
-  const bundlr = new Bundlr('https://node2.bundlr.network', 'arweave', wallet)
+  const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
   const warp = WarpFactory.forMainnet()
 
   const data = `<h1>Hello Permaweb!</h1>`
@@ -52,7 +53,7 @@ async function main() {
     }
   ]
 
-  const { id } = await bundlr.upload(data, { tags })
+  const { id } = await irys.upload(data, { tags })
   await warp.createContract.register(id, 'node2')
   console.log('原子代币：', id)
 }
@@ -65,7 +66,7 @@ main()
 运行示例
 
 ```sh
-npm install @bundlr-network/client warp-contracts 
+npm install @irys/sdk warp-contracts
 npm install typescript ts-node
 npx ts-node example.ts
 ```
@@ -77,7 +78,6 @@ npx ts-node example.ts
 ## 概要
 
 这是一个部署原子资产的简单示例，想了解更详细的示例，请查看：[https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)
-
 
 ## 与代币一起使用
 

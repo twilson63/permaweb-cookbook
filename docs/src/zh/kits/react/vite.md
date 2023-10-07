@@ -1,21 +1,22 @@
 ---
 locale: zh
 ---
+
 # Vite 入门套件
 
 本指南将以一步一步的流程指导您配置开发环境，构建和部署一个永久网络的 React 应用程序。
 
 ## 先决条件
 
-- 基本的 TypeScript 知识（非必需）- [https://www.typescriptlang.org/docs/](了解 TypeScript)
-- NodeJS v16.15.0 或更高版本- [https://nodejs.org/en/download/](下载 NodeJS)
-- 了解 ReactJS- [https://reactjs.org/](了解 ReactJS)
-- 知道 git 和常见的终端命令
+-   基本的 TypeScript 知识（非必需）- [https://www.typescriptlang.org/docs/](了解 TypeScript)
+-   NodeJS v16.15.0 或更高版本- [https://nodejs.org/en/download/](下载 NodeJS)
+-   了解 ReactJS- [https://reactjs.org/](了解 ReactJS)
+-   知道 git 和常见的终端命令
 
 ## 开发依赖
 
-- TypeScript
-- NPM 或 Yarn 包管理器
+-   TypeScript
+-   NPM 或 Yarn 包管理器
 
 ## 步骤
 
@@ -46,7 +47,6 @@ yarn create vite my-arweave-app --template react-ts
 cd my-arweave-app
 ```
 
-
 ### 安装 react-router-dom
 
 您需要安装此包以管理不同页面之间的路由
@@ -67,7 +67,6 @@ yarn add react-router-dom -D
 
   </CodeGroupItem>
 </CodeGroup>
-
 
 ### 运行应用程序
 
@@ -90,7 +89,6 @@ yarn dev
 </CodeGroup>
 它将在本地机器上启动一个新的开发服务器，默认情况下使用 `PORT 3000` ，如果此端口已被占用
 它可能会要求您切换到终端中的另一个可用端口
-
 
 ### 设置钱包类型
 
@@ -133,14 +131,14 @@ touch src/About.tsx
 import { Link } from "react-router-dom";
 
 function HomePage() {
-  return (
-    <div>
-      欢迎来到永久网络！
-      <Link to={"/about/"}>
-        <div>关于</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			欢迎来到永久网络！
+			<Link to={"/about/"}>
+				<div>关于</div>
+			</Link>
+		</div>
+	);
 }
 
 export default HomePage;
@@ -152,14 +150,14 @@ export default HomePage;
 import { Link } from "react-router-dom";
 
 function About() {
-  return (
-    <div>
-      欢迎来到关于页面！
-      <Link to={"/"}>
-        <div>首页</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			欢迎来到关于页面！
+			<Link to={"/"}>
+				<div>首页</div>
+			</Link>
+		</div>
+	);
 }
 
 export default About;
@@ -177,14 +175,14 @@ import HomePage from "./HomePage";
 import About from "./About";
 
 function App() {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/about/"} element={<About />} />
-      </Routes>
-    </HashRouter>
-  );
+	return (
+		<HashRouter>
+			<Routes>
+				<Route path={"/"} element={<HomePage />} />
+				<Route path={"/about/"} element={<About />} />
+			</Routes>
+		</HashRouter>
+	);
 }
 
 export default App;
@@ -225,29 +223,29 @@ yarn add arweave -D
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### 设置 bundlr
+### 设置 Irys
 
-我们需要 Bundlr 将我们的应用程序部署到 Permaweb，它提供即时数据上传和检索
+我们需要 Irys 将我们的应用程序部署到 Permaweb，它提供即时数据上传和检索
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global @bundlr-network/client
+npm install --global @irys/sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add @bundlr-network/client
+yarn global add @irys/sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-您需要为此钱包添加 AR 并向您的 bundlr 钱包提供资金，以便能够上传此应用程序。有关更多信息，请参阅 [https://bundlr.network](https://bundlr.network) 和 [https://www.arweave.org/](https://www.arweave.org/)。
+您需要为此钱包添加 AR 并向您的 Irys 钱包提供资金，以便能够上传此应用程序。有关更多信息，请参阅 [https://irys.xyz](https://irys.xyz) 和 [https://www.arweave.org/](https://www.arweave.org/)。
 :::
 
 ### 更新 package.json
@@ -257,7 +255,7 @@ yarn global add @bundlr-network/client
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir ./dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -285,6 +283,7 @@ yarn build
 </CodeGroup>
 
 ### 运行部署
+
 最后我们可以部署我们的首个 Permaweb 应用程序
 
 <CodeGroup>

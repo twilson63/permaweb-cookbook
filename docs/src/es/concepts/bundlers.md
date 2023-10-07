@@ -12,7 +12,7 @@ Con los servicios de empaquetamiento, los usuarios pueden publicar sus transacci
 
 ---
 
-Puede leer más sobre cómo publicar sus transacciones en un servicio de empaquetamiento [aquí](/guides/posting-transactions/bundlr.md).
+Puede leer más sobre cómo publicar sus transacciones en un servicio de empaquetamiento [aquí](/guides/posting-transactions/irys.md).
 
 ### ¿Qué es un paquete?
 
@@ -26,13 +26,13 @@ Puede encontrar una descripción de los paquetes de transacción y sus beneficio
 
 Un empaquetador es un nodo que se encarga de aceptar transacciones o elementos de datos de los usuarios, empaquetarlos y publicarlos en la red Arweave (con la garantía de que se cargarán con un identificador de transacción específico).
 
-El pionero de los servicios de empaquetamiento y el empaquetador más grande actualmente es [bundlr.network](https://bundlr.network). Los nodos Bundlr ejecutan:
+El pionero de los servicios de empaquetamiento y el empaquetador más grande actualmente es [irys.xyz](https://irys.xyz). Los nodos Irys ejecutan:
 
-- Un proxy inverso de NGINX
-- Procesos de API HTTP
-- Una memoria caché Redis
-- Una base de datos SQL (Postgres)
-- Procesos de trabajador
+-   Un proxy inverso de NGINX
+-   Procesos de API HTTP
+-   Una memoria caché Redis
+-   Una base de datos SQL (Postgres)
+-   Procesos de trabajador
 
 Que aseguran que los datos se mantengan hasta que se carguen en Arweave.
 

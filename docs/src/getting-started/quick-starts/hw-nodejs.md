@@ -1,12 +1,12 @@
 # Hello World (NodeJS)
 
-This guide walks you through the most simple way to get data on to the permaweb using `arweave-js` and `bundlr`.
+This guide walks you through the most simple way to get data on to the permaweb using `arweave-js` and `irys`.
 
 With Arweave 2.6 only allowing 1000 items per block, directly posting to the gateway (eg. using `arweave-js`) will likely be uncommon.
 
 ## Requirements
 
-- [NodeJS](https://nodejs.org) LTS or greater
+-   [NodeJS](https://nodejs.org) LTS or greater
 
 ## Description
 
@@ -17,7 +17,7 @@ Using a terminal/console window create a new folder called `hw-nodejs`.
 ```sh
 cd hw-nodejs
 npm init -y
-npm install arweave @bundlr-network/client
+npm install arweave @irys/sdk
 ```
 
 ## Generate a wallet
@@ -26,24 +26,32 @@ npm install arweave @bundlr-network/client
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-## Upload using bundlr (Free Transactions)
+## Upload using Irys (Previously Bundlr)
+
+Uploads of less than 100 KiB are currently free on Irys' Node 2.
 
 ```js:no-line-numbers
-import Bundlr from "@bundlr-network/client";
+import Irys from "@irys/sdk";
 import fs from "fs";
 
 const jwk = JSON.parse(fs.readFileSync("wallet.json").toString());
+const url = "https://node2.irys.xyz";
+const token = "arweave";
 
-const bundlr = new Bundlr(
-  "http://node2.bundlr.network",
-  "arweave",
-  jwk
-);
+const irys = new Irys({
+	url, // URL of the node you want to connect to
+	token, // Token used for payment and signing
+	jwk, // Arweave wallet
+});
 
-bundlr
-  .upload("Hello world")
-  .then((r) => console.log(`https://arweave.net/${r.id}`))
-  .catch(console.log);
+const dataToUpload = "GM world.";
+
+try {
+	const receipt = await irys.upload(dataToUpload);
+	console.log(`Data uploaded ==> https://arweave.net/${receipt.id}`);
+} catch (e) {
+	console.log("Error uploading data ", e);
+}
 ```
 
 ## Upload using ArweaveJS
@@ -79,6 +87,6 @@ console.log(`https://arweave.net/${tx.id}`);
 
 ## Resources
 
-- [Bundlr SDK](https://github.com/Bundlr-Network/js-sdk)
-- [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
-- [Bundlr Docs: Free Uploads](https://docs.bundlr.network/FAQs/general-faq#does-bundlr-offer-free-uploads)
+-   [Irys SDK](https://github.com/irys-xyz/js-sdk)
+-   [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
+-   [Irys Docs: Free Uploads](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)

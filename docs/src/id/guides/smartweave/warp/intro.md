@@ -4,7 +4,7 @@ locale: id
 
 # Pengantar SDK Warp (SmartWeave)
 
-Warp adalah SDK Populer untuk Protokol SmartWeave. Dengan Warp dan Bundlr, penyebaran dan interaksi SmartWeave Anda dapat sangat cepat.
+Warp adalah SDK Populer untuk Protokol SmartWeave. Dengan Warp dan Irys, penyebaran dan interaksi SmartWeave Anda dapat sangat cepat.
 
 ## Pengenalan
 
@@ -45,26 +45,25 @@ Ketika menggunakan Warp dengan proyek Anda, ada beberapa cara untuk mengimpor SD
   <CodeGroupItem title="Typescript">
 
 ```ts
-import { WarpFactory } from 'warp-contracts'
+import { WarpFactory } from "warp-contracts";
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="ESM">
 
 ```js
-import { WarpFactory } from 'warp-contracts/mjs'
+import { WarpFactory } from "warp-contracts/mjs";
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="CommonJS">
 
 ```js
-const { WarpFactory } = require('warp-contracts')
+const { WarpFactory } = require("warp-contracts");
 ```
 
   </CodeGroupItem>
 </CodeGroup>
-
 
 ## Menghubungkan ke Lingkungan
 
@@ -74,21 +73,21 @@ Ada beberapa lingkungan yang mungkin ingin Anda interaksikan, Anda dapat terhubu
   <CodeGroupItem title="Mainnet">
 
 ```ts
-const warp = WarpFactory.forMainnet()
+const warp = WarpFactory.forMainnet();
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="Testnet">
 
 ```js
-const warp = WarpFactory.forTestnet()
+const warp = WarpFactory.forTestnet();
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="Local">
 
 ```js
-const warp = WarpFactory.forLocal()
+const warp = WarpFactory.forLocal();
 ```
 
   </CodeGroupItem>
@@ -96,15 +95,14 @@ const warp = WarpFactory.forLocal()
 
 ```js
 const warp = WarpFactory.custom(
-  arweave, // arweave-js
-  cacheOptions, // { ...defaultCacheOptions, inMemory: true}
-  environment // 'local', 'testnet', 'mainnet'
-)
+	arweave, // arweave-js
+	cacheOptions, // { ...defaultCacheOptions, inMemory: true}
+	environment, // 'local', 'testnet', 'mainnet'
+);
 ```
 
   </CodeGroupItem>
 </CodeGroup>
-
 
 ::: warning
 Ketika menggunakan lingkungan lokal, Anda akan perlu menjalankan arLocal di port 1984.

@@ -11,26 +11,26 @@ locale: id
 ## Membuat Token Atomic
 
 ::: info INFORMASI
-Untuk contoh ini, kami menggunakan Sumber Kontrak SWT yang sudah dipublikasikan di jaringan. [x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) - 
+Untuk contoh ini, kami menggunakan Sumber Kontrak SWT yang sudah dipublikasikan di jaringan. [x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) -
 :::
 
 example.ts
 
 ```ts
-import Bundlr from '@bundlr-network/client'
+import Irys from '@irys/sdk'
 import { WarpFactory } from 'warp-contracts'
 
 async function main() {
   const wallet = JSON.parse(await import('fs')
     .then(fs => fs.readFileSync('./wallet.json', 'utf-8')))
 
-  const bundlr = new Bundlr('https://node2.bundlr.network', 'arweave', wallet)
+  const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
   const warp = WarpFactory.forMainnet()
 
   const data = `<h1>Halo Permaweb!</h1>`
   const tags = [
     { name: 'Content-Type', value: 'text/html' },
-    // Tag ANS-110 
+    // Tag ANS-110
     { name: 'Type', value: 'web-page' },
     { name: 'Title', value: 'Halaman permaweb pertama saya' },
     { name: 'Description', value: 'Halaman permaweb pertama oleh Anon' },
@@ -53,7 +53,7 @@ async function main() {
     }
   ]
 
-  const { id } = await bundlr.upload(data, { tags })
+  const { id } = await irys.upload(data, { tags })
   await warp.createContract.register(id, 'node2')
   console.log('Token Atomic: ', id)
 }
@@ -66,7 +66,7 @@ Dalam contoh ini, kami membuat item data dan mengunggahnya ke layanan jaringan b
 Jalankan Contoh
 
 ```sh
-npm install @bundlr-network/client warp-contracts 
+npm install @irys/sdk warp-contracts
 npm install typescript ts-node
 npx ts-node example.ts
 ```

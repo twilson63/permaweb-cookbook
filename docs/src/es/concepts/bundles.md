@@ -10,7 +10,7 @@ locale: es
 
 Un paquete de transacciones es un tipo especial de transacción de Arweave. Permite agrupar múltiples transacciones y/o elementos de datos en su interior. Debido a que los paquetes de transacciones contienen muchas transacciones anidadas, son clave para la capacidad de Arweave de escalar a miles de transacciones por segundo.
 
-Los usuarios envían transacciones a un servicio de agrupamiento, como [Bundlr.network](https://bundlr.network), que las combina en un 'paquete' con otras transacciones y las publica en la red.
+Los usuarios envían transacciones a un servicio de agrupamiento, como [irys.xyz](https://irys.xyz), que las combina en un 'paquete' con otras transacciones y las publica en la red.
 
 ### ¿Cómo ayudan los paquetes a Arweave?
 
@@ -33,7 +33,7 @@ Los paquetes pueden guardar hasta 2<sup>256</sup> transacciones, cada una de las
 
 #### Flexibilidad
 
-Dado que el agrupamiento es gestionado por servicios de agrupamiento construidos sobre Arweave, se abre la posibilidad de pagar por el almacenamiento con diferentes monedas. [Bundlr.network](https://bundlr.network) admite pagos en múltiples tokens (como ETH, MATIC y SOL) para cargar datos en Arweave.
+Dado que el agrupamiento es gestionado por servicios de agrupamiento construidos sobre Arweave, se abre la posibilidad de pagar por el almacenamiento con diferentes monedas. [irys.xyz](https://irys.xyz) admite pagos en múltiples tokens (como ETH, MATIC y SOL) para cargar datos en Arweave.
 
 ### ¿Qué son los paquetes anidados?
 
@@ -49,6 +49,6 @@ Los paquetes anidados pueden ser útiles cuando tienes diferentes grupos de dato
 
 Fuentes y lecturas adicionales:
 
-[Docs de Bundlr](https://docs.bundlr.network)
+[Docs de Irys](https://docs.irys.xyz)
 
 [ESTÁNDAR ANS-104](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md)

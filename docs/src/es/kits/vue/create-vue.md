@@ -1,21 +1,22 @@
 ---
 locale: es
 ---
+
 # Crear Starter Kit de Vue
 
 Esta guía proporcionará instrucciones paso a paso para configurar tu entorno de desarrollo y construir una aplicación Vue en la permaweb.
 
 ## Requisitos previos
 
-- Conocimiento básico de TypeScript (no obligatorio) - [Aprende TypeScript](https://www.typescriptlang.org/docs/)
-- NodeJS v16.15.0 o superior - [Descarga NodeJS](https://nodejs.org/en/download/)
-- Conocimiento de Vue.js (preferiblemente Vue 3) - [Aprende Vue.js](https://vuejs.org/)
-- Conocimiento de git y comandos de terminal comunes
+-   Conocimiento básico de TypeScript (no obligatorio) - [Aprende TypeScript](https://www.typescriptlang.org/docs/)
+-   NodeJS v16.15.0 o superior - [Descarga NodeJS](https://nodejs.org/en/download/)
+-   Conocimiento de Vue.js (preferiblemente Vue 3) - [Aprende Vue.js](https://vuejs.org/)
+-   Conocimiento de git y comandos de terminal comunes
 
 ## Dependencias de desarrollo
 
-- TypeScript (opcional)
-- Gestor de paquetes NPM o Yarn
+-   TypeScript (opcional)
+-   Gestor de paquetes NPM o Yarn
 
 ## Pasos
 
@@ -26,17 +27,16 @@ El siguiente comando instala y lanza create-vue, la herramienta oficial de estru
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-
-  ```console:no-line-numbers
-  npm init vue@latest
-  ```
+```console:no-line-numbers
+npm init vue@latest
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn create vue
-  ```
+```console:no-line-numbers
+yarn create vue
+```
 
   </CodeGroupItem>
 </CodeGroup>
@@ -66,16 +66,16 @@ cd <nombre-de-tu-proyecto>
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm install
-  ```
+```console:no-line-numbers
+npm install
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn
-  ```
+```console:no-line-numbers
+yarn
+```
 
   </CodeGroupItem>
 </CodeGroup>
@@ -85,26 +85,26 @@ cd <nombre-de-tu-proyecto>
 Vue Router es el enrutador oficial para Vue.js y se integra perfectamente con Vue. Para que funcione en la permaweb, cambia de un enrutador de historial de navegación (browser history router) a un enrutador de hash (hash router) ya que la URL no se puede enviar al servidor. Cambia `createWebHistory` a `createWebHashHistory` en tu archivo `src/router/index.ts` o `src/router/index.js`.
 
 ```ts
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHashHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
-})
+	history: createWebHashHistory(import.meta.env.BASE_URL),
+	routes: [
+		{
+			path: "/",
+			name: "home",
+			component: HomeView,
+		},
+		{
+			path: "/about",
+			name: "about",
+			component: () => import("../views/AboutView.vue"),
+		},
+	],
+});
 
-export default router
+export default router;
 ```
 
 ### Configurar la compilación
@@ -125,16 +125,16 @@ Antes de continuar, es crucial verificar que todo esté funcionando correctament
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm run dev
-  ```
+```console:no-line-numbers
+npm run dev
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn dev
-  ```
+```console:no-line-numbers
+yarn dev
+```
 
   </CodeGroupItem>
 </CodeGroup>
@@ -143,54 +143,56 @@ esto iniciará un nuevo servidor de desarrollo local en tu máquina, por defecto
 ## Desplegar
 
 ### Generar cartera
+
 Se requiere el paquete `arweave` para generar una cartera.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm install --save arweave
-  ```
+```console:no-line-numbers
+npm install --save arweave
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn add arweave
+```console:no-line-numbers
+yarn add arweave
 
-  ```
+```
 
   </CodeGroupItem>
 </CodeGroup>
 
 Para generar tu cartera, ejecuta el siguiente comando en la terminal:
+
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Instalar Bundlr
+### Instalar Irys
 
-Bundlr es necesario para desplegar tu aplicación en la permaweb, ya que ofrece carga y recuperación instantánea de datos.
+Irys es necesario para desplegar tu aplicación en la permaweb, ya que ofrece carga y recuperación instantánea de datos.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm install --save-dev @bundlr-network/client
-  ```
+```console:no-line-numbers
+npm install --save-dev @irys/sdk
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn add -D @bundlr-network/client
-  ```
+```console:no-line-numbers
+yarn add -D @irys/sdk
+```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info Arweave Wallet
-Para subir esta aplicación, es posible que necesites agregar AR y financiar tu cartera de Bundlr. Visita [https://bundlr.network](https://bundlr.network) y [https://www.arweave.org/](https://www.arweave.org/) para obtener más información.
+Para subir esta aplicación, es posible que necesites agregar AR y financiar tu cartera de Irys. Visita [https://irys.xyz](https://irys.xyz) y [https://www.arweave.org/](https://www.arweave.org/) para obtener más información.
 :::
 
 ### Actualizar package.json
@@ -200,7 +202,7 @@ Para subir esta aplicación, es posible que necesites agregar AR y financiar tu 
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -220,36 +222,37 @@ Ahora es el momento de generar la compilación.
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm run build
-  ```
+```console:no-line-numbers
+npm run build
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn build
-  ```
+```console:no-line-numbers
+yarn build
+```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ### Desplegar
+
 Finalmente estamos listos para desplegar nuestra Primera Aplicación en la Permaweb.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm run deploy
-  ```
+```console:no-line-numbers
+npm run deploy
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn deploy
-  ```
+```console:no-line-numbers
+yarn deploy
+```
 
   </CodeGroupItem>
 </CodeGroup>
@@ -259,14 +262,14 @@ Finalmente estamos listos para desplegar nuestra Primera Aplicación en la Perma
 :::
 
 ::: warning Financiar la cartera
-Si tu aplicación pesa más de 120 KB o recibes el error `Not enough funds to send data`, deberás financiar tu cartera de Bundlr. Consulta [https://bundlr.network](https://bundlr.network) para obtener más información.
+Si tu aplicación pesa más de 120 KB o recibes el error `Not enough funds to send data`, deberás financiar tu cartera de Irys. Consulta [https://irys.xyz](https://irys.xyz) para obtener más información.
 :::
 
 ## Repositorio
 
 Un ejemplo completamente funcional en JavaScript o TypeScript se puede encontrar en esta ubicación.
 
-* Repositorio: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
+-   Repositorio: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
 
 ## Resumen
 

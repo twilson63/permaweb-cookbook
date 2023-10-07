@@ -8,7 +8,7 @@ Sebelum memulai dengan referensi di bawah ini, pastikan Anda telah membaca [Bund
 
 ## Persiapan
 
-Kami akan menggunakan pustaka [arbundles](https://github.com/bundlr-Network/arbundles) yang merupakan implementasi JavaScript dari [spesifikasi ANS-104](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md). ArBundles dilengkapi dengan dukungan TypeScript.
+Kami akan menggunakan pustaka [arbundles](https://github.com/irys-xyz/arbundles) yang merupakan implementasi JavaScript dari [spesifikasi ANS-104](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md). ArBundles dilengkapi dengan dukungan TypeScript.
 
 **Catatan:** Referensi ini mengasumsikan lingkungan NodeJS. Kompatibilitas browser dengan ArBundles memungkinkan tetapi saat ini memerlukan penanganan `Buffer` polyfill. Ini akan diatasi dalam versi ArBundles yang akan datang.
 
@@ -144,7 +144,7 @@ await arweave.transactions.sign(tx, jwk)
 
 ## Mengonsumsi Bundles
 
-**PERINGATAN:** Pastikan bahwa `Buffer` yang Anda berikan kepada `new Bundle(buffer)` berisi sebuah `Bundle`, jika tidak, `Buffer` yang sangat kecil yang diberikan akan mengakibatkan crash pada thread. **JANGAN** menggunakan `new Bundle(buffer)` dalam lingkungan produksi. Sebaliknya, lihat [antarmuka yang dapat di-stream](https://github.com/Bundlr-Network/arbundles/blob/master/src/stream) di repositori ArBundles.
+**PERINGATAN:** Pastikan bahwa `Buffer` yang Anda berikan kepada `new Bundle(buffer)` berisi sebuah `Bundle`, jika tidak, `Buffer` yang sangat kecil yang diberikan akan mengakibatkan crash pada thread. **JANGAN** menggunakan `new Bundle(buffer)` dalam lingkungan produksi. Sebaliknya, lihat [antarmuka yang dapat di-stream](https://github.com/irys-xyz/arbundles/blob/master/src/stream) di repositori ArBundles.
 
 <CodeGroup>
   <CodeGroupItem title="TS">

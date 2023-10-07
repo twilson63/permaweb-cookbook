@@ -8,9 +8,9 @@ Panduan ini akan membimbing Anda untuk dengan cepat mendapatkan halaman web stat
 
 ## Persyaratan
 
-* [NodeJS](https://nodejs.org) LTS atau yang lebih tinggi
-* Pengetahuan dasar tentang HTML, CSS, dan JavaScript
-* Sebuah text editor (seperti VS Code, Sublime, atau sejenisnya)
+-   [NodeJS](https://nodejs.org) LTS atau yang lebih tinggi
+-   Pengetahuan dasar tentang HTML, CSS, dan JavaScript
+-   Sebuah text editor (seperti VS Code, Sublime, atau sejenisnya)
 
 ## Deskripsi
 
@@ -21,7 +21,7 @@ Menggunakan jendela terminal/konsol, buat folder baru bernama `hello-world`.
 ```sh
 cd hello-world
 npm init -y
-npm install arweave @bundlr-network/client
+npm install arweave @irys/sdk
 mkdir src && cd src
 touch index.js index.html style.css
 ```
@@ -36,7 +36,7 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 
 ## Buat halaman web
 
-Halaman web ini menggunakan HTML, CSS, dan JavaScript dasar untuk membuat tombol berdesain yang saat Anda mengkliknya, warna teks judul berubah. Setelah selesai, kita akan menggunakan Bundlr dan dompet yang sudah dibuat sebelumnya untuk mendeploy halaman web statis dan permanen ke Arweave.
+Halaman web ini menggunakan HTML, CSS, dan JavaScript dasar untuk membuat tombol berdesain yang saat Anda mengkliknya, warna teks judul berubah. Setelah selesai, kita akan menggunakan Irys dan dompet yang sudah dibuat sebelumnya untuk mendeploy halaman web statis dan permanen ke Arweave.
 
 Tempelkan kode dari blok kode berikut ke dalam file mereka:
 
@@ -48,20 +48,19 @@ Tempelkan kode dari blok kode berikut ke dalam file mereka:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="index.js"></script>
-  <title>Cookbook Hello World!</title>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="index.js"></script>
+		<title>Cookbook Hello World!</title>
+	</head>
 
-<body>
-  <button onclick="changeColor()" class="button">Click Me!</button>
-  <h1 id="main">Hello World!</h1>
-</body>
-
+	<body>
+		<button onclick="changeColor()" class="button">Click Me!</button>
+		<h1 id="main">Hello World!</h1>
+	</body>
 </html>
 ```
 
@@ -75,8 +74,8 @@ Tempelkan kode dari blok kode berikut ke dalam file mereka:
 
 ```css
 .button {
-  padding: '10px';
-  background-color: #4CAF50;
+	padding: "10px";
+	background-color: #4caf50;
 }
 ```
 
@@ -90,8 +89,8 @@ Tempelkan kode dari blok kode berikut ke dalam file mereka:
 
 ```javascript
 function changeColor() {
-  const header = document.getElementById("main");
-  header.style.color === "" ? header.style.color = "red" : header.style.color = ""
+	const header = document.getElementById("main");
+	header.style.color === "" ? (header.style.color = "red") : (header.style.color = "");
 }
 ```
 
@@ -101,12 +100,12 @@ function changeColor() {
 
 Sekarang bahwa ada situs statis yang akan dideploy, Anda dapat memeriksanya untuk memastikan semuanya berfungsi dengan benar dengan mengetikkan `open src/index.html` di konsol/terminal Anda. Jika semuanya berfungsi seperti yang diharapkan, saatnya mendeploy ke Arweave!
 
-## Unggah menggunakan Bundlr
+## Unggah menggunakan Irys
 
 Perintah di bawah ini mendeploy direktori `src` dan menunjukkan file `index.html` sebagai indeks untuk manifest (relatif terhadap path yang diberikan ke flag `upload-dir`).
 
 ```sh
-npx bundlr upload-dir src -h https://node2.bundlr.network --index-file index.html -c arweave -w ./wallet.json
+irys upload-dir src -h https://node2.irys.xyz --index-file index.html -c arweave -w ./wallet.json
 ```
 
 ## Selamat!!

@@ -4,26 +4,25 @@ This guide walks you through the a quick way to get a static HTML, CSS and JavaS
 
 ## Requirements
 
-* [NodeJS](https://nodejs.org) LTS or greater
-* Basic knowledge of HTML, CSS and JavaScript
-* A text editor (VS Code, Sublime, or similar)
+-   [NodeJS](https://nodejs.org) LTS or greater
+-   Basic knowledge of HTML, CSS and JavaScript
+-   A text editor (VS Code, Sublime, or similar)
 
 ## Description
 
-Using a terminal/console window create a new folder called `hello-world`. 
+Using a terminal/console window create a new folder called `hello-world`.
 
 ## Setup
 
 ```sh
 cd hello-world
 npm init -y
-npm install arweave @bundlr-network/client
+npm install arweave @irys/sdk
 mkdir src && cd src
 touch index.js index.html style.css
 ```
 
 Next open your text editor and import the `hello-world` directory.
-
 
 ## Generate a wallet
 
@@ -32,7 +31,8 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 ```
 
 ## Create a webpage
-This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using Bundlr and our previously generated wallet to deploy a fully functioning, static and permanent webpage to Arweave.
+
+This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using Irys and our previously generated wallet to deploy a fully functioning, static and permanent webpage to Arweave.
 
 Paste the code from the following code blocks into their files:
 
@@ -44,20 +44,19 @@ Paste the code from the following code blocks into their files:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="index.js"></script>
-  <title>Cookbook Hello World!</title>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="index.js"></script>
+		<title>Cookbook Hello World!</title>
+	</head>
 
-<body>
-  <button onclick="changeColor()" class="button">Click Me!</button>
-  <h1 id="main">Hello World!</h1>
-</body>
-
+	<body>
+		<button onclick="changeColor()" class="button">Click Me!</button>
+		<h1 id="main">Hello World!</h1>
+	</body>
 </html>
 ```
 
@@ -71,8 +70,8 @@ Paste the code from the following code blocks into their files:
 
 ```css
 .button {
-  padding: '10px';
-  background-color: #4CAF50;
+	padding: "10px";
+	background-color: #4caf50;
 }
 ```
 
@@ -86,8 +85,8 @@ Paste the code from the following code blocks into their files:
 
 ```javascript
 function changeColor() {
-  const header = document.getElementById("main");
-  header.style.color === "" ? header.style.color = "red" : header.style.color = ""
+	const header = document.getElementById("main");
+	header.style.color === "" ? (header.style.color = "red") : (header.style.color = "");
 }
 ```
 
@@ -97,11 +96,12 @@ function changeColor() {
 
 Now that there is a static site to deploy, it can be checked to ensure it all functions properly by typing `open src/index.html` in your console/terminal. If everything is working as expected it is time to deploy to Arweave!
 
-## Upload using bundlr
+## Upload using Irys (Previously Bundlr)
+
 The command below deploys the `src` directory whilst also indicating the `index.html` file as an index for the manifests (relative to the path provided to `upload-dir` flag).
 
 ```sh
-npx bundlr upload-dir src -h https://node2.bundlr.network --index-file index.html -c arweave -w ./wallet.json
+irys upload-dir src -h https://node2.irys.xyz --index-file index.html -c arweave -w ./wallet.json
 ```
 
 ## Congrats!!

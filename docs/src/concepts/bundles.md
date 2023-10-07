@@ -6,7 +6,7 @@
 
 A transaction bundle is a special type of Arweave transaction. It enables multiple other transactions and/or data items to be bundled inside it. Because transaction bundles contain many nested transactions they are key to Arweave's ability to scale to thousands of transactions per second.
 
-Users submit transactions to a bundling service, such as [Bundlr.network](https://bundlr.network), which combines them into a 'bundle' with other transactions and posts them to the network.
+Users submit transactions to a bundling service, such as [irys.xyz](https://irys.xyz), which combines them into a 'bundle' with other transactions and posts them to the network.
 
 ### How Do Bundles Help Arweave?
 
@@ -18,19 +18,19 @@ Bundling services guarantee that bundled transactions are reliably posted to Arw
 
 Transaction IDs of the bundled transactions are immediately made available, meaning the data can instantly be accessed as if it was already on the Arweave network.
 
-#### Reliability 
+#### Reliability
 
 Transactions posted to Arweave can occasionally fail to confirm (resulting in a dropped transaction) due to a number of reasons, such as high network activity. In these instances transactions can become **orphaned**, i.e. stuck in the mempool and eventually removed.
 
 Bundlers solve this problem by continually attempting to post bundled data to Arweave, assuring that it does not fail or get stuck in the mempool.
 
-#### Scalability 
+#### Scalability
 
 Bundles can store up to 2<sup>256</sup> transactions, each of which are settled as a single transaction on Arweave. This makes Arweave blockspace scale to support almost any use case.
 
 #### Flexibility
 
-As bundling is handled by bundling services built on top of Arweave, it opens up the possibility of paying for storage with different currencies. [Bundlr.network](https://bundlr.network) supports payments in multiple tokens (such as ETH, MATIC, and SOL) for uploading data to Arweave.
+As bundling is handled by bundling services built on top of Arweave, it opens up the possibility of paying for storage with different currencies. [Irys.xyz](https://irys.xyz) supports payments in multiple tokens (such as ETH, MATIC, and SOL) for uploading data to Arweave.
 
 ### What are Nested Bundles?
 
@@ -46,6 +46,6 @@ Nested bundles might be useful for when you have different groups of bundled dat
 
 Sources and Further Reading:
 
-[Bundlr Docs](https://docs.bundlr.network)
+[Irys Docs](https://docs.irys.xyz)
 
 [ANS-104 Standard](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md)

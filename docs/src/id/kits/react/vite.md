@@ -10,15 +10,15 @@ Panduan ini akan membimbing Anda langkah demi langkah untuk mengonfigurasi lingk
 
 ## Persyaratan
 
-- Pengetahuan Dasar TypeScript (Tidak Wajib) - [Pelajari TypeScript](https://www.typescriptlang.org/docs/)
-- NodeJS v16.15.0 atau lebih baru - [Unduh NodeJS](https://nodejs.org/en/download/)
-- Pengetahuan tentang ReactJS - [Pelajari ReactJS](https://reactjs.org/)
-- Mengetahui git dan perintah terminal umum
+-   Pengetahuan Dasar TypeScript (Tidak Wajib) - [Pelajari TypeScript](https://www.typescriptlang.org/docs/)
+-   NodeJS v16.15.0 atau lebih baru - [Unduh NodeJS](https://nodejs.org/en/download/)
+-   Pengetahuan tentang ReactJS - [Pelajari ReactJS](https://reactjs.org/)
+-   Mengetahui git dan perintah terminal umum
 
 ## Dependensi Pengembangan
 
-- TypeScript
-- NPM atau Yarn Package Manager
+-   TypeScript
+-   NPM atau Yarn Package Manager
 
 ## Langkah-langkah
 
@@ -49,7 +49,6 @@ yarn create vite my-arweave-app --template react-ts
 cd my-arweave-app
 ```
 
-
 ### Instalasi react-router-dom
 
 Anda harus menginstal paket ini untuk mengelola routing antara halaman yang berbeda.
@@ -70,7 +69,6 @@ yarn add react-router-dom -D
 
   </CodeGroupItem>
 </CodeGroup>
-
 
 ### Menjalankan Aplikasi
 
@@ -93,7 +91,6 @@ yarn dev
 </CodeGroup>
 Ini akan memulai server pengembangan baru secara lokal di mesin Anda. Secara default, ia menggunakan `PORT 3000`, jika PORT ini sudah digunakan,
 mungkin akan meminta Anda untuk beralih ke PORT lain yang tersedia di Terminal.
-
 
 ### Pengaturan tipe wallet
 
@@ -136,14 +133,14 @@ touch src/About.tsx
 import { Link } from "react-router-dom";
 
 function HomePage() {
-  return (
-    <div>
-      Selamat datang di Permaweb!
-      <Link to={"/about/"}>
-        <div>Tentang</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			Selamat datang di Permaweb!
+			<Link to={"/about/"}>
+				<div>Tentang</div>
+			</Link>
+		</div>
+	);
 }
 
 export default HomePage;
@@ -155,14 +152,14 @@ export default HomePage;
 import { Link } from "react-router-dom";
 
 function About() {
-  return (
-    <div>
-      Selamat datang di halaman About!
-      <Link to={"/"}>
-        <div>Beranda</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			Selamat datang di halaman About!
+			<Link to={"/"}>
+				<div>Beranda</div>
+			</Link>
+		</div>
+	);
 }
 
 export default About;
@@ -180,14 +177,14 @@ import HomePage from "./HomePage";
 import About from "./About";
 
 function App() {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/about/"} element={<About />} />
-      </Routes>
-    </HashRouter>
-  );
+	return (
+		<HashRouter>
+			<Routes>
+				<Route path={"/"} element={<HomePage />} />
+				<Route path={"/about/"} element={<About />} />
+			</Routes>
+		</HashRouter>
+	);
 }
 
 export default App;
@@ -227,29 +224,29 @@ lalu jalankan perintah berikut di terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Pengaturan bundlr
+### Pengaturan Irys
 
-Kita memerlukan Bundlr untuk mendeploy aplikasi kita ke Permaweb karena ini menyediakan pengunggahan dan pengambilan data instan
+Kita memerlukan Irys untuk mendeploy aplikasi kita ke Permaweb karena ini menyediakan pengunggahan dan pengambilan data instan
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global @bundlr-network/client
+npm install --global @irys/sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add @bundlr-network/client
+yarn global add @irys/sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-Anda perlu menambahkan AR ke wallet ini dan mendanai wallet bundlr Anda agar dapat mengunggah aplikasi ini. Lihat [https://bundlr.network](https://bundlr.network) dan [https://www.arweave.org/](https://www.arweave.org/) untuk informasi lebih lanjut.
+Anda perlu menambahkan AR ke wallet ini dan mendanai wallet Irys Anda agar dapat mengunggah aplikasi ini. Lihat [https://irys.xyz](https://irys.xyz) dan [https://www.arweave.org/](https://www.arweave.org/) untuk informasi lebih lanjut.
 :::
 
 ### Perbarui package.json
@@ -259,7 +256,7 @@ Anda perlu menambahkan AR ke wallet ini dan mendanai wallet bundlr Anda agar dap
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir ./dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -287,6 +284,7 @@ yarn build
 </CodeGroup>
 
 ### Jalankan deploy
+
 Akhirnya, kita siap untuk mendeploy Aplikasi Permaweb pertama kita
 
 <CodeGroup>

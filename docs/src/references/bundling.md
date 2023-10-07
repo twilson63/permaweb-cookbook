@@ -5,11 +5,11 @@ Before getting started with any of the below references, make sure you've read
 
 ## Setup
 
-We'll be using the [arbundles](https://github.com/bundlr-Network/arbundles)
+We'll be using the [arbundles](https://github.com/irys-xyz/arbundles)
 library which is a JavaScript implementation of the
-[ANS-104 specification](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md).  ArBundles comes with TypeScript support.
+[ANS-104 specification](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md). ArBundles comes with TypeScript support.
 
-**Note:** This reference assumes a NodeJS environment.  Browser compatibility
+**Note:** This reference assumes a NodeJS environment. Browser compatibility
 with ArBundles is possible but currently requires wrangling `Buffer` polyfills.
 This will be addressed in a future version of ArBundles.
 
@@ -131,7 +131,7 @@ await arweave.transactions.sign(tx, jwk)
 
 ## Sign a `DataItem`
 
-In order to get a `DataItem`'s ID (e.g. for use in a manifest also contained in the same bundle), we must call and `await` its `.sign()` method.  If signing
+In order to get a `DataItem`'s ID (e.g. for use in a manifest also contained in the same bundle), we must call and `await` its `.sign()` method. If signing
 is successful, the `DataItem` will now have their unique ID and signature and
 are ready to be added to a `Bundle`.
 
@@ -152,7 +152,7 @@ const id2 = myOtherDataItem.id
 ## Tagging `DataItem`
 
 `DataItem` can themselves have tags just as Layer 1 Arweave Transactions can
-have tags.  Once an Arweave Gateway unbundles and indexes the `Bundle`, these
+have tags. Once an Arweave Gateway unbundles and indexes the `Bundle`, these
 `DataItem` tags become queryable the same way a Layer 1 Arweave Transaction's
 tags are queryable.
 
@@ -175,9 +175,9 @@ tags are queryable.
 
 **WARNING:** Be sure that the `Buffer` you pass to `new Bundle(buffer)` does
 contain a `Bundle`, otherwise, very small `Buffer` being passed will crash
-the thread.  **DO NOT** use `new Bundle(buffer)` in a production environment.
+the thread. **DO NOT** use `new Bundle(buffer)` in a production environment.
 Instead, see the
-[streamable interface](https://github.com/Bundlr-Network/arbundles/blob/master/src/stream)
+[streamable interface](https://github.com/irys-xyz/arbundles/blob/master/src/stream)
 in the ArBundles repository.
 
 <CodeGroup>

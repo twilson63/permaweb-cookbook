@@ -10,17 +10,17 @@ Panduan ini akan membimbing Anda langkah demi langkah dalam mengkonfigurasi ling
 
 ## Persyaratan
 
-* Mengenal TypeScript
-* NodeJS v18 atau yang lebih tinggi
-* Mengenal Svelte - [https://svelte.dev](https://svelte.dev)
-* Mengenal git dan perintah terminal umum
+-   Mengenal TypeScript
+-   NodeJS v18 atau yang lebih tinggi
+-   Mengenal Svelte - [https://svelte.dev](https://svelte.dev)
+-   Mengenal git dan perintah terminal umum
 
 ## Ketergantungan Pengembangan
 
-* TypeScript
-* esbuild
-* w3
-* yarn `npm i -g yarn`
+-   TypeScript
+-   esbuild
+-   w3
+-   yarn `npm i -g yarn`
 
 ## Langkah-langkah
 
@@ -43,28 +43,28 @@ import sveltePreprocess from "svelte-preprocess";
 
 // Pastikan direktori sudah ada sebelum berkas dimasukkan ke dalamnya
 if (!fs.existsSync("./dist/")) {
-  fs.mkdirSync("./dist/");
+	fs.mkdirSync("./dist/");
 }
 esbuild
-  .build({
-    entryPoints: [`./src/main.ts`],
-    bundle: true,
-    outdir: `./dist`,
-    mainFields: ["svelte", "browser", "module", "main"],
-    // logLevel: `info`,
-    splitting: true,
-    write: true,
-    format: `esm`,
-    plugins: [
-      esbuildSvelte({
-        preprocess: sveltePreprocess(),
-      }),
-    ],
-  })
-  .catch((error, location) => {
-    console.warn(`Errors: `, error, location);
-    process.exit(1);
-  });
+	.build({
+		entryPoints: [`./src/main.ts`],
+		bundle: true,
+		outdir: `./dist`,
+		mainFields: ["svelte", "browser", "module", "main"],
+		// logLevel: `info`,
+		splitting: true,
+		write: true,
+		format: `esm`,
+		plugins: [
+			esbuildSvelte({
+				preprocess: sveltePreprocess(),
+			}),
+		],
+	})
+	.catch((error, location) => {
+		console.warn(`Errors: `, error, location);
+		process.exit(1);
+	});
 
 // Gunakan berkas html dasar untuk pengujian
 fs.copyFileSync("./index.html", "./dist/index.html");
@@ -98,28 +98,25 @@ touch src/about.svelte
 ## Main.ts
 
 ```ts
-import App from './app.svelte'
+import App from "./app.svelte";
 
 new App({
-  target: document.body
-})
+	target: document.body,
+});
 ```
 
 ## app.svelte
 
 ```html
 <script lang="ts">
-import { Route, router } from 'tinro'
-import Counter from './counter.svelte'
-import About from './about.svelte'
+	import { Route, router } from "tinro";
+	import Counter from "./counter.svelte";
+	import About from "./about.svelte";
 
-// tambahkan routing hash untuk dukungan Permaweb
-router.mode.hash()
-
+	// tambahkan routing hash untuk dukungan Permaweb
+	router.mode.hash();
 </script>
-<nav>
-<a href="/">Home</a> | <a href="/about">About</a>
-</nav>
+<nav><a href="/">Home</a> | <a href="/about">About</a></nav>
 <Route path="/"><Counter /></Route>
 <Route path="/about"><About /></Route>
 ```
@@ -132,14 +129,14 @@ Anda akan melihat pengaturan `router.mode.hash()` dalam sesi skrip, ini penting 
 
 ```html
 <script lang="ts">
-let count = 0
+	let count = 0;
 
-function inc() {
-  count += 1
-}
+	function inc() {
+		count += 1;
+	}
 </script>
 <h1>Hello Permaweb</h1>
-<button on:click={inc}>Inc</button>
+<button on:click="{inc}">Inc</button>
 <p>Count: {count}</p>
 ```
 
@@ -160,10 +157,10 @@ yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Instalasi bundlr
+### Instalasi Irys
 
 ```sh
-yarn add -D @bundlr-network/client
+yarn add -D @irys/sdk
 ```
 
 ### Perbarui package.json
@@ -173,7 +170,7 @@ yarn add -D @bundlr-network/client
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -189,7 +186,7 @@ Anda sekarang memiliki Aplikasi Svelte di Permaweb! Hebat!
 :::
 
 ::: warning Isi Wallet
-Jika aplikasi Anda lebih besar dari 120 KB, Anda perlu mengisi wallet bundlr Anda. Lihat [https://bundlr.network](https://bundlr.network) untuk informasi lebih lanjut.
+Jika aplikasi Anda lebih besar dari 120 KB, Anda perlu mengisi wallet Irys Anda. Lihat [https://irys.xyz](https://iryz.xyz) untuk informasi lebih lanjut.
 :::
 
 ## Repositori
