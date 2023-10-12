@@ -11,6 +11,7 @@ Arweave提供了一种简单的查询交易并通过[标签](../concepts/tags.md
 - [arweave.net graphql](https://arweave.net/graphql) 原始的GraphQL端点，由[ar.io](https://ar.io)管理
 - [goldsky search service](https://arweave-search.goldsky.com/graphql) 一个专门针对使用超集的GraphQL语法进行搜索优化的公共服务，由[goldsky](https://goldsky.com)管理
 - [ar.io decentralized indexing](https://ar-io.dev/graphql) 一个去中心化的索引服务网络。目前正在测试中，可用于L1交易。
+- [knn3 arseeding indexing](https://knn3-gateway.knn3.xyz/arseeding/graphql) 一个针对 Arseeding 的交易可以实时查询的服务。
 
 ## 执行GraphQL查询
 要对arweave进行查询，我们需要通过支持GraphQL的索引服务进行访问。使用上面列出的其中一个GraphQL游乐场来开始吧！
