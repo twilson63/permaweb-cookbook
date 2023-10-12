@@ -193,6 +193,10 @@ const getI18NSidebar = (langCode) => [
 						text: "irys.xyz",
 						link: get_i18n_link(langCode, "/guides/deploying-manifests/irys"),
 					},
+					{
+						text: "arseeding-js",
+						link: get_i18n_link(langCode, "/guides/deploying-manifests/arseeding-js"),
+					},
 				],
 			},
 			{
