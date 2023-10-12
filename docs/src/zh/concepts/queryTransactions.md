@@ -40,6 +40,8 @@ const results = await arweave.api.post('/graphql', queryObject);
 
 [https://arweave-search.goldsky.com/graphql](https://arweave-search.goldsky.com/graphql)
 
+[https://knn3-gateway.knn3.xyz/arseeding/graphql](https://knn3-gateway.knn3.xyz/arseeding/graphql)
+
 ## 检查区块
 上传到Arweave的每个数据都有其自己的唯一交易ID，并包含在唯一的区块中，然后添加到区块链中。与每个交易关联的数据被分割为256KB的块，并按顺序追加到Arweave的数据集中。可以从[当前区块](https://arweave.net/block/current)开始，逐个区块倒退，并检查其中的交易ID。找到后，可以从区块中检索到块的偏移量，并用于直接向Arweave节点请求块。这是在网络上定位和读取数据的最低级别方法。幸运的是，还有可用的工具，比如[GraphQL](#graphql)，可以减少工作量。
 
