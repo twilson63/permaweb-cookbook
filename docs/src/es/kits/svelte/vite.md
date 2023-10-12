@@ -1,9 +1,10 @@
 ---
 locale: es
 ---
+
 # Kit de inicio de Svelte/Vite
 
-Svelte es el marco que se compila rápidamente, lo que da como resultado paquetes pequeños, perfectos para la permaweb. Como desarrolladores, valoramos la experiencia de desarrollo tanto como la experiencia de usuario. Este kit utiliza el sistema de paquetes `vite` para brindar a los desarrolladores una gran experiencia de desarrollo (DX). 
+Svelte es el marco que se compila rápidamente, lo que da como resultado paquetes pequeños, perfectos para la permaweb. Como desarrolladores, valoramos la experiencia de desarrollo tanto como la experiencia de usuario. Este kit utiliza el sistema de paquetes `vite` para brindar a los desarrolladores una gran experiencia de desarrollo (DX).
 
 ## Instalando vite con svelte y typescript
 
@@ -69,13 +70,11 @@ En el archivo `src/App.svelte`, debes configurar el enrutador para que utilice e
 
 ```html
 <script lang="ts">
-  import { Route, router } from "tinro";
-  router.mode.hash();
-  router.subscribe((_) => window.scrollTo(0, 0));
+	import { Route, router } from "tinro";
+	router.mode.hash();
+	router.subscribe((_) => window.scrollTo(0, 0));
 </script>
-<main>
-
-</main>
+<main></main>
 ```
 
 La función `router.mode.hash` activa el modo de enrutamiento hash.
@@ -91,28 +90,24 @@ announcer.svelte
 
 ```html
 <script>
-  import { router } from "tinro";
-  $: current = $router.path === "/" ? "Inicio" : $router.path.slice(1);
+	import { router } from "tinro";
+	$: current = $router.path === "/" ? "Inicio" : $router.path.slice(1);
 </script>
 
-<div aria-live="assertive" aria-atomic="true">
-  {#key current}
-    Navegaste a {current}
-  {/key}
-</div>
+<div aria-live="assertive" aria-atomic="true">{#key current} Navegaste a {current} {/key}</div>
 
 <style>
-  div {
-    position: absolute;
-    left: 0;
-    top: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-  }
+	div {
+		position: absolute;
+		left: 0;
+		top: 0;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		overflow: hidden;
+		white-space: nowrap;
+		width: 1px;
+		height: 1px;
+	}
 </style>
 ```
 
@@ -139,19 +134,19 @@ transition.svelte
 
 ```html
 <script lang="ts">
-  ...
-  import Announcer from "./components/announcer.svelte";
-  import Transition from "./components/transition.svelte";
-  ...
+	...
+	import Announcer from "./components/announcer.svelte";
+	import Transition from "./components/transition.svelte";
+	...
 </script>
 <Announcer />
 <Transition>
-  <Route path="/">
-    <Home />
-  </Route>
-  <Route path="/about">
-    <About />
-  </Route>
+	<Route path="/">
+		<Home />
+	</Route>
+	<Route path="/about">
+		<About />
+	</Route>
 </Transition>
 ```
 
@@ -163,14 +158,14 @@ Agregando los componentes Announcer y Transition a nuestro sistema de enrutamien
 
 ```html
 <script lang="ts">
-let count = 0
+	let count = 0;
 
-function inc() {
-  count += 1
-}
+	function inc() {
+		count += 1;
+	}
 </script>
 <h1>Hola Permaweb</h1>
-<button on:click={inc}>Incrementar</button>
+<button on:click="{inc}">Incrementar</button>
 <p>Conteo: {count}</p>
 <a href="/about">Acerca de</a>
 ```
@@ -187,10 +182,9 @@ function inc() {
 
 ```html
 <script lang="ts">
-  ...
-  import Home from './home.svelte'
-  import About from './about.svelte'
-  
+	...
+	import Home from './home.svelte'
+	import About from './about.svelte'
 </script>
 ...
 ```
@@ -204,10 +198,10 @@ yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Instalar Bundlr
+### Instalar Irys
 
 ```sh
-yarn add -D @bundlr-network/client
+yarn add -D @irys/sdk
 ```
 
 ### Actualizar package.json
@@ -217,7 +211,7 @@ yarn add -D @bundlr-network/client
   ...
   "scripts": {
     ...
-    "deploy": "yarn build && bundlr upload-dir dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "yarn build && irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -228,13 +222,13 @@ yarn add -D @bundlr-network/client
 yarn deploy
 ```
 
-::: tip ÉXITO 
+::: tip ÉXITO
 ¡Ahora deberías tener una aplicación Svelte en la Permaweb! ¡Buen trabajo!
 :::
 
 ::: warning Financiar la billetera
-Si tu aplicación pesa más de 120 kb, deberás financiar tu billetera de bundlr. Consulta [https://bundlr.network](https://bundlr.network) para obtener más información.
-::: 
+Si tu aplicación pesa más de 120 kb, deberás financiar tu billetera de Irys. Consulta [https://irys.xyz](https://irys.xyz) para obtener más información.
+:::
 
 ## Repositorio
 

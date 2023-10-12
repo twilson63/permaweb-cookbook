@@ -8,7 +8,7 @@ Antes de comenzar con las referencias a continuación, asegúrate de haber leíd
 
 ## Configuración
 
-Utilizaremos la biblioteca [arbundles](https://github.com/bundlr-Network/arbundles), que es una implementación en JavaScript de la [especificación ANS-104](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md). ArBundles cuenta con soporte para TypeScript.
+Utilizaremos la biblioteca [arbundles](https://github.com/irys-xyz/arbundles), que es una implementación en JavaScript de la [especificación ANS-104](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md). ArBundles cuenta con soporte para TypeScript.
 
 **Nota:** Esta referencia asume un entorno de NodeJS. La compatibilidad con el navegador y ArBundles es posible, pero actualmente requiere la manipulación de polifills de `Buffer`. Esto se abordará en una versión futura de ArBundles.
 
@@ -162,7 +162,7 @@ Los `DataItem` pueden tener etiquetas, al igual que las transacciones de Arweave
 
 ## Consumir Bundles
 
-**ADVERTENCIA:** Asegúrate de que el `Buffer` que pasas a `new Bundle(buffer)` contenga un `Bundle`, de lo contrario, pasar un `Buffer` muy pequeño hará que se bloquee el hilo. **NO** utilices `new Bundle(buffer)` en un entorno de producción. En su lugar, consulta la [interfaz para transmisión](https://github.com/Bundlr-Network/arbundles/blob/master/src/stream) en el repositorio de ArBundles.
+**ADVERTENCIA:** Asegúrate de que el `Buffer` que pasas a `new Bundle(buffer)` contenga un `Bundle`, de lo contrario, pasar un `Buffer` muy pequeño hará que se bloquee el hilo. **NO** utilices `new Bundle(buffer)` en un entorno de producción. En su lugar, consulta la [interfaz para transmisión](https://github.com/irys-xyz/arbundles/blob/master/src/stream) en el repositorio de ArBundles.
 
 <CodeGroup>
   <CodeGroupItem title="TS">

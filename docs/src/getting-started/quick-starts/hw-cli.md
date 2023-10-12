@@ -4,20 +4,19 @@ This guide walks you through the most simple way to get data on to the permaweb 
 
 ## Requirements
 
-* [NodeJS](https://nodejs.org) LTS or greater
+-   [NodeJS](https://nodejs.org) LTS or greater
 
 ## Description
 
-Using a terminal/console window create a new folder called `hw-permaweb-1`. 
+Using a terminal/console window create a new folder called `hw-permaweb-1`.
 
 ## Setup
 
 ```sh
 cd hw-permaweb-1
 npm init -y
-npm install arweave @bundlr-network/client
+npm install arweave @irys/sdk
 ```
-
 
 ## Generate a wallet
 
@@ -31,9 +30,8 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 echo "<h1>Hello Permaweb</h1>" > index.html
 ```
 
-## Upload using bundlr
+## Upload using Irys (Previously Bundlr)
 
 ```sh
-npx bundlr upload index.html -c arweave -h https://node2.bundlr.network -w ./wallet.json
+irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
 ```
-

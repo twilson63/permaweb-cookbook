@@ -1,24 +1,23 @@
 # Transaction Metadata (Tags)
 
-Arweave can be thought of as a permanent append-only hard drive where each entry on the drive is its own unique transaction. Transactions have a unique ID, signature, and owner address for the address that signed and paid for the transaction to be posted. Along with those header values, the Arweave protocol allows users to tag transactions with custom tags. These are specified as a collection name value pairs appended to the transaction. These tags make it possible to query Arweave and find all the Transactions that include a particular tag or tags.  The ability to query and filter transactions is critical to supporting apps built on Arweave.
+Arweave can be thought of as a permanent append-only hard drive where each entry on the drive is its own unique transaction. Transactions have a unique ID, signature, and owner address for the address that signed and paid for the transaction to be posted. Along with those header values, the Arweave protocol allows users to tag transactions with custom tags. These are specified as a collection name value pairs appended to the transaction. These tags make it possible to query Arweave and find all the Transactions that include a particular tag or tags. The ability to query and filter transactions is critical to supporting apps built on Arweave.
 
 ## What are Transaction Tags?
 
-Transaction tags are key-value pairs, where the combination of base64URL keys and values must be less than the maximum of 2048 bytes for an arweave native transaction. 
+Transaction tags are key-value pairs, where the combination of base64URL keys and values must be less than the maximum of 2048 bytes for an arweave native transaction.
 
 ::: tip
 Bundled transactions have support for more tag space. Transactions posted via bundler.network have up to 4096 bytes of tag space.
 :::
 
-
 Some common examples of transaction tags include:
 
-* `Content-Type`: Used to specify the MIME type of content for render on the permaweb.
-* `App-Name`: This tag describes the app that is writing the data
-* `App-Version`: This tag is the version of the app, paired with App-Name
-* `Unix-Time`: This tag is the a unix timestamp, **seconds** since epoch.
-* `Title`: Used to give a name or brief description of the content stored in the transaction.
-* `Description`: Used to provide a longer description of the content.
+-   `Content-Type`: Used to specify the MIME type of content for render on the permaweb.
+-   `App-Name`: This tag describes the app that is writing the data
+-   `App-Version`: This tag is the version of the app, paired with App-Name
+-   `Unix-Time`: This tag is the a unix timestamp, **seconds** since epoch.
+-   `Title`: Used to give a name or brief description of the content stored in the transaction.
+-   `Description`: Used to provide a longer description of the content.
 
 Transaction tags can be used for a variety of purposes, such as indexing transactions for search, organizing transactions into categories, or providing metadata about the content stored in a transaction.
 
@@ -32,14 +31,14 @@ Transaction tags can be used in GraphQL queries to return a filtered set of tran
 
 ## Common Tags used in the community
 
-| <div style="width:100px">Tag Name</div>  | Description | Use Cases |
-| -------- | ----------- | --------- |
-| App-Name | Most commonly used for SmartWeave Identifiers | Common values are SmartWeaveContract, SmartWeaveAction, and SmartWeaveContractSource |
-| App-Version | The version of this data, it may represent the app consuming this information | 0.3.0 is the current SmartWeave Version |
-| Content-Type | MIME Type to identify the data contained in the transaction | text/html, application/json, image/png |
-| Unix-Time | This tag is the a unix timestamp, **seconds** since epoch | The time the transaction is submitted |
-| Title | ANS-110 Standard for describing content | Providing a name for an Atomic Asset |
-| Type | ANS-110 Standard for categorization of data | a type can classify a permaweb asset | 
+| <div style="width:100px">Tag Name</div> | Description                                                                   | Use Cases                                                                            |
+| --------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| App-Name                                | Most commonly used for SmartWeave Identifiers                                 | Common values are SmartWeaveContract, SmartWeaveAction, and SmartWeaveContractSource |
+| App-Version                             | The version of this data, it may represent the app consuming this information | 0.3.0 is the current SmartWeave Version                                              |
+| Content-Type                            | MIME Type to identify the data contained in the transaction                   | text/html, application/json, image/png                                               |
+| Unix-Time                               | This tag is the a unix timestamp, **seconds** since epoch                     | The time the transaction is submitted                                                |
+| Title                                   | ANS-110 Standard for describing content                                       | Providing a name for an Atomic Asset                                                 |
+| Type                                    | ANS-110 Standard for categorization of data                                   | a type can classify a permaweb asset                                                 |
 
 ## Examples
 
@@ -47,29 +46,28 @@ Transaction tags can be used in GraphQL queries to return a filtered set of tran
   <CodeGroupItem title="arweave">
 
 ```ts
-const tx = await arweave.createTransaction({ data: mydata })
-tx.addTag('Content-Type', 'text/html')
-tx.addTag('Title', 'My incredible post about Transaction Tags')
-tx.addTag('Description', 'This is one post you do not want to miss!')
-tx.addTag('Topic:Amazing', 'Amazing')
-tx.addTag('Type', 'blog-post')
+const tx = await arweave.createTransaction({ data: mydata });
+tx.addTag("Content-Type", "text/html");
+tx.addTag("Title", "My incredible post about Transaction Tags");
+tx.addTag("Description", "This is one post you do not want to miss!");
+tx.addTag("Topic:Amazing", "Amazing");
+tx.addTag("Type", "blog-post");
 
-
-await arweave.transactions.sign(tx, jwk)
-await arweave.transactions.post(tx)
+await arweave.transactions.sign(tx, jwk);
+await arweave.transactions.post(tx);
 ```
 
   </CodeGroupItem>
-  <CodeGroupItem title="@bundlr-network/client">
+  <CodeGroupItem title="@irys/sdk">
 
 ```js
-await bundlr.upload(mydata, [
-  { name: 'Content-Type', value: 'text/html' },
-  { name: 'Title', value: 'My incredible post about Transaction Tags' },
-  { name: 'Description', value: 'This one post you do not want to miss!' },
-  { name: 'Topic:Amazing', value: 'Amazing' },
-  { name: 'Type', value: 'blog-post' }
-])
+await irys.upload(mydata, [
+	{ name: "Content-Type", value: "text/html" },
+	{ name: "Title", value: "My incredible post about Transaction Tags" },
+	{ name: "Description", value: "This one post you do not want to miss!" },
+	{ name: "Topic:Amazing", value: "Amazing" },
+	{ name: "Type", value: "blog-post" },
+]);
 ```
 
   </CodeGroupItem>

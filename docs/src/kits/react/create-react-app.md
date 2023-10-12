@@ -4,15 +4,15 @@ This guide will walk you through in a step by step flow to configure your develo
 
 ## Prerequisites
 
-- Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
-- NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
-- Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
-- Know git and common terminal commands
+-   Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
+-   NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
+-   Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
+-   Know git and common terminal commands
 
 ## Development Dependencies
 
-- TypeScript
-- NPM or Yarn Package Manager
+-   TypeScript
+-   NPM or Yarn Package Manager
 
 ## Steps
 
@@ -43,7 +43,6 @@ yarn create react-app permaweb-create-react-app --template typescript
 cd permaweb-create-react-app
 ```
 
-
 ### Install react-router-dom
 
 You have to install this package to manage routing between different pages
@@ -64,7 +63,6 @@ yarn add react-router-dom -D
 
   </CodeGroupItem>
 </CodeGroup>
-
 
 ### Run the App
 
@@ -88,7 +86,6 @@ yarn start
 This will start a new development server locally on your machine. By default it uses `PORT 3000`, if this PORT is already in use
 it may ask you to switch to another available PORT in Terminal
 
-
 ### Modify the package.json to contain the following config
 
 ```json
@@ -97,7 +94,6 @@ it may ask you to switch to another available PORT in Terminal
   "homepage": ".",
 }
 ```
-
 
 ### Setup Routing
 
@@ -114,14 +110,14 @@ touch src/About.tsx
 import { Link } from "react-router-dom";
 
 function HomePage() {
-  return (
-    <div>
-      Welcome to the Permaweb!
-      <Link to={"/about/"}>
-        <div>About</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			Welcome to the Permaweb!
+			<Link to={"/about/"}>
+				<div>About</div>
+			</Link>
+		</div>
+	);
 }
 
 export default HomePage;
@@ -133,14 +129,14 @@ export default HomePage;
 import { Link } from "react-router-dom";
 
 function About() {
-  return (
-    <div>
-      Welcome to the About page!
-      <Link to={"/"}>
-        <div>Home</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			Welcome to the About page!
+			<Link to={"/"}>
+				<div>Home</div>
+			</Link>
+		</div>
+	);
 }
 
 export default About;
@@ -158,14 +154,14 @@ import HomePage from "./HomePage";
 import About from "./About";
 
 function App() {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/about/"} element={<About />} />
-      </Routes>
-    </HashRouter>
-  );
+	return (
+		<HashRouter>
+			<Routes>
+				<Route path={"/"} element={<HomePage />} />
+				<Route path={"/about/"} element={<About />} />
+			</Routes>
+		</HashRouter>
+	);
 }
 
 export default App;
@@ -206,29 +202,29 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Setup bundlr
+### Setup Irys
 
-We need Bundlr to deploy our app to Permaweb it provides instant data upload and retrieval
+We need Irys to deploy our app to Permaweb it provides instant data upload and retrieval
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global @bundlr-network/client
+npm install --global @irys/sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add @bundlr-network/client
+yarn global add @irys/sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-You will need to add AR to this wallet and fund your bundlr wallet to be able to upload this app. See [https://bundlr.network](https://bundlr.network) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
+You will need to add AR to this wallet and fund your Irys wallet to be able to upload this app. See [https://irys.xyz](https://irys.xyz) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
 :::
 
 ### Update package.json
@@ -238,7 +234,7 @@ You will need to add AR to this wallet and fund your bundlr wallet to be able to
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir ./build -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./build -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -266,6 +262,7 @@ yarn build
 </CodeGroup>
 
 ### Run deploy
+
 Finally we are good to deploy our first Permaweb Application
 
 <CodeGroup>
@@ -290,28 +287,28 @@ You should now have a React Application on the Permaweb! Great Job!
 :::
 
 ::: info ERROR
-If you receive this error `Not enough funds to send data`, you have to fund some AR into your Bundlr wallet, and then try to deploy it again, run
+If you receive this error `Not enough funds to send data`, you have to fund some AR into your Irys wallet, and then try to deploy it again, run
 :::
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
+irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
+irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-The above number 1479016 is an amount of AR expressed in winston, the smallest unit of AR. This will take some time to propagate to your Bundlr wallet. Come back in 10-20 minutes and try to run the deployment again.
+The above number 1479016 is an amount of AR expressed in winston, the smallest unit of AR. This will take some time to propagate to your Irys wallet. Come back in 10-20 minutes and try to run the deployment again.
 :::
 
 ## Repository

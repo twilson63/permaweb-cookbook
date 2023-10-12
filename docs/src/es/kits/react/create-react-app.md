@@ -1,21 +1,22 @@
 ---
 locale: es
 ---
+
 # Kit de inicio de Create React App
 
 Esta guía te guiará paso a paso para configurar tu entorno de desarrollo para construir y desplegar una aplicación React en la permaweb.
 
 ## Requisitos previos
 
-- Conocimiento básico de TypeScript (no obligatorio) - [https://www.typescriptlang.org/docs/](Aprende TypeScript)
-- NodeJS v16.15.0 o superior - [https://nodejs.org/en/download/](Descargar NodeJS)
-- Conocimiento de ReactJS - [https://reactjs.org/](Aprende ReactJS)
-- Conocer git y comandos comunes de la terminal
+-   Conocimiento básico de TypeScript (no obligatorio) - [https://www.typescriptlang.org/docs/](Aprende TypeScript)
+-   NodeJS v16.15.0 o superior - [https://nodejs.org/en/download/](Descargar NodeJS)
+-   Conocimiento de ReactJS - [https://reactjs.org/](Aprende ReactJS)
+-   Conocer git y comandos comunes de la terminal
 
 ## Dependencias de desarrollo
 
-- TypeScript
-- NPM o Yarn Package Manager
+-   TypeScript
+-   NPM o Yarn Package Manager
 
 ## Pasos
 
@@ -114,14 +115,14 @@ touch src/About.tsx
 import { Link } from "react-router-dom";
 
 function HomePage() {
-  return (
-    <div>
-      ¡Bienvenido a la Permaweb!
-      <Link to={"/about/"}>
-        <div>Acerca de</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			¡Bienvenido a la Permaweb!
+			<Link to={"/about/"}>
+				<div>Acerca de</div>
+			</Link>
+		</div>
+	);
 }
 
 export default HomePage;
@@ -133,14 +134,14 @@ export default HomePage;
 import { Link } from "react-router-dom";
 
 function About() {
-  return (
-    <div>
-      ¡Bienvenido a la página Acerca de!
-      <Link to={"/"}>
-        <div>Inicio</div>
-      </Link>
-    </div>
-  );
+	return (
+		<div>
+			¡Bienvenido a la página Acerca de!
+			<Link to={"/"}>
+				<div>Inicio</div>
+			</Link>
+		</div>
+	);
 }
 
 export default About;
@@ -158,14 +159,14 @@ import HomePage from "./HomePage";
 import About from "./About";
 
 function App() {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/about/"} element={<About />} />
-      </Routes>
-    </HashRouter>
-  );
+	return (
+		<HashRouter>
+			<Routes>
+				<Route path={"/"} element={<HomePage />} />
+				<Route path={"/about/"} element={<About />} />
+			</Routes>
+		</HashRouter>
+	);
 }
 
 export default App;
@@ -207,29 +208,29 @@ A continuación, ejecuta este comando en la terminal:
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Configurar bundlr
+### Configurar Irys
 
-Necesitamos Bundlr para desplegar nuestra aplicación en la Permaweb, proporciona una carga y recuperación instantáneas de datos.
+Necesitamos Irys para desplegar nuestra aplicación en la Permaweb, proporciona una carga y recuperación instantáneas de datos.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global @bundlr-network/client
+npm install --global @irys/sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add @bundlr-network/client
+yarn global add @irys/sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-Debes añadir AR a esta cartera y financiar tu cartera de Bundlr para poder cargar esta aplicación. Consulta [https://bundlr.network](https://bundlr.network) y [https://www.arweave.org/](https://www.arweave.org/) para obtener más información.
+Debes añadir AR a esta cartera y financiar tu cartera de Irys para poder cargar esta aplicación. Consulta [https://irys.xyz](https://irys.xyz) y [https://www.arweave.org/](https://www.arweave.org/) para obtener más información.
 :::
 
 ### Actualizar package.json
@@ -239,7 +240,7 @@ Debes añadir AR a esta cartera y financiar tu cartera de Bundlr para poder carg
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir ./build -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./build -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -292,28 +293,28 @@ yarn deploy
 :::
 
 ::: info ERROR
-Si recibes este error `Not enough funds to send data`, tienes que financiar tu cartera de Bundlr con AR y luego intentar desplegarla de nuevo. Ejecuta:
+Si recibes este error `Not enough funds to send data`, tienes que financiar tu cartera de Irys con AR y luego intentar desplegarla de nuevo. Ejecuta:
 :::
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
+irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-bundlr fund 1479016 -h https://node1.bundlr.network -w wallet.json -c arweave
+irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info
-El número 1479016 anterior es una cantidad de AR expresada en winston, la unidad más pequeña de AR. Esto llevará algún tiempo en propagarse a tu cartera de Bundlr. Vuelve en 10-20 minutos e intenta ejecutar el despliegue nuevamente.
+El número 1479016 anterior es una cantidad de AR expresada en winston, la unidad más pequeña de AR. Esto llevará algún tiempo en propagarse a tu cartera de Irys. Vuelve en 10-20 minutos e intenta ejecutar el despliegue nuevamente.
 :::
 
 ## Repositorio

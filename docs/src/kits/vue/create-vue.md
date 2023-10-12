@@ -4,15 +4,15 @@ This guide will provide step-by-step instructions to configure your development 
 
 ## Prerequisites
 
-- Basic Typescript Knowledge (Not Mandatory) - [Learn Typescript](https://www.typescriptlang.org/docs/)
-- NodeJS v16.15.0 or greater - [Download NodeJS](https://nodejs.org/en/download/)
-- Knowledge of Vue.js (preferably Vue 3) - [Learn Vue.js](https://vuejs.org/)
-- Know git and common terminal commands
+-   Basic Typescript Knowledge (Not Mandatory) - [Learn Typescript](https://www.typescriptlang.org/docs/)
+-   NodeJS v16.15.0 or greater - [Download NodeJS](https://nodejs.org/en/download/)
+-   Knowledge of Vue.js (preferably Vue 3) - [Learn Vue.js](https://vuejs.org/)
+-   Know git and common terminal commands
 
 ## Development Dependencies
 
-- TypeScript (Optional)
-- NPM or Yarn Package Manager
+-   TypeScript (Optional)
+-   NPM or Yarn Package Manager
 
 ## Steps
 
@@ -23,17 +23,16 @@ The following command installs and launches create-vue, the official scaffolding
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-
-  ```console:no-line-numbers
-  npm init vue@latest
-  ```
+```console:no-line-numbers
+npm init vue@latest
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn create vue
-  ```
+```console:no-line-numbers
+yarn create vue
+```
 
   </CodeGroupItem>
 </CodeGroup>
@@ -63,16 +62,16 @@ cd <your-project-name>
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm install
-  ```
+```console:no-line-numbers
+npm install
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn
-  ```
+```console:no-line-numbers
+yarn
+```
 
   </CodeGroupItem>
 </CodeGroup>
@@ -82,26 +81,26 @@ cd <your-project-name>
 Vue Router is the official router for Vue.js and seamlessly integrates with Vue. To make it work with Permaweb, switch from a browser history router to a hash router as the URL cannot be sent to the server. Change `createWebHistory` to `createWebHashHistory` in your `src/router/index.ts` or `src/router/index.js` file.
 
 ```ts
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHashHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
-})
+	history: createWebHashHistory(import.meta.env.BASE_URL),
+	routes: [
+		{
+			path: "/",
+			name: "home",
+			component: HomeView,
+		},
+		{
+			path: "/about",
+			name: "about",
+			component: () => import("../views/AboutView.vue"),
+		},
+	],
+});
 
-export default router
+export default router;
 ```
 
 ### Setup Build
@@ -122,16 +121,16 @@ Before moving forward, it is crucial to verify that everything is working correc
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm run dev
-  ```
+```console:no-line-numbers
+npm run dev
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn dev
-  ```
+```console:no-line-numbers
+yarn dev
+```
 
   </CodeGroupItem>
 </CodeGroup>
@@ -140,54 +139,56 @@ it will start a new development server locally on your machine by default it use
 ## Deploy
 
 ### Generate Wallet
+
 The `arweave` package is required to generate a wallet.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm install --save arweave
-  ```
+```console:no-line-numbers
+npm install --save arweave
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn add arweave
+```console:no-line-numbers
+yarn add arweave
 
-  ```
+```
 
   </CodeGroupItem>
 </CodeGroup>
 
 To generate your wallet, run the following command in the terminal:
+
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### install bundlr
+### install Irys
 
-Bundlr is needed to deploy your app to Permaweb, as it offers instant data upload and retrieval.
+Irys is needed to deploy your app to Permaweb, as it offers instant data upload and retrieval.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm install --save-dev @bundlr-network/client
-  ```
+```console:no-line-numbers
+npm install --save-dev @irys/sdk
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn add -D @bundlr-network/client
-  ```
+```console:no-line-numbers
+yarn add -D @irys/sdk
+```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ::: info Arweave Wallet
-To upload this app, you may need to add AR and fund your Bundlr wallet. Visit [https://bundlr.network](https://bundlr.network) and https://www.arweave.org/](https://www.arweave.org/) for more information.
+To upload this app, you may need to add AR and fund your Irys wallet. Visit [https://irys.xyz](https://irys.xyz) and https://www.arweave.org/](https://www.arweave.org/) for more information.
 :::
 
 ### update package.json
@@ -197,7 +198,7 @@ To upload this app, you may need to add AR and fund your Bundlr wallet. Visit [h
   ...
   "scripts": {
     ...
-    "deploy": "bundlr upload-dir dist -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -217,36 +218,37 @@ It's now time to generate the build.
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm run build
-  ```
+```console:no-line-numbers
+npm run build
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn build
-  ```
+```console:no-line-numbers
+yarn build
+```
 
   </CodeGroupItem>
 </CodeGroup>
 
 ### Run deploy
+
 Finally we are good to deploy our First Permaweb Application
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
-  ```console:no-line-numbers
-  npm run deploy
-  ```
+```console:no-line-numbers
+npm run deploy
+```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
 
-  ```console:no-line-numbers
-  yarn deploy
-  ```
+```console:no-line-numbers
+yarn deploy
+```
 
   </CodeGroupItem>
 </CodeGroup>
@@ -256,14 +258,14 @@ You should now have a React Application on the Permaweb! Great Job!
 :::
 
 ::: warning Fund Wallet
-if your application is greater than 120 kb or you receive the error `Not enough funds to send data`, you will need to fund you bundlr wallet. See [https://bundlr.network](https://bundlr.network) for more information.
+if your application is greater than 120 kb or you receive the error `Not enough funds to send data`, you will need to fund you Irys wallet. See [https://irys.xyz](https://irys.xyz) for more information.
 :::
 
 ## Repository
 
 A fully functional example in JavaScript or TypeScript can be found at this location.
 
-* Repository: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
+-   Repository: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
 
 ## Summary
 

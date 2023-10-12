@@ -1,9 +1,10 @@
 ---
 locale: es
 ---
+
 # Introducción al SDK de Warp (SmartWeave)
 
-Warp es un popular SDK del Protocolo SmartWeave. Con Warp y Bundlr tus implementaciones e interacciones de SmartWeave pueden ser extremadamente rápidas.
+Warp es un popular SDK del Protocolo SmartWeave. Con Warp y Irys tus implementaciones e interacciones de SmartWeave pueden ser extremadamente rápidas.
 
 ## Introducción
 
@@ -44,26 +45,25 @@ Cuando uses Warp con tu proyecto, hay varias formas de importar el SDK dependien
   <CodeGroupItem title="Typescript">
 
 ```ts
-import { WarpFactory } from 'warp-contracts'
+import { WarpFactory } from "warp-contracts";
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="ESM">
 
 ```js
-import { WarpFactory } from 'warp-contracts/mjs'
+import { WarpFactory } from "warp-contracts/mjs";
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="CommonJS">
 
 ```js
-const { WarpFactory } = require('warp-contracts')
+const { WarpFactory } = require("warp-contracts");
 ```
 
   </CodeGroupItem>
 </CodeGroup>
-
 
 ## Conexión a un entorno
 
@@ -73,21 +73,21 @@ Existen varios entornos con los que puedes interactuar. Puedes conectarte a esto
   <CodeGroupItem title="Mainnet">
 
 ```ts
-const warp = WarpFactory.forMainnet()
+const warp = WarpFactory.forMainnet();
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="Testnet">
 
 ```js
-const warp = WarpFactory.forTestnet()
+const warp = WarpFactory.forTestnet();
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="Local">
 
 ```js
-const warp = WarpFactory.forLocal()
+const warp = WarpFactory.forLocal();
 ```
 
   </CodeGroupItem>
@@ -95,15 +95,14 @@ const warp = WarpFactory.forLocal()
 
 ```js
 const warp = WarpFactory.custom(
-  arweave, // arweave-js
-  cacheOptions, // { ...defaultCacheOptions, inMemory: true}
-  environment // 'local', 'testnet', 'mainnet'
-)
+	arweave, // arweave-js
+	cacheOptions, // { ...defaultCacheOptions, inMemory: true}
+	environment, // 'local', 'testnet', 'mainnet'
+);
 ```
 
   </CodeGroupItem>
 </CodeGroup>
-
 
 ::: warning
 Cuando uses el entorno local, necesitarás tener arLocal ejecutándose en el puerto 1984.

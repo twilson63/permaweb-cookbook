@@ -3,9 +3,10 @@ locale: zh
 ---
 # Hello World（无需代码）
 
-在这个快速入门中，我们不使用任何代码将一张图片上传到永久网络！
+在本快速入门中，我们将无需任何代码即可将图像上传到 permaweb！
 
-## 需求
+
+## 要求
 
 * 电脑
 * 互联网
@@ -15,10 +16,12 @@ locale: zh
 
 [https://arweave.app/add](https://arweave.app/add) 或 [https://arconnect.io](https://arconnect.io)
 
-## 发送一些数据到Arweave
+## 发送一些数据到 Arweave
 
-前往 https://
+打开这个网页 https://hello_cookbook.arweave.dev
+输入一些数据并点击发布，连接你的钱包和“BAM”
+
 
 ## 恭喜！！
 
-您刚刚使用零代码在Arweave上发布了一些数据。
+您刚刚没有使用任何代码在 Arweave 上发布了一些数据。

@@ -1,10 +1,10 @@
 # Github Action
 
 ::: danger
-This guide is for educational purposes only, and you should use to learn options of how you might want to deploy your application. In this guide, we are trusting a 3rd party resource `github` owned by `microsoft` to protect our secret information, in their documentation they encrypt secrets in their store using `libsodium sealed box`, you can find more information about their security practices here. https://docs.github.com/en/actions/security-guides/encrypted-secrets 
+This guide is for educational purposes only, and you should use to learn options of how you might want to deploy your application. In this guide, we are trusting a 3rd party resource `github` owned by `microsoft` to protect our secret information, in their documentation they encrypt secrets in their store using `libsodium sealed box`, you can find more information about their security practices here. https://docs.github.com/en/actions/security-guides/encrypted-secrets
 :::
 
-Github Actions are CI/CD pipelines that allows developers to trigger automated tasks via events generated from the github workflow system. These tasks can be just about anything, in this guide we will show how you can use github actions to deploy your permaweb application to the permaweb using bundlr and ArNS.
+Github Actions are CI/CD pipelines that allows developers to trigger automated tasks via events generated from the github workflow system. These tasks can be just about anything, in this guide we will show how you can use github actions to deploy your permaweb application to the permaweb using Irys and ArNS.
 
 ::: tip
 This guide requires understanding of github actions, and you must have some ArNS Test Tokens, go to https://ar.io/arns/ for more details.
@@ -16,12 +16,12 @@ This guide does not include testing or any other checks you may want to add to y
 
 ## Create deploy script
 
-A deploy script is a script that does the heavy lifting of deploying your application, we will use `@bundlr-network/client` and `warp-contracts` to publish our application and register the newly published application on ArNS.
+A deploy script is a script that does the heavy lifting of deploying your application, we will use `@irys/sdk` and `warp-contracts` to publish our application and register the newly published application on ArNS.
 
 Install deploy dependencies
 
 ```console
-npm install --save-dev @bundlr-network/client
+npm install --save-dev @irys/sdk
 npm install --save-dev warp-contracts
 npm install --save-dev arweave
 ```
@@ -29,39 +29,34 @@ npm install --save-dev arweave
 Create `deploy.mjs` file
 
 ```js
-import Bundlr from '@bundlr-network/client'
-import { WarpFactory, defaultCacheOptions } from 'warp-contracts'
-import Arweave from 'arweave'
+import Irys from "@irys/sdk";
+import { WarpFactory, defaultCacheOptions } from "warp-contracts";
+import Arweave from "arweave";
 
-const ANT = '[YOUR ANT CONTRACT]'
-const DEPLOY_FOLDER = './dist'
-const BUNDLR_NODE = 'https://node2.bundlr.network'
+const ANT = "[YOUR ANT CONTRACT]";
+const DEPLOY_FOLDER = "./dist";
+const IRYS_NODE = "https://node2.irys.xyz";
 
-const arweave = Arweave.init({ host: 'arweave.net', port: 443, protocol: 'https' })
-const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, 'base64').toString('utf-8'))
+const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
+const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, "base64").toString("utf-8"));
 
-const bundlr = new Bundlr.default(BUNDLR_NODE, 'arweave', jwk)
-const warp = WarpFactory.custom(
-  arweave,
-  defaultCacheOptions,
-  'mainnet'
-).useArweaveGateway().build()
+const irys = new Irys({ IRYS_NODE, "arweave", jwk });
+const warp = WarpFactory.custom(arweave, defaultCacheOptions, "mainnet").useArweaveGateway().build();
 
-const contract = warp.contract(ANT).connect(jwk)
+const contract = warp.contract(ANT).connect(jwk);
 // upload folder
-const result = await bundlr.uploadFolder(DEPLOY_FOLDER, {
-  indexFile: 'index.html'
-})
-
+const result = await irys.uploadFolder(DEPLOY_FOLDER, {
+	indexFile: "index.html",
+});
 
 // update ANT
 await contract.writeInteraction({
-  function: 'setRecord',
-  subDomain: '@',
-  transactionId: result.id
-})
+	function: "setRecord",
+	subDomain: "@",
+	transactionId: result.id,
+});
 
-console.log('Deployed Cookbook, please wait 20 - 30 minutes for ArNS to update!')
+console.log("Deployed Cookbook, please wait 20 - 30 minutes for ArNS to update!");
 ```
 
 ## Add script to package.json
@@ -80,31 +75,30 @@ package.json
   ...
 ```
 
-
 ## Create github action
 
 Create a `deploy.yml` file in the `.github/workflows` folder, this file instructs github actions to deploy when a push event is triggered on the `main` branch.
 
 ```yml
-name: publish 
+name: publish
 
 on:
-  push:
-    branches:
-      - "main"
+    push:
+        branches:
+            - "main"
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 18.x
-      - run: yarn
-      - run: yarn deploy
-        env:
-          KEY: ${{ secrets.PERMAWEB_KEY }}
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 18.x
+            - run: yarn
+            - run: yarn deploy
+              env:
+                  KEY: ${{ secrets.PERMAWEB_KEY }}
 ```
 
 ## Summary
@@ -115,10 +109,10 @@ In the project repo, go to the settings and secrets, add a new secret to the rep
 base64 -i wallet.json | pbcopy
 ```
 
-In order for this deployment to work, you will need to fund this wallets bundlr account, make sure there is some $AR in the wallet you will be using, not much, maybe .5 AR, then use the bundlr cli to fund.
+In order for this deployment to work, you will need to fund this wallets Irys account, make sure there is some $AR in the wallet you will be using, not much, maybe .5 AR, then use the Irys cli to fund.
 
 ```console
-npx bundlr 250000000000 -h https://node2.bundlr.network -w wallet.json -c arweave
+irys 250000000000 -h https://node2.irys.xyz -w wallet.json -c arweave
 ```
 
 ::: warning

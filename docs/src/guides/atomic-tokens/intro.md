@@ -1,32 +1,32 @@
 # Atomic Tokens
 
-## What is an Atomic Token? 
+## What is an Atomic Token?
 
 [Check out the concept](../../concepts/atomic-tokens.md)
 
 ## Creating an Atomic Token
 
 ::: info INFORMATION
-For this example, we are using a SWT Contract Source that is already published on the network. [x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) - 
+For this example, we are using a SWT Contract Source that is already published on the network. [x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) -
 :::
 
 example.ts
 
 ```ts
-import Bundlr from '@bundlr-network/client'
+import Irys from '@irys/sdk'
 import { WarpFactory } from 'warp-contracts'
 
 async function main() {
   const wallet = JSON.parse(await import('fs')
     .then(fs => fs.readFileSync('./wallet.json', 'utf-8')))
 
-  const bundlr = new Bundlr('https://node2.bundlr.network', 'arweave', wallet)
+  const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
   const warp = WarpFactory.forMainnet()
 
   const data = `<h1>Hello Permaweb!</h1>`
   const tags = [
     { name: 'Content-Type', value: 'text/html' },
-    // ANS-110 Tags 
+    // ANS-110 Tags
     { name: 'Type', value: 'web-page' },
     { name: 'Title', value: 'My first permaweb page' },
     { name: 'Description', value: 'First permaweb page by Anon' },
@@ -49,7 +49,7 @@ async function main() {
     }
   ]
 
-  const { id } = await bundlr.upload(data, { tags })
+  const { id } = await irys.upload(data, { tags })
   await warp.createContract.register(id, 'node2')
   console.log('Atomic Token: ', id)
 }
@@ -62,7 +62,7 @@ In this example, we are creating a data-item and uploading the item to the bundl
 Run Example
 
 ```sh
-npm install @bundlr-network/client warp-contracts 
+npm install @irys/sdk warp-contracts
 npm install typescript ts-node
 npx ts-node example.ts
 ```
@@ -74,7 +74,6 @@ npx ts-node example.ts
 ## Summary
 
 This is a simple example of deploying an Atomic Asset, for more detailed examples check out: [https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)
-
 
 ## Working with Tokens
 
