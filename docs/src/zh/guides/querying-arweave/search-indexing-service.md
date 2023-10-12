@@ -27,6 +27,7 @@ locale: zh
 目前，此语法的唯一版本托管在 Goldsky 上。如果有人有兴趣使用相同的语法托管自己的网关，请随时与 [Goldsky](https://goldsky.com) 联系寻求帮助。
 
 - [Goldsky 搜索服务](https://arweave-search.goldsky.com/graphql)
+- [KNN3 arseeding 索引服务] (https://knn3-gateway.knn3.xyz/arseeding/graphql)
 
 ## 功能
 
