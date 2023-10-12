@@ -10,7 +10,6 @@
 npm i arseeding-js
 ```
 
-创建一个 demo.js, 将以下代码复制进去。
 Create a `demo.js`, and copy the following code into it.
 
 ```jsx
