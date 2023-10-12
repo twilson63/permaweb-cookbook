@@ -37,10 +37,9 @@ const ANT = "[YOUR ANT CONTRACT]";
 const DEPLOY_FOLDER = "./dist";
 const IRYS_NODE = "https://node2.irys.xyz";
 
-const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
 const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, "base64").toString("utf-8"));
-
-const irys = new Irys({ IRYS_NODE, "arweave", jwk });
+const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
+const irys = new Irys({ url: IRYS_NODE, token: "arweave", key: jwk });
 const warp = WarpFactory.custom(arweave, defaultCacheOptions, "mainnet").useArweaveGateway().build();
 
 const contract = warp.contract(ANT).connect(jwk);
