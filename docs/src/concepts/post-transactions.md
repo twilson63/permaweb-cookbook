@@ -57,3 +57,4 @@ An example of how to post a 100KB or less bundled transaction with an Arweave wa
 -   [arweave-js](../guides/posting-transactions/arweave-js.md) example
 -   [irys.xyz](../guides/posting-transactions/irys.md) example
 -   [dispatch](../guides/posting-transactions/dispatch.md) example
+-   [arseeding-js](../guides/posting-transactions/arseeding-js.md) example

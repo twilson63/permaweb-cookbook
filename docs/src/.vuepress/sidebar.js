@@ -56,6 +56,10 @@ const getI18NSidebar = (langCode) => [
 						text: "dispatch",
 						link: get_i18n_link(langCode, "/guides/posting-transactions/dispatch"),
 					},
+					{
+						text: "arseeding-js",
+						link: get_i18n_link(langCode, "/guides/posting-transactions/arseeding-js"),
+					},
 				],
 			},
 			{
