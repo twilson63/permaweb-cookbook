@@ -30,7 +30,7 @@ locale: zh
 
 由于网关不是核心协议的一部分，因此没有内置的激励机制，如挖矿的奖励或激励。这使得网关运营商或外部服务能够选择如何构建他们的激励系统，从而实现更加分散和民主的模式。甚至个别应用程序可以运行自己的网关，以实现更好的缓存和永久网应用性能。
 
-一些受欢迎的网关包括由Arweave团队运营的[arweave.net](https://arweave.net/)，以及其他网关如[arweave.live](https://arweave.live/)和[g8way.io](https://g8way.io)。然而，通过[AR.IO](https://ar.io/)等团队，网关的运营变得更加简单和易于访问。
+一些受欢迎的网关包括由Arweave团队运营的[arweave.net](https://arweave.net/)，以及其他网关如 [arweave.world](https://cookbook.arweave.world/) [arweave.asia](https://cookbook.arweave.asia) [arweave.live](https://arweave.live/)和[g8way.io](https://g8way.io)。然而，通过[AR.IO](https://ar.io/)等团队，网关的运营变得更加简单和易于访问。
 
 ### 来源和进一步阅读材料
 

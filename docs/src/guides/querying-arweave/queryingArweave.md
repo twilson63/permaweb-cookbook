@@ -8,7 +8,7 @@ Arweave provides a simple way of querying for transactions and filtering them by
 - [arweave.net graphql](https://arweave.net/graphql) the original graphql endpoint, managed by [ar.io](https://ar.io)
 - [goldsky search service](https://arweave-search.goldsky.com/graphql) a public service specifically optimized for search using a superset of the graphql syntax, managed by [goldsky](https://goldsky.com)
 - [ar.io decentralized indexing](https://ar-io.dev/graphql) A decentralized network for indexing services. Currently in testing with L1 transactions available.
-- [knn3 arseeding indexing] (https://knn3-gateway.knn3.xyz/arseeding/graphql), one for arseeding trading can real-time query service.
+- [knn3 arseeding indexing](https://knn3-gateway.knn3.xyz/arseeding/graphql), one for arseeding trading can real-time query service.
 
 ## Executing a GraphQL Query
 To query arweave we’ll need to access it through an indexing service that supports GraphQL. Use one of the GraphQL playgrounds listed above to get started!
