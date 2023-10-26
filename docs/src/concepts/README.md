@@ -22,6 +22,12 @@ Foundations of Arweave and the Permaweb.
   - [Arweave Name System (ArNS)](arns.md)
   - [Atomic Tokens](atomic-tokens.md)
   - [Profit Sharing Tokens (PSTs)](psts.md)
+- [Arweave File System (ArFS)](arfs/arfs.md)
+  - [Data model](arfs/data-model.md)
+  - [Entity Types](arfs/entity-types.md)
+  - [Content Types](arfs/content-types.md)
+  - [Privacy](arfs/privacy.md)
+  - [Schema Diagrams](arfs/schema-diagrams.md)
 
 > Do you think a permaweb core concept is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md) 
 

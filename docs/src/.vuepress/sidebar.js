@@ -133,6 +133,36 @@ const getI18NSidebar = (langCode) => [
 					},
 				],
 			},
+			{
+				text: "Arweave File System (ArFS)",
+				link: get_i18n_link(langCode, "/concepts/arfs/arfs"),
+				children: [
+					{
+						text: "ArFS",
+						link: get_i18n_link(langCode, "/concepts/arfs/arfs")
+					},
+					{
+						text: "Data Model",
+						link: get_i18n_link(langCode, "/concepts/arfs/data-model")
+					},
+					{
+						text: "Entity Types",
+						link: get_i18n_link(langCode, "/concepts/arfs/entity-types")
+					},
+					{
+						text: "Content Types",
+						link: get_i18n_link(langCode, "/concepts/arfs/content-types")
+					},
+					{
+						text: "Privacy",
+						link: get_i18n_link(langCode, "/concepts/arfs/privacy")
+					},
+					{
+						text: "Schema Diagrams",
+						link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams")
+					}
+				]
+			}
 		],
 	},
 	{
