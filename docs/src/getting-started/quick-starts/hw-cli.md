@@ -33,5 +33,5 @@ echo "<h1>Hello Permaweb</h1>" > index.html
 ## Upload using Irys (Previously Bundlr)
 
 ```sh
-irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
+npx irys upload index.html -t arweave -h https://node2.irys.xyz -w ./wallet.json
 ```
