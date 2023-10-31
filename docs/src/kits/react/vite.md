@@ -219,6 +219,23 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
+### Update vite config
+
+Make sure you add the `base` property to the vite config object and set it to an empty string.
+
+vite.config.ts
+
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  base: '',
+  plugins: [react()],
+})
+```
+
 ### Setup Irys
 
 We need Irys to deploy our app to Permaweb it provides instant data upload and retrieval
