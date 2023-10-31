@@ -251,7 +251,7 @@ You will need to add AR to this wallet and fund your Irys wallet to be able to u
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -t arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -303,6 +303,26 @@ yarn deploy
 You should now have a React Application on the Permaweb! Great Job!
 :::
 
-::: error
+::: tip ERROR
 If you receive this error `Not enough funds to send data`, you have to fund some AR into your wallet, and then try to deploy it again.
 :::
+
+How do I fund my irys account?
+
+Check balance
+
+```console:no-line-numbers
+irys balance [Address] -h https://node2.irys.xyz -t arweave
+```
+
+Fund Irys
+
+```console:no-line-numbers
+irys fund 20000000000 -t arweave -h https://node2.irys.xyz -w ./wallet.json
+```
+
+::: tip INFO
+It will take about 20 to 30 minutes for the funds to be deposited into your irys account.
+:::
+
+
