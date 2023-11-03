@@ -101,7 +101,7 @@ Now that there is a static site to deploy, it can be checked to ensure it all fu
 The command below deploys the `src` directory whilst also indicating the `index.html` file as an index for the manifests (relative to the path provided to `upload-dir` flag).
 
 ```sh
-irys upload-dir src -h https://node2.irys.xyz --index-file index.html -c arweave -w ./wallet.json
+irys upload-dir src -h https://node2.irys.xyz --index-file index.html -t arweave -w ./wallet.json
 ```
 
 ## Congrats!!
