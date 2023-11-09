@@ -116,7 +116,7 @@ base64 -i wallet.json | pbcopy
 Agar penyebaran ini berfungsi, Anda perlu mendanai akun Irys dompet ini, pastikan ada beberapa $AR di dompet yang akan Anda gunakan, tidak banyak, mungkin .5 AR, kemudian gunakan Irys cli untuk mendanai.
 
 ```console
-irys 250000000000 -h https://node2.irys.xyz -w wallet.json -c arweave
+irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -c arweave
 ```
 
 ::: warning
