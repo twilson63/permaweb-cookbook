@@ -9,13 +9,26 @@ const get_i18n_str = useI18NStr();
 </script>
 
 <template>
-  <a href="https://arweavehub.com/#/events/perma-hacks" target="blank">
-    <div class="topbar hackathon">
-      <p>
-        <span>Ready to build? Permahacks starts October 30th. Details here.</span>
-      </p>
-    </div>
-  </a>
+  <div class="topbar">
+    <p>
+      <span>{{ get_i18n_str("cookbook-meetup-notification") }}</span
+      >
+      <add-to-calendar-button
+        style="white-space: nowrap"
+        name="Permaweb Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
+        options="'Apple','Google'"
+        location="https://app.gather.town/app/VQzhQa280FhWKtuy/permaweb?spawnToken=d8Vy968fQ4eZ1Y44vxFg"
+        startDate="2023-04-26"
+        startTime="12:00"
+        endTime="13:00"
+        timeZone="America/New_York"
+        recurrence="weekly"
+        buttonStyle="round"
+        :lightMode="!darkMode ? 'light' : 'dark'"
+        size="1"
+      ></add-to-calendar-button>
+    </p>
+  </div>
 </template>
 
 <style lang="scss" scoped>
