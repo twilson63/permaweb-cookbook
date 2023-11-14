@@ -111,7 +111,7 @@ base64 -i wallet.json | pbcopy
 In order for this deployment to work, you will need to fund this wallets Irys account, make sure there is some $AR in the wallet you will be using, not much, maybe .5 AR, then use the Irys cli to fund.
 
 ```console
-irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -c arweave -t arweave
+irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -t arweave
 ```
 
 ::: warning
