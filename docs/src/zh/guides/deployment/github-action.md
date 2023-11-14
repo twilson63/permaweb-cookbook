@@ -121,7 +121,7 @@ base64 -i wallet.json | pbcopy
 为了使此部署工作，您需要为此钱包的 Irys 账户提供资金，请确保钱包中有一些$AR，不要太多，也许0.5个$AR，然后使用 Irys cli 进行资金注入。
 
 ```console
-irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -c arweave
+irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -c arweave -t arweave
 ```
 
 ::: warning

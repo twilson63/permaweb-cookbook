@@ -121,7 +121,7 @@ base64 -i wallet.json | pbcopy
 Para que esta implementación funcione, deberás financiar la cuenta de Irys de esta billetera, asegúrate de tener algunos $AR en la billetera que vayas a usar, no mucho, tal vez .5 AR, luego usa la interfaz de línea de comandos de Irys para financiarla.
 
 ```console
-irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -c arweave
+irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -c arweave -t arweave
 ```
 
 ::: warning
