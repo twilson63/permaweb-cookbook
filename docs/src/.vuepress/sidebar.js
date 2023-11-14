@@ -294,6 +294,10 @@ const getI18NSidebar = (langCode) => [
 				collapsible: true,
 				children: [
 					{
+						text: get_i18n_str(langCode, "guides-atomic-asset"),
+						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index")
+					},
+					{
 						text: get_i18n_str(langCode, "guides-atomic-token"),
 						link: get_i18n_link(langCode, "/guides/atomic-tokens/intro"),
 					},
