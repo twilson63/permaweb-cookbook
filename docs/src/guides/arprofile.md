@@ -1,8 +1,54 @@
 # ArProfile
-ArProfile is an Arweave native DID
+
+[ArProfile](https://arprofile.arweave.dev) is an Arweave native DID which relies on the open data protocol [`Account`](https://docs.arprofile.org/#/?id=data-protocol).
+
+[`arweave-account`](https://www.npmjs.com/package/arweave-account) is a npm package that allows you to easily integrate ArProfile in your codebase, wether it is a web app or a backend (nodejs).
+
+[See complete documentation here](https://docs.arprofile.org)
+
+## Purpose
 
 The underlying account protocol aims to satisfy essential needs for social interactions between users: an avatar, a unique handle, a name and a bio. It also includes the possibility to add accounts from the well known social networks such as Twitter, Discord, Github, Instagram and Facebook.
+
+## Quick integration
+
+A [permadapp](/concepts/permawebApplications.html) profile viewer is available at the tx [`5OHoPfYucLPTgOvJGgnL0Cg0Ktl-ZDaiTjQo_2B3tBg`](https://viewblock.io/arweave/tx/5OHoPfYucLPTgOvJGgnL0Cg0Ktl-ZDaiTjQo_2B3tBg)
+
+You can embed any ArProfile with a `<iframe>` html tag.
+
+For simplicity and to update automatically to the lattest txid, we recommend using the [ArNS](https://ar.io/arns/) name `profile`.
+
+### Embeddable URLs
+
+- https://profile.arweave.dev/`address`/`<wallet_address>`
+- https://profile.arweave.dev/`handler`/`<name#unique>`
+
+### Example
+
+```html
+<iframe
+  src="https://profile.arweave.net/address/vh-NTHVvlKZqRxc8LyyTNok65yQ55a_PJ1zWLb9G2JI"
+  width="300"
+  height="420"
+  frameBorder="0">
+</iframe>
+```
+
+Result:
+
+<iframe
+  src="https://4tq6qppwfzylhu4a5perucol2audikwzpzsdnisogqup6ydxwqma.arweave.net/5OHoPfYucLPTgOvJGgnL0Cg0Ktl-ZDaiTjQo_2B3tBg/address/vh-NTHVvlKZqRxc8LyyTNok65yQ55a_PJ1zWLb9G2JI"
+  width="300"
+  height="420"
+  frameBorder="0">
+</iframe>
+
+# Integration in your codebase
+
+[`arweave-account`](https://www.npmjs.com/package/arweave-account) is a npm package that allows you to easily integrate ArProfile in your codebase, wether it is a web app or a backend (nodejs).
+
 ## Installation
+
 Add the package using npm:
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -129,5 +175,3 @@ await account.search("cromatikap#aIUdog")
 
 ## Summary
 With just 3 lines of code needed to implement, ArProfile is a straight-forward way for adding additional Arweave user information such as avatars, bio's and social links to your applications.
-
-[ArProfile](https://arprofile.arweave.dev)
