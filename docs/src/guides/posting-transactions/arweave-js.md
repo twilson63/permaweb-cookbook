@@ -27,7 +27,7 @@ yarn add arweave
 </CodeGroup>
 
 ::: info
-When working with NodeJS a minimum version of 18+ is required.
+When working with NodeJS a minimum version of NodeJS 18 or higher is required.
 :::
 
 ## Initializing arweave-js
