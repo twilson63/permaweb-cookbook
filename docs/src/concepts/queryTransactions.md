@@ -48,7 +48,7 @@ Each piece of data uploaded to Arweave has its own unique transaction id and is 
 
 ## Irys Query Package
 
-The [Irys query package](https://docs.irys.xyz/developer-docs/querying/query-package) is a JavaScript abstraction that sits on top of GraphQL, enabling JavaScript and TypeScript developers to interact with GraphQL without directly engaging in its syntax.
+The [Irys query package](/guides/irysQueryPackage.html) is a JavaScript abstraction that sits on top of GraphQL, enabling JavaScript and TypeScript developers to interact with GraphQL without directly engaging in its syntax.
 
 It supports the same query functionality as native GraphQL [allowing you to search by](https://docs.irys.xyz/developer-docs/querying/query-package#query-type) transaction ID, [tags](https://docs.irys.xyz/developer-docs/tags), [payment token](https://docs.irys.xyz/overview/supported-tokens), transaction sender and block information.
 
@@ -59,6 +59,7 @@ const myQuery = new Query();
 const results = await myQuery
 	.search("irys:transactions")
 	.tags([{ name: "Content-Type", values: ["image/png"] }])
+	.token("solana");
 	.sort("ASC")
 	.limit(20);
 ```

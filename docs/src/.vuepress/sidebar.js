@@ -139,30 +139,30 @@ const getI18NSidebar = (langCode) => [
 				children: [
 					{
 						text: "ArFS",
-						link: get_i18n_link(langCode, "/concepts/arfs/arfs")
+						link: get_i18n_link(langCode, "/concepts/arfs/arfs"),
 					},
 					{
 						text: "Data Model",
-						link: get_i18n_link(langCode, "/concepts/arfs/data-model")
+						link: get_i18n_link(langCode, "/concepts/arfs/data-model"),
 					},
 					{
 						text: "Entity Types",
-						link: get_i18n_link(langCode, "/concepts/arfs/entity-types")
+						link: get_i18n_link(langCode, "/concepts/arfs/entity-types"),
 					},
 					{
 						text: "Content Types",
-						link: get_i18n_link(langCode, "/concepts/arfs/content-types")
+						link: get_i18n_link(langCode, "/concepts/arfs/content-types"),
 					},
 					{
 						text: "Privacy",
-						link: get_i18n_link(langCode, "/concepts/arfs/privacy")
+						link: get_i18n_link(langCode, "/concepts/arfs/privacy"),
 					},
 					{
 						text: "Schema Diagrams",
-						link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams")
-					}
-				]
-			}
+						link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams"),
+					},
+				],
+			},
 		],
 	},
 	{
@@ -290,12 +290,17 @@ const getI18NSidebar = (langCode) => [
 				],
 			},
 			{
+				text: "Irys Query Package",
+				link: get_i18n_link(langCode, "/guides/irysQueryPackage"),
+				collapsible: false,
+			},
+			{
 				text: "SmartWeave",
 				collapsible: true,
 				children: [
 					{
 						text: get_i18n_str(langCode, "guides-atomic-asset"),
-						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index")
+						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index"),
 					},
 					{
 						text: get_i18n_str(langCode, "guides-atomic-token"),
