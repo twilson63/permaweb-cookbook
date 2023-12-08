@@ -26,6 +26,10 @@ yarn add arweave
   </CodeGroupItem>
 </CodeGroup>
 
+::: info
+When working with NodeJS a minimum version of NodeJS 18 or higher is required.
+:::
+
 ## Initializing arweave-js
 
 Direct Layer 1 transactions are posted using the `arweave-js` library.
