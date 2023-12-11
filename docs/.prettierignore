@@ -3,4 +3,5 @@
 dist
 
 package.json
-src/guides/irysQueryPackage.md
+/src/guides/irysQueryPackage.md
+/src/references/irysQueryPackage.md

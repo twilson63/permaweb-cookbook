@@ -371,6 +371,11 @@ const getI18NSidebar = (langCode) => [
 				collapsible: false,
 				link: get_i18n_link(langCode, "/references/http-api"),
 			},
+			{
+				text: "Irys Query Package",
+				collapsible: false,
+				link: get_i18n_link(langCode, "/references/irysQueryPackage"),
+			},
 		],
 	},
 	{
@@ -389,6 +394,10 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "Vue",
 				link: get_i18n_link(langCode, "/kits/vue/"),
+			},
+			{
+				text: "Irys Provenance Toolkit",
+				link: get_i18n_link(langCode, "/kits/irysProvenanceToolkit"),
 			},
 		],
 	},
