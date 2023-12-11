@@ -23,9 +23,10 @@ Snack-sized guides for the building blocks of the Permaweb
     -   [ArDB](querying-arweave/ardb.md)
     -   [ar-gql](querying-arweave/ar-gql.md)
     -   [Search Service](querying-arweave/search-indexing-service.md)
+-   [Irys Query Package](irysQueryPackage.md)
 -   SmartWeave
     -   [Atomic Assets](smartweave/atomic-assets/index.md)
-        - [using ArDrive CLI](smartweave/atomic-assets/ardrive-cli.md)
+        -   [using ArDrive CLI](smartweave/atomic-assets/ardrive-cli.md)
     -   [Atomic Tokens](atomic-tokens/intro.md)
     -   [Vouch](vouch.md)
     -   Warp Contracts
