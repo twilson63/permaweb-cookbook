@@ -27,7 +27,6 @@ For any custom needs or feature ideas, feel free to contact the Goldsky team thr
 Currently, the only service with this syntax is hosted Goldsky. If anybody is interested in hosting their own gateway with the same syntax, feel free to contact the [Goldsky](https://goldsky.com) for help.
 
 - [Goldsky Search Service](https://arweave-search.goldsky.com/graphql)
-- [KNN3 arseeding indexing](https://knn3-gateway.knn3.xyz/arseeding/graphql)
 
 ## Features
 
