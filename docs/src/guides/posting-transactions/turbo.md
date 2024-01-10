@@ -94,7 +94,7 @@ await signedDataItem.sign(signer);
 const uploadResult = await turbo.uploadSignedDataItem({
   dataItemStreamFactory: () => signedDataItem.getRaw(),
   dataItemSizeFactory: () => signedDataItem.getRaw().length,
-  signal: AbortSignal.timeout(10_000), // cancel the upload after 10 seconds
+  signal: AbortSignal.timeout(10_000), // Optional: cancel the upload after 10 seconds
 
 });
 
@@ -114,8 +114,8 @@ const dataItemOpts = {
 const uploadResult = await turbo.uploadFile({
 	fileStreamFactory: () => fs.createReadStream(filePath),
 	fileSizeFactory: () => fileSize,
-	signal: AbortSignal.timeout(10_000), // cancel the upload after 10 seconds
-  dataItemOpts
+	signal: AbortSignal.timeout(10_000), // Optional: cancel the upload after 10 seconds
+  dataItemOpts // Optional
 });
 console.log(JSON.stringify(uploadResult, null, 2));
 ```
