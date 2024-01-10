@@ -60,6 +60,10 @@ const getI18NSidebar = (langCode) => [
 						text: "arseeding-js",
 						link: get_i18n_link(langCode, "/guides/posting-transactions/arseeding-js"),
 					},
+					{
+						text: "Turbo-SDK",
+						link: get_i18n_link(langCode, "/guides/posting-transactions/turbo")
+					},
 				],
 			},
 			{
