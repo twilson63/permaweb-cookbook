@@ -67,14 +67,19 @@ const JWK = JSON.parse(fs.readFileSync(process.env.PATH_TO_WALLET).toString());
 const turbo = TurboFactory.authenticated({ privateKey: JWK });
 
 const filePath = new URL('path/to/file', import.meta.url).pathname;
-  const fileSize = fs.statSync(filePath).size;
+const fileSize = fs.statSync(filePath).size;
+const dataItemOpts = {
+    //target: ,
+    // anchor: ,
+    tags: [{name: 'test', value: 'test'}] // add tags
+  }
   const uploadResult = await turbo.uploadFile({
     fileStreamFactory: () => fs.createReadStream(filePath),
     fileSizeFactory: () => fileSize,
-    signal: AbortSignal.timeout(10_000), // cancel the upload after 10 seconds
+    signal: AbortSignal.timeout(10_000), // Optional: cancel the upload after 10 seconds
+    dataItemOpts // Optional
   });
   console.log(JSON.stringify(uploadResult, null, 2));
-
 ```
 
 ## Posting a `Data-Item` (recommended)
@@ -101,10 +106,16 @@ console.log("Result", uploadResult);
 ```js
 const filePath = new URL('path/to/file', import.meta.url).pathname;
 const fileSize = fs.statSync(filePath).size;
+const dataItemOpts = {
+    //target: 'string',
+    // anchor: 'string',
+    tags: [{name: 'test', value: 'test'}] // add tags
+  }
 const uploadResult = await turbo.uploadFile({
 	fileStreamFactory: () => fs.createReadStream(filePath),
 	fileSizeFactory: () => fileSize,
 	signal: AbortSignal.timeout(10_000), // cancel the upload after 10 seconds
+  dataItemOpts
 });
 console.log(JSON.stringify(uploadResult, null, 2));
 ```
@@ -112,3 +123,4 @@ console.log(JSON.stringify(uploadResult, null, 2));
 ## Resources
 
 - Dive into the [Code](https://github.com/ardriveapp/turbo-sdk)
+- Join the discussion in the [ArDrive Discord](https://discord.com/invite/ya4hf2H)
