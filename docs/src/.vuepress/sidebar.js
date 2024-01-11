@@ -134,6 +134,10 @@ const getI18NSidebar = (langCode) => [
 				],
 			},
 			{
+				text: "Browser Sandboxing",
+				link: get_i18n_link(langCode, "/concepts/sandboxing")
+			},
+			{
 				text: "Arweave File System (ArFS)",
 				link: get_i18n_link(langCode, "/concepts/arfs/arfs"),
 				children: [
