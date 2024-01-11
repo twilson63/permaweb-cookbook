@@ -34,4 +34,21 @@ const expectedTxSandbox = (id: string): string => {
 };
 ```
 
+Example:
+
+```typescript
+const id = 'gnWKBqFXMJrrksEWrXLQRUQQQeFhv4uVxesHBcT8i6o';
+const expectedTxSandbox = (id): string => {
+  return toB32(fromB64Url(id));
+};
+console.log(expectedTxSandbox);
+```
+
+Example Output:
+
+```console
+qj2yubvbk4yjv24syelk24wqivcbaqpbmg7yxfof5mdqlrh4rova
+```
+
+
 View the full code for generating browser sandbox values [here](https://github.com/ar-io/arweave-gateway/blob/719f43f8d6135adf44c87701e95f58105638710a/src/gateway/middleware/sandbox.ts#L69).
