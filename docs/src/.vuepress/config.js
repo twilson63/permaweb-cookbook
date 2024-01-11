@@ -4,6 +4,7 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { containerPlugin } from "@vuepress/plugin-container";
 import { mediumZoomPlugin } from "@vuepress/plugin-medium-zoom";
 import { searchPlugin } from "@vuepress/plugin-search";
+import codeCopyPlugin from '@snippetors/vuepress-plugin-code-copy'
 
 import createSidebars from "./sidebar";
 import { languages } from "../../languages/def";
@@ -99,6 +100,7 @@ export default {
         },
       },
     }),
+    codeCopyPlugin({})
   ],
 
   // passing languages def to client side
