@@ -43,6 +43,18 @@ const irys = new Irys({
 });
 ```
 
+## Using ArDrive Turbo with Irys
+
+The Irys SDK can post transactions to Turbo, and use Turbo Credits to pay for upload, by setting `https://turbo.ardrive.io` as the upload url when initializing.
+
+```js:no-line-numbers
+const irys = new Irys({
+	url: 'https://turbo.ardrive.io',
+	token: 'arweave',
+	key //Arweave Wallet
+})
+```
+
 ## Posting a Bundled Transaction
 
 ```js:no-line-numbers
