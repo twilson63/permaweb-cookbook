@@ -16,6 +16,7 @@ const contract = warp.contract(ANT).connect(jwk);
 const result = await bundlr.uploadFolder("./src/.vuepress/dist", {
 	indexFile: "index.html",
 });
+console.log('manifest id:', result.id)
 
 // update ANT
 
