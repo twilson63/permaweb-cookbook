@@ -9,26 +9,13 @@ const get_i18n_str = useI18NStr();
 </script>
 
 <template>
-  <div class="topbar">
-    <p>
-      <span>{{ get_i18n_str("cookbook-meetup-notification") }}</span
-      >
-      <add-to-calendar-button
-        style="white-space: nowrap"
-        name="Permaweb Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
-        options="'Apple','Google'"
-        location="https://app.gather.town/app/VQzhQa280FhWKtuy/permaweb?spawnToken=d8Vy968fQ4eZ1Y44vxFg"
-        startDate="2023-04-26"
-        startTime="12:00"
-        endTime="13:00"
-        timeZone="America/New_York"
-        recurrence="weekly"
-        buttonStyle="round"
-        :lightMode="!darkMode ? 'light' : 'dark'"
-        size="1"
-      ></add-to-calendar-button>
-    </p>
-  </div>
+  <a href="https://cookbook_ao.arweave.dev/" target="blank">
+    <div class="topbar ao">
+      <p>
+        <span>Interested in exploring ao computer? See docs here.</span>
+      </p>
+    </div>
+  </a>
 </template>
 
 <style lang="scss" scoped>
@@ -74,6 +61,16 @@ a {
       color: var(--c-accent-rose);
       white-space: nowrap;
       margin-left: 15px;
+    }
+  }
+
+  &.ao {
+    padding: 16px;
+
+    span {
+      @include media-breakpoint-down(md) {
+        font-size: 12px;
+      }
     }
   }
 
