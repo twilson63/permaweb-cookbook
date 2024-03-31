@@ -1,12 +1,12 @@
 # Hello World (Code)
 
-This guide walks you through the a quick way to get a static HTML, CSS and JavaScript webpage on to the permaweb using a few lines of code and a [command-line interface (CLI)](./hw-cli.md).
+This guide walks you through a quick way to get a static HTML, CSS and JavaScript webpage on to the permaweb using a few lines of code and a [command-line interface (CLI)](./hw-cli.md).
 
 ## Requirements
 
--   [NodeJS](https://nodejs.org) LTS or greater
--   Basic knowledge of HTML, CSS and JavaScript
--   A text editor (VS Code, Sublime, or similar)
+- [NodeJS](https://nodejs.org) LTS or greater
+- Basic knowledge of HTML, CSS and JavaScript
+- A text editor (VS Code, Sublime, or similar)
 
 ## Description
 
@@ -17,7 +17,7 @@ Using a terminal/console window create a new folder called `hello-world`.
 ```sh
 cd hello-world
 npm init -y
-npm install arweave @irys/sdk
+npm i -g @irys/sdk
 mkdir src && cd src
 touch index.js index.html style.css
 ```
@@ -29,6 +29,10 @@ Next open your text editor and import the `hello-world` directory.
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
+
+:::info
+The wallet.json file must be in the root of the `hello-world` folder and not inside of your `src` folder.
+:::
 
 ## Create a webpage
 
@@ -44,19 +48,19 @@ Paste the code from the following code blocks into their files:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<script src="index.js"></script>
-		<title>Cookbook Hello World!</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="index.js"></script>
+    <title>Cookbook Hello World!</title>
+  </head>
 
-	<body>
-		<button onclick="changeColor()" class="button">Click Me!</button>
-		<h1 id="main">Hello World!</h1>
-	</body>
+  <body>
+    <button onclick="changeColor()" class="button">Click Me!</button>
+    <h1 id="main">Hello World!</h1>
+  </body>
 </html>
 ```
 
@@ -70,8 +74,8 @@ Paste the code from the following code blocks into their files:
 
 ```css
 .button {
-	padding: "10px";
-	background-color: #4caf50;
+  padding: "10px";
+  background-color: #4caf50;
 }
 ```
 
@@ -85,8 +89,10 @@ Paste the code from the following code blocks into their files:
 
 ```javascript
 function changeColor() {
-	const header = document.getElementById("main");
-	header.style.color === "" ? (header.style.color = "red") : (header.style.color = "");
+  const header = document.getElementById("main");
+  header.style.color === ""
+    ? (header.style.color = "red")
+    : (header.style.color = "");
 }
 ```
 
