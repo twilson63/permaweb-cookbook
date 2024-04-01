@@ -37,12 +37,11 @@ import fs from "fs";
 
 // carga el archivo de clave del monedero JWK desde el disco
 let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
-const url = "https://node1.irys.xyz";
 const token = "arweave";
 
 // inicializa el SDK de Irys
 const irys = new Irys({
-	url, // URL of the node you want to connect to
+	network : "mainnet", // Irys network "mainnet" || "devnet"
 	token, // Token used for payment and signing
 	key, // Arweave wallet
 });
@@ -69,8 +68,8 @@ try {
 
 ## Recursos
 
--   Para obtener una descripción general de todas las formas en que puedes publicar transacciones, consulta la sección [Publicación de Transacciones](../../concepts/post-transactions.md) del libro de recetas.
+- Para obtener una descripción general de todas las formas en que puedes publicar transacciones, consulta la sección [Publicación de Transacciones](../../concepts/post-transactions.md) del libro de recetas.
 
--   Puedes encontrar la documentación completa del cliente Irys en el [sitio web de Irys.xyz](http://docs.irys.xyz/developer-docs/irys-sdk)
+- Puedes encontrar la documentación completa del cliente Irys en el [sitio web de Irys.xyz](http://docs.irys.xyz/developer-docs/irys-sdk)
 
--   Un tutorial y taller para [subir una colección de NFT](http://docs.irys.xyz/hands-on/tutorials/uploading-nfts) utilizando Irys.
+- Un tutorial y taller para [subir una colección de NFT](http://docs.irys.xyz/hands-on/tutorials/uploading-nfts) utilizando Irys.

@@ -33,39 +33,34 @@ npm install --save-dev arweave
 创建`deploy.mjs`文件
 
 ```js
-import Irys from '@irys/sdk'
-import { WarpFactory, defaultCacheOptions } from 'warp-contracts'
-import Arweave from 'arweave'
+import Irys from "@irys/sdk";
+import { WarpFactory, defaultCacheOptions } from "warp-contracts";
+import Arweave from "arweave";
 
-const ANT = '[YOUR ANT CONTRACT]'
-const DEPLOY_FOLDER = './dist'
-const IRYS_NODE = 'https://node2.irys.xyz'
+const ANT = "[YOUR ANT CONTRACT]";
+const DEPLOY_FOLDER = "./dist";
+const IRYS_NETWORK = "mainnet"; // "mainnet" || "devnet"
 
-const arweave = Arweave.init({ host: 'arweave.net', port: 443, protocol: 'https' })
-const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, 'base64').toString('utf-8'))
+const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
+const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, "base64").toString("utf-8"));
 
-const irys = new Irys({ IRYS_NODE, 'arweave', jwk })
-const warp = WarpFactory.custom(
-  arweave,
-  defaultCacheOptions,
-  'mainnet'
-).useArweaveGateway().build()
+const irys = new Irys({ network: IRYS_NETWORK, token: "arweave", key: jwk });
+const warp = WarpFactory.custom(arweave, defaultCacheOptions, "mainnet").useArweaveGateway().build();
 
-const contract = warp.contract(ANT).connect(jwk)
+const contract = warp.contract(ANT).connect(jwk);
 // 上传文件夹
 const result = await irys.uploadFolder(DEPLOY_FOLDER, {
-  indexFile: 'index.html'
-})
-
+	indexFile: "index.html",
+});
 
 // 更新ANT
 await contract.writeInteraction({
-  function: 'setRecord',
-  subDomain: '@',
-  transactionId: result.id
-})
+	function: "setRecord",
+	subDomain: "@",
+	transactionId: result.id,
+});
 
-console.log('已部署的食谱，请等待20-30分钟以进行ArNS更新！')
+console.log("已部署的食谱，请等待20-30分钟以进行ArNS更新！");
 ```
 
 ## 将脚本添加到 package.json
@@ -92,22 +87,22 @@ package.json
 name: publish
 
 on:
-    push:
-        branches:
-            - "main"
+  push:
+    branches:
+      - "main"
 
 jobs:
-    publish:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 18.x
-            - run: yarn
-            - run: yarn deploy
-              env:
-                  KEY: ${{ secrets.PERMAWEB_KEY }}
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+      - run: yarn
+      - run: yarn deploy
+        env:
+          KEY: ${{ secrets.PERMAWEB_KEY }}
 ```
 
 ## 总结
@@ -121,7 +116,7 @@ base64 -i wallet.json | pbcopy
 为了使此部署工作，您需要为此钱包的 Irys 账户提供资金，请确保钱包中有一些$AR，不要太多，也许0.5个$AR，然后使用 Irys cli 进行资金注入。
 
 ```console
-irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -t arweave
+irys fund 250000000000 -n mainnet -w wallet.json -t arweave
 ```
 
 ::: warning

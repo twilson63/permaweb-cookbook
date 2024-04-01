@@ -41,7 +41,7 @@ Another difference when using a bundling service like [irys.xyz](https://irys.xy
 [irys.xyz](https://irys.xyz) allows clients to make deposits in a number of [supported crypto currencies](https://docs.irys.xyz/docs/currencies).
 
 ::: info
-When transactions are posted to irys.xyz they are also appear in the optimistic cache of connected gateways so they are available to query in a matter of milliseconds.
+When transactions are posted to irys.xyz they also appear in the optimistic cache of connected gateways so they are available to query in a matter of milliseconds.
 :::
 
 An example of how to post bundled transactions using `irys.xyz/sdk` can be found [in this guide](../guides/posting-transactions/irys.md).
@@ -54,7 +54,7 @@ An example of how to post a 100KB or less bundled transaction with an Arweave wa
 
 ## Resources
 
--   [arweave-js](../guides/posting-transactions/arweave-js.md) example
--   [irys.xyz](../guides/posting-transactions/irys.md) example
--   [dispatch](../guides/posting-transactions/dispatch.md) example
--   [arseeding-js](../guides/posting-transactions/arseeding-js.md) example
+- [arweave-js](../guides/posting-transactions/arweave-js.md) example
+- [irys.xyz](../guides/posting-transactions/irys.md) example
+- [dispatch](../guides/posting-transactions/dispatch.md) example
+- [arseeding-js](../guides/posting-transactions/arseeding-js.md) example

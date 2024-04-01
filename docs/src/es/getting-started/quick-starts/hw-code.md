@@ -8,9 +8,9 @@ Esta guía le ayudará a lograr de forma rápida una página web estática HTML,
 
 ## Requisitos
 
--   [NodeJS](https://nodejs.org) LTS o superior
--   Conocimientos básicos de HTML, CSS y JavaScript
--   Un editor de texto (VS Code, Sublime, u otro similar)
+- [NodeJS](https://nodejs.org) LTS o superior
+- Conocimientos básicos de HTML, CSS y JavaScript
+- Un editor de texto (VS Code, Sublime, u otro similar)
 
 ## Descripción
 
@@ -104,7 +104,7 @@ Ahora que hay un sitio estático para desplegar, se puede comprobar para asegura
 El comando a continuación despliega el directorio `src` mientras también indica el archivo `index.html` como índice para los manifiestos (relativo a la ruta proporcionada al indicador `upload-dir`).
 
 ```sh
-irys upload-dir src -h https://node2.irys.xyz --index-file index.html -c arweave -w ./wallet.json
+irys upload-dir src -n mainnet --index-file index.html -c arweave -w ./wallet.json
 ```
 
 ## ¡¡Felicidades!!

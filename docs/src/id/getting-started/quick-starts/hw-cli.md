@@ -8,7 +8,7 @@ Panduan ini akan membantu Anda untuk melakukan hal yang paling sederhana, yaitu 
 
 ## Persyaratan
 
--   [NodeJS](https://nodejs.org) LTS atau yang lebih baru
+- [NodeJS](https://nodejs.org) LTS atau yang lebih baru
 
 ## Deskripsi
 
@@ -37,5 +37,5 @@ echo "<h1>Halo Permaweb</h1>" > index.html
 ## Mengunggah menggunakan Irys
 
 ```sh
-irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
+irys upload index.html -c arweave -n mainnet -w ./wallet.json
 ```

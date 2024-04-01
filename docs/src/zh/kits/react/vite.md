@@ -8,15 +8,15 @@ locale: zh
 
 ## 先决条件
 
--   基本的 TypeScript 知识（非必需）- [https://www.typescriptlang.org/docs/](了解 TypeScript)
--   NodeJS v16.15.0 或更高版本- [https://nodejs.org/en/download/](下载 NodeJS)
--   了解 ReactJS- [https://reactjs.org/](了解 ReactJS)
--   知道 git 和常见的终端命令
+- 基本的 TypeScript 知识（非必需）- [https://www.typescriptlang.org/docs/](了解 TypeScript)
+- NodeJS v16.15.0 或更高版本- [https://nodejs.org/en/download/](下载 NodeJS)
+- 了解 ReactJS- [https://reactjs.org/](了解 ReactJS)
+- 知道 git 和常见的终端命令
 
 ## 开发依赖
 
--   TypeScript
--   NPM 或 Yarn 包管理器
+- TypeScript
+- NPM 或 Yarn 包管理器
 
 ## 步骤
 
@@ -255,7 +255,7 @@ yarn global add @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }

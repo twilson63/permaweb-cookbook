@@ -10,7 +10,7 @@ Dengan Arweave 2.6 hanya memungkinkan 1000 item per blok, pengunggahan langsung 
 
 ## Persyaratan
 
--   [NodeJS](https://nodejs.org) LTS atau yang lebih baru
+- [NodeJS](https://nodejs.org) LTS atau yang lebih baru
 
 ## Deskripsi
 
@@ -37,11 +37,10 @@ import Irys from "@irys/sdk";
 import fs from "fs";
 
 const jwk = JSON.parse(fs.readFileSync("wallet.json").toString());
-const url = "https://node2.irys.xyz";
 const token = "arweave";
 
 const irys = new Irys({
-	url, // URL of the node you want to connect to
+	network: "mainnet", // Irys network, "mainnet" || "devnet"
 	token, // Token used for payment and signing
 	jwk, // Arweave wallet
 });
@@ -89,6 +88,6 @@ console.log(`https://arweave.net/${tx.id}`);
 
 ## Sumber Daya
 
--   [SDK Irys](https://github.com/irys-xyz/js-sdk)
--   [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
--   [Dokumentasi Irys: Unggahan Gratis](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)
+- [SDK Irys](https://github.com/irys-xyz/js-sdk)
+- [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
+- [Dokumentasi Irys: Unggahan Gratis](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)

@@ -4,17 +4,17 @@ This guide will walk you through in a step by step flow to configure your develo
 
 ## Prerequisites
 
--   Know typescript
--   NodeJS v18 or greater
--   Know Svelte - [https://svelte.dev](https://svelte.dev)
--   Know git and common terminal commands
+- Know typescript
+- NodeJS v18 or greater
+- Know Svelte - [https://svelte.dev](https://svelte.dev)
+- Know git and common terminal commands
 
 ## Development Dependencies
 
--   TypeScript
--   esbuild
--   w3
--   yarn `npm i -g yarn`
+- TypeScript
+- esbuild
+- w3
+- yarn `npm i -g yarn`
 
 ## Steps
 
@@ -164,7 +164,7 @@ yarn add -D @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```

@@ -8,15 +8,15 @@ locale: zh
 
 ## 先决条件
 
--   基本的 Typescript 知识（可选）- [https://www.typescriptlang.org/docs/](学习Typescript)
--   NodeJS v16.15.0 或更高版本-[https://nodejs.org/en/download/](下载NodeJS)
--   了解 ReactJS-[https://reactjs.org/](学习ReactJS)
--   了解 git 和常用的终端命令
+- 基本的 Typescript 知识（可选）- [https://www.typescriptlang.org/docs/](学习Typescript)
+- NodeJS v16.15.0 或更高版本-[https://nodejs.org/en/download/](下载NodeJS)
+- 了解 ReactJS-[https://reactjs.org/](学习ReactJS)
+- 了解 git 和常用的终端命令
 
 ## 开发依赖
 
--   TypeScript
--   NPM 或 Yarn 软件包管理器
+- TypeScript
+- NPM 或 Yarn 软件包管理器
 
 ## 步骤
 
@@ -238,7 +238,7 @@ yarn global add @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./build -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./build -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -298,14 +298,14 @@ yarn deploy
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
+irys fund 1479016 -n mainnet -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
+irys fund 1479016 -n mainnet -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>

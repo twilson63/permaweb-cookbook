@@ -1,4 +1,4 @@
-# Irys CLI (Previously Bundlr)
+# Irys CLI
 
 ## Requirements
 

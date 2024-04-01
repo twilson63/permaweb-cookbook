@@ -35,10 +35,10 @@ function deploy(initState, src) {
 
 There are 4 ways you can deploy a SmartWeaveContract via the Warp SDK, these options handle different use cases that a developer may encounter.
 
--   Need to deploy the contract with the source at the same time
--   Need to deploy a contract where the source is already on the permaweb
--   Need to deploy a contract through the sequencer and point it to some data using a path manifest
--   Need to deploy a contract via Irys and register that contract on the sequencer
+- Need to deploy the contract with the source at the same time
+- Need to deploy a contract where the source is already on the permaweb
+- Need to deploy a contract through the sequencer and point it to some data using a path manifest
+- Need to deploy a contract via Irys and register that contract on the sequencer
 
 ::: tip
 For more information about Warp deployments check out the github Readme for the project. [https://github.com/warp-contracts/warp#deployment](https://github.com/warp-contracts/warp#deployment).
@@ -68,11 +68,11 @@ const { contractTxId, srcTxId } = await warp.deploy({
 });
 ```
 
--   wallet - should be Arweave keyfile (wallet.json) parsed as a JSON object implementing the [JWK Interface](https://rfc-editor.org/rfc/rfc7517) or the string 'use_wallet'
--   initState - is a stringified JSON object
--   data - is optional if you want to write data as part of your deployment
--   src - is the string or Uint8Array value of the source code for the contract
--   tags - is an array of name/value objects `{name: string, value: string}[]`, [Learn more about tags](../../../concepts/tags.md)
+- wallet - should be Arweave keyfile (wallet.json) parsed as a JSON object implementing the [JWK Interface](https://rfc-editor.org/rfc/rfc7517) or the string 'use_wallet'
+- initState - is a stringified JSON object
+- data - is optional if you want to write data as part of your deployment
+- src - is the string or Uint8Array value of the source code for the contract
+- tags - is an array of name/value objects `{name: string, value: string}[]`, [Learn more about tags](../../../concepts/tags.md)
 
 **deployFromSourceTx**
 
@@ -118,7 +118,10 @@ Uses Warp Gateway Sequencer's endpoint to index a contract that has been uploade
 ```ts
 import Irys from '@irys/sdk'
 
-const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
+const irys = new Irys({
+	network: 'mainnet', // Irys network, "mainnet" || "devnet"
+	'arweave',
+	wallet })
 const { id } = await irys.upload('Some Awesome Atomic Asset',  {
   tags: [{'Content-Type': 'text/plain' }]
 })

@@ -39,10 +39,10 @@ function deploy(initState, src) {
 
 通过 Warp SDK，您可以通过以下 4 种方式部署 SmartWeaveContract，这些选项处理开发人员可能遇到的不同用例。
 
--   需要同时部署具有相同源代码的合约
--   需要部署源代码已经在 permaweb 上的合约
--   需要通过序列器部署合约并使用路径清单将其指向某些数据
--   需要通过 Irys 部署合约并在序列器上注册该合约
+- 需要同时部署具有相同源代码的合约
+- 需要部署源代码已经在 permaweb 上的合约
+- 需要通过序列器部署合约并使用路径清单将其指向某些数据
+- 需要通过 Irys 部署合约并在序列器上注册该合约
 
 ::: 提示
 有关 Warp 部署的更多信息，请查看项目的 github 自述文件。[https://github.com/warp-contracts/warp#deployment](https://github.com/warp-contracts/warp#deployment)。
@@ -72,11 +72,11 @@ const { contractTxId, srcTxId } = await warp.deploy({
 });
 ```
 
--   wallet - 应该是 Arweave keyfile（wallet.json），解析为实现[JWK 接口](https://rfc-editor.org/rfc/rfc7517)的 JSON 对象或字符串'use_wallet'
--   initState - 是一个字符串化的 JSON 对象
--   data -如果你想将数据作为部署的一部分编写，这是可选的
--   src - 是合约的源代码的字符串或 Uint8Array 值
--   tags - 是一个包含名称/值对象`{name: string, value: string}[]`的数组，[了解更多关于标签的信息](../../../concepts/tags.md)
+- wallet - 应该是 Arweave keyfile（wallet.json），解析为实现[JWK 接口](https://rfc-editor.org/rfc/rfc7517)的 JSON 对象或字符串'use_wallet'
+- initState - 是一个字符串化的 JSON 对象
+- data -如果你想将数据作为部署的一部分编写，这是可选的
+- src - 是合约的源代码的字符串或 Uint8Array 值
+- tags - 是一个包含名称/值对象`{name: string, value: string}[]`的数组，[了解更多关于标签的信息](../../../concepts/tags.md)
 
 **deployFromSourceTx**
 
@@ -122,7 +122,10 @@ const { contractTxId } = await warp.deployBundled(dataItem.getRaw());
 ```ts
 import Irys from '@irys/sdk'
 
-const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
+const irys = new Irys({
+		network: 'mainnet', // Irys network, "mainnet" || "devnet"
+		'arweave',
+		wallet })
 const { id } = await irys.upload('Some Awesome Atomic Asset',  {
   tags: [{'Content-Type': 'text/plain' }]
 })

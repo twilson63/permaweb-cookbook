@@ -8,15 +8,15 @@ locale: zh
 
 ## 先决条件
 
--   基本的 Typescript 知识（非强制）- [学习 Typescript](https://www.typescriptlang.org/docs/)
--   NodeJS v16.15.0 或以上版本- [下载 NodeJS](https://nodejs.org/en/download/)
--   Vue.js 知识（最好是 Vue 3）- [学习 Vue.js](https://vuejs.org/)
--   了解 git 和常用终端命令
+- 基本的 Typescript 知识（非强制）- [学习 Typescript](https://www.typescriptlang.org/docs/)
+- NodeJS v16.15.0 或以上版本- [下载 NodeJS](https://nodejs.org/en/download/)
+- Vue.js 知识（最好是 Vue 3）- [学习 Vue.js](https://vuejs.org/)
+- 了解 git 和常用终端命令
 
 ## 开发依赖项
 
--   TypeScript（可选）
--   NPM 或 Yarn 软件包管理器
+- TypeScript（可选）
+- NPM 或 Yarn 软件包管理器
 
 ## 步骤
 
@@ -202,7 +202,7 @@ yarn add -D @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.sdk --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -269,7 +269,7 @@ yarn deploy
 
 此位置有一个完整的 JavaScript 或 TypeScript 示例。
 
--   代码库：[https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
+- 代码库：[https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
 
 ## 摘要
 

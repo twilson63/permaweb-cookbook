@@ -2,7 +2,7 @@
 locale: es
 ---
 
-# Irys CLI (Previously Bundlr)
+# Irys CLI
 
 ## Requisitos
 

@@ -60,7 +60,7 @@ arkb deploy [carpeta] --wallet [ruta a la cartera]
 
 Para implementar utilizando Irys, necesitarás <a href="#fund-irys">financiar un nodo Irys</a>.
 
-Irys node2 permite transacciones gratuitas de menos de 100kb.
+Irys permite transacciones gratuitas de menos de 100kb.
 
 Puedes añadir etiquetas identificables personalizadas a la implementación utilizando la sintaxis `nombre-etiqueta/valor-etiqueta`.
 

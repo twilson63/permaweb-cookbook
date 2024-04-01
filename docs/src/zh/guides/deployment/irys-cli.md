@@ -2,7 +2,7 @@
 locale: zh
 ---
 
-# Irys CLI (Previously Bundlr)
+# Irys CLI
 
 ## 要求
 

@@ -6,7 +6,7 @@ With Arweave 2.6 only allowing 1000 items per block, directly posting to the gat
 
 ## Requirements
 
--   [NodeJS](https://nodejs.org) LTS or greater
+- [NodeJS](https://nodejs.org) LTS or greater
 
 ## Description
 
@@ -26,7 +26,7 @@ npm install arweave @irys/sdk
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-## Upload using Irys (Previously Bundlr)
+## Upload using Irys
 
 Uploads of less than 100 KiB are currently free on Irys' Node 2.
 
@@ -35,11 +35,10 @@ import Irys from "@irys/sdk";
 import fs from "fs";
 
 const jwk = JSON.parse(fs.readFileSync("wallet.json").toString());
-const url = "https://node2.irys.xyz";
 const token = "arweave";
 
 const irys = new Irys({
-	url, // URL of the node you want to connect to
+	network : "mainnet", // Irys network "mainnet" || "devnet"
 	token, // Token used for payment and signing
 	jwk, // Arweave wallet
 });
@@ -87,6 +86,6 @@ console.log(`https://arweave.net/${tx.id}`);
 
 ## Resources
 
--   [Irys SDK](https://github.com/irys-xyz/js-sdk)
--   [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
--   [Irys Docs: Free Uploads](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)
+- [Irys SDK](https://github.com/irys-xyz/js-sdk)
+- [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
+- [Irys Docs: Free Uploads](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)

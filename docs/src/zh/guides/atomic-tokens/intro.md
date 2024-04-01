@@ -24,7 +24,10 @@ async function main() {
   const wallet = JSON.parse(await import('fs')
     .then(fs => fs.readFileSync('./wallet.json', 'utf-8')))
 
-  const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
+  const irys = new Irys({
+		network: 'mainnet', // Irys network, "mainnet" || "devnet"
+		'arweave',
+		wallet })
   const warp = WarpFactory.forMainnet()
 
   const data = `<h1>Hello Permaweb!</h1>`

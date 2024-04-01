@@ -10,7 +10,7 @@ Con Arweave 2.6 solo permitiendo 1000 elementos por bloque, directamente subir a
 
 ## Requerimientos
 
--   [NodeJS](https://nodejs.org) LTS o mayor
+- [NodeJS](https://nodejs.org) LTS o mayor
 
 ## Descripción
 
@@ -34,11 +34,10 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 
 ```js:no-line-numbers
 const jwk = JSON.parse(fs.readFileSync("wallet.json").toString());
-const url = "https://node2.irys.xyz";
 const token = "arweave";
 
 const irys = new Irys({
-	url, // URL of the node you want to connect to
+	network : "mainnet", // Irys network "mainnet" || "devnet"
 	token, // Token used for payment and signing
 	jwk, // Arweave wallet
 });
@@ -86,6 +85,6 @@ console.log(`https://arweave.net/${tx.id}`);
 
 ## Recursos
 
--   [Irys SDK](https://github.com/irys-xyz/js-sdk)
--   [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
--   [Irys Docs: Cargas gratuitas](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)
+- [Irys SDK](https://github.com/irys-xyz/js-sdk)
+- [Arweave JS SDK](https://github.com/ArweaveTeam/arweave-js)
+- [Irys Docs: Cargas gratuitas](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)

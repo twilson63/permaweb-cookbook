@@ -39,7 +39,10 @@ import fs from "fs";
 let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
 
 // inisialisasi SDK Irys
-const irys = new Irys({ "http://node1.irys.xyz", "arweave", key });
+const irys = new Irys({
+		network: "mainnet", // Irys network, "mainnet" || "devnet"
+		"arweave",
+		key });
 ```
 
 ## Mengirimkan Transaksi yang Dibundel
@@ -63,8 +66,8 @@ await tx.upload();
 
 ## Sumber Daya
 
--   Untuk gambaran semua cara Anda dapat memposting transaksi, lihat bagian [Posting Transactions](../../concepts/post-transactions.md) dari buku masak.
+- Untuk gambaran semua cara Anda dapat memposting transaksi, lihat bagian [Posting Transactions](../../concepts/post-transactions.md) dari buku masak.
 
--   Dokumentasi lengkap Irys client dapat ditemukan di [situs web irys.xyz](https://docs.irys.xyz)
+- Dokumentasi lengkap Irys client dapat ditemukan di [situs web irys.xyz](https://docs.irys.xyz)
 
--   Tutorial dan lokakarya untuk [mengunggah koleksi NFT](http://docs.irys.xyz/hands-on/tutorials/uploading-nfts) menggunakan Irys.
+- Tutorial dan lokakarya untuk [mengunggah koleksi NFT](http://docs.irys.xyz/hands-on/tutorials/uploading-nfts) menggunakan Irys.

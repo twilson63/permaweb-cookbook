@@ -48,19 +48,19 @@ Paste the code from the following code blocks into their files:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="index.js"></script>
-    <title>Cookbook Hello World!</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="index.js"></script>
+		<title>Cookbook Hello World!</title>
+	</head>
 
-  <body>
-    <button onclick="changeColor()" class="button">Click Me!</button>
-    <h1 id="main">Hello World!</h1>
-  </body>
+	<body>
+		<button onclick="changeColor()" class="button">Click Me!</button>
+		<h1 id="main">Hello World!</h1>
+	</body>
 </html>
 ```
 
@@ -74,8 +74,8 @@ Paste the code from the following code blocks into their files:
 
 ```css
 .button {
-  padding: "10px";
-  background-color: #4caf50;
+	padding: "10px";
+	background-color: #4caf50;
 }
 ```
 
@@ -89,10 +89,8 @@ Paste the code from the following code blocks into their files:
 
 ```javascript
 function changeColor() {
-  const header = document.getElementById("main");
-  header.style.color === ""
-    ? (header.style.color = "red")
-    : (header.style.color = "");
+	const header = document.getElementById("main");
+	header.style.color === "" ? (header.style.color = "red") : (header.style.color = "");
 }
 ```
 
@@ -102,12 +100,12 @@ function changeColor() {
 
 Now that there is a static site to deploy, it can be checked to ensure it all functions properly by typing `open src/index.html` in your console/terminal. If everything is working as expected it is time to deploy to Arweave!
 
-## Upload using Irys (Previously Bundlr)
+## Upload using Irys
 
 The command below deploys the `src` directory whilst also indicating the `index.html` file as an index for the manifests (relative to the path provided to `upload-dir` flag).
 
 ```sh
-irys upload-dir src -h https://node2.irys.xyz --index-file index.html -t arweave -w ./wallet.json
+irys upload-dir src -n mainnet --index-file index.html -t arweave -w ./wallet.json
 ```
 
 ## Congrats!!

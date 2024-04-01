@@ -39,12 +39,12 @@ import Arweave from "arweave";
 
 const ANT = "[ANT CONTRACT ANDA]";
 const DEPLOY_FOLDER = "./dist";
-const IRYS_NODE = "https://node2.irys.xyz";
+const IRYS_NETWORK = "mainnet"; // "mainnet" || "devnet"
 
 const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
 const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, "base64").toString("utf-8"));
 
-const irys = new Irys({ IRYS_NODE, "arweave", jwk });
+const irys = new Irys({ network: IRYS_NETWORK, token: "arweave", key: jwk });
 const warp = WarpFactory.custom(arweave, defaultCacheOptions, "mainnet").useArweaveGateway().build();
 
 const contract = warp.contract(ANT).connect(jwk);
@@ -87,22 +87,22 @@ Buat file `deploy.yml` di folder `.github/workflows`, file ini menginstruksikan 
 name: publish
 
 on:
-    push:
-        branches:
-            - "main"
+  push:
+    branches:
+      - "main"
 
 jobs:
-    publish:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 18.x
-            - run: yarn
-            - run: yarn deploy
-              env:
-                  KEY: ${{ secrets.PERMAWEB_KEY }}
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+      - run: yarn
+      - run: yarn deploy
+        env:
+          KEY: ${{ secrets.PERMAWEB_KEY }}
 ```
 
 ## Ringkasan
@@ -116,7 +116,7 @@ base64 -i wallet.json | pbcopy
 Agar penyebaran ini berfungsi, Anda perlu mendanai akun Irys dompet ini, pastikan ada beberapa $AR di dompet yang akan Anda gunakan, tidak banyak, mungkin .5 AR, kemudian gunakan Irys cli untuk mendanai.
 
 ```console
-irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -t arweave
+irys fund 250000000000 -n mainnet -w wallet.json -t arweave
 ```
 
 ::: warning

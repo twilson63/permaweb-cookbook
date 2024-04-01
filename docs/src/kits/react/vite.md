@@ -4,15 +4,15 @@ This guide will walk you through in a step by step flow to configure your develo
 
 ## Prerequisites
 
--   Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
--   NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
--   Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
--   Know git and common terminal commands
+- Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
+- NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
+- Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
+- Know git and common terminal commands
 
 ## Development Dependencies
 
--   TypeScript
--   NPM or Yarn Package Manager
+- TypeScript
+- NPM or Yarn Package Manager
 
 ## Steps
 
@@ -226,14 +226,14 @@ Make sure you add the `base` property to the vite config object and set it to an
 vite.config.ts
 
 ```ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '',
-  plugins: [react()],
-})
+	base: "",
+	plugins: [react()],
+});
 ```
 
 ### Setup Irys
@@ -268,7 +268,7 @@ You will need to add AR to this wallet and fund your Irys wallet to be able to u
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -t arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./dist -n mainnet --wallet ./wallet.json -t arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -329,17 +329,15 @@ How do I fund my irys account?
 Check balance
 
 ```console:no-line-numbers
-irys balance [Address] -h https://node2.irys.xyz -t arweave
+irys balance [Address] -n mainnet -t arweave
 ```
 
 Fund Irys
 
 ```console:no-line-numbers
-irys fund 20000000000 -t arweave -h https://node2.irys.xyz -w ./wallet.json
+irys fund 20000000000 -t arweave -n mainnet -w ./wallet.json
 ```
 
 ::: tip INFO
 It will take about 20 to 30 minutes for the funds to be deposited into your irys account.
 :::
-
-
