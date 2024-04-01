@@ -8,9 +8,9 @@ Panduan ini akan membimbing Anda untuk dengan cepat mendapatkan halaman web stat
 
 ## Persyaratan
 
--   [NodeJS](https://nodejs.org) LTS atau yang lebih tinggi
--   Pengetahuan dasar tentang HTML, CSS, dan JavaScript
--   Sebuah text editor (seperti VS Code, Sublime, atau sejenisnya)
+- [NodeJS](https://nodejs.org) LTS atau yang lebih tinggi
+- Pengetahuan dasar tentang HTML, CSS, dan JavaScript
+- Sebuah text editor (seperti VS Code, Sublime, atau sejenisnya)
 
 ## Deskripsi
 
@@ -105,7 +105,7 @@ Sekarang bahwa ada situs statis yang akan dideploy, Anda dapat memeriksanya untu
 Perintah di bawah ini mendeploy direktori `src` dan menunjukkan file `index.html` sebagai indeks untuk manifest (relatif terhadap path yang diberikan ke flag `upload-dir`).
 
 ```sh
-irys upload-dir src -h https://node2.irys.xyz --index-file index.html -c arweave -w ./wallet.json
+irys upload-dir src -n mainnet --index-file index.html -c arweave -w ./wallet.json
 ```
 
 ## Selamat!!

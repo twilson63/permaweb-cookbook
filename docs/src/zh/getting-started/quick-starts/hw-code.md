@@ -8,9 +8,9 @@ locale: zh
 
 ## 要求
 
--   [NodeJS](https://nodejs.org) LTS 或更高版本
--   基本的 HTML、CSS 和 JavaScript 知识
--   文本编辑器（VS Code、Sublime 或类似的）
+- [NodeJS](https://nodejs.org) LTS 或更高版本
+- 基本的 HTML、CSS 和 JavaScript 知识
+- 文本编辑器（VS Code、Sublime 或类似的）
 
 ## 说明
 
@@ -105,7 +105,7 @@ function changeColor() {
 以下命令将部署`src`目录，并将`index.html`文件作为清单的索引位置（相对于提供给`upload-dir`标志的路径）。
 
 ```sh
-irys upload-dir src -h https://node2.irys.xyz --index-file index.html -c arweave -w ./wallet.json
+irys upload-dir src -n mainnet --index-file index.html -c arweave -w ./wallet.json
 ```
 
 ## 恭喜！！

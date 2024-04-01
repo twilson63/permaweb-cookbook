@@ -4,7 +4,7 @@ This guide walks you through the most simple way to get data on to the permaweb 
 
 ## Requirements
 
--   [NodeJS](https://nodejs.org) LTS or greater
+- [NodeJS](https://nodejs.org) LTS or greater
 
 ## Description
 
@@ -30,8 +30,8 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 echo "<h1>Hello Permaweb</h1>" > index.html
 ```
 
-## Upload using Irys (Previously Bundlr)
+## Upload using Irys
 
 ```sh
-npx irys upload index.html -t arweave -h https://node2.irys.xyz -w ./wallet.json
+npx irys upload index.html -t arweave -n mainnet -w ./wallet.json
 ```

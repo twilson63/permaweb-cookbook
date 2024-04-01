@@ -1,4 +1,4 @@
-### Irys (Previously Bundlr)
+### Irys
 
 When uploading a folder or group of files from the Irys [CLI](http://docs.irys.xyz/developer-docs/cli), [server](http://docs.irys.xyz/developer-docs/irys-sdk) or from the [browser](http://docs.irys.xyz/developer-docs/irys-sdk/irys-in-the-browser), a manifest is automatically generated for the files.
 

@@ -33,39 +33,34 @@ npm install --save-dev arweave
 Crear archivo `deploy.mjs`
 
 ```js
-import Irys from '@irys/sdk'
-import { WarpFactory, defaultCacheOptions } from 'warp-contracts'
-import Arweave from 'arweave'
+import Irys from "@irys/sdk";
+import { WarpFactory, defaultCacheOptions } from "warp-contracts";
+import Arweave from "arweave";
 
-const ANT = '[TU CONTRATO ANT]'
-const DEPLOY_FOLDER = './dist'
-const IRYS_NODE = 'https://node2.irys.xyz'
+const ANT = "[TU CONTRATO ANT]";
+const DEPLOY_FOLDER = "./dist";
+const IRYS_NETWORK = "mainnet"; // 'mainnet' || 'devnet'
 
-const arweave = Arweave.init({ host: 'arweave.net', port: 443, protocol: 'https' })
-const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, 'base64').toString('utf-8'))
+const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
+const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, "base64").toString("utf-8"));
 
-const irys = new Irys({ IRYS_NODE, 'arweave', jwk })
-const warp = WarpFactory.custom(
-  arweave,
-  defaultCacheOptions,
-  'mainnet'
-).useArweaveGateway().build()
+const irys = new Irys({ network: IRYS_NETWORK, token: "arweave", key: jwk });
+const warp = WarpFactory.custom(arweave, defaultCacheOptions, "mainnet").useArweaveGateway().build();
 
-const contract = warp.contract(ANT).connect(jwk)
+const contract = warp.contract(ANT).connect(jwk);
 // cargar carpeta
 const result = await irys.uploadFolder(DEPLOY_FOLDER, {
-  indexFile: 'index.html'
-})
-
+	indexFile: "index.html",
+});
 
 // actualizar ANT
 await contract.writeInteraction({
-  function: 'setRecord',
-  subDomain: '@',
-  transactionId: result.id
-})
+	function: "setRecord",
+	subDomain: "@",
+	transactionId: result.id,
+});
 
-console.log('Implementado Cookbook, por favor espera 20 - 30 minutos para que ArNS se actualice!')
+console.log("Implementado Cookbook, por favor espera 20 - 30 minutos para que ArNS se actualice!");
 ```
 
 ## Agregar script a package.json
@@ -92,22 +87,22 @@ Crear un archivo `deploy.yml` en la carpeta `.github/workflows`, este archivo in
 name: publicar
 
 on:
-    push:
-        branches:
-            - "main"
+  push:
+    branches:
+      - "main"
 
 jobs:
-    publicar:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 18.x
-            - run: yarn
-            - run: yarn deploy
-              env:
-                  KEY: ${{ secrets.PERMAWEB_KEY }}
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+      - run: yarn
+      - run: yarn deploy
+        env:
+          KEY: ${{ secrets.PERMAWEB_KEY }}
 ```
 
 ## Resumen
@@ -121,7 +116,7 @@ base64 -i wallet.json | pbcopy
 Para que esta implementación funcione, deberás financiar la cuenta de Irys de esta billetera, asegúrate de tener algunos $AR en la billetera que vayas a usar, no mucho, tal vez .5 AR, luego usa la interfaz de línea de comandos de Irys para financiarla.
 
 ```console
-irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -t arweave
+irys fund 250000000000 -n mainnet -w wallet.json -t arweave
 ```
 
 ::: warning

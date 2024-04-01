@@ -35,11 +35,11 @@ import Arweave from "arweave";
 
 const ANT = "[YOUR ANT CONTRACT]";
 const DEPLOY_FOLDER = "./dist";
-const IRYS_NODE = "https://node2.irys.xyz";
+const IRYS_NETWORK = "mainnet"; // Irys network "mainnet" || "devnet"
 
 const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, "base64").toString("utf-8"));
 const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
-const irys = new Irys({ url: IRYS_NODE, token: "arweave", key: jwk });
+const irys = new Irys({ network: IRYS_NETWORK, token: "arweave", key: jwk });
 const warp = WarpFactory.custom(arweave, defaultCacheOptions, "mainnet").useArweaveGateway().build();
 
 const contract = warp.contract(ANT).connect(jwk);
@@ -82,22 +82,22 @@ Create a `deploy.yml` file in the `.github/workflows` folder, this file instruct
 name: publish
 
 on:
-    push:
-        branches:
-            - "main"
+  push:
+    branches:
+      - "main"
 
 jobs:
-    publish:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 18.x
-            - run: yarn
-            - run: yarn deploy
-              env:
-                  KEY: ${{ secrets.PERMAWEB_KEY }}
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+      - run: yarn
+      - run: yarn deploy
+        env:
+          KEY: ${{ secrets.PERMAWEB_KEY }}
 ```
 
 ## Summary
@@ -111,7 +111,7 @@ base64 -i wallet.json | pbcopy
 In order for this deployment to work, you will need to fund this wallets Irys account, make sure there is some $AR in the wallet you will be using, not much, maybe .5 AR, then use the Irys cli to fund.
 
 ```console
-irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -t arweave
+irys fund 250000000000 -n mainnet -w wallet.json -t arweave
 ```
 
 ::: warning

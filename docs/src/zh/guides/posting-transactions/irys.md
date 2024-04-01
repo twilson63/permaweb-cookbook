@@ -39,7 +39,10 @@ import fs from "fs";
 let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
 
 // 初始化IrysSDK
-const irys = new Irys({ "http://node1.iryz.xyz", "arweave", key });
+const irys = new Irys({
+		network: "mainnet", // Irys network, "mainnet" || "devnet"
+		"arweave",
+		key });
 ```
 
 ## 发布捆绑交易
@@ -63,8 +66,8 @@ await tx.upload();
 
 ## 资源
 
--   有关发布交易的所有方式的概述，请参阅操作手册中的[发布交易](../../concepts/post-transactions.md)部分。
+- 有关发布交易的所有方式的概述，请参阅操作手册中的[发布交易](../../concepts/post-transactions.md)部分。
 
--   可以在[irys.xyz 网站](https://docs.irys.xyz/)上找到完整的 Irys 客户端文档。
+- 可以在[irys.xyz 网站](https://docs.irys.xyz/)上找到完整的 Irys 客户端文档。
 
--   使用 Irys 上传 NFT 合集的教程和工作坊[在此处](http://docs.irys.xyz/hands-on/tutorials/uploading-nfts)。
+- 使用 Irys 上传 NFT 合集的教程和工作坊[在此处](http://docs.irys.xyz/hands-on/tutorials/uploading-nfts)。

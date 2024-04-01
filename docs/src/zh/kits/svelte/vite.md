@@ -210,7 +210,7 @@ yarn add -D @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "yarn build && irys upload-dir dist -h https://node2.irys.sdk --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "yarn build && irys upload-dir dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```

@@ -39,10 +39,10 @@ async function deploy(initState, src) {
 
 Hay 4 formas en las que puedes desplegar un Contrato SmartWeave a través del SDK de Warp, estas opciones manejan diferentes casos de uso que un desarrollador puede encontrar.
 
--   Necesidad de desplegar el contrato con el código fuente al mismo tiempo.
--   Necesidad de desplegar un contrato donde el código fuente ya está en la permaweb.
--   Necesidad de desplegar un contrato a través del secuenciador y señalar algunos datos mediante un manifiesto de ruta.
--   Necesidad de desplegar un contrato a través de Irys y registrar ese contrato en el secuenciador.
+- Necesidad de desplegar el contrato con el código fuente al mismo tiempo.
+- Necesidad de desplegar un contrato donde el código fuente ya está en la permaweb.
+- Necesidad de desplegar un contrato a través del secuenciador y señalar algunos datos mediante un manifiesto de ruta.
+- Necesidad de desplegar un contrato a través de Irys y registrar ese contrato en el secuenciador.
 
 ::: tip
 Para obtener más información sobre los despliegues de Warp, consulta el Readme de GitHub para el proyecto. [https://github.com/warp-contracts/warp#deployment](https://github.com/warp-contracts/warp#deployment).
@@ -72,11 +72,11 @@ const { contractTxId, srcTxId } = await warp.deploy({
 });
 ```
 
--   wallet - debe ser el archivo de clave de Arweave (wallet.json) analizado como un objeto JSON que implementa la [Interfaz JWK](https://rfc-editor.org/rfc/rfc7517) o la cadena 'use_wallet'
--   initState - es un objeto JSON convertido en cadena
--   data - es opcional si deseas escribir datos como parte de tu despliegue
--   src - es el valor de la cadena o Uint8Array del código fuente del contrato
--   tags - es un array de objetos de nombre/valor `{name: string, value: string}[]`, [Aprende más sobre etiquetas](../../../concepts/tags.md)
+- wallet - debe ser el archivo de clave de Arweave (wallet.json) analizado como un objeto JSON que implementa la [Interfaz JWK](https://rfc-editor.org/rfc/rfc7517) o la cadena 'use_wallet'
+- initState - es un objeto JSON convertido en cadena
+- data - es opcional si deseas escribir datos como parte de tu despliegue
+- src - es el valor de la cadena o Uint8Array del código fuente del contrato
+- tags - es un array de objetos de nombre/valor `{name: string, value: string}[]`, [Aprende más sobre etiquetas](../../../concepts/tags.md)
 
 **deployFromSourceTx**
 
@@ -122,7 +122,10 @@ Utiliza el punto de enlace del Secuenciador del Gateway de Warp para indexar un 
 ```ts
 import Irys from '@irys/sdk'
 
-const irys = new Irys({'https://node2.irys.xyz', 'arweave', wallet})
+const irys = new Irys({
+		network: 'mainnet', // Irys network 'mainnet' || 'devnet'
+	 'arweave',
+	 wallet})
 const { id } = await irys.upload('Some Awesome Atomic Asset',  {
   tags: [{'Content-Type': 'text/plain' }]
 })

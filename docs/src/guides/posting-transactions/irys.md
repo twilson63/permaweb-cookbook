@@ -1,4 +1,4 @@
-# Posting Transactions using Irys (Previously Bundlr)
+# Posting Transactions using Irys
 
 Posting transactions to irys.xyz can be accomplished using the `irys.xyz/sdk` JavaScript package. Bundling services enable guaranteed confirmation of posted transactions as well as supporting many thousands of transactions per block though the use of transaction bundles.
 
@@ -31,13 +31,12 @@ A difference between posting Layer 1 and bundled Layer 2 transactions is that wh
 import Irys from "@irys/sdk";
 import fs from "fs";
 
-const url = "https://node1.irys.xyz";
 const token = "arweave";
 // load the JWK wallet key file from disk
 let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
 
 const irys = new Irys({
-	url, // URL of the node you want to connect to
+	network: "mainnet", // Irys network, "mainnet" || "devnet"
 	token, // Token used for payment and signing
 	key, // Arweave wallet
 });
@@ -76,8 +75,8 @@ try {
 
 ## Resources
 
--   For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/post-transactions.md) section of the cookbook.
+- For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/post-transactions.md) section of the cookbook.
 
--   The full Irys client docs can be found on the [irys.xyz website](http://docs.irys.xyz/developer-docs/irys-sdk)
+- The full Irys client docs can be found on the [irys.xyz website](http://docs.irys.xyz/developer-docs/irys-sdk)
 
--   A tutorial for [uploading NFT assets](http://docs.irys.xyz/hands-on/tutorials/uploading-nfts) using Irys.
+- A tutorial for [uploading NFT assets](http://docs.irys.xyz/hands-on/tutorials/uploading-nfts) using Irys.

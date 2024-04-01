@@ -10,17 +10,17 @@ Panduan ini akan membimbing Anda langkah demi langkah dalam mengkonfigurasi ling
 
 ## Persyaratan
 
--   Mengenal TypeScript
--   NodeJS v18 atau yang lebih tinggi
--   Mengenal Svelte - [https://svelte.dev](https://svelte.dev)
--   Mengenal git dan perintah terminal umum
+- Mengenal TypeScript
+- NodeJS v18 atau yang lebih tinggi
+- Mengenal Svelte - [https://svelte.dev](https://svelte.dev)
+- Mengenal git dan perintah terminal umum
 
 ## Ketergantungan Pengembangan
 
--   TypeScript
--   esbuild
--   w3
--   yarn `npm i -g yarn`
+- TypeScript
+- esbuild
+- w3
+- yarn `npm i -g yarn`
 
 ## Langkah-langkah
 
@@ -170,7 +170,7 @@ yarn add -D @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```

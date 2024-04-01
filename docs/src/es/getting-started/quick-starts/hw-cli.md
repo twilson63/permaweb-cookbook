@@ -8,7 +8,7 @@ Esta guía le guiará a través de la forma más simple de obtener datos en el p
 
 ## Requerimientos
 
--   [NodeJS](https://nodejs.org) LTS o superior
+- [NodeJS](https://nodejs.org) LTS o superior
 
 ## Descripción
 
@@ -37,5 +37,5 @@ echo "<h1>Hola Permaweb</h1>" > index.html
 ## Subir utilizando Irys
 
 ```sh
-irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
+irys upload index.html -c arweave -n mainnet -w ./wallet.json
 ```

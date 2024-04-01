@@ -10,15 +10,15 @@ Panduan ini akan memberikan instruksi langkah demi langkah untuk mengonfigurasi 
 
 ## Persyaratan
 
--   Pengetahuan Dasar tentang TypeScript (Tidak Wajib) - [Pelajari TypeScript](https://www.typescriptlang.org/docs/)
--   NodeJS v16.15.0 atau yang lebih baru - [Unduh NodeJS](https://nodejs.org/en/download/)
--   Pengetahuan tentang Vue.js (lebih baik lagi Vue 3) - [Pelajari Vue.js](https://vuejs.org/)
--   Mengetahui git dan perintah terminal umum
+- Pengetahuan Dasar tentang TypeScript (Tidak Wajib) - [Pelajari TypeScript](https://www.typescriptlang.org/docs/)
+- NodeJS v16.15.0 atau yang lebih baru - [Unduh NodeJS](https://nodejs.org/en/download/)
+- Pengetahuan tentang Vue.js (lebih baik lagi Vue 3) - [Pelajari Vue.js](https://vuejs.org/)
+- Mengetahui git dan perintah terminal umum
 
 ## Dependensi Pengembangan
 
--   TypeScript (Opsional)
--   Manajer Paket NPM atau Yarn
+- TypeScript (Opsional)
+- Manajer Paket NPM atau Yarn
 
 ## Langkah-langkah
 
@@ -204,7 +204,7 @@ Untuk mengunggah aplikasi ini, Anda mungkin perlu menambahkan AR dan mengisi wal
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -271,7 +271,7 @@ Jika aplikasi Anda lebih dari 120 kb atau Anda menerima pesan kesalahan `Not eno
 
 Contoh yang sepenuhnya fungsional dalam JavaScript atau TypeScript dapat ditemukan di lokasi ini.
 
--   Repositori: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
+- Repositori: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
 
 ## Ringkasan
 

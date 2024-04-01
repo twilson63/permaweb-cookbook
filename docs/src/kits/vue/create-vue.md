@@ -4,15 +4,15 @@ This guide will provide step-by-step instructions to configure your development 
 
 ## Prerequisites
 
--   Basic Typescript Knowledge (Not Mandatory) - [Learn Typescript](https://www.typescriptlang.org/docs/)
--   NodeJS v16.15.0 or greater - [Download NodeJS](https://nodejs.org/en/download/)
--   Knowledge of Vue.js (preferably Vue 3) - [Learn Vue.js](https://vuejs.org/)
--   Know git and common terminal commands
+- Basic Typescript Knowledge (Not Mandatory) - [Learn Typescript](https://www.typescriptlang.org/docs/)
+- NodeJS v16.15.0 or greater - [Download NodeJS](https://nodejs.org/en/download/)
+- Knowledge of Vue.js (preferably Vue 3) - [Learn Vue.js](https://vuejs.org/)
+- Know git and common terminal commands
 
 ## Development Dependencies
 
--   TypeScript (Optional)
--   NPM or Yarn Package Manager
+- TypeScript (Optional)
+- NPM or Yarn Package Manager
 
 ## Steps
 
@@ -198,7 +198,7 @@ To upload this app, you may need to add AR and fund your Irys wallet. Visit [htt
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```
@@ -265,7 +265,7 @@ if your application is greater than 120 kb or you receive the error `Not enough 
 
 A fully functional example in JavaScript or TypeScript can be found at this location.
 
--   Repository: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
+- Repository: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
 
 ## Summary
 

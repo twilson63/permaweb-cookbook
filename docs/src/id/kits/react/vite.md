@@ -10,15 +10,15 @@ Panduan ini akan membimbing Anda langkah demi langkah untuk mengonfigurasi lingk
 
 ## Persyaratan
 
--   Pengetahuan Dasar TypeScript (Tidak Wajib) - [Pelajari TypeScript](https://www.typescriptlang.org/docs/)
--   NodeJS v16.15.0 atau lebih baru - [Unduh NodeJS](https://nodejs.org/en/download/)
--   Pengetahuan tentang ReactJS - [Pelajari ReactJS](https://reactjs.org/)
--   Mengetahui git dan perintah terminal umum
+- Pengetahuan Dasar TypeScript (Tidak Wajib) - [Pelajari TypeScript](https://www.typescriptlang.org/docs/)
+- NodeJS v16.15.0 atau lebih baru - [Unduh NodeJS](https://nodejs.org/en/download/)
+- Pengetahuan tentang ReactJS - [Pelajari ReactJS](https://reactjs.org/)
+- Mengetahui git dan perintah terminal umum
 
 ## Dependensi Pengembangan
 
--   TypeScript
--   NPM atau Yarn Package Manager
+- TypeScript
+- NPM atau Yarn Package Manager
 
 ## Langkah-langkah
 
@@ -256,7 +256,7 @@ Anda perlu menambahkan AR ke wallet ini dan mendanai wallet Irys Anda agar dapat
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }

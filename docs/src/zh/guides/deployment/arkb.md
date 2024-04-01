@@ -60,7 +60,7 @@ arkb deploy [folder] --wallet [钱包路径]
 
 要使用 irys 进行部署，您需要<a href="#fund-irys">为 Irys 节点提供资金</a>。
 
-Irys node2 允许在 100kb 以下的免费交易。
+Irys 允许在 100kb 以下的免费交易。
 
 您可以使用`tag-name/tag-value`语法为部署添加自定义标识标签。
 

@@ -8,7 +8,7 @@ locale: zh
 
 ## 要求
 
--   [NodeJS](https://nodejs.org) LTS 或更高版本
+- [NodeJS](https://nodejs.org) LTS 或更高版本
 
 ## 描述
 
@@ -37,5 +37,5 @@ echo "<h1>Hello Permaweb</h1>" > index.html
 ## 使用 Irys 上传
 
 ```sh
-irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
+irys upload index.html -c arweave -n mainnet -w ./wallet.json
 ```

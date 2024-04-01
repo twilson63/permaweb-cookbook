@@ -2,7 +2,7 @@
 locale: id
 ---
 
-# Irys CLI (Previously Bundlr)
+# Irys CLI
 
 ## Prasyarat
 

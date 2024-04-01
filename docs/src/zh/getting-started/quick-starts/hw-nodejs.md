@@ -10,7 +10,7 @@ locale: zh
 
 ## 要求
 
--   [NodeJS](https://nodejs.org) LTS 或更高版本
+- [NodeJS](https://nodejs.org) LTS 或更高版本
 
 ## 描述
 
@@ -39,7 +39,7 @@ import fs from "fs";
 const jwk = JSON.parse(fs.readFileSync("wallet.json").toString());
 
 const irys = new Irys({}
-  "http://node2.irys.xyz",
+	network: "mainnet", // Irys network, "mainnet" || "devnet"
   "arweave",
   jwk
 });
@@ -83,6 +83,6 @@ console.log(`https://arweave.net/${tx.id}`);
 
 ## 资源
 
--   [Irys Irys 软件开发工具包）](https://github.com/irys-xyz/js-sdk)
--   [Arweave JS SDK（Arweave JavaScript 软件开发工具包）](https://github.com/ArweaveTeam/arweave-js)
--   [Irys 文档：免费上传](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)
+- [Irys Irys 软件开发工具包）](https://github.com/irys-xyz/js-sdk)
+- [Arweave JS SDK（Arweave JavaScript 软件开发工具包）](https://github.com/ArweaveTeam/arweave-js)
+- [Irys 文档：免费上传](http://docs.irys.xyz/faqs/dev-faq#does-irys-offer-free-uploads)

@@ -54,9 +54,9 @@ arkb deploy [folder] --wallet [path to wallet]
 
 #### Bundled Deployment
 
-To deploy using Bundlr you will need to <a href="#fund-bundlr">fund a Bundlr node</a>.
+To deploy using Irys you will need to <a href="#fund-irys">fund an Irys node</a>.
 
-Bundlr node2 allows free transactions under 100kb.
+Bundlr allows free transactions under 100kb.
 
 You can add custom identifiable tags to the deployment using `tag-name/tag-value` syntax.
 
@@ -69,13 +69,13 @@ arkb deploy [folder] --use-bundler [bundlr node] --wallet [path to wallet] --tag
 
 ## Other Commands
 
-#### Fund Bundlr
+#### Fund Irys
 
 ```console
 arkb fund-bundler [amount] --use-bundler [bundlr node]
 ```
 
-<sub style="float:right">\* Funding a Bundlr instance can take up to 30 minutes to process</sub>
+<sub style="float:right">\* Funding an Irys instance can take up to 30 minutes to process</sub>
 
 #### Saving Keyfile
 

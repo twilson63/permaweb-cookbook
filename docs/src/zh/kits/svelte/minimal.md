@@ -8,17 +8,17 @@ locale: zh
 
 ## 先决条件
 
--   熟悉 Typescript
--   NodeJS v18 或更高版本
--   了解 Svelte - [https://svelte.dev](https://svelte.dev)
--   了解 git 和常用终端命令
+- 熟悉 Typescript
+- NodeJS v18 或更高版本
+- 了解 Svelte - [https://svelte.dev](https://svelte.dev)
+- 了解 git 和常用终端命令
 
 ## 开发依赖
 
--   TypeScript
--   esbuild
--   w3
--   yarn `npm i -g yarn`
+- TypeScript
+- esbuild
+- w3
+- yarn `npm i -g yarn`
 
 ## 步骤
 
@@ -168,7 +168,7 @@ yarn add -D @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
 }
 ```

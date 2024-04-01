@@ -8,15 +8,15 @@ Esta guía te guiará paso a paso para configurar tu entorno de desarrollo y con
 
 ## Requisitos previos
 
--   Conocimientos básicos de TypeScript (no obligatorio) - [https://www.typescriptlang.org/docs/](Aprende TypeScript)
--   NodeJS v16.15.0 o superior - [https://nodejs.org/en/download/](Descargar NodeJS)
--   Conocimientos de ReactJS - [https://reactjs.org/](Aprende ReactJS)
--   Conocimiento de git y comandos de terminal comunes
+- Conocimientos básicos de TypeScript (no obligatorio) - [https://www.typescriptlang.org/docs/](Aprende TypeScript)
+- NodeJS v16.15.0 o superior - [https://nodejs.org/en/download/](Descargar NodeJS)
+- Conocimientos de ReactJS - [https://reactjs.org/](Aprende ReactJS)
+- Conocimiento de git y comandos de terminal comunes
 
 ## Dependencias de desarrollo
 
--   TypeScript
--   NPM o Yarn Package Manager
+- TypeScript
+- NPM o Yarn Package Manager
 
 ## Pasos
 
@@ -255,7 +255,7 @@ Necesitarás agregar AR a esta billetera y fondear tu billetera de Irys para pod
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./dist -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }

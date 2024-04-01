@@ -8,15 +8,15 @@ Esta guía te guiará paso a paso para configurar tu entorno de desarrollo para 
 
 ## Requisitos previos
 
--   Conocimiento básico de TypeScript (no obligatorio) - [https://www.typescriptlang.org/docs/](Aprende TypeScript)
--   NodeJS v16.15.0 o superior - [https://nodejs.org/en/download/](Descargar NodeJS)
--   Conocimiento de ReactJS - [https://reactjs.org/](Aprende ReactJS)
--   Conocer git y comandos comunes de la terminal
+- Conocimiento básico de TypeScript (no obligatorio) - [https://www.typescriptlang.org/docs/](Aprende TypeScript)
+- NodeJS v16.15.0 o superior - [https://nodejs.org/en/download/](Descargar NodeJS)
+- Conocimiento de ReactJS - [https://reactjs.org/](Aprende ReactJS)
+- Conocer git y comandos comunes de la terminal
 
 ## Dependencias de desarrollo
 
--   TypeScript
--   NPM o Yarn Package Manager
+- TypeScript
+- NPM o Yarn Package Manager
 
 ## Pasos
 
@@ -240,7 +240,7 @@ Debes añadir AR a esta cartera y financiar tu cartera de Irys para poder cargar
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./build -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "irys upload-dir ./build -n mainnet --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }
@@ -300,14 +300,14 @@ Si recibes este error `Not enough funds to send data`, tienes que financiar tu c
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
+irys fund 1479016 -n mainnet -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
+irys fund 1479016 -n mainnet -w wallet.json -c arweave
 ```
 
   </CodeGroupItem>

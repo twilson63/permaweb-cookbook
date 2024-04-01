@@ -39,10 +39,10 @@ async function deploy(initState, src) {
 
 Ada 4 cara Anda dapat menyelenggarakan Kontrak SmartWeave menggunakan SDK Warp, pilihan-pilihan ini menangani berbagai kasus penggunaan yang mungkin dihadapi oleh pengembang.
 
--   Perlu menyelenggarakan kontrak dengan sumber kode pada saat yang sama.
--   Perlu menyelenggarakan kontrak di mana sumber kode sudah ada di Permaweb.
--   Perlu menyelenggarakan kontrak melalui pengurutan (sequencer) dan mengarahkannya ke beberapa data menggunakan manifes jalur (path manifest).
--   Perlu menyelenggarakan kontrak melalui Irys dan mendaftarkan kontrak tersebut pada pengurutan (sequencer).
+- Perlu menyelenggarakan kontrak dengan sumber kode pada saat yang sama.
+- Perlu menyelenggarakan kontrak di mana sumber kode sudah ada di Permaweb.
+- Perlu menyelenggarakan kontrak melalui pengurutan (sequencer) dan mengarahkannya ke beberapa data menggunakan manifes jalur (path manifest).
+- Perlu menyelenggarakan kontrak melalui Irys dan mendaftarkan kontrak tersebut pada pengurutan (sequencer).
 
 ::: tip
 Untuk informasi lebih lanjut tentang penyelenggaraan Warp, lihat Readme di GitHub untuk proyek ini. [https://github.com/warp-contracts/warp#deployment](https://github.com/warp-contracts/warp#deployment).
@@ -72,11 +72,11 @@ const { contractTxId, srcTxId } = await warp.deploy({
 });
 ```
 
--   wallet - seharusnya berupa keyfile Arweave (wallet.json) yang diurai sebagai objek JSON yang mengimplementasikan [JWK Interface](https://rfc-editor.org/rfc/rfc7517) atau string 'use_wallet'.
--   initState - adalah objek JSON yang telah diubah menjadi string.
--   data - opsional jika Anda ingin menulis data sebagai bagian dari penyelenggaraan Anda.
--   src - adalah nilai string atau Uint8Array dari kode sumber kontrak.
--   tags - adalah array dari objek nama/nilai `{name: string, value: string}[]`, [Pelajari lebih lanjut tentang tags](../../../concepts/tags.md).
+- wallet - seharusnya berupa keyfile Arweave (wallet.json) yang diurai sebagai objek JSON yang mengimplementasikan [JWK Interface](https://rfc-editor.org/rfc/rfc7517) atau string 'use_wallet'.
+- initState - adalah objek JSON yang telah diubah menjadi string.
+- data - opsional jika Anda ingin menulis data sebagai bagian dari penyelenggaraan Anda.
+- src - adalah nilai string atau Uint8Array dari kode sumber kontrak.
+- tags - adalah array dari objek nama/nilai `{name: string, value: string}[]`, [Pelajari lebih lanjut tentang tags](../../../concepts/tags.md).
 
 **deployFromSourceTx**
 
@@ -122,7 +122,10 @@ Menggunakan endpoint Sequencer Warp Gateway untuk mengindekskan kontrak yang tel
 ```ts
 import Irys from '@irys/sdk'
 
-const irys = new Irys({ 'https://node2.irys.xyz', 'arweave', wallet })
+const irys = new Irys({
+		network: 'mainnet', // Irys network, "mainnet" || "devnet"
+		'arweave',
+		wallet })
 const { id } = await irys.upload('Some Awesome Atomic Asset',  {
   tags: [{'Content-Type': 'text/plain' }]
 })
