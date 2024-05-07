@@ -9,4 +9,5 @@ The SmartWeave Token has a special feature called a balances object that keeps t
 ## Deploying Atomic Assets
 
 
+* [using Akord](akord.md)
 * [using ArDrive CLI](ardrive-cli)
