@@ -5,3 +5,4 @@ Please the the examples attached to Posting Transactions Core Concept.
 -   [dispatch](/guides//posting-transactions/dispatch.md) example
 -   [arseeding-js](/guides//posting-transactions/arseeding-js.md) example
 -   [turbo](/guides//posting-transactions/turbo.md) example
+-   [akord](/guides/posting-transactions/akord.md) example

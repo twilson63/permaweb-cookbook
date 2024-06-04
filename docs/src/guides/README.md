@@ -18,6 +18,7 @@ Snack-sized guides for the building blocks of the Permaweb
     -   [arweave.app](deploying-manifests/arweave-app.md)
     -   [ardrive](deploying-manifests/ardrive.md)
     -   [irys.xyz](deploying-manifests/irys.md)
+    -   [Akord](deploying-manifests/akord.md)
 -   [Deploying PSTs](deploying-psts.md)
 -   [GraphQL](querying-arweave/queryingArweave.md)
     -   [ArDB](querying-arweave/ardb.md)
@@ -26,6 +27,7 @@ Snack-sized guides for the building blocks of the Permaweb
 -   [Irys Query Package](irysQueryPackage.md)
 -   SmartWeave
     -   [Atomic Assets](smartweave/atomic-assets/index.md)
+        -   [using Akord](smartweave/atomic-assets/akord.md)
         -   [using ArDrive CLI](smartweave/atomic-assets/ardrive-cli.md)
     -   [Atomic Tokens](atomic-tokens/intro.md)
     -   [Vouch](vouch.md)

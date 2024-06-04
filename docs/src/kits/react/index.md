@@ -9,6 +9,7 @@ React Starter Kit Guides:
 * [Turbo](./turbo.md) - React + Vite, publish with Turbo
 * [Vite](./vite.md) - utilize Vite to build a React permaweb app
 * [Create React App](./create-react-app.md) - utilize Create React App to build a React permaweb app
+* [Akord](./akord.md) - React + Vite, deploy with Akord
 
 
 ::: info Permaweb Application Constraints
