@@ -5,64 +5,64 @@ const get_i18n_link = (code, link) => `${code === "en" ? "" : "/" + code}${link}
 const getI18NSidebar = (langCode) => [
 	{
 		text: get_i18n_str(langCode, "getting-started", "Getting Started"),
-		link: get_i18n_link(langCode, "/getting-started/"),
+		link: get_i18n_link(langCode, "/getting-started/index.html"),
 		collapsible: true,
 		children: [
 			{
 				text: get_i18n_str(langCode, "getting-started-welcome", "Welcome"),
-				link: get_i18n_link(langCode, "/getting-started/welcome"),
+				link: get_i18n_link(langCode, "/getting-started/welcome.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "getting-started-hw-no-code", "Hello World (No Code)"),
-				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-no-code"),
+				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-no-code.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "getting-started-hw-cli", "Hello World (CLI)"),
-				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-cli"),
+				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-cli.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "getting-started-hw-code", "Hello World (With Code)"),
-				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-code"),
+				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-code.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "getting-started-hw-node", "Hello World (Nodejs)"),
-				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-nodejs"),
+				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-nodejs.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "getting-started-contributing", "Contributing"),
-				link: get_i18n_link(langCode, "/getting-started/contributing"),
+				link: get_i18n_link(langCode, "/getting-started/contributing.html"),
 			},
 		],
 	},
 	{
 		text: get_i18n_str(langCode, "concepts"),
-		link: get_i18n_link(langCode, "/concepts/"),
+		link: get_i18n_link(langCode, "/concepts/index.html"),
 		collapsible: true,
 		children: [
 			{
 				text: get_i18n_str(langCode, "concepts-post-transactions"),
-				link: get_i18n_link(langCode, "/concepts/post-transactions"),
+				link: get_i18n_link(langCode, "/concepts/post-transactions.html"),
 				collapsible: true,
 				children: [
 					{
 						text: "arweave-js",
-						link: get_i18n_link(langCode, "/guides/posting-transactions/arweave-js"),
+						link: get_i18n_link(langCode, "/guides/posting-transactions/arweave-js.html"),
 					},
 					{
 						text: "irys.xyz",
-						link: get_i18n_link(langCode, "/guides/posting-transactions/irys"),
+						link: get_i18n_link(langCode, "/guides/posting-transactions/irys.html"),
 					},
 					{
 						text: "dispatch",
-						link: get_i18n_link(langCode, "/guides/posting-transactions/dispatch"),
+						link: get_i18n_link(langCode, "/guides/posting-transactions/dispatch.html"),
 					},
 					{
 						text: "arseeding-js",
-						link: get_i18n_link(langCode, "/guides/posting-transactions/arseeding-js"),
+						link: get_i18n_link(langCode, "/guides/posting-transactions/arseeding-js.html"),
 					},
 					{
 						text: "Turbo-SDK",
-						link: get_i18n_link(langCode, "/guides/posting-transactions/turbo")
+						link: get_i18n_link(langCode, "/guides/posting-transactions/turbo.html")
 					},
           {
 						text: "Akord",
@@ -72,102 +72,102 @@ const getI18NSidebar = (langCode) => [
 			},
 			{
 				text: get_i18n_str(langCode, "concepts-tags"),
-				link: get_i18n_link(langCode, "/concepts/tags"),
+				link: get_i18n_link(langCode, "/concepts/tags.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "concepts-querying"),
-				link: get_i18n_link(langCode, "/concepts/queryTransactions"),
+				link: get_i18n_link(langCode, "/concepts/queryTransactions.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "concepts-fetching-data"),
-				link: get_i18n_link(langCode, "/guides/http-api.md"),
+				link: get_i18n_link(langCode, "/guides/http-api.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "concepts-transaction-types"),
 				children: [
 					{
 						text: get_i18n_str(langCode, "concepts-bundles"),
-						link: get_i18n_link(langCode, "/concepts/bundles"),
+						link: get_i18n_link(langCode, "/concepts/bundles.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-path-manifests"),
-						link: get_i18n_link(langCode, "/concepts/manifests"),
+						link: get_i18n_link(langCode, "/concepts/manifests.html"),
 					},
 				],
 			},
 			{
 				text: get_i18n_str(langCode, "concepts-wallets-and-keys"),
-				link: get_i18n_link(langCode, "/concepts/keyfiles-and-wallets"),
+				link: get_i18n_link(langCode, "/concepts/keyfiles-and-wallets.html"),
 			},
 			{
 				text: "Permaweb",
-				link: get_i18n_link(langCode, "/concepts/permaweb"),
+				link: get_i18n_link(langCode, "/concepts/permaweb.html"),
 				collapsible: false,
 				children: [
 					{
 						text: get_i18n_str(langCode, "concepts-permaweb-applications"),
-						link: get_i18n_link(langCode, "/concepts/permawebApplications"),
+						link: get_i18n_link(langCode, "/concepts/permawebApplications.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-gateways"),
-						link: get_i18n_link(langCode, "/concepts/gateways"),
+						link: get_i18n_link(langCode, "/concepts/gateways.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-bundlers"),
-						link: get_i18n_link(langCode, "/concepts/bundlers"),
+						link: get_i18n_link(langCode, "/concepts/bundlers.html"),
 					},
 				],
 			},
 			{
 				text: "SmartWeave",
-				link: get_i18n_link(langCode, "/concepts/smartweave"),
+				link: get_i18n_link(langCode, "/concepts/smartweave.html"),
 				collapsible: false,
 				children: [
 					{
 						text: "Arweave Name System (ArNS)",
-						link: get_i18n_link(langCode, "/concepts/arns"),
+						link: get_i18n_link(langCode, "/concepts/arns.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-atomic-tokens"),
-						link: get_i18n_link(langCode, "/concepts/atomic-tokens.md"),
+						link: get_i18n_link(langCode, "/concepts/atomic-tokens.html"),
 					},
 					{
 						text: "Profit Sharing Tokens (PSTs)",
-						link: get_i18n_link(langCode, "/concepts/psts"),
+						link: get_i18n_link(langCode, "/concepts/psts.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-vouch"),
-						link: get_i18n_link(langCode, "/concepts/vouch"),
+						link: get_i18n_link(langCode, "/concepts/vouch.html"),
 					},
 				],
 			},
 			{
 				text: "Arweave File System (ArFS)",
-				link: get_i18n_link(langCode, "/concepts/arfs/arfs"),
+				link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
 				children: [
 					{
 						text: "ArFS",
-						link: get_i18n_link(langCode, "/concepts/arfs/arfs"),
+						link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
 					},
 					{
 						text: "Data Model",
-						link: get_i18n_link(langCode, "/concepts/arfs/data-model"),
+						link: get_i18n_link(langCode, "/concepts/arfs/data-model.html"),
 					},
 					{
 						text: "Entity Types",
-						link: get_i18n_link(langCode, "/concepts/arfs/entity-types"),
+						link: get_i18n_link(langCode, "/concepts/arfs/entity-types.html"),
 					},
 					{
 						text: "Content Types",
-						link: get_i18n_link(langCode, "/concepts/arfs/content-types"),
+						link: get_i18n_link(langCode, "/concepts/arfs/content-types.html"),
 					},
 					{
 						text: "Privacy",
-						link: get_i18n_link(langCode, "/concepts/arfs/privacy"),
+						link: get_i18n_link(langCode, "/concepts/arfs/privacy.html"),
 					},
 					{
 						text: "Schema Diagrams",
-						link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams"),
+						link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams.html"),
 					},
 				],
 			},
@@ -175,12 +175,12 @@ const getI18NSidebar = (langCode) => [
 	},
 	{
 		text: get_i18n_str(langCode, "guides"),
-		link: get_i18n_link(langCode, "/guides/"),
+		link: get_i18n_link(langCode, "/guides/index.html"),
 		collapsible: true,
 		children: [
 			{
 				text: get_i18n_str(langCode, "guides-arprofile"),
-				link: get_i18n_link(langCode, "/guides/arprofile"),
+				link: get_i18n_link(langCode, "/guides/arprofile.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "guides-dns-integration"),
@@ -188,11 +188,11 @@ const getI18NSidebar = (langCode) => [
 				children: [
 					{
 						text: get_i18n_str(langCode, "guides-server-side"),
-						link: get_i18n_link(langCode, "/guides/dns-integration/server-side"),
+						link: get_i18n_link(langCode, "/guides/dns-integration/server-side.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "guides-spheron"),
-						link: get_i18n_link(langCode, "/guides/dns-integration/spheron"),
+						link: get_i18n_link(langCode, "/guides/dns-integration/spheron.html"),
 					},
 				],
 			},
@@ -202,38 +202,38 @@ const getI18NSidebar = (langCode) => [
 				children: [
 					{
 						text: "arkb",
-						link: get_i18n_link(langCode, "/guides/deployment/arkb"),
+						link: get_i18n_link(langCode, "/guides/deployment/arkb.html"),
 					},
 					{
 						text: "Irys",
-						link: get_i18n_link(langCode, "/guides/deployment/irys-cli"),
+						link: get_i18n_link(langCode, "/guides/deployment/irys-cli.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "guides-github-action"),
-						link: get_i18n_link(langCode, "/guides/deployment/github-action"),
+						link: get_i18n_link(langCode, "/guides/deployment/github-action.html"),
 					},
 				],
 			},
 			{
 				text: get_i18n_str(langCode, "guides-deploying-manifests"),
-				link: get_i18n_link(langCode, "/guides/deploying-manifests/deployingManifests"),
+				link: get_i18n_link(langCode, "/guides/deploying-manifests/deployingManifests.html"),
 				collapsible: false,
 				children: [
 					{
 						text: "arweave.app",
-						link: get_i18n_link(langCode, "/guides/deploying-manifests/arweave-app"),
+						link: get_i18n_link(langCode, "/guides/deploying-manifests/arweave-app.html"),
 					},
 					{
 						text: "ardrive",
-						link: get_i18n_link(langCode, "/guides/deploying-manifests/ardrive"),
+						link: get_i18n_link(langCode, "/guides/deploying-manifests/ardrive.html"),
 					},
 					{
 						text: "irys.xyz",
-						link: get_i18n_link(langCode, "/guides/deploying-manifests/irys"),
+						link: get_i18n_link(langCode, "/guides/deploying-manifests/irys.html"),
 					},
 					{
 						text: "arseeding-js",
-						link: get_i18n_link(langCode, "/guides/deploying-manifests/arseeding-js"),
+						link: get_i18n_link(langCode, "/guides/deploying-manifests/arseeding-js.html"),
 					},
           {
 						text: "Akord",
@@ -244,7 +244,7 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: get_i18n_str(langCode, "guides-deploying-psts"),
 				collapsible: false,
-				link: get_i18n_link(langCode, "/guides/deploying-psts"),
+				link: get_i18n_link(langCode, "/guides/deploying-psts.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "guides-execution-machine"),
@@ -252,11 +252,11 @@ const getI18NSidebar = (langCode) => [
 				children: [
 					{
 						text: get_i18n_str(langCode, "guides-intro"),
-						link: get_i18n_link(langCode, "/guides/exm/intro.md"),
+						link: get_i18n_link(langCode, "/guides/exm/intro.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "guides-api-token"),
-						link: get_i18n_link(langCode, "/guides/exm/api.md"),
+						link: get_i18n_link(langCode, "/guides/exm/api.html"),
 					},
 					{
 						text: "JS SDK",
@@ -264,19 +264,19 @@ const getI18NSidebar = (langCode) => [
 						children: [
 							{
 								text: get_i18n_str(langCode, "guides-sdk-intro"),
-								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-intro.md"),
+								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-intro.html"),
 							},
 							{
 								text: get_i18n_str(langCode, "guides-sdk-deploy"),
-								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-deploy.md"),
+								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-deploy.html"),
 							},
 							{
 								text: get_i18n_str(langCode, "guides-sdk-write"),
-								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-write.md"),
+								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-write.html"),
 							},
 							{
 								text: get_i18n_str(langCode, "guides-sdk-read"),
-								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-read.md"),
+								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-read.html"),
 							},
 						],
 					},
@@ -284,26 +284,26 @@ const getI18NSidebar = (langCode) => [
 			},
 			{
 				text: "GraphQL",
-				link: get_i18n_link(langCode, "/guides/querying-arweave/queryingArweave"),
+				link: get_i18n_link(langCode, "/guides/querying-arweave/queryingArweave.html"),
 				collapsible: false,
 				children: [
 					{
 						text: "ArDB",
-						link: get_i18n_link(langCode, "/guides/querying-arweave/ardb"),
+						link: get_i18n_link(langCode, "/guides/querying-arweave/ardb.html"),
 					},
 					{
 						text: "ar-gql",
-						link: get_i18n_link(langCode, "/guides/querying-arweave/ar-gql"),
+						link: get_i18n_link(langCode, "/guides/querying-arweave/ar-gql.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "guides-search-indexing-service"),
-						link: get_i18n_link(langCode, "/guides/querying-arweave/search-indexing-service"),
+						link: get_i18n_link(langCode, "/guides/querying-arweave/search-indexing-service.html"),
 					},
 				],
 			},
 			{
 				text: "Irys Query Package",
-				link: get_i18n_link(langCode, "/guides/irysQueryPackage"),
+				link: get_i18n_link(langCode, "/guides/irysQueryPackage.html"),
 				collapsible: false,
 			},
 			{
@@ -312,26 +312,26 @@ const getI18NSidebar = (langCode) => [
 				children: [
 					{
 						text: get_i18n_str(langCode, "guides-atomic-asset"),
-						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index"),
+						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index.html"),
 						collapsible: false,
 						children: [
 							{
 								text: "using Akord",
-								link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/akord.md"),
+								link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/akord.html"),
 							},
 							{
 								text: "using ArDrive CLI",
-								link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/ardrive-cli.md"),
+								link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/ardrive-cli.html"),
 							}
 						],
 					},
 					{
 						text: get_i18n_str(langCode, "guides-atomic-token"),
-						link: get_i18n_link(langCode, "/guides/atomic-tokens/intro"),
+						link: get_i18n_link(langCode, "/guides/atomic-tokens/intro.html"),
 					},
 					{
 						text: "Vouch",
-						link: get_i18n_link(langCode, "/guides/vouch"),
+						link: get_i18n_link(langCode, "/guides/vouch.html"),
 					},
 					{
 						text: "Warp",
@@ -339,23 +339,23 @@ const getI18NSidebar = (langCode) => [
 						children: [
 							{
 								text: get_i18n_str(langCode, "guides-intro"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/intro.md"),
+								link: get_i18n_link(langCode, "/guides/smartweave/warp/intro.html"),
 							},
 							{
 								text: get_i18n_str(langCode, "guides-warp-deploying-contracts"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/deploying-contracts.md"),
+								link: get_i18n_link(langCode, "/guides/smartweave/warp/deploying-contracts.html"),
 							},
 							{
 								text: get_i18n_str(langCode, "guides-warp-read-state"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/readstate.md"),
+								link: get_i18n_link(langCode, "/guides/smartweave/warp/readstate.html"),
 							},
 							{
 								text: get_i18n_str(langCode, "guides-warp-write-interactions"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/write-interactions.md"),
+								link: get_i18n_link(langCode, "/guides/smartweave/warp/write-interactions.html"),
 							},
 							{
 								text: get_i18n_str(langCode, "guides-warp-evolve"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/evolve.md"),
+								link: get_i18n_link(langCode, "/guides/smartweave/warp/evolve.html"),
 							},
 						],
 					},
@@ -368,7 +368,7 @@ const getI18NSidebar = (langCode) => [
 					{
 						text: "arlocal",
 						collapsible: false,
-						link: get_i18n_link(langCode, "/guides/testing/arlocal"),
+						link: get_i18n_link(langCode, "/guides/testing/arlocal.html"),
 					},
 				],
 			},
@@ -376,51 +376,51 @@ const getI18NSidebar = (langCode) => [
 	},
 	{
 		text: get_i18n_str(langCode, "references"),
-		link: get_i18n_link(langCode, "/references/"),
+		link: get_i18n_link(langCode, "/references/index.html"),
 		collapsible: true,
 		children: [
 			{
 				text: "Bundling",
 				collapsible: false,
-				link: get_i18n_link(langCode, "/references/bundling"),
+				link: get_i18n_link(langCode, "/references/bundling.html"),
 			},
 			{
 				text: "GraphQL",
 				collapsible: false,
-				link: get_i18n_link(langCode, "/references/gql"),
+				link: get_i18n_link(langCode, "/references/gql.html"),
 			},
 			{
 				text: "HTTP API",
 				collapsible: false,
-				link: get_i18n_link(langCode, "/references/http-api"),
+				link: get_i18n_link(langCode, "/references/http-api.html"),
 			},
 			{
 				text: "Irys Query Package",
 				collapsible: false,
-				link: get_i18n_link(langCode, "/references/irysQueryPackage"),
+				link: get_i18n_link(langCode, "/references/irysQueryPackage.html"),
 			},
 		],
 	},
 	{
 		text: get_i18n_str(langCode, "kits"),
-		link: get_i18n_link(langCode, "/kits/"),
+		link: get_i18n_link(langCode, "/kits/index.html"),
 		collapsible: true,
 		children: [
 			{
 				text: "React",
-				link: get_i18n_link(langCode, "/kits/react/"),
+				link: get_i18n_link(langCode, "/kits/react/index.html"),
 			},
 			{
 				text: "Svelte",
-				link: get_i18n_link(langCode, "/kits/svelte/"),
+				link: get_i18n_link(langCode, "/kits/svelte/index.html"),
 			},
 			{
 				text: "Vue",
-				link: get_i18n_link(langCode, "/kits/vue/"),
+				link: get_i18n_link(langCode, "/kits/vue/index.html"),
 			},
 			{
 				text: "Irys Provenance Toolkit",
-				link: get_i18n_link(langCode, "/kits/irysProvenanceToolkit"),
+				link: get_i18n_link(langCode, "/kits/irysProvenanceToolkit.html"),
 			},
 		],
 	},
