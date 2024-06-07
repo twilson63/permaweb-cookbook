@@ -1,7 +1,5 @@
 ---
 locale: es
----
----
 onboarding: true
 ---
 
