@@ -62,7 +62,7 @@ const frontmatter = usePageFrontmatter();
 
       <div class="col-12 col-md-6 col-xl-3">
         <I18NRouterLink
-          to="/getting-started/quick-starts/hw-no-code"
+          to="/getting-started/quick-starts/hw-no-code.html"
           class="onboard-card"
         >
           <div class="card-content">
@@ -178,7 +178,7 @@ const frontmatter = usePageFrontmatter();
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <I18NRouterLink to="/concepts" class="onboard-card">
+        <I18NRouterLink to="/concepts/index.html" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon">
@@ -294,7 +294,7 @@ const frontmatter = usePageFrontmatter();
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <I18NRouterLink to="/guides" class="onboard-card">
+        <I18NRouterLink to="/guides/index.html" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon">

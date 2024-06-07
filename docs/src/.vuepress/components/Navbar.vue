@@ -44,7 +44,7 @@ onMounted(() => {
             @toggle="$emit('toggle-sidebar')"
           />
 
-          <I18NRouterLink to="/" style="flex: 1;">
+          <I18NRouterLink to="/index.html" style="flex: 1;">
             <div class="logo"></div>
           </I18NRouterLink>
         </div>
@@ -59,7 +59,7 @@ onMounted(() => {
             <I18NRouterLink
               class="d-none d-md-block"
               style="color: var(--c-text)"
-              to="/getting-started/"
+              to="/getting-started/index.html"
               >Docs</I18NRouterLink
             >
 
