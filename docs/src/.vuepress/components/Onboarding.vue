@@ -20,7 +20,7 @@ const frontmatter = usePageFrontmatter();
           <I18NRouterLink
             style="color: var(--c-accent-rose)"
             class="hero-body-text"
-            to="/getting-started/"
+            to="/getting-started/index.html"
           >
             {{ get_i18n_str(frontmatter.locale, "get-started", "Get Started") }}
           </I18NRouterLink>
