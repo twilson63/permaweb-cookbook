@@ -42,9 +42,6 @@ Transaction tags can be used in GraphQL queries to return a filtered set of tran
 
 ## Examples
 
-<CodeGroup>
-  <CodeGroupItem title="arweave">
-
 ```ts
 const tx = await arweave.createTransaction({ data: mydata });
 tx.addTag("Content-Type", "text/html");

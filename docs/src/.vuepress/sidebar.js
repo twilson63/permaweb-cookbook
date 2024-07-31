@@ -116,10 +116,6 @@ const getI18NSidebar = (langCode) => [
 						link: get_i18n_link(langCode, "/concepts/arns.html"),
 					},
 					{
-						text: get_i18n_str(langCode, "concepts-atomic-tokens"),
-						link: get_i18n_link(langCode, "/concepts/atomic-tokens.html"),
-					},
-					{
 						text: "Profit Sharing Tokens (PSTs)",
 						link: get_i18n_link(langCode, "/concepts/psts.html"),
 					},

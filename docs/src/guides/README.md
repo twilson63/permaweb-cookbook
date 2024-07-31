@@ -26,7 +26,6 @@ Snack-sized guides for the building blocks of the Permaweb
     -   [Atomic Assets](smartweave/atomic-assets/index.md)
         -   [using Akord](smartweave/atomic-assets/akord.md)
         -   [using ArDrive CLI](smartweave/atomic-assets/ardrive-cli.md)
-    -   [Atomic Tokens](atomic-tokens/intro.md)
     -   [Vouch](vouch.md)
     -   Warp Contracts
         -   [Intro](smartweave/warp/intro.md)
