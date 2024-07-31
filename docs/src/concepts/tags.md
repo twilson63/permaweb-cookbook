@@ -42,9 +42,6 @@ Transaction tags can be used in GraphQL queries to return a filtered set of tran
 
 ## Examples
 
-<CodeGroup>
-  <CodeGroupItem title="arweave">
-
 ```ts
 const tx = await arweave.createTransaction({ data: mydata });
 tx.addTag("Content-Type", "text/html");
@@ -56,22 +53,6 @@ tx.addTag("Type", "blog-post");
 await arweave.transactions.sign(tx, jwk);
 await arweave.transactions.post(tx);
 ```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="@irys/sdk">
-
-```js
-await irys.upload(mydata, [
-	{ name: "Content-Type", value: "text/html" },
-	{ name: "Title", value: "My incredible post about Transaction Tags" },
-	{ name: "Description", value: "This one post you do not want to miss!" },
-	{ name: "Topic:Amazing", value: "Amazing" },
-	{ name: "Type", value: "blog-post" },
-]);
-```
-
-  </CodeGroupItem>
-</CodeGroup>
 
 ## Summary
 

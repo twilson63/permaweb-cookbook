@@ -15,13 +15,13 @@ Using a terminal/console window create a new folder called `hw-permaweb-1`.
 ```sh
 cd hw-permaweb-1
 npm init -y
-npm install arweave @irys/sdk
+npm install arweave ardrive-cli
 ```
 
 ## Generate a wallet
 
 ```sh
-node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
+npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json
 ```
 
 ## Create a web page
@@ -30,8 +30,15 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 echo "<h1>Hello Permaweb</h1>" > index.html
 ```
 
-## Upload using Irys (Previously Bundlr)
+## Upload using Ardrive CLI
 
 ```sh
-npx irys upload index.html -t arweave -h https://node2.irys.xyz -w ./wallet.json
+# Create a Drive
+FOLDER_ID=$(npx ardrive create-drive -n public -w ~/.demo-arweave-wallet.json --turbo | jq -r '.created[] | select(.type == "folder") | .entityId')
+# Upload file
+TX_ID=$(npx ardrive upload-file -l index.html --content-type text/html -w ~/.demo-arweave-wallet.json --turbo -F ${FOLDER_ID} | jq -r '.created[] | select(.type == "file
+") | .dataTxId')
+# open file from ar.io gateway
+open https://g8way.io/${TX_ID}
 ```
+

@@ -36,26 +36,15 @@ An example of how to post a direct transaction using `arweave-js` can be found [
 
 Services built on top of Arweave that provide additional utility for Permaweb builders are sometimes called Permaweb Services. A bundler is one such service. Bundlers take multiple individual transactions and bundle them together into a single transaction that is posted directly to Arweave. In this way a single transaction at the protocol level can contain tens of thousands of bundled transactions. There is one restriction, however, only **data** transactions can be included in a bundle. **Wallet-to-wallet** transactions (that transfer **AR** tokens between wallet addresses) must be done as individual transactions posted directly to Arweave.
 
-Another difference when using a bundling service like [irys.xyz](https://irys.xyz) is that you must make a small deposit on the bundler node you intend to use prior to posting transactions. This enables the bundler service to charge for many small (or large) uploads without the overhead of settling **AR** tokens transfers directly on Arweave each time.
-
-[irys.xyz](https://irys.xyz) allows clients to make deposits in a number of [supported crypto currencies](https://docs.irys.xyz/docs/currencies).
-
-::: info
-When transactions are posted to irys.xyz they are also appear in the optimistic cache of connected gateways so they are available to query in a matter of milliseconds.
-:::
-
-An example of how to post bundled transactions using `irys.xyz/sdk` can be found [in this guide](../guides/posting-transactions/irys.md).
-
 ## Dispatched Transactions
 
-Another way to post bundled transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to bundlers. Arweave browser wallets implement a `dispatch()` API method. If you are posting small transactions (100KB or less) you can use the wallets `dispatch()` method to take advantage of bundled transactions even if `irys.xyz/sdk` isn't packaged with your application.
+Another way to post bundled transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to bundlers. Arweave browser wallets implement a `dispatch()` API method. If you are posting small transactions (100KB or less) you can use the wallets `dispatch()` method to take advantage of bundled transactions.
 
 An example of how to post a 100KB or less bundled transaction with an Arweave wallets `dispatch()` method can be found [in this guide](../guides/posting-transactions/dispatch.md).
 
 ## Resources
 
 -   [arweave-js](../guides/posting-transactions/arweave-js.md) example
--   [irys.xyz](../guides/posting-transactions/irys.md) example
 -   [dispatch](../guides/posting-transactions/dispatch.md) example
 -   [arseeding-js](../guides/posting-transactions/arseeding-js.md) example
 -   [akord](../guides/posting-transactions/akord.md) example

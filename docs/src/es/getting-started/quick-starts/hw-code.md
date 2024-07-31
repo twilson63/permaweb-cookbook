@@ -21,7 +21,6 @@ Usar una terminal/ventana de consola para crear una nueva carpeta llamada `hola-
 ```sh
 cd hola-mundo
 npm init -y
-npm install arweave @irys/sdk
 mkdir src && cd src
 touch index.js index.html style.css
 ```

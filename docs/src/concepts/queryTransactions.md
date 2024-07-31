@@ -46,43 +46,6 @@ const results = await arweave.api.post('/graphql', queryObject);
 
 Each piece of data uploaded to Arweave has its own unique transaction id and is included in a unique block which is then added to the blockchain. The data associated with each transaction is split up into 256KB chunks and appended sequentially to Arweave's dataset. It is possible to walk back, block by block, from the [current block](https://arweave.net/block/current) and inspect each one for the transaction id in question. Once found, the chunks offsets can be retrieved from the block and used to request chunks directly from an Arweave peer. This is the lowest level way to locate and read data on the network. Thankfully, less labor intensive approaches [like GraphQL](#graphql) are available.
 
-## Irys Query Package
-
-The [Irys query package](/guides/irysQueryPackage.html) is a JavaScript abstraction that sits on top of GraphQL, enabling JavaScript and TypeScript developers to interact with GraphQL without directly engaging in its syntax.
-
-It supports the same query functionality as native GraphQL [allowing you to search by](https://docs.irys.xyz/developer-docs/querying/query-package#query-type) transaction ID, [tags](https://docs.irys.xyz/developer-docs/tags), [payment token](https://docs.irys.xyz/overview/supported-tokens), transaction sender and block information.
-
-You start by instantiating a new Query object and then filter your query by chaining together a series of filters. You can search transactions uploaded via Irys:
-
-```js:no-line-numbers
-const myQuery = new Query();
-const results = await myQuery
-	.search("irys:transactions")
-	.tags([{ name: "Content-Type", values: ["image/png"] }])
-	.token("solana");
-	.sort("ASC")
-	.limit(20);
-```
-
-Transactions on Arweave:
-
-```js:no-line-numbers
-const myQuery = new Query();
-const results = await myQuery
-	.search("arweave:transactions")
-	.tags([{ name: "Content-Type", values: ["image/png", "image/jpg"] }]);
-```
-
-And Arweave block information.
-
-```js:no-line-numbers
-const myQuery = new Query();
-const results = await myQuery
-	.search("arweave:blocks")
-	.minHeight(1188272)
-	.maxHeight(1188279);
-```
-
 ## ARQL
 
 ::: warning

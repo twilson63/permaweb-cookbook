@@ -21,14 +21,6 @@ const getI18NSidebar = (langCode) => [
 				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-cli.html"),
 			},
 			{
-				text: get_i18n_str(langCode, "getting-started-hw-code", "Hello World (With Code)"),
-				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-code.html"),
-			},
-			{
-				text: get_i18n_str(langCode, "getting-started-hw-node", "Hello World (Nodejs)"),
-				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-nodejs.html"),
-			},
-			{
 				text: get_i18n_str(langCode, "getting-started-contributing", "Contributing"),
 				link: get_i18n_link(langCode, "/getting-started/contributing.html"),
 			},
@@ -49,10 +41,6 @@ const getI18NSidebar = (langCode) => [
 						link: get_i18n_link(langCode, "/guides/posting-transactions/arweave-js.html"),
 					},
 					{
-						text: "irys.xyz",
-						link: get_i18n_link(langCode, "/guides/posting-transactions/irys.html"),
-					},
-					{
 						text: "dispatch",
 						link: get_i18n_link(langCode, "/guides/posting-transactions/dispatch.html"),
 					},
@@ -64,7 +52,7 @@ const getI18NSidebar = (langCode) => [
 						text: "Turbo-SDK",
 						link: get_i18n_link(langCode, "/guides/posting-transactions/turbo.html")
 					},
-          {
+					{
 						text: "Akord",
 						link: get_i18n_link(langCode, "/guides/posting-transactions/akord")
 					},
@@ -126,10 +114,6 @@ const getI18NSidebar = (langCode) => [
 					{
 						text: "Arweave Name System (ArNS)",
 						link: get_i18n_link(langCode, "/concepts/arns.html"),
-					},
-					{
-						text: get_i18n_str(langCode, "concepts-atomic-tokens"),
-						link: get_i18n_link(langCode, "/concepts/atomic-tokens.html"),
 					},
 					{
 						text: "Profit Sharing Tokens (PSTs)",
@@ -205,10 +189,6 @@ const getI18NSidebar = (langCode) => [
 						link: get_i18n_link(langCode, "/guides/deployment/arkb.html"),
 					},
 					{
-						text: "Irys",
-						link: get_i18n_link(langCode, "/guides/deployment/irys-cli.html"),
-					},
-					{
 						text: get_i18n_str(langCode, "guides-github-action"),
 						link: get_i18n_link(langCode, "/guides/deployment/github-action.html"),
 					},
@@ -228,14 +208,10 @@ const getI18NSidebar = (langCode) => [
 						link: get_i18n_link(langCode, "/guides/deploying-manifests/ardrive.html"),
 					},
 					{
-						text: "irys.xyz",
-						link: get_i18n_link(langCode, "/guides/deploying-manifests/irys.html"),
-					},
-					{
 						text: "arseeding-js",
 						link: get_i18n_link(langCode, "/guides/deploying-manifests/arseeding-js.html"),
 					},
-          {
+					{
 						text: "Akord",
 						link: get_i18n_link(langCode, "/guides/deploying-manifests/akord"),
 					},
@@ -300,11 +276,6 @@ const getI18NSidebar = (langCode) => [
 						link: get_i18n_link(langCode, "/guides/querying-arweave/search-indexing-service.html"),
 					},
 				],
-			},
-			{
-				text: "Irys Query Package",
-				link: get_i18n_link(langCode, "/guides/irysQueryPackage.html"),
-				collapsible: false,
 			},
 			{
 				text: "SmartWeave",
@@ -394,11 +365,6 @@ const getI18NSidebar = (langCode) => [
 				collapsible: false,
 				link: get_i18n_link(langCode, "/references/http-api.html"),
 			},
-			{
-				text: "Irys Query Package",
-				collapsible: false,
-				link: get_i18n_link(langCode, "/references/irysQueryPackage.html"),
-			},
 		],
 	},
 	{
@@ -417,10 +383,6 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "Vue",
 				link: get_i18n_link(langCode, "/kits/vue/index.html"),
-			},
-			{
-				text: "Irys Provenance Toolkit",
-				link: get_i18n_link(langCode, "/kits/irysProvenanceToolkit.html"),
 			},
 		],
 	},

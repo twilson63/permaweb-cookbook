@@ -11,7 +11,7 @@ For a deeper dive into the permaweb check out this article on [The Permaweb](./p
 The permaweb is a collection of sites, apps, and SmartContracts built on top of the [Arweave's Permaweb Services](./permaweb.md). The core parts of the Permaweb are the following:
 
 -   Gateway Service (ex. arweave.net, arweave.live, ar.io)
--   Bundling Service (ex. irys.xyz)
+-   Bundling Service (ex. ardrive turbo)
 -   Sequencer Service (ex. warp.cc)
 -   Index Service (ex goldsky)
 

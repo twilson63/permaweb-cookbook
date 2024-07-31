@@ -12,22 +12,11 @@ Una aplicación Permaweb es un tipo de página web o aplicación web que se ejec
 Para profundizar en el permaweb, consulte este artículo sobre [El Permaweb](./permaweb.md)
 :::
 
-El permaweb es una colección de sitios, aplicaciones y SmartContracts construidos sobre [Servicios Permaweb de Arweave](./permaweb.md) . Las partes principales del Permaweb son las siguientes:
-
--   Servicio de Puerta de Enlace (ex. arweave.net, arweave.live, ar.io)
--   Servicio de Empaquetado (ex. irys.xyz)
--   Servicio de Secuenciador (ex. warp.cc)
--   Servicio de Índice (ex goldsky)
-
 <img src="https://arweave.net/ycQzutVToTtVT_vT4811ByswtZ-KjqmifNSehSb1-eg" width="700">
 
 ### Servicios de Puerta de Enlace
 
 Los servicios de puerta de enlace son el puente entre los datos de Arweave y la visualización de datos en el navegador. Los gateways a menudo proporcionan servicio de indexación junto al servicio de datos de transacciones, exponen puntos finales de graphQL para consultar transacciones Arewave.
-
-### Servicios de Empaquetado
-
-Los servicios de empaquetado agrupan transacciones en lotes de transacciones y garantizan que estos paquetes se publican directamente en Arewave. Al utilizar un servicio de empaquetado como irys.xyz, puede publicar cientos de miles de transacciones en un solo bloque de Arweave.
 
 ### Servicios de Secuenciación
 
