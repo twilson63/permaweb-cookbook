@@ -17,16 +17,16 @@ Using a terminal/console window create a new folder called `hw-nodejs`.
 ```sh
 cd hw-nodejs
 npm init -y
-npm install arweave @irys/sdk
+npm install arweave ardrive-cli
 ```
 
 ## Generate a wallet
 
 ```sh
-node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
+npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json
 ```
 
-## Upload using Irys (Previously Bundlr)
+## Upload using Ardrive Turbo
 
 Uploads of less than 100 KiB are currently free on Irys' Node 2.
 

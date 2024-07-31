@@ -4,11 +4,7 @@
 
 With bundling services users can post their data transactions to a bundling service to have it "bundled" together with other users transactions and posted as a single Arweave transaction in an upcoming Arweave block.
 
-### Posting to a bundling service
-
 ---
-
-You can read more about how to post your transactions to a bundling service [here](/guides/posting-transactions/irys.md).
 
 ### What is a bundle?
 
@@ -22,13 +18,9 @@ A description of transaction bundles and their benefits can be found [here](/con
 
 A bundler is a node which is responsible for accepting transactions or data items from users, bundling them, and posting them to the Arweave network (with a guarantee they will be uploaded with a specific transaction ID).
 
-The pioneer of bundling services and the largest current bundler is [irys.xyz](https://irys.xyz). Irys nodes run:
+Services:
 
--   A NGINX reverse proxy
--   HTTP API processes
--   A Redis cache
--   A SQL (Postgres) database
--   Worker processes
+- [Turbo](https://github.com/ardriveapp/turbo-upload-service/)
 
 Which make sure the data is persisted until it is uploaded to Arweave.
 

@@ -40,24 +40,9 @@ Un ejemplo de cómo publicar una transacción directa usando `arweave-js` se pue
 
 Los servicios construidos encima de Arweave que proporcionan una utilidad adicional para los constructores de Permaweb a veces se llaman Servicios Permaweb. Un empaquetador es uno de esos servicios. Los empaquetadores recopilan múltiples transacciones individuales y las agrupan en una sola transacción que se publica directamente en Arweave. De esta manera, en el nivel de protocolo, una sola transacción puede contener decenas de miles de transacciones agrupadas. Sin embargo, hay una restricción: solo se pueden incluir **transacciones de datos** en un paquete. Las transacciones **billetera-a-billetera** (que transfieren tokens **AR** entre direcciones de billetera) deben hacerse como transacciones individuales publicadas directamente en Arweave.
 
-Otra diferencia cuando se usa un servicio de empaquetado como [irys.xyz](https://irys.xyz) es que debe hacer un pequeño depósito en el nodo de empaquetador que desea usar antes de publicar transacciones. Esto permite al servicio de empaquetado cobrar por muchas cargas pequeñas (o grandes) sin la sobrecarga de liquidar transferencias tokens **AR** directamente en Arweave cada vez.
-
-[irys.xyz](https://irys.xyz) permite a los clientes hacer depósitos en una serie de [criptomonedas admitidas](https://docs.irys.xyz/docs/currencies).
-
-::: info
-Cuando se publican transacciones en irys.xyz, también aparecen en el caché optimista de las puertas de enlace conectadas, por lo que están disponibles para consultar en cuestión de milisegundos.
-:::
-
-Un ejemplo de cómo publicar transacciones en agrupadas usando `irys/sdk` se puede encontrar [en esta guía](../guides/posting-transactions/irys.md).
-
-## Transacciones Enviadas
-
-Otra forma de publicar transacciones agrupadas es desde el navegador. Si bien los navegadores imponen algunas restricciones en cuanto al tamaño de los datos que se pueden cargar, las billeteras basadas en navegador pueden publicar transacciones en los agrupadores. Las billeteras de navegador de Arweave implementan un método de API llamado `dispatch()`. Si estás publicando transacciones pequeñas (de 100KB o menos), puedes utilizar el método `dispatch()` de las billeteras para aprovechar las transacciones agrupadas, incluso si `irys/sdk` no está incluido en tu aplicación.
-
 Un ejemplo de cómo publicar una transacción agrupada de 100KB o menos utilizando el método `dispatch()` de las billeteras de Arweave se puede encontrar en esta guía.
 
 ## Recursos
 
 -   Ejemplo de [arweave-js](../guides/posting-transactions/arweave-js.md)
--   Ejemplo de [irys.xyz](../es/guides/posting-transactions/irys.md)
 -   Ejemplo de [dispatch](../guides/posting-transactions/dispatch.md)

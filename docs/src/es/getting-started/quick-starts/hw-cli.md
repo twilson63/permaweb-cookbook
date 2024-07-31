@@ -19,13 +19,13 @@ Usando una ventana de terminal / consola, cree una nueva carpeta llamada `hw-per
 ```sh
 cd hw-permaweb-1
 npm init -y
-npm installar arweave @irys/sdk
+npm install arweave ardrive-cli
 ```
 
 ## Generar una billetera
 
 ```sh
-node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
+npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json
 ```
 
 ## Crea una página web
@@ -37,5 +37,11 @@ echo "<h1>Hola Permaweb</h1>" > index.html
 ## Subir utilizando Irys
 
 ```sh
-irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
+# Create a Drive
+FOLDER_ID=$(npx ardrive create-drive -n public -w ~/.demo-arweave-wallet.json --turbo | jq -r '.created[] | select(.type == "folder") | .entityId')
+# Upload file
+TX_ID=$(npx ardrive upload-file -l index.html --content-type text/html -w ~/.demo-arweave-wallet.json --turbo -F ${FOLDER_ID} | jq -r '.created[] | select(.type == "file
+") | .dataTxId')
+# open file from ar.io gateway
+open https://g8way.io/${TX_ID}
 ```

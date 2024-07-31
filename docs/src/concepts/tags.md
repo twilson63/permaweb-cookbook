@@ -57,22 +57,6 @@ await arweave.transactions.sign(tx, jwk);
 await arweave.transactions.post(tx);
 ```
 
-  </CodeGroupItem>
-  <CodeGroupItem title="@irys/sdk">
-
-```js
-await irys.upload(mydata, [
-	{ name: "Content-Type", value: "text/html" },
-	{ name: "Title", value: "My incredible post about Transaction Tags" },
-	{ name: "Description", value: "This one post you do not want to miss!" },
-	{ name: "Topic:Amazing", value: "Amazing" },
-	{ name: "Type", value: "blog-post" },
-]);
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
 ## Summary
 
 Understanding how Transaction Tags factor into the Arweave tech stack can provide context on how to solve problems using the Permaweb as an application platform. Tags provide a tool to consume and create common data standards and patterns to encourage a non-rivalous data experience on the Permaweb. The result gives users of the ecosystem the choice of applications to consume and create content as their data is always with the user not the application.
