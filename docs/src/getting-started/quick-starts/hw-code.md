@@ -17,7 +17,6 @@ Using a terminal/console window create a new folder called `hello-world`.
 ```sh
 cd hello-world
 npm init -y
-npm i -g @irys/sdk
 mkdir src && cd src
 touch index.js index.html style.css
 ```
@@ -102,13 +101,9 @@ function changeColor() {
 
 Now that there is a static site to deploy, it can be checked to ensure it all functions properly by typing `open src/index.html` in your console/terminal. If everything is working as expected it is time to deploy to Arweave!
 
-## Upload using Irys (Previously Bundlr)
+## Upload using permaweb-deploy
 
-The command below deploys the `src` directory whilst also indicating the `index.html` file as an index for the manifests (relative to the path provided to `upload-dir` flag).
-
-```sh
-irys upload-dir src -h https://node2.irys.xyz --index-file index.html -t arweave -w ./wallet.json
-```
+See: https://github.com/permaweb/permaweb-deploy
 
 ## Congrats!!
 
