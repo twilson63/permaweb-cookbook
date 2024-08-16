@@ -9,6 +9,7 @@ const get_i18n_str = useI18NStr();
 </script>
 
 <template>
+  <!--
   <div class="topbar">
     <p>
       <span>{{ get_i18n_str("cookbook-meetup-notification") }}</span
@@ -29,6 +30,7 @@ const get_i18n_str = useI18NStr();
       ></add-to-calendar-button>
     </p>
   </div>
+  -->
 </template>
 
 <style lang="scss" scoped>

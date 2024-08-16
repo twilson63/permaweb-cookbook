@@ -6,10 +6,6 @@ Arweave can be thought of as a permanent append-only hard drive where each entry
 
 Transaction tags are key-value pairs, where the combination of base64URL keys and values must be less than the maximum of 2048 bytes for an arweave native transaction.
 
-::: tip
-Bundled transactions have support for more tag space. Transactions posted via bundler.network have up to 4096 bytes of tag space.
-:::
-
 Some common examples of transaction tags include:
 
 -   `Content-Type`: Used to specify the MIME type of content for render on the permaweb.
