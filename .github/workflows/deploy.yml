@@ -43,7 +43,7 @@ jobs:
           DEPLOY_KEY: ${{ secrets.COOKBOOK }}
           ARTIFACTS_OUTPUT_DIR: ${{ steps.build_artifacts.outputs.artifacts_output_dir }}
           ANT_PROCESS: tP8uMeEQR-zodP_jHRyLJf1K7TZtACUsBrn8wdYlGuc
-          UNDERNAME: @
+          UNDERNAME: "@"
       - name: Discord Notification
         uses: Ilshidur/action-discord@master
         env:
