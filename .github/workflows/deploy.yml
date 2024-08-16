@@ -9,20 +9,43 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v1
+      - name: ⎔ Setup Node
+        uses: actions/setup-node@v1
         with:
           node-version: 18.x
-      - run: cd docs && yarn
-      - run: cd docs && yarn deploy
+      - name: 📥 Download deps
+        run: |
+          cd docs
+          yarn
+      - name: 🛠 Build Docs
+        id: build_artifacts
+        run: |
+          cd docs
+          yarn build
+
+          echo "artifacts_output_dir=src/.vuepress/dist" >> $GITHUB_OUTPUT
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SPECIAL_ACCESS_TOKEN: ${{ secrets.SPECIAL_ACCESS_TOKEN }}
-          COOKBOOK: ${{ secrets.COOKBOOK }}
-      - uses: Ilshidur/action-discord@master
-        name: Discord Notification
+      - name: 💾 Publish to Arweave
+        id: publish_artifacts
+        run: |
+          cd docs
+          npx permaweb-deploy \
+            --ant-process=${ANT_PROCESS} \
+            --undername=${UNDERNAME} \
+            --deploy-folder=${ARTIFACTS_OUTPUT_DIR}
+        env: 
+          DEPLOY_KEY: ${{ secrets.COOKBOOK }}
+          ARTIFACTS_OUTPUT_DIR: ${{ steps.build_artifacts.outputs.artifacts_output_dir }}
+          ANT_PROCESS: tP8uMeEQR-zodP_jHRyLJf1K7TZtACUsBrn8wdYlGuc
+          UNDERNAME: @
+      - name: Discord Notification
+        uses: Ilshidur/action-discord@master
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
