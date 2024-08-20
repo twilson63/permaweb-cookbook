@@ -49,9 +49,12 @@ and having JSON formatted transaction data that matches the example below.
 ```json
 {
   "manifest": "arweave/paths",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "index": {
     "path": "index.html"
+  },
+  "fallback": {
+    "id": "cG7Hdi_iTQPoEYgQJFqJ8NMpN4KoZ-vH_j7pG4iP7NI"
   },
   "paths": {
     "index.html": {
