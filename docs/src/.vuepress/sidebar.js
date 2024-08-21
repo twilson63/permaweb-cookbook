@@ -215,6 +215,10 @@ const getI18NSidebar = (langCode) => [
 						text: "Akord",
 						link: get_i18n_link(langCode, "/guides/deploying-manifests/akord"),
 					},
+					{
+						text: "Turbo",
+						link: get_i18n_link(langCode, "/guides/deploying-manifests/turbo"),
+					},
 				],
 			},
 			{
