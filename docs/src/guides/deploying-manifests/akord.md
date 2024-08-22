@@ -113,10 +113,13 @@ const akord = await Akord.init(wallet);
 // let's define our manifest
 const manifest = {
   "manifest": "arweave/paths",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "index": {
     "path": "index.html"
   },
+  "fallback": {
+    "id": "cG7Hdi_iTQPoEYgQJFqJ8NMpN4KoZ-vH_j7pG4iP7NI"
+  }
   "paths": {
     "index.html": {
       "id": "cG7Hdi_iTQPoEYgQJFqJ8NMpN4KoZ-vH_j7pG4iP7NI"

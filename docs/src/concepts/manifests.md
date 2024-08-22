@@ -49,9 +49,12 @@ and having JSON formatted transaction data that matches the example below.
 ```json
 {
   "manifest": "arweave/paths",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "index": {
     "path": "index.html"
+  },
+  "fallback": {
+    "id": "cG7Hdi_iTQPoEYgQJFqJ8NMpN4KoZ-vH_j7pG4iP7NI"
   },
   "paths": {
     "index.html": {
@@ -75,6 +78,10 @@ and having JSON formatted transaction data that matches the example below.
   }
 }
 ```
+
+- **fallback:**
+
+Manifest version 0.2.0 introduced the `fallback` attribute. `fallback` is an object that accepts the sub attribute `id`, which defines an Arweave data item transaction id for the resolver to fall back to if it fails to correctly resolve a requested path.
 
 Source and Further Reading in the official Arweave Path Manifest docs: [Arweave Docs](https://github.com/ArweaveTeam/arweave/blob/master/doc/path-manifest-schema.md)
 
