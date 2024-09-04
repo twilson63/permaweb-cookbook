@@ -390,6 +390,10 @@ const getI18NSidebar = (langCode) => [
 			},
 		],
 	},
+	{
+		text: get_i18n_str(langCode, "community", "Community"),
+		link: get_i18n_link(langCode, "/community/index.html"),
+	},
 ];
 
 const createSidebars = () => {
