@@ -1,4 +1,9 @@
 # Vouch
+
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 There are a few ways to query an Arweave address to verify if it has been vouched by a service. Below is two of those approaches.
 ## VouchDAO Package
 The `isVouched` function is made available to use in your applications in a straight-forward way.

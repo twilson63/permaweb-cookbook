@@ -1,5 +1,9 @@
 # Warp WriteInteractions
 
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 To call a function on a SmartWeave contract, you can create a transaction known as a SmartWeave action. This action includes the function name and the necessary input parameters for the function on the SmartWeave contract. You can create a SmartWeave action using the contract.writeInteraction function.
 
 ## Code

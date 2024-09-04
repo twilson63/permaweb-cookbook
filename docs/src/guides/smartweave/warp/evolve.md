@@ -1,5 +1,9 @@
 # Warp (SmartWeave) SDK - Evolve
 
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 Evolve is a feature that allows developers to update the source code of a smart contract without deploying a new contract. To use this feature, you must first submit the new source code using the save function. Once the updated code has been confirmed on the Permaweb, you can use the evolve function to point the contract to the new source code ID. This allows you to update the contract's behavior without creating a new contract instance.
 
 ## Why?

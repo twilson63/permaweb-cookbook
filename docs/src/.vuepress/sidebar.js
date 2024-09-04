@@ -107,25 +107,6 @@ const getI18NSidebar = (langCode) => [
 				],
 			},
 			{
-				text: "SmartWeave",
-				link: get_i18n_link(langCode, "/concepts/smartweave.html"),
-				collapsible: false,
-				children: [
-					{
-						text: "Arweave Name System (ArNS)",
-						link: get_i18n_link(langCode, "/concepts/arns.html"),
-					},
-					{
-						text: "Profit Sharing Tokens (PSTs)",
-						link: get_i18n_link(langCode, "/concepts/psts.html"),
-					},
-					{
-						text: get_i18n_str(langCode, "concepts-vouch"),
-						link: get_i18n_link(langCode, "/concepts/vouch.html"),
-					},
-				],
-			},
-			{
 				text: "Arweave File System (ArFS)",
 				link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
 				children: [
@@ -282,61 +263,6 @@ const getI18NSidebar = (langCode) => [
 				],
 			},
 			{
-				text: "SmartWeave",
-				collapsible: true,
-				children: [
-					{
-						text: get_i18n_str(langCode, "guides-atomic-asset"),
-						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index.html"),
-						collapsible: false,
-						children: [
-							{
-								text: "using Akord",
-								link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/akord.html"),
-							},
-							{
-								text: "using ArDrive CLI",
-								link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/ardrive-cli.html"),
-							}
-						],
-					},
-					{
-						text: get_i18n_str(langCode, "guides-atomic-token"),
-						link: get_i18n_link(langCode, "/guides/atomic-tokens/intro.html"),
-					},
-					{
-						text: "Vouch",
-						link: get_i18n_link(langCode, "/guides/vouch.html"),
-					},
-					{
-						text: "Warp",
-						collapsible: false,
-						children: [
-							{
-								text: get_i18n_str(langCode, "guides-intro"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/intro.html"),
-							},
-							{
-								text: get_i18n_str(langCode, "guides-warp-deploying-contracts"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/deploying-contracts.html"),
-							},
-							{
-								text: get_i18n_str(langCode, "guides-warp-read-state"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/readstate.html"),
-							},
-							{
-								text: get_i18n_str(langCode, "guides-warp-write-interactions"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/write-interactions.html"),
-							},
-							{
-								text: get_i18n_str(langCode, "guides-warp-evolve"),
-								link: get_i18n_link(langCode, "/guides/smartweave/warp/evolve.html"),
-							},
-						],
-					},
-				],
-			},
-			{
 				text: get_i18n_str(langCode, "guides-testing"),
 				collapsible: true,
 				children: [
@@ -393,6 +319,102 @@ const getI18NSidebar = (langCode) => [
 	{
 		text: get_i18n_str(langCode, "community", "Community"),
 		link: get_i18n_link(langCode, "/community/index.html"),
+		collapsible: true,
+		children: [
+			{
+				text: get_i18n_str(langCode, "guides-atomic-asset"),
+				link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index.html"),
+				collapsible: false,
+				children: [
+					{
+						text: "using Akord",
+						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/akord.html"),
+					},
+					{
+						text: "using ArDrive CLI",
+						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/ardrive-cli.html"),
+					}
+				],
+			},
+		]
+	},
+	{
+		text: "Legacy",
+		link: get_i18n_link(langCode, "/legacy/index.html"),
+		collapsible: true,
+		children: [
+			{ 
+				text: "Concepts", 
+				collapsible: true,
+				children: [
+					{
+						text: "SmartWeave",
+						link: get_i18n_link(langCode, "/concepts/smartweave.html"),
+						collapsible: false,
+						children: [
+							{
+								text: "Arweave Name System (ArNS)",
+								link: get_i18n_link(langCode, "/concepts/arns.html"),
+							},
+							{
+								text: "Profit Sharing Tokens (PSTs)",
+								link: get_i18n_link(langCode, "/concepts/psts.html"),
+							},
+							{
+								text: get_i18n_str(langCode, "legacy-vouch", "Vouch"),
+								link: get_i18n_link(langCode, "/concepts/vouch.html"),
+							}
+						],
+					},
+				]
+			},
+			{
+				text: "Guides",
+				collapsible: true,
+				children: [
+					{
+						text: "SmartWeave",
+						collapsible: true,
+						children: [
+							{
+								text: get_i18n_str(langCode, "guides-atomic-token"),
+								link: get_i18n_link(langCode, "/guides/atomic-tokens/intro.html"),
+							},
+							{
+								text: "Vouch",
+								link: get_i18n_link(langCode, "/guides/vouch.html"),
+							},
+							{
+								text: "Warp",
+								collapsible: false,
+								children: [
+									{
+										text: get_i18n_str(langCode, "guides-intro"),
+										link: get_i18n_link(langCode, "/guides/smartweave/warp/intro.html"),
+									},
+									{
+										text: get_i18n_str(langCode, "guides-warp-deploying-contracts"),
+										link: get_i18n_link(langCode, "/guides/smartweave/warp/deploying-contracts.html"),
+									},
+									{
+										text: get_i18n_str(langCode, "guides-warp-read-state"),
+										link: get_i18n_link(langCode, "/guides/smartweave/warp/readstate.html"),
+									},
+									{
+										text: get_i18n_str(langCode, "guides-warp-write-interactions"),
+										link: get_i18n_link(langCode, "/guides/smartweave/warp/write-interactions.html"),
+									},
+									{
+										text: get_i18n_str(langCode, "guides-warp-evolve"),
+										link: get_i18n_link(langCode, "/guides/smartweave/warp/evolve.html"),
+									},
+								],
+							},
+						],
+					},
+				],
+			},
+		],
 	},
 ];
 

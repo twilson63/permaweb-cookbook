@@ -1,6 +1,9 @@
 # Overview
 
 ---
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
 
 Profit Sharing Tokens (PSTs) are a type of SmartWeaveToken which include the following structure:
 

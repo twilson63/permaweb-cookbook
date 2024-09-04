@@ -1,4 +1,9 @@
 # Vouch
+
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 ## Overview
 #### Vouch Protocol
 Arweave introduced the concept of the ANS-109 Vouch (Assertion of Identity). It is a standard that uses a specific transaction format along with some tags to allows anyone on the permaweb to "vouch" for the identity and humanity of any Arweave address.

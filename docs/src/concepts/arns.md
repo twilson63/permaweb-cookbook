@@ -1,4 +1,9 @@
 # ArNS - Arweave Name System
+
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 ## Overview
 The Arweave Name System (ArNS) is the Smartweave-powered phonebook of the PermaWeb.  
 
