@@ -18,10 +18,6 @@ Foundations of Arweave and the Permaweb.
   - [Permaweb Applications](permawebApplications.md)
   - [Gateway Services](gateways.md)
   - [Bundling Services](bundlers.md)
-- [SmartWeave](smartweave.md)
-  - [Arweave Name System (ArNS)](arns.md)
-  - [Atomic Tokens](atomic-tokens.md)
-  - [Profit Sharing Tokens (PSTs)](psts.md)
 - [Arweave File System (ArFS)](arfs/arfs.md)
   - [Data model](arfs/data-model.md)
   - [Entity Types](arfs/entity-types.md)
@@ -29,5 +25,4 @@ Foundations of Arweave and the Permaweb.
   - [Privacy](arfs/privacy.md)
   - [Schema Diagrams](arfs/schema-diagrams.md)
 
-> Do you think a permaweb core concept is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md) 
-
+> Do you think a permaweb core concept is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md)

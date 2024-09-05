@@ -136,6 +136,10 @@ const getI18NSidebar = (langCode) => [
 					},
 				],
 			},
+			{
+				text: get_i18n_str(langCode, "concepts-vouch", "Vouch"),
+				link: get_i18n_link(langCode, "/concepts/vouch.html"),
+			}
 		],
 	},
 	{
@@ -273,6 +277,10 @@ const getI18NSidebar = (langCode) => [
 					},
 				],
 			},
+			{
+				text: "Vouch",
+				link: get_i18n_link(langCode, "/guides/vouch.html"),
+			},
 		],
 	},
 	{
@@ -322,9 +330,13 @@ const getI18NSidebar = (langCode) => [
 		collapsible: true,
 		children: [
 			{
+				text: "Arweave Name System (ArNS)",
+				link: get_i18n_link(langCode, "/concepts/arns.html"),
+			},
+			{
 				text: get_i18n_str(langCode, "guides-atomic-asset"),
 				link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index.html"),
-				collapsible: false,
+				collapsible: true,
 				children: [
 					{
 						text: "using Akord",
@@ -353,17 +365,9 @@ const getI18NSidebar = (langCode) => [
 						collapsible: false,
 						children: [
 							{
-								text: "Arweave Name System (ArNS)",
-								link: get_i18n_link(langCode, "/concepts/arns.html"),
-							},
-							{
 								text: "Profit Sharing Tokens (PSTs)",
 								link: get_i18n_link(langCode, "/concepts/psts.html"),
 							},
-							{
-								text: get_i18n_str(langCode, "legacy-vouch", "Vouch"),
-								link: get_i18n_link(langCode, "/concepts/vouch.html"),
-							}
 						],
 					},
 				]
@@ -379,10 +383,6 @@ const getI18NSidebar = (langCode) => [
 							{
 								text: get_i18n_str(langCode, "guides-atomic-token"),
 								link: get_i18n_link(langCode, "/guides/atomic-tokens/intro.html"),
-							},
-							{
-								text: "Vouch",
-								link: get_i18n_link(langCode, "/guides/vouch.html"),
 							},
 							{
 								text: "Warp",
