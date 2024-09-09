@@ -134,16 +134,16 @@ yarn dev
 
   </CodeGroupItem>
 </CodeGroup>
-it will start a new development server locally on your machine by default it uses `PORT 5173` if this PORT is already in use it may increase the PORT number by 1 (`PORT 5174`) and try again.
+it will start a new development server locally on your machine by default it uses `PORT 5173`. If this PORT is already in use it may increase the PORT number by 1 (`PORT 5174`) and try again.
 
-## Deploy
+## Deploy Permanently
 
 ### Generate Wallet
 
-The `arweave` package is required to generate a wallet.
+We need the `arweave` package to generate a wallet
 
 <CodeGroup>
-  <CodeGroupItem title="NPM">
+<CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
 npm install --save arweave
@@ -151,80 +151,74 @@ npm install --save arweave
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
-
+  
 ```console:no-line-numbers
-yarn add arweave
-
+yarn add arweave -D
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-To generate your wallet, run the following command in the terminal:
+then run this command in the terminal
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### install Irys
+### Fund Wallet
+You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
+Then, you can purchase turbo credits for your wallet.
 
-Irys is needed to deploy your app to Permaweb, as it offers instant data upload and retrieval.
+### Setup Permaweb-Deploy
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
-
+  
 ```console:no-line-numbers
-npm install --save-dev @irys/sdk
+npm install --global permaweb-deploy
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
-
+  
 ```console:no-line-numbers
-yarn add -D @irys/sdk
+yarn global add permaweb-deploy
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-::: info Arweave Wallet
-To upload this app, you may need to add AR and fund your Irys wallet. Visit [https://irys.xyz](https://irys.xyz) and https://www.arweave.org/](https://www.arweave.org/) for more information.
-:::
-
-### update package.json
+### Update package.json
 
 ```json
 {
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
   }
+  ...
 }
 ```
 
-### Update .gitignore
-
-To protect your funds, it's important to keep your wallet file private. Uploading it to GitHub, where it can potentially become public, could result in your money being leaked. To prevent this, add the `wallet.json` file to your `.gitignore` file. And don't forget to save it in a safe place.
-
-```sh
-echo "wallet.json" >> .gitignore
-```
+::: info
+Replace << ANT-PROCESS >> with your ANT process id.
+:::
 
 ### Run build
 
-It's now time to generate the build.
+Now it is time to generate a build, run
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
-
+  
 ```console:no-line-numbers
 npm run build
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
-
+  
 ```console:no-line-numbers
 yarn build
 ```
@@ -234,18 +228,18 @@ yarn build
 
 ### Run deploy
 
-Finally we are good to deploy our First Permaweb Application
+Finally we are good to deploy our first Permaweb Application
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
-
+  
 ```console:no-line-numbers
 npm run deploy
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
-
+  
 ```console:no-line-numbers
 yarn deploy
 ```
@@ -253,12 +247,22 @@ yarn deploy
   </CodeGroupItem>
 </CodeGroup>
 
-::: tip SUCCESS
-You should now have a React Application on the Permaweb! Great Job!
+::: info ERROR
+If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
 :::
 
-::: warning Fund Wallet
-if your application is greater than 120 kb or you receive the error `Not enough funds to send data`, you will need to fund you Irys wallet. See [https://irys.xyz](https://irys.xyz) for more information.
+### Response
+
+You should see a response similar to the following:
+
+```shell
+Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
+```
+
+Your React app can be found at `https://arweave.net/<< tx-id >>`.
+
+::: tip SUCCESS
+You should now have a React Application on the Permaweb! Great Job!
 :::
 
 ## Repository

@@ -14,18 +14,34 @@ This guide will walk you through in a step by step flow to configure your develo
 -   TypeScript
 -   esbuild
 -   w3
--   yarn `npm i -g yarn`
 
 ## Steps
 
 ### Create Project
 
-```sh
+<CodeGroup>
+<CodeGroupItem title="NPM">
+
+```console:no-line-numbers
+mkdir myproject
+cd myproject
+npm init -y
+npm install -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess
+```
+
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
 mkdir myproject
 cd myproject
 yarn init -y
 yarn add -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess
 ```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 ## Create buildscript.js
 
@@ -66,8 +82,7 @@ fs.copyFileSync("./index.html", "./dist/index.html");
 
 ## Modify package.json
 
-Set `type` to `module`
-Add a build cripts
+Set `type` to `module`, add a build script
 
 ```json
 {
@@ -89,7 +104,7 @@ touch src/counter.svelte
 touch src/about.svelte
 ```
 
-## Main.ts
+### Main.ts
 
 ```ts
 import App from "./app.svelte";
@@ -99,7 +114,7 @@ new App({
 });
 ```
 
-## app.svelte
+### app.svelte
 
 ```html
 <script lang="ts">
@@ -119,7 +134,7 @@ new App({
 You will notice the `router.mode.hash()` setting in the script session, this is important to configure your application to use hash based routing, which will enable url support when running that application on a path, like `https://[gateway]/[TX]`
 :::
 
-## counter.svelte
+### counter.svelte
 
 ```html
 <script lang="ts">
@@ -134,7 +149,7 @@ You will notice the `router.mode.hash()` setting in the script session, this is 
 <p>Count: {count}</p>
 ```
 
-## about.svelte
+### about.svelte
 
 ```html
 <h1>About Page</h1>
@@ -142,45 +157,164 @@ You will notice the `router.mode.hash()` setting in the script session, this is 
 <a href="/">Home</a>
 ```
 
-## Deploy
+## Add index.html
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Svelte + TS</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
+```
+
+
+## Deploy Permanently
 
 ### Generate Wallet
 
+We need the `arweave` package to generate a wallet
+
+<CodeGroup>
+<CodeGroupItem title="NPM">
+
+```console:no-line-numbers
+npm install --save arweave
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn add arweave -D
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+then run this command in the terminal
+
 ```sh
-yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### install Irys
+### Fund Wallet
+You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
+Then, you can purchase turbo credits for your wallet.
 
-```sh
-yarn add -D @irys/sdk
+### Setup Permaweb-Deploy
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm install --global permaweb-deploy
 ```
 
-### update package.json
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn global add permaweb-deploy
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+### Update vite.config.ts
+
+```ts
+import { defineConfig } from 'vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+
+export default defineConfig({
+  plugins: [svelte()],
+  base: './'
+})
+```
+
+### Update package.json
 
 ```json
 {
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
   }
+  ...
 }
 ```
 
+::: info
+Replace << ANT-PROCESS >> with your ANT process id.
+:::
+
+### Run build
+
+Now it is time to generate a build, run
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm run build
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn build
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
 ### Run deploy
 
-```sh
+Finally we are good to deploy our first Permaweb Application
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm run deploy
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
 yarn deploy
 ```
 
-::: tip SUCCESS
-You should now have a Svelte Application on the Permaweb! Great Job!
+  </CodeGroupItem>
+</CodeGroup>
+
+::: info ERROR
+If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
 :::
 
-::: warning Fund Wallet
-if your application is greater than 120 kb, you will need to fund you Irys wallet. See [https://irys.xyz](https://irys.xyz) for more information.
+### Response
+
+You should see a response similar to the following:
+
+```shell
+Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
+```
+
+Your React app can be found at `https://arweave.net/<< tx-id >>`.
+
+::: tip SUCCESS
+You should now have a React Application on the Permaweb! Great Job!
 :::
 
 ## Repository
