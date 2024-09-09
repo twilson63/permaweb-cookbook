@@ -6,10 +6,10 @@ can be uploaded as a transaction to the permaweb where it will serve as a single
 
 React Starter Kit Guides:
 
-* [Vite](./turbo.md) - React + Vite, publish with permaweb-deploy
+* [Turbo](./turbo.md) - React + Vite, publish with Turbo
+* [Vite](./vite.md) - utilize Vite to build a React permaweb app
 * [Create React App](./create-react-app.md) - utilize Create React App to build a React permaweb app
 * [Akord](./akord.md) - React + Vite, deploy with Akord
-<!-- * [Vite](./vite.md) - utilize Vite to build a React permaweb app -->
 
 
 ::: info Permaweb Application Constraints

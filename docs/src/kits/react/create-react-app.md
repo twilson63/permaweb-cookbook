@@ -130,7 +130,7 @@ import { Link } from "react-router-dom";
 
 function About() {
 	return (
-    <div>
+		<div>
 			Welcome to the About page!
 			<Link to={"/"}>
 				<div>Home</div>
@@ -202,32 +202,30 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Fund Wallet
-You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
-Then, you can purchase turbo credits for your wallet.
+### Setup Irys
 
-### Setup Permaweb-Deploy
+We need Irys to deploy our app to Permaweb it provides instant data upload and retrieval
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global permaweb-deploy
+npm install --global @irys/sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add permaweb-deploy
+yarn global add @irys/sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-<!-- ::: info
+::: info
 You will need to add AR to this wallet and fund your Irys wallet to be able to upload this app. See [https://irys.xyz](https://irys.xyz) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
-::: -->
+:::
 
 ### Update package.json
 
@@ -236,15 +234,11 @@ You will need to add AR to this wallet and fund your Irys wallet to be able to u
   ...
   "scripts": {
     ...
-    "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
+    "deploy": "irys upload-dir ./build -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
   }
   ...
 }
 ```
-
-::: info
-Replace << ANT-PROCESS >> with your ANT process id.
-:::
 
 ### Run build
 
@@ -288,22 +282,33 @@ yarn deploy
   </CodeGroupItem>
 </CodeGroup>
 
-::: info ERROR
-If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
-:::
-
-### Response
-
-You should see a response similar to the following:
-
-```shell
-Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
-```
-
-Your React app can be found at `https://arweave.net/<< tx-id >>`.
-
 ::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!
+:::
+
+::: info ERROR
+If you receive this error `Not enough funds to send data`, you have to fund some AR into your Irys wallet, and then try to deploy it again, run
+:::
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+::: info
+The above number 1479016 is an amount of AR expressed in winston, the smallest unit of AR. This will take some time to propagate to your Irys wallet. Come back in 10-20 minutes and try to run the deployment again.
 :::
 
 ## Repository

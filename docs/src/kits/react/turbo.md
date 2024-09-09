@@ -40,46 +40,17 @@ ardrive generate-wallet -s "SEED_PHRASE_FROM_ABOVE" > wallet.json
 
 ### Create React App
 
-<CodeGroup>
-<CodeGroupItem title="NPM">
-
-```sh
-npm create vite my-arweave-app --template react-ts
-cd my-arweave-app
-npm install
-```
-
-</CodeGroupItem>
-<CodeGroupItem title="YARN">
-
 ```sh
 yarn create vite my-arweave-app --template react-ts
 cd my-arweave-app
 yarn
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 ### Add React Router DOM
-
-<CodeGroup>
-<CodeGroupItem title="NPM">
-
-```sh
-npm install react-router-dom
-```
-
-</CodeGroupItem>
-<CodeGroupItem title="YARN">
 
 ```sh
 yarn add react-router-dom
 ```
-
-</CodeGroupItem>
-</CodeGroup>
-
 
 We need to use the hash-router to create a working app on arweave.
 
@@ -168,24 +139,9 @@ body {
 }
 ```
 
-Run the project
-<CodeGroup>
-<CodeGroupItem title="NPM">
-
-```sh
-npm run dev
-```
-
-</CodeGroupItem>
-<CodeGroupItem title="YARN">
-
 ```sh
 yarn dev
 ```
-
-</CodeGroupItem>
-</CodeGroup>
-
 
 ### Building React App
 
@@ -207,138 +163,41 @@ export default defineConfig({
 yarn build
 ```
 
-### Deploy Permanently
+### Publishing to Arweave
 
-#### Generate Wallet
-
-We need the `arweave` package to generate a wallet
-
-<CodeGroup>
-<CodeGroupItem title="NPM">
-
-```console:no-line-numbers
-npm install --save arweave
-```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="YARN">
-  
-```console:no-line-numbers
-yarn add arweave -D
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-then run this command in the terminal
+#### create drive
 
 ```sh
-node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
+ardrive create-drive -w ../wallet.json -n my-arweave-app --turbo
 ```
 
-#### Fund Wallet
-You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
-Then, you can purchase turbo credits for your wallet.
+#### create folder
 
-#### Setup Permaweb-Deploy
-
-<CodeGroup>
-  <CodeGroupItem title="NPM">
-  
-```console:no-line-numbers
-npm install --global permaweb-deploy
+```sh
+ardrive create-folder -w ../wallet.json -n "v1" -F __ROOT_FOLDER_ID__ --turbo
+export V1=__FOLDER_ID__
 ```
 
-  </CodeGroupItem>
-  <CodeGroupItem title="YARN">
-  
-```console:no-line-numbers
-yarn global add permaweb-deploy
+#### upload files
+
+```sh
+cd dist
+ardrive upload-file -w ../../wallet.json -l ./ -F ${V1} --turbo
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+#### create manifest
 
-<!-- ::: info
-You will need to add AR to this wallet and fund your Irys wallet to be able to upload this app. See [https://irys.xyz](https://irys.xyz) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
-::: -->
-
-#### Update package.json
-
-```json
-{
-  ...
-  "scripts": {
-    ...
-    "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> "
-  }
-  ...
-}
+```sh
+cd ..
+ardrive create-manifest -w ../wallet.json -f ${V1} --turbo --dry-run
 ```
 
-::: info
-Replace << ANT-PROCESS >> with your ANT process id.
-:::
+> NOTE: We need to grab the manifest object and edit it, we need to change the index to point to "index.html", and remove all of the "./" for each path, save file as manifest.json in the app root directory.
 
-#### Run build
-
-Now it is time to generate a build, run
-
-<CodeGroup>
-  <CodeGroupItem title="NPM">
-  
-```console:no-line-numbers
-npm run build
+```sh
+ardrive upload-file -w ../wallet.json -l ./manifest.json --content-type application/x.arweave-manifest+json -F ${V1} --turbo
 ```
 
-  </CodeGroupItem>
-  <CodeGroupItem title="YARN">
-  
-```console:no-line-numbers
-yarn build
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-#### Run deploy
-
-Finally we are good to deploy our first Permaweb Application
-
-<CodeGroup>
-  <CodeGroupItem title="NPM">
-  
-```console:no-line-numbers
-npm run deploy
-```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="YARN">
-  
-```console:no-line-numbers
-yarn deploy
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-::: info ERROR
-If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
-:::
-
-#### Response
-
-You should see a response similar to the following:
-
-```shell
-Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
-```
-
-Your React app can be found at `https://arweave.net/<< tx-id >>`.
-
-::: tip SUCCESS
-You should now have a React Application on the Permaweb! Great Job!
-:::
 ### Congrats!
 
 You just published a react application on the Permaweb! This app will be hosted forever!
