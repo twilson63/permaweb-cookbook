@@ -166,42 +166,51 @@ To generate your wallet, run the following command in the terminal:
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### install Irys
+### install Turbo
 
-Irys is needed to deploy your app to Permaweb, as it offers instant data upload and retrieval.
+We need Turbo to deploy our app to the Permaweb.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
-
+  
 ```console:no-line-numbers
-npm install --save-dev @irys/sdk
+npm install @ardrive/turbo-sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
-
+  
 ```console:no-line-numbers
-yarn add -D @irys/sdk
+yarn add @ardrive/turbo-sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-::: info Arweave Wallet
-To upload this app, you may need to add AR and fund your Irys wallet. Visit [https://irys.xyz](https://irys.xyz) and https://www.arweave.org/](https://www.arweave.org/) for more information.
-:::
+### Fund Your Wallet
+ 
+Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.
 
-### update package.json
+```console:no-line-numbers
+turbo top-up --wallet-file wallet.json --currency USD --value 10
+```
+
+Be sure to replace `wallet.json` with the path to your Arweave wallet.
+
+### Update package.json
 
 ```json
 {
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "turbo upload-folder --folder-path ./build --wallet-file wallet.json > latest-manifest.json"
   }
+  ...
 }
 ```
+
+This will upload your build folder to the permaweb, and save all of the details of the upload to a file named "latest-manifest.json". That way, you'll have a reference for the manifest TxId to use later.
 
 ### Update .gitignore
 
@@ -255,10 +264,6 @@ yarn deploy
 
 ::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!
-:::
-
-::: warning Fund Wallet
-if your application is greater than 120 kb or you receive the error `Not enough funds to send data`, you will need to fund you Irys wallet. See [https://irys.xyz](https://irys.xyz) for more information.
 :::
 
 ## Repository

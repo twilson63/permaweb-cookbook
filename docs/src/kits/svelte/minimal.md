@@ -151,11 +151,21 @@ yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### install Irys
+### install Turbo
 
 ```sh
-yarn add -D @irys/sdk
+yarn add -D @ardrive/turbo-sdk
 ```
+
+### Fund Your Wallet
+ 
+Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.
+
+```console:no-line-numbers
+turbo top-up --wallet-file wallet.json --currency USD --value 10
+```
+
+Be sure to replace `wallet.json` with the path to your Arweave wallet.
 
 ### update package.json
 
@@ -164,10 +174,14 @@ yarn add -D @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "turbo upload-folder --folder-path dist --wallet-file wallet.json > latest-manifest.json"
   }
+  ...
 }
 ```
+
+This will upload your build folder to the permaweb, and save all of the details of the upload to a file named "latest-manifest.json". That way, you'll have a reference for the manifest TxId to use later.
+
 
 ### Run deploy
 
@@ -177,10 +191,6 @@ yarn deploy
 
 ::: tip SUCCESS
 You should now have a Svelte Application on the Permaweb! Great Job!
-:::
-
-::: warning Fund Wallet
-if your application is greater than 120 kb, you will need to fund you Irys wallet. See [https://irys.xyz](https://irys.xyz) for more information.
 :::
 
 ## Repository

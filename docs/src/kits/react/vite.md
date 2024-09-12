@@ -236,30 +236,38 @@ export default defineConfig({
 })
 ```
 
-### Setup Irys
+### Setup Turbo
 
-We need Irys to deploy our app to Permaweb it provides instant data upload and retrieval
+### Setup Turbo
+
+We need Turbo to deploy our app to the Permaweb.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global @irys/sdk
+npm install @ardrive/turbo-sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add @irys/sdk
+yarn add @ardrive/turbo-sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-::: info
-You will need to add AR to this wallet and fund your Irys wallet to be able to upload this app. See [https://irys.xyz](https://irys.xyz) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
-:::
+### Fund Your Wallet
+ 
+Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.
+
+```console:no-line-numbers
+turbo top-up --wallet-file wallet.json --currency USD --value 10
+```
+
+Be sure to replace `wallet.json` with the path to your Arweave wallet.
 
 ### Update package.json
 
@@ -268,11 +276,13 @@ You will need to add AR to this wallet and fund your Irys wallet to be able to u
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./dist -h https://node2.irys.xyz --wallet ./wallet.json -t arweave --index-file index.html --no-confirmation"
+    "deploy": "turbo upload-folder --folder-path ./build --wallet-file wallet.json > latest-manifest.json"
   }
   ...
 }
 ```
+
+This will upload your build folder to the permaweb, and save all of the details of the upload to a file named "latest-manifest.json". That way, you'll have a reference for the manifest TxId to use later.
 
 ### Run build
 
@@ -319,27 +329,4 @@ yarn deploy
 ::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!
 :::
-
-::: tip ERROR
-If you receive this error `Not enough funds to send data`, you have to fund some AR into your wallet, and then try to deploy it again.
-:::
-
-How do I fund my irys account?
-
-Check balance
-
-```console:no-line-numbers
-irys balance [Address] -h https://node2.irys.xyz -t arweave
-```
-
-Fund Irys
-
-```console:no-line-numbers
-irys fund 20000000000 -t arweave -h https://node2.irys.xyz -w ./wallet.json
-```
-
-::: tip INFO
-It will take about 20 to 30 minutes for the funds to be deposited into your irys account.
-:::
-
 
