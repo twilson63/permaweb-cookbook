@@ -177,6 +177,10 @@ are served on a path like `https://[gateway]/[TX]`
 
 ### Generate Wallet
 
+::: info Existing Wallet
+This step will generate a new, empty, Arweave wallet. If you already have an existing Arweave wallet you may provide its keyfile and skip this step.
+:::
+
 We need the `arweave` package to generate a wallet
 
 <CodeGroup>
@@ -202,30 +206,38 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Setup Irys
+It is very important to make sure that your wallet file is not included in any folder you want uploaded to Arweave.
 
-We need Irys to deploy our app to Permaweb it provides instant data upload and retrieval
+### Setup Turbo
+
+We need Turbo to deploy our app to the Permaweb.
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global @irys/sdk
+npm install @ardrive/turbo-sdk
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add @irys/sdk
+yarn add @ardrive/turbo-sdk
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-::: info
-You will need to add AR to this wallet and fund your Irys wallet to be able to upload this app. See [https://irys.xyz](https://irys.xyz) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
-:::
+### Fund Your Wallet
+ 
+Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.
+
+```console:no-line-numbers
+turbo top-up --wallet-file wallet.json --currency USD --value 10
+```
+
+Be sure to replace `wallet.json` with the path to your Arweave wallet.
 
 ### Update package.json
 
@@ -234,11 +246,13 @@ You will need to add AR to this wallet and fund your Irys wallet to be able to u
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir ./build -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "turbo upload-folder --folder-path ./build --wallet-file wallet.json > latest-manifest.json"
   }
   ...
 }
 ```
+
+This will upload your build folder to the permaweb, and save all of the details of the upload to a file named "latest-manifest.json". That way, you'll have a reference for the manifest TxId to use later.
 
 ### Run build
 
@@ -284,31 +298,6 @@ yarn deploy
 
 ::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!
-:::
-
-::: info ERROR
-If you receive this error `Not enough funds to send data`, you have to fund some AR into your Irys wallet, and then try to deploy it again, run
-:::
-
-<CodeGroup>
-  <CodeGroupItem title="NPM">
-  
-```console:no-line-numbers
-irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
-```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="YARN">
-  
-```console:no-line-numbers
-irys fund 1479016 -h https://node1.irys.xyz -w wallet.json -c arweave
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-::: info
-The above number 1479016 is an amount of AR expressed in winston, the smallest unit of AR. This will take some time to propagate to your Irys wallet. Come back in 10-20 minutes and try to run the deployment again.
 :::
 
 ## Repository

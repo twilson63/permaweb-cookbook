@@ -194,21 +194,24 @@ yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### install Irys
+### install Turbo
 
 ```sh
-yarn add -D @irys/sdk
+yarn add -D @ardrive/turbo-sdk
 ```
 
 ### update package.json
+
+### Update package.json
 
 ```json
 {
   ...
   "scripts": {
     ...
-    "deploy": "yarn build && irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "turbo upload-folder --folder-path dist --wallet-file wallet.json > latest-manifest.json"
   }
+  ...
 }
 ```
 
@@ -220,10 +223,6 @@ yarn deploy
 
 ::: tip SUCCESS
 You should now have a Svelte Application on the Permaweb! Great Job!
-:::
-
-::: warning Fund Wallet
-if your application is greater than 120 kb, you will need to fund you Irys wallet. See [https://irys.xyz](https://irys.xyz) for more information.
 :::
 
 ## Repository
