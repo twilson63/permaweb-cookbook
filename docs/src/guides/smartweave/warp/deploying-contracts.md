@@ -1,5 +1,9 @@
 # Warp (SmartWeave) SDK - Deploying Contracts
 
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 SmartWeave Contracts are created by posting two transactions to the network, a Source Transaction and a Initial State Transaction, the source transaction contains the source code the contract will use to determine the current state. The initial state transaction provides a contract identifer to reference as well as the initial seed data the contract should use as the starting point to evaluate the current state. The current state is calculated by accessing actions that are transactions written to the network that contain input parameters to execute using the evaluated and instantiated source code. Warp Contracts can be created using many different languages and can be evaluated using the Warp SDK. This guide will show the many different ways you can deploy a Warp Contract.
 
 ::: tip

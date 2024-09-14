@@ -1,5 +1,9 @@
 # Atomic Tokens
 
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 ## What is an Atomic Token?
 
 [Check out the concept](../../concepts/atomic-tokens.md)

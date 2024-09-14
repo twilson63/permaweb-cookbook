@@ -1,5 +1,9 @@
 # SmartWeave
 
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 ## What is SmartWeave?
 
 SmartWeave is the name given to the dominant SmartContract paradigm on Arweave. A unique property of SmartWeave contracts is that the current state of the contract is provided by a process of "lazy evaluation". This means that instead of Arweave mining nodes constantly evaluating the current state of all contracts, a client reading a contract evaluates the state for themselves.
