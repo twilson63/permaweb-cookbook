@@ -1,6 +1,6 @@
 # Github Action
 
-::: danger
+::: warning
 This guide is for educational purposes only, and you should use to learn options of how you might want to deploy your application. In this guide, we are trusting a 3rd party resource `github` owned by `microsoft` to protect our secret information, in their documentation they encrypt secrets in their store using `libsodium sealed box`, you can find more information about their security practices here. https://docs.github.com/en/actions/security-guides/encrypted-secrets
 :::
 
@@ -21,7 +21,7 @@ A deploy script is a script that does the heavy lifting of deploying your applic
 Install deploy dependencies
 
 ```console
-npm install --save-dev @irys/sdk
+npm install --save-dev @permaweb/arx
 npm install --save-dev warp-contracts
 npm install --save-dev arweave
 ```
@@ -29,22 +29,22 @@ npm install --save-dev arweave
 Create `deploy.mjs` file
 
 ```js
-import Irys from "@irys/sdk";
+import Arx from "@permaweb/arx";
 import { WarpFactory, defaultCacheOptions } from "warp-contracts";
 import Arweave from "arweave";
 
 const ANT = "[YOUR ANT CONTRACT]";
 const DEPLOY_FOLDER = "./dist";
-const IRYS_NODE = "https://node2.irys.xyz";
+const TURBO_NODE = "https://turbo.ardrive.io";
 
 const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, "base64").toString("utf-8"));
 const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
-const irys = new Irys({ url: IRYS_NODE, token: "arweave", key: jwk });
+const arx = new Arx({ url: TURBO_NODE, token: "arweave", key: jwk });
 const warp = WarpFactory.custom(arweave, defaultCacheOptions, "mainnet").useArweaveGateway().build();
 
 const contract = warp.contract(ANT).connect(jwk);
 // upload folder
-const result = await irys.uploadFolder(DEPLOY_FOLDER, {
+const result = await arx.uploadFolder(DEPLOY_FOLDER, {
 	indexFile: "index.html",
 });
 
@@ -111,7 +111,7 @@ base64 -i wallet.json | pbcopy
 In order for this deployment to work, you will need to fund this wallets Irys account, make sure there is some $AR in the wallet you will be using, not much, maybe .5 AR, then use the Irys cli to fund.
 
 ```console
-irys fund 250000000000 -h https://node2.irys.xyz -w wallet.json -t arweave
+arx fund 250000000000 -w wallet.json -t arweave
 ```
 
 ::: warning
