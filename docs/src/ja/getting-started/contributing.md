@@ -1,63 +1,59 @@
 ---
 locale: ja
 ---
-# Contributing Workflow
+# 貢献ワークフロー
 
-Anyone in the community is welcome to contribute to the Permaweb Cookbook, as community members we want a high quality reference guide of little snack bite sized nuggets of information. Below is a step by step workflow of how anyone can contribute to this project.
+コミュニティの誰もがパーマウェブクックブックに貢献することを歓迎します。私たちは、質の高いリファレンスガイドを提供することを目指しており、小さなスナックサイズの情報の塊を集めています。以下は、誰でもこのプロジェクトに貢献できる手順を示したワークフローです。
 
-## What do you need to know?
+## 知っておくべきことは？
 
-* Git and Github - publishes content to github.com.
-* Markdown - Markdown is a text based markup language that can be transformed into HTML
-* Arweave and the Permaweb - Have some knowledge about the Permaweb that should be shared
+* GitとGithub - コンテンツをgithub.comに公開します。
+* Markdown - Markdownは、HTMLに変換できるテキストベースのマークアップ言語です。
+* Arweaveとパーマウェブ - 共有すべきパーマウェブについての知識を持っていること。
 
-## Steps to Contribute
-
+## 貢献のステップ
 
 ![diagram](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ29udHJpYnV0aW5nIHRvIFBlcm1hd2ViIENvb2tib29rCgoAGglvciAtPiBSZXBvIDogQ2hlY2sgT3V0IG9mIEZvcmsAFAVzaXRvcnkKbm90ZSBvdmVyAFYKb3IgOiBDcmVhdGUgTWFya2Rvd24gRG9jdW1lbnQAFxpvbW1pdCBDaGFuZ2VzAHQXUHVzaCBCcmFuY2gAYRljAHQGUHVsbCBSZXF1ZXMAWxphc3NpZ24gcmV2aWV3ZXIocykKUgAFBwCBdgsADQYAOhgAKAk6IEFwcHJvdmUgUFIAgjQXbWVyZ2UgdG8gbWFpbg&s=mscgen)
 
-## Need Help?
+## 助けが必要ですか？
 
-Join our [discord channel](https://discord.gg/haCAX3shxF) and post a note.
+私たちの[Discordチャンネル](https://discord.gg/haCAX3shxF)に参加してメッセージを投稿してください。
 
-## Commiting work
+## 作業のコミット
 
-We are using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
-for this repository.
+このリポジトリでは[従来のコミット](https://www.conventionalcommits.org/en/v1.0.0/)を使用しています。
 
-General flow for making a contribution:
+貢献を行うための一般的な流れ：
 
-1. Fork the repo on GitHub
-2. Clone the project to your own machine
-3. Commit changes to your own branch
-4. Push your work back up to your fork
-5. Submit a Pull request so that we can review your changes
+1. GitHubでリポジトリをフォークする
+2. プロジェクトを自分のマシンにクローンする
+3. 自分のブランチに変更をコミットする
+4. フォークに作業をプッシュする
+5. 変更をレビューできるようにプルリクエストを提出する
 
-**NOTE**: Be sure to merge the latest from "upstream" before making a
-pull request!
+**注意**: プルリクエストを作成する前に、「アップストリーム」から最新のものをマージしてください！
 
-## Style
+## スタイル
 
-Here are some suggestions on tone and style from some contributors:
+いくつかの貢献者からのトーンやスタイルに関する提案です：
 
 ::: tip
-In writing them, I'm getting a feeling for the tone that's appropriate for each.
-CoreConcepts should be rather textbook like, neutral voice, objective.  "This is how Arweave works"
-For Guides, I think it's ok to have a more personal voice. Refer to the reader as "you" and speak in the collaborative voice "next we'll take a look at..."
-This may just be personal preference, but in general I feel this tone much more supportive and accessible when following a longer form guide.
-Indeed, its the voice that most popular tutorials from other ecosystems are written in.
-For Resources, I think it shares the same voice as core concepts, with a preference for brevity.
+それらを書くことで、それぞれに適切なトーンを感じ取っています。
+コアコンセプトは、教科書のように中立的で客観的な声であるべきです。「これがArweaveの動作です」
+ガイドについては、より個人的な声を持つことが良いと思います。読者を「あなた」と呼び、共同の声で「次は…を見てみましょう」と話します。
+これは個人的な好みかもしれませんが、一般的に長い形式のガイドを追っているときは、このトーンがより支援的でアクセスしやすいと感じます。
+実際、これは他のエコシステムの人気のあるチュートリアルが書かれている声です。
+リソースについては、コアコンセプトと同じ声を持ち、簡潔さを重視します。
 
 dmac
 :::
 
-
 ::: tip
-Conceptual and referencial data should have a more cold scientific tone and guides should be a supportive or even humorous tone. Longer form content needs to pull readers in without them zoning out.
+概念的および参照データは、より冷たい科学的トーンを持つべきで、ガイドは支援的またはユーモラスなトーンを持つべきです。長い形式のコンテンツは、読者を引き込む必要がありますが、彼らをぼーっとさせないようにする必要があります。
 
 Arch_Druid
 :::
 
-## More information about contributing check out the repo style guide
+## 貢献に関する詳細はリポジトリのスタイルガイドを参照してください
 
 [CONTRIBUTING](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md)

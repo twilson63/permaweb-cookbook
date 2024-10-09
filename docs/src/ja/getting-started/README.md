@@ -2,38 +2,37 @@
 locale: ja
 ---
 
-# Cooking with the Permaweb
+# パーマウェブでの料理
 
-The Permaweb Cookbook is a developer resource that provides the essential concepts and references for buiding applications on the Permaweb. Each concept and reference will focus on specific aspects of the Permaweb development ecosystem while providing additional details and usage examples.
+パーマウェブクックブックは、パーマウェブ上でアプリケーションを構築するための基本概念とリファレンスを提供する開発者向けリソースです。各概念とリファレンスは、パーマウェブ開発エコシステムの特定の側面に焦点を当てながら、追加の詳細や使用例を提供します。
 
-## Developers
+## 開発者
 
-Welcome to the Arweave development community, where the past is forever etched in the blockchain and the future is full of endless possibilities. Let's build the decentralized web together!
+ブロックチェーンに永遠に刻まれた過去と、無限の可能性に満ちた未来を持つArweave開発コミュニティへようこそ。一緒に分散型ウェブを構築しましょう！
 
-[Read More](welcome.md)
+[もっと読む](welcome.md)
 
-## Contributing
+## 貢献
 
-The Cookbook is designed in a way that makes it easy for new Permaweb developers to contribute. Even if you don't know how to do something, contributing to the cookbook is a great way to learn!
+クックブックは、新しいパーマウェブ開発者が貢献しやすいように設計されています。何かをする方法がわからなくても、クックブックへの貢献は学ぶための素晴らしい方法です！
 
-Check out all open issues here. Contribution guidelines here. if you find the cookbook is missing a concept, guide or reference, please add an issue.
+ここでオープンなイシューを確認してください。貢献ガイドラインはこちらです。クックブックに概念、ガイド、リファレンスが不足していると感じた場合は、イシューを追加してください。
 
-[Read More](contributing.md)
+[もっと読む](contributing.md)
 
+## クックブックの読み方
 
-## How to Read the Cookbook
+パーマウェブクックブックは、異なる目標を持つセクションに分かれています。
 
-The Permaweb Cookbook is split into different sections, each aimed at a different goal.
-
-| Section | Description |
+| セクション | 説明 |
 | ------- | ----------- |
-| Core Concepts | Building blocks of the Permaweb that are good to know for development |
-| Guides | Snack-sized guides about different tools for development |
-| References | References to commonly needed code snippets | 
-| Starter Kits | Front-end Framework Starters to get you started building on the Permaweb in no time | 
+| コア概念 | 開発のために知っておくべきパーマウェブの基本要素 |
+| ガイド | 様々な開発ツールについてのスナックサイズのガイド |
+| リファレンス | よく必要とされるコードスニペットへの参照 |
+| スターターキット | 短時間でパーマウェブ上の開発を開始できるフロントエンドフレームワークスターター |
 
-## Quick Starts
+## クイックスタート
 
-These are small guides to help developers from every experience level to ship code the the permaweb.
+これらは、あらゆる経験レベルの開発者がパーマウェブにコードを出荷するのを助けるための小さなガイドです。
 
 - [Hello World (NodeJS)](quick-starts/hw-nodejs.md)

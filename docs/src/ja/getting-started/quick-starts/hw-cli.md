@@ -3,17 +3,18 @@ locale: ja
 ---
 # Hello World (CLI)
 
-This guide walks you through the most simple way to get data on to the permaweb using a command-line interface (CLI).
 
-## Requirements
+このガイドでは、コマンドラインインターフェース（CLI）を使用して、パーマウェブにデータを取得する最も簡単な方法を説明します。
 
--   [NodeJS](https://nodejs.org) LTS or greater
+## 要件
 
-## Description
+-   [NodeJS](https://nodejs.org) LTS 以上
 
-Using a terminal/console window create a new folder called `hw-permaweb-1`.
+## 説明
 
-## Setup
+ターミナル/コンソールウィンドウを使用して、`hw-permaweb-1`という新しいフォルダーを作成します。
+
+## セットアップ
 
 ```sh
 cd hw-permaweb-1
@@ -21,19 +22,19 @@ npm init -y
 npm install arweave ardrive-cli
 ```
 
-## Generate a wallet
+## ウォレットを生成する
 
 ```sh
 npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json
 ```
 
-## Create a web page
+## ウェブページを作成する
 
 ```sh
 echo "<h1>Hello Permaweb</h1>" > index.html
 ```
 
-## Upload using Ardrive CLI
+## Ardrive CLIを使用してアップロードする
 
 ```sh
 # Create a Drive

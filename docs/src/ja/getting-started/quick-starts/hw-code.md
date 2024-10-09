@@ -1,21 +1,22 @@
 ---
 locale: ja
 ---
-# Hello World (Code)
 
-This guide walks you through a quick way to get a static HTML, CSS and JavaScript webpage on to the permaweb using a few lines of code and a [command-line interface (CLI)](./hw-cli.md).
+# Hello World (コード)
 
-## Requirements
+このガイドでは、数行のコードと[コマンドラインインターフェース (CLI)](./hw-cli.md)を使用して、静的なHTML、CSS、JavaScriptのウェブページをパーマウェブにアップロードする簡単な方法を説明します。
 
-- [NodeJS](https://nodejs.org) LTS or greater
-- Basic knowledge of HTML, CSS and JavaScript
-- A text editor (VS Code, Sublime, or similar)
+## 要件
 
-## Description
+- [NodeJS](https://nodejs.org) LTS以上
+- HTML、CSS、JavaScriptの基本的な知識
+- テキストエディタ（VS Code、Sublime、または同様のもの）
 
-Using a terminal/console window create a new folder called `hello-world`.
+## 説明
 
-## Setup
+ターミナル/コンソールウィンドウを使用して、`hello-world`という新しいフォルダを作成します。
+
+## セットアップ
 
 ```sh
 cd hello-world
@@ -24,23 +25,23 @@ mkdir src && cd src
 touch index.js index.html style.css
 ```
 
-Next open your text editor and import the `hello-world` directory.
+次に、テキストエディタを開き、`hello-world`ディレクトリをインポートします。
 
-## Generate a wallet
+## ウォレットの生成
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
 :::info
-The wallet.json file must be in the root of the `hello-world` folder and not inside of your `src` folder.
+wallet.jsonファイルは、`hello-world`フォルダのルートに配置する必要があり、`src`フォルダの中には置かないでください。
 :::
 
-## Create a webpage
+## ウェブページの作成
 
-This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using Irys and our previously generated wallet to deploy a fully functioning, static and permanent webpage to Arweave.
+このウェブページでは、基本的なHTML、CSS、JavaScriptを使用して、クリックするとヘッダーのテキストの色が変わるスタイル付きボタンを作成します。完成後、Irysと以前に生成したウォレットを使用して、完全に機能する静的かつ永続的なウェブページをArweaveにデプロイします。
 
-Paste the code from the following code blocks into their files:
+次のコードブロックからコードをそれぞれのファイルに貼り付けてください：
 
 **index.html**
 
@@ -101,13 +102,12 @@ function changeColor() {
 </details>
 
 <hr />
+静的サイトをデプロイする準備が整ったら、コンソール/ターミナルで`open src/index.html`と入力して、すべてが正しく機能しているか確認できます。すべてが期待通りに動作している場合、Arweaveにデプロイする時が来ました！
 
-Now that there is a static site to deploy, it can be checked to ensure it all functions properly by typing `open src/index.html` in your console/terminal. If everything is working as expected it is time to deploy to Arweave!
+## permaweb-deployを使用したアップロード
 
-## Upload using permaweb-deploy
+詳細はこちら: [https://github.com/permaweb/permaweb-deploy](https://github.com/permaweb/permaweb-deploy)
 
-See: https://github.com/permaweb/permaweb-deploy
+## おめでとう！！
 
-## Congrats!!
-
-You just published a static site on Arweave using a few commands and a few lines of code!
+わずか数コマンドと数行のコードで、Arweaveに静的サイトを公開しました！
