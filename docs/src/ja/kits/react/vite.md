@@ -1,28 +1,27 @@
 ---
 locale: ja
 ---
-# Vite Starter Kit
+# Vite スターターキット
 
-This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb react application.
+このガイドでは、Permaweb の React アプリケーションを構築してデプロイするために、開発環境を設定する手順を説明します。
 
-## Prerequisites
+## 前提条件
 
--   Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
--   NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
--   Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
--   Know git and common terminal commands
+-   基本的な TypeScript の知識（必須ではありません） - [https://www.typescriptlang.org/docs/](TypeScript を学ぶ)
+-   NodeJS v16.15.0 以上 - [https://nodejs.org/en/download/](NodeJS をダウンロード)
+-   ReactJS の知識 - [https://reactjs.org/](ReactJS を学ぶ)
+-   Git と一般的なターミナルコマンドの知識
 
-## Development Dependencies
+## 開発依存関係
 
 -   TypeScript
--   NPM or Yarn Package Manager
+-   NPM または Yarn パッケージマネージャ
 
-## Steps
+## 手順
 
-### Create Project
+### プロジェクトの作成
 
-if you are not familiar with typescript you can use the template "react" (`--template react`)
-
+TypeScript に不慣れな場合は、テンプレート「react」を使用できます（`--template react`）。
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
@@ -86,12 +85,14 @@ yarn dev
 
   </CodeGroupItem>
 </CodeGroup>
-it will start a new development server locally on your machine by default it uses `PORT 3000` if this PORT is already in use
-it may ask you to switch to another available PORT in Terminal
 
-### Setup wallet types
+デフォルトでは、ローカルマシン上で新しい開発サーバーが開始され、`PORT 3000` が使用されます。このポートがすでに使用中の場合、ターミナルで利用可能な別のポートに切り替えるように求められることがあります。
 
-If you want to use [ArConnect](https://arconnect.io), [Arweave.app](https://arweave.app) or other browser-based wallets, you can install ArConnect's types package to have declarations for `window.arweaveWallet`.
+### ウォレットの種類を設定
+
+[ArConnect](https://arconnect.io)、[Arweave.app](https://arweave.app) または他のブラウザベースのウォレットを使用したい場合は、`window.arweaveWallet` の宣言を持つ ArConnect のタイプパッケージをインストールできます。
+
+
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -187,17 +188,16 @@ function App() {
 export default App;
 ```
 
-::: info Hash Routing
-Note that we are wrapping the routes in a HashRouter and using the react-router-dom Link component to build links.
-This is important on the permaweb in its current state, it will ensure the routes work properly because applications
-are served on a path like `https://[gateway]/[TX]`
+::: info ハッシュルーティング
+ルートを HashRouter でラップし、react-router-dom の Link コンポーネントを使用してリンクを構築していることに注意してください。
+これは現在の状態の Permaweb では重要であり、アプリケーションが `https://[gateway]/[TX]` のようなパスで提供されるため、ルートが適切に機能することを保証します。
 :::
 
-## Deploy Permanently
+## 永続的にデプロイ
 
-### Generate Wallet
+### ウォレットを生成する
 
-We need the `arweave` package to generate a wallet
+ウォレットを生成するために `arweave` パッケージが必要です。
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -222,9 +222,9 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Update vite config
+### vite 設定の更新
 
-Make sure you add the `base` property to the vite config object and set it to an empty string.
+vite 設定オブジェクトに `base` プロパティを追加し、空の文字列に設定してください。
 
 vite.config.ts
 
@@ -239,9 +239,9 @@ export default defineConfig({
 })
 ```
 
-### Setup Irys
+### Irys のセットアップ
 
-We need Irys to deploy our app to Permaweb it provides instant data upload and retrieval
+アプリを Permaweb にデプロイするために Irys が必要です。Irys は即時データのアップロードと取得を提供します。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -261,7 +261,7 @@ yarn global add @irys/sdk
 </CodeGroup>
 
 ::: info
-You will need to add AR to this wallet and fund your Irys wallet to be able to upload this app. See [https://irys.xyz](https://irys.xyz) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
+このウォレットに AR を追加し、Irys ウォレットに資金を供給する必要があります。このアプリをアップロードできるようにするためです。詳細については [https://irys.xyz](https://irys.xyz) と [https://www.arweave.org/](https://www.arweave.org/) をご覧ください。
 :::
 
 ### Update package.json
@@ -320,16 +320,17 @@ yarn deploy
 </CodeGroup>
 
 ::: tip SUCCESS
-You should now have a React Application on the Permaweb! Great Job!
+これで Permaweb 上に React アプリケーションができました！素晴らしい仕事です！
 :::
 
 ::: tip ERROR
-If you receive this error `Not enough funds to send data`, you have to fund some AR into your wallet, and then try to deploy it again.
+もしこのエラー `データを送信するための資金が不足しています` が表示された場合は、ウォレットにいくらかの AR を資金を供給し、その後再度デプロイを試みてください。
 :::
 
-How do I fund my irys account?
+## Irys アカウントに資金を供給する方法
 
-Check balance
+### 残高を確認
+
 
 ```console:no-line-numbers
 irys balance [Address] -h https://node2.irys.xyz -t arweave
@@ -342,7 +343,7 @@ irys fund 20000000000 -t arweave -h https://node2.irys.xyz -w ./wallet.json
 ```
 
 ::: tip INFO
-It will take about 20 to 30 minutes for the funds to be deposited into your irys account.
+資金が Irys アカウントに入金されるまでに約 20 ～ 30 分かかります。
 :::
 
 

@@ -1,27 +1,27 @@
 ---
 locale: ja
 ---
-# Create React App Starter Kit
+# Create React App スターターキット
 
-This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb react application.
+このガイドでは、開発環境を設定し、パーマウェブ React アプリケーションを構築してデプロイするためのステップバイステップの流れを紹介します。
 
-## Prerequisites
+## 前提条件
 
--   Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
--   NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
--   Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
--   Know git and common terminal commands
+- 基本的な TypeScript の知識（必須ではありません） - [https://www.typescriptlang.org/docs/](Learn Typescript)
+- NodeJS v16.15.0 以上 - [https://nodejs.org/en/download/](Download NodeJS)
+- ReactJS の知識 - [https://reactjs.org/](Learn ReactJS)
+- Git および一般的なターミナルコマンドの知識
 
-## Development Dependencies
+## 開発依存関係
 
--   TypeScript
--   NPM or Yarn Package Manager
+- TypeScript
+- NPM または Yarn パッケージマネージャー
 
-## Steps
+## ステップ
 
-### Create Project
+### プロジェクトを作成する
 
-If you are not familiar with typescript you can exclude the extra check `--template typescript`
+TypeScript に不慣れな場合は、追加のチェック `--template typescript` を除外できます。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -46,9 +46,9 @@ yarn create react-app permaweb-create-react-app --template typescript
 cd permaweb-create-react-app
 ```
 
-### Install react-router-dom
+### react-router-dom をインストールする
 
-You have to install this package to manage routing between different pages
+異なるページ間のルーティングを管理するために、このパッケージをインストールする必要があります。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -67,9 +67,10 @@ yarn add react-router-dom -D
   </CodeGroupItem>
 </CodeGroup>
 
-### Run the App
 
-Now we need to check if everything is working before jumping into next step, run
+### アプリを実行する
+
+次のステップに進む前に、すべてが正常に動作しているか確認する必要があります。次のコマンドを実行してください。
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -86,10 +87,9 @@ yarn start
 
   </CodeGroupItem>
 </CodeGroup>
-This will start a new development server locally on your machine. By default it uses `PORT 3000`, if this PORT is already in use
-it may ask you to switch to another available PORT in Terminal
+これにより、ローカルマシン上で新しい開発サーバーが起動します。デフォルトでは `PORT 3000` を使用します。このポートがすでに使用されている場合、ターミナルで別の利用可能なポートに切り替えるよう求められる場合があります。
 
-### Modify the package.json to contain the following config
+### package.json を次の設定に変更する
 
 ```json
 {
@@ -98,9 +98,9 @@ it may ask you to switch to another available PORT in Terminal
 }
 ```
 
-### Setup Routing
+### ルーティングを設定する
 
-Now modify the application and add a new route such as an about page, first create 2 more .tsx files. (if you have exluceded the extra check `--template typescript`, then your component file extension should be `.jsx or .js`)
+アプリケーションを変更し、アバウトページなどの新しいルートを追加します。まず、2つの `.tsx` ファイルを作成します（`--template typescript` のチェックを除外した場合は、コンポーネントファイルの拡張子は `.jsx` または `.js` になります）。
 
 ```sh
 touch src/HomePage.tsx
@@ -145,9 +145,9 @@ function About() {
 export default About;
 ```
 
-#### Modify App.tsx
+#### App.tsx を修正する
 
-We need to update the App.tsx to manage the different pages
+異なるページを管理できるように App.tsx を更新する必要があります。
 
 ```ts
 import { HashRouter } from "react-router-dom";
@@ -170,17 +170,17 @@ function App() {
 export default App;
 ```
 
-::: info Hash Routing
-Note that we are wrapping the routes in a HashRouter and using the react-router-dom Link component to build links.
-This is important on the permaweb in its current state, it will ensure the routes work properly because applications
-are served on a path like `https://[gateway]/[TX]`
+::: info Hash ルーティング
+ルートを HashRouter でラップし、react-router-dom の Link コンポーネントを使用してリンクを構築していることに注意してください。これは、現状のパーマウェブでは重要です。これにより、アプリケーションが `https://[gateway]/[TX]` のようなパスで提供されるため、ルートが正しく機能することが保証されます。
 :::
 
-## Deploy Permanently
+## 永続的にデプロイする
 
-### Generate Wallet
+### ウォレットを生成する
 
-We need the `arweave` package to generate a wallet
+ウォレットを生成するために `arweave` パッケージが必要です。
+
+
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -205,11 +205,11 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Fund Wallet
-You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
-Then, you can purchase turbo credits for your wallet.
+### ウォレットに資金を追加する
+ArDrive Turbo クレジットでウォレットに資金を追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスし、ウォレットをインポートします。その後、ウォレットのために Turbo クレジットを購入できます。
 
-### Setup Permaweb-Deploy
+### Permaweb-Deploy を設定する
+
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -249,9 +249,9 @@ You will need to add AR to this wallet and fund your Irys wallet to be able to u
 Replace << ANT-PROCESS >> with your ANT process id.
 :::
 
-### Run build
+### ビルドを実行する
 
-Now it is time to generate a build, run
+ビルドを生成する時間です。次のコマンドを実行します。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -270,9 +270,9 @@ yarn build
   </CodeGroupItem>
 </CodeGroup>
 
-### Run deploy
+### デプロイを実行する
 
-Finally we are good to deploy our first Permaweb Application
+最後に、最初の Permaweb アプリケーションをデプロイします。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -292,27 +292,27 @@ yarn deploy
 </CodeGroup>
 
 ::: info ERROR
-If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
+`Insufficient funds` のエラーが表示された場合、デプロイメント用のウォレットに ArDrive Turbo クレジットを追加するのを忘れないでください。
 :::
 
-### Response
+### レスポンス
 
-You should see a response similar to the following:
+次のようなレスポンスが表示されるはずです：
 
 ```shell
 Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
 ```
 
-Your React app can be found at `https://arweave.net/<< tx-id >>`.
+あなたの React アプリは `https://arweave.net/<< tx-id >>` で見つけることができます。
 
 ::: tip SUCCESS
-You should now have a React Application on the Permaweb! Great Job!
+これで、Permaweb 上に React アプリケーションがあるはずです！素晴らしい仕事です！
 :::
 
-## Repository
+## リポジトリ
 
-A completed version of this example is available here: [https://github.com/VinceJuliano/permaweb-create-react-app](https://github.com/VinceJuliano/permaweb-create-react-app)
+この例の完成版はここで入手できます：[https://github.com/VinceJuliano/permaweb-create-react-app](https://github.com/VinceJuliano/permaweb-create-react-app)
 
-## Summary
+## まとめ
 
-This is a Create React App version of publishing a React app on the permaweb. You may discover new ways to deploy an app on the permaweb or checkout other starter kits in this guide!
+これは、Create React App を使用して Permaweb に React アプリを公開する方法です。Permaweb にアプリをデプロイする新しい方法を発見したり、このガイドに掲載されている他のスターターキットをチェックしたりできます！

@@ -3,24 +3,24 @@ locale: ja
 ---
 # Minimal Svelte Starter Kit
 
-This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb application.
+このガイドでは、Permaweb アプリケーションを構築しデプロイするための開発環境を構成する手順を説明します。
 
-## Prerequisites
+## 前提条件
 
--   Know typescript
--   NodeJS v18 or greater
--   Know Svelte - [https://svelte.dev](https://svelte.dev)
--   Know git and common terminal commands
+-   TypeScript の知識
+-   NodeJS v18 以上
+-   Svelte の知識 - [https://svelte.dev](https://svelte.dev)
+-   Git と一般的なターミナルコマンドの知識
 
-## Development Dependencies
+## 開発依存関係
 
 -   TypeScript
 -   esbuild
 -   w3
 
-## Steps
+## 手順
 
-### Create Project
+### プロジェクトの作成
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -134,7 +134,7 @@ new App({
 ```
 
 ::: info Hash Routing
-You will notice the `router.mode.hash()` setting in the script session, this is important to configure your application to use hash based routing, which will enable url support when running that application on a path, like `https://[gateway]/[TX]`
+スクリプトセッションにある `router.mode.hash()` 設定に注意してください。これは、アプリケーションをハッシュベースのルーティングを使用するように構成するために重要です。これにより、アプリケーションを `https://[gateway]/[TX]` のようなパスで実行する際の URL サポートが可能になります。
 :::
 
 ### counter.svelte
@@ -178,12 +178,11 @@ You will notice the `router.mode.hash()` setting in the script session, this is 
 </html>
 ```
 
+## 永続的なデプロイ
 
-## Deploy Permanently
+### ウォレットの生成
 
-### Generate Wallet
-
-We need the `arweave` package to generate a wallet
+ウォレットを生成するために `arweave` パッケージが必要です。
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -208,11 +207,11 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Fund Wallet
-You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
-Then, you can purchase turbo credits for your wallet.
+### ウォレットに資金を追加
+ウォレットに ArDrive Turbo クレジットを追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスし、ウォレットをインポートします。
+その後、ウォレットのためにターボクレジットを購入できます。
 
-### Setup Permaweb-Deploy
+### Permaweb-Deploy のセットアップ
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -303,27 +302,27 @@ yarn deploy
 </CodeGroup>
 
 ::: info ERROR
-If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
+資金不足のエラー `Insufficient funds` が表示された場合は、デプロイ用のウォレットに ArDrive Turbo クレジットを追加したことを確認してください。
 :::
 
-### Response
+### 応答
 
-You should see a response similar to the following:
+次のような応答が表示されるはずです：
 
 ```shell
 Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
 ```
 
-Your Svelte app can be found at `https://arweave.net/<< tx-id >>`.
+あなたの Svelte アプリは `https://arweave.net/<< tx-id >>` で見つけることができます。
 
 ::: tip SUCCESS
-You should now have a Svelte Application on the Permaweb! Great Job!
+これで Permaweb に Svelte アプリケーションを持つことができました！素晴らしい仕事です！
 :::
 
-## Repository
+## リポジトリ
 
-A completed version of this example is available here: [https://github.com/twilson63/permaweb-minimal-svelte-starter](https://github.com/twilson63/permaweb-minimal-svelte-starter)
+この例の完全なバージョンは、こちらで利用できます: [https://github.com/twilson63/permaweb-minimal-svelte-starter](https://github.com/twilson63/permaweb-minimal-svelte-starter)
 
-## Summary
+## まとめ
 
-This is a minimal version of publishing a Svelte application on the permaweb, but you may want more features, like hot-reloading and tailwind, etc. Check out `hypar` for a turnkey starter kit. [HypAR](https://github.com/twilson63/hypar)
+これは Permaweb に Svelte アプリケーションを公開するための最小限のバージョンですが、ホットリロードや Tailwind などの機能を追加したいかもしれません。その場合は、ターンキーのスターターキットである `hypar` をチェックしてください。 [HypAR](https://github.com/twilson63/hypar)
