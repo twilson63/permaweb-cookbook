@@ -2,24 +2,25 @@
 locale: ja
 ---
 
-# Arweave peer HTTP API
-For a more complete reference of the Arweave peer HTTP APIs see the [linked guide](https://docs.arweave.org/developers/server/http-api).
+# Arweave ピア HTTP API
 
-The endpoints present here are for done so for convenance and/or because they were omitted from the [linked guide](https://docs.arweave.org/developers/server/http-api).
+Arweave ピア HTTP API のより完全なリファレンスについては、[リンクされたガイド](https://docs.arweave.org/developers/server/http-api)を参照してください。
+
+ここに示されているエンドポイントは、便利さのため、または[リンクされたガイド](https://docs.arweave.org/developers/server/http-api)から省略されたために提示されています。
 
 ::: info
-Permaweb gateway services are typically backed by one or more full Arweave nodes. As a result they will often expose the node endpoints under the `/tx/` path and routing the request directly to an Arweave node. This means these methods can often be called on a gateway as well as directly on an arweave peer/node.
+Permaweb ゲートウェイサービスは、通常、1つ以上の完全な Arweave ノードによってバックされています。その結果、ノードエンドポイントが `/tx/` パスの下で公開され、リクエストが直接 Arweave ノードにルーティングされることがよくあります。これは、これらのメソッドがゲートウェイ上でも、Arweave ピア/ノード上でも呼び出すことができることを意味します。
 :::
 
 <hr />
 
-### Get by field
-Retrieves the header fields associated with a transaction directly from an Arweave node. Can be used to retrieve the transaction data as well, if the node 
-stores the chunks, and the data is small enough for the node to serve.
+### フィールドによる取得
+トランザクションに関連するヘッダーフィールドを直接 Arweave ノードから取得します。ノードがチャンクを保存していて、データがノードによって提供されるのに十分小さい場合は、トランザクションデータを取得するためにも使用できます。
 
 `https://arweave.net/tx/TX_ID/FIELD`
 
-Available fields: id | last_tx | owner | target | quantity | data | reward | signature
+利用可能なフィールド: id | last_tx | owner | target | quantity | data | reward | signature
+
 ```js
 const result = await fetch('https://arweave.net/tx/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8/data')
 // fields are returned in base64url format, so we need to decode
@@ -47,9 +48,10 @@ console.log(jsonData)
 </details>
 <hr />
 
-### Get Wallet Balance
-The returned balance is in Winston. To get balance in $AR, divide the balance by 1000000000000
+### ウォレット残高の取得
+返される残高はウィンストン（Winston）単位です。$ARでの残高を取得するには、残高を1000000000000で割ってください。
 `https://arweave.net/wallet/ADDRESS/balance`
+
 ```js
 const res = await axios.get(`https://arweave.net/wallet/NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0/balance`)
 console.log(res)
@@ -60,10 +62,10 @@ console.log(res.data / 1000000000000)
 ```
 <hr />
 
-### Get transaction status
+### トランザクションのステータス取得
 `https://arweave.net/tx/TX_ID/status`
 ::: tip
-This endpoint only supports base Arweave transactions not bundled transactions. Transactions must be confirmed on-chain before their status will be available.
+このエンドポイントは、バンドルされたトランザクションではなく、基本的な Arweave トランザクションのみをサポートしています。トランザクションのステータスが利用可能になる前に、オンチェーンで確認される必要があります。
 :::
 
 ```js
@@ -85,7 +87,7 @@ This endpoint only supports base Arweave transactions not bundled transactions. 
 
 
 
-### Get network information
+### ネットワーク情報の取得
 
 ```js
 const res = await axios.get('https://arweave.net/info')

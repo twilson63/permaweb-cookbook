@@ -1,14 +1,14 @@
 ---
 locale: ja
-title: Permaweb Cookbook - References
+title: パーマウェブクックブック - 参考資料
 ---
 
-# References
+# 参考資料
 
-References for learning in depth about various topics like Bundling, GraphQL, and HTTP APIs.
+バンドリング、GraphQL、HTTP APIなどのさまざまなトピックについて深く学ぶための参考資料。
 
--   [Bundling](bundling.md)
--   [GraphQL](gql.md)
--   [HTTP API](http-api)
+- [バンドリング](bundling.md)
+- [GraphQL](gql.md)
+- [HTTP API](http-api)
 
-> Do you think a permaweb guide is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md)
+> パーマウェブに関するガイドが不足していると思いますか？[Github](https://github.com/twilson63/permaweb-cookbook/issues)に問題を作成するか、[貢献](../getting-started/contributing.md)を検討してください。
