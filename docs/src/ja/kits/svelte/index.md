@@ -1,16 +1,16 @@
 ---
 locale: ja
 ---
-# Svelte Starter Kits
+# Svelte スターターキット
 
-Svelte is a framework that compiles to a JavaScript bundle and in the process removes the framework from the distribution of the app. This results in a much smaller footprint than other frameworks. Svelte is the perfect framework for Permaweb Applications. A Permaweb Application is built on the principles of a Single Page Application, but lives on the Arweave network and is distributed by Permaweb gateways.
+Svelte は、JavaScript バンドルにコンパイルされるフレームワークで、アプリの配布からフレームワークを削除します。これにより、他のフレームワークに比べてはるかに小さなフットプリントが実現されます。Svelte はパーマウェブアプリケーションに最適なフレームワークです。パーマウェブアプリケーションはシングルページアプリケーションの原則に基づいて構築されますが、Arweave ネットワーク上に存在し、パーマウェブゲートウェイによって配布されます。
 
-Svelte Starter Kit Guides:
+Svelte スターターキットガイド:
 
-* [Minimal](./minimal.md) - the minimum required to build a svelte permaweb app
-* [Vite](./vite.md) - Svelte, Typescript and Vite
+* [最小限](./minimal.md) - Svelte パーマウェブアプリを構築するために必要な最小限の要素
+* [Vite](./vite.md) - Svelte、TypeScript、および Vite
 
-::: info Permaweb Application Constraints
-* 100% Front-end application (No Server-Side Backend)
-* Applications are served from a sub-path (https://[gateway]/[TX_ID])
+::: info パーマウェブアプリケーションの制約
+* 100% フロントエンドアプリケーション（サーバーサイドバックエンドなし）
+* アプリケーションはサブパスから提供されます（https://[gateway]/[TX_ID]）
 :::

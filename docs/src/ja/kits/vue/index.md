@@ -1,18 +1,18 @@
 ---
 locale: ja
 ---
-# Vue Starter Kits
+# Vue スターターキット
 
-Vue.js is a progressive JavaScript framework that allows building user interfaces. Unlike other frameworks, it compiles the template into JavaScript during runtime, resulting in a smaller file size and faster performance. Vue is ideal for building performant and scalable single-page applications, making it a popular choice among front-end developers.
+Vue.js は、ユーザーインターフェースを構築するための進歩的なJavaScriptフレームワークです。他のフレームワークとは異なり、テンプレートを実行時にJavaScriptにコンパイルするため、ファイルサイズが小さく、パフォーマンスが向上します。Vueは、高速でスケーラブルなシングルページアプリケーションを構築するのに最適であり、フロントエンド開発者の間で人気があります。
 
-Vue Starter Kit Guides:
+Vue スターターキットガイド:
 
-**Note:** - Since `npm init vue@latest`alredy uses vite, we have not included a vite guide for Vue.
+**注意:** - `npm init vue@latest` はすでに vite を使用しているため、Vue用の vite ガイドは含まれていません。
 
-- [Create Vue App](./create-vue.md) - Use Create Vue to efficiently build a Vue.js-based with TypeScript and Vite modern permaweb application
+- [Vueアプリを作成](./create-vue.md) - Create Vueを使用して、TypeScriptとViteを用いた効率的なVue.jsベースの最新パーマウェブアプリケーションを構築します。
 
-::: info Permaweb Application Constraints
+::: info パーマウェブアプリケーションの制約
 
-- 100% Front-end application (No Server-Side Backend)
-- Applications are served from a sub-path (https://[gateway]/[TX_ID])
-  :::
+- 100% フロントエンドアプリケーション（サーバーサイドバックエンドなし）
+- アプリケーションはサブパスから提供されます（https://[gateway]/[TX_ID]）
+:::

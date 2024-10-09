@@ -1,21 +1,17 @@
 ---
 locale: ja
 ---
-# React Starter Kits
+# React スターターキット
 
-React is a popular library used for building user interfaces. Alongside other popular 
-tools such as create-react-app, a React project can be compiled into a bundle. This bundle
-can be uploaded as a transaction to the permaweb where it will serve as a single page application.
+React は、ユーザーインターフェースを構築するために使用される人気のあるライブラリです。create-react-app などの他の人気ツールと組み合わせることで、React プロジェクトはバンドルにコンパイルできます。このバンドルは、トランザクションとしてパーマウェブにアップロードされ、シングルページアプリケーションとして機能します。
 
-React Starter Kit Guides:
+React スターターキットガイド:
 
-* [Vite](./turbo.md) - React + Vite, publish with permaweb-deploy
-* [Create React App](./create-react-app.md) - utilize Create React App to build a React permaweb app
-* [Akord](./akord.md) - React + Vite, deploy with Akord
-<!-- * [Vite](./vite.md) - utilize Vite to build a React permaweb app -->
+* [Vite](./turbo.md) - React + Vite、permaweb-deploy で公開
+* [Create React App](./create-react-app.md) - Create React App を利用して React パーマウェブアプリを構築
+* [Akord](./akord.md) - React + Vite、Akord でデプロイ
 
-
-::: info Permaweb Application Constraints
-* 100% Front-end application (No Server-Side Backend)
-* Applications are served from a sub-path (https://[gateway]/[TX_ID])
+::: info パーマウェブアプリケーションの制約
+* 100% フロントエンドアプリケーション（サーバーサイドバックエンドなし）
+* アプリケーションはサブパスから提供されます（https://[gateway]/[TX_ID]）
 :::

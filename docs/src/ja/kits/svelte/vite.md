@@ -1,11 +1,13 @@
 ---
 locale: ja
 ---
-# Svelte/Vite Starter Kit
+# Svelte/Vite スターターキット
 
-Svelte is the framework that compiles out of the way, that results is small packages, which is perfect for the permaweb. As developers, we value Dev Experience as much as we value User Experience. This kit uses the `vite` bundle system to give developers a great DX experience.
+Svelte は、余計なものをコンパイルし、コンパクトなパッケージを生成するフレームワークで、Permaweb に最適です。開発者として、私たちはユーザーエクスペリエンスと同じくらい、開発エクスペリエンス (DX) を重視しています。このキットは、開発者に素晴らしい DX 経験を提供するために `vite` バンドルシステムを使用しています。
 
-## Installing vite with svelte and typescript
+## Svelte と TypeScript を使用した vite のインストール
+
+
 
 <CodeGroup>
   <CodeGroupItem title="NPM v6">
@@ -38,13 +40,13 @@ pnpm create vite my-perma-app --template svelte-ts
   </CodeGroupItem>
 </CodeGroup>
 
-## Project Info
+## プロジェクト情報
 
-The vite build system places your index.html file in the root directory, this is where you would include any css or global script dependencies if needed. For more information about the vite project layout check out the [vite documentation](https://vitejs.dev/guide/#index-html-and-project-root)
+vite のビルドシステムは、index.html ファイルをルートディレクトリに配置します。ここに必要に応じて CSS やグローバルスクリプトの依存関係を含めることができます。vite プロジェクトのレイアウトに関する詳細は、[vite ドキュメント](https://vitejs.dev/guide/#index-html-and-project-root)を参照してください。
 
-## Setup hash-router
+## ハッシュルーターのセットアップ
 
-To setup the hash-router we will use [tinro](https://github.com/AlexxNB/tinro). `tinro` is a tiny declarative routing library, that is similar to React Router.
+ハッシュルーターをセットアップするために、[tinro](https://github.com/AlexxNB/tinro)を使用します。`tinro` は、React Router に似た小さな宣言型ルーティングライブラリです。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -63,9 +65,9 @@ yarn add -D tinro
   </CodeGroupItem>
 </CodeGroup>
 
-## Telling Svelte to use hash routing
+## Svelte にハッシュルーティングを使用するよう指示する
 
-In the `src/App.svelte` file, you want to configure the router to use the hash routing mode.
+`src/App.svelte` ファイルで、ルーターをハッシュルーティングモードを使用するように設定します。
 
 ```html
 <script lang="ts">
@@ -76,14 +78,14 @@ In the `src/App.svelte` file, you want to configure the router to use the hash r
 <main></main>
 ```
 
-The `router.mode.hash` function turns on hash router mode.
-The `router.subscribe` callback is nice to reset the page to the top on page transfers
+`router.mode.hash` 関数は、ハッシュルーター モードをオンにします。
+`router.subscribe` コールバックは、ページ遷移時にページを最上部にリセットするのに便利です。
 
-## Adding some transition components
+## トランジション コンポーネントの追加
 
-These component will manage the transition between one page to another page when routing.
+これらのコンポーネントは、ルーティング時に1ページから別のページへの遷移を管理します。
 
-Create a directory under the `src` directory called components and add these two files:
+`src` ディレクトリの下に `components` というディレクトリを作成し、次の2つのファイルを追加します。
 
 ### announcer.svelte
 
@@ -149,9 +151,9 @@ Create a directory under the `src` directory called components and add these two
 </Transition>
 ```
 
-Adding the Announcer and Transition components to our routing system will handle announcing page transitions as well as animating the transition.
+アナウンサーおよびトランジションコンポーネントをルーティングシステムに追加することで、ページ遷移のアナウンスと遷移のアニメーションを処理します。
 
-## Create some pages
+## ページを作成する
 
 ### home.svelte
 
@@ -188,11 +190,11 @@ Adding the Announcer and Transition components to our routing system will handle
 ...
 ```
 
-## Deploy Permanently
+## 永続的にデプロイする
 
-### Generate Wallet
+### ウォレットを生成する
 
-We need the `arweave` package to generate a wallet
+`arweave` パッケージを使用してウォレットを生成する必要があります。
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -217,11 +219,11 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### Fund Wallet
-You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
-Then, you can purchase turbo credits for your wallet.
+### ウォレットに資金を追加する
+ウォレットに ArDrive Turbo クレジットを追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスしてウォレットをインポートします。
+その後、ウォレットのためにターボクレジットを購入できます。
 
-### Setup Permaweb-Deploy
+### Permaweb-Deployの設定
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -269,9 +271,9 @@ export default defineConfig({
 Replace << ANT-PROCESS >> with your ANT process id.
 :::
 
-### Run build
+### ビルドを実行する
 
-Now it is time to generate a build, run
+今こそビルドを生成する時です。以下のコマンドを実行します。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -290,10 +292,9 @@ yarn build
   </CodeGroupItem>
 </CodeGroup>
 
-### Run deploy
+### デプロイを実行する
 
-Finally we are good to deploy our first Permaweb Application
-
+最終的に、私たちは初めてのPermawebアプリケーションをデプロイする準備が整いました。
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
@@ -312,12 +313,12 @@ yarn deploy
 </CodeGroup>
 
 ::: info ERROR
-If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
+`Insufficient funds`というエラーが発生した場合は、デプロイ用のウォレットにArDrive Turboクレジットを資金供給したことを確認してください。
 :::
 
-### Response
+### レスポンス
 
-You should see a response similar to the following:
+次のようなレスポンスが表示されるはずです：
 
 ```shell
 Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
@@ -326,13 +327,13 @@ Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>
 Your Svelte app can be found at `https://arweave.net/<< tx-id >>`.
 
 ::: tip SUCCESS
-You should now have a Svelte Application on the Permaweb! Great Job!
+あなたは今、PermawebにSvelteアプリケーションを持っています！素晴らしい仕事です！
 :::
 
-## Repository
+## リポジトリ
 
-A completed version of this example is available here: [https://github.com/twilson63/svelte-ts-vite-example](https://github.com/twilson63/svelte-ts-vite-example)
+この例の完成版は以下で入手できます: [https://github.com/twilson63/svelte-ts-vite-example](https://github.com/twilson63/svelte-ts-vite-example)
 
-## Summary
+## まとめ
 
-This is a minimal version of publishing a Svelte application on the permaweb, but you may want more features, like hot-reloading and tailwind, etc. Check out `hypar` for a turnkey starter kit. [HypAR](https://github.com/twilson63/hypar)
+これはPermawebにSvelteアプリケーションを公開するための最小限のバージョンですが、ホットリロードやTailwindなど、さらに多くの機能が欲しいかもしれません。ターンキーのスターターキットとして`hypar`をチェックしてください。 [HypAR](https://github.com/twilson63/hypar)

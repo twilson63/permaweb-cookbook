@@ -3,24 +3,23 @@ locale: ja
 ---
 # React Starter Kit w/vite & ArDrive
 
-This guide will walk you through in a step by step flow to configure your development environment to build and deploy a permaweb react application.
+このガイドでは、Permaweb React アプリケーションを構築してデプロイするための開発環境を構成する手順を説明します。
 
-## Prerequisites
+## 前提条件
 
--   Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
--   NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
--   Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
--   Know git and common terminal commands
+-   基本的な TypeScript の知識（必須ではありません） - [https://www.typescriptlang.org/docs/](TypeScriptを学ぶ)
+-   NodeJS v16.15.0 以上 - [https://nodejs.org/en/download/](NodeJSをダウンロード)
+-   ReactJS の知識 - [https://reactjs.org/](ReactJSを学ぶ)
+-   git と一般的なターミナルコマンドの知識
 
-## Development Dependencies
+## 開発依存関係
 
 -   TypeScript
--   NPM or Yarn Package Manager
+-   NPM または Yarn パッケージマネージャ
 
-## Steps
+## 手順
 
-### Create React App
-
+### React アプリを作成する
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -62,9 +61,9 @@ yarn add react-router-dom
 </CodeGroup>
 
 
-We need to use the hash-router to create a working app on arweave.
+Arweave で動作するアプリを作成するには、ハッシュルーターを使用する必要があります。
 
-### Page Components
+### ページコンポーネント
 
 ```sh
 touch src/Home.tsx src/About.tsx
@@ -108,9 +107,10 @@ function About() {
 export default About;
 ```
 
-#### Modify App.tsx
+#### App.tsx を修正する
 
-We need to update the App.tsx to manage different pages
+異なるページを管理できるように App.tsx を更新する必要があります。
+
 
 ```tsx
 import { HashRouter } from "react-router-dom";
@@ -133,9 +133,9 @@ function App() {
 export default App;
 ```
 
-#### Modify index.css
+#### index.css を修正する
 
-Alter the `body` selector
+`body` セレクタを変更します。
 
 ```css
 body {
@@ -168,9 +168,10 @@ yarn dev
 </CodeGroup>
 
 
-### Building React App
+### React アプリをビルドする
 
-#### Modify vite.config.ts
+#### vite.config.ts を修正する
+
 
 ```ts
 import { defineConfig } from 'vite'
@@ -188,11 +189,11 @@ export default defineConfig({
 yarn build
 ```
 
-### Deploy Permanently
+### 永続的にデプロイする
 
-#### Generate Wallet
+#### ウォレットを生成する
 
-We need the `arweave` package to generate a wallet
+ウォレットを生成するために `arweave` パッケージが必要です。
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -217,11 +218,10 @@ then run this command in the terminal
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-#### Fund Wallet
-You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
-Then, you can purchase turbo credits for your wallet.
+#### ウォレットに資金を追加する
+ArDrive Turbo クレジットでウォレットに資金を追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスし、ウォレットをインポートします。その後、ウォレットのために Turbo クレジットを購入できます。
 
-#### Setup Permaweb-Deploy
+#### Permaweb-Deploy を設定する
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -282,9 +282,11 @@ yarn build
   </CodeGroupItem>
 </CodeGroup>
 
-#### Run deploy
+#### デプロイを実行する
 
-Finally we are good to deploy our first Permaweb Application
+最後に、最初の Permaweb アプリケーションをデプロイします。
+
+
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -304,23 +306,22 @@ yarn deploy
 </CodeGroup>
 
 ::: info ERROR
-If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
+`Insufficient funds` エラーが表示された場合は、デプロイメント用のウォレットに ArDrive Turbo クレジットを追加したことを確認してください。
 :::
 
-#### Response
+#### 応答
 
-You should see a response similar to the following:
+以下のような応答が表示されるはずです：
 
 ```shell
 Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
 ```
 
-Your React app can be found at `https://arweave.net/<< tx-id >>`.
+あなたの React アプリは `https://arweave.net/<< tx-id >>` で見つけることができます。
 
 ::: tip SUCCESS
-You should now have a React Application on the Permaweb! Great Job!
+これで、Permaweb 上に React アプリケーションを持っていることになります！素晴らしい仕事です！
 :::
-### Congrats!
+### おめでとうございます！
 
-You just published a react application on the Permaweb! This app will be hosted forever!
-
+あなたは Permaweb に React アプリケーションを公開しました！このアプリは永遠にホストされます！
