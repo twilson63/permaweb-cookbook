@@ -1,8 +1,9 @@
 ---
 locale: ja
 ---
-# Complete GraphQL Structure for Transactions
-The following GraphQL query returns all of the properties of a transaction captured by the indexing service.
+
+# トランザクションの完全なGraphQL構造
+次のGraphQLクエリは、インデックスサービスによってキャプチャされたトランザクションのすべてのプロパティを返します。
 
 ```graphql:no-line-numbers
 query {
@@ -54,8 +55,9 @@ query {
 
 ```
 
-## Pagination
-By default, GraphQL queries return the first 10 results. Larger result sets can be requested by adding the `first: X` option (where `X` is a value from 1 to 100) to the transactions query.
+## ページネーション
+デフォルトでは、GraphQLクエリは最初の10件の結果を返します。より大きな結果セットを要求するには、トランザクションクエリに `first: X` オプションを追加します（ここで `X` は1から100の値）。
+
 ```graphql{4}
 query
 {
@@ -82,7 +84,7 @@ query
 }
 
 ```
-If there are more than 100 items in the result set, subsequent pages of results can be retrieved by using a cursor.
+結果セットに100件を超えるアイテムがある場合、カーソルを使用して次のページの結果を取得できます。
 ```graphql{13-15,17}
 query
 {
@@ -112,7 +114,7 @@ query
   }
 }
 ```
-If there are subsequent result pages `hasNextPage` will have a value of `true`. Take the `cursor` value of the last item in the result set and use it as the value for the `after` query parameter.
+次の結果ページがある場合、`hasNextPage`の値は`true`になります。結果セットの最後のアイテムの`cursor`値を取得し、それを`after`クエリパラメーターの値として使用します。
 ```graphql{5}
 query
 {
@@ -143,13 +145,14 @@ query
   }
 }
 ```
-To retrieve the entire results set, repeat the `after` query with an updated `cursor` value from the last item of each page until `hasNextPage` is `false`.
 
-## Rate Limiting
-Indexing services will implement rate limiting to prevent attacks and abuse of their services. The `arweave.net/graphql` service limits GraphQL queries to 600 queries every 5 minutes (per IP address). Always check the results of your queries to see if they have a status code in the 200s before parsing the response. A HTTP Status code of 429 will indicate rate limiting is being enforced. A HTTP Status code of 503 usually indicates that the query result set is too large for `arweave.net/graphql`.
+すべての結果セットを取得するには、`hasNextPage`が`false`になるまで、各ページの最後のアイテムから取得した`cursor`値を使用して`after`クエリを繰り返します。
 
-## Resources
-* For a more complete listing of the Arweave GraphQL schema see the [Arweave GraphQL Guide](https://gql-guide.arweave.dev)
-* [ArDB package](../guides/querying-arweave/ardb.md)
-* [ar-gql package](../guides/querying-arweave/ar-gql.md)
-* For a general guide to graphql [graphql.org/learn](https://graphql.org/learn) is a good starting point
+## レート制限
+インデックスサービスは、攻撃やサービスの悪用を防ぐためにレート制限を実施します。`arweave.net/graphql`サービスは、GraphQLクエリを5分ごとに600クエリに制限しています（IPアドレスごと）。レスポンスを解析する前に、クエリの結果に200番台のステータスコードがあるかを必ず確認してください。HTTPステータスコード429は、レート制限が施行されていることを示します。HTTPステータスコード503は、クエリの結果セットが`arweave.net/graphql`にとって大きすぎることを示すことが一般的です。
+
+## リソース
+* Arweave GraphQLスキーマのより完全なリストについては、[Arweave GraphQL Guide](https://gql-guide.arweave.dev)を参照してください。
+* [ArDBパッケージ](../guides/querying-arweave/ardb.md)
+* [ar-gqlパッケージ](../guides/querying-arweave/ar-gql.md)
+* GraphQLに関する一般的なガイドは、[graphql.org/learn](https://graphql.org/learn)が良い出発点です。

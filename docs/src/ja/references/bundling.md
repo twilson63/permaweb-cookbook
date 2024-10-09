@@ -1,20 +1,15 @@
 ---
 locale: ja
 ---
-# Bundling
+# バンドリング
 
-Before getting started with any of the below references, make sure you've read
-[Bundles and Bundling](/concepts/bundles.md) from [Core Concepts](/concepts/).
+以下の参考資料を始める前に、[コアコンセプト](/concepts/)の[バンドルとバンドリング](/concepts/bundles.md)を読んでおくことをお勧めします。
 
-## Setup
+## セットアップ
 
-We'll be using the [arbundles](https://github.com/irys-xyz/arbundles)
-library which is a JavaScript implementation of the
-[ANS-104 specification](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md). ArBundles comes with TypeScript support.
+私たちは、[arbundles](https://github.com/irys-xyz/arbundles)ライブラリを使用します。これは、[ANS-104仕様](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md)のJavaScript実装です。ArBundlesはTypeScriptサポートも提供しています。
 
-**Note:** This reference assumes a NodeJS environment. Browser compatibility
-with ArBundles is possible but currently requires wrangling `Buffer` polyfills.
-This will be addressed in a future version of ArBundles.
+**注意:** この参考資料はNodeJS環境を前提としています。ArBundlesのブラウザ互換性は可能ですが、現在は`Buffer`ポリフィルを扱う必要があります。これは将来のArBundlesのバージョンで解決される予定です。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -33,9 +28,9 @@ yarn add arbundles
   </CodeGroupItem>
 </CodeGroup>
 
-## Create a `Signer`
+## `Signer`を作成する
 
-In order to create Data Items, we need to first create a `Signer`.
+データアイテムを作成するには、まず`Signer`を作成する必要があります。
 
 <CodeGroup>
   <CodeGroupItem title="TS">
@@ -50,13 +45,11 @@ const signer = new ArweaveSigner(jwk)
   </CodeGroupItem>
 </CodeGroup>
 
-## Create a `DataItem`
+## `DataItem`を作成する
 
-To create a `DataItem`, we pass some data along with a `Signer` to the
-`createData()` utility function.
+`DataItem`を作成するには、いくつかのデータと`Signer`を`createData()`ユーティリティ関数に渡します。
 
-**Note:** While the `createData()` utility function requires a `Signer`, the
-returned `DataItem` is **not yet signed** and contains a placeholder ID.
+**注意:** `createData()`ユーティリティ関数は`Signer`を必要としますが、返される`DataItem`は**まだ署名されておらず**、プレースホルダーIDが含まれています。
 
 <CodeGroup>
   <CodeGroupItem title="TS">
@@ -78,13 +71,11 @@ const myOtherDataItem = createData(myBufferData, signer)
   </CodeGroupItem>
 </CodeGroup>
 
-## Create a `Bundle`
+## `Bundle`を作成する
 
-To create a Bundle, we pass our `DataItem` to the `bundleAndSignData` utility
-function and `await` the result.
+`Bundle`を作成するには、`DataItem`を`bundleAndSignData`ユーティリティ関数に渡し、結果を`await`します。
 
-**Note:** A `DataItem` passed to this utility function can
-be pre-signed as detailed in a later section.
+**注意:** このユーティリティ関数に渡される`DataItem`は、後のセクションで詳述されているように、事前に署名されている場合があります。
 
 <CodeGroup>
   <CodeGroupItem title="TS">
@@ -99,10 +90,9 @@ const bundle = await bundleAndSignData(dataItems, signer)
   </CodeGroupItem>
 </CodeGroup>
 
-## Create a `Transaction` from a `Bundle`
+## `Bundle`から`Transaction`を作成する
 
-In order to post a `Bundle` to Arweave there ultimately needs to be a root
-Layer 1 `Transaction` containing the `Bundle`.
+`Bundle`をArweaveに投稿するには、最終的に`Bundle`を含むルートLayer 1の`Transaction`が必要です。
 
 <CodeGroup>
   <CodeGroupItem title="TS">
@@ -132,11 +122,9 @@ await arweave.transactions.sign(tx, jwk)
   </CodeGroupItem>
 </CodeGroup>
 
-## Sign a `DataItem`
+## `DataItem`に署名する
 
-In order to get a `DataItem`'s ID (e.g. for use in a manifest also contained in the same bundle), we must call and `await` its `.sign()` method. If signing
-is successful, the `DataItem` will now have their unique ID and signature and
-are ready to be added to a `Bundle`.
+`DataItem`のID（例えば、同じバンドルに含まれるマニフェストで使用するため）を取得するには、その`.sign()`メソッドを呼び出して`await`する必要があります。署名が成功すると、`DataItem`は独自のIDと署名を持ち、`Bundle`に追加する準備が整います。
 
 <CodeGroup>
   <CodeGroupItem title="TS">
@@ -152,12 +140,9 @@ const id2 = myOtherDataItem.id
   </CodeGroupItem>
 </CodeGroup>
 
-## Tagging `DataItem`
+## `DataItem`にタグ付けする
 
-`DataItem` can themselves have tags just as Layer 1 Arweave Transactions can
-have tags. Once an Arweave Gateway unbundles and indexes the `Bundle`, these
-`DataItem` tags become queryable the same way a Layer 1 Arweave Transaction's
-tags are queryable.
+`DataItem`は、Layer 1のArweaveトランザクションと同様に、タグを持つことができます。Arweaveゲートウェイが`Bundle`をアンバンドルしてインデックス化すると、これらの`DataItem`タグは、Layer 1のArweaveトランザクションのタグと同じようにクエリ可能になります。
 
 <CodeGroup>
   <CodeGroupItem title="TS">
@@ -174,14 +159,9 @@ tags are queryable.
   </CodeGroupItem>
 </CodeGroup>
 
-## Consuming Bundles
+## バンドルの消費
 
-**WARNING:** Be sure that the `Buffer` you pass to `new Bundle(buffer)` does
-contain a `Bundle`, otherwise, very small `Buffer` being passed will crash
-the thread. **DO NOT** use `new Bundle(buffer)` in a production environment.
-Instead, see the
-[streamable interface](https://github.com/irys-xyz/arbundles/blob/master/src/stream)
-in the ArBundles repository.
+**警告:** `new Bundle(buffer)`に渡す`Buffer`が`Bundle`を含んでいることを確認してください。そうでない場合、非常に小さな`Buffer`が渡されるとスレッドがクラッシュします。**本番環境では** `new Bundle(buffer)`を使用しないでください。代わりに、ArBundlesリポジトリの[ストリーミングインターフェース](https://github.com/irys-xyz/arbundles/blob/master/src/stream)を参照してください。
 
 <CodeGroup>
   <CodeGroupItem title="TS">
