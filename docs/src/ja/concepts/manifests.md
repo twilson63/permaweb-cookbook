@@ -1,53 +1,52 @@
 ---
 locale: ja
 ---
-# Path Manifests
+# パスマニフェスト
 
-## Overview
+## 概要
 
-When uploading files to Arweave each file is assigned its own unique transaction ID. By default these ID's aren't grouped or organized in any particular manner.
+ファイルをArweaveにアップロードすると、各ファイルには独自のトランザクションIDが割り当てられます。デフォルトでは、これらのIDは特定の方法でグループ化されたり整理されたりしません。
 
-One picture of your cat might be stored with a transaction ID of [bVLEkL1SOPFCzIYi8T_QNnh17VlDp4RylU6YTwCMVRw](https://arweave.net/bVLEkL1SOPFCzIYi8T_QNnh17VlDp4RylU6YTwCMVRw), while another with [FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0](https://arweave.net/FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0) as its transaction ID.
+例えば、あなたの猫の写真の一つはトランザクションID [bVLEkL1SOPFCzIYi8T_QNnh17VlDp4RylU6YTwCMVRw](https://arweave.net/bVLEkL1SOPFCzIYi8T_QNnh17VlDp4RylU6YTwCMVRw) で保存されている一方で、別の写真は [FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0](https://arweave.net/FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0) というトランザクションIDで保存されています。
 
-| Cat1 | Cat2 |
+| 猫1 | 猫2 |
 |------|------|
 | <img src="https://arweave.net/bVLEkL1SOPFCzIYi8T_QNnh17VlDp4RylU6YTwCMVRw" width="300">|<img src="https://arweave.net/FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0" width="360"> |
 | bVLEkL1SOPFCzIYi8T_QNnh17VlDp4... | FguFk5eSth0wO8SKfziYshkSxeIYe7oK9zoPN2PhSc0 |
 
-These transaction ID's are a bit unwieldy and make it difficult to find all of your relevant files. Without a path manifest, if you uploaded 100 pictures of your cat you would need to keep track of **100 different IDs and links**! 
+これらのトランザクションIDは少し扱いにくく、関連するファイルを見つけるのが難しくなります。パスマニフェストがなければ、100枚の猫の写真をアップロードした場合、**100の異なるIDとリンク**を追跡する必要があります！ 
 
-Path Manifests are a way to link multiple transactions together under a single base transaction ID and give them human readable file names. In relation to the cat example, you could have one base transaction ID to remember and use it like a folder - accessing your cat pictures with more memorable filenames like [{base id}/cat1.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/cat1.jpg), [{base id}/cat2.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/cat2.jpg), etc. 
+パスマニフェストは、複数のトランザクションを単一の基本トランザクションIDの下にリンクし、人間が読みやすいファイル名を与える方法です。猫の例に関連付けると、1つの基本トランザクションIDを覚えておき、それをフォルダのように使い、`[{base id}/cat1.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/cat1.jpg)`や`[{base id}/cat2.jpg](https://arweave.net/6dRh-TaiA5qtd0NWqrghpvC4_l3EtA3AwCluwPtfWVw/cat2.jpg)`のようなもっと覚えやすいファイル名で猫の写真にアクセスすることができます。
 
-Creating grouped sets of readable file names is essential for creating practical applications on Arweave, and unlocks the ability to host websites or other file collections as explored in the examples below.
+読みやすいファイル名のグループ化を作成することは、Arweave上で実用的なアプリケーションを作成するために不可欠であり、以下の例で探求するように、ウェブサイトや他のファイルコレクションをホストする能力を開放します。
 
-### What Can You Use Manifests For?
+### マニフェストは何に使えますか？
 
 ---
 
-Any time you need to group files in a hierarchical way, manifests can be useful. For example:
+ファイルを階層的にグループ化する必要がある場合、マニフェストは便利です。例えば：
 
-- **Storing NFT collections:**
+- **NFTコレクションの保存：**
     - [https://arweave.net/X8Qm…AOhA/0.png](https://arweave.net/X8Qm4X2MD4TJoY7OqUSMM3v8H1lvFr-xHby0YbKAOhA/0.png)
     - [https://arweave.net/X8Qm…AOhA/1.png](https://arweave.net/X8Qm4X2MD4TJoY7OqUSMM3v8H1lvFr-xHby0YbKAOhA/1.png)
 
-This mirrors the common base path approach used by NFT collections when linking to NFT images and metadata on a storage API or IPFS.
+これは、ストレージAPIやIPFS上でNFT画像とメタデータにリンクする際に使用される一般的な基本パスアプローチと同様です。
 
-
-- **Hosting websites:**
+- **ウェブサイトのホスティング：**
     - https://arweave.net/X8Qm…AOhA/index.html
     - https://arweave.net/X8Qm…AOhA/styles.css
     - https://arweave.net/X8Qm…AOhA/public/favicon.png
 
-
-### Manifest Structure
+### マニフェストの構造
 
 ---
 
-Path Manifests are a special format of transaction created and posted to Arweave using the Tags:
+パスマニフェストは、以下のタグを使用して作成され、Arweaveに投稿される特別なトランザクション形式です：
 
- `{ name: "Content-type", value: "application/x.arweave-manifest+json" }`
+`{ name: "Content-type", value: "application/x.arweave-manifest+json" }`
 
-and having JSON formatted transaction data that matches the example below.
+そして、以下の例に一致するJSON形式のトランザクションデータを持っています。
+
 
 ```json
 {
@@ -82,10 +81,8 @@ and having JSON formatted transaction data that matches the example below.
 }
 ```
 
-- **fallback:**
+- **フォールバック：**
 
-Manifest version 0.2.0 introduced the `fallback` attribute. `fallback` is an object that accepts the sub attribute `id`, which defines an Arweave data item transaction id for the resolver to fall back to if it fails to correctly resolve a requested path.
+マニフェストのバージョン0.2.0では、`fallback`属性が導入されました。`fallback`は、リゾルバがリクエストされたパスを正しく解決できない場合にフォールバックするためのArweaveデータアイテムトランザクションIDを定義するサブ属性`id`を受け付けるオブジェクトです。
 
-Source and Further Reading in the official Arweave Path Manifest docs: [Arweave Docs](https://github.com/ArweaveTeam/arweave/blob/master/doc/path-manifest-schema.md)
-
-
+公式のArweaveパスマニフェストドキュメントでの出典とさらなる読み物： [Arweave Docs](https://github.com/ArweaveTeam/arweave/blob/master/doc/path-manifest-schema.md)

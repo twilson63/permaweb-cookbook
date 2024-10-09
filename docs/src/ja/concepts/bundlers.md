@@ -1,31 +1,34 @@
-# Bundling Services
+---
+locale: ja
+---
+# バンドリングサービス
 
 ---
 
-With bundling services users can post their data transactions to a bundling service to have it "bundled" together with other users transactions and posted as a single Arweave transaction in an upcoming Arweave block.
+バンドリングサービスを利用すると、ユーザーはデータトランザクションをバンドリングサービスに投稿し、他のユーザーのトランザクションと一緒に「バンドル」して、次回のArweaveブロックに1つのArweaveトランザクションとして投稿されるようにできます。
 
 ---
 
-### What is a bundle?
+### バンドルとは？
 
 ---
 
-A description of transaction bundles and their benefits can be found [here](/concepts/bundles.md).
+トランザクションバンドルとその利点の説明は、[こちら](/concepts/bundles.md)で確認できます。
 
-### What is a Bundler node?
+### バンドラーノードとは？
 
 ---
 
-A bundler is a node which is responsible for accepting transactions or data items from users, bundling them, and posting them to the Arweave network (with a guarantee they will be uploaded with a specific transaction ID).
+バンドラーとは、ユーザーからトランザクションやデータアイテムを受け取り、それらをバンドルし、Arweaveネットワークに投稿する責任を持つノードです（特定のトランザクションIDでアップロードされることを保証します）。
 
-Services:
+サービス：
 
 - [Turbo](https://github.com/ardriveapp/turbo-upload-service/)
 
-Which make sure the data is persisted until it is uploaded to Arweave.
+データがArweaveにアップロードされるまで持続されることを保証します。
 
-### Supporting multiple currencies
+### 複数通貨のサポート
 
 ---
 
-A key feature of bundling services is that because they pay for the base Arweave transaction to be posted (using AR tokens) they can choose to enable payments of storage fees on a variety of different tokens. This is the main entry point for other chains to enable Arweave's permanent storage for their users.
+バンドリングサービスの重要な機能は、ARトークンを使用して投稿される基本的なArweaveトランザクションの支払いを行うため、さまざまなトークンでのストレージ料金の支払いを有効にできることです。これは、他のチェーンがユーザーのためにArweaveの永続的なストレージを有効にするための主な入り口です。

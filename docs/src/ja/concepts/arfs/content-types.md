@@ -1,36 +1,38 @@
 ---
+locale: ja
 prev: "entity-types.md"
 next: "privacy.md"
 ---
 
-# Content Types
+# コンテンツタイプ
 
-All transaction types in ArFS leverage a specific metadata tag for the Content-Type (also known as mime-type) of the data that is included in the transaction. ArFS clients must determine what the mime-type of the data is, in order for Arweave gateways and browswers to render this content appropriately.
+ArFSのすべてのトランザクションタイプは、トランザクションに含まれるデータのContent-Type（MIMEタイプとも呼ばれる）に特定のメタデータタグを利用します。ArFSクライアントは、データのMIMEタイプを決定する必要があります。これにより、Arweaveゲートウェイやブラウザがこのコンテンツを適切にレンダリングできるようになります。
 
-All public drive, folder, and file (metadata only) entity transactions all use a JSON standard, therefore they must have the following content type tag:
+すべてのパブリックドライブ、フォルダー、およびファイル（メタデータのみ）エンティティトランザクションはすべてJSON標準を使用するため、次のコンテンツタイプタグを持つ必要があります：
+
 
 ```json
 Content-Type: '<application/json>'
 ```
 
-However, a file's data transaction must have its mime-type determined. This is stored in the file's corresponding metadata transaction JSON's `dataContentType` as well as the content type tag in the data transaction itself.
+ただし、ファイルのデータトランザクションにはMIMEタイプを決定する必要があります。これは、ファイルの対応するメタデータトランザクションJSONの`dataContentType`に格納されているほか、データトランザクション自体のコンテンツタイプタグにも格納されます。
 
 ```json
 Content-Type: "<file's mime-type>"
 ```
 
-All private drive, folder, and file entity transactions must have the following content type, since they are encrypted:
+すべてのプライベートドライブ、フォルダー、およびファイルエンティティトランザクションは、暗号化されているため、次のコンテンツタイプを持つ必要があります：
 
 ```json
 Content-Type: '<application/octet-stream>'
 ```
 
-[ArDrive-Core](https://docs.ardrive.io/docs/core-sdk.html) includes methods to determine a file's content type.
+[ArDrive-Core](https://docs.ardrive.io/docs/core-sdk.html)には、ファイルのコンテンツタイプを決定するためのメソッドが含まれています。
 
+## その他のタグ
 
-## Other Tags
+ArFS対応クライアントは、トランザクションに次のタグを含めて、アプリケーションを識別する必要があります。
 
-ArFS enabled clients should include the following tags on their transactions to identify their application
 
 ```json
 App-Name: "<defined application name eg. ArDrive"

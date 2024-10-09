@@ -1,17 +1,17 @@
 ---
 locale: ja
 ---
-# Querying Transactions
+# トランザクションのクエリ
 
-It isn't enough to store data permanently, for Arweave to be useful the data also needs to be discoverable and retrievable. This guide summarizes the different approaches to querying data on Arweave.
+データを永久に保存するだけでは不十分です。Arweaveを有用にするためには、データが発見可能で取得可能である必要があります。このガイドでは、Arweave上のデータをクエリするためのさまざまなアプローチをまとめています。
 
 ## GraphQL
 
-Over time, indexing services that implement a GraphQL interface have became the preferred method for querying transaction data on Arweave. An indexing service reads transaction and block headers as they are added to the network (usually from a full Arweave node which the service operates). Once read, the header info is inserted into a database where it can be indexed and efficiently queried. The indexing service uses this database to provide a GraphQL endpoint for clients to query.
+時間の経過とともに、GraphQLインターフェースを実装するインデックスサービスは、Arweave上のトランザクションデータをクエリするための好ましい方法となりました。インデックスサービスは、ネットワークに追加されるトランザクションとブロックヘッダーを読み取ります（通常、サービスが運営する完全なArweaveノードから）。読み取られると、ヘッダー情報はデータベースに挿入され、インデックス化され、効率的にクエリされます。インデックスサービスはこのデータベースを使用して、クライアントがクエリできるGraphQLエンドポイントを提供します。
 
-GraphQL has a few advantages that make it ideal for retrieving query data sets. It enables indexing services to create a single endpoint that can then be used to query all types data. The service is able to return multiple resources in a single request as opposed to making an HTTP request for each resource (like one would with a REST API). With GraphQL, clients can batch multiple requests in a single round-trip and specify exactly what data is needed which increases performance.
+GraphQLには、クエリデータセットを取得するのに理想的な利点がいくつかあります。インデックスサービスは、すべてのタイプのデータをクエリできる単一のエンドポイントを作成できます。このサービスは、REST APIを使用する場合のように各リソースごとにHTTPリクエストを行うのではなく、単一のリクエストで複数のリソースを返すことができます。GraphQLを使用すると、クライアントは単一の往復で複数のリクエストをバッチ処理し、必要なデータを正確に指定できるため、パフォーマンスが向上します。
 
-The following GraphQL example queries all the transaction ids from a given owners wallet address that have a "Type" tag with a value of "manifest". For more information about tags, read the guide on [Transaction Tags](tags.md).
+以下のGraphQLの例は、特定のオーナーのウォレットアドレスから「Type」タグの値が「manifest」であるすべてのトランザクションIDをクエリします。タグに関する詳細については、[トランザクションタグ](tags.md)に関するガイドをお読みください。
 
 ```js:no-line-numbers
 const queryObject = {
@@ -37,7 +37,7 @@ const queryObject = {
 const results = await arweave.api.post('/graphql', queryObject);
 ```
 
-### Public Indexing Services
+### 公開インデックスサービス
 
 [https://arweave.net/graphql](https://arweave.net/graphql)
 
@@ -45,16 +45,17 @@ const results = await arweave.api.post('/graphql', queryObject);
 
 [https://knn3-gateway.knn3.xyz/arseeding/graphql](https://knn3-gateway.knn3.xyz/arseeding/graphql)
 
-## Inspecting the Blocks
+## ブロックの検査
 
-Each piece of data uploaded to Arweave has its own unique transaction id and is included in a unique block which is then added to the blockchain. The data associated with each transaction is split up into 256KB chunks and appended sequentially to Arweave's dataset. It is possible to walk back, block by block, from the [current block](https://arweave.net/block/current) and inspect each one for the transaction id in question. Once found, the chunks offsets can be retrieved from the block and used to request chunks directly from an Arweave peer. This is the lowest level way to locate and read data on the network. Thankfully, less labor intensive approaches [like GraphQL](#graphql) are available.
+Arweaveにアップロードされた各データは、独自のトランザクションIDを持ち、それぞれがユニークなブロックに含まれ、ブロックチェーンに追加されます。各トランザクションに関連付けられたデータは256KBのチャンクに分割され、Arweaveのデータセットに順次追加されます。現在のブロックから[ブロックを遡る](https://arweave.net/block/current)ことができ、各ブロックを検査して問題のトランザクションIDを見つけることができます。見つかったら、チャンクのオフセットをブロックから取得し、Arweaveピアからチャンクを直接リクエストするために使用できます。これはネットワーク上のデータを見つけて読むための最も低いレベルの方法です。幸いにも、[GraphQL](#graphql)のような労力の少ないアプローチが利用可能です。
 
 ## ARQL
 
 ::: warning
-ARQL is deprecated and replaced by GraphQL queries at a gateway or indexing service. Some peers may still honor ARQL requests but the availability and accuracy of results are not guaranteed.
+ARQLは非推奨であり、ゲートウェイまたはインデックスサービスでのGraphQLクエリに置き換えられました。一部のピアはまだARQLリクエストを処理するかもしれませんが、結果の可用性と正確性は保証されていません。
 :::
-Arweave Query Language (ARQL) was used early on in Arweave's development. Along side blocks and chunks, peers also maintained a SQL database which indexed individual transactions. Clients could query a peer using ARQL and get back transaction data. The following is an example ARQL query syntax.
+
+Arweave Query Language (ARQL)は、Arweaveの開発初期に使用されていました。ブロックやチャンクと共に、ピアは個々のトランザクションをインデックス化したSQLデータベースも維持していました。クライアントはARQLを使用してピアにクエリを投げ、トランザクションデータを取得できました。以下はARQLクエリ構文の例です。
 
 ```js:no-line-numbers
 let get_mail_query =
@@ -75,13 +76,13 @@ let get_mail_query =
 const res = await this.arweave.api.post(`arql`, get_mail_query)
 ```
 
-This approach to querying was sufficient the weave dataset was small and easy to index. As Arweave adoption accelerated, indexing the data set and responding to ARQL queries resulted in increasing computational costs. Over time as mining became more and more competitive, peers became less and less likely to be able to afford to offer the ARQL service. This ultimately became the impetus for indexing services and the [GraphQL querying](#graphql) common on Arweave today.
+このクエリ手法は、ウィーブデータセットが小さくインデックス化しやすかったため、十分でした。しかし、Arweaveの採用が加速するにつれて、データセットをインデックス化しARQLクエリに応じることは、計算コストの増加を引き起こしました。時間が経つにつれて、マイニングがますます競争的になり、ピアはARQLサービスを提供する余裕が少なくなっていきました。これが最終的にインデックスサービスと、今日のArweaveで一般的な[GraphQLクエリ](#graphql)の必要性のきっかけとなりました。
 
-There is a pathway back to being able to query data directly from peers however. The [Permaweb Payments Protocol (P3)](https://arweave.net/UoDCeYYmamvnc0mrElUxr5rMKUYRaujo9nmci206WjQ) is a specification developed by the community to enable clients to pay for service. Using P3, peers wishing to offer indexing service could afford to operate it profitably it by charging for the service.
+ただし、ピアから直接データをクエリする道は残されています。[Permaweb Payments Protocol (P3)](https://arweave.net/UoDCeYYmamvnc0mrElUxr5rMKUYRaujo9nmci206WjQ)は、クライアントがサービスの対価を支払うことを可能にするためにコミュニティによって開発された仕様です。P3を使用することで、インデックスサービスを提供したいピアは、そのサービスに対して料金を請求することで、利益を上げながら運営することが可能になります。
 
-## Resources
+## リソース
 
--   [Querying Arweave Guide](../guides/querying-arweave/queryingArweave.md)
--   [ArDB package](../guides/querying-arweave/ardb.md)
--   [ar-gql package](../guides/querying-arweave/ar-gql.md)
--   [GraphQL Reference](../references/gql.md)
+-   [Arweaveのクエリガイド](../guides/querying-arweave/queryingArweave.md)
+-   [ArDBパッケージ](../guides/querying-arweave/ardb.md)
+-   [ar-gqlパッケージ](../guides/querying-arweave/ar-gql.md)
+-   [GraphQLリファレンス](../references/gql.md)

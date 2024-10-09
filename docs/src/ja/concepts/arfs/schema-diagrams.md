@@ -1,17 +1,18 @@
 ---
+locale: ja
 prev: "privacy.md"
 ---
 
-## Schema Diagrams
+## スキーマ図
 
-The following diagrams show complete examples of Drive, Folder, and File entity Schemas.
+以下の図は、ドライブ、フォルダー、ファイルエンティティスキーマの完全な例を示しています。
 
-### Public Drive
+### パブリックドライブ
 <img :src='$withBase("/public-drive-schema.png")' style="height: auto; display: block; margin-left: auto; margin-right: auto; width: 75%;">
-<div style="text-align: center; font-size: .75em;">Public Drive Schema</div>
+<div style="text-align: center; font-size: .75em;">パブリックドライブスキーマ</div>
 
-### Private Drive
+### プライベートドライブ
 <img :src='$withBase("/private-drive-schema.png")' style="height: auto; display: block; margin-left: auto; margin-right: auto; width: 75%;">
-<div style="text-align: center; font-size: .75em;">Private Drive Schema</div>
+<div style="text-align: center; font-size: .75em;">プライベートドライブスキーマ</div>
 
-Arweave GQL Tag Byte Limit is restricted to `2048`. There is no determined limit on Data JSON custom metadata, though more data results in a higher upload cost.
+Arweave GQLタグのバイト制限は `2048` に制限されています。データJSONカスタムメタデータの制限は決まっていませんが、データが多いほどアップロードコストが高くなります。

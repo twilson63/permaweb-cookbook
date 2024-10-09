@@ -1,35 +1,38 @@
 ---
 locale: ja
 ---
-# Fetching Transaction Data
-While indexing services allow querying of transaction metadata they don't provide access to the transaction data itself. This is because caching transaction data and indexing metadata have different resource requirements. Indexing services primarily rely on compute resources to perform queries on a database while transaction data is better suited to deployment on a Content Delivery Network (CDN) to optimize storage and bandwidth.
+# トランザクションデータの取得
 
-A Transaction data caching service is offered by most gateways though a set of HTTP endpoints. Any HTTP client/package can be used to request transaction data from these endpoints. For example Axios or Fetch for JavaScript, Guzzle for PHP, etc.
+インデクシングサービスはトランザクションメタデータのクエリを可能にしますが、トランザクションデータ自体へのアクセスは提供しません。これは、トランザクションデータのキャッシングとメタデータのインデクシングが異なるリソース要件を持つためです。インデクシングサービスは、データベースでのクエリを実行するために主にコンピューティングリソースに依存しますが、トランザクションデータは、ストレージと帯域幅を最適化するためにコンテンツ配信ネットワーク（CDN）へのデプロイに適しています。
+
+トランザクションデータキャッシングサービスは、ほとんどのゲートウェイによって一連のHTTPエンドポイントを介して提供されています。これらのエンドポイントからトランザクションデータをリクエストするために、任意のHTTPクライアント/パッケージを使用できます。たとえば、JavaScriptの場合はAxiosやFetch、PHPの場合はGuzzleなどです。
 
 <img src="https://ar-io.net/VZs292M6mq8LqvjLMdoHGD45qZKDnITQVAmiM9O2KSI" width="700">
 
-If you wanted to bypass a transaction data caching service and get data directly from the Arweave peers/nodes you could, but it's a lot of work!
+トランザクションデータキャッシングサービスをバイパスしてArweaveのピア/ノードからデータを直接取得したい場合もできますが、かなりの作業が必要です！
 
-Transaction data is stored on Arweave as a contiguous sequence of 256KB chunks, from the very beginning of the network until the current block. This format is optimized to support the SPoRA mining mechanism miners participate in to prove they are storing Arweave data.
+トランザクションデータは、ネットワークの非常に初期の段階から現在のブロックまで、256KBのチャンクの連続したシーケンスとしてArweaveに保存されています。この形式は、マイナーがArweaveデータを保存していることを証明するために参加するSPoRAマイニングメカニズムをサポートするよう最適化されています。
 
 ::: info
-1. Retrieve a list of peers from a well known peer.
-1. Ask the peer for the chunk offsets which contain your transactions data.
-1. Ask the peer to for the chunks.
-    1. If the peer provides the chunks, combine them back into their original format.
-1. (If the peer does not have the chunks) walk the peer list asking for the chunks.
-1. For each peer you visit, check their peer list and add peers not already in your list.
-1. Repeat from step 3 until you have all of the chunks.
+1. よく知られたピアからピアのリストを取得します。
+1. ピアに対して、トランザクションデータを含むチャンクのオフセットを要求します。
+1. ピアにチャンクを要求します。
+    1. ピアがチャンクを提供する場合、それらを元の形式に結合します。
+1. （ピアにチャンクがない場合）ピアリストを歩き、チャンクを要求します。
+1. 訪問した各ピアについて、彼らのピアリストを確認し、すでにリストにないピアを追加します。
+1. ステップ3から繰り返し、すべてのチャンクを取得するまで続けます。
 :::
 
-This is a fairly large amount of work to perform each time you want to retrieve data from the Arweave network. Imagine if you were trying to display a timeline of tweets like [https://public-square.g8way.io](https://public-square.g8way.io) does. The user experience would be terrible with long load times and spinners. Because data on Arweave is permanent, it's safe to cache in its original form to make retrieval of transaction data much quicker and easier.
+これは、Arweaveネットワークからデータを取得するたびに実行するにはかなりの作業量です。たとえば、[https://public-square.g8way.io](https://public-square.g8way.io)のようにツイートのタイムラインを表示しようとした場合、ユーザーエクスペリエンスは非常に悪く、長い読み込み時間やスピナーが表示されるでしょう。Arweave上のデータは永続的であるため、元の形式でキャッシュすることで、トランザクションデータの取得をはるかに迅速かつ容易にすることができます。
 
-The following HTTP endpoints are how how to access cached transaction data in the arweave.net Transaction data caching service.
+以下のHTTPエンドポイントは、arweave.netトランザクションデータキャッシングサービスでキャッシュされたトランザクションデータにアクセスする方法です。
 
 <hr />
 
-### Get cached TX data
-This method retrieves the transaction data associated with the specified transaction id (TX_ID) from the cache.
+### キャッシュされたTXデータを取得
+
+このメソッドは、指定されたトランザクションID（TX_ID）に関連付けられたトランザクションデータをキャッシュから取得します。
+
 
 `https://arweave.net/TX_ID`
 
@@ -98,9 +101,11 @@ console.log(res)
 </details>
 <hr />
 
-### Get raw transaction
-The data for some [transaction types](manifests.md) follows different rules for rendering, this endpoint will return the raw untransformed data.
+### 生のトランザクションを取得
+
+一部の[トランザクションタイプ](manifests.md)のデータは、レンダリングのための異なるルールに従います。このエンドポイントは、生の未変換データを返します。
 `https://arweave.net/raw/TX_ID`
+
 ```js
 const result = await fetch('https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHbFMb24YTQHGe9geo')
   .then(res => res.json())
@@ -128,4 +133,4 @@ const result = await fetch('https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHb
 </details>
 <hr/>
 
-Each Arweave peer/node also exposes some HTTP endpoints which are often replicated gateways. You can read more about Arweave peer's HTTP endpoints [here](/references/http-api.md).
+各Arweaveピア/ノードも、しばしばレプリケートされたゲートウェイのHTTPエンドポイントを公開しています。ArweaveピアのHTTPエンドポイントについては、[こちら](/references/http-api.md)で読むことができます。

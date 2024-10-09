@@ -1,31 +1,29 @@
 ---
+locale: ja
 prev: "data-model.md"
 next: "content-types.md"
 ---
 
-# Entity Types
+# エンティティタイプ
 
-## Overview
+## 概要
 
-Arweave transactions are composed of transaction headers and data payloads. 
+Arweaveのトランザクションは、トランザクションヘッダーとデータペイロードで構成されています。
 
-ArFS entities, therefore, have their data split between being stored as tags on their transaction header and encoded as JSON and stored as the data of a transaction. In the case of private entities, JSON data and file data payloads are always encrypted according to the protocol processes defined below.
+したがって、ArFSエンティティは、トランザクションヘッダーのタグとして保存されるデータと、トランザクションのデータとしてエンコードされて保存されるデータに分かれています。プライベートエンティティの場合、JSONデータとファイルデータペイロードは常に以下で定義されたプロトコルプロセスに従って暗号化されます。
 
-- Drive entities require a single metadata transaction, with standard Drive tags and encoded JSON with secondary metadata.
+- ドライブエンティティは、標準のドライブタグとセカンダリメタデータをエンコードした単一のメタデータトランザクションを必要とします。
+- フォルダーエンティティは、標準のフォルダータグとセカンダリメタデータをエンコードした単一のメタデータトランザクションを必要とします。
+- ファイルエンティティは、標準のファイルタグとファイルに関連するセカンダリメタデータをエンコードしたメタデータトランザクションを必要とします。
+- ファイルエンティティには、限られたセットのファイルタグと実際のファイルデータ自体を含む別のデータトランザクションも必要です。
+- スナップショットエンティティは、ドライブのすべての集約されたArFSメタデータとスナップショットを識別する標準スナップショットGQLタグを含むデータJSONを含む単一のトランザクションを必要とします。
 
-- Folder entities require a single metadata transaction, with standard Folder tags and an encoded JSON with secondary metadata.
+## ドライブ
 
-- File entities require a metadata transaction, with standard File tags and an encoded Data JSON with secondary metadata relating to the file.
+ドライブは、フォルダーとファイルの論理的な最上位グループです。すべてのフォルダーとファイルはドライブの一部である必要があり、そのドライブのドライブIDを参照します。
 
-- File entities also require a second data transaction, which includes a limited set of File tags and the actual file data itself.
+ドライブを作成する際には、対応するフォルダーも作成する必要があります。これがドライブのルートフォルダーとして機能します。ドライブとフォルダーエンティティのこの分離により、フォルダービュークエリ、リネーミング、リンク作成などの機能が可能になります。
 
-- Snapshot entities require a single transaction. which contains a Data JSON with all of the Drive’s rolled up ArFS metadata and standard Snapshot GQL tags that identify the Snapshot.
-
-## Drive
-
-A drive is the highest level logical grouping of folders and files. All folders and files must be part of a drive, and reference the Drive ID of that drive.
-
-When creating a Drive, a corresponding folder must be created as well. This will act as the root folder of the drive. This separation of drive and folder entity enables features such as folder view queries, renaming, and linking.
 
 ```json
 ArFS: "0.13"
@@ -44,11 +42,11 @@ Data JSON {
 }
 ```
 
-<div style="text-align: center; font-size: .75em;">Drive Entity Transaction Example</div>
+<div style="text-align: center; font-size: .75em;">ドライブエンティティトランザクションの例</div>
 
-## Folder
+## フォルダー
 
-A folder is a logical grouping of other folders and files. Folder entity metadata transactions without a parent folder id are considered the Drive Root Folder of their corresponding Drives. All other Folder entities must have a parent folder id. Since folders do not have underlying data, there is no Folder data transaction required.
+フォルダーは、他のフォルダーとファイルの論理的なグループです。親フォルダーIDがないフォルダーエンティティのメタデータトランザクションは、それに対応するドライブのルートフォルダーと見なされます。他のすべてのフォルダーエンティティは、親フォルダーIDを持っている必要があります。フォルダーは基礎データを持たないため、フォルダーデータトランザクションは必要ありません。
 
 ```json
 ArFS: "0.13"
@@ -66,19 +64,18 @@ Data JSON {
 }
 ```
 
-<div style="text-align: center; font-size: .75em;">Folder Entity Transaction Example</div>
+<div style="text-align: center; font-size: .75em;">フォルダーエンティティトランザクションの例</div>
 
-## File
+## ファイル
 
-A File contains uploaded data, like a photo, document, or movie. 
+ファイルには、写真、ドキュメント、映画などのアップロードデータが含まれます。
 
+Arweaveファイルシステムでは、単一のファイルは2つの部分に分割されます - メタデータとデータです。
 
-In the Arweave File System, a single file is broken into 2 parts - its metadata and its data.
+Arweaveファイルシステムでは、単一のファイルは2つの部分に分割されます - メタデータとデータです。
 
+ファイルエンティティメタデータトランザクションには、実際のファイルデータは含まれていません。代わりに、ファイルデータはファイルデータトランザクションと呼ばれる別のトランザクションとしてアップロードされる必要があります。ファイルのJSONメタデータトランザクションには、実際のデータを取得するためのファイルデータトランザクションIDへの参照が含まれています。この分離により、ファイルのメタデータを更新する際にファイル自体を再アップロードする必要がなくなります。また、プライベートファイルはそのJSONメタデータトランザクションを暗号化できるため、権限のない人がファイルやメタデータを見ることができないことが保証されます。
 
-In the Arweave File System, a single file is broken into 2 parts - its metadata and its data.
-
-A File entity metadata transaction does not include the actual File data. Instead, the File data must be uploaded as a separate transaction, called the File Data Transaction. The File JSON metadata transaction contains a reference to the File Data Transaction ID so that it can retrieve the actual data. This separation allows for file metadata to be updated without requiring the file itself to be reuploaded. It also ensures that private files can have their JSON Metadata Transaction encrypted as well, ensuring that no one without authorization can see either the file or its metadata.
 
 ```json
 ArFS: "0.13"
@@ -101,15 +98,16 @@ Data JSON {
 }
 ```
 
-<div style="text-align: center; font-size: .75em;"> Pin Files </div>
+<div style="text-align: center; font-size: .75em;">ピンファイル</div>
 
-Since the version v0.13, ArFS suports Pins. Pins are files whose data may be any transaction uploaded to Arweave, that may or may not be owned by the wallet that created the pin.
+バージョンv0.13以降、ArFSはピンをサポートしています。ピンは、Arweaveにアップロードされた任意のトランザクションのデータであり、そのトランザクションはピンを作成したウォレットが所有しているかもしれませんし、そうでないかもしれません。
 
-When a new File Pin is created, the only created transaction is the Metadata Transaction. The `dataTxId` field will point it to any transaction in Arweave, and the optional `pinnedDataOwner` field is gonna hold the address of the wallet that owns the original copy of the data transaction.
+新しいファイルピンが作成されると、作成されるトランザクションはメタデータトランザクションだけです。`dataTxId`フィールドは、Arweaveの任意のトランザクションを指し、オプションの`pinnedDataOwner`フィールドには、元のデータトランザクションの所有者であるウォレットのアドレスが保持されます。
 
-<div style="text-align: center; font-size: .75em;">File Data Transaction Example</div>
 
-The File Data Transaction contains limited information about the file, such as the information required to decrypt it, or the Content-Type (mime-type) needed to view in the browser.
+<div style="text-align: center; font-size: .75em;">ファイルデータトランザクションの例</div>
+
+ファイルデータトランザクションには、ファイルに関する限られた情報が含まれます。例えば、復号化に必要な情報や、ブラウザで表示するために必要なContent-Type（mime-type）などです。
 
 ```json
 Cipher?: "AES256-GCM"
@@ -118,11 +116,11 @@ Content-Type: "<file mime-type | application/octet-stream>"
  { File Data - Encrypted if private }
 ```
 
-<div style="text-align: center; font-size: .75em;">File Metadata Transaction Example</div>
+<div style="text-align: center; font-size: .75em;">ファイルメタデータトランザクションの例</div>
 
-The the File Metadata Transaction contains the GQL Tags necessary to identify the file within a drive and folder.
+ファイルメタデータトランザクションには、ドライブとフォルダー内でファイルを特定するために必要なGQLタグが含まれています。
 
-Its data contains the JSON metadata for the file. This includes the file name, size, last modified date, data transaction id, and data content type.
+そのデータには、ファイルのJSONメタデータが含まれます。これには、ファイル名、サイズ、最終更新日、データトランザクションID、データコンテンツタイプが含まれます。
 
 ```json
 ArFS: "0.13"
@@ -137,19 +135,19 @@ Unix-Time: "<seconds since unix epoch>"
  { File JSON Metadata - Encrypted if private }
 ```
 
-## Snapshot
+## スナップショット
 
-ArFS applications generate the latest state of a drive by querying for all ArFS transactions made relating to a user's particular `Drive-Id`. This includes both paged queries for indexed ArFS data via GQL, as well as the ArFS JSON metadata entries for each ArFS transaction.
+ArFSアプリケーションは、ユーザーの特定の `Drive-Id` に関連するすべてのArFSトランザクションを照会することで、ドライブの最新の状態を生成します。これには、GQLを介したインデックス化されたArFSデータのページクエリと、各ArFSトランザクションのArFS JSONメタデータエントリの両方が含まれます。
 
-For small drives (less than 1000 files), a few thousand requests for very small volumes of data can be achieved relatively quickly and reliably. For larger drives, however, this results in long sync times to pull every piece of ArFS metadata when the local database cache is empty. This can also potentially trigger rate-limiting related ArWeave Gateway delays.
+小さなドライブ（ファイル数が1000未満）の場合、非常に小さなデータの数千リクエストを比較的迅速かつ信頼性高く達成できます。しかし、より大きなドライブの場合、ローカルデータベースキャッシュが空のときにすべてのArFSメタデータを取得するために長い同期時間がかかります。これにより、ArWeave Gatewayの遅延に関連するレート制限が発生する可能性もあります。
 
-Once a drive state has been completely, and accurately generated, in can be rolled up into a single snapshot and uploaded as an Arweave transaction. ArFS clients can use GQL to find and retrieve this snapshot in order to rapidly reconstitute the total state of the drive, or a large portion of it. They can then query individual transactions performed after the snapshot.
+ドライブの状態が完全かつ正確に生成されたら、それを単一のスナップショットにまとめ、Arweaveトランザクションとしてアップロードできます。ArFSクライアントはGQLを使用してこのスナップショットを見つけて取得し、ドライブの総状態またはその大部分を迅速に再構成できます。その後、スナップショットの後に行われた個々のトランザクションを照会できます。
 
-This optional method offers convenience and resource efficiency when building the drive state, at the cost of paying for uploading the snapshot data. Using this method means a client will only have to iterate through a few snapshots instead of every transaction performed on the drive.
+このオプションの方法は、スナップショットデータをアップロードするコストがかかるものの、ドライブ状態を構築する際の便利さとリソース効率を提供します。この方法を使用すると、クライアントはドライブで実行されたすべてのトランザクションの代わりに、数回のスナップショットを反復するだけで済みます。
 
-### Snapshot Entity Tags
+### スナップショットエンティティタグ
 
-Snapshot entities require the following tags. These are queried by ArFS clients to find drive snapshots, organize them together with any other transactions not included within them, and build the latest state of the drive.
+スナップショットエンティティには、次のタグが必要です。これらはArFSクライアントによって照会され、ドライブスナップショットを見つけ、他のトランザクションと組織し、ドライブの最新の状態を構築するために使用されます。
 
 ```json
 ArFS: "0.13"
@@ -166,13 +164,13 @@ Unix-Time: "<seconds since unix epoch>"
 
 <div style="text-align: center; font-size: .75em;">Snapshot Transaction GQL tags example</div>
 
-### Snapshot Entity Data
+### スナップショットエンティティデータ
 
-A JSON data object must also be uploaded with every ArFS Snapshot entity. THis data contains all ArFS Drive, Folder, and File metadata changes within the associated drive, as well as any previous Snapshots. The Snapshot Data contains an array `txSnapshots`. Each item includes both the GQL and ArFS metadata details of each transaction made for the associated drive, within the snapshot's start and end period.
+各ArFSスナップショットエンティティに対して、JSONデータオブジェクトもアップロードする必要があります。このデータには、関連するドライブ内のすべてのArFSドライブ、フォルダー、ファイルメタデータの変更と、以前のスナップショットが含まれます。スナップショットデータには、`txSnapshots`という配列が含まれています。各アイテムには、スナップショットの開始および終了期間内の関連ドライブに対して行われた各トランザクションのGQLおよびArFSメタデータの詳細が含まれます。
 
-A `tsSnapshot` contains a `gqlNode` object which uses the same GQL tags interface returned by the Arweave Gateway. It includes all of the important `block`, `owner`, `tags`, and `bundledIn` information needed by ArFS clients. It also contains a `dataJson` object which stores the correlated Data JSON for that ArFS entity.
+`tsSnapshot`には、Arweave Gatewayから返されるのと同じGQLタグインターフェースを使用する`gqlNode`オブジェクトが含まれています。これには、ArFSクライアントに必要な重要な`block`、`owner`、`tags`、および`bundledIn`情報がすべて含まれています。また、そのArFSエンティティに関連するデータJSONを保存する`dataJson`オブジェクトも含まれています。
 
-For private drives, the `dataJson` object contains the JSON-string-escaped encrypted text of the associated file or folder. This encrypted text uses the file's existing `Cipher` and `Cipher-IV`. This ensures clients can decrypt this information quickly using the existing ArFS privacy protocols.
+プライベートドライブの場合、`dataJson`オブジェクトには、関連するファイルまたはフォルダーのJSON文字列エスケープされた暗号化テキストが含まれています。この暗号化テキストは、ファイルの既存の`Cipher`と`Cipher-IV`を使用します。これにより、クライアントは既存のArFSプライバシープロトコルを使用して、この情報を迅速に復号化できることが保証されます。
 
 ```json
 {
@@ -239,18 +237,16 @@ For private drives, the `dataJson` object contains the JSON-string-escaped encry
 
 
 
-## Schema Diagrams
+## スキーマダイアグラム
 
-The following diagrams show complete examples of Drive, Folder, and File entity Schemas.
+以下のダイアグラムは、ドライブ、フォルダー、およびファイルエンティティのスキーマの完全な例を示しています。
 
-### Public Drive
+### パブリックドライブ
 
 <img :src='$withBase("/public-drive-schema.png")' style="height: auto; display: block; margin-left: auto; margin-right: auto; width: 75%;">
-<div style="text-align: center; font-size: .75em;">Public Drive Schema</div>
+<div style="text-align: center; font-size: .75em;">パブリックドライブスキーマ</div>
 
-### Private Drive
+### プライベートドライブ
 
 <img :src='$withBase("/private-drive-schema.png")' style="height: auto; display: block; margin-left: auto; margin-right: auto; width: 75%;">
-<div style="text-align: center; font-size: .75em;">Private Drive Schema</div>
-
-
+<div style="text-align: center; font-size: .75em;">プライベートドライブスキーマ</div>

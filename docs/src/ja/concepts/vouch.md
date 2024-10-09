@@ -3,27 +3,29 @@ locale: ja
 ---
 # Vouch
 
-## Overview
+## 概要
 
-#### Motivation
+#### 動機
 
-Vouching provides a decentralized approach to Sybil resistance. A Sybil attack is when an attacker subverts the network by creating a large number of pseudonymous identities to gain a disproportionately large influence.
+バウチングは、Sybil攻撃に対する分散型アプローチを提供します。Sybil攻撃とは、攻撃者が多数の擬似的なアイデンティティを作成してネットワークを侵害し、不相応に大きな影響を得ることです。
 
-#### Vouch Protocol
+#### Vouchプロトコル
 
-Arweave introduced the concept of the ANS-109 Vouch (Assertion of Identity). It is a standard that uses a specific transaction format along with some tags to allows anyone on the permaweb to "vouch" for the identity and humanity of any Arweave address.
+Arweaveは、ANS-109 Vouch（アイデンティティの主張）の概念を導入しました。これは、特定のトランザクション形式といくつかのタグを使用して、誰でもpermaweb上の任意のArweaveアドレスのアイデンティティと人間性を「保証」できるようにする標準です。
 
-Adding a standard such as the ANS-109 to the permaweb will help minimize Sybil attacks and bad actors, making it a safer experience for permaweb users. 
+ANS-109のような標準をpermawebに追加することで、Sybil攻撃や悪意のある行為者を最小限に抑え、permawebユーザーにとってより安全な体験を提供します。
 
 #### VouchDAO
-VouchDAO is a community led, decentralized verification layer built on top of the Vouch standard. Developers create vouch services and members of the VouchDAO community vote on which of these verification services are deemed trustworthy.
+VouchDAOは、Vouch標準の上に構築されたコミュニティ主導の分散型検証レイヤーです。開発者は保証サービスを作成し、VouchDAOコミュニティのメンバーはこれらの検証サービスのどれが信頼できるかを投票で決定します。
 
 <img src="https://arweave.net/7W9krszlEXdR38LB7uXgJ_EPXGj-woXljsA5h5GpGzk" />
 
-## How It Works
-Developers have the ability to create different Vouch services to attest to a user's Arweave wallet based on a given set of requirements. A current example of this is the Twitter service which is the first vouch service, which has vouched over 180 Arweave addresses so far.
+## 仕組み
+開発者は、特定の要件に基づいてユーザーのArweaveウォレットを保証するためのさまざまなVouchサービスを作成することができます。現在の例としては、180以上のArweaveアドレスを保証してきた最初の保証サービスであるTwitterサービスがあります。
 
-The VouchDAO smart contract state has an attribute `vouched`. This state gets updated whenever a user gets verified. The `vouched` object stores a list of vouched addresses in the following format:
+VouchDAOスマートコントラクトの状態には`vouched`という属性があります。この状態は、ユーザーが確認されるたびに更新されます。`vouched`オブジェクトは、以下の形式で保証されたアドレスのリストを保存します。
+
+
 ```
 VOUCH_USER_ADDRESS:[
   {
@@ -37,17 +39,17 @@ VOUCH_USER_ADDRESS:[
 ]
 ```
 
-Users that get verified will have the ANS-109 token sent to their wallet to indicate that wallet has been vouched for by that service.
+確認されたユーザーには、そのウォレットがそのサービスによって保証されたことを示すために、ANS-109トークンが送信されます。
 
-## ANS-109 Transaction Format 
-| Tag Name | _Optional?_ | Tag Value |
+## ANS-109トランザクションフォーマット 
+| タグ名 | _オプション?_ | タグ値 |
 |---|---|---|
-|App-Name|False|`Vouch`|
-|Vouch-For|False|Arweave `address` that is being vouched for in this transaction|
-|App-Version|True|`0.1`|
-|Verification-Method|True| Method of verification of identity for the person. Example - `Twitter`/`In-Person`/`Gmail`/`Facebook`|
-|User-Identifier|True|An identifier for the user based on the Verification Method. Example - `abhav@arweave.org`|
+|App-Name|必須|`Vouch`|
+|Vouch-For|必須|このトランザクションで保証されるArweaveの`address`|
+|App-Version|オプション|`0.1`|
+|Verification-Method|オプション|その人のアイデンティティを確認する方法。例 - `Twitter`/`対面`/`Gmail`/`Facebook`|
+|User-Identifier|オプション|確認方法に基づくユーザーの識別子。例 - `abhav@arweave.org`|
 
-## Resources
+## リソース
 * [VouchDAO](https://vouch-dao.arweave.dev)
-* [VouchDAO Contract](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)
+* [VouchDAOコントラクト](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)

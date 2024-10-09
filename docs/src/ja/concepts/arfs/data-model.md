@@ -3,42 +3,39 @@ prev: "arfs.md"
 next: "entity-types.md"
 ---
 
-# Data Model
+# データモデル
 
-Because of Arweave's permanent and immutable nature, traditional file structure operations such as renaming and moving files or folders cannot be accomplished by simply updating on-chain data. ArFS works around this by defining an append-only transaction data model based on the metadata tags found in the Arweave [Transaction Headers.](https://docs.arweave.org/developers/server/http-api#transaction-format)
+Arweaveの永久不変の性質により、ファイルやフォルダーの名前変更や移動といった従来のファイル構造操作は、オンチェーンデータを単に更新することでは達成できません。ArFSは、Arweaveの[トランザクションヘッダー](https://docs.arweave.org/developers/server/http-api#transaction-format)に見られるメタデータタグに基づく追記専用のトランザクションデータモデルを定義することでこれを回避しています。
 
+このモデルはボトムアップの参照方式を使用しており、ファイルシステムの更新時に発生するレースコンディションを回避します。各ファイルには親フォルダーを指すメタデータが含まれ、各フォルダーにはその親ドライブを指すメタデータが含まれています。トップダウンのデータモデルでは、親モデル（つまりフォルダー）がその子供の参照を保持する必要があります。
 
-This model uses a bottom-up reference method, which avoids race conditions in file system updates. Each file contains metadata that refers to the parent folder, and each folder contains metadata that refers to its parent drive. A top-down data model would require the parent model (i.e. a folder) to store references to its children.
+これらの定義されたエンティティにより、クライアントはドライブの状態を構築してファイルシステムのように見えるようにできます。
 
-These defined entities allow the state of the drive to be constructed by a client to look and feel like a file system
+- ドライブエンティティにはフォルダーとファイルが含まれます
+- フォルダーエンティティには他のフォルダーやファイルが含まれます
+- ファイルエンティティにはファイルデータとメタデータの両方が含まれます
+- スナップショットエンティティにはドライブ内のすべてのファイルとフォルダーメタデータの状態がロールアップされて含まれます
 
-- Drive Entities contain folders and files
+## エンティティの関係
 
-- Folder Entities contain other folders or files
-
-- File Entities contain both the file data and metadata
-
-- Snapshot entities contain a state rollups of all files and folder metadata within a drive
-
-## Entity relationships
-
-The following diagram shows the high level relationships between drive, folder, and file entities, and their associated data. More detailed information about each Entity Type can be found [here](./entity-types.md). 
+以下の図は、ドライブ、フォルダー、およびファイルエンティティ間の高レベルの関係とそれに関連するデータを示しています。各エンティティタイプに関する詳細な情報は[こちら](./entity-types.md)で確認できます。
 
 <img :src="$withBase('/entity-relationship-diagram.png')" style="height: auto; display: block; margin-left: auto; margin-right: auto; width: 75%;">
 
-<div style="text-align: center; font-size: .75em;">Entity Relationship Diagram</div>
+<div style="text-align: center; font-size: .75em;">エンティティ関係図</div>
 
-As you can see, each file and folder contains metadata which points to both the parent folder and the parent drive. The drive entity contains metadata about itself, but not the child contents. So clients must build drive states from the lowest level and work their way up.
+ご覧の通り、各ファイルとフォルダーには親フォルダーと親ドライブの両方を指すメタデータが含まれています。ドライブエンティティは自分自身に関するメタデータを含んでいますが、子の内容については含んでいません。したがって、クライアントは最低レベルからドライブの状態を構築し、上に進んでいかなければなりません。
 
-## Metadata Format
+## メタデータ形式
 
-Metadata stored in any Arweave transaction tag will be defined in the following manner:
+Arweaveのトランザクションタグに保存されるメタデータは、以下のように定義されます。
+
 
 ```json
 { "name": "Example-Tag", "value": "example-data" }
 ```
 
-Metadata stored in the Transaction Data Payload will follow JSON formatting like below:
+トランザクションデータペイロードに保存されるメタデータは、以下のようにJSON形式に従います。
 
 ```json
 {
@@ -46,7 +43,7 @@ Metadata stored in the Transaction Data Payload will follow JSON formatting like
 }
 ```
 
-fields with a `?` suffix are optional.
+`?`が付くフィールドはオプションです。
 
 ```json
 {
@@ -57,8 +54,8 @@ fields with a `?` suffix are optional.
 }
 ```
 
-Enumerated field values (those which must adhere to certain values) are defined in the format "value 1 | value 2".
+列挙されたフィールド値（特定の値に従う必要があるもの）は、「値1 | 値2」という形式で定義されます。
 
-All UUIDs used for Entity-Ids are based on the [Universally Unique Identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier) standard.
+エンティティIDに使用されるすべてのUUIDは、[ユニバーサリー一意識別子](https://en.wikipedia.org/wiki/Universally_unique_identifier)の標準に基づいています。
 
-There are no requirements to list ArFS tags in any specific order.
+ArFSタグを特定の順序でリストする必要はありません。
