@@ -1,28 +1,24 @@
----
-title: Permaweb Cookbook - Core Concepts
----
+# コアコンセプト
 
-# Core Concepts
+ArweaveおよびPermawebの基盤です。
 
-Foundations of Arweave and the Permaweb.
+- [トランザクションの投稿](post-transactions.md)
+- [メタデータ (タグ)](tags.md)
+- [クエリ](queryTransactions.md)
+- [データの取得](/guides/http-api.md)
+- [トランザクションタイプ](bundles.md)
+  - [バンドル](bundles.md)
+  - [パスマニフェスト](manifests.md)
+- [ウォレットと鍵](keyfiles-and-wallets.md)
+- [パーマウェブ](permaweb.md)
+  - [パーマウェブアプリケーション](permawebApplications.md)
+  - [ゲートウェイサービス](gateways.md)
+  - [バンドルサービス](bundlers.md)
+- [Arweaveファイルシステム (ArFS)](arfs/arfs.md)
+  - [データモデル](arfs/data-model.md)
+  - [エンティティタイプ](arfs/entity-types.md)
+  - [コンテンツタイプ](arfs/content-types.md)
+  - [プライバシー](arfs/privacy.md)
+  - [スキーマ図](arfs/schema-diagrams.md)
 
-- [Posting Transactions](post-transactions.md)
-- [Metadata (Tags)](tags.md)
-- [Querying](queryTransactions.md)
-- [Fetching Data](/guides/http-api.md)
-- [Transaction Types](bundles.md)
-  - [Bundles](bundles.md)
-  - [Path Manifests](manifests.md)
-- [Wallets and Keys](keyfiles-and-wallets.md)
-- [Permaweb](permaweb.md)
-  - [Permaweb Applications](permawebApplications.md)
-  - [Gateway Services](gateways.md)
-  - [Bundling Services](bundlers.md)
-- [Arweave File System (ArFS)](arfs/arfs.md)
-  - [Data model](arfs/data-model.md)
-  - [Entity Types](arfs/entity-types.md)
-  - [Content Types](arfs/content-types.md)
-  - [Privacy](arfs/privacy.md)
-  - [Schema Diagrams](arfs/schema-diagrams.md)
-
-> Do you think a permaweb core concept is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md)
+> Permawebのコアコンセプトが不足していると思いますか？[Github](https://github.com/twilson63/permaweb-cookbook/issues)でイシューを作成するか、[貢献することを検討してください](../getting-started/contributing.md)。

@@ -1,53 +1,53 @@
 ---
 locale: ja
 ---
-# Posting Transactions
+# トランザクションの投稿
 
-There are several ways to post transactions to Arweave. Each has its own unique affordances and constraints. The diagram below illustrates the four main approaches to posting transactions.
+トランザクションをArweaveに投稿する方法はいくつかあります。それぞれに独自の利点と制約があります。以下の図は、トランザクションを投稿するための4つの主要なアプローチを示しています。
 
-`Direct to Peer`,`Direct to Gateway`, `Bundled`, and `Dispatched`.
+`ピアへの直接投稿`、`ゲートウェイへの直接投稿`、`バンドル`、および`ディスパッチ`です。
 
 <img src="https://arweave.net/Z1eDDnz4kqxAkkzy6p5elMz-jKnlaVIletp-Tm6W8kQ" width="550">
 
-::: tip <img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> Guaranteed Transactions
-When posting a large quantity of transactions or when fast settlement time is desireable consider using a bundling service. Bundlers settle large volumes of transactions immediately and make the transaction data available within milliseconds. The bundling service holds onto posted transactions until they are confirmed on-chain. If the transactions are not included in the most recent block the bundling service re-posts them with each new block until they are recorded on chain with a sufficient number of confirmations.
+::: tip <img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> 確実なトランザクション
+大量のトランザクションを投稿する場合や迅速な決済時間が望ましい場合は、バンドルサービスを利用することを検討してください。バンドラーは大量のトランザクションを即座に決済し、トランザクションデータを数ミリ秒内に利用可能にします。バンドルサービスは投稿されたトランザクションを保持し、ブロックに確認されるまで待機します。トランザクションが最新のブロックに含まれない場合、バンドルサービスは新しいブロックごとに再投稿します。
 :::
 
-## Direct Transactions
+## 直接トランザクション
 
-Transactions posted directly to Arweave come in two varieties **wallet-to-wallet** transactions and **data** transactions. The first transfers **AR** tokens between wallet addresses. The second posts data to Arweave and pays the associated storage costs.
+Arweaveに直接投稿されたトランザクションには、**ウォレット間**のトランザクションと**データ**トランザクションの2種類があります。最初のものは**AR**トークンをウォレットアドレス間で転送します。後者はデータをArweaveに投稿し、関連するストレージコストを支払います。
 
-Interestingly, **data** transactions may also transfer **AR** tokens to a wallet address while paying storage costs at the same time.
+興味深いことに、**データ**トランザクションは、ストレージコストを支払いながらウォレットアドレスに**AR**トークンを転送することもできます。
 
-All transactions allow the user to specify up to 2KB worth of metadata in the form of [custom tags](./tags.md).
+すべてのトランザクションでは、ユーザーが最大2KBのメタデータを[カスタムタグ](./tags.md)の形式で指定できます。
 
-### Direct to Peer
+### ピアへの直接投稿
 
-Transactions may be posted directly to an Arweave peer (mining node). This is perhaps the most decentralized means of posting a transaction as clients can choose what peer they wish to post to.
+トランザクションはArweaveピア（マイニングノード）に直接投稿できます。これはトランザクションを投稿する最も分散型の手段の1つであり、クライアントはどのピアに投稿するかを選択できます。
 
-This approach is not without drawbacks. Peers may come and go making it difficult to reliably post transactions from an app. While it's possible to query a list of active peers and choose one before posting it adds overhead and friction to the process. Additionally, transactions posted to peers are only queryable at the gateway after being mined in a block. This introduces a 1-2 minute delay between posting the transaction to a peer and it being available to read in a browser from a gateway.
+このアプローチには欠点もあります。ピアは来たり去ったりすることがあるため、アプリからトランザクションを確実に投稿することが難しくなります。アクティブなピアのリストをクエリして投稿前に選択することも可能ですが、プロセスにオーバーヘッドと摩擦を追加します。さらに、ピアに投稿されたトランザクションは、ブロックにマイニングされるまでゲートウェイでのみクエリ可能です。これにより、トランザクションをピアに投稿してから、ゲートウェイからブラウザで読み取れるまでに1〜2分の遅延が発生します。
 
-For the above reasons, developers tend to configure `arweave-js` to point to a gateway when posting direct transactions as the optimistic cache at the gateway makes the transaction available almost immediately.
+上記の理由から、開発者は直接トランザクションを投稿する際に`arweave-js`をゲートウェイにポイントするように設定することが一般的です。ゲートウェイの楽観的キャッシュは、トランザクションをほぼ即座に利用可能にします。
 
-### Direct to Gateway
+### ゲートウェイへの直接投稿
 
-Gateways sit between clients and Arweave's network of peers. One of the primary functions of the gateway is to index transactions and optimistically cache the data posted to the network while waiting for it to be included in a block. This makes the transaction queryable in a "Pending" state almost instantly which allows applications built on top of a gateway to be more responsive. There is still a risk of transactions dropping out of the optimistic cache if they are not mined in a block by the peers.
+ゲートウェイは、クライアントとArweaveのピアネットワークの間に位置しています。ゲートウェイの主な機能の1つは、トランザクションをインデックスし、ネットワークに投稿されたデータを楽観的にキャッシュすることです。これにより、トランザクションは「保留中」の状態でほぼ即座にクエリ可能になり、ゲートウェイ上に構築されたアプリケーションはより応答性が高くなります。ただし、トランザクションがブロックにマイニングされない場合、楽観的キャッシュから外れるリスクがあります。
 
-An example of how to post a direct transaction using `arweave-js` can be found [in this guide](../guides/posting-transactions/arweave-js.md).
+直接トランザクションを投稿する方法の例は、[このガイド](../guides/posting-transactions/arweave-js.md)にあります。
 
-## Bundled Transactions
+## バンドルトランザクション
 
-Services built on top of Arweave that provide additional utility for Permaweb builders are sometimes called Permaweb Services. A bundler is one such service. Bundlers take multiple individual transactions and bundle them together into a single transaction that is posted directly to Arweave. In this way a single transaction at the protocol level can contain tens of thousands of bundled transactions. There is one restriction, however, only **data** transactions can be included in a bundle. **Wallet-to-wallet** transactions (that transfer **AR** tokens between wallet addresses) must be done as individual transactions posted directly to Arweave.
+Arweaveの上に構築されたサービスは、パーマウェブビルダーに追加のユーティリティを提供し、時にはパーマウェブサービスと呼ばれます。バンドラーはそのようなサービスの1つです。バンドラーは複数の個別トランザクションをまとめて、1つのトランザクションとして直接Arweaveに投稿します。この方法により、プロトコルレベルで1つのトランザクションが数万のバンドルトランザクションを含むことができます。ただし、1つの制限があります。**データ**トランザクションのみがバンドルに含まれることができます。**ウォレット間**のトランザクション（**AR**トークンをウォレットアドレス間で転送する）は、Arweaveに直接投稿される個別トランザクションとして行う必要があります。
 
-## Dispatched Transactions
+## ディスパッチトランザクション
 
-Another way to post bundled transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to bundlers. Arweave browser wallets implement a `dispatch()` API method. If you are posting small transactions (100KB or less) you can use the wallets `dispatch()` method to take advantage of bundled transactions.
+バンドルトランザクションを投稿する別の方法は、ブラウザからです。ブラウザは、アップロードできるデータのサイズに関していくつかの制約を課しますが、ブラウザベースのウォレットはバンドラーにトランザクションを投稿できます。Arweaveブラウザウォレットは、`dispatch()`APIメソッドを実装しています。小さなトランザクション（100KB以下）を投稿する場合は、ウォレットの`dispatch()`メソッドを使用してバンドルトランザクションの利点を享受できます。
 
-An example of how to post a 100KB or less bundled transaction with an Arweave wallets `dispatch()` method can be found [in this guide](../guides/posting-transactions/dispatch.md).
+100KB以下のバンドルトランザクションをArweaveウォレットの`dispatch()`メソッドで投稿する方法の例は、[このガイド](../guides/posting-transactions/dispatch.md)にあります。
 
-## Resources
+## リソース
 
--   [arweave-js](../guides/posting-transactions/arweave-js.md) example
--   [dispatch](../guides/posting-transactions/dispatch.md) example
--   [arseeding-js](../guides/posting-transactions/arseeding-js.md) example
--   [akord](../guides/posting-transactions/akord.md) example
+-   [arweave-js](../guides/posting-transactions/arweave-js.md) の例
+-   [dispatch](../guides/posting-transactions/dispatch.md) の例
+-   [arseeding-js](../guides/posting-transactions/arseeding-js.md) の例
+-   [akord](../guides/posting-transactions/akord.md) の例

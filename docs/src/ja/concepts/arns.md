@@ -1,39 +1,40 @@
 # ArNS - Arweave Name System
 
-## Overview
-The Arweave Name System (ArNS) is the phonebook of the PermaWeb.  
+## 概要
+Arweave Name System (ArNS) は、PermaWeb の電話帳です。
 
-It is a decentralized and censorship-resistant naming system that is enabled by AR.IO Gateways and used to connect friendly names to PermaWeb apps, pages and data.
+これは、AR.IO ゲートウェイによって有効化され、ユーザーが親しみやすい名前を PermaWeb アプリ、ページ、およびデータに接続するために使用される分散型かつ検閲耐性のある命名システムです。
 
-This system works similarly to traditional DNS, where a user can purchase a name in a registry and DNS Name servers resolve these names to IP addresses.  
+このシステムは、ユーザーがレジストリで名前を購入し、DNS 名前サーバーがこれらの名前を IP アドレスに解決する従来の DNS と似ています。
 
-With ArNS, the registry is decentralized, permanent and stored on Arweave and each AR.IO gateway acts as both cache and name resolver. Users can register a name within the ArNS Registry, like "my-name" and set a pointer to any Arweave Transaction ID. AR.IO Gateways will resolve that name as one of their own subdomains, eg. https://laserilla.arweave.net and proxy all requests to the associated Arweave Transaction ID.  Each registered name can also have under names associated with it that each point to an Arweave Transaction ID, like https://v1_laserilla.arweave.net, giving even more flexibility and control to its owner.
+ArNS では、レジストリが分散型で永久的であり、Arweave に保存され、各 AR.IO ゲートウェイがキャッシュおよび名前解決者として機能します。ユーザーは、"my-name" のような名前を ArNS レジストリに登録し、任意の Arweave トランザクション ID へのポインタを設定できます。AR.IO ゲートウェイは、その名前を自身のサブドメインの一部として解決し、たとえば `https://laserilla.arweave.net` のように、関連する Arweave トランザクション ID へのすべてのリクエストをプロキシします。登録された各名前は、Arweave トランザクション ID を指す関連するサブ名前を持つこともでき、例えば `https://v1_laserilla.arweave.net` のように、所有者にさらなる柔軟性と制御を提供します。
 
-## The ArNS Registry
+## ArNS レジストリ
 
-ArNS uses the Smartweave protocol manage its name records. Each record, or name, is leased by a user and tied to an ANT token. You can register multiple ArNS names to a single ANT, but you cannot register multiple ANTs to a single ArNS name - the gateways wouldn't know where to point the routing ID.
+ArNS は、スマートウィーブプロトコルを使用してその名前レコードを管理します。各レコードまたは名前は、ユーザーによってリースされ、ANT トークンに紐づけられています。1つの ANT に複数の ArNS 名前を登録することはできますが、1つの ArNS 名前に複数の ANT を登録することはできません - ゲートウェイはルーティング ID の指し示す場所を知ることができません。
 
-ArNS names can be up to 32 characters, including numbers [0-9], letters [a-z], and dashes [-]. The dashes cannot be trailing dashes, e.g. -myname.
+ArNS 名は、0-9 の数字、a-z の文字、およびダッシュ [-] を含む最大 32 文字です。ダッシュは末尾に置くことはできません。例えば `-myname` は無効です。
 
 ## ANTs (Arweave Name Tokens)
 
-ANTs are a crucial part of the ArNS ecosystem - they are the actual key to owning an ArNS name. When you register an ArNS name to an ANT, the ANT then becomes the transfer method for that name. The ArNS registry does not care who owns the ANT, it simply knows what name ANT it belongs to.
+ANT は ArNS エコシステムの重要な部分です - それは ArNS 名前を所有するための実際の鍵です。ArNS 名前を ANT に登録すると、その ANT はその名前の転送方法になります。ArNS レジストリは ANT の所有者が誰であるかを気にせず、単にどの名前に属する ANT であるかを知っています。
 
-Within ANTs you can build out whatever functionality you wish, within the scope ArNS registry approved source code transaction list. Up to and including NFT's, PST's, DAO's, or full on applications.
+ANT 内では、ArNS レジストリによって承認されたソースコードトランザクションリストの範囲内で、任意の機能を構築できます。NFT、PST、DAO、または完全なアプリケーションを含むまでです。
 
-## Under_Names
+## アンダーネーム
 
-Undernames are records held and managed by your ANT (Arweave Name Token). These records can be created and managed without even owning an ARNS name, and will be transferred along with the ant when sent to a new owner. Likewise if your ArNS name expires, and you register your ANT to a new ArNS name, all your undername will remain intact.
+アンダーネームは、あなたの ANT (Arweave Name Token) によって保持および管理されるレコードです。これらのレコードは、ArNS 名前を所有していなくても作成および管理でき、ANT を新しい所有者に送信する際に一緒に転送されます。同様に、あなたの ArNS 名前が期限切れになった場合、ANT を新しい ArNS 名前に登録すると、すべてのアンダーネームはそのまま残ります。
 
-Example: you own oldName.arweave.net. 
+例: あなたは `oldName.arweave.net` を所有しています。
 
-then: You create the undername "my" - my_oldName.arweave.net.
+その後: あなたはアンダーネーム "my" を作成します - `my_oldName.arweave.net`。
 
-then: oldName.arweave.net expires, and you register newName.arweave.net to your ANT.
+その後: `oldName.arweave.net` が期限切れになり、あなたは ANT に `newName.arweave.net` を登録します。
 
-now: my_ undername is accessable on newName - my_newName.arweave.net. 
+今: アンダーネーム `my` は `newName` 上でアクセス可能です - `my_newName.arweave.net`。
 
-Below is an example of an ANT contract State:
+以下は ANT コントラクトの状態の例です:
+
 
 ```json
 {
@@ -49,12 +50,12 @@ Below is an example of an ANT contract State:
   ticker:"ANT-ARDRIVE-OG-LOGO"
 }
 ```
-the base "@" record is the initial routing id for the ANT. if you registered 'my-name' to this ANT, and tried to access it via my-name.arweave.net, you would be redirected to the @ record's transactionId.
+ベースの "@" レコードは ANT の初期ルーティング ID です。もしこの ANT に 'my-name' を登録し、`my-name.arweave.net` 経由でアクセスしようとすると、@ レコードの `transactionId` にリダイレクトされます。
 
-if you tried to access undername1_my-name.arweave.net, you would get 'undername1's transactionId. 
+もし `undername1_my-name.arweave.net` にアクセスしようとすると、`undername1` の `transactionId` が得られます。
 
-ANT's, in theory, have an UNLIMITED number of undernames. However, how many will be served depends on which tier is used with your ArNS name.
+ANT には理論上、無制限のアンダーネームがあります。ただし、どれだけ提供されるかは、使用される ArNS 名前のティアによります。
 
-## Resources
-# [ArNS App](https://arns.app/)
-# [ArNS Docs](https://docs.ar.io/arns/)
+## リソース
+# [ArNS アプリ](https://arns.app/)
+# [ArNS ドキュメント](https://docs.ar.io/arns/)

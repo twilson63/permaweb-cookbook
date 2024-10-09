@@ -3,42 +3,42 @@ locale: ja
 ---
 # SmartWeave
 
-> **⚠️ Deprecation Notice**
+> **⚠️ 廃止のお知らせ**
 >
-> This document is deprecated and may contain outdated information.
+> このドキュメントは廃止されており、古い情報を含んでいる可能性があります。
 
-## What is SmartWeave?
+## SmartWeaveとは？
 
-SmartWeave is the name given to the dominant SmartContract paradigm on Arweave. A unique property of SmartWeave contracts is that the current state of the contract is provided by a process of "lazy evaluation". This means that instead of Arweave mining nodes constantly evaluating the current state of all contracts, a client reading a contract evaluates the state for themselves.
+SmartWeaveは、Arweave上の主要なスマートコントラクトのパラダイムに与えられた名前です。SmartWeaveコントラクトのユニークな特性は、コントラクトの現在の状態が「レイジー評価」によって提供されることです。これは、Arweaveのマイニングノードがすべてのコントラクトの現在の状態を常に評価するのではなく、コントラクトを読むクライアントが自分自身で状態を評価することを意味します。
 
-## Why is SmartWeave important?
+## SmartWeaveが重要な理由
 
-The state and logic of decentralized applications need to be as censorship-resistant, permanent, and verifiable as the rest of their data. SmartWeave enables developers to write smart contracts that encapsulate their apps state and logic on-chain and execute it in a trustless verifiable way. This is no small feat as the Arweave protocol does not include incentives for nodes to evaluate smart contract state for the network.
+分散型アプリケーションの状態とロジックは、他のデータと同様に検閲に対する耐性があり、永続的で、検証可能である必要があります。SmartWeaveは、開発者がアプリの状態とロジックをオンチェーンでカプセル化し、信頼できる検証可能な方法で実行するためのスマートコントラクトを書くことを可能にします。これは、Arweaveプロトコルがノードにネットワークのためにスマートコントラクトの状態を評価するインセンティブを含んでいないため、決して簡単なことではありません。
 
-SmartWeave provides an immutable append-only pattern for contract interactions that leverage permanent storage to hold onto their state. The result is a fully decentralized on-chain state machine that can give protocols and applications dynamic functionality in a permissionless and trustless way. By using SmartWeave, developers can create smart contracts that are stored on Arweave and are guaranteed not to change over time. This allows them to build [Permaweb applications](/concepts/permawebApplications.md) with dynamic functionality that can be used in a permissionless and trustless manner.
+SmartWeaveは、状態を保持するために永続的なストレージを利用するための不変の追加専用パターンを提供します。その結果、許可不要で信頼できる方法でプロトコルやアプリケーションに動的な機能を提供できる完全に分散型のオンチェーン状態マシンが実現します。SmartWeaveを使用することで、開発者はArweaveに保存され、時間とともに変更されないことが保証されたスマートコントラクトを作成できます。これにより、[Permawebアプリケーション](/concepts/permawebApplications.md)を動的機能を持つ形で構築できるようになります。
 
-There are several reasons why developers might choose to use SmartWeave to implement the logic for their permaweb applications:
+開発者が自分のPermawebアプリケーションのロジックを実装するためにSmartWeaveを使用する理由はいくつかあります：
 
-- **Decentralized storage:** SmartWeave is built on Arweave, which means that applications created using SmartWeave will be stored on a distributed network of nodes rather than on a centralized server. This can make them more resistant to censorship, tampering, and other forms of interference.
+- **分散ストレージ:** SmartWeaveはArweave上に構築されているため、SmartWeaveを使用して作成されたアプリケーションは、中央サーバーではなく、ノードの分散ネットワーク上に保存されます。これにより、検閲や改ざん、その他の干渉に対する耐性が向上します。
 
-- **Lazy evaluation:** The lazy evaluation feature of SmartWeave contracts allows for efficient and scaleable execution. Instead of Arweave nodes constantly evaluating the state of a contract, the client reading the contract is responsible for evaluating the state, leveraging the users processing power instead of the networks nodes.
+- **レイジー評価:** SmartWeaveコントラクトのレイジー評価機能により、効率的でスケーラブルな実行が可能です。Arweaveノードがコントラクトの状態を常に評価するのではなく、コントラクトを読むクライアントがその状態を評価する責任を負うことで、ネットワークノードの処理能力を利用することができます。
 
-- **Language support:** SmartWeave supports a range of programming languages, including JavaScript, TypeScript, Rust, Go, AssemblyScript, and WASM (WebAssembly). This allows developers to use the language they are most familiar with when creating SmartWeave applications.
+- **言語サポート:** SmartWeaveはJavaScript、TypeScript、Rust、Go、AssemblyScript、WASM（WebAssembly）など、さまざまなプログラミング言語をサポートしています。これにより、開発者はSmartWeaveアプリケーションを作成する際に最も馴染みのある言語を使用できます。
 
-- **Data durability:** Arweave is designed to store data in a way that makes it highly durable and long-lasting. This can be useful for applications that need to store data over a long period of time, such as historical records or scientific data.
+- **データの耐久性:** Arweaveはデータを非常に耐久性があり、長期間保存できる方法で保存することを目的としています。これは、歴史的記録や科学データなど、長期間データを保存する必要があるアプリケーションに便利です。
 
-- **Economic model:** Arweave uses a unique economic model based on the concept of permanent storage that incentivizes miners to store data indefinitely. This can help ensure the long-term viability and durability of permaweb applications created using SmartWeave.
+- **経済モデル:** Arweaveは、永久保存の概念に基づくユニークな経済モデルを使用しており、データを無期限に保存するためにマイナーにインセンティブを与えます。これにより、SmartWeaveを使用して作成されたPermawebアプリケーションの長期的な実現可能性と耐久性が保証されます。
 
-## How does SmartWeave Work?
+## SmartWeaveの仕組み
 
-SmartWeave contracts, at their core, are built from an initial contract state, with edits, additions, and subtractions using transaction tags. 
+SmartWeaveコントラクトは、コントラクトの初期状態から構築され、トランザクションタグを使用して編集、追加、削除されます。
 
-SmartWeave SDK's such as `Warp` (previously `RedStone`), are used to query for these transactions to build contract state locally, modifying the contract state with each transaction. The Evaluator (`Warp`) uses tags to query for a contracts transactions; It knows a transaction is part of the contract by way of the App-Name tag, and the Contract tag.  
+`Warp`（以前の`RedStone`）のようなSmartWeave SDKは、これらのトランザクションをクエリしてコントラクトの状態をローカルに構築し、各トランザクションでコントラクトの状態を変更します。Evaluator（`Warp`）は、タグを使用してコントラクトのトランザクションをクエリします。トランザクションがコントラクトの一部であることは、App-NameタグとContractタグによって判断されます。
 
-Here is an example of a contract **interaction** .
-- The `App-Name` says its a Smartweave **ACTION** . 
-- The `Contract` tag gives the specific transaction ID of the initial contract state. 
-- The `Input` tag gives the contract its function to execute and any other data it needs: 
+以下はコントラクトの**相互作用**の例です。
+- `App-Name`は、それがSmartweaveの**アクション**であることを示します。
+- `Contract`タグは初期コントラクト状態の特定のトランザクションIDを示します。
+- `Input`タグは、コントラクトに実行すべき関数と必要な他のデータを提供します：
 
 ```json
 [
@@ -64,9 +64,9 @@ Here is an example of a contract **interaction** .
     }
 ]
 ```
-And here is an example of a **contract** . 
-- The `App-Name` says its a Smartweave **CONTRACT**
-- The `Contract-Src` tag points to the source code of the contract:
+以下は**コントラクト**の例です。
+- `App-Name`は、それがSmartweaveの**コントラクト**であることを示します。
+- `Contract-Src`タグはコントラクトのソースコードを指します：
 
 ```json
 [
@@ -93,32 +93,32 @@ And here is an example of a **contract** .
 ]
 ```
 
-The resulting state is the current contract state, which the SDK on the client side can use to calculate user balances, contract owners, and other contract specific details. Once the caller has a validated contract state they can build an interaction for the user to deploy to the chain, which upon mining or indexing on a [Gateway](/concepts/gateways.md) will be included the next time someone builds the contract state.
+結果として得られる状態は、クライアント側のSDKがユーザーの残高、コントラクト所有者、およびその他のコントラクト特有の詳細を計算するために使用できる現在のコントラクト状態です。呼び出し元が検証済みのコントラクト状態を取得すると、ブロックチェーンにデプロイするためのユーザーの相互作用を構築できます。この相互作用は、マイニングまたは[ゲートウェイ](/concepts/gateways.md)でインデックスされると、次回コントラクト状態が構築される際に含まれます。
 
-For a comprehensive overview of the SmartWeave Protocol, its leading implementation Warp Contracts, and more, head to [Warp Academy](https://academy.warp.cc/). Dive into step-by-step tutorials, explore advanced concepts, and uncover how SmartWeave power up the permaweb!
+SmartWeaveプロトコルの包括的な概要、主要な実装であるWarp Contracts、その他については、[Warp Academy](https://academy.warp.cc/)を訪れてください。ステップバイステップのチュートリアルを掘り下げ、先進的な概念を探索し、SmartWeaveがどのようにパーマウェブを強化するかを発見してください。
 
-## Smartweave ecosystem projects
+## SmartWeaveエコシステムプロジェクト
 
-There's quite a few ecosystem projects leveraging SmartWeave SmartContracts, but here are some of notes:
+SmartWeaveスマートコントラクトを活用しているエコシステムプロジェクトは多数ありますが、以下にいくつかの注目すべきプロジェクトを示します：
 
-### Implementations
-- [Warp](https://warp.cc/) | Main provider of SmartWeave SDK's, tutorials, and helps maintain the SmartWeave protocol.
-- [MEM](https://www.mem.tech/) | Molecular Execution Machine (MEM) is a developer platform that powers the creation and usage of highly available and highly performant applications within a decentralized environment.
+### 実装
+- [Warp](https://warp.cc/) | SmartWeave SDK、チュートリアルの主要プロバイダーであり、SmartWeaveプロトコルの維持に協力しています。
+- [MEM](https://www.mem.tech/) | 分子実行マシン（MEM）は、分散環境内で高い可用性と高性能なアプリケーションの作成と使用を支える開発者プラットフォームです。
 
-### Tools
-- [SonAr](https://sonar.warp.cc/#/app/contracts)| SmartWeave contract explorer, created and hosted by Warp.
+### ツール
+- [SonAr](https://sonar.warp.cc/#/app/contracts)| SmartWeaveコントラクトエクスプローラー、Warpによって作成され、ホストされています。
 
-### Resources
-- [Warp Academy](https://academy.warp.cc/) | A one-stop shop for all things SmartWeave
+### リソース
+- [Warp Academy](https://academy.warp.cc/) | SmartWeaveに関するすべての情報が集まるワンストップショップ
 
-### Apps
-- [Permapages](https://permapages.app/) | Permanent webpage creation tool, ArNS purchase portal, and ANT creation portal. Your profile on the permaweb.
-- [ArNS](arns.md) | Arweave Name System <!-- // todo: update to arns portal when portal is released -->
-- [WeaveDB](https://weavedb.dev/) | NoSQL Database as a Smart Contract.
-- [KwilDB](https://docs.kwil.com/)| SQL Database as a Smart Contract.
-- [ArDrive Inferno](https://ardrive.io/inferno/) | Get PST's for uploading thru Ardrive.
-- [Akord](https://akord.com/) | A protocol offering secure storage on Arweave with a seamless UX.
-- [FirstBatch](https://www.firstbatch.xyz/) | FirstBatch aids developers and enterprises in creating personalized, private, and distortion-free AI applications.
+### アプリ
+- [Permapages](https://permapages.app/) | 永続的なウェブページ作成ツール、ArNS購入ポータル、ANT作成ポータル。あなたのパーマウェブ上のプロフィール。
+- [ArNS](arns.md) | Arweave Name System
+- [WeaveDB](https://weavedb.dev/) | スマートコントラクトとしてのNoSQLデータベース。
+- [KwilDB](https://docs.kwil.com/)| スマートコントラクトとしてのSQLデータベース。
+- [ArDrive Inferno](https://ardrive.io/inferno/) | Ardriveを介してアップロードするためのPSTを取得します。
+- [Akord](https://akord.com/) | Arweave上の安全なストレージを提供するプロトコルで、シームレスなUXを実現します。
+- [FirstBatch](https://www.firstbatch.xyz/) | FirstBatchは、開発者や企業が個別化されたプライベート
 - [Othent](https://othent.io/) | Web3 transactions with existing traditional social logins.
 - [BazAR](https://bazar.arweave.dev/) | Digital content marketplace with real-world rights.
 - [Alex the Archieve](https://alex.arweave.dev/) | A decentralized archival platform utilizing Arweave's immutable storage.

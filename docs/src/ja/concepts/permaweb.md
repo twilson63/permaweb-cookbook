@@ -1,22 +1,21 @@
 ---
 locale: ja
 ---
-# Welcome to the Permaweb
+# パーマウェブへようこそ
 
-The permaweb is like the web, but permanent. Developers build on top of permaweb services to create apps and sites that will exist forever on Arweave. 
+パーマウェブはウェブに似ていますが、永久的です。開発者はパーマウェブサービスの上にアプリやサイトを構築し、それらはArweave上で永遠に存在します。
 
-![Permaweb](https://arweave.net/lK3mptAgC2cijnPvogKaLCOsKSuPlvLu_6opnEOrpT0)
+![パーマウェブ](https://arweave.net/lK3mptAgC2cijnPvogKaLCOsKSuPlvLu_6opnEOrpT0)
 
-Benefits of the permaweb.
+パーマウェブの利点：
 
-1. Sites and apps are permanent, you never have to worry about them going away (even if the team supporting them moves on)
-1. App developers have to make sure every new version of the app actually adds value, otherwise, why would you switch off the old one.
-1. Because all Permaweb apps share a common storage layer, Arweave, they can all compose with one anther's data.
-1. Your data is owned by your wallet and can follow you from app to app.
+1. サイトやアプリは永続的で、消える心配がありません（サポートするチームが移行しても）。
+2. アプリ開発者は、新しいバージョンが実際に価値を追加することを確認する必要があります。さもなければ、古いバージョンをオフにする理由がありません。
+3. すべてのパーマウェブアプリは共通のストレージレイヤー、Arweaveを共有しているため、他のアプリのデータと組み合わせることができます。
+4. あなたのデータはあなたのウォレットによって所有され、アプリからアプリへと移動できます。
 
-## Compare Traditional Web vs Permaweb
+## 従来のウェブとパーマウェブの比較
 
-![Permaweb vs Traditional](https://arweave.net/5EP6mhpHsfnTsmFk7aVyK8jF6zqavxJT4kgx70mUc5I)
+![パーマウェブと従来のウェブ](https://arweave.net/5EP6mhpHsfnTsmFk7aVyK8jF6zqavxJT4kgx70mUc5I)
 
-For more information about the permaweb check out the [medium post](https://arweave.medium.com/welcome-to-the-permaweb-ce0e6c73ddfb).
-
+パーマウェブに関する詳細情報は、[mediumの記事](https://arweave.medium.com/welcome-to-the-permaweb-ce0e6c73ddfb)をご覧ください。

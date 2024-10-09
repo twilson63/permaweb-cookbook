@@ -1,58 +1,57 @@
 ---
 locale: ja
 ---
-# Permaweb Applications
+# パーマウェブアプリケーション
 
-A permaweb application is a type of web page or web app that runs in your browser. What makes it a permaweb app is that it is deployed to Arweave and saved forever. Even if the team that developed it moves on users can rest assured the permaweb app will stay online and available. A huge advantage to permaweb apps is that they save their data on Arweave which means it can easily be imported into other apps that might improve on the one your currently using.
+パーマウェブアプリケーションは、ブラウザで動作するウェブページまたはウェブアプリの一種です。パーマウェブアプリの特徴は、Arweaveにデプロイされ、永遠に保存されることです。開発チームが移行しても、ユーザーはパーマウェブアプリがオンラインで利用可能であることを安心して確認できます。パーマウェブアプリの大きな利点は、データがArweaveに保存されるため、現在使用しているアプリの改善につながる他のアプリに簡単にインポートできることです。
 
-## What is the permaweb?
+## パーマウェブとは？
 
 ::: info INFORMATION
-For a deeper dive into the permaweb check out this article on [The Permaweb](./permaweb.md)
+パーマウェブについてさらに詳しく知りたい方は、[The Permaweb](./permaweb.md)に関する記事をご覧ください。
 :::
 
-The permaweb is a collection of sites, apps, and SmartContracts built on top of the [Arweave's Permaweb Services](./permaweb.md). The core parts of the Permaweb are the following:
+パーマウェブは、[Arweaveのパーマウェブサービス](./permaweb.md)の上に構築されたサイト、アプリ、スマートコントラクトのコレクションです。パーマウェブの主要な部分は以下の通りです。
 
--   Gateway Service (ex. arweave.net, arweave.live, ar.io)
--   Bundling Service (ex. ardrive turbo)
--   Sequencer Service (ex. warp.cc)
--   Index Service (ex goldsky)
+-   ゲートウェイサービス（例：arweave.net、arweave.live、ar.io）
+-   バンドルサービス（例：ardrive turbo）
+-   シーケンサーサービス（例：warp.cc）
+-   インデックスサービス（例：goldsky）
 
 <img src="https://arweave.net/ycQzutVToTtVT_vT4811ByswtZ-KjqmifNSehSb1-eg" width="700">
 
-### Gateway Services
+### ゲートウェイサービス
 
-Gateway services are the bridge between data on Arweave and displaying data in the browser. Gateways often provide indexing service along side serving transaction data, exposing graphQL endpoints for querying Arewave transactions.
+ゲートウェイサービスは、Arweave上のデータとブラウザでのデータ表示の間の橋渡しを行います。ゲートウェイは、トランザクションデータを提供するだけでなく、インデックスサービスも提供し、ArweaveトランザクションをクエリするためのGraphQLエンドポイントを公開します。
 
-### Bundling Services
+### バンドルサービス
 
-Bundling services aggregate transactions into transaction bundles and make sure those bundles are posted directly to Arweave. By using a bundling service like Irys.network you can post hundreds of thousands of transactions in a single Arweave block.
+バンドルサービスは、トランザクションをトランザクションバンドルに集約し、それらのバンドルが直接Arweaveに投稿されることを保証します。Irys.networkのようなバンドルサービスを使用することで、数十万のトランザクションを1つのArweaveブロックに投稿できます。
 
-### Sequencing Services
+### シーケンシングサービス
 
-Sequencers enables high performance for SmartWeave Contracts to calculate business logic stored on the Arweave network.
+シーケンサーは、Arweaveネットワーク上に保存されたビジネスロジックを計算するためのSmartWeaveコントラクトの高性能を実現します。
 
-### Indexing Services
+### インデックスサービス
 
-Indexing services listen to all the transactions on Arweave and import them into an indexed database suitable for fast querying. They then expose
-a graphQL endpoint so permaweb apps can make optimized queries for Arweave data.
+インデックスサービスは、Arweave上のすべてのトランザクションを監視し、それらを高速クエリに適したインデックスデータベースにインポートします。その後、パーマウェブアプリがArweaveデータの最適化されたクエリを行えるようにGraphQLエンドポイントを公開します。
 
-These services work together to form the Permaweb Services Layer and gives developers the power to build fully decentralized applications on the permaweb.
+これらのサービスは協力してパーマウェブサービスレイヤーを形成し、開発者がパーマウェブ上に完全に分散型のアプリケーションを構築できる力を与えます。
 
-## Application Development
+## アプリケーション開発
 
-Approaching application development with the permaweb is similar to `Single Page Application` development, the application consists of frontend functionality that is executed in a web browser, and uses GraphQL (Read/Query), Irys (Write), and SmartWeave (Decentralized computation) to make up the business logic and persistance layer of the application.
+パーマウェブでのアプリケーション開発は、`シングルページアプリケーション`の開発に似ています。アプリケーションは、ウェブブラウザで実行されるフロントエンド機能で構成され、ビジネスロジックと永続性の層を構成するためにGraphQL（読み取り/クエリ）、Irys（書き込み）、SmartWeave（分散計算）を使用します。
 
-![common permaweb app](https://arweave.net/UjbgAk8duudDc97lOYIt7rBVtRHp2Z9F6Ua5OcvwNCk/)
+![一般的なパーマウェブアプリ](https://arweave.net/UjbgAk8duudDc97lOYIt7rBVtRHp2Z9F6Ua5OcvwNCk/)
 
-By leveraging modern web application frameworks and the [Path Manifest](./manifests.md) specification, developers can deploy web sites and applications to the permaweb.
+現代のウェブアプリケーションフレームワークと[パスマニフェスト](./manifests.md)仕様を活用することで、開発者はウェブサイトやアプリケーションをパーマウェブにデプロイできます。
 
-To learn more about creating and deploying Permaweb Apps, check out our starter kits in your favorite framework:
+パーマウェブアプリの作成とデプロイについてさらに詳しく学ぶには、お気に入りのフレームワークのスターターキットをご覧ください。
 
 -   [React](../kits/react/index.md)
 -   [Svelte](../kits/svelte/index.md)
 -   [Vue](../kits/vue/index.md)
 
-::: tip Missing my framework?
-Can't find your framework, why don't you contribute? [How to contribute to the cookbook](../getting-started/contributing.md)
+::: tip フレームワークが見つからない？
+自分のフレームワークが見つからない場合は、貢献してみませんか？ [料理本への貢献方法](../getting-started/contributing.md)
 :::

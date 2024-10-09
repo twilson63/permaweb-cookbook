@@ -1,54 +1,53 @@
 ---
+locale: ja
 next: "data-model.md"
 ---
-# ArFS Protocol: A Decentralized File System on Arweave
+# ArFSプロトコル：Arweave上の分散型ファイルシステム
 
-Arweave File System, or “ArFS” is a data modeling, storage, and retrieval protocol designed to emulate common file system operations and to provide aspects of mutability to your data hierarchy on [Arweave](https://ardrive.io/what-is-arweave/)'s otherwise permanent, immutable data storage blockweave.
+Arweaveファイルシステム、または「ArFS」は、一般的なファイルシステム操作を模倣し、Arweaveのそれ以外は永久的で不変なデータストレージブロックウェーブ上でデータ階層に可変性の側面を提供するために設計されたデータモデリング、ストレージ、および取得プロトコルです。
 
-Due to Arweave's permanent, immutable and public nature traditional file system operations such as permissions, file/folder renaming and moving, and file updates cannot be done by simply updating the on-chain data model.  
+Arweaveの永久的、不変、かつ公開の性質のため、権限、ファイル/フォルダーの名前変更や移動、ファイルの更新などの従来のファイルシステム操作は、単にオンチェーンデータモデルを更新することで行うことはできません。
 
-ArFS works around this by implementing a privacy and encryption pattern and defining an append-only transaction data model using tags within [Arweave Transaction headers](https://docs.arweave.org/developers/server/http-api#transaction-format).
+ArFSは、プライバシーと暗号化のパターンを実装し、[Arweaveトランザクションヘッダー](https://docs.arweave.org/developers/server/http-api#transaction-format)内のタグを使用して追加専用のトランザクションデータモデルを定義することで、この問題を解決します。
 
-## Key Features
+## 主な特徴
 
-### File Structure
+### ファイル構造
 
-ArFS organizes files and folders using a hierarchical structure. Files are stored as individual transactions on the Arweave blockchain, while folders are metadata that reference these file transactions.
+ArFSは、階層構造を使用してファイルとフォルダーを整理します。ファイルはArweaveブロックチェーン上の個々のトランザクションとして保存され、フォルダーはこれらのファイルトランザクションを参照するメタデータです。
 
-### Metadata
+### メタデータ
 
-Each file and folder has associated metadata, such as the name, type, size, and modification timestamp. ArFS leverages Arweave's tagging system to store this metadata in a standardized format, which allows for easy querying and organization.
+各ファイルとフォルダーには、名前、タイプ、サイズ、変更タイムスタンプなどの関連メタデータがあります。ArFSは、標準化された形式でこのメタデータを保存するためにArweaveのタグ付けシステムを活用し、簡単なクエリと整理を可能にします。
 
-### File Permissions
+### ファイル権限
 
-ArFS supports public and private file permissions. Public files can be accessed by anyone on the network, while private files are encrypted using the owner's private key, ensuring only they can decrypt and access the content.
+ArFSは、パブリックおよびプライベートファイル権限をサポートします。パブリックファイルはネットワーク上の誰でもアクセスできますが、プライベートファイルは所有者の秘密鍵を使用して暗号化されており、所有者のみが内容を復号してアクセスできます。
 
-### File Versioning
+### ファイルのバージョン管理
 
-ArFS supports versioning of files, allowing users to store multiple versions of a file and access previous versions at any time. This is achieved by linking new file transactions to previous versions through the use of metadata tags.
+ArFSはファイルのバージョン管理をサポートしており、ユーザーはファイルの複数のバージョンを保存し、いつでも以前のバージョンにアクセスできます。これは、新しいファイルトランザクションをメタデータタグを使用して以前のバージョンにリンクすることで実現されます。
 
-### Data Deduplication
+### データ重複排除
 
-To minimize storage redundancy and costs, ArFS employs data deduplication techniques. If a user tries to store a file that already exists on the network, the protocol will simply create a new reference to the existing file instead of storing a duplicate copy.
+ストレージの冗長性とコストを最小限に抑えるために、ArFSはデータ重複排除技術を採用しています。ユーザーがすでにネットワーク上に存在するファイルを保存しようとした場合、プロトコルは単に既存のファイルへの新しい参照を作成し、重複コピーを保存するのではなく、既存のファイルを参照します。
 
-### Search and Discovery
+### 検索と発見
 
-ArFS enables users to search and discover files based on their metadata, such as file names, types, and tags. This is made possible by indexing the metadata stored within the Arweave blockchain.
+ArFSは、ファイル名、タイプ、タグなどのメタデータに基づいてファイルを検索および発見する機能を提供します。これは、Arweaveブロックチェーン内に保存されたメタデータをインデックス化することで実現されます。
 
-### Interoperability
+### 相互運用性
 
-ArFS is designed to be interoperable with other decentralized applications and services built on the Arweave network. This allows for seamless integration and collaboration between different applications and users.
+ArFSは、Arweaveネットワーク上に構築された他の分散型アプリケーションやサービスと相互運用可能になるように設計されています。これにより、さまざまなアプリケーションやユーザー間でシームレスな統合とコラボレーションが可能になります。
 
-## Getting Started
+## 始めるには
 
-To start using ArFS, you'll need to familiarize yourself with the Arweave ecosystem, acquire AR tokens to cover storage costs, and choose a compatible client or library to interact with the ArFS protocol.
+ArFSを使用するには、Arweaveエコシステムに慣れ、ストレージコストをカバーするためのARトークンを取得し、ArFSプロトコルと対話するための互換性のあるクライアントまたはライブラリを選択する必要があります。
 
+## リソース
 
-## Resources
+さらに情報、文書、およびコミュニティサポートについては、以下のリソースを参照してください。
 
-For more information, documentation, and community support, refer to the following resources:
-
-- [Arweave Official Website](https://www.arweave.org/)
-- [Arweave Developer Documentation](https://docs.arweave.org/)
-- [Arweave Community Forums](https://community.arweave.org/)
-
+- [Arweave公式ウェブサイト](https://www.arweave.org/)
+- [Arweave開発者ドキュメント](https://docs.arweave.org/)
+- [Arweaveコミュニティフォーラム](https://community.arweave.org/)

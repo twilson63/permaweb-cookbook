@@ -1,71 +1,70 @@
 ---
 locale: ja
 ---
-# Overview
+# 概要
 
 ---
-> **⚠️ Deprecation Notice**
+> **⚠️ 廃止通知**
 >
-> This document is deprecated and may contain outdated information.
+> この文書は廃止されており、古い情報が含まれている可能性があります。
 
-Profit Sharing Tokens (PSTs) are a type of SmartWeaveToken which include the following structure:
+利益共有トークン（PST）は、次の構造を含むスマートウィーブトークンの一種です。
 
-| property    | type        |
+| プロパティ    | 型        |
 | ----------- | ----------- |
-| balances    | object      |
-| name        | string      |
-| ticker      | string      |
-| transfer    | method      |
-| balance     | method      |
+| balances    | オブジェクト      |
+| name        | 文字列      |
+| ticker      | 文字列      |
+| transfer    | メソッド      |
+| balance     | メソッド      |
 
-PSTs are typically used to govern a protocol or "Profit Sharing Community" (PSC) - similar to a DAO.
+PSTは通常、プロトコルや「利益共有コミュニティ」（PSC）を管理するために使用されます。これはDAOに似ています。
 
-### How are PSTs Distributed?
-
----
-
-Founders of an application can create a set number of PSTs and distribute them as they see fit - to keep, or sell to investors to raise capital.
-
-Protocols can offer PSTs as a reward for contributing work, or completing tasks for the community to incentivize growth.
-
-PSTs can also be exchanged between each other on [Permaswap](https://permaswap.network/#/) (currently in testnet), and developers can set up token trading permissions using [Verto Flex](https://github.com/useverto/flex).
-
-### Features
+### PSTはどのように配布されますか？
 
 ---
 
-PSTs work as ‘**micro-dividends**’. When a protocol is used, a tipping amount is set aside to be distributed amongst holders. The tip is paid out in $AR - **not** in the currency of the PST. This creates quite a special relationship between the app being developed, and Arweave itself.
+アプリケーションの創設者は、一定数のPSTを作成し、彼らの判断で配布できます。資本を調達するために保持したり、投資家に販売したりすることができます。
 
-### Benefits
+プロトコルは、成長を促進するために、作業を貢献したり、コミュニティのタスクを完了したりする報酬としてPSTを提供できます。
 
----
+PSTは[Permaswap](https://permaswap.network/#/)（現在テストネット中）でお互いに交換することもでき、開発者は[Verto Flex](https://github.com/useverto/flex)を使用してトークン取引の権限を設定できます。
 
-- Provides a flexible way for developers to run a protocol and distribute as much ‘ownership’ as they see fit
-- PSTs can be used as payment for protocol work or for community tasks
-- Founders are incentivized to increase network usage, as it is directly tied to revenue
-- Holders get **intrinsic** value (rewards $AR, not more ‘stock’)
-
-### Example PST: ARDRIVE Token
+### 特徴
 
 ---
 
-ArDrive is a permaweb application utilitizing their aptly named PST, ARDRIVE.
+PSTは「**マイクロ配当**」として機能します。プロトコルが使用されると、チッピング額が保持者に配分されるために取っておかれます。このチップは$ARで支払われ、PSTの通貨ではありません。これにより、開発中のアプリとArweave自体との間に特別な関係が生まれます。
 
-When someone pays $AR to upload data through ArDrive, a 15% community fee is distributed to a single token holder using a random, weighted method.
-
-![ArDrive PST Cycle](~@source/images/ardrive-pst.png)
-
-A user uploads data -> An ARDRIVE token holder receives $AR -> ARDRIVE token holder can use this $AR to upload files -> cycle repeats. Hopefully this gives you a good idea of one way you could implement your own PST!
-
-### Exploring PSTs
+### 利点
 
 ---
 
-Going straight to viewblock and Sonar by Redstone is most appropriate most likely. Just use links that specifically show PSTs so someone doesn’t have to navigate to find them.
+- 開発者がプロトコルを運営し、所有権を柔軟に分配する方法を提供します
+- PSTはプロトコルの作業やコミュニティのタスクの支払いに使用できます
+- 創設者はネットワークの使用を増やすインセンティブがあり、収益に直接結びついています
+- 保持者は**内在的**価値（報酬$AR、より多くの「株式」ではなく）を得ます
 
-You can use [ViewBlock](https://viewblock.io/arweave) for an etherscan-like experience to view PST contracts, like this one [here](https://viewblock.io/arweave/contract/-8A6RexFkpfWwuyVO98wzSFZh0d6VJuI-buTJvlwOJQ).
+### 例 PST: ARDRIVEトークン
 
-Another option is Sonar, an Arweave smart contract explorer built by [RedStone Finance](https://sonar.redstone.tools/#/app/contracts). View the same contract [here](https://sonar.warp.cc/?#/app/contract/-8A6RexFkpfWwuyVO98wzSFZh0d6VJuI-buTJvlwOJQ).
+---
 
+ArDriveは、適切に名付けられたPST、ARDRIVEを利用したパーマウェブアプリケーションです。
 
-> Some community members have been discussing calling PSTs “Permaweb Service Tokens”. There is still much to explore with PSTs → join the discussion [here](https://discord.com/channels/999377270701564065/999377270701564068/1055569446481178734) (Discord).
+誰かがArDriveを通じてデータをアップロードするために$ARを支払うと、15％のコミュニティ手数料がランダムな重み付け方式で単一のトークン保持者に配分されます。
+
+![ArDrive PSTサイクル](~@source/images/ardrive-pst.png)
+
+ユーザーがデータをアップロード -> ARDRIVEトークン保持者が$ARを受け取る -> ARDRIVEトークン保持者はこの$ARを使用してファイルをアップロード -> サイクルが繰り返される。このようにして、あなた自身のPSTを実装する方法を理解してもらえればと思います。
+
+### PSTを探求する
+
+---
+
+ViewblockやSonar by Redstoneを使用してPSTを表示するのが最も適切です。PSTを特に表示するリンクを使用して、誰かが見つける手間を省いてください。
+
+[PST契約](https://viewblock.io/arweave)を表示するために、Etherscanのような体験を得るためにViewBlockを使用できます。こちらの[例](https://viewblock.io/arweave/contract/-8A6RexFkpfWwuyVO98wzSFZh0d6VJuI-buTJvlwOJQ)を見てください。
+
+もう一つのオプションは、[RedStone Finance](https://sonar.redstone.tools/#/app/contracts)によって構築されたArweaveスマートコントラクトエクスプローラーであるSonarです。こちらの[例](https://sonar.warp.cc/?#/app/contract/-8A6RexFkpfWwuyVO98wzSFZh0d6VJuI-buTJvlwOJQ)をご覧ください。
+
+> 一部のコミュニティメンバーは、PSTを「パーマウェブサービストークン」と呼ぶことを議論しています。PSTに関してはまだ多くの探索が必要です → [ここで議論に参加してください](https://discord.com/channels/999377270701564065/999377270701564068/1055569446481178734)（Discord）。

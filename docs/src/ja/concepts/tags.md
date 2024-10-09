@@ -1,45 +1,42 @@
----
-locale: ja
----
-# Transaction Metadata (Tags)
+# トランザクションメタデータ（タグ）
 
-Arweave can be thought of as a permanent append-only hard drive where each entry on the drive is its own unique transaction. Transactions have a unique ID, signature, and owner address for the address that signed and paid for the transaction to be posted. Along with those header values, the Arweave protocol allows users to tag transactions with custom tags. These are specified as a collection name value pairs appended to the transaction. These tags make it possible to query Arweave and find all the Transactions that include a particular tag or tags. The ability to query and filter transactions is critical to supporting apps built on Arweave.
+Arweaveは、各エントリーが独自のトランザクションである永続的な追加専用のハードドライブと考えることができます。トランザクションにはユニークなID、署名、およびトランザクションを投稿するために署名して支払ったアドレスの所有者アドレスがあります。それらのヘッダー値に加えて、Arweaveプロトコルではユーザーがカスタムタグでトランザクションにタグ付けすることを許可しています。これらはトランザクションに追加されるコレクション名の値ペアとして指定されます。これらのタグにより、Arweaveをクエリして特定のタグを含むすべてのトランザクションを見つけることが可能になります。トランザクションをクエリしてフィルタリングする能力は、Arweave上に構築されたアプリをサポートするために重要です。
 
-## What are Transaction Tags?
+## トランザクションタグとは？
 
-Transaction tags are key-value pairs, where the combination of base64URL keys and values must be less than the maximum of 2048 bytes for an arweave native transaction.
+トランザクションタグはキーと値のペアであり、base64URLのキーと値の組み合わせはArweaveネイティブトランザクションの最大2048バイト未満である必要があります。
 
-Some common examples of transaction tags include:
+一般的なトランザクションタグの例には以下が含まれます：
 
--   `Content-Type`: Used to specify the MIME type of content for render on the permaweb.
--   `App-Name`: This tag describes the app that is writing the data
--   `App-Version`: This tag is the version of the app, paired with App-Name
--   `Unix-Time`: This tag is the a unix timestamp, **seconds** since epoch.
--   `Title`: Used to give a name or brief description of the content stored in the transaction.
--   `Description`: Used to provide a longer description of the content.
+- `Content-Type`: パーマウェブ上でのレンダリング用のコンテンツのMIMEタイプを指定するために使用されます。
+- `App-Name`: データを書き込むアプリを説明するタグです。
+- `App-Version`: このデータのバージョンで、App-Nameとペアになります。
+- `Unix-Time`: Unixタイムスタンプで、エポックからの**秒数**です。
+- `Title`: トランザクションに格納されたコンテンツの名前または簡単な説明を提供するために使用されます。
+- `Description`: コンテンツの詳細な説明を提供するために使用されます。
 
-Transaction tags can be used for a variety of purposes, such as indexing transactions for search, organizing transactions into categories, or providing metadata about the content stored in a transaction.
+トランザクションタグは、トランザクションの検索用のインデックス作成、トランザクションのカテゴリ分け、またはトランザクションに格納されたコンテンツに関するメタデータの提供など、さまざまな目的に使用できます。
 
-## Some good things to know about Transaction Tags
+## トランザクションタグに関する知っておくべきこと
 
-Transaction tags are encoded as Base64URL encoded strings for both the key and value. This makes it possible to post arrays of bytes as keys or values and transfer them safely over http. While it's not human readable without decoding, it shouldn't be considered encryption.
+トランザクションタグは、キーと値の両方のためにBase64URLエンコードされた文字列としてエンコードされます。これにより、キーや値としてバイトの配列を投稿し、安全にhttpを介して転送することが可能になります。デコードなしでは人間が読めるわけではありませんが、暗号化とは見なされません。
 
-The max total size of Transaction tags for transaction posted directly to Arweave is 2048 bytes. This size is determined by the concatenation of all keys and all values of the transaction tags.
+直接Arweaveに投稿されたトランザクションのトランザクションタグの最大総サイズは2048バイトです。このサイズは、トランザクションタグのすべてのキーとすべての値を連結することによって決定されます。
 
-Transaction tags can be used in GraphQL queries to return a filtered set of transaction items.
+トランザクションタグは、GraphQLクエリで使用され、フィルタリングされたトランザクションアイテムのセットを返すことができます。
 
-## Common Tags used in the community
+## コミュニティで使用される一般的なタグ
 
-| <div style="width:100px">Tag Name</div> | Description                                                                   | Use Cases                                                                            |
-| --------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| App-Name                                | Most commonly used for SmartWeave Identifiers                                 | Common values are SmartWeaveContract, SmartWeaveAction, and SmartWeaveContractSource |
-| App-Version                             | The version of this data, it may represent the app consuming this information | 0.3.0 is the current SmartWeave Version                                              |
-| Content-Type                            | MIME Type to identify the data contained in the transaction                   | text/html, application/json, image/png                                               |
-| Unix-Time                               | This tag is the a unix timestamp, **seconds** since epoch                     | The time the transaction is submitted                                                |
-| Title                                   | ANS-110 Standard for describing content                                       | Providing a name for an Atomic Asset                                                 |
-| Type                                    | ANS-110 Standard for categorization of data                                   | a type can classify a permaweb asset                                                 |
+| <div style="width:100px">タグ名</div> | 説明                                                                   | 使用例                                                                              |
+| --------------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| App-Name                                | SmartWeave識別子のために最も一般的に使用される                         | 一般的な値はSmartWeaveContract、SmartWeaveAction、SmartWeaveContractSourceです |
+| App-Version                             | このデータのバージョンで、これを消費するアプリを表すことがあります   | 現在のSmartWeaveバージョンは0.3.0です                                              |
+| Content-Type                            | トランザクションに含まれるデータを識別するためのMIMEタイプ             | text/html、application/json、image/png                                             |
+| Unix-Time                               | Unixタイムスタンプで、エポックからの**秒数**                          | トランザクションが提出された時間                                                 |
+| Title                                   | コンテンツを説明するためのANS-110標準                                 | 原子資産に名前を提供                                                              |
+| Type                                    | データの分類のためのANS-110標準                                       | パーマウェブ資産を分類するためのタイプ                                            |
 
-## Examples
+## 例
 
 ```ts
 const tx = await arweave.createTransaction({ data: mydata });
@@ -52,7 +49,6 @@ tx.addTag("Type", "blog-post");
 await arweave.transactions.sign(tx, jwk);
 await arweave.transactions.post(tx);
 ```
+## まとめ
 
-## Summary
-
-Understanding how Transaction Tags factor into the Arweave tech stack can provide context on how to solve problems using the Permaweb as an application platform. Tags provide a tool to consume and create common data standards and patterns to encourage a non-rivalous data experience on the Permaweb. The result gives users of the ecosystem the choice of applications to consume and create content as their data is always with the user not the application.
+トランザクションタグがArweaveテックスタックにどのように関与しているかを理解することで、Permawebをアプリケーションプラットフォームとして使用する際の問題を解決するための文脈を提供できます。タグは、共通のデータ標準とパターンを作成し、Permaweb上での非競合データ体験を促進するためのツールを提供します。その結果、エコシステムのユーザーは、データが常にユーザーのものであり、アプリケーションのものでないため、消費するアプリケーションと作成するコンテンツの選択肢を持つことができます。

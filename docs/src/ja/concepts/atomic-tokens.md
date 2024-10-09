@@ -1,27 +1,30 @@
-# Atomic Token Concept and Principles
+---
+locale: ja
+---
+# アトミックトークンの概念と原則
 
 ![https://arweave.net/bcHI0TW_nH-iTfZnobD9Wt6d0Qe6thWfPrGhnvi1m1A](https://arweave.net/bcHI0TW_nH-iTfZnobD9Wt6d0Qe6thWfPrGhnvi1m1A)
 
-An Atomic Token is a single permanent identifier that references data and a SmartWeave Contract on the Permaweb.
+アトミックトークンは、データおよびパーマウェブ上の SmartWeave コントラクトを参照する単一の永続的な識別子です。
 
-## Specifications
+## 仕様
 
-Data MUST be stored on the arweave network and referencable by a Transaction Identifier
+データは必ず arweave ネットワークに保存され、トランザクション識別子で参照可能でなければなりません。
 
-Contract MUST implement a `balances` object that represents the ownership of the Atomic Token
+コントラクトは、アトミックトークンの所有権を表す `balances` オブジェクトを実装しなければなりません。
 
-Contract MUST implement a `transfer` function that takes the following arguments:
-- target {WalletAddress or Contract}
+コントラクトは、以下の引数を取る `transfer` 関数を実装しなければなりません：
+- target {WalletAddress または Contract}
 - qty {Number}
 
-> The transfer function should transfer ownership from the caller to the target
+> transfer 関数は、呼び出し元からターゲットへ所有権を移転する必要があります。
 
-## Options
+## オプション
 
-_These are implementation options that can make the Atomic Token discoverable and tradeable on the Permaweb_
+_これらはアトミックトークンをパーマウェブ上で発見可能かつ取引可能にするための実装オプションです。_
 
-[Verto Flex](https://github.com/useverto/flex) - The Flex Library gives your atomic token to be sold or purchased without trusting an exchange.
+[Verto Flex](https://github.com/useverto/flex) - Flexライブラリを使用することで、アトミックトークンを信頼することなく売買できます。
 
-[Discoverability Tags - ANS 110](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-110.md) - These additional tags can help Permaweb applications and services discover your token.
+[発見可能性タグ - ANS 110](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-110.md) - これらの追加タグは、パーマウェブアプリケーションやサービスがトークンを発見するのに役立ちます。
 
-[Check out the Guide](../guides/atomic-tokens/intro.md)
+[ガイドをチェック](../guides/atomic-tokens/intro.md)

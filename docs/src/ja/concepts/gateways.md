@@ -1,38 +1,38 @@
 ---
 locale: ja
 ---
-# Gateways
+# ゲートウェイ
 
 ---
 
-Data uploaded to the Arweave network (or the [permaweb](https://cookbook.arweave.dev/concepts/permaweb.html)) isn't always immediately easy to work with.
+Arweaveネットワーク（または[パーマウェブ](https://cookbook.arweave.dev/concepts/permaweb.html)）にアップロードされたデータは、常にすぐに操作しやすいわけではありません。
 
-### What is a Gateway?
+### ゲートウェイとは？
 
-Gateways are sometimes referred to as the "front door to the permaweb". They act as an interface between Arweave and end-users, making it easy to access data or use permaweb applications from your web browser.
+ゲートウェイは時々「パーマウェブのフロントドア」と呼ばれます。これらはArweaveとエンドユーザーの間のインターフェースとして機能し、Webブラウザからデータにアクセスしたり、パーマウェブアプリケーションを利用したりすることを容易にします。
 
-For example, accessing a HTML file stored on Arweave will be displayed as a web page in your browser. The same goes for viewing images, downloading files, viewing JSON data, or any other file stored on Arweave. This makes interacting with the permaweb very similar to using the traditional web. 
+例えば、Arweaveに保存されたHTMLファイルにアクセスすると、それはブラウザでウェブページとして表示されます。同様に、画像の表示、ファイルのダウンロード、JSONデータの表示、またはArweaveに保存されたその他のファイルを扱うことも可能です。これにより、パーマウェブとのインタラクションは従来のWebを使用するのと非常に似ています。
 
-### Other Roles of Gateways
+### ゲートウェイのその他の役割
 
-Other than serving data for users to access, gateways offer other services such as:
+ユーザーがアクセスできるデータを提供するだけでなく、ゲートウェイは以下のような他のサービスも提供します：
 
-- Caching frequently accessed data and transactions
-- Indexing and querying transactions (through Arweave tags and a GraphQl interface)
-- Seeding transactions throughout the Arweave network
-- Content moderation (content policies to choose which data is or isn't served)
+- 頻繁にアクセスされるデータやトランザクションのキャッシュ
+- トランザクションのインデックス作成およびクエリ（ArweaveタグおよびGraphQlインターフェースを通じて）
+- Arweaveネットワーク全体へのトランザクションのシーディング
+- コンテンツのモデレーション（どのデータが提供されるかを選択するためのコンテンツポリシー）
 
-### Gateways and the Arweave Protocol
+### ゲートウェイとArweaveプロトコル
 
-Although gateways play a large role in allowing content to be accessed on Arweave, they are **not** part of the core protocol.
+ゲートウェイはArweave上のコンテンツにアクセスするのを可能にする大きな役割を果たしますが、彼らは**コアプロトコル**の一部ではありません。
 
-This means hosting and running gateways is separate to running a node securing the Arweave network (although are frequently done together).
+これは、ゲートウェイのホスティングと運用がArweaveネットワークを保護するノードの運用とは別であることを意味します（ただし、これらはしばしば一緒に行われます）。
 
-As gateways are not part of the core protocol, there is no built-in incentive structure like the rewards or incentives for mining. This allows gateway operators or external services to choose how they want to structure their incentive system, leading to a more decentralized and democratic model. Individual applications could even operate their own gateway to allow for better caching and performance of their permaweb applications.
+ゲートウェイはコアプロトコルの一部ではないため、マイニングに対する報酬やインセンティブのような組み込みのインセンティブ構造はありません。これにより、ゲートウェイオペレーターや外部サービスは、インセンティブシステムの構築方法を選択できるようになり、より分散化された民主的なモデルが生まれます。個々のアプリケーションは、パーマウェブアプリケーションのキャッシングとパフォーマンスを向上させるために独自のゲートウェイを運営することもできます。
 
-Some popular gateways include [arweave.net](https://arweave.net/) ran by the Arweave team, and others like [arweave.world](https://cookbook.arweave.world/) [arweave.asia](https://cookbook.arweave.asia) [arweave.live](https://arweave.live/), and [g8way.io](https://g8way.io). However, operating gateways is being made easier and more accessible through teams such as [AR.IO](https://ar.io/). 
+人気のあるゲートウェイには、Arweaveチームによって運営されている[arweave.net](https://arweave.net/)や、[arweave.world](https://cookbook.arweave.world/)、[arweave.asia](https://cookbook.arweave.asia)、[arweave.live](https://arweave.live/) 、および[g8way.io](https://g8way.io)などがあります。ただし、[AR.IO](https://ar.io/)のようなチームによって、ゲートウェイの運用はより簡単でアクセス可能になっています。
 
-### Sources and Further Reading
+### 出典とさらなる読み物
 
 - [ArWiki](https://arwiki.wiki/#/en/gateways)
 - [AR.IO](https://ar.io/)
