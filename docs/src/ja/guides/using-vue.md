@@ -1,12 +1,12 @@
 ---
 locale: ja
 ---
-# Using Vue in Markdown
+# VueをMarkdownで使用する
 
-## Browser API Access Restrictions
+## ブラウザAPIアクセス制限
 
-Because VuePress applications are server-rendered in Node.js when generating static builds, any Vue usage must conform to the [universal code requirements](https://ssr.vuejs.org/en/universal.html). In short, make sure to only access Browser / DOM APIs in `beforeMount` or `mounted` hooks.
+VuePressアプリケーションは、静的ビルドを生成する際にNode.jsでサーバー側レンダリングされるため、Vueの使用は[ユニバーサルコード要件](https://ssr.vuejs.org/en/universal.html)に準拠する必要があります。簡単に言うと、Browser / DOM APIには`beforeMount`または`mounted`フック内でのみアクセスするようにしてください。
 
-If you are using or demoing components that are not SSR friendly (for example containing custom directives), you can wrap them inside the built-in `<ClientOnly>` component:
+SSRに適していないコンポーネント（カスタムディレクティブを含むなど）を使用したりデモしたりする場合は、それらを組み込みの`<ClientOnly>`コンポーネントでラップすることができます：
 
 ##
