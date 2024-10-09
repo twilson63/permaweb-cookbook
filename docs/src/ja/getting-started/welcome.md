@@ -1,21 +1,21 @@
 ---
 locale: ja
 ---
-# Developing on the Permaweb
+# パーマウェブでの開発
 
-## Welcome to the Permaweb
+## パーマウェブへようこそ
 
-Creating applications on the permaweb, which is built on the Arweave protocol, is similar to building traditional web applications but with some key differences.
+Arweaveプロトコルに基づいて構築されたパーマウェブ上でアプリケーションを作成することは、従来のウェブアプリケーションを構築するのと似ていますが、いくつかの重要な違いがあります。
 
-One major difference is that data is stored on the permaweb permanently, as the name suggests, rather than on a centralized server. This means that once data is uploaded to the permaweb, it cannot be deleted or altered. This can be beneficial for applications that require tamper-proof data storage, such as supply chain management or voting systems.
+一つの大きな違いは、データがパーマウェブ上に永久に保存されることです。名前が示すように、これは集中型サーバーではなく、データが一度パーマウェブにアップロードされると、削除や変更ができないことを意味します。これは、サプライチェーン管理や投票システムなど、改ざん防止のデータ保存が必要なアプリケーションにとって有益です。
 
-Another difference is that the permaweb is decentralized, meaning there is no central point of control or failure. This can provide increased security and reliability for applications.
+もう一つの違いは、パーマウェブが分散型であることです。つまり、中央集権的な管理ポイントや障害点が存在しません。これにより、アプリケーションのセキュリティと信頼性が向上します。
 
-Additionally, the permaweb uses a unique token, called AR, to pay for the storage of data on the network. This can add a new layer of complexity to application development, as developers need to consider how to integrate AR into their applications and handle payments.
+さらに、パーマウェブでは、データのストレージに対して支払うためにARと呼ばれるユニークなトークンを使用しています。これにより、開発者はアプリケーションにARを統合し、支払いを処理する方法を考慮する必要があるため、アプリケーション開発に新たな複雑さが加わる可能性があります。
 
-Overall, the experience of creating applications on the permaweb can be challenging, but it can also be rewarding as it offers unique benefits over traditional web development.
+全体として、パーマウェブ上でのアプリケーション作成の経験は挑戦的かもしれませんが、従来のウェブ開発に比べてユニークな利点を提供するため、やりがいもあります。
 
-## Hello Worlds
+## ハローワールド
 
-* [Hello World (No Code)](./quick-starts/hw-no-code.md)
+* [Hello World (ノーコード)](./quick-starts/hw-no-code.md)
 * [Hello World (CLI)](./quick-starts/hw-cli.md)

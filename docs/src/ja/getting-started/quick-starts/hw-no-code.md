@@ -1,28 +1,28 @@
 ---
 locale: ja
 ---
-# Hello World (No Code)
+# Hello World (ノーコード)
 
-In this quick start we are going to upload an image to the permaweb with no code!
+このクイックスタートでは、ノーコードで画像をパーマウェブにアップロードします！
 
-## Requirements
+## 要件
 
-* Computer
-* Internet
-* Modern web browser
+* コンピュータ
+* インターネット
+* モダンウェブブラウザ
 
-## Create a wallet
+## ウォレットを作成
 
-[https://arweave.app/add](https://arweave.app/add) or [https://arconnect.io](https://arconnect.io)
+[https://arweave.app/add](https://arweave.app/add) または [https://arconnect.io](https://arconnect.io)
 
-## Send some data to arweave
+## データをArweaveに送信
 
-Go to [https://hello_cookbook.arweave.dev](https://hello_cookbook.arweave.dev)
+[https://hello_cookbook.arweave.dev](https://hello_cookbook.arweave.dev)にアクセスします。
 
-Enter some data and click publish, connect your wallet and "BAM"
+データを入力し、公開をクリックし、ウォレットを接続すると「バン！」です。
 
-## Congrats!!
+## おめでとうございます！！
 
-You just published some data on Arweave using zero code.
+あなたはゼロコードでArweaveにデータを公開しました。
 
-> To check out the project -> https://github.com/twilson63/pw-no-code-hello
+> プロジェクトをチェックアウトするには -> https://github.com/twilson63/pw-no-code-hello
