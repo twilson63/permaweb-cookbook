@@ -3,11 +3,11 @@ locale: ja
 ---
 # Execution Machine SDK
 
-The JavaScript SDK enables the usage of Execution Machine (EXM) in JavaScript and TypeScript applications. To use the SDK the following setup steps are needed.
+JavaScript SDKは、JavaScriptおよびTypeScriptアプリケーションでExecution Machine（EXM）を使用するためのものです。SDKを使用するには、以下のセットアップ手順が必要です。
 
-## Install
+## インストール
 
-To install EXM in your project you can use `npm` or `yarn`.
+プロジェクトにEXMをインストールするには、`npm`または`yarn`を使用できます。
 
 <CodeGroup>
   <CodeGroupItem title="npm">
@@ -26,9 +26,9 @@ yarn add @execution-machine/sdk
   </CodeGroupItem>
 </CodeGroup>
 
-## Import
+## インポート
 
-When using EXM with your project the package must be imported as follows.
+EXMをプロジェクトで使用する場合、パッケージは次のようにインポートする必要があります。
 
 <CodeGroup>
   <CodeGroupItem title="JavaScript">
@@ -39,9 +39,9 @@ import { Exm } from '@execution-machine/sdk';
   </CodeGroupItem>
 </CodeGroup>
 
-## Creating an instance
+## インスタンスの作成
 
-To interact with EXM after installation and importing, an instance must be created.
+インストールとインポートの後、EXMと対話するにはインスタンスを作成する必要があります。
 
 <CodeGroup>
   <CodeGroupItem title="JavaScript">
@@ -52,6 +52,6 @@ const exmInstance = new Exm({ token: 'MY_EXM_TOKEN' });
   </CodeGroupItem>
 </CodeGroup>
 
-## Summary
+## サマリー
 
-The following guides will show how to deploy serverless functions using the EXM JS SDK, and how to interact with them.
+以下のガイドでは、EXM JS SDKを使用してサーバーレス関数をデプロイする方法と、それらとのインタラクション方法を示します。

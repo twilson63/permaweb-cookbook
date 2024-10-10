@@ -1,13 +1,13 @@
 ---
 locale: ja
 ---
-# Read from Serverless Functions with Execution Machine SDK
+# Execution Machine SDKを使用したサーバーレス関数の読み取り
 
-There are two ways of reading state from an EXM serverless functions. As explained in the [introduction](../intro.md#serverless-functions-on-arweave), EXM stores a copy of the function on a cache layer for rapidly serving applications but also uploads the function on Arweave to maintain decentralisation and its associated benefits. As a result of this, the function state can be read either from EXM's cache layer or directly from Arweave.
+EXMサーバーレス関数から状態を読み取る方法は2つあります。[はじめに](../intro.md#serverless-functions-on-arweave)で説明したように、EXMは関数のコピーをキャッシュ層に保存してアプリケーションを迅速に提供しますが、同時にその関数をArweaveにアップロードして分散化とその関連する利点を維持しています。この結果、関数の状態はEXMのキャッシュ層またはArweaveから直接読み取ることができます。
 
-1. Reading from EXM's cache layer:
+1. EXMのキャッシュ層からの読み取り:
 
-The read call reads the latest state as stored on EXM's cached layer. This layer is specifically designed for rapily serving applications. It takes an optimistic approach and updates the function state immediately upoon receiving a transaction request.
+   読み取り呼び出しは、EXMのキャッシュ層に保存された最新の状態を読み取ります。この層は、アプリケーションを迅速に提供するために特別に設計されています。楽観的アプローチを取り、トランザクションリクエストを受け取るとすぐに関数の状態を更新します。
 
 <CodeGroup>
   <CodeGroupItem title="read.js">
@@ -27,9 +27,9 @@ console.log(readResult);
   </CodeGroupItem>
 </CodeGroup>
 
-2. Reading directly from Arweave (Evaluate):
+2. Arweaveからの直接読み取り（評価）:
 
-The evaluate call returns the latest state as successfully processed on Arweave. This latest state is calculated by [lazy evaluation](../intro.md#how-does-it-work-in-the-background), which evaluates the initial state and the interactions with the function in order of ocurrence to arrive at the latest state.
+   評価呼び出しは、Arweaveで正常に処理された最新の状態を返します。この最新の状態は、[遅延評価](../intro.md#how-does-it-work-in-the-background)によって計算され、初期状態と関数との相互作用を発生順に評価して最新の状態に到達します。
 
 <CodeGroup>
   <CodeGroupItem title="evaluate.js">
@@ -50,6 +50,6 @@ console.log(evalResult);
 </CodeGroup>
 
 ::: tip
-Reading from Arweave is recommended for verification purposes only. The function state returned from the evaluate call can be checked against the information returned by the cache layer to ensure its authenticity. There may be a slight lag in posting the transaction request and it updating on the network.
+Arweaveからの読み取りは、検証目的のみに推奨されます。評価呼び出しから返された関数の状態は、キャッシュ層から返された情報と照合してその真正性を確認できます。トランザクションリクエストの投稿とネットワーク上での更新にはわずかな遅延がある場合があります。
 :::
 
