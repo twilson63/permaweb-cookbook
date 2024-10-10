@@ -1,17 +1,17 @@
 ---
 locale: ja
 ---
-# Posting Transactions using Akord
+# Akordを使用したトランザクションの投稿
 
-Posting transactions to Arweave can be done directly via Akord API, no new dependencies in your code, just a simple HTTP.
+Akord APIを介してArweaveにトランザクションを直接投稿できます。新しい依存関係をコードに追加することなく、シンプルなHTTPで済みます。
 
-## Getting Started
+## はじめに
 
-You just need two things to get started:
+始めるには、以下の2つが必要です：
 
-- [Create your Akord account (100 MB free)](https://v2.akord.com/signup)
+- [Akordアカウントを作成（100MB無料）](https://v2.akord.com/signup)
 
-- [Get your API key here](https://v2.akord.com/account/developers)
+- [こちらでAPIキーを取得](https://v2.akord.com/account/developers)
 
 ## HTTP API
 
@@ -50,7 +50,7 @@ const body = await response.json();
 console.log(body);
 ```
 
-That's it! You just uploaded the file to Arweave. Here is the example response body:
+これで完了です！ファイルをArweaveにアップロードしました。以下は、レスポンスボディの例です：
 
 ```json
 {
@@ -100,8 +100,8 @@ That's it! You just uploaded the file to Arweave. Here is the example response b
 }
 ```
 
-## Resources
-- For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/post-transactions.md) section of the cookbook.
-- More examples of how to upload files to Arweave with Akord API can be found [here](https://docs.akord.com/api-and-dev-tools/quickest-way-to-upload-to-arweave).
-- Full documentation of Akord API can be found [here](https://api.akord.com/docs).
-- More about bundles [ANS-104 Standard](https://specs.g8way.io/#/view/xwOgX-MmqN5_-Ny_zNu2A8o-PnTGsoRb_3FrtiMAkuw)
+## リソース
+- トランザクションを投稿する方法の概要は、[Posting Transactions](../../concepts/post-transactions.md)セクションを参照してください。
+- Akord APIを使用してArweaveにファイルをアップロードする方法のさらなる例は、[こちら](https://docs.akord.com/api-and-dev-tools/quickest-way-to-upload-to-arweave)で見つけられます。
+- Akord APIの完全なドキュメントは、[こちら](https://api.akord.com/docs)で確認できます。
+- バンドルに関する詳細は、[ANS-104 Standard](https://specs.g8way.io/#/view/xwOgX-MmqN5_-Ny_zNu2A8o-PnTGsoRb_3FrtiMAkuw)をご覧ください。

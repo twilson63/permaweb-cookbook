@@ -1,44 +1,44 @@
 ---
 locale: ja
 ---
-# Search Indexing Service
+# 検索インデックスサービス
 
 tl;dr
 
-- Backwards compatible syntax with Arweave GraphQL
-- Faster response times for complex queries (ie multi-tag search)
-- More query options
+- Arweave GraphQLとの後方互換性のある構文
+- 複雑なクエリ（例えばマルチタグ検索）のためのより高速な応答時間
+- 追加のクエリオプション
 ---
 
-[Goldsky](https://goldsky.com)'s free search service uses an optimized backend that allows for faster searches for complex queries across arweave blocks and transactions, and also introduces additional querying syntax for fuzzy and wildcard search use-cases. 
+[Goldsky](https://goldsky.com)の無料検索サービスは、Arweaveのブロックとトランザクションを横断して複雑なクエリをより迅速に検索できる最適化されたバックエンドを利用しており、あいまい検索やワイルドカード検索のユースケースに役立つ追加のクエリ構文も導入しています。
 
-The Search GraphQL syntax is a superset of the [Arweave GraphQL syntax](./queryingArweave.md). It's fully backwards compatible and will return the same results for the same queries, but has some additional modifiers that can be useful. 
+検索GraphQL構文は、[Arweave GraphQL構文](./queryingArweave.md)のスーパーセットです。完全に後方互換性があり、同じクエリに対して同じ結果を返しますが、便利な追加の修飾子があります。
 
-- Flexible tag filters
-  - Search for just a tag name or value
-- Advanced tag filters
-  - Fuzzy search
-  - Wildcard search
-- Filter for L1 transactions only
-- Result set total counts
+- 柔軟なタグフィルター
+  - タグ名または値だけを検索
+- 高度なタグフィルター
+  - あいまい検索
+  - ワイルドカード検索
+- L1トランザクションのみをフィルタリング
+- 結果セットの総カウント
 
-For any custom needs or feature ideas, feel free to contact the Goldsky team through email or on discord! 
+カスタムニーズや機能アイデアがある場合は、GoldskyチームにメールまたはDiscordでお気軽にお問い合わせください！ 
 
 
-## Search Gateway Endpoints
+## 検索ゲートウェイエンドポイント
 
-Currently, the only service with this syntax is hosted Goldsky. If anybody is interested in hosting their own gateway with the same syntax, feel free to contact the [Goldsky](https://goldsky.com) for help.
+現在、この構文を持つ唯一のサービスはGoldskyがホストしています。誰かが同じ構文で独自のゲートウェイをホストしたい場合は、[Goldsky](https://goldsky.com)にお問い合わせください。
 
-- [Goldsky Search Service](https://arweave-search.goldsky.com/graphql)
+- [Goldsky検索サービス](https://arweave-search.goldsky.com/graphql)
 
-## Features
+## 機能
 
-### Flexible Tag Filters
+### 柔軟なタグフィルター
 
-The Search Gateway Syntax is less strict, and allows for searching just for the Tag name or value
+検索ゲートウェイ構文はそれほど厳密ではなく、タグ名または値だけを検索できます。
 
-#### Examples
-Search for transactions with the tag value 'cat'
+#### 例
+タグ値が「cat」のトランザクションを検索
 
 ```graphql:no-line-numbers
 query just_values {
@@ -130,11 +130,11 @@ Searching all transactions with an image content type using a wildcard
 }
 ```
 
-### Fuzzy Search
+### あいまい検索
 
-Fuzzy search is very powerful, and can search for 'similar' text with many variations. 
+あいまい検索は非常に強力で、多くのバリエーションを持つ「類似」テキストを検索できます。 
 
-Searching all transactions with 'cat' OR 'dog' (or CAT or doG or cAts or CAAts etcs). So the tag could contain at least of cat-like or dog-like term.
+「cat」または「dog」（またはCAT、doG、cAts、CAAtsなど）を持つすべてのトランザクションを検索します。タグには少なくともcatに似たまたはdogに似た用語が含まれている可能性があります。
 
 ```graphql:no-line-numbers
 {
@@ -160,7 +160,7 @@ Searching all transactions with 'cat' OR 'dog' (or CAT or doG or cAts or CAAts e
 }
 ```
 
-Search for transactions that have cat-like AND dog-like tag values
+catに似たおよびdogに似たタグ値を持つトランザクションを検索します
 ```graphql:no-line-numbers
 {
     transactions(        
@@ -213,9 +213,9 @@ query just_l1 {
 ```
 
 
-### Getting total counts given a query
+### クエリに基づく総カウントを取得する
 
-If you'd like to understand how many transactions fit a certain set of filters, just use the `count` field. This will trigger an additional optimized count operation. This will likely double the time it would take to return the query, so use only when needed. 
+特定のフィルタセットに合致するトランザクションがいくつあるかを理解したい場合は、`count`フィールドを使用します。これにより、追加の最適化されたカウント操作がトリガーされます。クエリを返すのにかかる時間がほぼ倍増するため、必要なときだけ使用してください。 
 
 ```graphql:no-line-numbers
 query count_mirror {

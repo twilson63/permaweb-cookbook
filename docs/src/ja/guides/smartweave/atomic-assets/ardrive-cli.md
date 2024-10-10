@@ -1,13 +1,15 @@
 ---
 locale: ja
 ---
-# Deploy and Register Atomic Assets using ArDrive CLI
+# ArDrive CLIを使用してアトミックアセットをデプロイおよび登録する
 
-Atomic Assets need to be registered to be capable of being traded on the Permaweb. You can upload your assets using services like `ardrive-cli` and give the asset the proper data tags, then use this cli to register the asset.
+アトミックアセットは、Permawebで取引可能にするために登録する必要があります。`ardrive-cli`のようなサービスを使用してアセットをアップロードし、適切なデータタグを付与した後、このCLIを使用してアセットを登録できます。
 
-## Guide to publish an atomic asset using ArDrive-cli and `asset-registar` cli.
+## ArDrive-cliと`asset-register` CLIを使用してアトミックアセットを公開するためのガイド
 
-### Setup
+### セットアップ
+
+
 
 > Requires NodeJS - https://nodejs.org and jq - https://jqlang.github.io/jq/download/
 
@@ -16,9 +18,9 @@ npm i -g ardrive-cli
 npm i -g asset-registar
 ```
 
-### Create Atomic Assets Tags
+### アトミックアセットタグの作成
 
-Using a text editor, we want to create a new file called `data.json` and in this new file add the following:
+テキストエディタを使用して、新しいファイル`data.json`を作成し、この新しいファイルに以下を追加します。
 
 ```json
 {
@@ -36,42 +38,40 @@ Using a text editor, we want to create a new file called `data.json` and in this
 }
 ```
 
-Now that you have your tags initialized you need to take every uppercase word and replace it with the values that are unique to your asset.
+タグが初期化されたら、すべての大文字の単語を、アセットに固有の値に置き換える必要があります。
 
 ASSET_TYPE_HERE:
 
-This should be a one word description of your asset, "image", "audio", "video". etc.
+これはアセットの一語の説明で、「image」、「audio」、「video」などです。
 
 TITLE_HERE:
 
-A title that describes your asset, it should not be longer than 150 characters.
+アセットを説明するタイトルで、150文字を超えてはいけません。
 
 DESCRIPTION_HERE:
 
-A description that you want to show up in search results or list results for your asset.
+検索結果やアセットのリスト結果に表示したい説明です。
 
 ASSET_NAME_HERE:
 
-The name of your asset, in one word or connected with dashes ex. "AA-ALIEN-WITH-BEER".
+アセットの名前で、一単語またはダッシュでつなげて書きます（例："AA-ALIEN-WITH-BEER"）。
 
 YOUR_WALLET_ADDRESS:
 
-The wallet address you want to give ownership too.
+所有権を与えたいウォレットアドレスです。
 
 UNITS_HERE:
 
-The number of fractional units you want to provide for this asset, if there can only be one owner then the replace with 1, if you want 100 owners replace with 100.
+このアセットに対して提供したい部分単位の数で、唯一の所有者であれば1に、100人の所有者を望む場合は100に置き換えます。
 
-save the file as `data.json`
+ファイルを`data.json`として保存します。
 
-### Copy the asset you want to publish to this directory.
-
+### 公開するアセットをこのディレクトリにコピーします。
 ---
 
-### Uploading with new arweave wallet.
+### 新しいArweaveウォレットを使ったアップロード
 
-Create a wallet or copy your wallet.json here.
-
+ウォレットを作成するか、ここにwallet.jsonをコピーしてください。
 ```sh
 ardrive generate-seedphrase
 # copy the seed phrase that is in the output and include in the next command where the `...` are.
@@ -91,14 +91,13 @@ export ASSET=$(ardrive upload-file -w ./wallet.json -F ${FOLDER} --metadata-file
 > NOTE: if your file is larger than 500k, you will need to add credits to your ardrive wallet, you can do this by going to https://ardrive.io and logging in with your wallet file.
 
 
-### Register asset
+### アセットの登録
 
-Once the asset is uploaded with the Atomic Asset Tags, now all you have to do is call `asset-register <assetId>`
+アセットがアトミックアセットタグでアップロードされたら、`asset-register <assetId>`と呼び出すだけです。
 
 ```sh
 asset-registar ${ASSET}
 ```
+### おめでとうございます！
 
-### CONGRATS! 
-
-You should be able to find your asset on ar://bazar by typing in the contractId in the search bar.
+検索バーにcontractIdを入力することで、ar://bazarでアセットを見つけることができるはずです。

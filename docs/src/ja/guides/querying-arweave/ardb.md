@@ -2,7 +2,7 @@
 locale: ja
 ---
 # ArDB
-A library built on top of GraphQL that makes it possible to query transaction and block data from arweave without having to memorize GraphQL parameter names. Just build queries using autocomplete in your favorite code editor.
+GraphQLの上に構築されたライブラリで、GraphQLのパラメータ名を暗記することなく、Arweaveからトランザクションおよびブロックデータをクエリすることができます。お気に入りのコードエディタでオートコンプリートを使用してクエリを構築するだけです。
 
 ## Installation
 ```console:no-line-numbers
@@ -51,5 +51,5 @@ const txs = await ardb.search('blocks')
 
 ```
 
-## Resources
-* [ArDB NPM package](https://www.npmjs.com/package/ardb)
+## リソース
+* [ArDB NPMパッケージ](https://www.npmjs.com/package/ardb)

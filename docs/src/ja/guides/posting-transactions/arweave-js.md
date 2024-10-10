@@ -1,17 +1,18 @@
 ---
 locale: ja
 ---
-# Posting Transactions using arweave-js
+# arweave-jsを使用したトランザクションの投稿
 
-Arweave native transactions can be posted directly to a node or gateway using the `arweave-js` package.
+Arweaveのネイティブトランザクションは、`arweave-js`パッケージを使用してノードまたはゲートウェイに直接投稿できます。
 
 ::: info
-Arweave scales though the use of transaction bundles. These bundles make it possible for each block to contain a nearly unlimited number of transactions. Without the use of bundles, Arweave blocks are limited 1000 transactions per block (with new blocks produced every ~2 minutes). If your use case exceeds this capacity you may experience dropped transactions. Under these circumstances please consider using [irys.xyz](./irys.md) or similar services to bundle your transactions.
+Arweaveはトランザクションバンドルを使用することでスケールします。これにより、各ブロックにほぼ無制限のトランザクションを含めることが可能になります。バンドルを使用しない場合、Arweaveブロックは1ブロックあたり最大1000トランザクションに制限されます（新しいブロックは約2分ごとに生成されます）。あなたのユースケースがこの容量を超える場合、トランザクションがドロップされることがあります。このような場合は、[irys.xyz](./irys.md)や類似のサービスを使用してトランザクションをバンドルすることを検討してください。
 :::
 
-## Installing the arweave-js Package
+## arweave-jsパッケージのインストール
 
-To install `arweave-js` run
+`arweave-js`をインストールするには、次のコマンドを実行します。
+
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -29,13 +30,15 @@ yarn add arweave
   </CodeGroupItem>
 </CodeGroup>
 
+
+
 ::: info
-When working with NodeJS a minimum version of NodeJS 18 or higher is required.
+NodeJSを使用する場合、NodeJSの最小バージョンは18以上が必要です。
 :::
 
-## Initializing arweave-js
+## arweave-jsの初期化
 
-Direct Layer 1 transactions are posted using the `arweave-js` library.
+Layer 1トランザクションは、`arweave-js`ライブラリを使用して投稿されます。
 
 ```js:no-line-numbers
 import Arweave from 'arweave';
@@ -48,9 +51,9 @@ let key = JSON.parse(fs.readFileSync("walletFile.txt").toString());
 const arweave = Arweave.init({});
 ```
 
-## Posting a wallet-to-wallet Transaction
+## ウォレット間トランザクションの投稿
 
-A basic transaction to move AR tokens from one wallet address to another.
+ARトークンを1つのウォレットアドレスから別のウォレットアドレスに移動する基本的なトランザクション。
 
 ```js:no-line-numbers
 //  create a wallet-to-wallet transaction sending 10.5AR to the target address
@@ -66,9 +69,9 @@ await arweave.transactions.sign(transaction, key);
 const response = await arweave.transactions.post(transaction);
 ```
 
-## Posting a Data Transaction
+## データトランザクションの投稿
 
-This example illustrates how load a file from disk and create a transaction to store its data on the network. You can find the current price the network is charging at [https://ar-fees.arweave.dev](https://ar-fees.arweave.dev)
+この例では、ディスクからファイルを読み込み、そのデータをネットワークに保存するためのトランザクションを作成する方法を示します。ネットワークが請求している現在の価格は、[https://ar-fees.arweave.dev](https://ar-fees.arweave.dev)で確認できます。
 
 ```js:no-line-numbers
 // load the data from disk
@@ -94,8 +97,8 @@ while (!uploader.isComplete) {
 }
 ```
 
-## Resources
+## リソース
 
--   For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/post-transactions.md) section of the cookbook.
+-   トランザクションを投稿するためのすべての方法の概要については、操作マニュアルの[Posting Transactions](../../concepts/post-transactions.md)セクションを参照してください。
 
--   For a more detailed description of all `arweave-js`'s features see the documentation [on github](https://github.com/ArweaveTeam/arweave-js)
+-   `arweave-js`のすべての機能の詳細な説明については、[GitHubのドキュメント](https://github.com/ArweaveTeam/arweave-js)をご覧ください。

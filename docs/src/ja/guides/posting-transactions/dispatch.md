@@ -1,10 +1,16 @@
 ---
 locale: ja
 ---
-# Posting a Transaction using Dispatch
-Arweave Browser wallets have the concept of dispatching transactions. If the transaction is under 100KB in size it can be posted for free!
-## Dispatching a Transaction
-This can be done without any package dependencies for the client app. As long as the user has a browser wallet active and the data is less than 100KB, dispatched transactions are free and guaranteed to be confirmed on the network.
+# Dispatchを使用したトランザクションの投稿
+
+Arweaveのブラウザウォレットには、トランザクションをディスパッチするという概念があります。トランザクションが100KB未満の場合、無料で投稿できます！
+
+## トランザクションのディスパッチ
+
+クライアントアプリに依存するパッケージは必要ありません。ユーザーがブラウザウォレットをアクティブにしており、データが100KB未満であれば、ディスパッチされたトランザクションは無料で、ネットワーク上での確認が保証されます。
+
+
+
 
 ```js:no-line-numbers
 // use arweave-js to create a transaction
@@ -23,5 +29,5 @@ let result = await window.arweaveWallet.dispatch(tx);
 console.log(result.id);
 ```
 
-## Resources
-* For an overview of all the ways you can post transactions, see the [Posting Transactions](../../concepts/post-transactions.md) section of the cookbook.
+## リソース
+* トランザクションを投稿するためのすべての方法の概要については、操作マニュアルの[Posting Transactions](../../concepts/post-transactions.md)セクションを参照してください。
