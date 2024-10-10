@@ -1,29 +1,29 @@
 ---
 locale: ja
 ---
-# ServerSide DNS Integration
+# サーバーサイドDNS統合
 
-So you have a permaweb application and it is on the permaweb, but you also have a specific domain that you want users to use to access this app. mydomain.com, to connect your domain to a permaweb app, you have several options, this option we will show here is a called a server-side redirect. The redirect occurs as a reverse proxy so that the user remains on mydomain.com in their browser, while behind the scenes the application is being served from the permaweb.
+あなたのパーマウェブアプリケーションはパーマウェブ上にありますが、ユーザーがこのアプリにアクセスするために使用したい特定のドメイン（mydomain.com）を持っています。このドメインをパーマウェブアプリに接続するためのオプションはいくつかありますが、ここで示すオプションはサーバーサイドリダイレクトと呼ばれます。リダイレクトはリバースプロキシとして行われ、ユーザーはブラウザでmydomain.comのままで、背後ではアプリケーションがパーマウェブから提供されています。
 
 ::: tip
-You can use any reverse proxy to setup a server-side redirect, in this guide we will be using deno and deno.com a lightweight edge hosting service.
+任意のリバースプロキシを使用してサーバーサイドリダイレクトを設定できます。このガイドでは、軽量のエッジホスティングサービスであるdenoとdeno.comを使用します。
 :::
 
-## What you will need to setup a reverse proxy using deno.com
+## deno.comを使用したリバースプロキシの設定に必要なもの
 
-* A deno.com account, which at the time of this writting is free.
-* A domain with access to the DNS Settings
-* A permaweb application identifier and is deployed on the permaweb
+* Deno.comアカウント（この時点では無料です）。
+* DNS設定にアクセスできるドメイン。
+* パーマウェブにデプロイされたパーマウェブアプリケーションの識別子。
 
-## Create proxy on Deno.com
+## Deno.comでプロキシを作成する
 
-Deno Deploy is a distributed system that runs at the edge. 35 regions worldwide. Open your browser to [https://deno.com](https://deno.com) and click sign in or sign up if you do not have an account. 
+Deno Deployは、エッジで動作する分散システムです。世界中に35の地域があります。ブラウザを開いて[https://deno.com](https://deno.com)にアクセスし、サインインするか、アカウントを持っていない場合はサインアップします。
 
-Click on `New Project` and Click `Play`
+`New Project`をクリックし、`Play`をクリックします。
 
-The deno playground will allow us to create a proxy without having to leave the browser.
+Denoプレイグラウンドでは、ブラウザを離れることなくプロキシを作成できます。
 
-Copy the following code:
+以下のコードをコピーしてください：
 
 ```ts
 import { serve } from "https://deno.land/std/http/mod.ts";
@@ -53,31 +53,28 @@ async function reqHandler(req: Request) {
 serve(reqHandler, { port: 8100 });
 ```
 
-This proxy server will receive requests from mydomain.com and proxy the request to arweave.net/APP_ID and then return the response as mydomain.com. Your APP_ID is the TX_ID identifier for you permaweb application.
+このプロキシサーバーは、mydomain.comからのリクエストを受信し、そのリクエストをarweave.net/APP_IDにプロキシし、レスポンスをmydomain.comとして返します。あなたのAPP_IDは、パーマウェブアプリケーションのTX_ID識別子です。
 
-Click `Save and Deploy`
+`Save and Deploy`をクリックします。
 
-## Connecting to DNS
+## DNSへの接続
 
-In Project Settings go to the domains section and click to add a domain.
+プロジェクト設定でドメインセクションに移動し、ドメインを追加するためのクリックします。
 
-Enter `mydomain.com` domain and follow the instructions to modify your DNS settings to point to the deno deploy edge network.
+`mydomain.com`ドメインを入力し、DNS設定を変更してdeno deployエッジネットワークを指すようにする手順に従います。
 
-It may take a few minutes to resolve to the dns, but once resolved your app will now be rendering from mydomain.com.
+DNSが解決されるまで数分かかることがありますが、一旦解決されれば、アプリはmydomain.comからレンダリングされます。
 
-:tada: Congrats you have published a server-side redirect to your permaweb application.
+:tada: おめでとうございます！あなたのパーマウェブアプリケーションへのサーバーサイドリダイレクトを公開しました。
 
 ::: warning
-Note that any changes to your application will generate a new TX_ID and you will need to modify that TX_ID to publish the new changes to your domain.
+アプリケーションの変更は新しいTX_IDを生成し、そのTX_IDを変更して新しい変更をドメインに公開する必要があることに注意してください。
 :::
 
-## Automating the Deploy
+## デプロイの自動化
 
-If you would like to automate new deploys of your permaweb app, look into github actions and using the deno deploy github action: [https://github.com/denoland/deployctl/blob/main/action/README.md](https://github.com/denoland/deployctl/blob/main/action/README.md)
+パーマウェブアプリの新しいデプロイを自動化したい場合は、GitHub Actionsとdeno deploy GitHub Actionの使用を検討してください: [https://github.com/denoland/deployctl/blob/main/action/README.md](https://github.com/denoland/deployctl/blob/main/action/README.md)
 
+## まとめ
 
-## Summary
-
-Server Side redirects are great for providing your users a Domain Name System URL to access your permaweb application. We hope you found this guide useful in your permaweb development journey!
-
-
+サーバーサイドリダイレクトは、ユーザーにドメイン名システムのURLを提供してパーマウェブアプリケーションにアクセスさせるのに優れています。このガイドがあなたのパーマウェブ開発の旅に役立つことを願っています！
