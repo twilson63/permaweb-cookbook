@@ -5,11 +5,11 @@ locale: ja
 
 > **⚠️ Deprecation Notice**
 >
-> This document is deprecated and may contain outdated information.
+> この文書は廃止予定であり、古い情報が含まれている可能性があります。
 
-To call a function on a SmartWeave contract, you can create a transaction known as a SmartWeave action. This action includes the function name and the necessary input parameters for the function on the SmartWeave contract. You can create a SmartWeave action using the contract.writeInteraction function.
+SmartWeaveコントラクト上の関数を呼び出すには、SmartWeaveアクションとして知られるトランザクションを作成します。このアクションには、関数名とSmartWeaveコントラクトの関数に必要な入力パラメータが含まれます。コントラクトのwriteInteraction関数を使用してSmartWeaveアクションを作成できます。
 
-## Code
+## コード
 
 ```ts
 import { WarpFactory } from 'warp-contracts'
@@ -29,15 +29,16 @@ async function doStamp() {
 }
 ```
 
-When calling writeInteraction, you need to pass your input parameters, these are the parameters the contract is expecting to receive.
+writeInteractionを呼び出す際には、コントラクトが受け取ることを期待している入力パラメータを渡す必要があります。
 
 ::: warning
-Since SmartWeave contracts are evaluated in a lazy flow, you do not know if your interaction ran successfully until you evaluate the contract to the current state. Use [Warp readState](./readstate.md) to access the contract and determine if the interaction was applied successfully.
+SmartWeaveコントラクトは遅延フローで評価されるため、あなたのインタラクションが成功したかどうかは、コントラクトを現在の状態に評価するまで分かりません。[Warp readState](./readstate.md)を使用してコントラクトにアクセスし、インタラクションが成功したかどうかを確認してください。
 :::
 
-## Dry Write
+## ドライ書き込み
 
-`DryWrite` allows you to test and verify an interaction on the current state without actually executing it on the permaweb. This feature allows you to simulate the interaction locally and ensure that it will be successful before applying it.
+`DryWrite`は、実際にpermaweb上で実行せずに、現在の状態でインタラクションをテストして検証できる機能です。この機能を使用すると、ローカルでインタラクションをシミュレートし、それが成功するかどうかを確認してから適用できます。
+
 
 ```ts
 import { WarpFactory } from 'warp-contracts'
@@ -58,12 +59,12 @@ async function doStamp() {
 ```
 
 ::: warning
-One thing to note when using dry writes, is that the entire state needs to be evaluated locally for contacts that use readState or internalWrites. This can result in a slow performing process.
+ドライ書き込みを使用する際の注意点として、readStateやinternalWritesを使用するコントラクトの場合、全体の状態をローカルで評価する必要があります。これにより、処理が遅くなる可能性があります。
 :::
 
-## Optimized for speed
+## スピード最適化
 
-By default, writeInteractions are submitted to the Warp Sequencer and bundled and posted to Arweave. You can post directly to Arweave by disabling bundling.
+デフォルトでは、writeInteractionsはWarp Sequencerに送信され、バンドルされてArweaveに投稿されます。バンドルを無効にすることで、直接Arweaveに投稿することも可能です。
 
 ```ts
 const result = await contract.writeInteraction({
@@ -72,11 +73,11 @@ const result = await contract.writeInteraction({
 }, { disableBundling: true })
 ```
 
-## Summary
+## まとめ
 
-The SmartWeave Protocol allows for the modification of dynamic data on an immutable, append-only storage system using writeInteractions. These interactions enable trustless and permissionless communication with SmartWeave contracts. The Warp SDK provides developers with a user-friendly API for interacting with the SmartWeave Protocol and its writeInteractions feature.
+SmartWeaveプロトコルは、immutableでappend-onlyのストレージシステム上の動的データを変更することを可能にし、writeInteractionsを使用してSmartWeaveコントラクトとの信頼のない、許可のないコミュニケーションを可能にします。Warp SDKは、SmartWeaveプロトコルとそのwriteInteractions機能とのインタラクションのためのユーザーフレンドリーなAPIを提供します。
 
-For additional resources:
+追加リソース：
 
 * Warp SDK [https://github.com/warp-contracts/warp](https://github.com/warp-contracts/warp)
 * Warp Docs [https://warp.cc](https://warp.cc)

@@ -5,13 +5,14 @@ locale: ja
 
 > **⚠️ Deprecation Notice**
 >
-> This document is deprecated and may contain outdated information.
+> この文書は廃止予定であり、古い情報が含まれている可能性があります。
 
-Evolve is a feature that allows developers to update the source code of a smart contract without deploying a new contract. To use this feature, you must first submit the new source code using the save function. Once the updated code has been confirmed on the Permaweb, you can use the evolve function to point the contract to the new source code ID. This allows you to update the contract's behavior without creating a new contract instance.
+Evolveは、開発者が新しいコントラクトをデプロイすることなくスマートコントラクトのソースコードを更新できる機能です。この機能を使用するには、まず新しいソースコードをsave関数を使って送信する必要があります。更新されたコードがPermaweb上で確認されたら、evolve関数を使用してコントラクトを新しいソースコードIDにポイントします。これにより、新しいコントラクトインスタンスを作成することなく、コントラクトの動作を更新できます。
 
-## Why?
+## なぜ？
 
-Writing SmartWeave contracts can be difficult and sometimes requires updates or new features to be added over time. Evolve allows you to make changes to your contract without having to create a new contract instance from scratch. To use this feature, your contract state object must include an evolve property that is set to the new contract source transaction identifier. This enables you to modify and improve your existing contract without starting from scratch.
+SmartWeaveコントラクトを書くのは難しく、時間の経過とともに更新や新機能を追加する必要がある場合があります。Evolveを使用することで、新しいコントラクトインスタンスをゼロから作成することなく、コントラクトに変更を加えることができます。この機能を使用するには、コントラクトの状態オブジェクトに新しいコントラクトソーストランザクション識別子を設定したevolveプロパティを含める必要があります。これにより、ゼロから始めることなく既存のコントラクトを修正および改善できます。
+
 
 ```json
 {
@@ -20,10 +21,9 @@ Writing SmartWeave contracts can be difficult and sometimes requires updates or 
 }
 ```
 
-## Post your new source to the permaweb
+## 新しいソースをPermawebに投稿する
 
-Before you can evolve your existing contract, you need to post the new source code to the permaweb, you can do this with the `save` function.
-
+既存のコントラクトを進化させる前に、新しいソースコードをPermawebに投稿する必要があります。これを`save`関数を使って行います。
 ```ts
 import { WarpFactory } from 'warp-contracts'
 import fs from 'fs'
@@ -41,10 +41,10 @@ async function main() {
 main()
 ```
 
-## Evolve your contract
+## コントラクトを進化させる
 
 ::: warning
-**Verify** your new Source TX_ID is confirmed, go to [Sonar](https://sonar.warp.cc) to make sure the TX_ID is confirmed.
+**確認**してください：新しいSource TX_IDが確認されていることを、[Sonar](https://sonar.warp.cc)でTX_IDが確認されていることを確認してください。
 :::
 
 ```ts
@@ -66,13 +66,12 @@ main()
 ```
 
 ::: tip
-It's worth noting that the evolve feature is only applicable to future actions, meaning you cannot use it to apply new source code to actions that occurred before the contract was evolved.
+進化機能は、将来のアクションにのみ適用されることに注意してください。つまり、コントラクトが進化する前に発生したアクションに新しいソースコードを適用することはできません。
 :::
 
+## まとめ
 
-## Summary
-
-Evolve is a powerful feature and can provide extensibility for your contracts, it can also be an **attack** vector, so make sure you fully understand what you are doing when using it. Below is a common snippet of what an evolve function may look like in your contract.
+Evolveは強力な機能であり、コントラクトの拡張性を提供しますが、**攻撃**ベクトルにもなり得るため、使用する際には自分が何をしているのかを十分に理解していることを確認してください。以下は、コントラクト内でのevolve関数の一般的なスニペットの例です。
 
 ```js
 

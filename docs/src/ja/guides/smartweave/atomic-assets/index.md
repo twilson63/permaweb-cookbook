@@ -3,14 +3,13 @@ locale: ja
 ---
 # Atomic Assets
 
-An atomic asset is a unique package that includes data, labels (also known as tags), and a specific agreement, all under a single, unchangeable identifier. This allows applications and users to access the data, labels, and agreement by using just this one identifier.
+アトミックアセットは、データ、ラベル（タグとも呼ばれる）、および特定の合意を含むユニークなパッケージであり、すべてが単一の変更不可能な識別子の下にあります。これにより、アプリケーションやユーザーは、この識別子を使用してデータ、ラベル、および合意にアクセスできます。
 
-To enable trading of the Atomic Asset, we must connect it to something called a SmartWeave Token. This connection transforms the asset into what's known as an Atomic Token and allows it to be exchanged or traded.
+アトミックアセットの取引を可能にするためには、スマートウィーブトークンというものに接続する必要があります。この接続により、アセットはアトミックトークンと呼ばれるものに変わり、交換または取引できるようになります。
 
-The SmartWeave Token has a special feature called a balances object that keeps track of who owns the tokens related to that particular asset. This ensures that ownership and trades are recorded and managed accurately.
+スマートウィーブトークンには、特定のアセットに関連するトークンの所有者を追跡するための特別な機能であるバランスオブジェクトがあります。これにより、所有権と取引が正確に記録および管理されることが保証されます。
 
-## Deploying Atomic Assets
+## アトミックアセットのデプロイ
 
-
-* [using Akord](akord.md)
-* [using ArDrive CLI](ardrive-cli)
+* [Akordを使用する](akord.md)
+* [ArDrive CLIを使用する](ardrive-cli)

@@ -1,26 +1,28 @@
 ---
 locale: ja
 ---
-# Creating and Deploying a PST
+# PSTの作成とデプロイ
 
-### **Prerequisites**
-
----
-
-Before you begin creating your PST, you will need **NodeJS/NPM** installed.
-
-### **Getting Started**
+### **前提条件**
 
 ---
 
-SmartWeave contracts can be broken down into two parts:
+PSTを作成する前に、**NodeJS/NPM**をインストールしておく必要があります。
 
-- **The Contract** (the actual logic behind the token)
-- **Initial State** (some settings or configuration we want our token to have)
+### **始めに**
 
-In this guide we will create both.
+---
 
-**Setting Up a Local Environment**
+SmartWeaveコントラクトは、以下の2つの部分に分かれています。
+
+- **コントラクト**（トークンの背後にある実際のロジック）
+- **初期状態**（トークンに設定したい設定や構成）
+
+このガイドでは、両方を作成します。
+
+**ローカル環境の設定**
+
+次のコマンドを実行します。
 
 Run `npm install arweave arlocal warp-contracts`. 
 
@@ -47,27 +49,26 @@ Create a configuration file that looks something like this:
 }
 
 ```
+これにより、PSTの初期オプションが設定されます。これを `initial-state.json` として保存してください。
 
-Which sets some initial options for the PST. Save it as `initial-state.json`.
+- **`ticker`** - トークンのシンボル（例：BTC、ETH）
+- **`name`** - トークンの名前
+- **`owner`** - コントラクトの所有者のアドレス
+- **`balances`** - 初期トークンを配布するアドレス
 
-- **`ticker`** - symbol of the token (e.g. BTC, ETH)
-- **`name`** - name of the token
-- **`owner`** - address of the contract owner
-- **`balances`** - addresses to distribute the initial tokens to
+### コントラクトの作成
 
-### Writing The Contract
+PSTコントラクトには、`handle` という単一の関数が必要です。この関数は2つの引数を受け取ります。
 
-The PST contract should have a single function, `handle`, which takes two arguments:
+`state` はコントラクトの現在の状態を表し、`action` は実行したいアクション（例：トークンの移転）を示します。
 
-`state`, which is the current state of the contract, and `action`, which is the action you want to perform (e.g. transferring tokens).
+PSTコントラクトへの呼び出しは、次のいずれかの結果を返す必要があります：
+- **`state`** - コントラクトの状態が変更された場合（例：移転を行う）。
+- **`result`** - コントラクトの状態が変更されない場合（例：残高の確認）。
 
-When making a call to the PST contract, it should return one of two things:
-- **`state`** - if the call to the contract changes the state (e.g. making a transfer).
-- **`result`** - if the call does **not** change the state (e.g. viewing a balance).
+それ以外の場合は、呼び出しが無効であるか失敗した場合には **`error`** を投げる必要があります。
 
-Otherwise it should throw **`error`** if the call is invalid or fails. 
-
-First, let's define the main `handle` function.
+まず、メインの `handle` 関数を定義しましょう。.
 ```js
 //contract.js
 export function handle(state, action) {
@@ -76,9 +77,9 @@ export function handle(state, action) {
   let caller = action.caller;
 }
 ```
-This sets up some variables for common interactions the smart contract uses.
+これにより、スマートコントラクトが使用する一般的な操作のための変数が設定されます。
 
-Now let's add the first type of input which will change the state. This allows the owner of the contract to mint new PSTs to their wallet address.
+次に、状態を変更する最初のタイプの入力を追加します。これにより、契約の所有者は新しいPSTを自分のウォレットアドレスにミントできます。
 
 ```js
   if (input.function == 'mint') {
@@ -100,7 +101,7 @@ Now let's add the first type of input which will change the state. This allows t
   return { state };
   }
 ```
-The next function will handle transfers of PSTs between wallets.
+次の関数は、ウォレット間のPSTの転送を処理します。
 
 ```js
 if (input.function == 'transfer') {
@@ -137,7 +138,7 @@ if (input.function == 'transfer') {
     return { state };
   }
 ```
-Let's also add a way to view the PST balance of a target wallet.
+ターゲットウォレットのPST残高を表示する方法も追加しましょう。
 
 ```js
 if (input.function == 'balance') {
@@ -156,29 +157,30 @@ if (input.function == 'balance') {
     return { result: { target, ticker, balance: balances[target] } };
   }
 ```
-And finally, let's throw an error if the input given is not the `mint`, `transfer`, or `balance` function.
+最後に、入力された内容が`mint`、`transfer`、または`balance`関数でない場合にエラーをスローします。
 
 ```js
 throw new ContractError(`No function supplied or function not recognised: "${input.function}"`);
 ```
 
-### **Deploying The Contract**
+### **契約のデプロイ**
 
-To deploy a contract, we need to write a NodeJS script which will work with Warp to deploy our contract.
+契約をデプロイするには、Warpと連携して契約をデプロイするNodeJSスクリプトを書く必要があります。
 
-Create a file called `deploy-contract.js`, and begin by importing `WarpFactory`.
+`deploy-contract.js`という名前のファイルを作成し、`WarpFactory`をインポートして開始します。
 
 ```js
 import { WarpFactory } from 'warp-contracts/mjs'
 ```
-Next, initialize an instance of Warp.
+次に、Warpのインスタンスを初期化します。
 
-You can replace `forMainnet()` with `forLocal()`, or `forTestnet()`, depending on where you want to deploy your contract.
+契約をデプロイする場所に応じて、`forMainnet()`を`forLocal()`または`forTestnet()`に置き換えることができます。
+
 ```js
 const warp = WarpFactory.forMainnet();
 ```
 
-Now we have Warp setup, you'll need a wallet to deploy the contract from. You can either use your own local keyfile:
+Warpの設定が完了したら、契約をデプロイするためのウォレットが必要です。ローカルのキー・ファイルを使用するか、自分のものを使用できます：
 
 ```js
 const walletAddress = "path/to/wallet.json"
@@ -189,11 +191,11 @@ const walletAddress = "path/to/wallet.json"
 const jwk = await warp.arweave.wallets.generate();
 const walletAddress = await warp.arweave.wallets.jwkToAddress(jwk);
 ```
-Transactions under 100KB are free, so you don't even have to fund the wallet!
+100KB未満のトランザクションは無料なので、ウォレットに資金を入れる必要はありません！
 
 ---
 
-Before deploying the contract, we need to read in the initial state file and the contract file.
+契約をデプロイする前に、初期状態ファイルと契約ファイルを読み込む必要があります。
 
 ```js
 const contract = fs.readFileSync(path.join(__dirname, 'contract.js'), 'utf8');
@@ -201,7 +203,7 @@ const state = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'initial-state.json'), 'utf8')
 );
 ```
-If you generated a new wallet to deploy from, you'll need to override the `owner` in the initial state. You can do this with the following code:
+新しいウォレットを生成してデプロイする場合、初期状態で`owner`を上書きする必要があります。次のコードを使ってこれを行うことができます：
 ```js
 const initialState = {
   ...stateFromFile,
@@ -210,9 +212,9 @@ const initialState = {
   },
 };
 ```
-If you're using wallet, you can instead edit the `initial-state.json` file directly to use your wallet address.
+ウォレットを使用している場合は、代わりに`initial-state.json`ファイルを直接編集してウォレットアドレスを使用できます。
 
-The following code handles the deployment of the contract:
+以下のコードが契約のデプロイを処理します：
 
 ```js
 const contractTxId = await warp.createContract.deploy({
@@ -227,8 +229,8 @@ console.log('Deployment completed: ', {
 });
 ```
 
-Run the script with `node deploy-contract.js` which will deoply your contract and log the contract transaction ID in the terminal for you to use.
+`node deploy-contract.js`を実行すると、あなたの契約がデプロイされ、ターミナルに契約トランザクションIDがログとして表示されます。
 
 ---
 
-**Source and Further Reading**: [Warp Docs](https://academy.warp.cc/tutorials/pst/introduction/intro)
+**出典およびさらなる情報**: [Warp Docs](https://academy.warp.cc/tutorials/pst/introduction/intro)

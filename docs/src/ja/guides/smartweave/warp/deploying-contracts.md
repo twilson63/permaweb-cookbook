@@ -5,15 +5,15 @@ locale: ja
 
 > **⚠️ Deprecation Notice**
 >
-> This document is deprecated and may contain outdated information.
+> この文書は廃止予定であり、古い情報が含まれている可能性があります。
 
-SmartWeave Contracts are created by posting two transactions to the network, a Source Transaction and a Initial State Transaction, the source transaction contains the source code the contract will use to determine the current state. The initial state transaction provides a contract identifer to reference as well as the initial seed data the contract should use as the starting point to evaluate the current state. The current state is calculated by accessing actions that are transactions written to the network that contain input parameters to execute using the evaluated and instantiated source code. Warp Contracts can be created using many different languages and can be evaluated using the Warp SDK. This guide will show the many different ways you can deploy a Warp Contract.
+SmartWeaveコントラクトは、ネットワークに対して2つのトランザクションを投稿することで作成されます。1つはソーストランザクション、もう1つは初期状態トランザクションです。ソーストランザクションには、コントラクトが現在の状態を決定するために使用するソースコードが含まれています。初期状態トランザクションは、参照するためのコントラクト識別子と、コントラクトが現在の状態を評価するための出発点として使用すべき初期シードデータを提供します。現在の状態は、ネットワークに書き込まれたアクション（入力パラメータを実行するために評価されたソースコードを使用するトランザクション）にアクセスすることによって計算されます。Warpコントラクトは多くの異なる言語で作成でき、Warp SDKを使用して評価できます。このガイドでは、Warpコントラクトをデプロイするさまざまな方法を示します。
 
 ::: tip
-If you would like to learn more about authoring Warp SmartWeaveContracts, checkout the Warp Academy! [https://academy.warp.cc/](https://academy.warp.cc/)
+Warp SmartWeaveコントラクトの作成について詳しく学ぶには、Warpアカデミーをチェックしてください！ [https://academy.warp.cc/](https://academy.warp.cc/)
 :::
 
-As of Warp version 1.3.0 you willl need a plugin to deploy contracts with Warp. This plugin will enable you to add different wallet signatures.
+Warpバージョン1.3.0以降、コントラクトをWarpでデプロイするためにはプラグインが必要です。このプラグインを使用すると、さまざまなウォレット署名を追加できます。
 
 ```js
 import { DeployPlugin, InjectedArweaveSigner } from 'warp-contracts-plugin-deploy'
@@ -38,32 +38,32 @@ function deploy(initState, src) {
 }
 ```
 
-## The Four ways to deploy a Warp SmartWeave Contract
+## Warp SmartWeaveコントラクトをデプロイする4つの方法
 
-There are 4 ways you can deploy a SmartWeaveContract via the Warp SDK, these options handle different use cases that a developer may encounter.
+Warp SDKを介してSmartWeaveコントラクトをデプロイする方法は4つあります。これらのオプションは、開発者が直面するさまざまなユースケースを処理します。
 
--   Need to deploy the contract with the source at the same time
--   Need to deploy a contract where the source is already on the permaweb
--   Need to deploy a contract through the sequencer and point it to some data using a path manifest
--   Need to deploy a contract via Irys and register that contract on the sequencer
+-   ソースを同時にデプロイする必要がある
+-   すでにpermawebにソースがあるコントラクトをデプロイする必要がある
+-   シーケンサーを介してコントラクトをデプロイし、パスマニフェストを使用してデータを指し示す必要がある
+-   Irysを介してコントラクトをデプロイし、そのコントラクトをシーケンサーに登録する必要がある
 
 ::: tip
-For more information about Warp deployments check out the github Readme for the project. [https://github.com/warp-contracts/warp#deployment](https://github.com/warp-contracts/warp#deployment).
+Warpのデプロイメントに関する詳細は、プロジェクトのGitHubのREADMEをチェックしてください。 [https://github.com/warp-contracts/warp#deployment](https://github.com/warp-contracts/warp#deployment)
 :::
 
 ::: warning
-This project is in rapid development, so the documentation here could be out of data quickly, if you discover it is out of date, please let us know on the [Permaweb Cookbook Discord Channel](https://discord.gg/haCAX3shxF).
+このプロジェクトは急速に開発が進んでいるため、ここにある文書はすぐに古くなる可能性があります。古いことに気づいた場合は、[Permaweb Cookbook Discord Channel](https://discord.gg/haCAX3shxF)でお知らせください。
 :::
 
-## Examples
+## 例
 
 ::: tip
-By default all deploy functions are published to Arweave via Irys, each option has a flag that can be set to not use Irys, but it can take many confirmations for the network to fully confirm the transaction.
+デフォルトでは、すべてのデプロイ関数はIrysを介してArweaveに公開されます。各オプションには、Irysを使用しないように設定できるフラグがありますが、ネットワークがトランザクションを完全に確認するまでに多くの確認が必要です。
 :::
 
 **deploy**
 
-Deploys contract plus source code to Warp Sequencer, to Irys (L2), to Arweave.
+コントラクトとソースコードをWarpシーケンサーにデプロイし、Irys（L2）およびArweaveにデプロイします。
 
 ```ts
 const { contractTxId, srcTxId } = await warp.deploy({
@@ -81,9 +81,10 @@ const { contractTxId, srcTxId } = await warp.deploy({
 -   src - is the string or Uint8Array value of the source code for the contract
 -   tags - is an array of name/value objects `{name: string, value: string}[]`, [Learn more about tags](../../../concepts/tags.md)
 
+
 **deployFromSourceTx**
 
-Already have the source on the permaweb? Then deployFromSourceTx is your tool of choice! With the permaweb you never have to worry about data changing so re-using source code for contracts is a no brainer.
+すでにpermawebにソースがありますか？その場合、deployFromSourceTxがあなたの選択肢です！permawebでは、データが変更される心配がないため、コントラクトのソースコードを再利用するのは簡単です。
 
 ```ts
 const { contractTxId, srcTxId } = await warp.deployFromSourceTx({
@@ -95,7 +96,7 @@ const { contractTxId, srcTxId } = await warp.deployFromSourceTx({
 
 **deployBundled**
 
-Uses Warp Gateway Sequencer's endpoint to upload a raw data item to Irys and index it.
+Warpゲートウェイシーケンサーのエンドポイントを使用して、生データアイテムをIrysにアップロードし、インデックス化します。
 
 ```ts
 import { createData } from "arbundles";
@@ -118,9 +119,10 @@ const dataItem = createData(
 const { contractTxId } = await warp.deployBundled(dataItem.getRaw());
 ```
 
+
 **register**
 
-Uses Warp Gateway Sequencer's endpoint to index a contract that has been uploaded with Irys.
+Warpゲートウェイシーケンサーのエンドポイントを使用して、Irysでアップロードされたコントラクトをインデックス化します。
 
 ```ts
 import Irys from '@irys/sdk'
@@ -132,6 +134,6 @@ const { id } = await irys.upload('Some Awesome Atomic Asset',  {
 const { contractTxId } = await warp.register(id, 'node2')
 ```
 
-## Summary
+## まとめ
 
-Why are there so many options to deploy contracts? These methods exist to reduce duplication, enable advanced contract interactions, and allow for flexibility for testing and usage of the smartweave protocol. The permaweb is very unique in its architecture, it provides a feature where you can deploy both digital data and the contract to manage that data generating the same transaction identifier. The result is dynamic data paired with an immutable set of data. Deploying contracts is just one piece of the Warp SDK, to learn more keep reading this guide!
+なぜこれほど多くのコントラクトをデプロイするオプションがあるのでしょうか？これらのメソッドは重複を減らし、高度なコントラクトインタラクションを可能にし、スマートウィーブプロトコルのテストや使用の柔軟性を提供するために存在します。permawebは非常にユニークなアーキテクチャを持っており、デジタルデータとそのデータを管理するためのコントラクトの両方を同じトランザクション識別子でデプロイする機能を提供します。その結果、動的データと不変のデータセットがペアになります。コントラクトをデプロイすることはWarp SDKの一部に過ぎず、詳細を学ぶにはこのガイドを読み続けてください！

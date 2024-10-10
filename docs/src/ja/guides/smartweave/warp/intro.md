@@ -5,23 +5,23 @@ locale: ja
 
 > **⚠️ Deprecation Notice**
 >
-> This document is deprecated and may contain outdated information.
+> この文書は廃止予定であり、古い情報が含まれている可能性があります。
 
-Warp is a popular SmartWeave Protocol SDK. With Warp and Irys your SmartWeave deployments and interactions can be extremely fast.
+Warpは人気のあるSmartWeaveプロトコルSDKです。WarpとIrysを使用すると、SmartWeaveのデプロイやインタラクションを非常に高速に行うことができます。
 
-## Introduction
+## はじめに
 
-This guide is a short introduction to the Warp SDK and some of its API methods, if you want to learn more about SmartWeave Contracts in general visit [Core Concepts: SmartWeave](/concepts/smartweave.html).
+このガイドはWarp SDKとそのAPIメソッドの簡単な紹介です。SmartWeaveコントラクトの一般的な情報については、[Core Concepts: SmartWeave](/concepts/smartweave.html)をご覧ください。
 
 ::: tip
-You can find the Warp SDK on [github](https://github.com/warp-contracts). For a deeper dive on Warp SmartWeave visit [Warp Website](https://warp.cc)
+Warp SDKは[github](https://github.com/warp-contracts)で見つけることができます。Warp SmartWeaveについてさらに詳しく知りたい場合は、[Warp Website](https://warp.cc)をご覧ください。
 :::
 
-To use the SDK on the server, you will need access to a wallet.json file, to use the SDK in the browser you will need to connect to an arweave supported wallet.
+SDKをサーバーで使用するには、wallet.jsonファイルへのアクセスが必要です。ブラウザでSDKを使用するには、Arweaveサポートのウォレットに接続する必要があります。
 
-## Install
+## インストール
 
-To install warp in your project you can use `npm` or `yarn` or other npm clients.
+プロジェクトにwarpをインストールするには、`npm`、`yarn`、または他のnpmクライアントを使用できます。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -40,9 +40,9 @@ yarn add warp-contracts
   </CodeGroupItem>
 </CodeGroup>
 
-## Import
+## インポート
 
-When using Warp with your project there are several ways to import the sdk depending on your project setup.
+Warpをプロジェクトで使用する場合、プロジェクトのセットアップに応じてSDKをインポートする方法がいくつかあります。
 
 <CodeGroup>
   <CodeGroupItem title="Typescript">
@@ -68,9 +68,9 @@ const { WarpFactory } = require("warp-contracts");
   </CodeGroupItem>
 </CodeGroup>
 
-## Connecting to an environment
+## 環境への接続
 
-There are several environments that you may want to interact with, you can connect to those environments using the `forXXXX` helpers.
+インタラクションを行いたい環境はいくつかあります。これらの環境には`forXXXX`ヘルパーを使用して接続できます。
 
 <CodeGroup>
   <CodeGroupItem title="Mainnet">
@@ -108,9 +108,9 @@ const warp = WarpFactory.custom(
 </CodeGroup>
 
 ::: warning
-When using local environment, you will need to have arLocal running on port 1984.
+ローカル環境を使用する場合は、ポート1984でarLocalを実行している必要があります。
 :::
 
-## Summary
+## まとめ
 
-This intro guide is to help you get setup with Warp, the following guides will show you how to deploy SmartWeave contracts using the Warp SDK, how to interact with those contracts and finally, how to evolve SmartWeave contracts.
+このイントロガイドはWarpの設定を手助けするためのものであり、次のガイドではWarp SDKを使用してSmartWeaveコントラクトをデプロイし、それらのコントラクトとインタラクトし、最終的にはSmartWeaveコントラクトを進化させる方法を示します。
