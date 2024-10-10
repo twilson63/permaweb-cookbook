@@ -1,17 +1,20 @@
-# Atomic Tokens
+---
+locale: ja
+---
+# アトミックトークン
 
-> **⚠️ Deprecation Notice**
+> **⚠️ 廃止通知**
 >
-> This document is deprecated and may contain outdated information.
+> この文書は廃止されており、古い情報が含まれている可能性があります。
 
-## What is an Atomic Token?
+## アトミックトークンとは？
 
-[Check out the concept](../../concepts/atomic-tokens.md)
+[この概念をチェックしてください](../../concepts/atomic-tokens.md)
 
-## Creating an Atomic Token
+## アトミックトークンの作成
 
 ::: info INFORMATION
-For this example, we are using a SWT Contract Source that is already published on the network. [x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) -
+この例では、ネットワーク上に既に公開されているSWTコントラクトソースを使用しています。[x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs](https://sonar.warp.cc/#/app/source/x0ojRwrcHBmZP20Y4SY0mgusMRx-IYTjg5W8c3UFoNs#) -
 :::
 
 example.ts
@@ -61,9 +64,9 @@ async function main() {
 main()
 ```
 
-In this example, we are creating a data-item and uploading the item to the bundler network service. Then we are registering our contract with the Warp sequencer. By using bundler to publish our data-item and registering with the Warp sequencer, our data is immediately available on the gateway service and our contract is immediately able to accept interactions.
+この例では、データアイテムを作成し、それをバンドラーネットワークサービスにアップロードしています。その後、Warpシーケンサーに契約を登録します。バンドラーを使用してデータアイテムを公開し、Warpシーケンサーに登録することで、私たちのデータはすぐにゲートウェイサービスで利用可能になり、私たちの契約はすぐにインタラクションを受け入れることができるようになります。
 
-Run Example
+## 例を実行
 
 ```sh
 npm install @irys/sdk warp-contracts
@@ -72,13 +75,13 @@ npx ts-node example.ts
 ```
 
 ::: info INFORMATION
-[ANS-110](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-110.md) is an Asset Discovery Specification to allow for composability with the Permaweb Application ecosystem.
+[ANS-110](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-110.md) は、Permawebアプリケーションエコシステムとのコンポーザビリティを可能にするための資産発見仕様です。
 :::
 
-## Summary
+## まとめ
 
-This is a simple example of deploying an Atomic Asset, for more detailed examples check out: [https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)
+これはアトミックアセットをデプロイするシンプルな例です。より詳細な例については、[https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)をチェックしてください。
 
-## Working with Tokens
+## トークンの操作
 
-SmartWeave Contracts can not hold AR the native coin of the Arweave Network. AR is used to purchase storage for data on the Arweave Network and it can be transferred from a source wallet to a target wallet on the Arweave network, but it can not be held in a SmartWeave contract.
+SmartWeaveコントラクトは、ArweaveネットワークのネイティブコインであるARを保持することができません。ARは、Arweaveネットワーク上のデータのストレージを購入するために使用され、ソースウォレットからターゲットウォレットに転送することができますが、SmartWeaveコントラクト内に保持することはできません。

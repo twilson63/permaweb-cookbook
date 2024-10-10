@@ -1,66 +1,66 @@
 ---
 locale: ja
 ---
-# Execution Machine (EXM)
+# 実行マシン (EXM)
 
-**Execution Machine (EXM)** is a developer platform that provides the ability to create and leverage **blockchain-based (permanent) serverless functions** without the need for knowledge of or access to blockchain technologies like wallets and tokens.
+**実行マシン (EXM)** は、ブロックチェーンベースの（永続的な）サーバーレス機能を作成し活用する能力を提供する開発者向けプラットフォームであり、ウォレットやトークンなどのブロックチェーン技術に関する知識やアクセスは必要ありません。
 
-This further enables the creation of **composable**, **immutable** and **trustless** applications in a frictionless manner.
+これにより、**コンポーザブル**、**不変**、および **信頼不要** のアプリケーションを摩擦なく作成することが可能になります。
 
-## Serverless Functions on Arweave
+## Arweave 上のサーバーレス機能
 
-Serverless functions are stored on Arweave through the intermediary EXM that also stores a copy as cache to rapidly serve applications at any time. The functions are stateful (store data) and hence, a single function id points to some data as well as the logic for interacting and updating this data.
+サーバーレス機能は、EXM を介して Arweave に保存され、アプリケーションを迅速に提供するためにキャッシュとしてのコピーも保存されます。これらの機能は状態を保持し（データを保存する）、単一の機能 ID がデータとそのデータに対する相互作用および更新ロジックを指します。
 
-EXM handles the storage and execution, eliminating the need for maintaining a dedicated server, reducing upkeep costs and adding a layer of modularity.
+EXM はストレージと実行を管理し、専用サーバーを維持する必要を排除し、維持コストを削減し、モジュール性の層を追加します。
 
-The modularity also brings in composability to select and assemble functions in various combinations to create custom applications suited to our requirements. These functions, and interactions with them, are **permanently stored on chain**, they cannot be tampered with and are available for anyone to view, making them **immutable** and **trustless**.
+モジュール性により、さまざまな組み合わせで機能を選択し組み合わせて、私たちの要件に合ったカスタムアプリケーションを作成することができます。これらの機能とそれに対する相互作用は **永久にチェーン上に保存され**、改ざんされることはなく、誰でも確認できるため、**不変**で **信頼不要** です。
 
-Additionally, EXM covers the cost for uploading the data to Arweave and making the process crypto agnostic for devs.
+さらに、EXM は Arweave にデータをアップロードするコストを負担し、開発者にとって暗号に依存しないプロセスを提供します。
 
-![Functions on dedicated servers vs serverless functions on blockchains](~@source/images/exm-serverless-functions.png)
+![専用サーバー上の機能とブロックチェーン上のサーバーレス機能の比較](~@source/images/exm-serverless-functions.png)
 
-## How does it work in the background?
+## 背景での動作方法
 
-A user sends a transaction request to a dedicated EXM server. With the help of Verifiable Computing, Execution Machine is able to process user requests in a quick and performant manner, eliminating the need for blockchain technology like tokens and wallets, while still maintaining a decentralised result. EXM then updates its cache layer with the updated state while also uploading the data to Arweave. The cache layer is used as an aid to rapidly serve applications at any time.
+ユーザーは、専用の EXM サーバーにトランザクションリクエストを送信します。検証可能な計算の助けを借りて、実行マシンはユーザーリクエストを迅速かつ高性能に処理でき、トークンやウォレットのようなブロックチェーン技術を必要とせずに分散化された結果を維持します。その後、EXM は更新された状態でキャッシュレイヤーを更新し、データを Arweave にアップロードします。キャッシュレイヤーは、アプリケーションを迅速に提供するために使用されます。
 
-Additionally, EXM is able to maintain a trust minimised environment as users can verify the transactions and current state of the contract/ functions using Lazy Evaluation.
+さらに、EXM は信頼を最小化した環境を維持することができ、ユーザーは遅延評価を使用してトランザクションや契約の現在の状態を検証できます。
 
 <details>
-<summary><strong>Verifiable Computing Explained</strong></summary>
+<summary><strong>検証可能な計算の説明</strong></summary>
 
-<strong>Verifiable computing</strong> is a form of computing that takes advantage of the benefits of centralised system while still guaranteeing a decentralised result.
+<strong>検証可能な計算</strong>は、集中型システムの利点を活用しながら、分散型の結果を保証する計算の一形態です。
 
-Every serverless function either has the ability to read or update the state of some information. Using verifiable computing, this state is cached in a centralised server which allows for greater performance as consensus is not needed at the time of processing, but the information is always available for verification by the users. This allows users to “lazily evaluate” even when it is stored on the cache layer before eventually being moved on chain.
+すべてのサーバーレス機能は、情報の状態を読み取るか更新する能力を持っています。検証可能な計算を使用すると、この状態は集中型サーバーにキャッシュされ、処理時に合意が必要ないため、パフォーマンスが向上しますが、情報は常にユーザーによる検証のために利用可能です。これにより、ユーザーはキャッシュレイヤーに保存されている間でも「遅延評価」を行うことができ、最終的にオンチェーンに移動します。
 
-![Verifiable Computing Explained](~@source/images/exm-verifiable-computing.png)
+![検証可能な計算の説明](~@source/images/exm-verifiable-computing.png)
 
-For verifiable computing to work seamlessly, some core parts must be implemented.
+検証可能な計算がシームレスに機能するためには、いくつかのコア部分が実装される必要があります。
 
-- <strong>Executor</strong>: A software that processes user transaction requests and caches them.
-- <strong>Processor</strong>: A centralised pipeline (system) responsible for receiving transactions by a single or multiple users. After receiving the different bulks of transactions sent, processor must re-evaluate the smart contract with the new data. As transactions are received, the latest state of the smart contract must be upgraded and saved with accessibility to the user. The processor is responsible for ordering the transactions, usually by timestamp.
-- <strong>Conveyor</strong>: A centralised system that establishes a bridge between a data-based blockchain. All the transactions received by the processor must be sent to the conveyor, the conveyor will guarantee the success of storing these operations in a data-based blockchain like Arweave.
+- <strong>エグゼキューター</strong>: ユーザートランザクションリクエストを処理し、キャッシュするソフトウェア。
+- <strong>プロセッサ</strong>: 単一または複数のユーザーからトランザクションを受け取る責任を持つ集中型パイプライン（システム）。トランザクションのバルクを受信した後、新しいデータを使用してスマートコントラクトを再評価する必要があります。トランザクションが受信されると、スマートコントラクトの最新の状態がアップグレードされ、ユーザーがアクセスできるように保存される必要があります。プロセッサは通常、タイムスタンプによってトランザクションの順序を決定します。
+- <strong>コンベイヤー</strong>: データベースのブロックチェーンと橋渡しをする集中型システム。プロセッサによって受信されたすべてのトランザクションはコンベイヤーに送信され、このオペレーションを Arweave のようなデータベースのブロックチェーンに保存することを保証します。
 </details>
 <br/>
 
 <details>
-<summary><strong>Lazy Evaluation Explained</strong></summary>
+<summary><strong>遅延評価の説明</strong></summary>
 
-![Lazy Evaluation Explained](~@source/images/exm-lazy-evaluation.png)
+![遅延評価の説明](~@source/images/exm-lazy-evaluation.png)
 
-<strong>Lazy evaluation</strong>, as the name suggests, is a method for lazily evaluating smart contracts and their current state on the blockchain. The smart contract itself and any interactions (write operations) with them are stored on chain and can be accessed by any user.
+<strong>遅延評価</strong>は、名前が示すように、スマートコントラクトとその現在の状態をブロックチェーンで遅延評価する方法です。スマートコントラクト自体とそれに対するすべての相互作用（書き込み操作）はチェーン上に保存され、任意のユーザーがアクセスできます。
 
-It aims to shift the burden of processing from the nodes to the users. The user can opt to evaluate and interpret the smart contract code and interactions with it locally to verify the current state of the contract.
+これは、ノードからユーザーに処理の負担を移すことを目的としています。ユーザーは、スマートコントラクトコードとそれとの相互作用をローカルで評価し、現在の契約の状態を検証することができます。
 
-This eliminates the need for nodes to store the full copy of the current state of a chain and arrive at a consensus on it. Thus, reducing the cost and improving performance, respectively.
+これにより、ノードがチェーンの現在の状態の完全なコピーを保存し、それに対して合意に達する必要がなくなります。したがって、コストを削減し、パフォーマンスを向上させます。
 
-As everyone has access to the same data, everyone will interpret the it in the same way ensuring everyone has access to the same current state of information.
+すべての人が同じデータにアクセスできるため、すべての人が同じ方法で解釈し、情報の現在の状態にアクセスできることが保証されます。
 </details>
 <br/>
 
-## Advantages of using Serverless Functions
+## サーバーレス機能を使用する利点
 
-- Serverless functions add a layer of modularity and can be composed as per various application requirements.
-- Bug fixes and new feature integrations are easier to implement by targeting.
-- Execution Machine has a cached layer for rapidly serving applications.
-- Execution Machine leverages a centralised system while guaranteeing a decentralised result.
-- Execution Machine seeks to be crypto agnostic.
+- サーバーレス機能はモジュール性の層を追加し、さまざまなアプリケーション要件に応じて組み合わせることができます。
+- バグ修正や新機能の統合は、ターゲットを絞って実施しやすくなります。
+- 実行マシンには、アプリケーションを迅速に提供するためのキャッシュレイヤーがあります。
+- 実行マシンは、集中型システムを活用しながら、分散型の結果を保証します。
+- 実行マシンは暗号に依存しないことを目指しています。

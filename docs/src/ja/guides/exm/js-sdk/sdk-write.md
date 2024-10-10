@@ -1,16 +1,17 @@
 ---
 locale: ja
 ---
-# Write to Serverless Functions with Execution Machine SDK
+# Execution Machine SDKを使用したサーバーレス関数への書き込み
 
-Once a function is deployed, it's state can be updated with the help of write interactions. Due to the unique architecture of EXM's serverless functions, the logic for updating state is stored along with the state itself and both of these can be referred to using the same `functionId`. Functions can have a single operation or multiple operations for updating state as per the application requirements and the arguments for the write call vary accordingly.
+関数がデプロイされると、その状態は書き込みインタラクションを使って更新できます。EXMのサーバーレス関数のユニークなアーキテクチャにより、状態を更新するためのロジックは状態自体と共に保存され、これらは同じ `functionId` を使用して参照できます。関数は、アプリケーションの要件に応じて状態を更新するための単一の操作または複数の操作を持つことができ、書き込み呼び出しの引数はそれに応じて変わります。
+
 
 <details>
-<summary><strong>Function Logic and Corresponding Write Example</strong></summary>
+<summary><strong>関数ロジックと対応する書き込み例</strong></summary>
 
-- <strong>Function example with single operations for updating state:</strong>
+- <strong>状態を更新するための単一の操作を持つ関数の例:</strong>
 
-The following function adds names to a users array:
+以下の関数は、ユーザーの配列に名前を追加します。
 
 ```js
 export async function handle(state, action) {
@@ -31,9 +32,9 @@ In this case, the write call only needs a key-value pair of `name` as an input:
 const inputs = [{ name: 'Open Sourcerer' }];
 ```
 
-- <strong>Function example with multiple operations for updating state:</strong>
+- <strong>状態を更新するための複数の操作を持つ関数の例:</strong>
 
-The following function creates posts but also has the ability to update or delete these posts:
+以下の関数は投稿を作成しますが、これらの投稿を更新または削除する機能もあります。
 
 ```js
 export async function handle(state, action) {
@@ -48,7 +49,7 @@ export async function handle(state, action) {
 }
 ```
 
-The posts are objects with the following format:
+投稿は次のフォーマットのオブジェクトです:
 
 ```js
 post: {
@@ -59,9 +60,9 @@ post: {
 }
 ```
 
-We give each post a unique `id` so that we can refer to it for updating or deleting. If no corresponding `id` exists, then a new post is created instead.
+各投稿に一意の `id` を付与して、更新または削除する際に参照できるようにします。対応する `id` が存在しない場合は、代わりに新しい投稿が作成されます。
 
-However, as can be seen in the function above, this function logic has the abilitiy to perform multiple operations and hence the `type` for each has been given a name. This name must be passed in as an input along with the post or id for performing the appropriate write call. To update a post, the inputs for the write call would look as follows:
+ただし、上記の関数に見られるように、この関数ロジックは複数の操作を実行する能力を持っており、したがって、各操作に名前が付けられています。この名前は、適切な書き込み呼び出しを実行するために、投稿またはIDと共に入力として渡す必要があります。投稿を更新する場合、書き込み呼び出しの入力は次のようになります:
 
 ```js
 const inputs = [{
@@ -77,7 +78,7 @@ const inputs = [{
 </details>
 <br/>
 
-The write transaction takes in two arguments. The `functionId` of the function to interact with and any `inputs` the function needs to process the write request and update state.
+書き込みトランザクションは、相互作用する関数の `functionId` と、書き込みリクエストを処理し状態を更新するために必要な `inputs` の2つの引数を取ります。
 
 <CodeGroup>
   <CodeGroupItem title="write.js">
@@ -100,7 +101,7 @@ console.log(writeResult);
   </CodeGroupItem>
 </CodeGroup>
 
-A successful write request returns an object with the status as SUCCESS.
+成功した書き込みリクエストは、ステータスが SUCCESS のオブジェクトを返します。
 
 ```bash
 {

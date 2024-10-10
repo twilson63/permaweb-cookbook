@@ -1,13 +1,14 @@
 ---
 locale: ja
 ---
-# Posting Transactions using Ardrive Turbo
+# Ardrive Turboを使用したトランザクションの投稿
 
-Posting transactions using Turbo can be accomplished using the `@ardrive/turbo-sdk` JavaScript package.
+Turboを使用してトランザクションを投稿するには、`@ardrive/turbo-sdk` JavaScriptパッケージを利用します。
 
-## Installing the @ardrive/turbo-sdk
+## @ardrive/turbo-sdkのインストール
 
-To install `@ardrive/turbo-sdk` run
+`@ardrive/turbo-sdk`をインストールするには、次のコマンドを実行します。
+
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -26,16 +27,16 @@ yarn add @ardrive/turbo-sdk
   </CodeGroupItem>
 </CodeGroup>
 
-## Initializing Turbo Client
+## Turboクライアントの初期化
 
-There are multiple ways to upload data using the `turbo` sdk. You can:
+`turbo` SDKを使用してデータをアップロードする方法はいくつかあります。次のことができます：
 
-- upload a `file`
-- upload a `data-item`
+- `file`をアップロード
+- `data-item`をアップロード
 
-When uploading a `data-item` with the `turbo` sdk, you will use `ar-bundles` to create the `data-item` and add `tags`. 
+`turbo` SDKを使用して`data-item`をアップロードする場合、`ar-bundles`を使用して`data-item`を作成し、`tags`を追加します。
 
-### Data-Item (recommended)
+### データアイテム（推奨）
 
 ```js
 import fs from 'node:fs'
@@ -186,7 +187,7 @@ Example Output:
 }
 ```
 
-## Resources
+## リソース
 
-- Dive into the [Code](https://github.com/ardriveapp/turbo-sdk)
-- Join the discussion in the [ArDrive Discord](https://discord.com/invite/ya4hf2H)
+- [コード](https://github.com/ardriveapp/turbo-sdk)を確認
+- [ArDrive Discord](https://discord.com/invite/ya4hf2H)で議論に参加

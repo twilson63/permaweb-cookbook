@@ -1,11 +1,11 @@
 ---
 locale: ja
 ---
-## with Akord CLI
+## Akord CLIを使用して
 
-You can generate manifests using [Akord CLI](https://github.com/Akord-com/akord-cli).
+[Akord CLI](https://github.com/Akord-com/akord-cli)を使用して、マニフェストを生成できます。
 
-### Before you get started
+### 開始する
 
 > Requires NodeJS - https://nodejs.org
 
@@ -26,35 +26,35 @@ yarn global add @akord/akord-cli
   </CodeGroupItem>
 </CodeGroup>
 
-### Login to Akord (you can create an account [here](https://v2.akord.com/signup))
-Once you have the CLI installed, log in by following the prompts to authenticate with your Akord username and password.
+### Akordにログイン (アカウントを[こちらで作成](https://v2.akord.com/signup)できます)
+CLIをインストールしたら、プロンプトに従ってAkordのユーザー名とパスワードで認証してログインします。
 
 ```console
 akord login {your_email_address}
 ```
 
-### Choose your vault
-You'll need a vault id of your public vault to generate the manifest. To list your vaults:
+### ボールトを選択
+マニフェストを生成するためには、公開ボールトのボールトIDが必要です。ボールトをリストするには：
 
 ```console
 akord vault:list
 ```
 
-### Generate manifest
-Now that you are logged in and you have a vault id, you can generate the manifest for your files and contents. \
-If you do not have "index.html" file in your vault, you can provide a custom index:
+### マニフェストを生成
+ログインし、ボールトIDが取得できたら、ファイルとコンテンツのマニフェストを生成できます。\
+ボールトに「index.html」ファイルがない場合は、カスタムインデックスを提供できます：
 
 ```console
 akord manifest:generate {vaultId} --index "my-custom-index.html"
 ```
 
-After generating the manifest, a file named manifest.json will appear in your vault. Once it's confirmed on the Arweave blockchain and propagated by the gateways, your public vault will be available on the permaweb under following link: https://arweave.net/{uri}
+マニフェストを生成すると、ボールト内に「manifest.json」というファイルが表示されます。このファイルがArweaveブロックチェーン上で確認され、ゲートウェイによって伝播されると、次のリンクであなたの公開ボールトにアクセスできるようになります： https://arweave.net/{uri}
 
-## with AkordJS
+## AkordJSを使用して
 
-Alternatively, you can generate your manifests using [AkordJS](https://github.com/Akord-com/akord-js) package.
+代わりに、[AkordJS](https://github.com/Akord-com/akord-js)パッケージを使用してマニフェストを生成できます。
 
-### Before you get started
+### 開始する前に
 
 > Requires NodeJS - https://nodejs.org
 
@@ -75,9 +75,10 @@ yarn add @akord/akord-js
   </CodeGroupItem>
 </CodeGroup>
 
-### Let's generate manifest
+### マニフェストを生成しよう
 
-### Generate a manifest automatically from files inside a vault
+### ボールト内のファイルから自動的にマニフェストを生成
+
 ```js
 import { Akord, Auth } from '@akord/akord-js'
 
@@ -152,23 +153,22 @@ const { uri } = await akord.manifest.generate(vaultId, manifest);
 // In few minutes, you will be able to access your manifest here: https://arweave.net/{uri}
 ```
 
-### Congrats!
+### おめでとうございます！
 
-Once the transaction is accepted on Arweave network (it takes 5-15 minutes on average), \
-you can access the permaweb URL in your web browser by replacing {uri} with your unique manifest tx id:
-https://arweave.net/{uri}
+トランザクションがArweaveネットワークで受け入れられると（平均して5〜15分かかります）、\
+ブラウザで次のURLにアクセスできます。{uri}をユニークなマニフェストトランザクションIDに置き換えてください： https://arweave.net/{uri}
 
-## with Akord web app
+## Akordウェブアプリを使用して
 
-From the [web app](https://v2.akord.com/login) it's also possible to create the manifest and add it to your vault by selecting "Add Manifest" from the "+" button inside your public permanent vault.
+[ウェブアプリ](https://v2.akord.com/login)からも、公開の永久ボールト内で「+」ボタンから「マニフェストを追加」を選択することで、マニフェストを作成しボールトに追加することができます。
 
-The action will automatically create a manifest for all of the files & folders within the vault.
+このアクションにより、ボールト内のすべてのファイルとフォルダのマニフェストが自動的に作成されます。
 
-You can download your manifest and view it in the media gallery by clicking the title in the vault.
+マニフェストをダウンロードし、ボールト内のタイトルをクリックしてメディアギャラリーで表示できます。
 
-It's as simple as that!
+それは非常に簡単です！
 
-## Resources & further reading
-- [Generating manifests in Akord vaults](https://docs.akord.com/nft-projects/get-the-arweave-urls)
-- [Publishing a website to the permaweb](https://docs.akord.com/api-and-dev-tools/learn/publishing-a-website)
-- [AkordJS manifest module](https://github.com/Akord-com/akord-js?tab=readme-ov-file#manifest)
+## リソースとさらなる情報
+- [Akordボールト内でのマニフェストの生成](https://docs.akord.com/nft-projects/get-the-arweave-urls)
+- [パーマウェブへのウェブサイトの公開](https://docs.akord.com/api-and-dev-tools/learn/publishing-a-website)
+- [AkordJSマニフェストモジュール](https://github.com/Akord-com/akord-js?tab=readme-ov-file#manifest)

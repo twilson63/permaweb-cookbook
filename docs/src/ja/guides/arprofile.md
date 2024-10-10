@@ -3,30 +3,30 @@ locale: ja
 ---
 # ArProfile
 
-[ArProfile](https://arprofile.arweave.dev) is an Arweave native DID which relies on the open data protocol [`Account`](https://docs.arprofile.org/#/?id=data-protocol).
+[ArProfile](https://arprofile.arweave.dev) は、オープンデータプロトコル [`Account`](https://docs.arprofile.org/#/?id=data-protocol) に依存する Arweave ネイティブの DID です。
 
-[`arweave-account`](https://www.npmjs.com/package/arweave-account) is a npm package that allows you to easily integrate ArProfile in your codebase, wether it is a web app or a backend (nodejs).
+[`arweave-account`](https://www.npmjs.com/package/arweave-account) は、ウェブアプリやバックエンド（nodejs）など、コードベースに ArProfile を簡単に統合するための npm パッケージです。
 
-[See complete documentation here](https://docs.arprofile.org)
+[完全なドキュメントはこちら](https://docs.arprofile.org)を参照してください。
 
-## Purpose
+## 目的
 
-The underlying account protocol aims to satisfy essential needs for social interactions between users: an avatar, a unique handle, a name and a bio. It also includes the possibility to add accounts from the well known social networks such as Twitter, Discord, Github, Instagram and Facebook.
+基本的なアカウントプロトコルは、ユーザー間の社会的相互作用に必要な基本的ニーズを満たすことを目的としています：アバター、一意のハンドル、名前、およびプロフィール。さらに、Twitter、Discord、Github、Instagram、Facebook などの著名なソーシャルネットワークからアカウントを追加する機能も含まれています。
 
-## Quick integration
+## クイックインテグレーション
 
-A [permadapp](/concepts/permawebApplications.html) profile viewer is available at the tx [`5OHoPfYucLPTgOvJGgnL0Cg0Ktl-ZDaiTjQo_2B3tBg`](https://viewblock.io/arweave/tx/5OHoPfYucLPTgOvJGgnL0Cg0Ktl-ZDaiTjQo_2B3tBg)
+[permadapp](/concepts/permawebApplications.html) プロフィールビューワーは、tx [`5OHoPfYucLPTgOvJGgnL0Cg0Ktl-ZDaiTjQo_2B3tBg`](https://viewblock.io/arweave/tx/5OHoPfYucLPTgOvJGgnL0Cg0Ktl-ZDaiTjQo_2B3tBg) で入手可能です。
 
-You can embed any ArProfile with a `<iframe>` html tag.
+任意の ArProfile を `<iframe>` HTML タグで埋め込むことができます。
 
-For simplicity and to update automatically to the lattest txid, we recommend using the [ArNS](https://ar.io/arns/) name `profile`.
+簡単にするために、最新の txid に自動的に更新されるように、[ArNS](https://ar.io/arns/) 名 `profile` を使用することをお勧めします。
 
-### Embeddable URLs
+### 埋め込み可能な URL
 
 - https://profile.arweave.dev/`address`/`<wallet_address>`
 - https://profile.arweave.dev/`handler`/`<name#unique>`
 
-### Example
+### 例
 
 ```html
 <iframe
@@ -46,13 +46,13 @@ Result:
   frameBorder="0">
 </iframe>
 
-# Integration in your codebase
+# コードベースへの統合
 
-[`arweave-account`](https://www.npmjs.com/package/arweave-account) is a npm package that allows you to easily integrate ArProfile in your codebase, wether it is a web app or a backend (nodejs).
+[`arweave-account`](https://www.npmjs.com/package/arweave-account) は、ウェブアプリやバックエンド（nodejs）など、コードベースに ArProfile を簡単に統合するための npm パッケージです。
 
-## Installation
+## インストール
 
-Add the package using npm:
+npm を使用してパッケージを追加します：
 <CodeGroup>
   <CodeGroupItem title="NPM">
 
@@ -86,11 +86,12 @@ const opts = {
 ```
 
 ::: tip
-Caching will store the relevant profile information in your local storage so that future requests for such data can be fulfilled much faster. The duration that is stored is specified in the options passed in 
+キャッシュは、関連するプロフィール情報をローカルストレージに保存するため、将来のデータ要求に対してより迅速に応答できます。保存される期間は、渡されたオプションで指定します。
 :::
 
-#### Get Profile by Address
-To retrieve account information using an Arweave address, inside an async function pass the user address to the `get` function
+#### アドレスによるプロフィールの取得
+Arweave アドレスを使用してアカウント情報を取得するには、非同期関数内でユーザーアドレスを `get` 関数に渡します。
+
 
 ```js:no-line-numbers
 await account.get("aIUmY9Iy4qoW3HOikTy6aJww-mM4Y-CUJ7mXoPdzdog")
@@ -119,8 +120,8 @@ await account.get("aIUmY9Iy4qoW3HOikTy6aJww-mM4Y-CUJ7mXoPdzdog")
 }
 ```
 
-#### Get Profile by Handle
-An Arweave address can be linked to multiple ArProfile's. To retrieve account information using an existing ArProfile handle, inside an async function pass the user handle to the `search` function
+#### ハンドルによるプロフィールの取得
+Arweave アドレスは複数の ArProfile にリンクできます。既存の ArProfile ハンドルを使用してアカウント情報を取得するには、非同期関数内でユーザーハンドルを `search` 関数に渡します。
 
 ```js:no-line-numbers
 await account.search("cromatikap")
@@ -148,8 +149,8 @@ await account.search("cromatikap")
 ]
 ```
 
-#### Get Profile by Unique Handle
-To retrieve account information using an Arweave address, inside an async function pass the user handle and unique handle to the `search` function
+#### ユニークハンドルによるプロフィールの取得
+Arweave アドレスを使用してアカウント情報を取得するには、非同期関数内でユーザーハンドルとユニークハンドルを `search` 関数に渡します。
 
 ```js:no-line-numbers
 await account.search("cromatikap#aIUdog")
@@ -176,5 +177,5 @@ await account.search("cromatikap#aIUdog")
 }
 ```
 
-## Summary
-With just 3 lines of code needed to implement, ArProfile is a straight-forward way for adding additional Arweave user information such as avatars, bio's and social links to your applications.
+## まとめ
+実装に必要なコードはわずか 3 行で、ArProfile はアプリケーションにアバター、バイオ、ソーシャルリンクなどの追加の Arweave ユーザー情報を追加するための簡単な方法です。

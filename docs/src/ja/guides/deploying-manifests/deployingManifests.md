@@ -5,8 +5,8 @@ locale: ja
 
 ---
 
-This guide lays out how to create and deploy a path manifest manually. 
+このガイドでは、パスマニフェストを手動で作成し、デプロイする方法を説明します。
 
-The path manifests core concepts page has more information on what manifests are, and why they might be useful for your project. 
+パスマニフェストのコアコンセプトページには、マニフェストとは何か、そしてそれがプロジェクトにとってなぜ有用である可能性があるのかについての詳細が記載されています。
 
-If you follow this guide to deploy a path manifest, it will need to follow the manifest structure laid out in the [core concepts](https://cookbook.arweave.dev/concepts/manifests.html) page.
+このガイドに従ってパスマニフェストをデプロイする場合、[コアコンセプト](https://cookbook.arweave.dev/concepts/manifests.html)ページに示されたマニフェストの構造に従う必要があります。

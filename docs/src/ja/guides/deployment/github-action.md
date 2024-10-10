@@ -1,27 +1,27 @@
 ---
 locale: ja
 ---
-# Github Action
+# GitHub Actions
 
 ::: warning
-This guide is for educational purposes only, and you should use to learn options of how you might want to deploy your application. In this guide, we are trusting a 3rd party resource `github` owned by `microsoft` to protect our secret information, in their documentation they encrypt secrets in their store using `libsodium sealed box`, you can find more information about their security practices here. https://docs.github.com/en/actions/security-guides/encrypted-secrets
+このガイドは教育目的のためのものであり、アプリケーションをデプロイする方法を学ぶためのオプションとして使用するべきです。このガイドでは、私たちの秘密情報を保護するために`microsoft`が所有する第三者リソース`github`を信頼しています。彼らのドキュメントでは、秘密を保存する際に`libsodium sealed box`を使用して暗号化しています。彼らのセキュリティプラクティスについての詳細はこちらで確認できます。 https://docs.github.com/en/actions/security-guides/encrypted-secrets
 :::
 
-Github Actions are CI/CD pipelines that allows developers to trigger automated tasks via events generated from the github workflow system. These tasks can be just about anything, in this guide we will show how you can use github actions to deploy your permaweb application to the permaweb using Irys and ArNS.
+GitHub ActionsはCI/CDパイプラインで、開発者がGitHubワークフローシステムから生成されたイベントをトリガーとして自動化されたタスクを実行できるようにします。これらのタスクはほぼ何でも可能で、このガイドではIrysとArNSを使用してPermawebアプリケーションをデプロイする方法を示します。
 
 ::: tip
-This guide requires understanding of github actions, and you must have some ArNS Test Tokens, go to https://ar.io/arns/ for more details.
+このガイドではGitHub Actionsの理解が必要であり、いくつかのArNSテストトークンが必要です。詳細については、https://ar.io/arns/ をご覧ください。
 :::
 
 ::: warning
-This guide does not include testing or any other checks you may want to add to your production workflow.
+このガイドには、テストやプロダクションワークフローに追加したいその他のチェックは含まれていません。
 :::
 
-## Create deploy script
+## デプロイスクリプトの作成
 
-A deploy script is a script that does the heavy lifting of deploying your application, we will use `@irys/sdk` and `warp-contracts` to publish our application and register the newly published application on ArNS.
+デプロイスクリプトは、アプリケーションをデプロイするための重い作業を行うスクリプトです。`@irys/sdk`と`warp-contracts`を使用して、アプリケーションを公開し、新しく公開されたアプリケーションをArNSに登録します。
 
-Install deploy dependencies
+デプロイ依存関係をインストールします。
 
 ```console
 npm install --save-dev @permaweb/arx
@@ -61,9 +61,10 @@ await contract.writeInteraction({
 console.log("Deployed Cookbook, please wait 20 - 30 minutes for ArNS to update!");
 ```
 
-## Add script to package.json
 
-Create a new script property called `deploy`, call the build script, then call `node deploy.mjs` in the value of the scripts deploy property.
+## package.jsonにスクリプトを追加
+
+新しいスクリプトプロパティ`deploy`を作成し、ビルドスクリプトを呼び出し、その後`scripts deploy`プロパティの値に`node deploy.mjs`を設定します。
 
 package.json
 
@@ -77,9 +78,9 @@ package.json
   ...
 ```
 
-## Create github action
+## GitHub Actionの作成
 
-Create a `deploy.yml` file in the `.github/workflows` folder, this file instructs github actions to deploy when a push event is triggered on the `main` branch.
+`.github/workflows`フォルダーに`deploy.yml`ファイルを作成します。このファイルは、`main`ブランチでプッシュイベントがトリガーされたときにGitHub Actionsがデプロイを実行するよう指示します。
 
 ```yml
 name: publish
@@ -103,15 +104,15 @@ jobs:
                   KEY: ${{ secrets.PERMAWEB_KEY }}
 ```
 
-## Summary
+## まとめ
 
-In the project repo, go to the settings and secrets, add a new secret to the repostiory, this secret will be called PERMAWEB_KEY for this project. The value of the secret should be the base64 encode string of the deployment wallet.
+プロジェクトリポジトリの設定とシークレットに移動し、新しいシークレットをリポジトリに追加します。このプロジェクトのためにこのシークレットはPERMAWEB_KEYと呼ばれます。シークレットの値はデプロイメントウォレットのBase64エンコードされた文字列である必要があります。
 
 ```console
 base64 -i wallet.json | pbcopy
 ```
 
-In order for this deployment to work, you will need to fund this wallets Irys account, make sure there is some $AR in the wallet you will be using, not much, maybe .5 AR, then use the Irys cli to fund.
+このデプロイメントが機能するためには、このウォレットのIrysアカウントに資金を供給する必要があります。使用するウォレットには少しの$ARが必要です（0.5 AR程度で大丈夫です）。その後、Irys CLIを使用して資金を供給します。
 
 ```console
 arx fund 250000000000 -w wallet.json -t arweave
@@ -121,4 +122,4 @@ arx fund 250000000000 -w wallet.json -t arweave
 Keep this wallet low on funds and only use it for this project.
 :::
 
-:tada: You have setup a github action to completely automate your deploy to permaweb!
+:tada: Permawebへのデプロイを完全に自動化するGitHub Actionをセットアップしました！

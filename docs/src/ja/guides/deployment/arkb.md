@@ -3,13 +3,13 @@ locale: ja
 ---
 # arkb
 
-## Requirements
+## 要件
 
-An Arweave wallet is required to deploy using `arkb` for covering the data transaction costs.
+`arkb`を使用してデプロイするには、データトランザクションコストをカバーするためのArweaveウォレットが必要です。
 
-## Installation
+## インストール
 
-To install `arkb` run
+`arkb`をインストールするには、以下のコマンドを実行します。
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -27,15 +27,15 @@ yarn add ar-gql
   </CodeGroupItem>
 </CodeGroup>
 
-## Deploying
+## デプロイ
 
-When uploading a directory of files or a Permaweb application, by default `arkb` deploys each file separately as an L1 transaction, with the option to bundle the transactions using Bundlr.
+ファイルのディレクトリまたはPermawebアプリケーションをアップロードする際、デフォルトで`arkb`は各ファイルをL1トランザクションとして個別にデプロイし、Bundlrを使用してトランザクションをバンドルするオプションがあります。
 
-## Static Build
+## 静的ビルド
 
-Permaweb applications are statically generated, meaning that the code and content are generated ahead of time and stored on the network.
+Permawebアプリケーションは静的に生成されるため、コードとコンテンツは事前に生成され、ネットワークに保存されます。
 
-Below is an example of a static site. To deploy this to the Permaweb, the `build` directory will be passed in as the argument for the `deploy` flag.
+以下は静的サイトの例です。これをPermawebにデプロイするには、`build`ディレクトリを`deploy`フラグの引数として渡します。
 
 ```js
 |- build
@@ -44,9 +44,9 @@ Below is an example of a static site. To deploy this to the Permaweb, the `build
     |- index.js
 ```
 
-#### Default Deployment
+#### デフォルトデプロイ
 
-Deploying as an L1 transaction can take longer to confirm as it is directly uploaded to the Arweave network.
+L1トランザクションとしてデプロイすると、Arweaveネットワークに直接アップロードされるため、確認に時間がかかる場合があります。
 
 ```console
 arkb deploy [folder] --wallet [path to wallet]
@@ -55,13 +55,13 @@ arkb deploy [folder] --wallet [path to wallet]
 <br/>
 <img src="https://arweave.net/_itbo7y4H0kDm4mrPViDlc6bt85-0yLU2pO2KoSA0eM" />
 
-#### Bundled Deployment
+#### バンドルデプロイ
 
-To deploy using Bundlr you will need to <a href="#fund-bundlr">fund a Bundlr node</a>.
+Bundlrを使用してデプロイするには、<a href="#fund-bundlr">Bundlrノードに資金を供給する</a>必要があります。
 
-Bundlr node2 allows free transactions under 100kb.
+Bundlrのnode2は、100KB未満のトランザクションを無料で提供します。
 
-You can add custom identifiable tags to the deployment using `tag-name/tag-value` syntax.
+デプロイメントにカスタム識別可能なタグを追加するには、`tag-name/tag-value`構文を使用します。
 
 ```console
 arkb deploy [folder] --use-bundler [bundlr node] --wallet [path to wallet] --tag-name [tag name] --tag-value [tag value]
@@ -86,7 +86,7 @@ arkb fund-bundler [amount] --use-bundler [bundlr node]
 arkb wallet-save [path to wallet]
 ```
 
-After saving your key you can now run commands without the --wallet-file option, like this
+キーを保存した後は、--wallet-file オプションなしでコマンドを実行できるようになります。次のように実行します。
 
 ```console
 arkb deploy [path to directory]

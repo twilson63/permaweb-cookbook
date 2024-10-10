@@ -2,24 +2,25 @@
 locale: ja
 ---
 # arlocal
-`arlocal` is a tool for quickly setting up and running a local Arweave testing environment. It allows you to test transactions on a Arweave gateway-like server. It allows developers to test their applications in a simulated environment before deploying them to the Arweave network
 
-No $AR tokens are required to use and transactions are instant.
+`arlocal`は、ローカルのArweaveテスト環境を迅速にセットアップし、実行するためのツールです。これにより、Arweaveゲートウェイのようなサーバー上でトランザクションをテストすることができます。開発者は、アプリケーションをArweaveネットワークにデプロイする前に、シミュレーションされた環境でテストすることができます。
+
+$ARトークンは必要なく、トランザクションは即時です。
 
 ## CLI
-You must have node and npm installed on your machine to use the arlocal CLI
 
-To start the local gateway, run `npx arlocal`
+`arlocal` CLIを使用するには、マシンにNodeとnpmをインストールしておく必要があります。
 
+ローカルゲートウェイを起動するには、次のコマンドを実行します：
 ::: tip
-You can specify what port to run the slim gateway on by passing your port as an argument
+スリムゲートウェイを実行するポートを指定するには、引数としてポートを渡します。
 `npx arlocal 8080`
 :::
 
-To hide the logs, add the flag `--hidelogs` when you run your gateway
+ログを隠すには、ゲートウェイを実行するときに`--hidelogs`フラグを追加します。
 `npx arlocal --hidelogs`
 ## Node 
-Install the package as a dev dependency by running
+パッケージを開発依存関係としてインストールするには、次のコマンドを実行します：
 `yarn add arlocal -D` or `npm install arlocal --save-dev`
 
 ```js
@@ -38,20 +39,23 @@ import ArLocal from 'arlocal';
 })();
 ```
 
-An `ArLocal` instance can be created with options
-| Option | Description |
-| ---- | ----------- |
-| port | Port to use |
-| showLogs | Show logs |
-| dbPath | Directory for temporary database  |
-| persist | Persisting data between server restarts
+`ArLocal`インスタンスは、以下のオプションを指定して作成できます：
 
-### Example
-For this example to work, the code needs to use a generated test wallet. To achieve this the `arweave` package must be installed to the project along with `arlocal`
+| オプション  | 説明                           |
+|-------------|--------------------------------|
+| port        | 使用するポート                 |
+| showLogs    | ログを表示するかどうか         |
+| dbPath      | 一時データベース用のディレクトリ|
+| persist     | サーバーの再起動間でデータを永続化 |
+
+### 例
+
+この例を動作させるには、生成されたテストウォレットを使用する必要があります。これを実現するためには、`arweave`パッケージをプロジェクトにインストールする必要があります。
+`arweave` package must be installed to the project along with `arlocal`
 
 `yarn add arweave arlocal -D` or `npm install --save-dev arweave arlocal`
 
-Below is a basic JavaScript test for creating a data transaction and posting it to Arweave using arlocal:
+以下は、データトランザクションを作成し、arlocalを使用してArweaveに投稿するための基本的なJavaScriptテストです：
 
 ```js
 import ArLocal from 'arlocal'
@@ -92,9 +96,10 @@ test('test transaction', async () => {
 })
 ```
 
+
 ::: warning
-Test results from L1 transactions may differ from L2 transactions
+L1トランザクションのテスト結果は、L2トランザクションと異なる場合があります。
 :::
 
-## Resources
-[arlocal docs](https://github.com/textury/arlocal)
+## リソース
+[arlocalドキュメント](https://github.com/textury/arlocal)

@@ -1,3 +1,6 @@
+---
+locale: ja
+---
 # ArNS - Arweave Name System
 
 ## 概要

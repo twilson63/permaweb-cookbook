@@ -1,22 +1,23 @@
 ---
 locale: ja
 ---
-# Querying Arweave with GraphQL
-Arweave provides a simple way of querying for transactions and filtering them by [tags](../concepts/tags.md). Arweave GraphQL-compatible indexing services provide endpoints users can post GraphQL queries to, and also provide a playground for trying queries.
+# ArweaveをGraphQLでクエリする
+Arweaveはトランザクションをクエリし、[タグ](../concepts/tags.md)でフィルタリングするための簡単な方法を提供しています。ArweaveのGraphQL対応インデックスサービスは、ユーザーがGraphQLクエリを送信できるエンドポイントを提供し、クエリを試すためのプレイグラウンドも提供しています。
 
-[GraphQL](https://graphql.org) is a flexible query language that services can use to build a customized data schema for clients to query. GraphQL also allows clients to specify which elements of the available data structure they would like to see in the results.
+[GraphQL](https://graphql.org)は、サービスがクライアントがクエリできるカスタマイズされたデータスキーマを構築するために使用できる柔軟なクエリ言語です。GraphQLはまた、クライアントが結果に表示したいデータ構造の要素を指定することも可能にします。
 
-## Public Indexing Services
+## 公開インデックスサービス
 
-- [arweave.net graphql](https://arweave.net/graphql) the original graphql endpoint, managed by [ar.io](https://ar.io)
-- [goldsky search service](https://arweave-search.goldsky.com/graphql) a public service specifically optimized for search using a superset of the graphql syntax, managed by [goldsky](https://goldsky.com)
-- [ar.io decentralized indexing](https://ar-io.dev/graphql) A decentralized network for indexing services. Currently in testing with L1 transactions available.
-- [knn3 arseeding indexing](https://knn3-gateway.knn3.xyz/arseeding/graphql), one for arseeding trading can real-time query service.
+- [arweave.net graphql](https://arweave.net/graphql) 元のgraphqlエンドポイント、[ar.io](https://ar.io)によって管理されています。
+- [goldsky検索サービス](https://arweave-search.goldsky.com/graphql) 特に検索用に最適化された公開サービス、[goldsky](https://goldsky.com)によって管理されています。
+- [ar.io分散インデックス](https://ar-io.dev/graphql) 分散型インデックスサービスのネットワーク。現在、L1トランザクションでテスト中です。
+- [knn3 arseedingインデックス](https://knn3-gateway.knn3.xyz/arseeding/graphql) arseeding取引用のリアルタイムクエリサービスです。
 
-## Executing a GraphQL Query
-To query arweave we’ll need to access it through an indexing service that supports GraphQL. Use one of the GraphQL playgrounds listed above to get started!
+## GraphQLクエリの実行
+Arweaveをクエリするには、GraphQLをサポートするインデックスサービスを介してアクセスする必要があります。上記のGraphQLプレイグラウンドのいずれかを使用して始めましょう！
 
-Copy and paste in the following query
+以下のクエリをコピーして貼り付けます
+
 ```graphql:no-line-numbers
 query {
   transactions(tags: [{
@@ -37,55 +38,57 @@ query {
 }
 ```
 
-If you’re not familiar with GraphQL it can seem a little overwhelming at first but once you know the structure, it’s fairly easy to read and understand.
+
+
+GraphQLに不慣れな場合、最初は少し圧倒されるかもしれませんが、構造を知ると、読みやすく理解しやすいものです。
 
 ```text:no-line-numbers
 query { <schema type> ( <filter criteria> ) { <data structure of the results> } }
 ```
-In the example query we pasted our `<schema type>` is `transactions` but we could also query for `blocks`. A full description of Arweave's GraphQL schema is written up in the [Arweave GraphQL Guide](https://gql-guide.arweave.dev). The guide refers to the `filter criteria` as “Query Structures” and the complete data structure definition of `transactions` and `blocks` as “Data Structures”.
+貼り付けた例のクエリでは、`<schema type>`が`transactions`ですが、`blocks`をクエリすることもできます。ArweaveのGraphQLスキーマの完全な説明は、[Arweave GraphQL Guide](https://gql-guide.arweave.dev)に書かれています。このガイドでは、`filter criteria`を「クエリ構造」と呼び、`transactions`および`blocks`の完全なデータ構造定義を「データ構造」と呼んでいます。
 
-When it comes to the `<data structure of the results>`, the thing to note is that you can specify a subset of the complete data structure you’re interested in. For example, the complete data structure for a transactions schema is [listed here](https://gql-guide.arweave.dev/#full-data).
+`<data structure of the results>`に関して言えば、興味のあるデータ構造のサブセットを指定できることが重要です。たとえば、トランザクションスキーマの完全なデータ構造は[こちらにリストされています](https://gql-guide.arweave.dev/#full-data)。
 
-In our case we’re interested in the `id` and complete list of `tags` for any transaction matching our filter criteria.
+この場合、フィルタ基準に一致するトランザクションの`id`と完全な`tags`リストに興味があります。
 
-Hit the big “Play” button in the middle of the playground to run the query.
+プレイグラウンドの中央にある大きな「再生」ボタンをクリックしてクエリを実行します。
 
 ![image](https://arweave.net/rYfVvFVKLFmmtXmf8KeTvsG8avUXMQ4qOBBTZRHqVU0)
 
-You’ll notice we get back a list of transactions in the results data structure we specified in our original query.
+結果データ構造にリストされたトランザクションが返されるのに気づくでしょう。
 
-If you’re new to blockchains this is unexpected, we haven’t built anything, why do these results exist? It turns out, the `“PublicSquare”: “App-Name”` tag we’ve filtered for has been in use for a while.
+ブロックチェーンに不慣れな場合、これは予期しないかもしれません。何も構築していないのに、なぜこれらの結果が存在するのでしょうか？実際、フィルタリングした`“PublicSquare”: “App-Name”`タグは、しばらくの間使用されていました。
 
-Arweave protocol's founder, Sam Williams, proposed the transaction format a few years ago in a [github code snippet](https://gist.github.com/samcamwilliams/811537f0a52b39057af1def9e61756b2). Since then builders in the ecosystem have been building on and around it, experimenting, posting transactions with those tags.
+Arweaveプロトコルの創設者であるSam Williamsは、数年前に[githubのコードスニペット](https://gist.github.com/samcamwilliams/811537f0a52b39057af1def9e61756b2)でトランザクション形式を提案しました。それ以来、エコシステム内のビルダーはそれを元に構築し、実験し、これらのタグを使ってトランザクションを投稿してきました。
 
-Back to querying Arweave. You’ll notice in the GraphQL results that there are no readable post messages, just tags and information about posts.
+Arweaveのクエリに戻ります。GraphQLの結果には、読み取り可能な投稿メッセージはなく、タグと投稿に関する情報だけが含まれています。
 
-This is because the GraphQL indexing service is concerned with indexing and retrieving header data for transactions and blocks but not their associated data.
+これは、GraphQLインデックスサービスがトランザクションやブロックのヘッダーデータのインデックス作成と取得に関心を持っているためであり、それらに関連するデータには関与していないためです。
 
-To get the data of a transaction we need to look it up using another HTTP endpoint.
+トランザクションのデータを取得するには、別のHTTPエンドポイントを使用して検索する必要があります。
 ```text:no-line-numbers
 https://arweave.net/<transaction id>
 ```
 
-Copy and paste one of the id’s in your query results and modify the above link, appending the `id`. It should look something like this…
+クエリ結果の1つの`id`をコピーして、上記のリンクを変更し、`id`を追加します。以下のようになるはずです…
 
 https://arweave.net/eaUAvulzZPrdh6_cHwUYV473OhvCumqT3K7eWI8tArk
 
-The result of navigating to that URL in the browser (HTTP GET) would be retrieving the content of the post (stored in the transactions data). In this example it’s…
+ブラウザでそのURLにナビゲートすると（HTTP GET）、投稿の内容（トランザクションデータに格納されている）が取得されます。この例では…
 ```text:no-line-numbers
 Woah that's pretty cool 😎
 ```
-(For a complete listing arweave HTTP endpoints visit the [HTTP API](https://docs.arweave.org/developers/server/http-api) documentation.)
+（Arweave HTTPエンドポイントの完全なリストについては、[HTTP API](https://docs.arweave.org/developers/server/http-api)のドキュメントを参照してください。）
 
-## Posting a Query From JavasScript
-Posting a GraphQL query from javascript isn't much different than posting it in the playground.
+## JavaScriptからクエリを投稿する
+JavaScriptからGraphQLクエリを投稿することは、プレイグラウンドで投稿するのとあまり変わりません。
 
-First install the `arweave-js` package for easy access to a GraphQL endpoint.
+まず、GraphQLエンドポイントへの簡単なアクセスのために`arweave-js`パッケージをインストールします。
 ```console:no-line-numbers
 npm install --save arweave
 ```
 
-Then enter a slightly more advanced version of the example query from above and `await` the results of posting it.
+次に、上記の例のクエリのやや高度なバージョンを入力し、結果を`await`します。
 
 ```js:no-line-numbers
 import Arweave from 'arweave';
@@ -126,8 +129,8 @@ const queryObject = {
 const results = await arweave.api.post('/graphql', queryObject);
 ```
 
-## Multiple Queries
-It is possible to post multiple queries in a single round-trip to the GraphQL endpoint. This example queries the `name` transaction (each as a separate query) for two wallet addresses using the now obsolete (replaced by `ar-profile`) but still permanent `arweave-id` protocol.
+## 複数のクエリ
+GraphQLエンドポイントへの1回のラウンドトリップで複数のクエリを投稿することも可能です。この例では、`arweave-id`プロトコル（現在は`ar-profile`に置き換えられていますが、依然として永久的です）を使用して2つのウォレットアドレスの`name`トランザクションをクエリします。
 ```graphql:no-line-numbers
 query {
 	account1: transactions(first: 1, owners:["89tR0-C1m3_sCWCoVCChg4gFYKdiH5_ZDyZpdJ2DDRw"],
@@ -176,9 +179,8 @@ query {
 ```
 
 
-## Resources
-* [Arweave GQL Reference](../../references/gql.md)
-* [ArDB package](./ardb.md)
-* [ar-gql package](./ar-gql.md)
-* [Search Indexing Service](./search-indexing-service.md)
-
+## リソース
+* [Arweave GQLリファレンス](../../references/gql.md)
+* [ArDBパッケージ](./ardb.md)
+* [ar-gqlパッケージ](./ar-gql.md)
+* [検索インデックスサービス](./search-indexing-service.md)

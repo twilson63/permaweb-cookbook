@@ -1,42 +1,42 @@
 ---
 locale: ja
 ---
-# Execution Machine API Token
+# 実行マシン API トークン
 
-EXM seeks to be crypto agnostic and requires only a single API token (also known as key) to interact with. This API key is required for most actions in EXM like deployments and write operations.
+EXM は暗号に依存せず、単一の API トークン（キーとも呼ばれます）でインタラクションを行うことを目指しています。この API キーは、デプロイや書き込み操作など、EXM のほとんどのアクションに必要です。
 
-## Creating an API Token
+## API トークンの作成
 
-For creating an API token, the following steps must be performed:
+API トークンを作成するには、以下の手順を実行する必要があります。
 
-- Go to the [main page](https://exm.dev/).
-- Choose the preferred method to Sign-Up/ Sign-In.
+- [メインページ](https://exm.dev/)に移動します。
+- サインアップ / サインインのための好みの方法を選択します。
 
-![EXM Sign In Options](~@source/images/exm-sign-in-options.png)
+![EXM サインインオプション](~@source/images/exm-sign-in-options.png)
 
-- After being redirected to the dashboard, click on "New Token".
+- ダッシュボードにリダイレクトされた後、「新しいトークン」をクリックします。
 
-![Create New API Token](~@source/images/exm-create-token.png)
+![新しい API トークンを作成](~@source/images/exm-create-token.png)
 
-- Copy the token that has been generated and use it with the SDK or CLI.
+- 生成されたトークンをコピーし、SDK または CLI で使用します。
 
-## Handling API Token safely
+## API トークンの安全な取り扱い
 
-The token is an identifier to our account and lets us access functions associated with it. Hence, it is vital to ensure this token is kept secret to prevent any spams and attacks to our functions. The best way to do so is using environment variables.
+トークンはアカウントの識別子であり、それに関連する機能にアクセスすることを可能にします。したがって、このトークンを秘密に保つことは非常に重要です。スパムや攻撃から機能を保護するためです。最良の方法は、環境変数を使用することです。
 
-There are two ways to store environment variables:
+環境変数を保存する方法は 2 通りあります。
 
-1. Through the command line:
+1. コマンドラインを通じて：
 
-In the directory of the project, pass the following command:
-
+プロジェクトのディレクトリで、以下のコマンドを実行します。
 ```bash
 export EXM_PK=<your_api_token>
 ```
 
-2. Through the `dotenv` sdk:
 
-- Run the following in the command line:
+2. `dotenv` SDK を通じて：
+
+- コマンドラインで以下を実行します：
 
   ```bash
   npm install dotenv
@@ -45,11 +45,11 @@ export EXM_PK=<your_api_token>
 
   yarn add dotenv
   ```
-- Import the library in file using the variables:
+- ファイル内で変数を使用してライブラリをインポートします：
 
   ```jsx
   import dotenv from "dotenv";
   dotenv.config();
   ```
 
-Then this key can be refered inside files as `process.env.EXM_PK` without exposing it or pushing it to version control systems like GitHub.
+これにより、このキーは `process.env.EXM_PK` としてファイル内で参照でき、露出したり GitHub のようなバージョン管理システムにプッシュすることなく使用できます。

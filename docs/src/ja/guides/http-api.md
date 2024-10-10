@@ -1,30 +1,31 @@
 ---
 locale: ja
 ---
-# Fetching Transaction Data
-While indexing services allow querying of transaction metadata they don't provide access to the transaction data itself. This is because caching transaction data and indexing metadata have different resource requirements. Indexing services primarily rely on compute resources to perform queries on a database while transaction data is better suited to deployment on a Content Delivery Network (CDN) to optimize storage and bandwidth.
+# トランザクションデータの取得
 
-A Transaction data caching service is offered by most gateways though a set of HTTP endpoints. Any HTTP client/package can be used to request transaction data from these endpoints. For example Axios or Fetch for JavaScript, Guzzle for PHP, etc.
+インデックスサービスはトランザクションメタデータのクエリを可能にしますが、トランザクションデータ自体へのアクセスは提供していません。これは、トランザクションデータのキャッシュとメタデータのインデックス作成が異なるリソース要件を持つためです。インデックスサービスは主にデータベースでのクエリを実行するためにコンピュートリソースに依存し、一方トランザクションデータはストレージと帯域幅を最適化するためにコンテンツ配信ネットワーク（CDN）への展開に適しています。
 
-If you wanted to bypass a transaction data caching service and get data directly from the Arweave peers/nodes you could, but it's a lot of work!
+ほとんどのゲートウェイは、一連のHTTPエンドポイントを通じてトランザクションデータキャッシングサービスを提供しています。これらのエンドポイントからトランザクションデータを要求するために、任意のHTTPクライアント/パッケージを使用できます。例えば、JavaScriptのAxiosやFetch、PHPのGuzzleなどです。
 
-Transaction data is stored on Arweave as a contiguous sequence of 256KB chunks, from the very beginning of the network until the current block. This format is optimized to support the SPoRA mining mechanism miners participate in to prove they are storing Arweave data.
+トランザクションデータキャッシングサービスをバイパスして、Arweaveのピア/ノードから直接データを取得したい場合も可能ですが、かなりの作業が必要です！
+
+トランザクションデータは、ネットワークの最初から現在のブロックまで、256KBのチャンクの連続したシーケンスとしてArweaveに保存されます。この形式は、マイナーがArweaveデータを保存していることを証明するために参加するSPoRAマイニングメカニズムをサポートするように最適化されています。
 
 ::: info
-1. Retrieve a list of peers from a well known peer.
-1. Ask the peer for the chunk offsets which contain your transactions data.
-1. Ask the peer to for the chunks.
-    1. If the peer provides the chunks, combine them back into their original format.
-1. (If the peer does not have the chunks) walk the peer list asking for the chunks.
-1. For each peer you visit, check their peer list and add peers not already in your list.
-1. Repeat from step 3 until you have all of the chunks.
+1. よく知られたピアからピアのリストを取得します。
+1. ピアにトランザクションデータを含むチャンクオフセットを尋ねます。
+1. ピアにチャンクを要求します。
+    1. ピアがチャンクを提供する場合、元の形式に再結合します。
+1. （ピアがチャンクを持っていない場合）ピアリストを歩いてチャンクを要求します。
+1. 訪問した各ピアについて、彼らのピアリストを確認し、リストにまだ含まれていないピアを追加します。
+1. すべてのチャンクを取得するまでステップ3を繰り返します。
 :::
 
-This is a fairly large amount of work to perform each time you want to retrieve data from the Arweave network. Imagine if you were trying to display a timeline of tweets like [https://public-square.g8way.io](https://public-square.g8way.io) does. The user experience would be terrible with long load times and spinners. Because data on Arweave is permanent, it's safe to cache in its original form to make retrieval of transaction data much quicker and easier.
+これは、Arweaveネットワークからデータを取得するたびに実行するにはかなりの作業量です。例えば、[https://public-square.g8way.io](https://public-square.g8way.io)のようにツイートのタイムラインを表示しようとした場合、ユーザー体験は長いロード時間やスピナーでひどいものになるでしょう。Arweave上のデータは永久的であるため、元の形式でキャッシュすることが安全であり、トランザクションデータの取得をはるかに迅速かつ容易にします。
 
-The following is how to access cached transaction data in the arweave.net Transaction data caching service.
+以下は、arweave.netトランザクションデータキャッシングサービスでキャッシュされたトランザクションデータにアクセスする方法です。
 
-### Get cached TX data
+### キャッシュされたTXデータの取得
 
 `https://arweave.net/TX_ID`
 
@@ -93,9 +94,9 @@ console.log(res)
 </details>
 <hr />
 
-Each Arweave peer/node also exposes some HTTP endpoints which are often replicated gateways. You can read more about Arweave peer's HTTP endpoints here.
+各Arweaveピア/ノードは、しばしば複製されたゲートウェイであるHTTPエンドポイントも公開しています。ArweaveピアのHTTPエンドポイントについては、こちらで詳しく読むことができます。
 
-### Get raw transaction
+### 生トランザクションの取得
 `https://arweave.net/raw/TX_ID`
 ```js
 const result = await fetch('https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHbFMb24YTQHGe9geo')
@@ -153,8 +154,8 @@ const result = await fetch('https://arweave.net/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3
 </details>
 <hr />
 
-### Get Wallet Balance
-The returned balance is in Winston. To get balance in $AR, divide the balance by 1000000000000
+### ウォレット残高の取得
+返される残高はWinston単位です。$ARでの残高を取得するには、残高を1000000000000で割ります。
 `https://arweave.net/wallet/ADDRESS/balance`
 ```js
 const res = await axios.get(`https://arweave.net/wallet/NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0/balance`)
@@ -165,10 +166,10 @@ console.log(res.data / 1000000000000)
 6.638463438702 // $AR
 ```
 
-### Get transaction status
+### トランザクションのステータス取得
 `https://arweave.net/tx/TX_ID/status`
 ::: tip
-This endpoint only supports native Arweave transactions. Transactions must be confirmed before getting a successful response.
+このエンドポイントはネイティブのArweaveトランザクションのみをサポートしています。トランザクションは、成功した応答を得る前に確認される必要があります。
 :::
 
 ```js

@@ -2,9 +2,9 @@
 locale: ja
 ---
 # ar-gql
-This package is a minimal layer on top of GraphQL, it supports parameterized queries with query variables. It also implements management of paged results. 
+このパッケージはGraphQLの上に構築された最小限のレイヤーで、クエリ変数を使用したパラメータ化クエリをサポートしています。また、ページネーションされた結果の管理も実装されています。
 
-## Installation
+## インストール
 
 To install `ar-gql run
 <CodeGroup>
@@ -68,5 +68,5 @@ const argql = arGql()
 })();
 ```
 
-## Resources
-* [ar-gql github page](https://github.com/johnletey/arGql)
+## リソース
+* [ar-gql GitHubページ](https://github.com/johnletey/arGql)

@@ -1,10 +1,12 @@
 ---
 locale: ja
 ---
-# Posting Transactions using arseeding.js
-You can use the `arseeding-js` JavaScript SDK package to publish transactions on the Arweave network. Arseeding automatically broadcasts the transaction to all Arweave nodes in the network, ensuring that the transaction is promptly received in the pending pool of all Arweave nodes, thus increasing the transaction's packaging speed.
-## Installing arseeding.js
-To install `arseeding.js` run:
+# arseeding.jsを使用したトランザクションの投稿
+`arseeding-js` JavaScript SDKパッケージを使用して、Arweaveネットワーク上でトランザクションを公開できます。Arseedingは、トランザクションをネットワーク内のすべてのArweaveノードに自動的にブロードキャストし、トランザクションがすべてのArweaveノードの保留プールに迅速に受信されることを保証します。これにより、トランザクションのパッケージング速度が向上します。
+
+## arseeding.jsのインストール
+`arseeding.js`をインストールするには、次のコマンドを実行します：
+
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -23,8 +25,9 @@ yarn add arseeding-js
   </CodeGroupItem>
 </CodeGroup>
 
-## Transaction for Uploading Data
-When using Arseeding, you must pre-fund your account on [everpay](https://app.everpay.io/). This balance can be funded with $AR tokens or other cryptocurrencies. Another distinction is that the Arseeding service ensures that your data will make it onto the blockchain.
+
+## データをアップロードするためのトランザクション
+Arseedingを使用する場合、[everpay](https://app.everpay.io/)でアカウントに事前に資金を入れておく必要があります。この残高は、$ARトークンまたは他の暗号通貨で資金を供給できます。もう1つの違いは、Arseedingサービスがあなたのデータをブロックチェーンに確実に載せることを保証する点です。
 
 ```js:no-line-numbers
 const { genNodeAPI } = require('arseeding-js')
@@ -44,9 +47,9 @@ run()
 ```
 
 
-## Resources
-* For an overview of all methods for publishing transactions, please refer to the [Publishing Transactions](../../concepts/post-transactions.md) section in the operation manual.
+## リソース
+* トランザクションを公開するためのすべてのメソッドの概要については、操作マニュアルの[Publishing Transactions](../../concepts/post-transactions.md)セクションを参照してください。
 
-* You can find the complete Arseeding documentation on the [Arseeding website](https://web3infra.dev/docs/arseeding/introduction/lightNode/).
+* 完全なArseedingのドキュメントは、[Arseedingのウェブサイト](https://web3infra.dev/docs/arseeding/introduction/lightNode/)で確認できます。
 
-* Follow the Arseeding Upload Manifest tutorial [here](https://web3infra.dev/docs/arseeding/sdk/arseeding-js/manifest/).
+* Arseeding Upload Manifestチュートリアルは[こちら](https://web3infra.dev/docs/arseeding/sdk/arseeding-js/manifest/)でフォローしてください。

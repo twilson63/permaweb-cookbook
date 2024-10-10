@@ -1,7 +1,7 @@
 ---
 locale: ja
 ---
-# Deployment
+# デプロイメント
 
 - [arkb](arkb.md)
 - [github-action](github-action.md)

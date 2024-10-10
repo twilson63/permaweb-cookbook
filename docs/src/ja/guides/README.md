@@ -1,28 +1,28 @@
 ---
 locale: ja
-title: Permaweb Cookbook - Guides
+title: Permaweb Cookbook - ガイド
 ---
 
-# Guides
+# ガイド
 
-Snack-sized guides for the building blocks of the Permaweb
+Permawebの構成要素に関するスナックサイズのガイド
 
 -   [ArProfile](arprofile.md)
--   [DNS Integration](dns-integration/server-side.md)
-    -   [Server Side](dns-integration/server-side.md)
+-   [DNS統合](dns-integration/server-side.md)
+    -   [サーバーサイド](dns-integration/server-side.md)
     -   [Spheron](dns-integration/spheron.md)
--   [Deploying Apps](deployment/index.md)
+-   [アプリのデプロイ](deployment/index.md)
     -   [arkb](deployment/arkb.md)
     -   [github-action](deployment/github-action.md)
--   [Deploying PathManifests](deploying-manifests/deployingManifests.md)
+-   [PathManifestsのデプロイ](deploying-manifests/deployingManifests.md)
     -   [arweave.app](deploying-manifests/arweave-app.md)
     -   [ardrive](deploying-manifests/ardrive.md)
     -   [Akord](deploying-manifests/akord.md)
--   [Deploying PSTs](deploying-psts.md)
+-   [PSTのデプロイ](deploying-psts.md)
 -   [GraphQL](querying-arweave/queryingArweave.md)
     -   [ArDB](querying-arweave/ardb.md)
     -   [ar-gql](querying-arweave/ar-gql.md)
-    -   [Search Service](querying-arweave/search-indexing-service.md)
--   [Testing](testing/arlocal.md)
+    -   [検索サービス](querying-arweave/search-indexing-service.md)
+-   [テスト](testing/arlocal.md)
 
-> Do you think a permaweb guide is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md)
+> Permawebのガイドが欠けていると思いますか？ [Github](https://github.com/twilson63/permaweb-cookbook/issues)で問題を作成するか、[貢献](../getting-started/contributing.md)を検討してください。

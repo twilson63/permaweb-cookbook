@@ -1,17 +1,17 @@
 ---
 locale: ja
 ---
-# Mint your Atomic Assets with Akord
+# Akordを使ってアトミックアセットをミントする
 
-Akord enables the creation of Atomic NFTs compliant with the [Atomic Asset standard](https://atomic-assets.arweave.dev/).
+Akordは、[アトミックアセット標準](https://atomic-assets.arweave.dev/)に準拠したアトミックNFTの作成を可能にします。
 
-The Atomic Asset can be minted with the option to attach the [Universal Data License](https://arwiki.wiki/#/en/Universal-Data-License-How-to-use-it) (UDL), and can be listed on the [Universal Content Marketplace](https://docs.akord.com/nfts/minting-atomic-nfts/universal-content-marketplace) (UCM).
+アトミックアセットは、[ユニバーサルデータライセンス](https://arwiki.wiki/#/en/Universal-Data-License-How-to-use-it) (UDL) を添付するオプションでミントされ、[ユニバーサルコンテンツマーケットプレイス](https://docs.akord.com/nfts/minting-atomic-nfts/universal-content-marketplace) (UCM) にリストすることができます。
 
-## with AkordJS
+## AkordJSを使って
 
-You can mint your Atomic Assets using [AkordJS](https://github.com/Akord-com/akord-js) package.
+[AkordJS](https://github.com/Akord-com/akord-js)パッケージを使用してアトミックアセットをミントできます。
 
-### Before you get started
+### 始める前に
 
 > Requires NodeJS - https://nodejs.org
 
@@ -32,22 +32,23 @@ yarn add @akord/akord-js
   </CodeGroupItem>
 </CodeGroup>
 
-### Defining NFT metadata
-You can define following fields for your NFT
-| Name | Description | Optional
-| ---- | ----------- | --------
-| owner | the address of the asset owner | false
-| name | the name of the asset (max 150 characters) | false
-| description | a description of the asset (max 300 characters) | false
-| types | the types of the asset, ex: "image", "video" | false
-| topics | the topics or categories associated with the assets, ex: "nature", "music" | true
-| creator | the address of the asset creator, if not provided, defaults to the asset owner | true
-| thumbnail | a thumbnail image associated with the asset | true
-| contractTxId | contract source transaction id, if not provided, defaults to "Of9pi--Gj7hCTawhgxOwbuWnFI1h24TTgO5pw8ENJNQ" | true
-| ticker | the symbol of the token, if not provided, defaults to "ATOMIC" | true
+### NFTメタデータの定義
+NFTのために以下のフィールドを定義できます。
+| 名前 | 説明 | オプション |
+| ---- | ----------- | -------- |
+| owner | アセットの所有者のアドレス | false |
+| name | アセットの名前 (最大150文字) | false |
+| description | アセットの説明 (最大300文字) | false |
+| types | アセットの種類、例: "image", "video" | false |
+| topics | アセットに関連するトピックやカテゴリー、例: "nature", "music" | true |
+| creator | アセットの作成者のアドレス。提供されない場合、所有者がデフォルトになります | true |
+| thumbnail | アセットに関連付けられたサムネイル画像 | true |
+| contractTxId | コントラクトソーストランザクションID。提供されない場合、デフォルトは "Of9pi--Gj7hCTawhgxOwbuWnFI1h24TTgO5pw8ENJNQ" | true |
+| ticker | トークンのシンボル。提供されない場合、デフォルトは "ATOMIC" | true |
 
 
-### Minting flow example
+### ミントフローの例
+
 
 ```js
 import { Akord, Auth } from '@akord/akord-js'
@@ -74,22 +75,21 @@ const { vaultId } = await akord.vault.create("My NFTs", { public: true });
 // Finally, let's mint the NFT by passing the path to the asset data, NFT metadata
 const { uri } = await akord.nft.mint(vaultId, "./my-nft.jpeg", metadata);
 ```
+### おめでとうございます！
 
-### Congrats!
-
-Once the transaction is accepted on Arweave network (it takes 5-15 minutes on average), \
-it will get automatically registered on [Warp](https://sonar.warp.cc/) and you can access your NFT on ViewBlock by visiting the following URL:
+トランザクションがArweaveネットワークで受け入れられると（平均で5〜15分かかります）、 \
+それは自動的に[Warp](https://sonar.warp.cc/)に登録され、次のURLを訪れることでNFTにアクセスできます：
 https://viewblock.io/arweave/tx/{uri}
 
-## with Akord web app
+## Akordウェブアプリを使用して
 
-Alternatively, you can find a complete user-friendly guide that walk you through the creation of atomic assets from within a web application. \
-[Go to the minting guide here.](https://docs.akord.com/nfts/minting-atomic-nfts) \
-And the best part is, no coding is involved!
+また、ウェブアプリケーション内からアトミックアセットの作成を段階的に説明する完全なユーザーフレンドリーガイドを見つけることができます。 \
+[ミントガイドはこちら](https://docs.akord.com/nfts/minting-atomic-nfts) \
+そして、最良の部分は、コーディングが不要であることです！
 
-## Summary
+## まとめ
 
-In this guide, we demonstrated how to mint a single NFT with AkordJS, but the SDK doesn't stop there. \
-To delve deeper, check out these AkordJS modules:
-- [NFT](https://github.com/Akord-com/akord-js?tab=readme-ov-file#nft) - learn how to mint NFTs with the UDL attached and list them on UCM
-- [Collection](https://github.com/Akord-com/akord-js?tab=readme-ov-file#collection) - learn how to mint a collection of Atomic NFTs
+このガイドでは、AkordJSを使って単一のNFTをミントする方法を示しましたが、SDKはここで終わりません。 \
+さらに深く掘り下げるには、次のAkordJSモジュールをチェックしてください：
+- [NFT](https://github.com/Akord-com/akord-js?tab=readme-ov-file#nft) - UDLを添付してNFTをミントし、UCMにリストする方法を学ぶ
+- [コレクション](https://github.com/Akord-com/akord-js?tab=readme-ov-file#collection) - アトミックNFTのコレクションをミントする方法を学ぶ
