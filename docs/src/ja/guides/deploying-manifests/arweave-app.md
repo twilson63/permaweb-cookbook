@@ -5,10 +5,10 @@ locale: ja
 
 ---
 
-Uploading a directory through [Arweave.app](http://Arweave.app) will automatically create a manifest for all of the files in the directory.
+[Arweave.app](http://Arweave.app) を通じてディレクトリをアップロードすると、ディレクトリ内のすべてのファイルに対して自動的にマニフェストが作成されます。
 
 ![ArweaveApp Manifest Upload](~@source/images/arweaveapp-manifest.png)
 
-Alternatively, you can upload your own manifest file manually, add the following tag, and submit the transaction.
+または、自分でマニフェストファイルを手動でアップロードし、以下のタグを追加してトランザクションを送信することもできます。
 
 ![ArweaveApp Manifest Tags](~@source/images/arweaveapp-tags.png)

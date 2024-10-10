@@ -1,9 +1,9 @@
 ---
 locale: ja
 ---
-# Deploying Manifests with Turbo
+# Turboを使ったマニフェストのデプロイ
 
-## Installing Turbo
+## Turboのインストール
 
 > Requires NodeJS - https://nodejs.org
 
@@ -24,11 +24,11 @@ yarn add @ardrive/turbo-sdk
   </CodeGroupItem>
 </CodeGroup>
 
-## Upload Folder
+## フォルダのアップロード
 
-By default, the `uploadFolder` method in the Turbo SDK will generate and deploy a manifest for the folder. The `index` and `fallback` attributes will be set to the `index.html` and `404.html` files, respectively, in the uploaded folder unless other files are specified.
+デフォルトでは、Turbo SDKの`uploadFolder`メソッドは、フォルダ用のマニフェストを生成してデプロイします。`index`および`fallback`属性は、それぞれアップロードされたフォルダ内の`index.html`および`404.html`ファイルに設定されますが、他のファイルが指定された場合はそれに従います。
 
-The `uploadFolder` method will return both the full json for the manifest, and the transaction id for the manifest upload.
+`uploadFolder`メソッドは、マニフェストの完全なJSONと、マニフェストアップロードのトランザクションIDの両方を返します。
 
 ```javascript
 import { TurboFactory } from "@ardrive/turbo-sdk";
@@ -62,10 +62,9 @@ const { manifest, fileResponses, manifestResponse } = await turbo.uploadFolder({
   },
 });
 ```
+## マニフェストを手動で作成およびアップロード
 
-## Manually Create and Upload a Manifest
-
-Manifests can also be manually created and uploaded. A manifest is a json object with specific schema and uploaded with the `Content-Type` tag `application/x.arweave-manifest+json`.
+マニフェストは手動で作成してアップロードすることもできます。マニフェストは特定のスキーマを持つJSONオブジェクトで、`Content-Type`タグ`application/x.arweave-manifest+json`を使用してアップロードされます。
 
 ```js
 import { TurboFactory } from "@ardrive/turbo-sdk";

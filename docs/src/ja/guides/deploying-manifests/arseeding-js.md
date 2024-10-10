@@ -1,19 +1,20 @@
 ---
 locale: ja
 ---
-### Arseeding  JS SDK 
+### Arseeding JS SDK 
 
 ---
 
-*The guide of how to easily use the Manifest feature in Arseeding.*
+*Arseedingのマニフェスト機能を簡単に使用するためのガイドです。*
+
 ## Getting Started
 
-### Installing the SDK
+### SDKのインストール
 ```bash
 npm i arseeding-js
 ```
 
-Create a `demo.js`, and copy the following code into it.
+`demo.js`というファイルを作成し、以下のコードをコピーします。
 
 ```jsx
 import {uploadFolderAndPay} from "arseeding-js/cjs/uploadFolder";
@@ -34,16 +35,16 @@ curl --location --request GET 'https://arseed.web3infra.dev/{res.maniId}'
 ```
 
 
-Configuration Notes:
+#### 設定メモ:
 
-- Populate your ECC key with `YOUR PRIVATE KEY`. Make sure that the wallet corresponding to the private key has assets in everPay.
-- `arseedUrl` is the URL of the Arseeding backend service, here we use the public Arseeding service provided by permadao: https://arseed.web3infra.dev.
-- `payUrl` is the URL of the everPay service that needs to be configured: [https://api.everpay.io](https://api.everpay.io/)
-- `path` is the path to the folder you want to upload, for example, to deploy a static website, the front-end project will generate a build or dist folder after the project is compiled, just choose the path to that folder.
-- `tag` is the payment `token tag` you need to select, if your MetaMask address held in everPay is usdc, you can get the usdc tag via [getTokenTagByEver('usdc')](https://web3infra.dev/docs/arseeding/sdk/arseeding-js/getTokenTag),If you want to pay with another token, just fill in the token name to get the specified tag.
-- `indexFile` is optional,if you don't pass it, `index.html`(if exist) or null will be default value, if the folder is a front-end project build folder you don't need pass indexFile.
+- `YOUR PRIVATE KEY` を使用してECCキーを設定します。プライベートキーに対応するウォレットにeverPayの資産があることを確認してください。
+- `arseedUrl` はArseedingバックエンドサービスのURLです。ここでは、permadaoによって提供される公開のArseedingサービス（https://arseed.web3infra.dev）を使用します。
+- `payUrl` は設定が必要なeverPayサービスのURLです: [https://api.everpay.io](https://api.everpay.io/)
+- `path` はアップロードしたいフォルダーのパスです。例えば、静的ウェブサイトをデプロイする場合、フロントエンドプロジェクトはプロジェクトがコンパイルされた後にビルドまたはdistフォルダーを生成しますので、そのフォルダーのパスを選択します。
+- `tag` は選択する支払い `トークンタグ` です。MetaMaskアドレスがeverPayに保有している場合、usdcの場合、[getTokenTagByEver('usdc')](https://web3infra.dev/docs/arseeding/sdk/arseeding-js/getTokenTag)を介してusdcタグを取得できます。別のトークンで支払いを希望する場合は、トークン名を入力して指定されたタグを取得してください。
+- `indexFile` はオプションです。指定しない場合、`index.html`（存在する場合）またはnullがデフォルト値として使用されます。フォルダーがフロントエンドプロジェクトのビルドフォルダーである場合、indexFileを指定する必要はありません。
 
-After preparing the configuration, call `uploadFolderAndPay`(path,priv,url,payCurrency) to upload all the files under your folder to web3infra's Arseeding node by means of manifest.
+設定を準備した後、`uploadFolderAndPay(path,priv,url,payCurrency)`を呼び出して、マニフェストを介してフォルダー内のすべてのファイルをweb3infraのArseedingノードにアップロードします。
 
 ```bash
 node demo.js
@@ -61,21 +62,22 @@ return:
 }
 ```
 
-## Download data-Access page
+## Download data-## データアクセスページのダウンロード
 
-The `maniId` can be found in the returned result, the maniId above is EHeDa8b428L38b972qyHI87YELuZKue1jDI_JWC-aGE
+`maniId` は戻り値の中に見つけることができます。上記のmaniIdは `EHeDa8b428L38b972qyHI87YELuZKue1jDI_JWC-aGE` です。
 
-In this tutorial, we are uploading a Docusaurus front-end project, and running `yarn build` under that project will generate a build folder, which is the one we uploaded. Now, we can access the site via `maniId`!
+このチュートリアルでは、Docusaurusフロントエンドプロジェクトをアップロードしており、そのプロジェクト内で `yarn build` を実行すると、アップロードしたビルドフォルダーが生成されます。今、`maniId`を介してサイトにアクセスできます！
 
-In your browser, enter:
+ブラウザに次のように入力します:
+
 
 ```bash
 https://arseed.web3infra.dev/EHeDa8b428L38b972qyHI87YELuZKue1jDI_JWC-aGE
 ```
-You can now access this website, and it will be permanently available!
+このウェブサイトにアクセスできるようになり、永久に利用可能です！
 
 ---
 
-References and Further Reading:
+参考文献とさらなる学習:
 * [Arseeding Documentation](https://web3infra.dev/docs/arseeding/introduction/lightNode)
-* Follow the Arseeding Upload Manifest tutorial [here](https://web3infra.dev/docs/arseeding/sdk/arseeding-js/manifest/)。
+* Arseedingのアップロードマニフェストチュートリアルは[こちら](https://web3infra.dev/docs/arseeding/sdk/arseeding-js/manifest/)を参照してください。
