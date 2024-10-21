@@ -197,10 +197,6 @@ const getI18NSidebar = (langCode) => [
 						link: get_i18n_link(langCode, "/guides/deploying-manifests/arseeding-js.html"),
 					},
 					{
-						text: "Akord",
-						link: get_i18n_link(langCode, "/guides/deploying-manifests/akord"),
-					},
-					{
 						text: "Turbo",
 						link: get_i18n_link(langCode, "/guides/deploying-manifests/turbo"),
 					},
@@ -355,8 +351,8 @@ const getI18NSidebar = (langCode) => [
 		link: get_i18n_link(langCode, "/legacy/index.html"),
 		collapsible: true,
 		children: [
-			{ 
-				text: "Concepts", 
+			{
+				text: "Concepts",
 				collapsible: true,
 				children: [
 					{
