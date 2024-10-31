@@ -251,6 +251,8 @@ export default defineConfig({
 
 ### Update package.json
 
+### Update package.json
+
 ```json
 {
   ...
@@ -325,10 +327,6 @@ Your Svelte app can be found at `https://arweave.net/<< tx-id >>`.
 ::: tip SUCCESS
 You should now have a Svelte Application on the Permaweb! Great Job!
 :::
-
-## Repository
-
-A completed version of this example is available here: [https://github.com/twilson63/svelte-ts-vite-example](https://github.com/twilson63/svelte-ts-vite-example)
 
 ## Summary
 

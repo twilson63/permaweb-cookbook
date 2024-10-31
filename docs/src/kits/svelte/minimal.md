@@ -317,10 +317,6 @@ Your Svelte app can be found at `https://arweave.net/<< tx-id >>`.
 You should now have a Svelte Application on the Permaweb! Great Job!
 :::
 
-## Repository
-
-A completed version of this example is available here: [https://github.com/twilson63/permaweb-minimal-svelte-starter](https://github.com/twilson63/permaweb-minimal-svelte-starter)
-
 ## Summary
 
 This is a minimal version of publishing a Svelte application on the permaweb, but you may want more features, like hot-reloading and tailwind, etc. Check out `hypar` for a turnkey starter kit. [HypAR](https://github.com/twilson63/hypar)

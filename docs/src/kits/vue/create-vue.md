@@ -188,6 +188,17 @@ yarn global add permaweb-deploy
   </CodeGroupItem>
 </CodeGroup>
 
+### Fund Your Wallet
+ 
+Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.
+
+```console:no-line-numbers
+npm install @ardrive/turbo-sdk
+turbo top-up --wallet-file wallet.json --currency USD --value 10
+```
+
+Be sure to replace `wallet.json` with the path to your Arweave wallet.
+
 ### Update package.json
 
 ```json
@@ -264,12 +275,6 @@ Your Vue app can be found at `https://arweave.net/<< tx-id >>`.
 ::: tip SUCCESS
 You should now have a Vue Application on the Permaweb! Great Job!
 :::
-
-## Repository
-
-A fully functional example in JavaScript or TypeScript can be found at this location.
-
--   Repository: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
 
 ## Summary
 
