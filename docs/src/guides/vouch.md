@@ -1,17 +1,27 @@
 # Vouch
+
 There are a few ways to query an Arweave address to verify if it has been vouched by a service. Below is two of those approaches.
 ## VouchDAO Package
 The `isVouched` function is made available to use in your applications in a straight-forward way.
 
 #### Installation
-Add the package using npm:
+Add the package:
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+
 ```console:no-line-numbers
 npm i vouchdao
 ```
-or yarn:
+
+</CodeGroupItem>
+  <CodeGroupItem title="YARN">
+
 ```console:no-line-numbers
 yarn add vouchdao
 ```
+
+</CodeGroupItem>
+</CodeGroup>
 
 #### Usage
 Inside of an async function you can use the `isVouched` function which will return true if a user is vouched.
@@ -45,7 +55,7 @@ query {
 }
 ```
 
-If the address has been vouched, an array of nodes will be returned with tags pertaining to the service that issues the ANS-109. You can cross reference the `owner address` value with the passed [community votes](https://community.xyz/#_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk/votes) to ensure the service has been verified through community vote via VouchDAO.
+If the address has been vouched, an array of nodes will be returned with tags pertaining to the service that issues the ANS-109. You can cross reference the `owner address` value with the passed community votes to ensure the service has been verified through community vote via VouchDAO.
 
 ```graphql
 "owner": {

@@ -80,9 +80,9 @@ The `router.subscribe` callback is nice to reset the page to the top on page tra
 
 These component will manage the transition between one page to another page when routing.
 
-create a directory under the `src` directory called components and add these two files:
+Create a directory under the `src` directory called components and add these two files:
 
-announcer.svelte
+### announcer.svelte
 
 ```html
 <script>
@@ -109,7 +109,7 @@ announcer.svelte
 
 > This component is for screen readers announcing when a page changes
 
-transition.svelte
+### transition.svelte
 
 ```html
 <script>
@@ -185,22 +185,71 @@ Adding the Announcer and Transition components to our routing system will handle
 ...
 ```
 
-## Deploying to the Permaweb
+## Deploy Permanently
 
 ### Generate Wallet
 
+We need the `arweave` package to generate a wallet
+
+<CodeGroup>
+<CodeGroupItem title="NPM">
+
+```console:no-line-numbers
+npm install --save arweave
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn add arweave -D
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+then run this command in the terminal
+
 ```sh
-yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### install Turbo
+### Fund Wallet
+You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
+Then, you can purchase turbo credits for your wallet.
 
-```sh
-yarn add -D @ardrive/turbo-sdk
+### Setup Permaweb-Deploy
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm install --global permaweb-deploy
 ```
 
-### update package.json
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn global add permaweb-deploy
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+### Update vite.config.ts
+
+```ts
+import { defineConfig } from 'vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+
+export default defineConfig({
+  plugins: [svelte()],
+  base: './'
+})
+```
+
+### Update package.json
 
 ### Update package.json
 
@@ -209,25 +258,75 @@ yarn add -D @ardrive/turbo-sdk
   ...
   "scripts": {
     ...
-    "deploy": "turbo upload-folder --folder-path dist --wallet-file wallet.json > latest-manifest.json"
+    "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
   }
   ...
 }
 ```
 
+::: info
+Replace << ANT-PROCESS >> with your ANT process id.
+:::
+
+### Run build
+
+Now it is time to generate a build, run
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm run build
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn build
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
 ### Run deploy
 
-```sh
+Finally we are good to deploy our first Permaweb Application
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm run deploy
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
 yarn deploy
 ```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+::: info ERROR
+If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
+:::
+
+### Response
+
+You should see a response similar to the following:
+
+```shell
+Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
+```
+
+Your Svelte app can be found at `https://arweave.net/<< tx-id >>`.
 
 ::: tip SUCCESS
 You should now have a Svelte Application on the Permaweb! Great Job!
 :::
-
-## Repository
-
-A completed version of this example is available here: [https://github.com/twilson63/svelte-ts-vite-example](https://github.com/twilson63/svelte-ts-vite-example)
 
 ## Summary
 

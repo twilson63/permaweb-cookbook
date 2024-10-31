@@ -9,28 +9,15 @@ const get_i18n_str = useI18NStr();
 </script>
 
 <template>
-  <!--
-  <div class="topbar">
-    <p>
-      <span>{{ get_i18n_str("cookbook-meetup-notification") }}</span
-      >
-      <add-to-calendar-button
-        style="white-space: nowrap"
-        name="Permaweb Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays"
-        options="'Apple','Google'"
-        location="https://app.gather.town/app/VQzhQa280FhWKtuy/permaweb?spawnToken=d8Vy968fQ4eZ1Y44vxFg"
-        startDate="2023-04-26"
-        startTime="12:00"
-        endTime="13:00"
-        timeZone="America/New_York"
-        recurrence="weekly"
-        buttonStyle="round"
-        :lightMode="!darkMode ? 'light' : 'dark'"
-        size="1"
-      ></add-to-calendar-button>
-    </p>
-  </div>
-  -->
+  
+  <a href="https://community.arweave.net/#/fullstack" target="_blank">
+    <div class="topbar fullstack-hack">
+      <p>
+        <span>Join the first Arweave Fullstack Hack for up to $50k in funding</span>
+      </p>
+    </div>
+  </a>
+  
 </template>
 
 <style lang="scss" scoped>
@@ -79,19 +66,17 @@ a {
     }
   }
 
-  &.hackathon {
+  &.fullstack-hack {
     padding: 16px;
-    background: #c7d0b4;
+    background: #2d53ff;
 
     @include media-breakpoint-down(md) {
       padding: 10px;
     }
 
     span {
-      color: black;
-      font-family: var(--font-family-alt);
-      font-weight: 500;
-      letter-spacing: -0.38px;
+      color: white;
+      font-weight: bold;
 
       @include media-breakpoint-down(md) {
         font-size: 13px;

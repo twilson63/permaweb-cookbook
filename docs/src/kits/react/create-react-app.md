@@ -130,7 +130,7 @@ import { Link } from "react-router-dom";
 
 function About() {
 	return (
-		<div>
+    <div>
 			Welcome to the About page!
 			<Link to={"/"}>
 				<div>Home</div>
@@ -212,18 +212,24 @@ It is very important to make sure that your wallet file is not included in any f
 
 We need Turbo to deploy our app to the Permaweb.
 
+### Fund Wallet
+You will need to fund your wallet with ArDrive Turbo credits. To do this, enter [ArDrive](https://app.ardrive.io) and import your wallet.
+Then, you can purchase turbo credits for your wallet.
+
+### Setup Permaweb-Deploy
+
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install @ardrive/turbo-sdk
+npm install --global permaweb-deploy
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn add @ardrive/turbo-sdk
+yarn global add permaweb-deploy
 ```
 
   </CodeGroupItem>
@@ -234,6 +240,7 @@ yarn add @ardrive/turbo-sdk
 Turbo uses Turbo Credits to upload data to Arweave. You can purchase Turbo Credits with a variety of fiat currencies or crypto tokens. Below is an example for funding your wallet with 10 USD. It will open a browser window to complete the purchase using Stripe.
 
 ```console:no-line-numbers
+npm install @ardrive/turbo-sdk
 turbo top-up --wallet-file wallet.json --currency USD --value 10
 ```
 
@@ -296,13 +303,23 @@ yarn deploy
   </CodeGroupItem>
 </CodeGroup>
 
+::: info ERROR
+If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
+:::
+
+### Response
+
+You should see a response similar to the following:
+
+```shell
+Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
+```
+
+Your React app can be found at `https://arweave.net/<< tx-id >>`.
+
 ::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!
 :::
-
-## Repository
-
-A completed version of this example is available here: [https://github.com/VinceJuliano/permaweb-create-react-app](https://github.com/VinceJuliano/permaweb-create-react-app)
 
 ## Summary
 

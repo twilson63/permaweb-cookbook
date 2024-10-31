@@ -1,14 +1,19 @@
 # Vouch
+
 ## Overview
+
+#### Motivation
+
+Vouching provides a decentralized approach to Sybil resistance. A Sybil attack is when an attacker subverts the network by creating a large number of pseudonymous identities to gain a disproportionately large influence.
+
 #### Vouch Protocol
+
 Arweave introduced the concept of the ANS-109 Vouch (Assertion of Identity). It is a standard that uses a specific transaction format along with some tags to allows anyone on the permaweb to "vouch" for the identity and humanity of any Arweave address.
 
 Adding a standard such as the ANS-109 to the permaweb will help minimize Sybil attacks and bad actors, making it a safer experience for permaweb users. 
 
 #### VouchDAO
 VouchDAO is a community led, decentralized verification layer built on top of the Vouch standard. Developers create vouch services and members of the VouchDAO community vote on which of these verification services are deemed trustworthy.
-
-Once a new service is created, the address for it will be put to vote on the [VouchDAO community.xyz](https://community.xyz/#_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk) interface. If that vote passes, it is then added as a verified Voucher.
 
 <img src="https://arweave.net/7W9krszlEXdR38LB7uXgJ_EPXGj-woXljsA5h5GpGzk" />
 

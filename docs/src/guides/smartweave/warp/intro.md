@@ -1,5 +1,9 @@
 # Warp (SmartWeave) SDK Intro
 
+> **⚠️ Deprecation Notice**
+>
+> This document is deprecated and may contain outdated information.
+
 Warp is a popular SmartWeave Protocol SDK. With Warp and Irys your SmartWeave deployments and interactions can be extremely fast.
 
 ## Introduction
