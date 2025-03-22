@@ -1,4 +1,4 @@
-# Posting Transactions
+# Posting Transactions😍
 
 There are several ways to post transactions to Arweave. Each has its own unique affordances and constraints. The diagram below illustrates the four main approaches to posting transactions.
 
