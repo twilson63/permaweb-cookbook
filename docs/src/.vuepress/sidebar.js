@@ -52,10 +52,6 @@ const getI18NSidebar = (langCode) => [
 						text: "Turbo-SDK",
 						link: get_i18n_link(langCode, "/guides/posting-transactions/turbo.html")
 					},
-					{
-						text: "Akord",
-						link: get_i18n_link(langCode, "/guides/posting-transactions/akord")
-					},
 				],
 			},
 			{
@@ -334,10 +330,6 @@ const getI18NSidebar = (langCode) => [
 				link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index.html"),
 				collapsible: true,
 				children: [
-					{
-						text: "using Akord",
-						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/akord.html"),
-					},
 					{
 						text: "using ArDrive CLI",
 						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/ardrive-cli.html"),
