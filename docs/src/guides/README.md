@@ -16,7 +16,6 @@ Snack-sized guides for the building blocks of the Permaweb
 -   [Deploying PathManifests](deploying-manifests/deployingManifests.md)
     -   [arweave.app](deploying-manifests/arweave-app.md)
     -   [ardrive](deploying-manifests/ardrive.md)
-    -   [Akord](deploying-manifests/akord.md)
 -   [Deploying PSTs](deploying-psts.md)
 -   [GraphQL](querying-arweave/queryingArweave.md)
     -   [ArDB](querying-arweave/ardb.md)

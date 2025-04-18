@@ -9,5 +9,4 @@ If you've created something on the Permaweb, and would like to add documentation
 ## Community Contributions
 - [Arweave Name System (ArNS)](../concepts/arns.md)
 - [Atomic Assets](../guides/smartweave/atomic-assets/index.md)
-  - [using Akord](../guides/smartweave/atomic-assets/akord.md)
   - [using ArDrive CLI](../guides/smartweave/atomic-assets/ardrive-cli.md)

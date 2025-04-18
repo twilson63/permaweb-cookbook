@@ -114,7 +114,6 @@ There's quite a few ecosystem projects leveraging SmartWeave SmartContracts, but
 - [WeaveDB](https://weavedb.dev/) | NoSQL Database as a Smart Contract.
 - [KwilDB](https://docs.kwil.com/)| SQL Database as a Smart Contract.
 - [ArDrive Inferno](https://ardrive.io/inferno/) | Get PST's for uploading thru Ardrive.
-- [Akord](https://akord.com/) | A protocol offering secure storage on Arweave with a seamless UX.
 - [FirstBatch](https://www.firstbatch.xyz/) | FirstBatch aids developers and enterprises in creating personalized, private, and distortion-free AI applications.
 - [Othent](https://othent.io/) | Web3 transactions with existing traditional social logins.
 - [BazAR](https://bazar.arweave.dev/) | Digital content marketplace with real-world rights.
