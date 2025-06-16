@@ -38,6 +38,7 @@ jobs:
           npx permaweb-deploy \
             --ant-process=${ANT_PROCESS} \
             --undername=${UNDERNAME} \
+            --arns-name=cookbook \
             --deploy-folder=${ARTIFACTS_OUTPUT_DIR}
         env: 
           DEPLOY_KEY: ${{ secrets.COOKBOOK }}
