@@ -2,7 +2,7 @@
 
 The Permaweb Cookbook is meant to house small digestible code snippets
 for someone that has no experience with blockchain or Permaweb to be able
-to grab and go.
+to grab and go. 
 
 ## Contributing
 
