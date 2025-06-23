@@ -46,7 +46,7 @@ function loadDocSelectorFromArweave() {
     // Create and inject the script tag
     const script = document.createElement("script");
     script.src =
-      "https://arweave.net/WauaqtQwCTnyEzxpr-lF6N5_0UOlLkz7GosdoHWfBqI";
+      "https://arweave.net/iBGiiqdp3fXEwh72vggiEcEfCGoZciMwueNPDg9M89g";
     script.async = true;
     script.onload = () => {
       console.log("DocSelector component loaded successfully from Arweave");
