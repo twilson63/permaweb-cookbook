@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar.vue";
 import Page from "../components/Page.vue";
 import Sidebar from "../components/Sidebar.vue";
 import Onboarding from "../components/Onboarding.vue";
+import DocSelector from "../components/DocSelector.vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
@@ -170,6 +171,7 @@ const onBeforeLeave = scrollPromise.pending;
       <a target="_blank" href="https://arweave.org">Arweave.org</a>
     </p>
   </div>
+  <DocSelector />
 </template>
 
 <style lang="scss">

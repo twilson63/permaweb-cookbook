@@ -81,6 +81,7 @@ export default {
     // },
     colorMode: "dark",
     sidebar: createSidebars(),
+    backToTop: false,
   }),
 
   /**
