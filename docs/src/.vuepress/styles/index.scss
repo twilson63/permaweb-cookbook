@@ -48,24 +48,24 @@
 }
 
 html.dark {
-  --c-brand: #ff5f15;
+  --c-brand: #ff8851;
   --c-text: #ffffff;
   --c-text-light: #ebebeb;
   --c-text-lighter: #ddd;
   --c-text-lightest: #d0d0d0;
-  --c-bg: #242424;
-  --c-bg-light: #323131;
-  --c-bg-dark: #424141;
-  --c-bg-rgb: 36, 36, 36;
+  --c-bg: #1b1b1f;
+  --c-bg-light: #161618;
+  --c-bg-dark: #202127;
+  --c-bg-rgb: 27, 27, 31;
 
-  --c-topbar-bg: #2e2e2e;
+  --c-topbar-bg: #1a1a1a;
 
   --c-border: #585858;
   --c-border-dark: #414141;
 
-  --c-card-bg: #353535;
-  --c-card-hover-bg: #414141;
-  --c-card-border-color: rgba(35, 35, 35, 0.5);
+  --c-card-bg: #1f1f1f;
+  --c-card-hover-bg: #2b2b2b;
+  --c-card-border-color: rgba(15, 15, 15, 0.5);
   --c-card-shadow-inset: inset 0px 1px 0px rgba(225, 199, 184, 0.15);
 }
 
@@ -243,4 +243,8 @@ a:hover {
 
 .hero-body-text:hover {
   opacity: 85%;
+}
+
+.back-to-top {
+  display: none !important;
 }
