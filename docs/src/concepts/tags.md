@@ -29,8 +29,8 @@ Transaction tags can be used in GraphQL queries to return a filtered set of tran
 
 | <div style="width:100px">Tag Name</div> | Description                                                                   | Use Cases                                                                            |
 | --------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| App-Name                                | Most commonly used for SmartWeave Identifiers                                 | Common values are SmartWeaveContract, SmartWeaveAction, and SmartWeaveContractSource |
-| App-Version                             | The version of this data, it may represent the app consuming this information | 0.3.0 is the current SmartWeave Version                                              |
+| App-Name                                | Most commonly used to identify applications using Arweave                     | Common uses are the project's name, sometimes also used in specific ANS transactions |
+| App-Version                             | The version of this data, it may represent the app consuming this information | E.g. 0.3.0                                              |
 | Content-Type                            | MIME Type to identify the data contained in the transaction                   | text/html, application/json, image/png                                               |
 | Unix-Time                               | This tag is the a unix timestamp, **seconds** since epoch                     | The time the transaction is submitted                                                |
 | Title                                   | ANS-110 Standard for describing content                                       | Providing a name for an Atomic Asset                                                 |
