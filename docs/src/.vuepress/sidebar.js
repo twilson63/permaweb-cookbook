@@ -295,6 +295,16 @@ const getI18NSidebar = (langCode) => [
 				collapsible: false,
 				link: get_i18n_link(langCode, "/references/http-api.html"),
 			},
+			{
+				text: "LLMs.txt",
+				collapsible: false,
+				link: get_i18n_link(langCode, "/references/llms.html"),
+			},
+			{
+				text: "Glossary",
+				collapsible: false,
+				link: get_i18n_link(langCode, "/references/glossary.html"),
+			},
 		],
 	},
 	{
