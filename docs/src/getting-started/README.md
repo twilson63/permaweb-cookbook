@@ -4,7 +4,7 @@
 
 # Cooking with the Permaweb
 
-The Permaweb Cookbook is a developer resource that provides the essential concepts and references for buiding applications on the Permaweb. Each concept and reference will focus on specific aspects of the Permaweb development ecosystem while providing additional details and usage examples.
+The Permaweb Cookbook is a developer resource that provides the essential concepts and references for building applications on the Permaweb. Each concept and reference will focus on specific aspects of the Permaweb development ecosystem while providing additional details and usage examples.
 
 ## Developers
 
@@ -16,7 +16,7 @@ Welcome to the Arweave development community, where the past is forever etched i
 
 The Cookbook is designed in a way that makes it easy for new Permaweb developers to contribute. Even if you don't know how to do something, contributing to the cookbook is a great way to learn!
 
-Check out all open issues here. Contribution guidelines here. if you find the cookbook is missing a concept, guide or reference, please add an issue.
+Check out all open issues here. Contribution guidelines here. If you find the cookbook is missing a concept, guide or reference, please add an issue.
 
 [Read More](contributing.md)
 
