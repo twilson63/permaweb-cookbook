@@ -51,7 +51,7 @@ Interestingly the address of your wallet is derived from its **public key**. Whi
 ### Wallets
 [Arweave.app](https://arweave.app/welcome) - Arweave web wallet to deploy permanent data, connect your accounts securely to decentralized applications, and navigate the weave.
 
-[ArConnect](https://www.arconnect.io/) - Arweave Wallet Browser Extension
+[Wander](https://wander.app) - Browser extension and mobile wallet for Arweave and AO
 
 ### Sources and Further Reading:
 [Arweave Docs](https://docs.arweave.org/developers/server/http-api#key-format)
