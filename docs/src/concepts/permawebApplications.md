@@ -1,6 +1,6 @@
 # Permaweb Applications
 
-A permaweb application is a type of web page or web app that runs in your browser. What makes it a permaweb app is that it is deployed to Arweave and saved forever. Even if the team that developed it moves on users can rest assured the permaweb app will stay online and available. A huge advantage to permaweb apps is that they save their data on Arweave which means it can easily be imported into other apps that might improve on the one your currently using.
+A Permaweb application refers to a web page or app built on top of Arweave. Applications built on Arweave have the properties of immutability and long-term availability, which can go for not only data, but also backend processes (smart contracts) and the frontend of websites as well.
 
 ## What is the permaweb?
 
@@ -8,39 +8,46 @@ A permaweb application is a type of web page or web app that runs in your browse
 For a deeper dive into the permaweb check out this article on [The Permaweb](./permaweb.md)
 :::
 
-The permaweb is a collection of sites, apps, and SmartContracts built on top of the [Arweave's Permaweb Services](./permaweb.md). The core parts of the Permaweb are the following:
+The permaweb is a collection of sites, apps, and SmartContracts built on top of the [Arweave's Permaweb Services](./permaweb.md).
 
--   Gateway Service (ex. arweave.net, arweave.live, ar.io)
--   Bundling Service (ex. ardrive turbo)
--   Sequencer Service (ex. warp.cc)
--   Index Service (ex goldsky)
+The core parts of the Permaweb are the following:
 
-<img src="https://arweave.net/ycQzutVToTtVT_vT4811ByswtZ-KjqmifNSehSb1-eg" width="700">
+-   Gateways
+-   Bundlers
+-   Compute Networks (AO)
+-   Indexers
 
 ### Gateway Services
 
-Gateway services are the bridge between data on Arweave and displaying data in the browser. Gateways often provide indexing service along side serving transaction data, exposing graphQL endpoints for querying Arewave transactions.
+Gateways are often referred to as the "front door" to the Permaweb.
+
+Gateway services are the bridge between data on Arweave and displaying data in the browser. They serve transaction data, expose GraphQL endpoints for querying Arweave, and often provide indexing and caching services alongside their gateway responsibilities.
+
+[AR.IO](https://ar.io/) is one of the largest gateway networks in the ecosystem, and provide education and open source software for anyone to spin up their own gateway node, as well as running gateways of their own.
 
 ### Bundling Services
 
-Bundling services aggregate transactions into transaction bundles and make sure those bundles are posted directly to Arweave. By using a bundling service like Irys.network you can post hundreds of thousands of transactions in a single Arweave block.
+Bundling services aggregate transactions into transaction bundles and make sure those bundles are posted directly to Arweave. By using a bundling service like [ArDrive Turbo](https://ardrive.io/turbo-bundler) you can post hundreds of thousands of transactions in a single Arweave block.
 
-### Sequencing Services
+### Compute Services
 
-Sequencers enables high performance for SmartWeave Contracts to calculate business logic stored on the Arweave network.
+AO Computer is a decentralized compute network built on top of Arweave to provide the ability to create general-purpose smart contracts (Processes).
+
+Every interaction with a process on AO is stored as an Arweave transaction. 
+
+AO is built for large-scale parallel computation, and includes integrations to use Arweave data in Processes on AO. 
 
 ### Indexing Services
 
-Indexing services listen to all the transactions on Arweave and import them into an indexed database suitable for fast querying. They then expose
-a graphQL endpoint so permaweb apps can make optimized queries for Arweave data.
+Indexing services listen to all the transactions on Arweave and import them into an indexed database suitable for fast querying. They then expose a GraphQL endpoint so Permaweb apps can make optimized queries for Arweave data.
 
-These services work together to form the Permaweb Services Layer and gives developers the power to build fully decentralized applications on the permaweb.
+These services work together to form the Permaweb Services Layer and gives developers the power to build fully decentralized applications on the Permaweb.
 
 ## Application Development
 
-Approaching application development with the permaweb is similar to `Single Page Application` development, the application consists of frontend functionality that is executed in a web browser, and uses GraphQL (Read/Query), Irys (Write), and SmartWeave (Decentralized computation) to make up the business logic and persistance layer of the application.
+Approaching application development with the Permaweb is similar to `Single Page Application` development.
 
-![common permaweb app](https://arweave.net/UjbgAk8duudDc97lOYIt7rBVtRHp2Z9F6Ua5OcvwNCk/)
+The application consists of frontend functionality that is executed in a web browser, and uses GraphQL (Read/Query), Arweave/ArDrive Turbo (Write), and AO (decentralized computation) to make up the business logic and persistence layer of the application.
 
 By leveraging modern web application frameworks and the [Path Manifest](./manifests.md) specification, developers can deploy web sites and applications to the permaweb.
 
