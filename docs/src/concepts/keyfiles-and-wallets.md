@@ -5,7 +5,7 @@
 ### Arweave Wallets
 
 On Arweave a wallet secures a unique address on the blockchain. The address is used to keep track of your $AR balance, and interact with the Arweave
-network - such as sending transactions, or interacting with [SmartWeave Contracts](../guides/smartweave/warp/intro.md).
+network - such as sending transactions, or interacting with [AO Processes](https://ao.arweave.net).
 
 Like most blockchains, the concept of a wallet on Arweave is slightly misleading. 
 
