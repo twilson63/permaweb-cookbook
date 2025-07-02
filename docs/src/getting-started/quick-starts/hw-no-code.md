@@ -10,7 +10,7 @@ In this quick start we are going to upload an image to the permaweb with no code
 
 ## Create a wallet
 
-[https://arweave.app/add](https://arweave.app/add) or [https://arconnect.io](https://arconnect.io)
+[https://arweave.app/add](https://arweave.app/add) or [https://wander.app](https://wander.app)
 
 ## Send some data to arweave
 
