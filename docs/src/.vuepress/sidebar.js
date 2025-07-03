@@ -144,20 +144,12 @@ const getI18NSidebar = (langCode) => [
 		collapsible: true,
 		children: [
 			{
-				text: get_i18n_str(langCode, "guides-arprofile"),
-				link: get_i18n_link(langCode, "/guides/arprofile.html"),
-			},
-			{
 				text: get_i18n_str(langCode, "guides-dns-integration"),
 				collapsible: true,
 				children: [
 					{
 						text: get_i18n_str(langCode, "guides-server-side"),
 						link: get_i18n_link(langCode, "/guides/dns-integration/server-side.html"),
-					},
-					{
-						text: get_i18n_str(langCode, "guides-spheron"),
-						link: get_i18n_link(langCode, "/guides/dns-integration/spheron.html"),
 					},
 				],
 			},
@@ -195,47 +187,6 @@ const getI18NSidebar = (langCode) => [
 					{
 						text: "Turbo",
 						link: get_i18n_link(langCode, "/guides/deploying-manifests/turbo"),
-					},
-				],
-			},
-			{
-				text: get_i18n_str(langCode, "guides-deploying-psts"),
-				collapsible: false,
-				link: get_i18n_link(langCode, "/guides/deploying-psts.html"),
-			},
-			{
-				text: get_i18n_str(langCode, "guides-execution-machine"),
-				collapsible: true,
-				children: [
-					{
-						text: get_i18n_str(langCode, "guides-intro"),
-						link: get_i18n_link(langCode, "/guides/exm/intro.html"),
-					},
-					{
-						text: get_i18n_str(langCode, "guides-api-token"),
-						link: get_i18n_link(langCode, "/guides/exm/api.html"),
-					},
-					{
-						text: "JS SDK",
-						collapsible: true,
-						children: [
-							{
-								text: get_i18n_str(langCode, "guides-sdk-intro"),
-								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-intro.html"),
-							},
-							{
-								text: get_i18n_str(langCode, "guides-sdk-deploy"),
-								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-deploy.html"),
-							},
-							{
-								text: get_i18n_str(langCode, "guides-sdk-write"),
-								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-write.html"),
-							},
-							{
-								text: get_i18n_str(langCode, "guides-sdk-read"),
-								link: get_i18n_link(langCode, "/guides/exm/js-sdk/sdk-read.html"),
-							},
-						],
 					},
 				],
 			},
