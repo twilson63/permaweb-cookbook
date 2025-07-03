@@ -68,5 +68,6 @@
   "guides-api-token": "Api Token",
   "guides-testing": "Testing",
   "references": "References",
+  "references-llms": "LLMs Documentation",
   "kits": "Starter Kits"
 }
