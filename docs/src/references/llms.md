@@ -19,7 +19,7 @@ The following is a [tool](https://fuel_permawebllms.arweave.net) that allows you
 
 <iframe
   class="llms-iframe light-mode-iframe"
-  src="https://fuel_permawebllms.arweave.net/?minimal=true&iframe=true&bg-color=%23f2f2f2&text-color=%23222222&accent=%23e77b40"
+  src="https://fuel_permawebllms.arweave.net/?minimal=true&iframe=true&bg-color=%23f2f2f2&text-color=%23222222&accent-color=%23ff5f15"
   title="Permaweb LLMs Builder (Light Mode)"
   height="250"
   allowfullscreen
@@ -27,7 +27,7 @@ The following is a [tool](https://fuel_permawebllms.arweave.net) that allows you
 ></iframe>
 <iframe
   class="llms-iframe dark-mode-iframe"
-  src="https://fuel_permawebllms.arweave.net/?minimal=true&iframe=true&bg-color=%231b1b1f&text-color=%23e0e0e0&accent=%23e77b40"
+  src="https://fuel_permawebllms.arweave.net/?minimal=true&iframe=true&bg-color=%231b1b1f&text-color=%23e0e0e0&accent-color=%23ff8851"
   title="Permaweb LLMs Builder (Dark Mode)"
   height="250"
   allowfullscreen
