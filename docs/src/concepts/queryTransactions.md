@@ -40,8 +40,6 @@ const results = await arweave.api.post('/graphql', queryObject);
 
 [https://arweave-search.goldsky.com/graphql](https://arweave-search.goldsky.com/graphql)
 
-[https://knn3-gateway.knn3.xyz/arseeding/graphql](https://knn3-gateway.knn3.xyz/arseeding/graphql)
-
 ## Inspecting the Blocks
 
 Each piece of data uploaded to Arweave has its own unique transaction id and is included in a unique block which is then added to the blockchain. The data associated with each transaction is split up into 256KB chunks and appended sequentially to Arweave's dataset. It is possible to walk back, block by block, from the [current block](https://arweave.net/block/current) and inspect each one for the transaction id in question. Once found, the chunks offsets can be retrieved from the block and used to request chunks directly from an Arweave peer. This is the lowest level way to locate and read data on the network. Thankfully, less labor intensive approaches [like GraphQL](#graphql) are available.
@@ -49,6 +47,5 @@ Each piece of data uploaded to Arweave has its own unique transaction id and is 
 ## Resources
 
 -   [Querying Arweave Guide](../guides/querying-arweave/queryingArweave.md)
--   [ArDB package](../guides/querying-arweave/ardb.md)
 -   [ar-gql package](../guides/querying-arweave/ar-gql.md)
 -   [GraphQL Reference](../references/gql.md)
