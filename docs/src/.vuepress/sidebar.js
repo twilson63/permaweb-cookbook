@@ -209,17 +209,6 @@ const getI18NSidebar = (langCode) => [
 				],
 			},
 			{
-				text: get_i18n_str(langCode, "guides-testing"),
-				collapsible: true,
-				children: [
-					{
-						text: "arlocal",
-						collapsible: false,
-						link: get_i18n_link(langCode, "/guides/testing/arlocal.html"),
-					},
-				],
-			},
-			{
 				text: "Vouch",
 				link: get_i18n_link(langCode, "/guides/vouch.html"),
 			},
