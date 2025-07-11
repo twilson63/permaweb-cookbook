@@ -10,12 +10,7 @@ Anyone in the community is welcome to contribute to the Permaweb Cookbook, as co
 
 ## Steps to Contribute
 
-
 ![diagram](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ29udHJpYnV0aW5nIHRvIFBlcm1hd2ViIENvb2tib29rCgoAGglvciAtPiBSZXBvIDogQ2hlY2sgT3V0IG9mIEZvcmsAFAVzaXRvcnkKbm90ZSBvdmVyAFYKb3IgOiBDcmVhdGUgTWFya2Rvd24gRG9jdW1lbnQAFxpvbW1pdCBDaGFuZ2VzAHQXUHVzaCBCcmFuY2gAYRljAHQGUHVsbCBSZXF1ZXMAWxphc3NpZ24gcmV2aWV3ZXIocykKUgAFBwCBdgsADQYAOhgAKAk6IEFwcHJvdmUgUFIAgjQXbWVyZ2UgdG8gbWFpbg&s=mscgen)
-
-## Need Help?
-
-Join our [discord channel](https://discord.gg/haCAX3shxF) and post a note.
 
 ## Commiting work
 
