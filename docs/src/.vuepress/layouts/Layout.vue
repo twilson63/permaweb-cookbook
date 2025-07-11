@@ -84,7 +84,7 @@ const onBeforeLeave = scrollPromise.pending;
 </script>
 
 <template>
-  <Topbar />
+  <!-- <Topbar /> -->
   <Navbar
     v-if="shouldShowNavbar"
     class="fixed"
