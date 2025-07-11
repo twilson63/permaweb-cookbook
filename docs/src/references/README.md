@@ -4,10 +4,9 @@ title: Permaweb Cookbook - References
 
 # References
 
-References for learning in depth about various topics like Bundling, GraphQL, and HTTP APIs.
+Quick reference materials and lookup guides for working with the permaweb.
 
--   [Bundling](bundling.md)
--   [GraphQL](gql.md)
--   [HTTP API](http-api)
+- [LLMs.txt](llms.md) - Standard format for providing LLM-readable documentation
+- [Glossary](glossary.md) - Definitions of key permaweb and Arweave terms
 
-> Do you think a permaweb guide is missing? Create a issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md)
+> Do you think a permaweb reference is missing? Create an issue at [Github](https://github.com/twilson63/permaweb-cookbook/issues) or consider [contributing](../getting-started/contributing.md)

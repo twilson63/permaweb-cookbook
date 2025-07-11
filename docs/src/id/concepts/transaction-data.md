@@ -24,7 +24,7 @@ Data transaksi disimpan di Arweave sebagai urutan berkelanjutan dari potongan-po
 6. Ulangi dari langkah 3 sampai Anda memiliki semua potongan-potongan.
 :::
 
-Ini adalah jumlah pekerjaan yang cukup besar yang harus dilakukan setiap kali Anda ingin mengambil data dari jaringan Arweave. Bayangkan jika Anda mencoba menampilkan timeline tweet seperti [https://public-square.g8way.io](https://public-square.g8way.io) lakukan. Pengalaman pengguna akan buruk dengan waktu muat yang lama dan spinners. Karena data di Arweave permanen, aman untuk di-cache dalam bentuk aslinya untuk membuat pengambilan data transaksi menjadi lebih cepat dan lebih mudah.
+Ini adalah jumlah pekerjaan yang cukup besar yang harus dilakukan setiap kali Anda ingin mengambil data dari jaringan Arweave. Bayangkan jika Anda mencoba menampilkan timeline tweet seperti [https://public-square.g8way.io](https://public-square.arweave.net) lakukan. Pengalaman pengguna akan buruk dengan waktu muat yang lama dan spinners. Karena data di Arweave permanen, aman untuk di-cache dalam bentuk aslinya untuk membuat pengambilan data transaksi menjadi lebih cepat dan lebih mudah.
 
 Berikut adalah titik akhir HTTP yang digunakan untuk mengakses data transaksi yang di-cache dalam layanan penyimpanan data transaksi arweave.net.
 

@@ -19,7 +19,7 @@ Transaction data is stored on Arweave as a contiguous sequence of 256KB chunks, 
 1. Repeat from step 3 until you have all of the chunks.
 :::
 
-This is a fairly large amount of work to perform each time you want to retrieve data from the Arweave network. Imagine if you were trying to display a timeline of tweets like [https://public-square.g8way.io](https://public-square.g8way.io) does. The user experience would be terrible with long load times and spinners. Because data on Arweave is permanent, it's safe to cache in its original form to make retrieval of transaction data much quicker and easier.
+This is a fairly large amount of work to perform each time you want to retrieve data from the Arweave network. Imagine if you were trying to display a timeline of tweets like [https://public-square.arweave.net](https://public-square.arweave.net) does. The user experience would be terrible with long load times and spinners. Because data on Arweave is permanent, it's safe to cache in its original form to make retrieval of transaction data much quicker and easier.
 
 The following HTTP endpoints are how how to access cached transaction data in the arweave.net Transaction data caching service.
 

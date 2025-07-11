@@ -39,6 +39,6 @@ FOLDER_ID=$(npx ardrive create-drive -n public -w ~/.demo-arweave-wallet.json --
 TX_ID=$(npx ardrive upload-file -l index.html --content-type text/html -w ~/.demo-arweave-wallet.json --turbo -F ${FOLDER_ID} | jq -r '.created[] | select(.type == "file
 ") | .dataTxId')
 # open file from ar.io gateway
-open https://g8way.io/${TX_ID}
+open https://arweave.net/${TX_ID}
 ```
 
