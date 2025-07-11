@@ -68,6 +68,8 @@ const getI18NSidebar = (langCode) => [
 			},
 			{
 				text: get_i18n_str(langCode, "concepts-transaction-types"),
+				link: get_i18n_link(langCode, "/concepts/transaction-types.html"),
+				collapsible: true,
 				children: [
 					{
 						text: get_i18n_str(langCode, "concepts-bundles"),
@@ -86,7 +88,7 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "Permaweb",
 				link: get_i18n_link(langCode, "/concepts/permaweb.html"),
-				collapsible: false,
+				collapsible: true,
 				children: [
 					{
 						text: get_i18n_str(langCode, "concepts-permaweb-applications"),
@@ -105,6 +107,7 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "Arweave File System (ArFS)",
 				link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
+				collapsible: true,
 				children: [
 					{
 						text: "ArFS",
@@ -170,7 +173,7 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: get_i18n_str(langCode, "guides-deploying-manifests"),
 				link: get_i18n_link(langCode, "/guides/deploying-manifests/deployingManifests.html"),
-				collapsible: false,
+				collapsible: true,
 				children: [
 					{
 						text: "arweave.app",
@@ -193,12 +196,8 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "GraphQL",
 				link: get_i18n_link(langCode, "/guides/querying-arweave/queryingArweave.html"),
-				collapsible: false,
+				collapsible: true,
 				children: [
-					{
-						text: "ArDB",
-						link: get_i18n_link(langCode, "/guides/querying-arweave/ardb.html"),
-					},
 					{
 						text: "ar-gql",
 						link: get_i18n_link(langCode, "/guides/querying-arweave/ar-gql.html"),
@@ -232,21 +231,6 @@ const getI18NSidebar = (langCode) => [
 		collapsible: true,
 		children: [
 			{
-				text: "Bundling",
-				collapsible: false,
-				link: get_i18n_link(langCode, "/references/bundling.html"),
-			},
-			{
-				text: "GraphQL",
-				collapsible: false,
-				link: get_i18n_link(langCode, "/references/gql.html"),
-			},
-			{
-				text: "HTTP API",
-				collapsible: false,
-				link: get_i18n_link(langCode, "/references/http-api.html"),
-			},
-			{
 				text: "LLMs.txt",
 				collapsible: false,
 				link: get_i18n_link(langCode, "/references/llms.html"),
@@ -266,14 +250,43 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "React",
 				link: get_i18n_link(langCode, "/kits/react/index.html"),
+				collapsible: true,
+				children: [
+					{
+						text: "Vite + permaweb-deploy",
+						link: get_i18n_link(langCode, "/kits/react/turbo.html"),
+					},
+					{
+						text: "Create React App",
+						link: get_i18n_link(langCode, "/kits/react/create-react-app.html"),
+					},
+				],
 			},
 			{
 				text: "Svelte",
 				link: get_i18n_link(langCode, "/kits/svelte/index.html"),
+				collapsible: true,
+				children: [
+					{
+						text: "Minimal",
+						link: get_i18n_link(langCode, "/kits/svelte/minimal.html"),
+					},
+					{
+						text: "Vite",
+						link: get_i18n_link(langCode, "/kits/svelte/vite.html"),
+					},
+				],
 			},
 			{
 				text: "Vue",
 				link: get_i18n_link(langCode, "/kits/vue/index.html"),
+				collapsible: true,
+				children: [
+					{
+						text: "Create Vue App",
+						link: get_i18n_link(langCode, "/kits/vue/create-vue.html"),
+					},
+				],
 			},
 		],
 	},
@@ -285,18 +298,7 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "Arweave Name System (ArNS)",
 				link: get_i18n_link(langCode, "/concepts/arns.html"),
-			},
-			{
-				text: get_i18n_str(langCode, "guides-atomic-asset"),
-				link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/index.html"),
-				collapsible: true,
-				children: [
-					{
-						text: "using ArDrive CLI",
-						link: get_i18n_link(langCode, "/guides/smartweave/atomic-assets/ardrive-cli.html"),
-					}
-				],
-			},
+			}
 		]
 	},
 	{
@@ -311,7 +313,7 @@ const getI18NSidebar = (langCode) => [
 					{
 						text: "SmartWeave",
 						link: get_i18n_link(langCode, "/concepts/smartweave.html"),
-						collapsible: false,
+						collapsible: true,
 						children: [
 							{
 								text: "Profit Sharing Tokens (PSTs)",
@@ -335,7 +337,7 @@ const getI18NSidebar = (langCode) => [
 							},
 							{
 								text: "Warp",
-								collapsible: false,
+								collapsible: true,
 								children: [
 									{
 										text: get_i18n_str(langCode, "guides-intro"),

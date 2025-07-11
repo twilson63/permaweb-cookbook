@@ -4,118 +4,165 @@
 This guide is for educational purposes only, and you should use to learn options of how you might want to deploy your application. In this guide, we are trusting a 3rd party resource `github` owned by `microsoft` to protect our secret information, in their documentation they encrypt secrets in their store using `libsodium sealed box`, you can find more information about their security practices here. https://docs.github.com/en/actions/security-guides/encrypted-secrets
 :::
 
-Github Actions are CI/CD pipelines that allows developers to trigger automated tasks via events generated from the github workflow system. These tasks can be just about anything, in this guide we will show how you can use github actions to deploy your permaweb application to the permaweb using Irys and ArNS.
+Github Actions are CI/CD pipelines that allows developers to trigger automated tasks via events generated from the github workflow system. These tasks can be just about anything, in this guide we will show how you can use github actions to deploy your permaweb application to the permaweb using permaweb-deploy and ArNS.
 
 ::: tip
-This guide requires understanding of github actions, and you must have some ArNS Test Tokens, go to https://ar.io/arns/ for more details.
+This guide requires understanding of github actions, and you must have some Turbo Credits and an ArNS name. Go to https://ar.io/arns/ for more details on acquiring an ArNS name.
 :::
 
 ::: warning
 This guide does not include testing or any other checks you may want to add to your production workflow.
 :::
 
-## Create deploy script
+## Prerequisites
 
-A deploy script is a script that does the heavy lifting of deploying your application, we will use `@irys/sdk` and `warp-contracts` to publish our application and register the newly published application on ArNS.
+Before setting up GitHub Actions deployment, you'll need:
 
-Install deploy dependencies
+1. **An Arweave wallet** with sufficient Turbo Credits for deployment
+2. **An ArNS name** that you own
+3. **A built application** (e.g., in a `./dist` folder)
+
+## Install permaweb-deploy
+
+Add permaweb-deploy as a development dependency to your project:
 
 ```console
-npm install --save-dev @permaweb/arx
-npm install --save-dev warp-contracts
-npm install --save-dev arweave
+npm install --save-dev permaweb-deploy
 ```
 
-Create `deploy.mjs` file
+## Configure Deployment Script
 
-```js
-import Arx from "@permaweb/arx";
-import { WarpFactory, defaultCacheOptions } from "warp-contracts";
-import Arweave from "arweave";
-
-const ANT = "[YOUR ANT CONTRACT]";
-const DEPLOY_FOLDER = "./dist";
-const TURBO_NODE = "https://turbo.ardrive.io";
-
-const jwk = JSON.parse(Buffer.from(process.env.PERMAWEB_KEY, "base64").toString("utf-8"));
-const arweave = Arweave.init({ host: "arweave.net", port: 443, protocol: "https" });
-const arx = new Arx({ url: TURBO_NODE, token: "arweave", key: jwk });
-const warp = WarpFactory.custom(arweave, defaultCacheOptions, "mainnet").useArweaveGateway().build();
-
-const contract = warp.contract(ANT).connect(jwk);
-// upload folder
-const result = await arx.uploadFolder(DEPLOY_FOLDER, {
-	indexFile: "index.html",
-});
-
-// update ANT
-await contract.writeInteraction({
-	function: "setRecord",
-	subDomain: "@",
-	transactionId: result.id,
-});
-
-console.log("Deployed Cookbook, please wait 20 - 30 minutes for ArNS to update!");
-```
-
-## Add script to package.json
-
-Create a new script property called `deploy`, call the build script, then call `node deploy.mjs` in the value of the scripts deploy property.
-
-package.json
+Add a deployment script to your `package.json` that builds your application and deploys it using permaweb-deploy:
 
 ```json
-  ...
+{
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "deploy": "yarn build && node deploy.mjs"
-  },
-  ...
+    "deploy": "npm run build && permaweb-deploy --arns-name YOUR_ARNS_NAME"
+  }
+}
 ```
 
-## Create github action
+Replace `YOUR_ARNS_NAME` with your actual ArNS name (e.g., `my-app`).
 
-Create a `deploy.yml` file in the `.github/workflows` folder, this file instructs github actions to deploy when a push event is triggered on the `main` branch.
+### Advanced Configuration
+
+You can customize the deployment with additional options:
+
+```json
+{
+  "scripts": {
+    "deploy": "npm run build && permaweb-deploy --arns-name my-app --deploy-folder ./dist --undername @"
+  }
+}
+```
+
+Available options:
+- `--arns-name` (required): Your ArNS name
+- `--deploy-folder`: Folder to deploy (default: `./dist`)
+- `--undername`: ANT undername to update (default: `@`)
+- `--ario-process`: ARIO process (default: mainnet)
+
+## Create GitHub Action
+
+Create a `.github/workflows/deploy.yml` file in your repository:
 
 ```yml
-name: publish
+name: Deploy to Permaweb
 
 on:
-    push:
-        branches:
-            - "main"
+  push:
+    branches:
+      - "main"
 
 jobs:
-    publish:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 18.x
-            - run: yarn
-            - run: yarn deploy
-              env:
-                  KEY: ${{ secrets.PERMAWEB_KEY }}
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - run: npm install
+      - run: npm run deploy
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 ```
 
-## Summary
+## Setup GitHub Secrets
 
-In the project repo, go to the settings and secrets, add a new secret to the repostiory, this secret will be called PERMAWEB_KEY for this project. The value of the secret should be the base64 encode string of the deployment wallet.
+### 1. Prepare Your Wallet
+
+First, encode your Arweave wallet as base64:
 
 ```console
-base64 -i wallet.json | pbcopy
+base64 -i wallet.json
 ```
 
-In order for this deployment to work, you will need to fund this wallets Irys account, make sure there is some $AR in the wallet you will be using, not much, maybe .5 AR, then use the Irys cli to fund.
+Copy the output (it will be a long base64 string).
+
+### 2. Add Secret to GitHub
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Secrets and variables** → **Actions**
+3. Click **New repository secret**
+4. Name: `DEPLOY_KEY`
+5. Value: Paste the base64 encoded wallet string
+6. Click **Add secret**
+
+## Fund Your Wallet
+
+Ensure your deployment wallet has sufficient Turbo Credits. You can fund it using:
 
 ```console
-arx fund 250000000000 -w wallet.json -t arweave
+# Check current balance
+npx @ardrive/turbo-cli balance --wallet-file wallet.json
+
+# Add credits (amount in Winston - 1 AR = 1,000,000,000,000 Winston)
+npx @ardrive/turbo-cli top-up --value 500000000000 --wallet-file wallet.json
 ```
 
-::: warning
-Keep this wallet low on funds and only use it for this project.
+::: warning Security Best Practices
+- Use a dedicated wallet solely for deployments
+- Keep minimal funds in the deployment wallet
+- Never commit wallet files to your repository
+- Regularly rotate deployment keys
 :::
 
-:tada: You have setup a github action to completely automate your deploy to permaweb!
+## Test Your Deployment
+
+### Local Testing
+
+Test your deployment locally before pushing:
+
+```console
+DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy
+```
+
+### Verify Deployment
+
+After a successful GitHub Action run:
+
+1. Check the action logs for the deployment transaction ID
+2. Wait 10-20 minutes for ArNS propagation
+3. Visit your ArNS name: `https://YOUR_ARNS_NAME.arweave.dev`
+
+## Troubleshooting
+
+**Common Issues:**
+
+1. **Insufficient Credits**: Ensure your wallet has enough Turbo Credits
+2. **ArNS Propagation**: Wait 10-20 minutes after deployment for changes to appear
+3. **Build Failures**: Ensure your build command works locally first
+4. **Secret Issues**: Verify the `DEPLOY_KEY` secret is properly set and base64 encoded
+
+**Check Deployment Status:**
+
+Monitor your deployments through:
+- GitHub Actions logs
+- ArNS resolver: `https://arns.arweave.dev/resolve/YOUR_ARNS_NAME`
+
+:tada: You now have automated permaweb deployment with GitHub Actions!
+
+Your application will automatically deploy to the permaweb whenever you push to the main branch, and your ArNS name will point to the latest version.

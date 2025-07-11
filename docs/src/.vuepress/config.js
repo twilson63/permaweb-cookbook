@@ -68,7 +68,7 @@ export default {
   markdown: {
     code: {
       lineNumbers: false,
-    },
+    }
   },
 
   theme: defaultTheme({
@@ -81,6 +81,7 @@ export default {
     // },
     colorMode: "dark",
     sidebar: createSidebars(),
+    sidebarDepth: 0,
     backToTop: false,
   }),
 
