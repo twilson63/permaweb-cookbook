@@ -1,0 +1,118 @@
+import { defineConfig } from 'vitepress'
+import { description } from "../../package"
+import createSidebars from "./sidebar"
+import { languages } from "../../languages/def"
+import enStrings from "../../languages/strings/en.json"
+
+export default defineConfig({
+  title: "Cooking with the Permaweb",
+  description: description,
+  
+  // Theme configuration
+  themeConfig: {
+    siteTitle: "Cooking with the Permaweb",
+    logo: "/Permaweb_Cookbook.ico",
+    
+    // Navigation
+    nav: [
+      { text: 'Getting Started', link: '/getting-started/' },
+      { text: 'Concepts', link: '/concepts/' },
+      { text: 'Guides', link: '/guides/' },
+      { text: 'References', link: '/references/' },
+      { text: 'Kits', link: '/kits/' }
+    ],
+    
+    // Sidebar
+    sidebar: createSidebars(),
+    
+    // Social links
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/twilson63/permaweb-cookbook' }
+    ],
+    
+    // Footer
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2024-present Permaweb Builders'
+    },
+    
+    // Search
+    search: {
+      provider: 'local'
+    },
+    
+    // Edit link
+    editLink: {
+      pattern: 'https://github.com/twilson63/permaweb-cookbook/edit/main/docs/src/:path'
+    },
+    
+    // Dark mode
+    darkMode: true,
+    
+    // Back to top
+    backToTop: false
+  },
+  
+  // Head configuration
+  head: [
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    [
+      "meta",
+      {
+        name: "apple-mobile-web-app-status-bar-style",
+        content: "black",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/ico",
+        sizes: "16x16",
+        href: "/Permaweb_Cookbook.ico",
+      },
+    ],
+    ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+    ["link", { rel: "preconnect", href: "https://fonts.gstatic.com" }],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap",
+      },
+    ],
+    [
+      "script",
+      {
+        defer: true,
+        src: "https://ackee-l09o.onrender.com/tracker.js",
+        "data-ackee-server": "https://ackee-l09o.onrender.com",
+        async: true,
+        "data-ackee-domain-id": "a6bf4de4-a529-452d-a611-6296c8af1b58",
+      },
+    ],
+  ],
+  
+  // Markdown configuration
+  markdown: {
+    lineNumbers: false,
+    theme: 'material-theme-palenight'
+  },
+  
+  // Vite configuration
+  vite: {
+    define: {
+      __LANGUAGES__: languages,
+      __ENSTRS__: enStrings,
+    }
+  },
+  
+  // App level config
+  app: {
+    // Global data
+    data: {
+      languages,
+      enStrings
+    }
+  }
+}) 

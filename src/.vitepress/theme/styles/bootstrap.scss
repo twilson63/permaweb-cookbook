@@ -1,0 +1,25 @@
+// Custom Bootstrap configuration
+@import 'bootstrap/scss/functions';
+
+// Custom grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1100px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1360px,
+  xxl: 1440px
+);
+
+$grid-gutter-width: 40px;
+
+// Import only the variables we need, avoiding the problematic ones
+@import 'bootstrap/scss/mixins'; 

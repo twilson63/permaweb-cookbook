@@ -1,0 +1,238 @@
+/* Custom Styles for VitePress Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans:wght@400;500;600&display=swap');
+@import './bootstrap.scss';
+@import 'bootstrap/scss/bootstrap-grid';
+
+/* Global box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Text utilities */
+.text-fill {
+  fill: var(--c-text);
+}
+
+.text-stroke {
+  stroke: var(--c-text);
+}
+
+/* Typography classes */
+.hero-title {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 4.6rem;
+  letter-spacing: -0.05em;
+}
+
+.hero-body-text {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  letter-spacing: -0.025em;
+  transition: all 200ms ease-in-out;
+}
+
+.hero-body-text:hover {
+  opacity: 85%;
+}
+
+.header {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  letter-spacing: -0.05em;
+}
+
+.title {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.body-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+.subtext {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: -0.025em;
+}
+
+/* VitePress Home Layout Customizations */
+.Layout .VPHome {
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
+.Layout .VPHome .VPHero {
+  background: var(--c-bg);
+  border-bottom: none;
+}
+
+.Layout .VPHome .VPHero .VPHeroTitle {
+  font-family: var(--font-family-alt);
+  color: var(--c-text);
+}
+
+.Layout .VPHome .VPHero .VPHeroText {
+  color: var(--c-text-light);
+}
+
+.Layout .VPHome .VPHero .VPHeroTagline {
+  color: var(--c-text-lighter);
+}
+
+.Layout .VPHome .VPFeatures {
+  background: var(--c-bg);
+  border-top: none;
+}
+
+.Layout .VPHome .VPFeatures .VPFeature {
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-card-border-color);
+  box-shadow: var(--c-card-shadow-inset), 0 14px 66px rgb(0 0 0 / 7%),
+    0 10px 17px rgb(0 0 0 / 3%), 0 4px 7px rgb(0 0 0 / 5%);
+  border-radius: 8px;
+  transition: 0.18s all;
+}
+
+.Layout .VPHome .VPFeatures .VPFeature:hover {
+  transform: scale(1.02);
+  background: var(--c-card-hover-bg);
+}
+
+.Layout .VPHome .VPFeatures .VPFeature .VPFeatureTitle {
+  font-family: var(--font-family-alt);
+  color: var(--c-text);
+}
+
+.Layout .VPHome .VPFeatures .VPFeature .VPFeatureDetails {
+  color: var(--c-text-light);
+}
+
+/* Home page specific styles (for custom components if needed) */
+@media (min-width: 480px) {
+  .home-row {
+    display: flex;
+    gap: 16px;
+  }
+
+  .double-box {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 640px;
+    height: 320px;
+    background: #ffffff;
+    border: 1px solid #fcfafe;
+    box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .slug {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 22.5px;
+  }
+
+  .home-header {
+    display: flex;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .slug {
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .home-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .double-box {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 320px;
+    height: 320px;
+    background: #ffffff;
+    border: 1px solid #fcfafe;
+    box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .home-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-container {
+    display: none;
+  }
+}
+
+/* Additional responsive styles */
+@media (min-width: 1000px) {
+  .background-image {
+    background-size: cover;
+  }
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 85%;
+}
+
+/* Custom container styles */
+.custom-container.info {
+  border-color: #5288ef;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: var(--c-tip-bg);
+  color: var(--c-tip-text);
+}
+
+/* Hide back to top button */
+.back-to-top {
+  display: none !important;
+} 

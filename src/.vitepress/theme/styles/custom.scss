@@ -1,0 +1,327 @@
+/* Custom Styles for VitePress Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans:wght@400;500;600&display=swap');
+
+// Import only our custom bootstrap config (no full bootstrap)
+@import './bootstrap.scss';
+
+/* Global box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+
+  @media (max-width: 991px) {
+    font-size: 14px;
+  }
+}
+
+/* Bootstrap-style breakpoint mixins for compatibility */
+@mixin media-breakpoint-down($size) {
+  @if $size == md {
+    @media (max-width: 767px) { @content; }
+  } @else if $size == lg {
+    @media (max-width: 991px) { @content; }
+  }
+}
+
+/* Text utilities */
+.text-fill {
+  fill: var(--c-text);
+}
+
+.text-stroke {
+  stroke: var(--c-text);
+}
+
+/* Typography classes */
+.hero-title {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 4.6rem;
+  letter-spacing: -0.05em;
+}
+
+.hero-body-text {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  letter-spacing: -0.025em;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    opacity: 85%;
+  }
+}
+
+.header {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  letter-spacing: -0.05em;
+}
+
+.title {
+  font-family: var(--font-family-alt);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.body-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+.subtext {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: -0.025em;
+}
+
+/* Keyframes for cookbook illustration animation */
+@keyframes gradientAnimation {
+  to {
+    background-position: 400% 0;
+  }
+}
+
+/* VitePress Home Layout Customizations */
+.Layout .VPHome {
+  background: var(--c-bg);
+  color: var(--c-text);
+
+  .VPHero {
+    background: var(--c-bg);
+    border-bottom: none;
+    position: relative;
+
+    .VPHeroInfo {
+      position: relative;
+      
+      // Add the animated cookbook illustration within the hero content
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -50px;
+        transform: translateY(-50%);
+        width: 300px;
+        height: 250px;
+        background: white;
+        mask: url("/cookbook.svg") no-repeat center;
+        mask-size: contain;
+        animation: gradientAnimation 20s infinite linear;
+        background: linear-gradient(
+          90deg,
+          hsla(263, 93%, 69%, 1),
+          hsla(282, 57%, 64%, 1),
+          hsla(325, 55%, 66%, 1),
+          hsla(0, 92%, 75%, 1),
+          hsla(16, 65%, 78%, 1),
+          hsla(32, 50%, 80%, 1),
+          hsla(16, 65%, 78%, 1),
+          hsla(0, 92%, 75%, 1),
+          hsla(325, 55%, 66%, 1),
+          hsla(282, 57%, 64%, 1),
+          hsla(263, 93%, 69%, 1)
+        )
+        0 0 / 400% 100%;
+        z-index: 1;
+        pointer-events: none;
+
+        @include media-breakpoint-down(lg) {
+          right: -20px;
+          width: 250px;
+          height: 200px;
+        }
+
+        @include media-breakpoint-down(md) {
+          position: static;
+          transform: none;
+          margin: 20px auto 0;
+          display: block;
+          width: 200px;
+          height: 165px;
+        }
+      }
+    }
+
+    .VPHeroTitle {
+      font-family: var(--font-family-alt);
+      color: var(--c-text);
+    }
+
+    .VPHeroText {
+      color: var(--c-text-light);
+    }
+
+    .VPHeroTagline {
+      color: var(--c-text-lighter);
+    }
+
+    .VPButton {
+      background: var(--c-brand);
+      border-color: var(--c-brand);
+      
+      &:hover {
+        background: var(--c-brand);
+        border-color: var(--c-brand);
+        opacity: 0.9;
+      }
+    }
+
+    .VPButton.alt {
+      background: transparent;
+      border-color: var(--c-border);
+      color: var(--c-text);
+      
+      &:hover {
+        background: var(--c-bg-light);
+        border-color: var(--c-border-dark);
+      }
+    }
+  }
+
+  .VPFeatures {
+    background: var(--c-bg);
+    border-top: none;
+
+    .VPFeature {
+      background: var(--c-card-bg);
+      border: 1px solid var(--c-card-border-color);
+      box-shadow: var(--c-card-shadow-inset), 0 14px 66px rgb(0 0 0 / 7%),
+        0 10px 17px rgb(0 0 0 / 3%), 0 4px 7px rgb(0 0 0 / 5%);
+      border-radius: 8px;
+      transition: 0.18s all;
+
+      &:hover {
+        transform: scale(1.02);
+        background: var(--c-card-hover-bg);
+      }
+
+      .VPFeatureTitle {
+        font-family: var(--font-family-alt);
+        color: var(--c-text);
+      }
+
+      .VPFeatureDetails {
+        color: var(--c-text-light);
+      }
+    }
+  }
+}
+
+/* Home page specific styles (for custom components if needed) */
+@media (min-width: 480px) {
+  .home-row {
+    display: flex;
+    gap: 16px;
+  }
+
+  .double-box {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 640px;
+    height: 320px;
+    background: #ffffff;
+    border: 1px solid #fcfafe;
+    box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .slug {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 22.5px;
+  }
+
+  .home-header {
+    display: flex;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .slug {
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .home-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .double-box {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 320px;
+    height: 320px;
+    background: #ffffff;
+    border: 1px solid #fcfafe;
+    box-shadow: 0px 10px 10px rgba(249, 246, 254, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .home-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-container {
+    display: none;
+  }
+}
+
+/* Additional responsive styles */
+@media (min-width: 1000px) {
+  .background-image {
+    background-size: cover;
+  }
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    opacity: 85%;
+  }
+}
+
+/* Custom container styles */
+.custom-container.info {
+  border-color: #5288ef;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: var(--c-tip-bg);
+  color: var(--c-tip-text);
+}
+
+/* Hide back to top button */
+.back-to-top {
+  display: none !important;
+} 

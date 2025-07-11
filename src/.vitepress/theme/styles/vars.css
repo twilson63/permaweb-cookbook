@@ -1,0 +1,66 @@
+/* CSS Variables for VitePress Theme */
+
+:root {
+  --font-family: Work Sans, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  --font-family-alt: Roboto Mono, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+
+  --c-brand: #ff5f15;
+  --c-text: #242424;
+  --c-text-light: #3a3a3a;
+  --c-text-lighter: #424242;
+  --c-text-lightest: #5c5c5c;
+  --c-bg: #f2f2f2;
+  --c-bg-light: #e0e2e3;
+  --c-bg-dark: #d2d2d4;
+  --c-bg-rgb: 242, 242, 242;
+
+  --c-accent-peach: #e1c7b8;
+  --c-accent-violet: #9555f1;
+  --c-accent-rose: #da7373;
+  --c-accent-sunny: #f6b865;
+  --c-accent-pinky: #e14ca8;
+
+  --c-topbar-bg: #dcdcdc;
+
+  --c-border: #c7c9cc;
+  --c-border-dark: #9da0a3;
+
+  --c-card-bg: #e7e7e7;
+  --c-card-hover-bg: #dedede;
+  --c-card-border-color: #cbcbcb;
+  --c-card-shadow-inset: inset 0px 2px 0px rgba(255, 255, 255, 0.5);
+
+  --search-border-color: #cfcfcf;
+  --search-bg-color: #dfdfdf;
+  --search-item-text-color: #000000;
+
+  --navbar-height: 99px;
+}
+
+html.dark {
+  --c-brand: #ff8851;
+  --c-text: #ffffff;
+  --c-text-light: #ebebeb;
+  --c-text-lighter: #ddd;
+  --c-text-lightest: #d0d0d0;
+  --c-bg: #1b1b1f;
+  --c-bg-light: #161618;
+  --c-bg-dark: #202127;
+  --c-bg-rgb: 27, 27, 31;
+
+  --c-topbar-bg: #1a1a1a;
+
+  --c-border: #585858;
+  --c-border-dark: #414141;
+
+  --c-card-bg: #1f1f1f;
+  --c-card-hover-bg: #2b2b2b;
+  --c-card-border-color: rgba(15, 15, 15, 0.5);
+  --c-card-shadow-inset: inset 0px 1px 0px rgba(225, 199, 184, 0.15);
+} 
