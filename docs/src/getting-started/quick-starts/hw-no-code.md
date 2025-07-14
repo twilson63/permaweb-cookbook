@@ -1,6 +1,6 @@
 # Hello World (No Code)
 
-In this quick start we are going to upload an image to the permaweb with no code!
+In this quick start we are going to upload an image to the Permaweb with no code.
 
 ## Requirements
 
@@ -12,13 +12,13 @@ In this quick start we are going to upload an image to the permaweb with no code
 
 [https://arweave.app/add](https://arweave.app/add) or [https://wander.app](https://wander.app)
 
-## Send some data to arweave
+## Send some data to Arweave
 
 Go to [https://hello_cookbook.arweave.dev](https://hello_cookbook.arweave.dev)
 
 Enter some data and click publish, connect your wallet and "BAM"
 
-## Congrats!!
+## Congratulations!
 
 You just published some data on Arweave using zero code.
 
