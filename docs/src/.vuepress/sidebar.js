@@ -105,37 +105,6 @@ const getI18NSidebar = (langCode) => [
 				],
 			},
 			{
-				text: "Arweave File System (ArFS)",
-				link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
-				collapsible: true,
-				children: [
-					{
-						text: "ArFS",
-						link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
-					},
-					{
-						text: "Data Model",
-						link: get_i18n_link(langCode, "/concepts/arfs/data-model.html"),
-					},
-					{
-						text: "Entity Types",
-						link: get_i18n_link(langCode, "/concepts/arfs/entity-types.html"),
-					},
-					{
-						text: "Content Types",
-						link: get_i18n_link(langCode, "/concepts/arfs/content-types.html"),
-					},
-					{
-						text: "Privacy",
-						link: get_i18n_link(langCode, "/concepts/arfs/privacy.html"),
-					},
-					{
-						text: "Schema Diagrams",
-						link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams.html"),
-					},
-				],
-			},
-			{
 				text: get_i18n_str(langCode, "concepts-vouch", "Vouch"),
 				link: get_i18n_link(langCode, "/concepts/vouch.html"),
 			}
@@ -287,6 +256,37 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "Arweave Name System (ArNS)",
 				link: get_i18n_link(langCode, "/concepts/arns.html"),
+			},
+			{
+				text: "Arweave File System (ArFS)",
+				link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
+				collapsible: true,
+				children: [
+					{
+						text: "ArFS",
+						link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
+					},
+					{
+						text: "Data Model",
+						link: get_i18n_link(langCode, "/concepts/arfs/data-model.html"),
+					},
+					{
+						text: "Entity Types",
+						link: get_i18n_link(langCode, "/concepts/arfs/entity-types.html"),
+					},
+					{
+						text: "Content Types",
+						link: get_i18n_link(langCode, "/concepts/arfs/content-types.html"),
+					},
+					{
+						text: "Privacy",
+						link: get_i18n_link(langCode, "/concepts/arfs/privacy.html"),
+					},
+					{
+						text: "Schema Diagrams",
+						link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams.html"),
+					},
+				],
 			}
 		]
 	},
