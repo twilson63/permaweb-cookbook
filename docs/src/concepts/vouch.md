@@ -22,4 +22,4 @@ Adding a standard such as the ANS-109 to the permaweb will help minimize Sybil a
 |User-Identifier|True|An identifier for the user based on the Verification Method. Example - `abhav@arweave.org`|
 
 ## Resources
-* [ANS-10 Docs](https://github.com/ArweaveTeam/arweave-standards/blob/ans-109/ans/ANS-109.md)
+* [ANS-109 Docs](https://github.com/ArweaveTeam/arweave-standards/blob/ans-109/ans/ANS-109.md)
