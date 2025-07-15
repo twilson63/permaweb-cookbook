@@ -8,3 +8,4 @@ If you've created something on the Permaweb, and would like to add documentation
 
 ## Community Contributions
 - [Arweave Name System (ArNS)](../concepts/arns.md)
+- [ArFS](../concepts/arfs.md)
