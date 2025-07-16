@@ -1,18 +1,21 @@
+---
+locale: ja
+---
 # Hello World (NodeJS)
 
-This guide walks you through the most simple way to get data on to the permaweb using `arweave-js` and `irys`.
+このガイドでは、`arweave-js`と`irys`を使用して、データをパーマウェブにアップロードする最も簡単な方法を説明します。
 
-With Arweave 2.6 only allowing 1000 items per block, directly posting to the gateway (eg. using `arweave-js`) will likely be uncommon.
+Arweave 2.6では、ブロックごとに1000アイテムしか許可されていないため、ゲートウェイに直接投稿する（例：`arweave-js`を使用する）ことはあまり一般的ではないでしょう。
 
-## Requirements
+## 要件
 
--   [NodeJS](https://nodejs.org) LTS or greater
+-   [NodeJS](https://nodejs.org) LTS以上
 
-## Description
+## 説明
 
-Using a terminal/console window create a new folder called `hw-nodejs`.
+ターミナル/コンソールウィンドウを使用して、`hw-nodejs`という新しいフォルダを作成します。
 
-## Setup
+## セットアップ
 
 ```sh
 cd hw-nodejs
@@ -20,15 +23,16 @@ npm init -y
 npm install arweave ardrive-cli
 ```
 
-## Generate a wallet
+## ウォレットの生成
 
 ```sh
 npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json
 ```
 
-## Upload using Ardrive Turbo
+## Ardrive Turboを使用したアップロード
 
-Uploads of less than 100 KiB are currently free on Irys' Node 2.
+現在、Irysのノード2では、100 KiB未満のアップロードが無料です。
+
 
 ```js:no-line-numbers
 import Irys from "@irys/sdk";
@@ -54,9 +58,10 @@ try {
 }
 ```
 
-## Upload using ArweaveJS
+## ArweaveJSを使用したアップロード
 
-If you are running the latest version of `nodejs` this `arweavejs` script will work as is. For other versions you may need to use the `--experimental-fetch` flag.
+最新バージョンの`nodejs`を実行している場合、この`arweavejs`スクリプトはそのまま動作します。その他のバージョンでは、`--experimental-fetch`フラグを使用する必要があるかもしれません。
+
 
 ```js:no-line-numbers
 import Arweave from "arweave";
