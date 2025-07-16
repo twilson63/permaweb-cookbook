@@ -1,0 +1,22 @@
+name: Documentation
+description: Suggest improvements or additions to documentation
+labels: ['documentation']
+title: "[Docs]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve the docs!
+  - type: textarea
+    id: docs
+    attributes:
+      label: Documentation request
+      description: Summarize the change or addition.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+    validations:
+      required: false

@@ -1,0 +1,21 @@
+name: Chore
+description: Request maintenance or cleanup tasks
+labels: ['chore']
+title: "[Chore]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the maintenance task.
+  - type: textarea
+    id: description
+    attributes:
+      label: Chore description
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+    validations:
+      required: false
