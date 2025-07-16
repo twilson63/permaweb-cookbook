@@ -105,6 +105,10 @@ const getI18NSidebar = (langCode) => [
 				],
 			},
 			{
+				text: "Browser Sandboxing",
+				link: get_i18n_link(langCode, "/concepts/sandboxing")
+			},
+			{
 				text: get_i18n_str(langCode, "concepts-vouch", "Vouch"),
 				link: get_i18n_link(langCode, "/concepts/vouch.html"),
 			}
