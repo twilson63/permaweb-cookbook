@@ -1,0 +1,30 @@
+name: Translation request
+description: Request new or improved translations
+labels: ['translation']
+title: "[Translation]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Let us know which language you'd like to see supported.
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Language you want to request
+      placeholder: e.g. Spanish
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Additional details about the translation request
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+    validations:
+      required: false
