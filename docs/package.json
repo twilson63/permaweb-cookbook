@@ -11,7 +11,13 @@
 	"scripts": {
 		"dev": "vuepress dev src",
 		"build": "vuepress build src",
-		"deploy": "npm run build && node deploy.mjs",
+		"build:check": "npm run build && npm run check:links",
+		"check:links": "node scripts/check-links.js",
+		"check:links:fast": "node scripts/check-links.js --fast",
+		"check:links:internal": "node scripts/check-links.js --skip-external",
+		"fix:links": "node scripts/fix-common-links.js",
+		"fix:links:preview": "node scripts/fix-common-links.js --dry-run",
+		"deploy": "npm run build:check && node deploy.mjs",
 		"fmt": "prettier --single-quote --trailing-comma none --write src/.vuepress",
 		"lint": "prettier --single-quote --trailing-comma none --check src/.vuepress"
 	},
@@ -23,6 +29,8 @@
 		"@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
 		"@vuepress/plugin-search": "2.0.0-beta.61",
 		"arweave": "^1.11.8",
+		"htmlhint": "^1.6.3",
+		"markdown-link-check": "^3.13.7",
 		"prettier": "^2.8.4",
 		"vuepress": "2.0.0-beta.61",
 		"warp-contracts": "^1.2.37"

@@ -76,7 +76,7 @@ const { contractTxId, srcTxId } = await warp.deploy({
 -   initState - is a stringified JSON object
 -   data - is optional if you want to write data as part of your deployment
 -   src - is the string or Uint8Array value of the source code for the contract
--   tags - is an array of name/value objects `{name: string, value: string}[]`, [Learn more about tags](../../../concepts/tags.md)
+-   tags - is an array of name/value objects `{name: string, value: string}[]`, [Learn more about tags](../../../../concepts/tags.md)
 
 **deployFromSourceTx**
 

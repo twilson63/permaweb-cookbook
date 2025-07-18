@@ -1,6 +1,6 @@
 # Glossary
 
-The following is an embedded glossary tool for the permaweb ecosystem. It supports both light and dark mode, matching the documentation theme.
+The following is an embedded [glossary tool](https://glossary.arweave.net/) for the permaweb ecosystem.
 
 <style>
   .glossary-iframe {

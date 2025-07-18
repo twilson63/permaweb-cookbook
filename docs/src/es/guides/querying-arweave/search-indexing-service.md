@@ -3,7 +3,7 @@ locale: es
 ---
 # Servicio de indexación de búsqueda
 
-tl;dr
+TL;DR
 
 - Sintaxis compatible hacia atrás con Arweave GraphQL
 - Tiempos de respuesta más rápidos para consultas complejas (por ejemplo, búsqueda con múltiples etiquetas)
