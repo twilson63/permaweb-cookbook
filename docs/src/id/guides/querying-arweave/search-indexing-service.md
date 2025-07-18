@@ -4,7 +4,7 @@ locale: id
 
 # Layanan Indeks Pencarian
 
-tl;dr
+TL;DR
 
 - Sintaks yang kompatibel ke belakang dengan Arweave GraphQL
 - Waktu respons lebih cepat untuk kueri kompleks (misalnya pencarian multi-tag)

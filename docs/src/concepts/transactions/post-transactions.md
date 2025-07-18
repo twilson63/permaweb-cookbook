@@ -1,4 +1,4 @@
-# Posting Transactions😍
+# Posting Transactions
 
 There are several ways to post transactions to Arweave. Each has its own unique affordances and constraints. The diagram below illustrates the four main approaches to posting transactions.
 
@@ -46,4 +46,4 @@ An example of how to post a 100KB or less bundled transaction with an Arweave wa
 
 -   [arweave-js](../guides/posting-transactions/arweave-js.md) example
 -   [dispatch](../guides/posting-transactions/dispatch.md) example
--   [arseeding-js](../guides/posting-transactions/arseeding-js.md) example
+-   [Turbo SDK](../guides/posting-transactions/turbo.md) example

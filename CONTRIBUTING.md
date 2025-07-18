@@ -39,7 +39,7 @@ Guides are longer form informational documentation on various topics.
 The general structure for writing a guide is the following:
 
 ```
-Brief Summary/TLDR
+Brief Summary/TL;DR
 
 Why should I use this guide
 
