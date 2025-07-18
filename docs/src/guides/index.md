@@ -18,8 +18,8 @@ This section is being revamped to organize guides by user personas and use cases
 While we reorganize, you can find existing guides in:
 - [Posting Transactions](./posting-transactions/) - How to send data to Arweave
 - [Deploying Manifests](./deploying-manifests/) - Publishing applications and websites
-- [Deployment Tools](./deployment/) - CLI tools and automation
-- [Querying Arweave](./querying-arweave/) - Finding and retrieving data
+- [Deployment Tools](../tooling/deployment/) - CLI tools and automation
+- [Querying Arweave](../tooling/graphql/) - Finding and retrieving data
 
 ## Framework Integration
 

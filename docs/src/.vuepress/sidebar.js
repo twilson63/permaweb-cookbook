@@ -296,7 +296,7 @@ const getI18NSidebar = (langCode) => [
 							},
 							{
 								text: "Goldsky Search Gateway",
-								link: get_i18n_link(langCode, "/guides/querying-arweave/search-indexing-service.html"),
+								link: get_i18n_link(langCode, "/tooling/graphql/search-indexing-service.html"),
 							},
 							{
 								text: "ar-gql (Library)",
@@ -312,11 +312,11 @@ const getI18NSidebar = (langCode) => [
 				children: [
 					{
 						text: "arkb (CLI)",
-						link: get_i18n_link(langCode, "/guides/deployment/arkb.html"),
+						link: get_i18n_link(langCode, "/tooling/deployment/arkb.html"),
 					},
 					{
 						text: "GitHub Actions",
-						link: get_i18n_link(langCode, "/guides/deployment/github-action.html"),
+						link: get_i18n_link(langCode, "/tooling/deployment/github-action.html"),
 					},
 				],
 			},
