@@ -23,9 +23,8 @@ PERMAWEB COOKBOOK
 │       └── HyperBEAM
 │           ├── HyperBEAM Introduction
 │           ├── Querying AO Process State
+│           ├── Lua Serverless Functions
 │           └── HyperBEAM Devices
-│               ├── HyperBEAM Devices Introduction
-│               └── Querying Device State
 │
 ├── Guides (Adding these back in after getting started, core concepts, tooling content are updated)
 │   └── (empty - all children commented out)
