@@ -92,7 +92,7 @@ yarn dev
 
 ### 设置钱包类型
 
-如果您想使用 [ArConnect](https://arconnect.io)，[Arweave.app](https://arweave.app) 或其他基于浏览器的钱包，您可以安装 ArConnect 的类型包，以便为 `window.arweaveWallet` 进行声明。
+如果您想使用 [Wander](https://wander.app)，[Arweave.app](https://arweave.app) 或其他基于浏览器的钱包，您可以安装 Wander 的类型包，以便为 `window.arweaveWallet` 进行声明。
 <CodeGroup>
 <CodeGroupItem title="NPM">
 

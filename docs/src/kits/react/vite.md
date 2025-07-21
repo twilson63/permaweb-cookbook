@@ -88,7 +88,7 @@ it may ask you to switch to another available PORT in Terminal
 
 ### Setup wallet types
 
-If you want to use [ArConnect](https://arconnect.io), [Arweave.app](https://arweave.app) or other browser-based wallets, you can install ArConnect's types package to have declarations for `window.arweaveWallet`.
+If you want to use [Wander](https://wander.app), [Arweave.app](https://arweave.app) or other browser-based wallets, you can install Wander's types package to have declarations for `window.arweaveWallet`.
 <CodeGroup>
 <CodeGroupItem title="NPM">
 

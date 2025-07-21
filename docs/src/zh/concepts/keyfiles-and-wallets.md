@@ -52,7 +52,7 @@ Arweave 使用 *4096 位* RSA-PSS 密钥对，并以 JWK（JSON Web Keys）格�
 
 [Arweave.app](https://arweave.app/welcome) - Arweave 网页钱包，用于部署永久数据、安全地将您的账户连接到去中心化的应用程序，并导航 Arweave。
 
-[ArConnect](https://www.arconnect.io/) - Arweave 钱包浏览器扩展程序
+[Wander](https://www.wander.app/) - Arweave 钱包浏览器扩展程序
 
 ### 来源和进一步阅读：
 [Arweave 文档](https://docs.arweave.org/developers/server/http-api#key-format)

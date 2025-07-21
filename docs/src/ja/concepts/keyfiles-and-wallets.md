@@ -52,7 +52,7 @@ Arweaveは、*4096ビット*のRSA-PSSキーペアを使用し、JWK（JSON Web 
 
 [Arweave.app](https://arweave.app/welcome) - 永続データを展開し、分散型アプリケーションに安全に接続し、ウィーブをナビゲートするためのArweaveウェブウォレット。
 
-[ArConnect](https://www.arconnect.io/) - Arweaveウォレットブラウザ拡張機能。
+[Wander](https://www.wander.app/) - Arweaveウォレットブラウザ拡張機能。
 
 ### 出典とさらなる読み物：
 [Arweave Docs](https://docs.arweave.org/developers/server/http-api#key-format)

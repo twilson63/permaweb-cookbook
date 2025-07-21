@@ -93,7 +93,7 @@ Esto iniciará un nuevo servidor de desarrollo en tu máquina. De forma predeter
 
 ### Configurar tipos de billetera
 
-Si deseas usar [ArConnect](https://arconnect.io), [Arweave.app](https://arweave.app) u otras billeteras basadas en el navegador, puedes instalar el paquete de tipos de ArConnect para tener las declaraciones de `window.arweaveWallet`.
+Si deseas usar [Wander](https://wander.app), [Arweave.app](https://arweave.app) u otras billeteras basadas en el navegador, puedes instalar el paquete de tipos de Wander para tener las declaraciones de `window.arweaveWallet`.
 
 <CodeGroup>
 <CodeGroupItem title="NPM">

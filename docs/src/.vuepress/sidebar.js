@@ -14,7 +14,7 @@ const getI18NSidebar = (langCode) => [
 			},
 			{
 				text: "Zero-deployed Minimal Full Stack App",
-				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-no-code.html"),
+				link: get_i18n_link(langCode, "/getting-started/zero-to-deploy.html"),
 			},
 		],
 	},
@@ -62,6 +62,55 @@ const getI18NSidebar = (langCode) => [
 					{
 						text: "ArNS Introduction",
 						link: get_i18n_link(langCode, "/concepts/arns.html"),
+					},
+				],
+			},
+			{
+				text: "Decentralized Computing",
+				link: get_i18n_link(langCode, "/concepts/decentralized-computing/index.html"),
+				collapsible: true,
+				children: [
+					{
+						text: "AO Processes",
+						link: get_i18n_link(langCode, "/concepts/decentralized-computing/ao-processes/what-are-ao-processes.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "What are AO Processes",
+								link: get_i18n_link(langCode, "/concepts/decentralized-computing/ao-processes/what-are-ao-processes.html"),
+							},
+							{
+								text: "Process Communication",
+								link: get_i18n_link(langCode, "/concepts/decentralized-computing/ao-processes/process-communication.html"),
+							},
+							{
+								text: "State Management",
+								link: get_i18n_link(langCode, "/concepts/decentralized-computing/ao-processes/state-management.html"),
+							},
+						],
+					},
+					{
+						text: "HyperBEAM",
+						link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "HyperBEAM Introduction",
+								link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
+							},
+							{
+								text: "Querying AO Process State",
+								link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/querying-ao-state.html"),
+							},
+							{
+								text: "Lua Serverless Functions",
+								link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/lua-serverless.html"),
+							},
+							{
+								text: "HyperBEAM Devices",
+								link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/hyperbeam-devices.html"),
+							},
+						],
 					},
 				],
 			}

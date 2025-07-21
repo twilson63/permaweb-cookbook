@@ -14,7 +14,7 @@ locale: zh
 
 ## 创建一个钱包
 
-[https://arweave.app/add](https://arweave.app/add) 或 [https://arconnect.io](https://arconnect.io)
+[https://arweave.app/add](https://arweave.app/add) 或 [https://wander.app](https://wander.app)
 
 ## 发送一些数据到 Arweave
 

@@ -51,7 +51,7 @@ Alamat dompet Anda sebenarnya berasal dari **kunci publik** dompet Anda. Meskipu
 ### Dompet
 [Arweave.app](https://arweave.app/welcome) - Dompet web Arweave untuk mengunggah data permanen, menghubungkan akun Anda dengan aman ke aplikasi terdesentralisasi, dan menjelajahi weave.
 
-[ArConnect](https://www.arconnect.io/) - Ekstensi Peramban Dompet Arweave
+[Wander](https://www.wander.app/) - Ekstensi Peramban Dompet Arweave
 
 ### Sumber dan Bacaan Lanjutan:
 [Dokumentasi Arweave](https://docs.arweave.org/developers/server/http-api#key-format)

@@ -24,7 +24,7 @@ Arweaveのブロックウィーブは本質的に公開されています。し�
 
 <img :src="$withBase('/encryption-diagram.png')" style="height: auto; display: block; margin-left: auto; margin-right: auto; width: 75%;">
 
-他のウォレット（[ArConnect](https://www.arconnect.io/)など）は、このキー派生プロトコルに統合されており、ドライブキーを得るために必要なSHA-256署名を取得するために指定されたArweaveウォレットから署名を収集するAPIを公開しています。
+他のウォレット（[Wander](https://www.wander.app/)など）は、このキー派生プロトコルに統合されており、ドライブキーを得るために必要なSHA-256署名を取得するために指定されたArweaveウォレットから署名を収集するAPIを公開しています。
 
 Dartを使用した実装の例は[こちら](https://github.com/ardriveapp/ardrive-web/blob/187b3fb30808bda452123c2b18931c898df6a3fb/docs/private_drive_kdf_reference.dart)で入手でき、Typescriptの実装は[こちら](https://github.com/ardriveapp/ardrive-core-js/blob/f19da30efd30a4370be53c9b07834eae764f8535/src/utils/crypto.ts)にあります。
 

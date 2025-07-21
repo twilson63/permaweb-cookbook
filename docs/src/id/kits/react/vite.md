@@ -94,7 +94,7 @@ mungkin akan meminta Anda untuk beralih ke PORT lain yang tersedia di Terminal.
 
 ### Pengaturan tipe wallet
 
-Jika Anda ingin menggunakan [ArConnect](https://arconnect.io), [Arweave.app](https://arweave.app), atau dompet berbasis browser lainnya, Anda dapat menginstal paket tipe ArConnect untuk mendapatkan deklarasi untuk `window.arweaveWallet`.
+Jika Anda ingin menggunakan [Wander](https://wander.app), [Arweave.app](https://arweave.app), atau dompet berbasis browser lainnya, Anda dapat menginstal paket tipe Wander untuk mendapatkan deklarasi untuk `window.arweaveWallet`.
 <CodeGroup>
 <CodeGroupItem title="NPM">
 

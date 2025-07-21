@@ -90,7 +90,7 @@ yarn dev
 
 ### ウォレットの種類を設定
 
-[ArConnect](https://arconnect.io)、[Arweave.app](https://arweave.app) または他のブラウザベースのウォレットを使用したい場合は、`window.arweaveWallet` の宣言を持つ ArConnect のタイプパッケージをインストールできます。
+[Wander](https://wander.app)、[Arweave.app](https://arweave.app) または他のブラウザベースのウォレットを使用したい場合は、`window.arweaveWallet` の宣言を持つ Wander のタイプパッケージをインストールできます。
 
 
 <CodeGroup>

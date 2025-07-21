@@ -14,7 +14,7 @@ Dalam panduan cepat ini, kita akan mengunggah gambar ke permaweb tanpa perlu men
 
 ## Buat dompet (wallet)
 
-Buka [https://arweave.app/add](https://arweave.app/add) atau [https://arconnect.io](https://arconnect.io)
+Buka [https://arweave.app/add](https://arweave.app/add) atau [https://wander.app](https://wander.app)
 
 ## Kirim data ke arweave
 
