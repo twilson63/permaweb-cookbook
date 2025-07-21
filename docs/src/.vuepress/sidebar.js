@@ -13,7 +13,7 @@ const getI18NSidebar = (langCode) => [
 				link: get_i18n_link(langCode, "/getting-started/welcome.html"),
 			},
 			{
-				text: "Zero-deployed Minimal Full Stack App",
+				text: "Zero to Deployed",
 				link: get_i18n_link(langCode, "/getting-started/zero-to-deploy.html"),
 			},
 		],
