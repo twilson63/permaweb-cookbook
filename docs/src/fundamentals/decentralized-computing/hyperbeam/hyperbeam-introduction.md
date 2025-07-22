@@ -10,6 +10,8 @@ timeEstimate: "30 minutes"
 
 HyperBEAM is the primary, production-ready implementation of the AO-Core protocol, built on the robust Erlang/OTP framework. It serves as a decentralized operating system, powering the AO Computer—a scalable, trust-minimized, distributed supercomputer built on the permanent storage of Arweave.
 
+*For the most current technical specifications and implementation details, refer to the [official HyperBEAM documentation](https://hyperbeam.arweave.net).*
+
 ## What is HyperBEAM?
 
 Think of HyperBEAM as your "Swiss Army knife" for decentralized development. It's not a single-purpose application, but rather a powerful, extensible engine that transforms the abstract concepts of AO-Core into a concrete, operational system.
@@ -74,6 +76,8 @@ HyperBEAM introduces a uniquely modular architecture centered around **Devices**
 - **`~json@1.0`**: Provides JSON data structure manipulation
 - **`~relay@1.0`**: Forwards messages between nodes or external HTTP endpoints
 - **`~scheduler@1.0`**: Handles message ordering and execution timing
+
+*For a complete list of devices and their latest specifications, see the [HyperBEAM Devices documentation](https://hyperbeam.arweave.net/build/devices/hyperbeam-devices.html).*
 
 ```http
 # Using the Lua device to execute a calculation
@@ -278,16 +282,18 @@ GET /DATA_SOURCE/fetch/
 HyperBEAM nodes are accessible via HTTP. You can use any node while maintaining trustless guarantees:
 
 ```javascript
-// Popular HyperBEAM nodes
-const NODES = [
-  'https://forward.computer',
-  'https://ao-mu-1.onrender.com', 
-  'https://ao-cu.onrender.com'
+// Example HyperBEAM node URLs (verify node availability before use)
+// Note: Node availability can change. Always verify endpoints are operational.
+const EXAMPLE_NODES = [
+  'https://forward.computer',  // Community HyperBEAM node
+  // Additional nodes can be found in the AO ecosystem
+  // Use official node directories for current endpoints
 ];
 
-// Example: Query process state
+// Example: Query process state from a HyperBEAM node
 const processId = 'YOUR_PROCESS_ID';
-const response = await fetch(`https://forward.computer/${processId}~process@1.0/now`);
+const nodeUrl = 'YOUR_HYPERBEAM_NODE_URL'; // Replace with verified node URL
+const response = await fetch(`${nodeUrl}/${processId}~process@1.0/now`);
 const state = await response.json();
 ```
 
@@ -313,7 +319,7 @@ GET /~lua@5.3a&script=return os.time()/result
 import { connect, createDataItemSigner } from "@permaweb/aoconnect";
 
 const ao = connect({
-  MU_URL: "https://forward.computer"  // HyperBEAM node
+  MU_URL: "YOUR_HYPERBEAM_NODE_URL"  // Replace with verified HyperBEAM node
 });
 
 await ao.message({
@@ -401,6 +407,8 @@ Explore HyperBEAM's capabilities in detail:
 ## Resources
 
 - **HyperBEAM Official Documentation**: [HyperBEAM Docs](https://hyperbeam.arweave.net)
-- **Public Nodes**: [Node Directory](https://ao.arweave.dev/networks)
-- **AO Connect Integration**: [Migration Guide](https://cookbook.ao.arweave.net/guides/migrating-to-hyperbeam/)
+- **AO Cookbook**: [AO Documentation](https://cookbook.ao.arweave.net/)
+- **HyperBEAM Migration Guide**: [Migration from AO Connect](https://cookbook.ao.arweave.net/guides/migrating-to-hyperbeam/)
 - **Community**: [AO Discord](https://discord.gg/arweave)
+
+**Note**: Node endpoints and availability may change over time. Always verify node status and select reliable endpoints for production use. Consider running your own HyperBEAM node for maximum reliability and control.

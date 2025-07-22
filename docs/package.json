@@ -24,7 +24,6 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@bundlr-network/client": "^0.9.11",
-		"@renovamen/vuepress-plugin-mermaid": "^2.0.0-alpha.26",
 		"@snippetors/vuepress-plugin-code-copy": "^1.2.3",
 		"@vuepress/plugin-container": "2.0.0-beta.61",
 		"@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
@@ -43,6 +42,7 @@
 		"add-to-calendar-button": "^2.2.5",
 		"bootstrap": "5.2.3",
 		"dotenv": "^16.1.4",
-		"openai": "^3.2.1"
+		"openai": "^3.2.1",
+		"vuepress-plugin-md-enhance": "^1.30.0"
 	}
 }

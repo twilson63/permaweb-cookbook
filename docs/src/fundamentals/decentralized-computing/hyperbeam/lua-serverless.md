@@ -10,6 +10,8 @@ timeEstimate: "45 minutes"
 
 HyperBEAM's `~lua@5.3a` device enables you to run serverless Lua functions with permanent availability, instant execution, and cryptographic verification. Unlike traditional serverless platforms, your functions are deployed permanently to Arweave and executed on the decentralized HyperBEAM network.
 
+The device uses [Luerl](https://luerl.org/), an implementation of Lua 5.3 in Erlang, which provides excellent sandboxing but has some differences from standard Lua implementations. Most standard Lua functions work as expected, but some features may behave differently.
+
 ## How HyperBEAM Lua Works
 
 HyperBEAM executes Lua functions through HTTP requests using a specific URL structure:
@@ -132,14 +134,21 @@ end
 
 ### 2. Deploy to Arweave
 
-Use the Arweave CLI or a web interface to upload your Lua file:
+Use permaweb-deploy to upload your Lua file:
 
 ```bash
-# Using Arweave CLI
-arweave deploy statistics.lua --key-file wallet.json
+# Using permaweb-deploy (recommended)
+DEPLOY_KEY=$(base64 -i wallet.json) npx permaweb-deploy --arns-name my-lua-modules --deploy-file statistics.lua
 
 # Returns transaction ID: 58jTWUOJRGjYFA8xIF4PEjLKDKWT_gupBkcQ0vAaDSw
 ```
+
+:::tip Alternative Deployment
+You can also use the Arweave CLI for direct deployment:
+```bash
+arweave deploy statistics.lua --key-file wallet.json
+```
+:::
 
 ### 3. Execute Your Function
 
@@ -635,14 +644,11 @@ curl 'https://forward.computer/~lua@5.3a/math_utils/~json@1.0/serialize?numbers+
 curl 'https://forward.computer/~lua@5.3a/date_utils/~json@1.0/serialize?custom_timestamp+integer=1640995200&module=UTILS_MODULE_ID'
 ```
 
-## Integration with JavaScript
-
-### Frontend Integration
+## JavaScript Integration
 
 Use HyperBEAM functions in your web applications:
 
 ```javascript
-// Frontend JavaScript example
 class HyperBEAMLua {
     constructor(baseUrl = 'https://forward.computer') {
         this.baseUrl = baseUrl;
@@ -708,88 +714,6 @@ lua.callFunction('FINANCE_MODULE_ID', 'compound_interest', {
 });
 ```
 
-### Node.js Backend Integration
-
-```javascript
-// Node.js backend example
-const axios = require('axios');
-
-class HyperBEAMClient {
-    constructor(baseUrl = 'https://forward.computer') {
-        this.baseUrl = baseUrl;
-    }
-    
-    buildUrl(moduleId, functionName, params) {
-        const url = new URL(`/~lua@5.3a/${functionName}/~json@1.0/serialize`, this.baseUrl);
-        url.searchParams.append('module', moduleId);
-        
-        for (const [key, value] of Object.entries(params)) {
-            if (typeof value === 'number') {
-                const castType = Number.isInteger(value) ? 'integer' : 'float';
-                url.searchParams.append(`${key}+${castType}`, value.toString());
-            } else if (Array.isArray(value)) {
-                url.searchParams.append(`${key}+list`, value.join(','));
-            } else {
-                url.searchParams.append(key, value.toString());
-            }
-        }
-        
-        return url.toString();
-    }
-    
-    async execute(moduleId, functionName, params = {}) {
-        const url = this.buildUrl(moduleId, functionName, params);
-        
-        try {
-            const response = await axios.get(url, {
-                timeout: 30000, // 30 second timeout
-                headers: {
-                    'User-Agent': 'Node.js HyperBEAM Client'
-                }
-            });
-            
-            return response.data;
-        } catch (error) {
-            if (error.response) {
-                throw new Error(`HyperBEAM Error ${error.response.status}: ${error.response.statusText}`);
-            } else {
-                throw new Error(`Network Error: ${error.message}`);
-            }
-        }
-    }
-}
-
-// Express.js API endpoint example
-const express = require('express');
-const app = express();
-const hyperbeam = new HyperBEAMClient();
-
-app.get('/api/analyze-text', async (req, res) => {
-    try {
-        const { text } = req.query;
-        
-        if (!text) {
-            return res.status(400).json({ error: 'Text parameter required' });
-        }
-        
-        const result = await hyperbeam.execute(
-            'TEXT_MODULE_ID',
-            'analyze_text',
-            { text }
-        );
-        
-        res.json(result);
-    } catch (error) {
-        console.error('Text analysis failed:', error);
-        res.status(500).json({ error: 'Analysis failed' });
-    }
-});
-
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
-});
-```
-
 ## Deployment Workflow
 
 ### 1. Development and Testing
@@ -820,7 +744,10 @@ test_statistics()
 ### 2. Deploy to Arweave
 
 ```bash
-# Using Arweave CLI
+# Using permaweb-deploy (recommended)
+DEPLOY_KEY=$(base64 -i wallet.json) npx permaweb-deploy --arns-name my-lua-modules --deploy-file my_module.lua
+
+# Alternative: Using Arweave CLI
 arweave deploy my_module.lua \
     --key-file wallet.json \
     --tag "Content-Type" "text/plain" \
@@ -864,6 +791,8 @@ Keep track of your deployed functions:
 ## Resources
 
 - **HyperBEAM Documentation**: [forward.computer](https://forward.computer)
+- **Luerl Documentation**: [luerl.org](https://luerl.org/)
 - **Lua 5.3 Reference**: [lua.org/manual/5.3](https://www.lua.org/manual/5.3/)
+- **Permaweb Deployment**: [Permaweb Deploy](/tooling/deployment/permaweb-deploy)
 - **Arweave Deployment**: [Arweave CLI](https://github.com/ArweaveTeam/arweave-deploy)
 - **Community Examples**: [AO Discord](https://discord.gg/arweave)

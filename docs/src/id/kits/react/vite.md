@@ -99,14 +99,14 @@ Jika Anda ingin menggunakan [Wander](https://wander.app), [Arweave.app](https://
 <CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
-npm install arconnect -D
+npm install Wander -D
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn add arconnect -D
+yarn add Wander -D
 ```
 
   </CodeGroupItem>
@@ -115,7 +115,7 @@ yarn add arconnect -D
 Setelah menginstal paket, Anda perlu menambahkannya ke file `src/vite-env.d.ts` Anda.
 
 ```ts
-/// <reference types="arconnect" />
+/// <reference types="Wander" />
 ```
 
 ### Pengaturan Routing

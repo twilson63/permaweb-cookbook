@@ -68,6 +68,9 @@ export default {
   markdown: {
     code: {
       lineNumbers: false,
+    },
+    extractHeaders: {
+      level: [2, 3, 4, 5, 6],
     }
   },
 
@@ -95,6 +98,11 @@ export default {
     containerPlugin({
       type: "info",
     }),
+    containerPlugin({
+      type: "collapsible-code",
+      before: (info) => `<CollapsibleCode title="${info || 'Click to expand'}" class="custom-container-collapsible-code">`,
+      after: () => '</CollapsibleCode>',
+    }),
     searchPlugin({
       locales: {
         "/": {
@@ -102,7 +110,10 @@ export default {
         },
       },
     }),
-    codeCopyPlugin({})
+    codeCopyPlugin({}),
+    ["md-enhance", {
+      mermaid: true
+    }]
   ],
 
   // passing languages def to client side

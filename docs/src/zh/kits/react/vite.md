@@ -97,14 +97,14 @@ yarn dev
 <CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
-npm install arconnect -D
+npm install Wander -D
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn add arconnect -D
+yarn add Wander -D
 ```
 
   </CodeGroupItem>
@@ -113,7 +113,7 @@ yarn add arconnect -D
 安装包后，您需要将其添加到 `src/vite-env.d.ts` 文件中。
 
 ```ts
-/// <reference types="arconnect" />
+/// <reference types="Wander" />
 ```
 
 ### 设置路由

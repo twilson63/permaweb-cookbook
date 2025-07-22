@@ -7,7 +7,7 @@ Build and deploy a complete permaweb application with AO smart contracts in 30 m
 Before starting, ensure you have:
 
 - **Bun runtime** installed on your machine ([bun.sh](https://bun.sh))
-- **ArConnect or Arweave.app wallet** installed in your browser
+- **Wander or Arweave.app wallet** installed in your browser
 - **Basic JavaScript knowledge** (variables, functions, async/await)
 - **ArNS name registered** for deployment (register at [ar.io](https://ar.io))
 - **Turbo Credits** in your wallet for fast uploads (get at [turbo.ardrive.io](https://turbo.ardrive.io))
@@ -54,7 +54,7 @@ Test that everything is working:
 bun --version
 
 # Verify wallet is installed
-# Open your browser and look for the ArConnect extension icon
+# Open your browser and look for the Wander extension icon
 ```
 
 Create your `package.json` scripts section:
@@ -90,6 +90,7 @@ touch ao/ao.lua public/fonts/matrix.css
 
 Create `build.js` for modern bundling with esbuild:
 
+::: collapsible-code Build Configuration
 ```javascript
 import * as esbuild from 'esbuild';
 import { mkdir } from 'node:fs/promises';
@@ -124,11 +125,13 @@ await esbuild.build({
     }
 });
 ```
+:::
 
 ### Development Server
 
 Create `dev.js` for local development:
 
+::: collapsible-code Development Server
 ```javascript
 const server = Bun.serve({
     port: 3000,
@@ -167,11 +170,13 @@ const server = Bun.serve({
 
 console.log(`Server running at http://localhost:${server.port}`);
 ```
+:::
 
 ### TypeScript Configuration
 
 Create `jsconfig.json` for better development experience:
 
+::: collapsible-code TypeScript Configuration
 ```json
 {
   "compilerOptions": {
@@ -194,6 +199,7 @@ Create `jsconfig.json` for better development experience:
   }
 }
 ```
+:::
 
 ### HTML Foundation
 
@@ -210,7 +216,7 @@ Create `index.html`:
 </head>
 <body>
     <div id="app"></div>
-    <script src="/dist/bundle.js"></script>
+    &lt;script src="/dist/bundle.js"&gt;&lt;/script&gt;
 </body>
 </html>
 ```
@@ -219,6 +225,7 @@ Create `index.html`:
 
 Create `src/global-shim.js` for Node.js compatibility in browsers:
 
+::: collapsible-code Browser Compatibility Shim
 ```javascript
 // Polyfill global object for browser environment
 if (typeof window !== 'undefined') {
@@ -244,6 +251,7 @@ if (typeof window !== 'undefined') {
     window.process.versions = { node: '' };
 }
 ```
+:::
 
 ### Matrix Font Styling
 
@@ -263,6 +271,7 @@ Create `public/fonts/matrix.css`:
 
 Create `src/index.js`:
 
+::: collapsible-code Main Application Entry
 ```javascript
 // Ensure global is defined first
 if (typeof window !== 'undefined' && !window.global) {
@@ -299,11 +308,13 @@ if (app) {
     initApp();
 }
 ```
+:::
 
 ### Wallet Manager with AO Integration
 
 Create `src/wallet/WalletManager.js`:
 
+::: collapsible-code Wallet Manager
 ```javascript
 import { message, dryrun, result, createDataItemSigner } from '@permaweb/aoconnect';
 
@@ -317,10 +328,10 @@ export class WalletManager {
     this.initModal();
   }
 
-  async connectWallet(method = 'ArConnect') {
+  async connectWallet(method = 'Wander') {
     try {
       if (!window.arweaveWallet) {
-        throw new Error("ArConnect not installed");
+        throw new Error("Wander not installed");
       }
 
       await window.arweaveWallet.connect([
@@ -332,7 +343,7 @@ export class WalletManager {
       });
 
       this.walletAddress = await window.arweaveWallet.getActiveAddress();
-      this.authMethod = "ArConnect";
+      this.authMethod = "Wander";
       this.signer = createDataItemSigner(window.arweaveWallet);
       
       this.hideModal();
@@ -428,11 +439,13 @@ export class WalletManager {
 
 export default new WalletManager();
 ```
+:::
 
 ### Application Logic with AO Communication
 
 Create `src/app.js`:
 
+::: collapsible-code Application Logic with AO Communication  
 ```javascript
 import walletManager from './wallet/WalletManager.js';
 
@@ -696,11 +709,13 @@ export function initApp() {
     console.log('🌐 Permaweb app initialized!');
 }
 ```
+:::
 
 ### AO Smart Contract (Lua)
 
 Create `ao/ao.lua` for your backend logic:
 
+::: collapsible-code AO Smart Contract (Lua)
 ```lua
 local json = require("json")
 
@@ -752,6 +767,7 @@ Handlers.add(
 -- Initial state exposure
 exposeState()
 ```
+:::
 
 ### Test Your Application Locally
 
@@ -898,6 +914,7 @@ After successful deployment, you'll receive:
 
 For automated deployment, create `.github/workflows/deploy.yml`:
 
+::: collapsible-code GitHub Actions Deployment
 ```yaml
 name: Deploy to Permaweb
 on:
@@ -920,6 +937,7 @@ jobs:
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 ```
+:::
 
 **Setup:**
 1. Add your base64-encoded wallet as a GitHub secret named `DEPLOY_KEY`
@@ -935,7 +953,7 @@ Your permaweb application now consists of:
 **Frontend (Permaweb)**:
 - Modern JavaScript with Web Components  
 - Bun + esbuild for optimal bundling
-- ArConnect wallet integration
+- Wander wallet integration
 - HyperBEAM real-time data access
 
 **Backend (AO Process)**:
@@ -982,7 +1000,7 @@ sequenceDiagram
 - **esbuild**: Lightning-fast bundling with tree-shaking
 - **AO Protocol**: Decentralized compute with permanent storage
 - **HyperBEAM**: Real-time blockchain state access
-- **ArConnect**: Secure wallet integration
+- **Wander**: Secure wallet integration
 - **Permaweb**: Permanent, decentralized hosting
 
 ## Next Steps
@@ -1013,7 +1031,7 @@ Congratulations! You've built and deployed a full-stack decentralized applicatio
 
 | Problem | Solution |
 |---------|----------|
-| ArConnect not detected | Install ArConnect browser extension and refresh |
+| Wander not detected | Install Wander browser extension and refresh |
 | Build fails | Ensure Bun is installed correctly (`bun --version`) |
 | AO process not responding | Verify process ID and deployment with `aos` |
 | HyperBEAM cache empty | Send a message to populate state first |
@@ -1031,7 +1049,7 @@ Congratulations! You've built and deployed a full-stack decentralized applicatio
 
 ## Resources
 
-- **Template Repository**: [dpshade-minimal-permaweb](https://github.com/example/template)
+- **Template Repository**: [dpshade-minimal-permaweb](https://github.com/dpshade/minimal-permaweb)
 - **AO Documentation**: [https://cookbook_ao.ar.io](https://cookbook_ao.ar.io)  
 - **Arweave Developer Docs**: [https://docs.arweave.org](https://docs.arweave.org)
 - **HyperBEAM Guide**: [forward.computer](https://forward.computer)

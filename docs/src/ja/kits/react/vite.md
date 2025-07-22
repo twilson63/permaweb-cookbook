@@ -97,14 +97,14 @@ yarn dev
 <CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
-npm install arconnect -D
+npm install Wander -D
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn add arconnect -D
+yarn add Wander -D
 ```
 
   </CodeGroupItem>
@@ -113,7 +113,7 @@ yarn add arconnect -D
 After installing the package, you'll need to add it to your `src/vite-env.d.ts` file.
 
 ```ts
-/// <reference types="arconnect" />
+/// <reference types="Wander" />
 ```
 
 ### Setup Routing

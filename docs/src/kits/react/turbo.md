@@ -224,22 +224,22 @@ Then, you can purchase turbo credits for your wallet.
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global permaweb-deploy
+npm install --save-dev permaweb-deploy
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add permaweb-deploy
+yarn add permaweb-deploy --dev --ignore-engines
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-<!-- ::: info
-You will need to add AR to this wallet and fund your Irys wallet to be able to upload this app. See [https://irys.xyz](https://irys.xyz) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
-::: -->
+::: info
+You will need to add AR to your wallet and fund it with Turbo credits to be able to upload this app. See [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html) for more information.
+:::
 
 #### Update package.json
 
@@ -248,14 +248,14 @@ You will need to add AR to this wallet and fund your Irys wallet to be able to u
   ...
   "scripts": {
     ...
-    "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> "
+    "deploy": "npm run build && permaweb-deploy --arns-name my-react-app"
   }
   ...
 }
 ```
 
 ::: info
-Replace << ANT-PROCESS >> with your ANT process id.
+Replace `my-react-app` with your actual ArNS name. You can also add additional options like `--undername staging` for staging deployments.
 :::
 
 #### Run build
@@ -300,8 +300,8 @@ yarn deploy
   </CodeGroupItem>
 </CodeGroup>
 
-::: info ERROR
-If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with ArDrive Turbo credits.
+::: warning Insufficient Funds
+If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with Turbo credits. See [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html) for more information.
 :::
 
 #### Response
@@ -309,10 +309,18 @@ If you receive an error `Insufficient funds`, make sure you remembered to fund y
 You should see a response similar to the following:
 
 ```shell
-Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
+-------------------- DEPLOY DETAILS --------------------
+Tx ID: abc123def456ghi789jkl012mno345pqr678stu901v
+ArNS Name: my-react-app
+Undername: @
+ANT: xyz789abc012def345ghi678jkl901mno234pqr567s
+AR IO Process: bh9l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM
+TTL Seconds: 3600
+--------------------------------------------------------
+Deployed TxId [abc123def456ghi789jkl012mno345pqr678stu901v] to name [my-react-app] for ANT [xyz789abc012def345ghi678jkl901mno234pqr567s] using undername [@]
 ```
 
-Your React app can be found at `https://arweave.net/<< tx-id >>`.
+Your React app can be found at `https://my-react-app.arweave.dev` (if using ArNS) or `https://arweave.net/abc123def456ghi789jkl012mno345pqr678stu901v`.
 
 ::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!

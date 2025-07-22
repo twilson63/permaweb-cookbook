@@ -20,95 +20,95 @@ const getI18NSidebar = (langCode) => [
 	},
 	{
 		text: "Fundamentals",
-		link: get_i18n_link(langCode, "/concepts/index.html"),
+		link: get_i18n_link(langCode, "/fundamentals/index.html"),
 		collapsible: true,
 		children: [
 			{
 				text: get_i18n_str(langCode, "concepts-wallets-and-keys"),
-				link: get_i18n_link(langCode, "/concepts/keyfiles-and-wallets.html"),
+				link: get_i18n_link(langCode, "/fundamentals/keyfiles-and-wallets.html"),
 			},
 			{
 				text: "Transactions",
-				link: get_i18n_link(langCode, "/concepts/transactions/transaction-types.html"),
+				link: get_i18n_link(langCode, "/fundamentals/transactions/transaction-types.html"),
 				collapsible: true,
 				children: [
 					{
 						text: get_i18n_str(langCode, "concepts-post-transactions"),
-						link: get_i18n_link(langCode, "/concepts/transactions/post-transactions.html"),
+						link: get_i18n_link(langCode, "/fundamentals/transactions/post-transactions.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-tags"),
-						link: get_i18n_link(langCode, "/concepts/transactions/tags.html"),
+						link: get_i18n_link(langCode, "/fundamentals/transactions/tags.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-bundles"),
-						link: get_i18n_link(langCode, "/concepts/transactions/bundles.html"),
+						link: get_i18n_link(langCode, "/fundamentals/transactions/bundles.html"),
 					},
 				],
 			},
 			{
 				text: "Accessing Arweave Data",
-				link: get_i18n_link(langCode, "/concepts/queryTransactions.html"),
+				link: get_i18n_link(langCode, "/fundamentals/queryTransactions.html"),
 				collapsible: true,
 				children: [
 					{
 						text: "Gateways & Access",
-						link: get_i18n_link(langCode, "/concepts/gateways.html"),
+						link: get_i18n_link(langCode, "/fundamentals/gateways.html"),
 					},
 					{
 						text: "Manifests & Path Resolution",
-						link: get_i18n_link(langCode, "/concepts/manifests.html"),
+						link: get_i18n_link(langCode, "/fundamentals/manifests.html"),
 					},
 					{
 						text: "ArNS Introduction",
-						link: get_i18n_link(langCode, "/concepts/arns.html"),
+						link: get_i18n_link(langCode, "/fundamentals/arns.html"),
 					},
 				],
 			},
 			{
 				text: "Decentralized Computing",
-				link: get_i18n_link(langCode, "/concepts/decentralized-computing/index.html"),
+				link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/index.html"),
 				collapsible: true,
 				children: [
 					{
 						text: "AO Processes",
-						link: get_i18n_link(langCode, "/concepts/decentralized-computing/ao-processes/what-are-ao-processes.html"),
+						link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html"),
 						collapsible: true,
 						children: [
 							{
 								text: "What are AO Processes",
-								link: get_i18n_link(langCode, "/concepts/decentralized-computing/ao-processes/what-are-ao-processes.html"),
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html"),
 							},
 							{
 								text: "Process Communication",
-								link: get_i18n_link(langCode, "/concepts/decentralized-computing/ao-processes/process-communication.html"),
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/process-communication.html"),
 							},
 							{
 								text: "State Management",
-								link: get_i18n_link(langCode, "/concepts/decentralized-computing/ao-processes/state-management.html"),
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/state-management.html"),
 							},
 						],
 					},
 					{
 						text: "HyperBEAM",
-						link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
+						link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
 						collapsible: true,
 						children: [
 							{
 								text: "HyperBEAM Introduction",
-								link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
 							},
 							{
 								text: "Querying AO Process State",
-								link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/querying-ao-state.html"),
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/querying-ao-state.html"),
 							},
 							{
 								text: "Lua Serverless Functions",
-								link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/lua-serverless.html"),
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/lua-serverless.html"),
 							},
 							{
 								text: "HyperBEAM Devices",
-								link: get_i18n_link(langCode, "/concepts/decentralized-computing/hyperbeam/hyperbeam-devices.html"),
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html"),
 							},
 						],
 					},
@@ -360,6 +360,10 @@ const getI18NSidebar = (langCode) => [
 				collapsible: true,
 				children: [
 					{
+						text: "Permaweb Deploy",
+						link: get_i18n_link(langCode, "/tooling/deployment/permaweb-deploy.html"),
+					},
+					{
 						text: "arkb (CLI)",
 						link: get_i18n_link(langCode, "/tooling/deployment/arkb.html"),
 					},
@@ -375,30 +379,40 @@ const getI18NSidebar = (langCode) => [
 				children: [
 					{
 						text: "ArFS",
-						link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
+						link: get_i18n_link(langCode, "/tooling/specs/arfs/arfs.html"),
 						collapsible: true,
 						children: [
 							{
 								text: "Data Model",
-								link: get_i18n_link(langCode, "/concepts/arfs/data-model.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/data-model.html"),
 							},
 							{
 								text: "Entity Types",
-								link: get_i18n_link(langCode, "/concepts/arfs/entity-types.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/entity-types.html"),
 							},
 							{
 								text: "Content Types",
-								link: get_i18n_link(langCode, "/concepts/arfs/content-types.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/content-types.html"),
 							},
 							{
 								text: "Privacy",
-								link: get_i18n_link(langCode, "/concepts/arfs/privacy.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/privacy.html"),
 							},
 							{
 								text: "Schema Diagrams",
-								link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/schema-diagrams.html"),
 							},
 						],
+					},
+				],
+			},
+			{
+				text: "Components",
+				collapsible: true,
+				children: [
+					{
+						text: "Collapsible Code",
+						link: get_i18n_link(langCode, "/tooling/components/collapsible-code.html"),
 					},
 				],
 			},
@@ -441,16 +455,16 @@ const getI18NSidebar = (langCode) => [
 			// 	children: [
 			// 		{
 			// 			text: "SmartWeave",
-			// 			link: get_i18n_link(langCode, "/archive/concepts/smartweave.html"),
+			// 			link: get_i18n_link(langCode, "/archive/fundamentals/smartweave.html"),
 			// 			collapsible: true,
 			// 			children: [
 			// 				{
 			// 					text: "Profit Sharing Tokens (PSTs)",
-			// 					link: get_i18n_link(langCode, "/archive/concepts/psts.html"),
+			// 					link: get_i18n_link(langCode, "/archive/fundamentals/psts.html"),
 			// 				},
 			// 				{
 			// 					text: "Atomic Tokens",
-			// 					link: get_i18n_link(langCode, "/archive/concepts/atomic-tokens.html"),
+			// 					link: get_i18n_link(langCode, "/archive/fundamentals/atomic-tokens.html"),
 			// 				},
 			// 				{
 			// 					text: "Warp SDK",
@@ -482,11 +496,11 @@ const getI18NSidebar = (langCode) => [
 			// 		},
 			// 		{
 			// 			text: "Atomic Tokens Guide",
-			// 			link: get_i18n_link(langCode, "/archive/concepts/atomic-tokens.html"),
+			// 			link: get_i18n_link(langCode, "/archive/fundamentals/atomic-tokens.html"),
 			// 		},
 			// 		{
 			// 			text: "Vouch Protocol",
-			// 			link: get_i18n_link(langCode, "/archive/concepts/vouch.html"),
+			// 			link: get_i18n_link(langCode, "/archive/fundamentals/vouch.html"),
 			// 		},
 			// 	],
 			// },
