@@ -12,7 +12,7 @@ AO processes are autonomous compute units that run on the Arweave network, enabl
 
 ## Core Architecture
 
-AO (Autonomous Objects) processes represent a paradigm shift from traditional smart contracts. Unlike Ethereum's synchronous execution model, AO processes operate asynchronously, communicating through message passing in a distributed network.
+AO processes represent a paradigm shift from traditional smart contracts. Unlike Ethereum's synchronous execution model, AO processes operate asynchronously, communicating through message passing in a distributed network.
 
 ```mermaid
 graph TB
