@@ -8,7 +8,7 @@ timeEstimate: "20 minutes"
 
 # Decentralized Computing
 
-The Permaweb enables a new paradigm of decentralized computing that goes beyond simple data storage. Through technologies like AO (Autonomous Objects) and HyperBEAM, developers can build sophisticated applications that run permanently and trustlessly on a global, decentralized computer.
+The Permaweb enables a new paradigm of decentralized computing that goes beyond simple data storage. Through technologies like AO and HyperBEAM, developers can build sophisticated applications that run permanently and trustlessly on a global, decentralized computer.
 
 ## Overview
 
