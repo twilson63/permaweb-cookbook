@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Load configuration
-const config = require('../link-validation.config.js');
+const config = require('./link-validation.config.js');
 
 /**
  * Apply fixes to a file

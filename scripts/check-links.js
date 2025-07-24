@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Load configuration
-const config = require('../link-validation.config.js');
+const config = require('./link-validation.config.js');
 
 /**
  * Find all markdown files in the specified directories
@@ -156,7 +156,7 @@ function checkInternalLinks(filePath) {
  */
 function checkFile(filePath) {
   return new Promise((resolve, reject) => {
-    const cmd = `npx markdown-link-check "${filePath}" --config .markdown-link-check.json`;
+    const cmd = `npx markdown-link-check "${filePath}" --config config/markdown-link-check.json`;
     
     exec(cmd, (error, stdout, stderr) => {
       if (error && error.code !== 1) {
