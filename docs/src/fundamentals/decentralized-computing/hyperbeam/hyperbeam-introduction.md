@@ -18,27 +18,7 @@ Think of HyperBEAM as your "Swiss Army knife" for decentralized development. It'
 
 HyperBEAM provides the runtime environment and essential services to execute computations across a network of distributed nodes, making the AO Computer accessible through familiar web technologies like HTTP.
 
-```mermaid
-graph TB
-    A[Client Application] -->|HTTP Request| B[HyperBEAM Node]
-    B -->|Process Message| C[AO Process]
-    B -->|Execute Device| D[Device ~lua@5.3a]
-    B -->|Query State| E[Arweave Storage]
-    C -->|State Update| E
-    B -->|HTTP Response| A
-    
-    subgraph "HyperBEAM Architecture"
-        F[Message Router]
-        G[Device Manager]
-        H[State Engine]
-        I[Cryptographic Verifier]
-    end
-    
-    B --> F
-    B --> G
-    B --> H
-    B --> I
-```
+HyperBEAM serves as the bridge between standard HTTP interfaces and the AO Computer, managing message routing, device execution, state queries, and cryptographic verification.
 
 ## Core AO-Core Concepts in HyperBEAM
 
@@ -79,7 +59,7 @@ HyperBEAM introduces a uniquely modular architecture centered around **Devices**
 
 *For a complete list of devices and their latest specifications, see the [HyperBEAM Devices documentation](https://hyperbeam.arweave.net/build/devices/hyperbeam-devices.html).*
 
-```http
+```
 # Using the Lua device to execute a calculation
 GET /~lua@5.3a&script=return 2 + 2/result
 # Response: 4
@@ -95,12 +75,12 @@ HyperBEAM exposes a powerful HTTP API that uses structured URL patterns to inter
 
 **The URL bar becomes a command-line interface** for AO's trustless compute environment.
 
-```http
+```
 # Complex pipeline example: Calculate token supply and format as JSON
-GET /TOKEN_PROCESS~process@1.0/now/~lua@5.3a&module=CALC_MODULE/sum/serialize~json@1.0
+GET /TOKEN_PROCESS~process@1.0/now/cache/~lua@5.3a&module=CALC_MODULE/sum/serialize~json@1.0
 
 # This path:
-# 1. Reads latest state of TOKEN_PROCESS
+# 1. Reads latest state of TOKEN_PROCESS on the cache variable
 # 2. Pipes state to Lua script 
 # 3. Calls 'sum' function to calculate total supply
 # 4. Formats result as JSON
@@ -114,7 +94,7 @@ Building with HyperBEAM can be simplified to four core principles:
 
 You can compute on any message by calling its keys by name. The device specified in the message determines how these keys are resolved.
 
-```http
+```
 # Direct message access
 GET /~message@1.0&greeting="Hello"&count+integer=42/count
 # Response: 42
@@ -128,7 +108,7 @@ GET /PROCESS_ID~process@1.0/compute/userCount
 
 A path defines a sequence of 'request' messages to be executed. You can set a key in a message directly within the path using the `&key=value` syntax.
 
-```http
+```
 # Pipeline: Get process data → Transform with Lua → Format as JSON
 GET /PROCESS~process@1.0/now/~lua@5.3a&script=transform_data/result~json@1.0
 ```
@@ -137,7 +117,7 @@ GET /PROCESS~process@1.0/now/~lua@5.3a&script=transform_data/result~json@1.0
 
 The `~device@version` syntax allows you to apply a request as if the base message had a different device, providing powerful compute and storage logic.
 
-```http
+```
 # Execute Lua on process state
 GET /PROCESS~process@1.0/now/~lua@5.3a&func=calculateMetrics/metrics
 
@@ -149,7 +129,7 @@ GET /DATA~message@1.0/~wasm64@1.0&module=WASM_MODULE/compute
 
 The final message in a pipeline is returned as an HTTP response. This response is signed against the hashpath that generated it, ensuring integrity and verifiability of the computation.
 
-```http
+```
 # Every response includes cryptographic proof
 HTTP/1.1 200 OK
 X-HyperBEAM-Signature: 0x123abc...
@@ -242,7 +222,7 @@ Handlers.add(
 
 Combine persistent state management with on-demand compute:
 
-```http
+```
 # Smart contract state management
 GET /TOKEN_CONTRACT~process@1.0/now/balance
 
@@ -266,7 +246,7 @@ Build specialized computational environments through custom devices:
 
 Create complex, verifiable data processing workflows:
 
-```http
+```
 # Data pipeline: Fetch → Validate → Transform → Store → Notify
 GET /DATA_SOURCE/fetch/
     ~validator@1.0&schema=SCHEMA/validate/
@@ -300,7 +280,7 @@ const state = await response.json();
 ### Basic Operations
 
 **Query Process State:**
-```http
+```
 GET /PROCESS_ID~process@1.0/compute
 # Returns the latest known state (faster)
 
@@ -309,7 +289,7 @@ GET /PROCESS_ID~process@1.0/now
 ```
 
 **Execute Lua Code:**
-```http
+```
 GET /~lua@5.3a&script=return os.time()/result
 # Returns current timestamp
 ```
@@ -348,7 +328,7 @@ Every HyperBEAM response includes cryptographic proofs:
 
 Many HyperBEAM nodes run in TEEs for additional security:
 
-```http
+```
 # Verify node is running in genuine TEE
 GET /~snp@1.0/attestation
 # Returns cryptographic attestation report
@@ -408,7 +388,6 @@ Explore HyperBEAM's capabilities in detail:
 
 - **HyperBEAM Official Documentation**: [HyperBEAM Docs](https://hyperbeam.arweave.net)
 - **AO Cookbook**: [AO Documentation](https://cookbook.ao.arweave.net/)
-- **HyperBEAM Migration Guide**: [Migration from AO Connect](https://cookbook.ao.arweave.net/guides/migrating-to-hyperbeam/)
-- **Community**: [AO Discord](https://discord.gg/arweave)
+- **HyperBEAM Migration Guide**: [Migration from AO Connect](https://cookbook_ao.arweave.net/guides/migrating-to-hyperbeam/)
 
 **Note**: Node endpoints and availability may change over time. Always verify node status and select reliable endpoints for production use. Consider running your own HyperBEAM node for maximum reliability and control.

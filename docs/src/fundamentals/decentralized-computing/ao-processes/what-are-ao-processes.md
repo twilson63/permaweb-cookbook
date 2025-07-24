@@ -14,21 +14,19 @@ AO processes are autonomous compute units that run on the Arweave network, enabl
 
 AO processes represent a paradigm shift from traditional smart contracts. Unlike Ethereum's synchronous execution model, AO processes operate asynchronously, communicating through message passing in a distributed network.
 
-```mermaid
-graph TB
-    A[User/Application] -->|Message| B[AO Process]
-    B -->|State Update| C[Arweave Storage]
-    B -->|Message| D[Another Process]
-    D -->|Response| B
-    C -->|State Read| B
-    
-    subgraph "AO Network"
-        B
-        D
-        E[Process C]
-        F[Process D]
-    end
+**AO Process Architecture:**
+
 ```
+User/Application
+       ↓ (Message)
+   AO Process ←→ Another Process
+       ↓ ↑         (Messages)
+   State Update/Read
+       ↓ ↑
+ Arweave Storage
+```
+
+This architecture demonstrates how AO processes communicate through asynchronous message passing while maintaining persistent state on Arweave. Each process operates independently while being able to interact with other processes in the network.
 
 ### Key Components
 
@@ -629,8 +627,8 @@ Handlers.add(
 
 Now that you understand AO processes fundamentals:
 
-1. **Learn process communication** - [Process Communication](/concepts/decentralized-computing/ao-processes/process-communication)
-2. **Master state management** - [State Management](/concepts/decentralized-computing/ao-processes/state-management)  
+1. **Learn process communication** - [Process Communication](/fundamentals/decentralized-computing/ao-processes/process-communication)
+2. **Master state management** - [State Management](/fundamentals/decentralized-computing/ao-processes/state-management)  
 3. **Explore HyperBEAM** - [HyperBEAM Introduction](/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction)
 4. **Build your first process** - [Builder's Journey](/guides/builder-journey/)
 

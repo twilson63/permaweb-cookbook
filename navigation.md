@@ -1,12 +1,13 @@
 PERMAWEB COOKBOOK
 ├── Getting Started
 │   ├── Welcome & Overview
-│   └── Zero-deployed Minimal Full Stack App
+│   └── Quick Starts
+│       ├── CLI
+│       ├── Code
+│       └── No Code
 │
 ├── Fundamentals
-│   ├── Wallets & Keys
-│   │   ├── Creating a Wallet
-│   │   └── Using a Wallet
+│   ├── Keyfiles and Wallets
 │   ├── Transactions
 │   │   ├── Post Transactions
 │   │   ├── Tags
@@ -17,17 +18,24 @@ PERMAWEB COOKBOOK
 │   │   └── ArNS Introduction
 │   └── Decentralized Computing
 │       ├── AO Processes
-│       │   ├── What are AO Processes
-│       │   ├── Process Communication
-│       │   └── State Management
+│       │   └── What are AO Processes
 │       └── HyperBEAM
 │           ├── HyperBEAM Introduction
-│           ├── Querying AO Process State
+│           ├── Getting AO Process State
 │           ├── Lua Serverless Functions
+│           ├── HyperBEAM Oracle (to be documented)
 │           └── HyperBEAM Devices
 │
-├── Guides (Adding these back in after getting started, core concepts, tooling content are updated)
-│   └── (empty - all children commented out)
+├── Guides
+│   └── Frontend
+│       ├── React
+│       │   ├── Vite + permaweb-deploy
+│       │   └── Create React App
+│       ├── Svelte
+│       │   ├── Minimal
+│       │   └── Vite
+│       └── Vue
+│           └── Create Vue App
 │
 ├── Tooling
 │   ├── Upload & Bundling
@@ -38,6 +46,7 @@ PERMAWEB COOKBOOK
 │   │       ├── Goldsky Search Gateway
 │   │       └── ar-gql (Library)
 │   ├── Deployment
+│   │   ├── Permaweb Deploy
 │   │   ├── arkb (CLI)
 │   │   └── GitHub Actions
 │   └── Specs

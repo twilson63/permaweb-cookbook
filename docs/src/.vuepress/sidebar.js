@@ -13,8 +13,22 @@ const getI18NSidebar = (langCode) => [
 				link: get_i18n_link(langCode, "/getting-started/welcome.html"),
 			},
 			{
-				text: "Zero to Deployed",
-				link: get_i18n_link(langCode, "/getting-started/zero-to-deploy.html"),
+				text: "Quick Starts",
+				collapsible: true,
+				children: [
+					{
+						text: "CLI",
+						link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-cli.html"),
+					},
+					{
+						text: "Code",
+						link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-code.html"),
+					},
+					{
+						text: "No Code",
+						link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-no-code.html"),
+					},
+				],
 			},
 		],
 	},
@@ -48,20 +62,20 @@ const getI18NSidebar = (langCode) => [
 			},
 			{
 				text: "Accessing Arweave Data",
-				link: get_i18n_link(langCode, "/fundamentals/queryTransactions.html"),
+				link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/query-transactions.html"),
 				collapsible: true,
 				children: [
 					{
 						text: "Gateways & Access",
-						link: get_i18n_link(langCode, "/fundamentals/gateways.html"),
+						link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/gateways.html"),
 					},
 					{
 						text: "Manifests & Path Resolution",
-						link: get_i18n_link(langCode, "/fundamentals/manifests.html"),
+						link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/manifests.html"),
 					},
 					{
 						text: "ArNS Introduction",
-						link: get_i18n_link(langCode, "/fundamentals/arns.html"),
+						link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/arns.html"),
 					},
 				],
 			},
@@ -79,14 +93,6 @@ const getI18NSidebar = (langCode) => [
 								text: "What are AO Processes",
 								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html"),
 							},
-							{
-								text: "Process Communication",
-								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/process-communication.html"),
-							},
-							{
-								text: "State Management",
-								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/state-management.html"),
-							},
 						],
 					},
 					{
@@ -99,8 +105,8 @@ const getI18NSidebar = (langCode) => [
 								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
 							},
 							{
-								text: "Querying AO Process State",
-								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/querying-ao-state.html"),
+								text: "Getting AO Process State",
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html"),
 							},
 							{
 								text: "Lua Serverless Functions",
@@ -120,7 +126,55 @@ const getI18NSidebar = (langCode) => [
 		text: "Guides",
 		link: get_i18n_link(langCode, "/guides/index.html"),
 		collapsible: true,
-		children: [],
+		children: [
+			{
+				text: "Frontend",
+				collapsible: true,
+				children: [
+					{
+						text: "React",
+						link: get_i18n_link(langCode, "/kits/react/index.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "Vite + permaweb-deploy",
+								link: get_i18n_link(langCode, "/kits/react/turbo.html"),
+							},
+							{
+								text: "Create React App",
+								link: get_i18n_link(langCode, "/kits/react/create-react-app.html"),
+							},
+						],
+					},
+					{
+						text: "Svelte",
+						link: get_i18n_link(langCode, "/kits/svelte/index.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "Minimal",
+								link: get_i18n_link(langCode, "/kits/svelte/minimal.html"),
+							},
+							{
+								text: "Vite",
+								link: get_i18n_link(langCode, "/kits/svelte/vite.html"),
+							},
+						],
+					},
+					{
+						text: "Vue",
+						link: get_i18n_link(langCode, "/kits/vue/index.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "Create Vue App",
+								link: get_i18n_link(langCode, "/kits/vue/create-vue.html"),
+							},
+						],
+					},
+				],
+			},
+		],
 		// children: [
 		// 	{
 		// 		text: "Builder",
@@ -215,7 +269,7 @@ const getI18NSidebar = (langCode) => [
 		// 			},
 		// 			{
 		// 				text: "Manifests & Bundling",
-		// 				link: get_i18n_link(langCode, "/guides/deploying-manifests/deployingManifests.html"),
+		// 				link: get_i18n_link(langCode, "/guides/deploying-manifests/deploying-manifests.html"),
 		// 				collapsible: true,
 		// 				children: [
 		// 					{
@@ -254,7 +308,7 @@ const getI18NSidebar = (langCode) => [
 		// 		children: [
 		// 			{
 		// 				text: "GraphQL Querying",
-		// 				link: get_i18n_link(langCode, "/guides/querying-arweave/queryingArweave.html"),
+		// 				link: get_i18n_link(langCode, "/guides/querying-arweave/querying-arweave.html"),
 		// 				collapsible: true,
 		// 				children: [
 		// 					{
@@ -289,7 +343,7 @@ const getI18NSidebar = (langCode) => [
 		// 		children: [
 		// 			{
 		// 				text: "Advanced Querying Techniques",
-		// 				link: get_i18n_link(langCode, "/guides/querying-arweave/queryingArweave.html"),
+		// 				link: get_i18n_link(langCode, "/guides/querying-arweave/querying-arweave.html"),
 		// 			},
 		// 		],
 		// 	},
@@ -299,7 +353,7 @@ const getI18NSidebar = (langCode) => [
 		// 		children: [
 		// 			{
 		// 				text: "Vouch Protocol",
-		// 				link: get_i18n_link(langCode, "/guides/vouch.html"),
+		// 				link: get_i18n_link(langCode, "/guides/vouch-system.html"),
 		// 			},
 		// 		],
 		// 	},
@@ -341,7 +395,7 @@ const getI18NSidebar = (langCode) => [
 						children: [
 							{
 								text: "Querying Arweave",
-								link: get_i18n_link(langCode, "/tooling/queryingArweave.html"),
+								link: get_i18n_link(langCode, "/tooling/querying-arweave.html"),
 							},
 							{
 								text: "Goldsky Search Gateway",
@@ -405,17 +459,7 @@ const getI18NSidebar = (langCode) => [
 						],
 					},
 				],
-			},
-			{
-				text: "Components",
-				collapsible: true,
-				children: [
-					{
-						text: "Collapsible Code",
-						link: get_i18n_link(langCode, "/tooling/components/collapsible-code.html"),
-					},
-				],
-			},
+			}
 		],
 	},
 	{
@@ -431,7 +475,7 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "LLMs.txt",
 				collapsible: false,
-				link: get_i18n_link(langCode, "/references/llms.html"),
+				link: get_i18n_link(langCode, "/references/llms-txt.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "getting-started-contributing", "Contributing"),
@@ -500,7 +544,7 @@ const getI18NSidebar = (langCode) => [
 			// 		},
 			// 		{
 			// 			text: "Vouch Protocol",
-			// 			link: get_i18n_link(langCode, "/archive/fundamentals/vouch.html"),
+			// 			link: get_i18n_link(langCode, "/archive/fundamentals/vouch-system.html"),
 			// 		},
 			// 	],
 			// },

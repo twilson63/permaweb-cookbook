@@ -11,7 +11,7 @@ locale: zh
 
 [Goldsky](https://goldsky.com) 免费的搜索服务使用了一个优化的后端，允许在 arweave 区块和交易中进行更快的复杂查询，并且还引入了模糊和通配符搜索用例的附加查询语法。
 
-搜索 GraphQL 语法是 [Arweave GraphQL 语法](./queryingArweave.md) 的超集。它完全向后兼容，并将返回相同的查询结果，但拥有一些额外的修饰符，可以提供更多的使用选项。
+搜索 GraphQL 语法是 [Arweave GraphQL 语法](./querying-arweave.md) 的超集。它完全向后兼容，并将返回相同的查询结果，但拥有一些额外的修饰符，可以提供更多的使用选项。
 
 - 灵活的标签过滤器
   - 仅搜索标签名或值

@@ -74,7 +74,7 @@ const res = await this.arweave.api.post(`arql`, get_mail_query)
 然而，仍然有一种方法可以直接从节点查询数据。[Permaweb支付协议(P3)](https://arweave.net/UoDCeYYmamvnc0mrElUxr5rMKUYRaujo9nmci206WjQ)是由社区开发的一项规范，允许客户端为服务付费。使用P3，希望提供索引服务的节点可以通过收费来盈利并得以运营。
 
 ## 资源
-* [Arweave查询指南](../guides/querying-arweave/queryingArweave.md)
+* [Arweave查询指南](../guides/querying-arweave/querying-arweave.md)
 * [ArDB包](../guides/querying-arweave/ardb.md)
 * [ar-gql包](../guides/querying-arweave/ar-gql.md)
 * [GraphQL参考](../references/gql.md)

@@ -5,7 +5,7 @@ Reference documentation, specifications, and resources for Permaweb development.
 ## Quick References
 
 - **[Glossary](./glossary.md)** - Definitions of key terms and concepts
-- **[LLMs.txt](./llms.md)** - Machine-readable documentation for AI assistants
+- **[LLMs.txt](./llms-txt.md)** - Machine-readable documentation for AI assistants
 
 ## Technical Specifications
 

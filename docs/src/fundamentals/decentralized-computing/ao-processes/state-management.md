@@ -35,29 +35,6 @@ if not State.initialized then
 end
 ```
 
-### State Persistence
-
-State automatically persists to Arweave through the process lifecycle:
-
-```mermaid
-graph TB
-    A[Message Received] --> B[Load Current State]
-    B --> C[Process Message]
-    C --> D[Update State]
-    D --> E[Validate State]
-    E --> F[Persist to Arweave]
-    F --> G[Send Response]
-    
-    subgraph "State Storage"
-        H[Previous Snapshot]
-        I[Current State]
-        J[State Delta]
-    end
-    
-    B --> H
-    D --> I
-    F --> J
-```
 
 ### State Consistency
 

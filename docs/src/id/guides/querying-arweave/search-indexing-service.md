@@ -13,7 +13,7 @@ TL;DR
 
 Layanan pencarian gratis [Goldsky](https://goldsky.com) menggunakan backend yang dioptimalkan yang memungkinkan pencarian lebih cepat untuk kueri kompleks di seluruh blok dan transaksi Arweave, dan juga memperkenalkan sintaks tambahan untuk kasus penggunaan pencarian fuzzy dan wildcard. 
 
-Sintaks GraphQL Pencarian adalah superset dari [sintaks GraphQL Arweave](./queryingArweave.md). Ini sepenuhnya kompatibel ke belakang dan akan mengembalikan hasil yang sama untuk kueri yang sama, tetapi memiliki beberapa pengubah tambahan yang dapat berguna. 
+Sintaks GraphQL Pencarian adalah superset dari [sintaks GraphQL Arweave](./querying-arweave.md). Ini sepenuhnya kompatibel ke belakang dan akan mengembalikan hasil yang sama untuk kueri yang sama, tetapi memiliki beberapa pengubah tambahan yang dapat berguna. 
 
 - Filter tag yang fleksibel
   - Cari hanya nama tag atau nilainya saja

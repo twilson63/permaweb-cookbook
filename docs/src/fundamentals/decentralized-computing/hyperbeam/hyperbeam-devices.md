@@ -22,31 +22,38 @@ Each device is essentially an Erlang module that implements a specific interface
 - **Promote modularity** - Add new functionality without altering the core protocol
 - **Distribute workload** - Handle different parts of complex tasks in parallel
 
-```mermaid
-graph TB
-    A[HTTP Request] --> B[HyperBEAM Router]
-    B --> C{Device Selection}
-    C -->|~process@1.0| D[Process Device]
-    C -->|~lua@5.3a| E[Lua Device] 
-    C -->|~wasm64@1.0| F[WASM Device]
-    C -->|~json@1.0| G[JSON Device]
-    
-    D --> H[Process State Management]
-    E --> I[Lua Script Execution]
-    F --> J[WebAssembly Execution]
-    G --> K[JSON Processing]
-    
-    H --> L[HTTP Response]
-    I --> L
-    J --> L
-    K --> L
-    
-    subgraph "Device Ecosystem"
-        M[Security Devices]
-        N[Utility Devices]
-        O[Custom Devices]
-    end
+**HyperBEAM Device Architecture:**
+
 ```
+HTTP Request
+     ↓
+HyperBEAM Router
+     ↓
+Device Selection
+     ↓
+┌─────────────────────────────────────────┐
+│ Device Types:                           │
+│ • ~process@1.0  → Process State Mgmt    │
+│ • ~lua@5.3a     → Lua Script Execution │
+│ • ~wasm64@1.0   → WebAssembly Execution│
+│ • ~json@1.0     → JSON Processing      │
+└─────────────────────────────────────────┘
+     ↓
+Processing Results
+     ↓
+HTTP Response
+
+Device Ecosystem:
+┌─────────────────────────────────────────┐
+│ • Security Devices (authentication)     │
+│ • Utility Devices (routing, caching)   │
+│ • Custom Devices (domain-specific)     │
+│ • Communication Devices (relays)       │
+│ • Storage Devices (state management)   │
+└─────────────────────────────────────────┘
+```
+
+This modular architecture allows HyperBEAM to handle diverse computational tasks by routing requests to specialized devices, each optimized for specific types of processing.
 
 ### Device Naming and Versioning
 
@@ -78,7 +85,7 @@ Versioning indicates the specific interface and behavior of the device:
 
 The process device manages persistent, shared computational states similar to traditional smart contracts, but with greater flexibility.
 
-```http
+```
 # Access current process state
 GET /PROCESS_ID~process@1.0/now
 
@@ -106,7 +113,7 @@ GET /PROCESS_ID~process@1.0/compute/users/USER_ADDRESS
 
 Handles the ordering and execution timing of messages within processes.
 
-```http
+```
 # Query scheduler status
 GET /PROCESS_ID~scheduler@1.0/status
 
@@ -126,7 +133,7 @@ GET /PROCESS_ID~scheduler@1.0/queue/pending
 
 Executes Lua scripts for serverless functions and data processing.
 
-```http
+```
 # Simple calculation
 GET /~lua@5.3a&script=return 2 + 3 * 4/result
 
@@ -155,7 +162,7 @@ GET /~lua@5.3a&module=MODULE_TX_ID&script=return math_utils.factorial(Args.n)&n+
 
 Executes WebAssembly code for high-performance computations written in languages like Rust, C++, Go, and others.
 
-```http
+```
 # Execute WASM module
 GET /~wasm64@1.0&module=WASM_MODULE_TX_ID/function_name
 
@@ -204,7 +211,7 @@ pub fn hash_data(data: &str) -> String {
 
 Provides JSON data structure access and manipulation capabilities.
 
-```http
+```
 # Format process state as JSON
 GET /PROCESS_ID~process@1.0/now~json@1.0
 
@@ -226,7 +233,7 @@ GET /~json@1.0&data={"users":{"alice":{"balance":100}}}/users/alice/balance
 
 The default device that resolves keys to their literal values within messages.
 
-```http
+```
 # Create temporary message with data
 GET /~message@1.0&greeting="Hello"&count+integer=42/count
 # Response: 42
@@ -250,13 +257,14 @@ GET /~message@1.0&config+map=host="localhost";port+integer=3000&items+list="a","
 
 Forwards messages between AO nodes or to external HTTP endpoints.
 
-```http
+```
 # Relay GET request to external API
 GET /~relay@1.0/call?method=GET&path=https://api.example.com/data
 
 # Relay POST with data
 POST /~relay@1.0/call?method=POST&path=https://webhook.site/your-webhook
 Content-Type: application/json
+
 {"message": "Hello from AO"}
 
 # Relay to another AO process
@@ -275,7 +283,7 @@ GET /~relay@1.0/process/TARGET_PROCESS_ID?action=GetBalance&user=ALICE
 
 Handles Trusted Execution Environment (TEE) attestation and verification.
 
-```http
+```
 # Get TEE attestation report
 GET /~snp@1.0/attestation
 
@@ -306,7 +314,7 @@ Manages HTTP message signing and verification for authentication.
 
 Configures the HyperBEAM node itself including hardware specs, supported devices, and payment information.
 
-```http
+```
 # Get node capabilities
 GET /~meta@1.0/capabilities
 
@@ -351,7 +359,7 @@ Monitors process activity, performance metrics, and system health.
 
 Manages metering, billing, and micropayments for node services.
 
-```http
+```
 # Check payment status
 GET /~p4@1.0/balance/USER_ADDRESS
 
@@ -383,7 +391,7 @@ Handles authorization and access control for protected resources.
 
 Applies state updates directly to processes, often used for data migration and management.
 
-```http
+```
 # Apply state patch to process
 POST /PROCESS_ID~patch@1.0/apply
 Content-Type: application/json
@@ -409,7 +417,7 @@ GET /PROCESS_ID~patch@1.0/history
 
 Devices can be chained together to create sophisticated processing pipelines:
 
-```http
+```
 # Multi-device pipeline:
 # 1. Get process state
 # 2. Transform with Lua
@@ -439,366 +447,73 @@ Nodes can choose which devices to support, allowing for specialization:
 
 ### Custom Device Development
 
-Build custom devices in Erlang to extend HyperBEAM functionality:
+While HyperBEAM comes with a comprehensive set of built-in devices, you can create custom devices in Erlang to extend functionality for specialized use cases. This is an advanced topic that allows you to build domain-specific functionality tailored to your exact needs.
 
-```erlang
-%% custom_analytics_device.erl
--module(custom_analytics_device).
--behavior(hyperbeam_device).
-
--export([handle_request/3, device_info/0]).
-
-%% Device metadata
-device_info() ->
-    #{
-        name => <<"analytics">>,
-        version => <<"1.0">>,
-        description => <<"Custom analytics processing device">>,
-        supported_operations => [<<"calculate">>, <<"aggregate">>, <<"visualize">>]
-    }.
-
-%% Handle incoming requests
-handle_request(Operation, Args, State) ->
-    case Operation of
-        <<"calculate">> ->
-            Result = perform_analytics(Args),
-            {ok, Result, State};
-        <<"aggregate">> ->
-            Result = aggregate_data(Args),
-            {ok, Result, State};
-        <<"visualize">> ->
-            Chart = generate_chart(Args),
-            {ok, Chart, State};
-        _ ->
-            {error, {unsupported_operation, Operation}, State}
-    end.
-
-%% Private functions
-perform_analytics(Args) ->
-    Data = maps:get(<<"data">>, Args, []),
-    % Implement custom analytics logic
-    process_analytics_data(Data).
-
-aggregate_data(Args) ->
-    Data = maps:get(<<"data">>, Args, []),
-    GroupBy = maps:get(<<"group_by">>, Args, <<"category">>),
-    % Implement aggregation logic
-    aggregate_by_field(Data, GroupBy).
-
-generate_chart(Args) ->
-    Data = maps:get(<<"data">>, Args, []),
-    ChartType = maps:get(<<"type">>, Args, <<"bar">>),
-    % Generate chart data structure
-    create_chart(Data, ChartType).
-```
-
-### Native Implemented Functions (NIFs)
-
-For maximum performance, implement critical functions in C or Rust:
-
-```c
-// high_performance_crypto.c
-#include "erl_nif.h"
-#include <openssl/sha.h>
-
-static ERL_NIF_TERM
-hash_sha256_nif(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
-{
-    ErlNifBinary input, output;
-    
-    if (!enif_inspect_binary(env, argv[0], &input)) {
-        return enif_make_badarg(env);
-    }
-    
-    if (!enif_alloc_binary(SHA256_DIGEST_LENGTH, &output)) {
-        return enif_make_atom(env, "memory_error");
-    }
-    
-    SHA256(input.data, input.size, output.data);
-    
-    return enif_make_binary(env, &output);
-}
-
-static ErlNifFunc nif_funcs[] = {
-    {"hash_sha256", 1, hash_sha256_nif}
-};
-
-ERL_NIF_INIT(high_performance_crypto, nif_funcs, NULL, NULL, NULL, NULL)
-```
+For detailed guidance on building custom devices, see the [HyperBEAM Device Development Guide](https://hyperbeam.arweave.net/build/devices/building-devices.html).
 
 ## Device Discovery and Routing
 
-### Device Registry
+HyperBEAM automatically routes requests to the appropriate devices based on the URL path. You can discover available devices on any node:
 
-HyperBEAM maintains a registry of available devices:
-
-```http
+```
 # List all available devices
 GET /~meta@1.0/devices
 
-# Get specific device information
+# Get information about a specific device
 GET /~meta@1.0/device/~lua@5.3a
-
-# Check device availability
-GET /~meta@1.0/device/~wasm64@1.0/available
 ```
 
-### Dynamic Device Loading
+Devices are automatically load-balanced across available instances, with HyperBEAM handling routing optimization internally.
 
-Devices can be loaded dynamically based on demand:
+## Performance Considerations
 
-```erlang
-%% Device loader
--module(device_loader).
--export([load_device/2, unload_device/1]).
+Different devices have varying performance characteristics:
 
-load_device(DeviceName, DeviceModule) ->
-    case code:load_file(DeviceModule) of
-        {module, DeviceModule} ->
-            register_device(DeviceName, DeviceModule),
-            {ok, loaded};
-        {error, Reason} ->
-            {error, {load_failed, Reason}}
-    end.
+- **`~lua@5.3a`** - Fast startup, low resource usage, ideal for simple logic
+- **`~wasm64@1.0`** - Higher performance for complex computations
+- **`~process@1.0`** - Use `/compute` for cached state, `/now` for real-time updates
+- **`~json@1.0`** - Very lightweight for data serialization
 
-unload_device(DeviceName) ->
-    case unregister_device(DeviceName) of
-        ok ->
-            code:purge(get_device_module(DeviceName)),
-            {ok, unloaded};
-        {error, Reason} ->
-            {error, Reason}
-    end.
-```
+**Optimization Tips:**
+- Use device pipelines to chain operations in a single request
+- Cache frequently accessed data at the application level
+- Choose the right device for your workload (Lua for simple logic, WASM for computation)
 
-### Load Balancing and Routing
+## Extensible Device Ecosystem
 
-Route requests to optimal device instances:
+The modular nature of HyperBEAM devices enables endless possibilities for expansion. The community and ecosystem are continuously developing new devices for:
 
-```erlang
-%% Device router
--module(device_router).
--export([route_request/3]).
+- **Specialized Hardware** - GPU computing, AI/ML acceleration, quantum computing
+- **Domain-Specific Logic** - DeFi protocols, scientific computing, media processing
+- **Cross-Chain Integration** - Bridges to other blockchain networks
+- **Industry Solutions** - Custom devices for specific business needs
 
-route_request(DeviceName, Request, Options) ->
-    AvailableInstances = get_device_instances(DeviceName),
-    OptimalInstance = select_optimal_instance(AvailableInstances, Options),
-    forward_request(OptimalInstance, Request).
-
-select_optimal_instance(Instances, Options) ->
-    LoadMetrics = get_load_metrics(Instances),
-    LatencyMetrics = get_latency_metrics(Instances),
-    ResourceMetrics = get_resource_metrics(Instances),
-    
-    % Weighted scoring algorithm
-    Scores = calculate_instance_scores(Instances, LoadMetrics, LatencyMetrics, ResourceMetrics),
-    select_best_score(Scores).
-```
-
-## Performance and Optimization
-
-### Device Performance Characteristics
-
-| Device | Startup Time | Memory Usage | CPU Usage | I/O Intensity |
-|--------|--------------|--------------|-----------|---------------|
-| `~lua@5.3a` | Very Low | Low | Low-Medium | Low |
-| `~wasm64@1.0` | Low | Medium | Medium-High | Low |
-| `~process@1.0` | Medium | High | Medium | High |
-| `~json@1.0` | Very Low | Low | Low | Low |
-| `~relay@1.0` | Low | Low | Low | High |
-
-### Optimization Strategies
-
-**1. Device Selection:**
-```http
-# Choose optimal device for task
-# For simple data transformation:
-GET /~json@1.0&data=...
-
-# For complex computation:
-GET /~wasm64@1.0&module=COMPUTE_MODULE
-
-# For state queries:
-GET /PROCESS~process@1.0/compute  # (cached, faster)
-```
-
-**2. Request Batching:**
-```http
-# Instead of multiple requests, use pipelines:
-GET /DATA~process@1.0/now/~lua@5.3a&module=PROCESSOR/batch_process/~json@1.0
-```
-
-**3. Caching Strategies:**
-```javascript
-// Client-side caching
-const deviceCache = new Map();
-
-async function cachedDeviceCall(devicePath, ttl = 60000) {
-    const cacheKey = devicePath;
-    const cached = deviceCache.get(cacheKey);
-    
-    if (cached && Date.now() - cached.timestamp < ttl) {
-        return cached.data;
-    }
-    
-    const response = await fetch(`https://forward.computer${devicePath}`);
-    const data = await response.json();
-    
-    deviceCache.set(cacheKey, {
-        data,
-        timestamp: Date.now()
-    });
-    
-    return data;
-}
-```
-
-### Resource Management
-
-**Memory Management:**
-```erlang
-%% Device memory monitoring
--module(device_memory).
--export([monitor_device_memory/1]).
-
-monitor_device_memory(DevicePid) ->
-    {memory, Memory} = process_info(DevicePid, memory),
-    case Memory > get_memory_threshold() of
-        true ->
-            trigger_garbage_collection(DevicePid),
-            log_memory_warning(DevicePid, Memory);
-        false ->
-            ok
-    end.
-```
-
-**CPU Scheduling:**
-```erlang
-%% Load balancing
--module(device_scheduler).
--export([schedule_device_execution/2]).
-
-schedule_device_execution(DeviceRequest, Priority) ->
-    AvailableWorkers = get_available_workers(),
-    WorkerLoad = get_worker_loads(AvailableWorkers),
-    OptimalWorker = select_worker(WorkerLoad, Priority),
-    assign_work(OptimalWorker, DeviceRequest).
-```
-
-## Future Device Ecosystem
-
-### Specialized Hardware Integration
-
-**GPU Computing Devices:**
-- `~cuda@12.0` - NVIDIA CUDA computation
-- `~opencl@3.0` - OpenCL parallel computing  
-- `~metal@2.4` - Apple Metal performance shaders
-
-**AI/ML Devices:**
-- `~tensorflow@2.x` - TensorFlow model inference
-- `~pytorch@1.x` - PyTorch model execution
-- `~onnx@1.x` - ONNX runtime for cross-platform models
-
-**Quantum Computing Devices:**
-- `~qiskit@1.0` - IBM Qiskit quantum circuits
-- `~cirq@1.0` - Google Cirq quantum programming
-
-### Domain-Specific Devices
-
-**Financial Computing:**
-- `~defi@1.0` - DeFi protocol implementations
-- `~risk@1.0` - Risk analysis and calculations
-- `~trading@1.0` - Algorithmic trading strategies
-
-**Scientific Computing:**
-- `~numpy@1.0` - Numerical computing arrays
-- `~scipy@1.0` - Scientific computing libraries
-- `~sympy@1.0` - Symbolic mathematics
-
-**Media Processing:**
-- `~ffmpeg@6.0` - Video and audio processing
-- `~imagemagick@7.0` - Image manipulation
-- `~webgl@2.0` - 3D graphics rendering
-
-### Cross-Chain and Interoperability
-
-**Blockchain Integration Devices:**
-- `~ethereum@1.0` - Ethereum blockchain interaction
-- `~bitcoin@1.0` - Bitcoin network integration
-- `~cosmos@1.0` - Cosmos ecosystem connectivity
-- `~polkadot@1.0` - Polkadot parachain communication
+This extensibility ensures HyperBEAM can adapt to new technologies and use cases without requiring changes to the core protocol.
 
 ## Security Considerations
 
-### Device Security Model
+HyperBEAM devices run in isolated environments with built-in security features:
 
-**Sandboxing:**
-- Each device runs in isolated environment
-- Memory protection between devices
-- Resource quotas and limits
-- Permission-based access control
+- **Sandboxing** - Each device operates in its own isolated environment
+- **Resource Limits** - Automatic memory and execution time constraints
+- **Verification** - Device signatures and integrity checking
+- **Access Control** - Permission-based device access
 
-**Verification:**
-- Device signature verification
-- Code integrity checking
-- Runtime behavior monitoring
-- Audit logging for security events
-
-**Network Security:**
-- Encrypted communication between devices
-- Authentication for device-to-device communication
-- Rate limiting and DDoS protection
-- Intrusion detection and response
-
-### Best Practices
-
-**1. Device Selection Security:**
-```http
-# Verify device authenticity
-GET /~snp@1.0/verify/device/~lua@5.3a
-
-# Use specific versions
-GET /~lua@5.3a&script=... # Good
-GET /~lua&script=...       # Avoid (version unspecified)
-```
-
-**2. Input Validation:**
-```erlang
-validate_device_input(DeviceArgs) ->
-    RequiredFields = [<<"script">>, <<"data">>],
-    case validate_required_fields(DeviceArgs, RequiredFields) of
-        ok ->
-            sanitize_input(DeviceArgs);
-        {error, MissingFields} ->
-            {error, {missing_fields, MissingFields}}
-    end.
-```
-
-**3. Resource Limits:**
-```erlang
-%% Set execution limits
-execute_device_with_limits(Device, Args) ->
-    Limits = #{
-        max_memory => 100 * 1024 * 1024, % 100MB
-        max_execution_time => 30000,      % 30 seconds
-        max_network_requests => 10
-    },
-    execute_with_constraints(Device, Args, Limits).
-```
+**Best Practices:**
+- Always specify device versions (e.g., `~lua@5.3a` not just `~lua`)
+- Validate inputs when building applications that use devices
+- Use TEE-enabled nodes (`~snp@1.0`) for sensitive computations
 
 ## Next Steps
 
 Explore the broader HyperBEAM ecosystem:
 
-1. **Build Custom Devices**: [Device Development Guide](https://hyperbeam.arweave.net/build/devices/)
-2. **Lua Programming**: [Lua Serverless Functions](/concepts/decentralized-computing/hyperbeam/lua-serverless)
-3. **Process Integration**: [AO Process Development](/concepts/decentralized-computing/ao-processes/what-are-ao-processes)
-4. **Production Deployment**: [Builder's Journey](/guides/builder-journey/)
+1. **Build Custom Devices**: [Device Development Guide](https://hyperbeam.arweave.net/build/devices/building-devices.html)
+2. **Lua Programming**: [Lua Serverless Functions](../hyperbeam/lua-serverless)
+3. **Process Integration**: [AO Process Development](../ao-processes/what-are-ao-processes)
+4. **Production Deployment**: [Builder's Journey](../../../guides/index)
 
 ## Resources
 
-- **HyperBEAM Device Documentation**: [Official Device Docs](https://hyperbeam.arweave.net/build/devices/)
+- **HyperBEAM Device Documentation**: [Official Device Docs](https://hyperbeam.arweave.net/build/devices/building-devices.html)
 - **Erlang/OTP Documentation**: [Erlang Reference](https://www.erlang.org/doc/)
-- **Device Development Kit**: [GitHub Repository](https://github.com/permaweb/hyperbeam-devices)
-- **Community Devices**: [Device Registry](https://ao.arweave.dev/devices)
-- **Support and Discussion**: [AO Discord](https://discord.gg/arweave)

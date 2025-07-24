@@ -8,14 +8,14 @@ Foundations of Arweave and the Permaweb.
 
 - [Posting Transactions](post-transactions.md)
 - [Metadata (Tags)](tags.md)
-- [Querying](queryTransactions.md)
+- [Querying](query-transactions.md)
 - [Fetching Data](/guides/http-api.md)
 - [Transaction Types](bundles.md)
   - [Bundles](bundles.md)
   - [Path Manifests](manifests.md)
 - [Wallets and Keys](keyfiles-and-wallets.md)
 - [Permaweb](permaweb.md)
-  - [Permaweb Applications](permawebApplications.md)
+  - [Permaweb Applications](permaweb-applications.md)
   - [Gateway Services](gateways.md)
   - [Bundling Services](bundlers.md)
 

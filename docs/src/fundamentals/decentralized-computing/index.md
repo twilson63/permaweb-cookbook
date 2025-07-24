@@ -19,27 +19,30 @@ Traditional computing relies on centralized servers and cloud providers, creatin
 **AO Processes** - Autonomous computational units that maintain state and execute logic permanently on Arweave
 **HyperBEAM** - The production implementation of AO-Core that provides HTTP access to decentralized computing resources
 
-```mermaid
-graph TB
-    A[User/Application] -->|HTTP Request| B[HyperBEAM Node]
-    B -->|Route Message| C[AO Process]
-    C -->|Execute Logic| D[Lua/WASM Runtime]
-    D -->|Update State| E[Arweave Storage]
-    C -->|Send Message| F[Other AO Process]
-    B -->|HTTP Response| A
-    
-    subgraph "Decentralized Computing Network"
-        G[Node 1]
-        H[Node 2] 
-        I[Node 3]
-        J[Node N...]
-    end
-    
-    B -.->|Distributed Across| G
-    B -.->|Distributed Across| H
-    B -.->|Distributed Across| I
-    B -.->|Distributed Across| J
+**Decentralized Computing Architecture:**
+
 ```
+User/Application
+       ↓ (HTTP Request)
+   HyperBEAM Node ←──────→ HTTP Response
+       ↓ (Route Message)
+   AO Process ←──────→ Other AO Process
+       ↓ (Execute Logic)      (Messages)
+ Lua/WASM Runtime
+       ↓ (Update State)
+   Arweave Storage
+
+Decentralized Computing Network:
+┌─────────────────────────────────────┐
+│ Node 1  Node 2  Node 3  ... Node N │
+│   ↑       ↑       ↑          ↑     │
+│   └───────┼───────┼──────────┘     │
+│           └───────┘                │
+│     (Distributed across network)   │
+└─────────────────────────────────────┘
+```
+
+This system enables permanent, trustless computation where HyperBEAM nodes provide HTTP access to AO processes that execute on various runtimes and persist state to Arweave.
 
 ## Core Concepts
 
@@ -97,9 +100,9 @@ HyperBEAM's device architecture allows different computational engines (Lua, Web
 ### 1. Start with AO Processes
 Understand the fundamental building blocks of decentralized computing:
 
-- **[What are AO Processes](/concepts/decentralized-computing/ao-processes/what-are-ao-processes)** - Learn the core concepts and architecture
-- **[Process Communication](/concepts/decentralized-computing/ao-processes/process-communication)** - Master message passing and inter-process communication
-- **[State Management](/concepts/decentralized-computing/ao-processes/state-management)** - Understand persistent state and data consistency
+- **[What are AO Processes](/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes)** - Learn the core concepts and architecture
+- **[Process Communication](/fundamentals/decentralized-computing/ao-processes/process-communication)** - Master message passing and inter-process communication
+- **[State Management](/fundamentals/decentralized-computing/ao-processes/state-management)** - Understand persistent state and data consistency
 
 ### 2. Explore HyperBEAM
 Learn how to interact with and leverage the AO Computer:
@@ -220,4 +223,4 @@ Decentralized computing enables:
 
 ---
 
-**Ready to build?** Start with [What are AO Processes](/concepts/decentralized-computing/ao-processes/what-are-ao-processes) to understand the fundamentals, then move to [HyperBEAM Introduction](/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction) to learn how to interact with the AO Computer.
+**Ready to build?** Start with [What are AO Processes](/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes) to understand the fundamentals, then move to [HyperBEAM Introduction](/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction) to learn how to interact with the AO Computer.
