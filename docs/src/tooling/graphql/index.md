@@ -1,37 +1,90 @@
-# GraphQL Gateways
+---
+title: "GraphQL Tools"
+description: "Tools and libraries for querying Arweave data using GraphQL"
+---
 
-GraphQL gateways provide a powerful query interface for exploring transaction data on Arweave. While not required for every permaweb application, GraphQL can significantly enhance data discovery and analysis capabilities.
+# GraphQL Tools
 
-## Tools & Libraries
+This section covers the tools and libraries available for querying Arweave data using GraphQL. GraphQL provides a powerful and flexible way to retrieve exactly the data you need from the Arweave network.
 
-- **[ar-gql](./ar-gql.md)** - Minimal GraphQL client for Arweave with parameterized queries
+## Core GraphQL Tools
 
-## Gateway Options
+**[ar-gql](ar-gql.md)** - JavaScript Library
+- Lightweight GraphQL client for Arweave
+- TypeScript support
+- Easy integration with web applications
+- Comprehensive query building
 
-### Public Gateways
-- **Goldsky** - High-performance GraphQL gateway
-- **ArDB** - Community-maintained GraphQL service
+**[Querying Arweave](/tooling/querying-arweave.md)** - Comprehensive Guide
+- Complete overview of Arweave querying methods
+- GraphQL query examples and patterns
+- Best practices for data retrieval
 
-### Specialized Gateways
-- **[Goldsky Search GraphQL Gateway](../guides/querying-arweave/search-indexing-service.md)** - Enhanced GraphQL gateway with fuzzy search, wildcard matching, and advanced filtering capabilities
+## Advanced Querying
 
-## When to Use GraphQL
+**[Goldsky Search Gateway](search-indexing-service.md)** - Search & Indexing
+- Advanced search capabilities
+- Full-text search across Arweave data
+- Indexing and aggregation features
+- High-performance querying
 
-- Complex data queries and filtering
-- Data analytics and reporting
-- Building explorers and indexing services
-- Advanced transaction search functionality
+## Getting Started
 
-## When to Use Goldsky Search Gateway
+### Basic GraphQL Query
+```javascript
+import { gql } from 'ar-gql'
 
-- Multi-tag searches requiring faster response times
-- Fuzzy or wildcard search requirements
-- Need for advanced filtering options (L1-only transactions, result counts)
-- Backwards compatibility with standard Arweave GraphQL syntax
+const query = gql`
+  query {
+    transactions(
+      owners: ["YOUR_WALLET_ADDRESS"]
+      first: 10
+    ) {
+      edges {
+        node {
+          id
+          block {
+            height
+          }
+          tags {
+            name
+            value
+          }
+        }
+      }
+    }
+  }
+`
+```
 
-## Alternatives
+### Query Patterns
 
-For simple applications, consider:
-- Direct HTTP API calls
-- Arweave-js SDK for basic queries
-- Custom indexing solutions
+**Transaction Queries**
+- Filter by owner, recipient, or tags
+- Retrieve transaction metadata and content
+- Search across time ranges
+
+**Block Queries**
+- Get block information and statistics
+- Query network state at specific heights
+- Analyze network activity
+
+**Bundle Queries**
+- Access bundled transactions
+- Query bundle metadata
+- Retrieve nested transaction data
+
+## Best Practices
+
+1. **Use Specific Queries**: Request only the data you need
+2. **Implement Pagination**: Handle large result sets efficiently
+3. **Cache Results**: Store frequently accessed data locally
+4. **Error Handling**: Implement robust error handling for network issues
+5. **Rate Limiting**: Respect API rate limits and implement backoff strategies
+
+## Next Steps
+
+1. **Start with ar-gql**: [ar-gql Library](ar-gql.md)
+2. **Learn Querying**: [Querying Arweave](/tooling/querying-arweave.md)
+3. **Advanced Search**: [Goldsky Search Gateway](search-indexing-service.md)
+4. **Explore Examples**: [Zero to Deployed App](/getting-started/zero-to-deploy)

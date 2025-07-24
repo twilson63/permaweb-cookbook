@@ -81,7 +81,7 @@ Existe un camino de vuelta para consultar datos directamente desde los pares. El
 
 ## Recursos
 
-- [Guía de consulta de Arweave](../guides/querying-arweave/queryingArweave.md)
+- [Guía de consulta de Arweave](../guides/querying-arweave/querying-arweave.md)
 - [Paquete ArDB](../guides/querying-arweave/ardb.md)
 - [Paquete ar-gql](../guides/querying-arweave/ar-gql.md)
 - [Referencia GraphQL](../references/gql.md)

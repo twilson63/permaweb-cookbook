@@ -6,7 +6,7 @@ There are several ways to post transactions to Arweave. Each has its own unique 
 
 <img src="https://arweave.net/Z1eDDnz4kqxAkkzy6p5elMz-jKnlaVIletp-Tm6W8kQ" width="550">
 
-::: tip <img src="https://arweave.net/blzzObMx8QvyrPTdLPGV3m-NsnJ-QqBzvQIQzzZEfIk" width="20"> Guaranteed Transactions
+::: tip Guaranteed Transactions
 When posting a large quantity of transactions or when fast settlement time is desireable consider using a bundling service. Bundlers settle large volumes of transactions immediately and make the transaction data available within milliseconds. The bundling service holds onto posted transactions until they are confirmed on-chain. If the transactions are not included in the most recent block the bundling service re-posts them with each new block until they are recorded on chain with a sufficient number of confirmations.
 :::
 

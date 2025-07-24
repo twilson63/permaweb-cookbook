@@ -12,7 +12,7 @@ TL;DR
 
 El servicio de búsqueda gratuito de [Goldsky](https://goldsky.com) utiliza una infraestructura optimizada que permite búsquedas más rápidas para consultas complejas en bloques y transacciones de arweave, e introduce también una sintaxis adicional de consulta para casos de uso de búsqueda difusa y con comodines.
 
-La sintaxis de búsqueda GraphQL es un superconjunto de la sintaxis de búsqueda de [Arweave GraphQL](./queryingArweave.md). Es totalmente compatible hacia atrás y devolverá los mismos resultados para las mismas consultas, pero tiene algunos modificadores adicionales que pueden ser útiles.
+La sintaxis de búsqueda GraphQL es un superconjunto de la sintaxis de búsqueda de [Arweave GraphQL](./querying-arweave.md). Es totalmente compatible hacia atrás y devolverá los mismos resultados para las mismas consultas, pero tiene algunos modificadores adicionales que pueden ser útiles.
 
 - Filtros de etiquetas flexibles
   - Buscar solo por el nombre o valor de una etiqueta

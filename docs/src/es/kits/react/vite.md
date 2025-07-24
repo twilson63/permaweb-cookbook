@@ -93,20 +93,20 @@ Esto iniciará un nuevo servidor de desarrollo en tu máquina. De forma predeter
 
 ### Configurar tipos de billetera
 
-Si deseas usar [ArConnect](https://arconnect.io), [Arweave.app](https://arweave.app) u otras billeteras basadas en el navegador, puedes instalar el paquete de tipos de ArConnect para tener las declaraciones de `window.arweaveWallet`.
+Si deseas usar [Wander](https://wander.app), [Arweave.app](https://arweave.app) u otras billeteras basadas en el navegador, puedes instalar el paquete de tipos de Wander para tener las declaraciones de `window.arweaveWallet`.
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
-npm install arconnect -D
+npm install Wander -D
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn add arconnect -D
+yarn add Wander -D
 ```
 
   </CodeGroupItem>
@@ -115,7 +115,7 @@ yarn add arconnect -D
 Después de instalar el paquete, deberás agregarlo a tu archivo `src/vite-env.d.ts`.
 
 ```ts
-/// <reference types="arconnect" />
+/// <reference types="Wander" />
 ```
 
 ### Configurar el enrutamiento

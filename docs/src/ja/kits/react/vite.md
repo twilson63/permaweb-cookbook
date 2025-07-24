@@ -90,21 +90,21 @@ yarn dev
 
 ### ウォレットの種類を設定
 
-[ArConnect](https://arconnect.io)、[Arweave.app](https://arweave.app) または他のブラウザベースのウォレットを使用したい場合は、`window.arweaveWallet` の宣言を持つ ArConnect のタイプパッケージをインストールできます。
+[Wander](https://wander.app)、[Arweave.app](https://arweave.app) または他のブラウザベースのウォレットを使用したい場合は、`window.arweaveWallet` の宣言を持つ Wander のタイプパッケージをインストールできます。
 
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
-npm install arconnect -D
+npm install Wander -D
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn add arconnect -D
+yarn add Wander -D
 ```
 
   </CodeGroupItem>
@@ -113,7 +113,7 @@ yarn add arconnect -D
 After installing the package, you'll need to add it to your `src/vite-env.d.ts` file.
 
 ```ts
-/// <reference types="arconnect" />
+/// <reference types="Wander" />
 ```
 
 ### Setup Routing

@@ -73,7 +73,7 @@ Pendekatan ini untuk meminta cukup memadai saat kumpulan data benang masih kecil
 Namun, masih ada jalan untuk dapat meminta data langsung dari node. Protokol Pembayaran Permaweb (P3) adalah spesifikasi yang dikembangkan oleh komunitas untuk memungkinkan klien membayar layanan. Dengan menggunakan P3, node yang ingin menawarkan layanan indeks dapat membiayai operasinya dengan mengenakan biaya untuk layanan tersebut.
 
 ## Sumber Daya
-* [Panduan Meminta Arweave](../guides/querying-arweave/queryingArweave.md)
+* [Panduan Meminta Arweave](../guides/querying-arweave/querying-arweave.md)
 * [Paket ArDB](../guides/querying-arweave/ardb.md)
 * [Paket ar-gql](../guides/querying-arweave/ar-gql.md)
 * [Referensi GraphQL](../references/gql.md)

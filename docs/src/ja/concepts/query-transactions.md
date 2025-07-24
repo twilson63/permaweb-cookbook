@@ -82,7 +82,7 @@ const res = await this.arweave.api.post(`arql`, get_mail_query)
 
 ## リソース
 
--   [Arweaveのクエリガイド](../guides/querying-arweave/queryingArweave.md)
+-   [Arweaveのクエリガイド](../guides/querying-arweave/querying-arweave.md)
 -   [ArDBパッケージ](../guides/querying-arweave/ardb.md)
 -   [ar-gqlパッケージ](../guides/querying-arweave/ar-gql.md)
 -   [GraphQLリファレンス](../references/gql.md)

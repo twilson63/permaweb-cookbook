@@ -92,19 +92,19 @@ yarn dev
 
 ### 设置钱包类型
 
-如果您想使用 [ArConnect](https://arconnect.io)，[Arweave.app](https://arweave.app) 或其他基于浏览器的钱包，您可以安装 ArConnect 的类型包，以便为 `window.arweaveWallet` 进行声明。
+如果您想使用 [Wander](https://wander.app)，[Arweave.app](https://arweave.app) 或其他基于浏览器的钱包，您可以安装 Wander 的类型包，以便为 `window.arweaveWallet` 进行声明。
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
-npm install arconnect -D
+npm install Wander -D
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn add arconnect -D
+yarn add Wander -D
 ```
 
   </CodeGroupItem>
@@ -113,7 +113,7 @@ yarn add arconnect -D
 安装包后，您需要将其添加到 `src/vite-env.d.ts` 文件中。
 
 ```ts
-/// <reference types="arconnect" />
+/// <reference types="Wander" />
 ```
 
 ### 设置路由

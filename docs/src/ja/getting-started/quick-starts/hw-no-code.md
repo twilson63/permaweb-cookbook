@@ -13,7 +13,7 @@ locale: ja
 
 ## ウォレットを作成
 
-[https://arweave.app/add](https://arweave.app/add) または [https://arconnect.io](https://arconnect.io)
+[https://arweave.app/add](https://arweave.app/add) または [https://wander.app](https://wander.app)
 
 ## データをArweaveに送信
 

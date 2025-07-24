@@ -13,55 +13,110 @@ const getI18NSidebar = (langCode) => [
 				link: get_i18n_link(langCode, "/getting-started/welcome.html"),
 			},
 			{
-				text: "Zero-deployed Minimal Full Stack App",
-				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-no-code.html"),
+				text: "Quick Starts",
+				collapsible: true,
+				children: [
+					{
+						text: "CLI",
+						link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-cli.html"),
+					},
+					{
+						text: "Code",
+						link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-code.html"),
+					},
+					{
+						text: "No Code",
+						link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-no-code.html"),
+					},
+				],
 			},
 		],
 	},
 	{
 		text: "Fundamentals",
-		link: get_i18n_link(langCode, "/concepts/index.html"),
+		link: get_i18n_link(langCode, "/fundamentals/index.html"),
 		collapsible: true,
 		children: [
 			{
 				text: get_i18n_str(langCode, "concepts-wallets-and-keys"),
-				link: get_i18n_link(langCode, "/concepts/keyfiles-and-wallets.html"),
+				link: get_i18n_link(langCode, "/fundamentals/keyfiles-and-wallets.html"),
 			},
 			{
 				text: "Transactions",
-				link: get_i18n_link(langCode, "/concepts/transactions/transaction-types.html"),
+				link: get_i18n_link(langCode, "/fundamentals/transactions/transaction-types.html"),
 				collapsible: true,
 				children: [
 					{
 						text: get_i18n_str(langCode, "concepts-post-transactions"),
-						link: get_i18n_link(langCode, "/concepts/transactions/post-transactions.html"),
+						link: get_i18n_link(langCode, "/fundamentals/transactions/post-transactions.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-tags"),
-						link: get_i18n_link(langCode, "/concepts/transactions/tags.html"),
+						link: get_i18n_link(langCode, "/fundamentals/transactions/tags.html"),
 					},
 					{
 						text: get_i18n_str(langCode, "concepts-bundles"),
-						link: get_i18n_link(langCode, "/concepts/transactions/bundles.html"),
+						link: get_i18n_link(langCode, "/fundamentals/transactions/bundles.html"),
 					},
 				],
 			},
 			{
 				text: "Accessing Arweave Data",
-				link: get_i18n_link(langCode, "/concepts/queryTransactions.html"),
+				link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/query-transactions.html"),
 				collapsible: true,
 				children: [
 					{
 						text: "Gateways & Access",
-						link: get_i18n_link(langCode, "/concepts/gateways.html"),
+						link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/gateways.html"),
 					},
 					{
 						text: "Manifests & Path Resolution",
-						link: get_i18n_link(langCode, "/concepts/manifests.html"),
+						link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/manifests.html"),
 					},
 					{
 						text: "ArNS Introduction",
-						link: get_i18n_link(langCode, "/concepts/arns.html"),
+						link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/arns.html"),
+					},
+				],
+			},
+			{
+				text: "Decentralized Computing",
+				link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/index.html"),
+				collapsible: true,
+				children: [
+					{
+						text: "AO Processes",
+						link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "What are AO Processes",
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html"),
+							},
+						],
+					},
+					{
+						text: "HyperBEAM",
+						link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "HyperBEAM Introduction",
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html"),
+							},
+							{
+								text: "Getting AO Process State",
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html"),
+							},
+							{
+								text: "Lua Serverless Functions",
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/lua-serverless.html"),
+							},
+							{
+								text: "HyperBEAM Devices",
+								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html"),
+							},
+						],
 					},
 				],
 			}
@@ -71,7 +126,55 @@ const getI18NSidebar = (langCode) => [
 		text: "Guides",
 		link: get_i18n_link(langCode, "/guides/index.html"),
 		collapsible: true,
-		children: [],
+		children: [
+			{
+				text: "Frontend",
+				collapsible: true,
+				children: [
+					{
+						text: "React",
+						link: get_i18n_link(langCode, "/kits/react/index.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "Vite + permaweb-deploy",
+								link: get_i18n_link(langCode, "/kits/react/turbo.html"),
+							},
+							{
+								text: "Create React App",
+								link: get_i18n_link(langCode, "/kits/react/create-react-app.html"),
+							},
+						],
+					},
+					{
+						text: "Svelte",
+						link: get_i18n_link(langCode, "/kits/svelte/index.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "Minimal",
+								link: get_i18n_link(langCode, "/kits/svelte/minimal.html"),
+							},
+							{
+								text: "Vite",
+								link: get_i18n_link(langCode, "/kits/svelte/vite.html"),
+							},
+						],
+					},
+					{
+						text: "Vue",
+						link: get_i18n_link(langCode, "/kits/vue/index.html"),
+						collapsible: true,
+						children: [
+							{
+								text: "Create Vue App",
+								link: get_i18n_link(langCode, "/kits/vue/create-vue.html"),
+							},
+						],
+					},
+				],
+			},
+		],
 		// children: [
 		// 	{
 		// 		text: "Builder",
@@ -166,7 +269,7 @@ const getI18NSidebar = (langCode) => [
 		// 			},
 		// 			{
 		// 				text: "Manifests & Bundling",
-		// 				link: get_i18n_link(langCode, "/guides/deploying-manifests/deployingManifests.html"),
+		// 				link: get_i18n_link(langCode, "/guides/deploying-manifests/deploying-manifests.html"),
 		// 				collapsible: true,
 		// 				children: [
 		// 					{
@@ -205,7 +308,7 @@ const getI18NSidebar = (langCode) => [
 		// 		children: [
 		// 			{
 		// 				text: "GraphQL Querying",
-		// 				link: get_i18n_link(langCode, "/guides/querying-arweave/queryingArweave.html"),
+		// 				link: get_i18n_link(langCode, "/guides/querying-arweave/querying-arweave.html"),
 		// 				collapsible: true,
 		// 				children: [
 		// 					{
@@ -240,7 +343,7 @@ const getI18NSidebar = (langCode) => [
 		// 		children: [
 		// 			{
 		// 				text: "Advanced Querying Techniques",
-		// 				link: get_i18n_link(langCode, "/guides/querying-arweave/queryingArweave.html"),
+		// 				link: get_i18n_link(langCode, "/guides/querying-arweave/querying-arweave.html"),
 		// 			},
 		// 		],
 		// 	},
@@ -250,7 +353,7 @@ const getI18NSidebar = (langCode) => [
 		// 		children: [
 		// 			{
 		// 				text: "Vouch Protocol",
-		// 				link: get_i18n_link(langCode, "/guides/vouch.html"),
+		// 				link: get_i18n_link(langCode, "/guides/vouch-system.html"),
 		// 			},
 		// 		],
 		// 	},
@@ -292,7 +395,7 @@ const getI18NSidebar = (langCode) => [
 						children: [
 							{
 								text: "Querying Arweave",
-								link: get_i18n_link(langCode, "/tooling/queryingArweave.html"),
+								link: get_i18n_link(langCode, "/tooling/querying-arweave.html"),
 							},
 							{
 								text: "Goldsky Search Gateway",
@@ -311,6 +414,10 @@ const getI18NSidebar = (langCode) => [
 				collapsible: true,
 				children: [
 					{
+						text: "Permaweb Deploy",
+						link: get_i18n_link(langCode, "/tooling/deployment/permaweb-deploy.html"),
+					},
+					{
 						text: "arkb (CLI)",
 						link: get_i18n_link(langCode, "/tooling/deployment/arkb.html"),
 					},
@@ -325,34 +432,72 @@ const getI18NSidebar = (langCode) => [
 				collapsible: true,
 				children: [
 					{
+						text: "ANS",
+						collapsible: true,
+						children: [
+							{
+								text: "ANS-101: Gateway Capabilities",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-101.html"),
+							},
+							{
+								text: "ANS-102: Bundled Data - JSON",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-102.html"),
+							},
+							{
+								text: "ANS-103: Succinct Proofs",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-103.html"),
+							},
+							{
+								text: "ANS-104: Bundled Data - Binary",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-104.html"),
+							},
+							{
+								text: "ANS-105: License Tags",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-105.html"),
+							},
+							{
+								text: "ANS-106: Do-Not-Store",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-106.html"),
+							},
+							{
+								text: "ANS-109: Vouch-For",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-109.html"),
+							},
+							{
+								text: "ANS-110: Asset Discoverability",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-110.html"),
+							},
+						],
+					},
+					{
 						text: "ArFS",
-						link: get_i18n_link(langCode, "/concepts/arfs/arfs.html"),
+						link: get_i18n_link(langCode, "/tooling/specs/arfs/arfs.html"),
 						collapsible: true,
 						children: [
 							{
 								text: "Data Model",
-								link: get_i18n_link(langCode, "/concepts/arfs/data-model.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/data-model.html"),
 							},
 							{
 								text: "Entity Types",
-								link: get_i18n_link(langCode, "/concepts/arfs/entity-types.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/entity-types.html"),
 							},
 							{
 								text: "Content Types",
-								link: get_i18n_link(langCode, "/concepts/arfs/content-types.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/content-types.html"),
 							},
 							{
 								text: "Privacy",
-								link: get_i18n_link(langCode, "/concepts/arfs/privacy.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/privacy.html"),
 							},
 							{
 								text: "Schema Diagrams",
-								link: get_i18n_link(langCode, "/concepts/arfs/schema-diagrams.html"),
+								link: get_i18n_link(langCode, "/tooling/specs/arfs/schema-diagrams.html"),
 							},
 						],
 					},
 				],
-			},
+			}
 		],
 	},
 	{
@@ -368,7 +513,7 @@ const getI18NSidebar = (langCode) => [
 			{
 				text: "LLMs.txt",
 				collapsible: false,
-				link: get_i18n_link(langCode, "/references/llms.html"),
+				link: get_i18n_link(langCode, "/references/llms-txt.html"),
 			},
 			{
 				text: get_i18n_str(langCode, "getting-started-contributing", "Contributing"),
@@ -392,16 +537,16 @@ const getI18NSidebar = (langCode) => [
 			// 	children: [
 			// 		{
 			// 			text: "SmartWeave",
-			// 			link: get_i18n_link(langCode, "/archive/concepts/smartweave.html"),
+			// 			link: get_i18n_link(langCode, "/archive/fundamentals/smartweave.html"),
 			// 			collapsible: true,
 			// 			children: [
 			// 				{
 			// 					text: "Profit Sharing Tokens (PSTs)",
-			// 					link: get_i18n_link(langCode, "/archive/concepts/psts.html"),
+			// 					link: get_i18n_link(langCode, "/archive/fundamentals/psts.html"),
 			// 				},
 			// 				{
 			// 					text: "Atomic Tokens",
-			// 					link: get_i18n_link(langCode, "/archive/concepts/atomic-tokens.html"),
+			// 					link: get_i18n_link(langCode, "/archive/fundamentals/atomic-tokens.html"),
 			// 				},
 			// 				{
 			// 					text: "Warp SDK",
@@ -433,11 +578,11 @@ const getI18NSidebar = (langCode) => [
 			// 		},
 			// 		{
 			// 			text: "Atomic Tokens Guide",
-			// 			link: get_i18n_link(langCode, "/archive/concepts/atomic-tokens.html"),
+			// 			link: get_i18n_link(langCode, "/archive/fundamentals/atomic-tokens.html"),
 			// 		},
 			// 		{
 			// 			text: "Vouch Protocol",
-			// 			link: get_i18n_link(langCode, "/archive/concepts/vouch.html"),
+			// 			link: get_i18n_link(langCode, "/archive/fundamentals/vouch-system.html"),
 			// 		},
 			// 	],
 			// },

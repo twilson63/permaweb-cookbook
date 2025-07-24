@@ -88,19 +88,19 @@ it may ask you to switch to another available PORT in Terminal
 
 ### Setup wallet types
 
-If you want to use [ArConnect](https://arconnect.io), [Arweave.app](https://arweave.app) or other browser-based wallets, you can install ArConnect's types package to have declarations for `window.arweaveWallet`.
+If you want to use [Wander](https://wander.app), [Arweave.app](https://arweave.app) or other browser-based wallets, you can install Wander's types package to have declarations for `window.arweaveWallet`.
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
 ```console:no-line-numbers
-npm install arconnect -D
+npm install Wander -D
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn add arconnect -D
+yarn add Wander -D
 ```
 
   </CodeGroupItem>
@@ -109,7 +109,7 @@ yarn add arconnect -D
 After installing the package, you'll need to add it to your `src/vite-env.d.ts` file.
 
 ```ts
-/// <reference types="arconnect" />
+/// <reference types="Wander" />
 ```
 
 ### Setup Routing

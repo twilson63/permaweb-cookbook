@@ -8,7 +8,7 @@ Over time, indexing services that implement a GraphQL interface have became the 
 
 GraphQL has a few advantages that make it ideal for retrieving query data sets. It enables indexing services to create a single endpoint that can then be used to query all types data. The service is able to return multiple resources in a single request as opposed to making an HTTP request for each resource (like one would with a REST API). With GraphQL, clients can batch multiple requests in a single round-trip and specify exactly what data is needed which increases performance.
 
-The following GraphQL example queries all the transaction ids from a given owners wallet address that have a "Type" tag with a value of "manifest". For more information about tags, read the guide on [Transaction Tags](tags.md).
+The following GraphQL example queries all the transaction ids from a given owners wallet address that have a "Type" tag with a value of "manifest". For more information about tags, read the guide on [Transaction Tags](../transactions/tags.md).
 
 ```js:no-line-numbers
 const queryObject = {
@@ -46,6 +46,6 @@ Each piece of data uploaded to Arweave has its own unique transaction id and is 
 
 ## Resources
 
--   [Querying Arweave Guide](../guides/querying-arweave/queryingArweave.md)
--   [ar-gql package](../guides/querying-arweave/ar-gql.md)
--   [GraphQL Reference](../references/gql.md)
+-   [Querying Arweave Guide](../../guides/querying-arweave/querying-arweave.md)
+-   [ar-gql package](../../guides/querying-arweave/ar-gql.md)
+-   [GraphQL Reference](../../references/gql.md)

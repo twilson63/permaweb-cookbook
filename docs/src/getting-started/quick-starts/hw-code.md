@@ -103,7 +103,29 @@ Now that there is a static site to deploy, it can be checked to ensure it all fu
 
 ## Upload using permaweb-deploy
 
-See: https://github.com/permaweb/permaweb-deploy
+Install and configure permaweb-deploy for deployment:
+
+```bash
+npm install --save-dev permaweb-deploy
+```
+
+Add a deployment script to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "deploy": "permaweb-deploy --arns-name my-hello-world --deploy-folder src"
+  }
+}
+```
+
+Deploy your application:
+
+```bash
+DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy
+```
+
+For detailed deployment instructions, see [Permaweb Deploy](/tooling/deployment/permaweb-deploy).
 
 ## Congrats!!
 

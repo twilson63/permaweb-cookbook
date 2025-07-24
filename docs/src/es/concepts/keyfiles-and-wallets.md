@@ -52,7 +52,7 @@ Curiosamente, la dirección de su monedero se deriva de su **llave pública**. S
 ### Monederos
 [Arweave.app](https://arweave.app/welcome) - Monedero web de Arweave para desplegar datos permanentes, conecte sus cuentas de forma segura a aplicaciones descentralizadas y navegar el weab.
 
-[ArConnect](https://www.arconnect.io/) -Extensión del navegador de Monedero de Arweave
+[Wander](https://www.wander.app/) -Extensión del navegador de Monedero de Arweave
 
 ### Fuentes y Lectura Adicional:
 [Documentación Arweave](https://docs.arweave.org/developers/server/http-api#key-format)
