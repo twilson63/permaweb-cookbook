@@ -432,6 +432,44 @@ const getI18NSidebar = (langCode) => [
 				collapsible: true,
 				children: [
 					{
+						text: "ANS",
+						collapsible: true,
+						children: [
+							{
+								text: "ANS-101: Gateway Capabilities",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-101.html"),
+							},
+							{
+								text: "ANS-102: Bundled Data - JSON",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-102.html"),
+							},
+							{
+								text: "ANS-103: Succinct Proofs",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-103.html"),
+							},
+							{
+								text: "ANS-104: Bundled Data - Binary",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-104.html"),
+							},
+							{
+								text: "ANS-105: License Tags",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-105.html"),
+							},
+							{
+								text: "ANS-106: Do-Not-Store",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-106.html"),
+							},
+							{
+								text: "ANS-109: Vouch-For",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-109.html"),
+							},
+							{
+								text: "ANS-110: Asset Discoverability",
+								link: get_i18n_link(langCode, "/tooling/specs/ans/ANS-110.html"),
+							},
+						],
+					},
+					{
 						text: "ArFS",
 						link: get_i18n_link(langCode, "/tooling/specs/arfs/arfs.html"),
 						collapsible: true,
