@@ -1,6 +1,6 @@
 # Hello World (Code)
 
-This guide walks you through a quick way to get a static HTML, CSS and JavaScript webpage on to the permaweb using a few lines of code and a [command-line interface (CLI)](./hw-cli.md).
+This guide walks you through a quick way to get a static HTML, CSS and JavaScript webpage onto the Permaweb using a few lines of code and a [command-line interface (CLI)](./hw-cli.md).
 
 ## Requirements
 
@@ -35,7 +35,7 @@ The wallet.json file must be in the root of the `hello-world` folder and not ins
 
 ## Create a webpage
 
-This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using Irys and our previously generated wallet to deploy a fully functioning, static and permanent webpage to Arweave.
+This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using permaweb-deploy and our previously generated wallet to deploy a fully functioning, static and permanent webpage to Arweave.
 
 Paste the code from the following code blocks into their files:
 
