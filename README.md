@@ -20,7 +20,7 @@ These are the core concepts which underpin Arweave and the Permaweb.
 
 #### Guides
 
-These are structured, 0 -> 1 guides for building on the Permaweb, which assume
+These are structured guides for building on the Permaweb, which assume
 no prior knowledge of Arweave or AO.
 
 #### Tooling
