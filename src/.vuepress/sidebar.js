@@ -39,7 +39,14 @@ const getI18NSidebar = (langCode) => [
 		children: [
 			{
 				text: get_i18n_str(langCode, "concepts-wallets-and-keys"),
-				link: get_i18n_link(langCode, "/fundamentals/keyfiles-and-wallets.html"),
+				link: get_i18n_link(langCode, "/fundamentals/wallets-and-keyfiles/index.html"),
+				collapsible: true,
+				children: [
+					{
+						text: "Generating a wallet",
+						link: get_i18n_link(langCode, "/fundamentals/wallets-and-keyfiles/creating-a-wallet.html")
+					},
+				],
 			},
 			{
 				text: "Transactions",
