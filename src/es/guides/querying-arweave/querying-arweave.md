@@ -43,9 +43,9 @@ Si no estás familiarizado con GraphQL, puede parecer un poco abrumador al princ
 query { <tipo de esquema> ( <criterio de filtro> ) { <estructura de datos de los resultados> } }
 ```
 
-En la consulta de ejemplo que hemos pegado, nuestro `<tipo de esquema>` es `transactions`, pero también podríamos consultar `blocks`. Una descripción completa del esquema de GraphQL de Arweave se encuentra en la [Guía de GraphQL de Arweave](https://gql-guide.arweave.dev). La guía se refiere al `criterio de filtro` como "Estructuras de Consulta" y la definición completa de la estructura de datos de `transactions` y `blocks` como "Estructuras de Datos".
+En la consulta de ejemplo que hemos pegado, nuestro `<tipo de esquema>` es `transactions`, pero también podríamos consultar `blocks`. Una descripción completa del esquema de GraphQL de Arweave se encuentra en la [Guía de GraphQL de Arweave](https://gql-guide.arweave.net). La guía se refiere al `criterio de filtro` como "Estructuras de Consulta" y la definición completa de la estructura de datos de `transactions` y `blocks` como "Estructuras de Datos".
 
-En cuanto a la `<estructura de datos de los resultados>`, lo importante es que se puede especificar un subconjunto de la estructura de datos completa en la que estás interesado. Por ejemplo, la estructura de datos completa para un esquema de transacciones se encuentra [aquí](https://gql-guide.arweave.dev/#full-data).
+En cuanto a la `<estructura de datos de los resultados>`, lo importante es que se puede especificar un subconjunto de la estructura de datos completa en la que estás interesado. Por ejemplo, la estructura de datos completa para un esquema de transacciones se encuentra [aquí](https://gql-guide.arweave.net/#full-data).
 
 En nuestro caso, nos interesa el `id` y la lista completa de `tags` para cualquier transacción que cumpla con nuestros criterios de filtro.
 

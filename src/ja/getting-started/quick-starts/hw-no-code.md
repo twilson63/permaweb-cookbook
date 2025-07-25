@@ -17,7 +17,7 @@ locale: ja
 
 ## データをArweaveに送信
 
-[https://hello_cookbook.arweave.dev](https://hello_cookbook.arweave.dev)にアクセスします。
+[https://hello_cookbook.arweave.net](https://hello_cookbook.arweave.net)にアクセスします。
 
 データを入力し、公開をクリックし、ウォレットを接続すると「バン！」です。
 

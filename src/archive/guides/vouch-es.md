@@ -79,6 +79,6 @@ Si la dirección ha sido respaldada, se devolverá una matriz de nodos con etiqu
 ```
 
 ## Recursos
-* [VouchDAO](https://vouch-dao.arweave.dev)
+* [VouchDAO](https://vouch-dao.arweave.net)
 * [Contrato de VouchDAO](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)
 * [Arweave/GraphQL Playground](https://arweave.net/graphql)

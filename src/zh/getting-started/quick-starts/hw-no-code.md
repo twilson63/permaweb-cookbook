@@ -18,7 +18,7 @@ locale: zh
 
 ## 发送一些数据到 Arweave
 
-打开这个网页 https://hello_cookbook.arweave.dev
+打开这个网页 https://hello_cookbook.arweave.net
 输入一些数据并点击发布，连接你的钱包和“BAM”
 
 

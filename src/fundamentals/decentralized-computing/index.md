@@ -207,7 +207,7 @@ Decentralized computing enables:
 ## Community and Resources
 
 ### Documentation
-- **AO Computer Docs** - [ao.arweave.dev](https://ao.arweave.dev)
+- **AO Computer Docs** - [ao.arweave.net](https://ao.arweave.net)
 - **HyperBEAM Documentation** - [hyperbeam.arweave.net](https://hyperbeam.arweave.net)
 - **Arweave Developer Docs** - [docs.arweave.org](https://docs.arweave.org)
 

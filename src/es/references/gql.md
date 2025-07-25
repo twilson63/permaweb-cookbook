@@ -159,7 +159,7 @@ Los servicios de indexación implementarán un límite de velocidad para preveni
 
 ## Recursos
 
-- Para obtener una lista más completa del esquema de GraphQL de Arweave consulte la [Guía de GraphQL de Arweave](https://gql-guide.arweave.dev)
+- Para obtener una lista más completa del esquema de GraphQL de Arweave consulte la [Guía de GraphQL de Arweave](https://gql-guide.arweave.net)
 - [Paquete ArDB](../guides/querying-arweave/ardb.md)
 - [Paquete ar-gql](../guides/querying-arweave/ar-gql.md)
 - Para obtener una guía general sobre GraphQL, [graphql.org/learn](https://graphql.org/learn) es un buen punto de partida.

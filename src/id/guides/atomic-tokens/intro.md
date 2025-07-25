@@ -77,7 +77,7 @@ npx ts-node example.ts
 
 ## Ringkasan
 
-Ini adalah contoh sederhana tentang cara mendeploy Aset Atomic. Untuk contoh yang lebih detail, lihat di sini: [https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)
+Ini adalah contoh sederhana tentang cara mendeploy Aset Atomic. Untuk contoh yang lebih detail, lihat di sini: [https://atomic-assets.arweave.net](https://atomic-assets.arweave.net)
 
 ## Bekerja dengan Token
 

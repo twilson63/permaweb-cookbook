@@ -65,7 +65,7 @@ const response = await arweave.transactions.post(transaction);
 
 ## Posting a Data Transaction
 
-This example illustrates how load a file from disk and create a transaction to store its data on the network. You can find the current price the network is charging at [https://ar-fees.arweave.dev](https://ar-fees.arweave.dev)
+This example illustrates how load a file from disk and create a transaction to store its data on the network. You can find the current price the network is charging at [https://ar-fees.arweave.net](https://ar-fees.arweave.net)
 
 ```js:no-line-numbers
 // load the data from disk

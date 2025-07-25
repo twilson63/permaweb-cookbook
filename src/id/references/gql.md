@@ -150,7 +150,7 @@ Untuk mengambil seluruh rangkaian hasil, ulangi permintaan `after` dengan nilai 
 Layanan indeks akan menerapkan batasan laju untuk mencegah serangan dan penyalahgunaan layanan mereka. Layanan `arweave.net/graphql` membatasi permintaan GraphQL hingga 600 permintaan setiap 5 menit (per alamat IP). Selalu periksa hasil dari permintaan Anda untuk melihat apakah mereka memiliki kode status dalam angka 200 sebelum mengurai respons. Kode status HTTP 429 akan menunjukkan penerapan batasan laju. Kode status HTTP 503 biasanya menunjukkan bahwa hasil permintaan terlalu besar untuk `arweave.net/graphql`.
 
 ## Sumber Daya
-* Untuk daftar lengkap dari skema GraphQL Arweave, lihat [Panduan GraphQL Arweave](https://gql-guide.arweave.dev)
+* Untuk daftar lengkap dari skema GraphQL Arweave, lihat [Panduan GraphQL Arweave](https://gql-guide.arweave.net)
 * [Paket ArDB](../guides/querying-arweave/ardb.md)
 * [Paket ar-gql](../guides/querying-arweave/ar-gql.md)
 * Untuk panduan umum tentang GraphQL, [graphql.org/learn](https://graphql.org/learn) adalah titik awal yang baik.

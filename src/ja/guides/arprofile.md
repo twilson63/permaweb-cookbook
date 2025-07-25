@@ -3,7 +3,7 @@ locale: ja
 ---
 # ArProfile
 
-[ArProfile](https://arprofile.arweave.dev) は、オープンデータプロトコル [`Account`](https://docs.arprofile.org/#/?id=data-protocol) に依存する Arweave ネイティブの DID です。
+[ArProfile](https://arprofile.arweave.net) は、オープンデータプロトコル [`Account`](https://docs.arprofile.org/#/?id=data-protocol) に依存する Arweave ネイティブの DID です。
 
 [`arweave-account`](https://www.npmjs.com/package/arweave-account) は、ウェブアプリやバックエンド（nodejs）など、コードベースに ArProfile を簡単に統合するための npm パッケージです。
 
@@ -23,8 +23,8 @@ locale: ja
 
 ### 埋め込み可能な URL
 
-- https://profile.arweave.dev/`address`/`<wallet_address>`
-- https://profile.arweave.dev/`handler`/`<name#unique>`
+- https://profile.arweave.net/`address`/`<wallet_address>`
+- https://profile.arweave.net/`handler`/`<name#unique>`
 
 ### 例
 

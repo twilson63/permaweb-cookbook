@@ -137,4 +137,4 @@ await account.search("cromatikap#aIUdog")
 ## Ringkasan
 Dengan hanya 3 baris kode yang diperlukan untuk diimplementasikan, ArProfile adalah cara yang langsung untuk menambahkan informasi pengguna Arweave tambahan seperti avatar, bio, dan tautan sosial ke aplikasi Anda.
 
-[ArProfile](https://arprofile.arweave.dev)
+[ArProfile](https://arprofile.arweave.net)

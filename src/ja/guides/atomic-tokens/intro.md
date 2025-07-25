@@ -80,7 +80,7 @@ npx ts-node example.ts
 
 ## まとめ
 
-これはアトミックアセットをデプロイするシンプルな例です。より詳細な例については、[https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)をチェックしてください。
+これはアトミックアセットをデプロイするシンプルな例です。より詳細な例については、[https://atomic-assets.arweave.net](https://atomic-assets.arweave.net)をチェックしてください。
 
 ## トークンの操作
 

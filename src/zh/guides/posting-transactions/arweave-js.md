@@ -65,7 +65,7 @@ const response = await arweave.transactions.post(transaction);
 
 ## 发布数据交易
 
-此示例演示了如何从磁盘加载文件并创建一个事务，以将其数据存储在网络上。您可以在 [https://ar-fees.arweave.dev](https://ar-fees.arweave.dev) 上找到网络目前的收费价格。
+此示例演示了如何从磁盘加载文件并创建一个事务，以将其数据存储在网络上。您可以在 [https://ar-fees.arweave.net](https://ar-fees.arweave.net) 上找到网络目前的收费价格。
 
 ```js:no-line-numbers
 // 从磁盘加载数据

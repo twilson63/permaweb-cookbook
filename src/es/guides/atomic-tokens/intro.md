@@ -77,7 +77,7 @@ npx ts-node example.ts
 
 ## Resumen
 
-Este es un ejemplo simple de implementación de un Token Atómico, para ejemplos más detallados consulta: [https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)
+Este es un ejemplo simple de implementación de un Token Atómico, para ejemplos más detallados consulta: [https://atomic-assets.arweave.net](https://atomic-assets.arweave.net)
 
 ## Trabajando con Tokens
 

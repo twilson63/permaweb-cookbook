@@ -116,7 +116,7 @@ There's quite a few ecosystem projects leveraging SmartWeave SmartContracts, but
 - [ArDrive Inferno](https://ardrive.io/inferno/) | Get PST's for uploading thru Ardrive.
 - [FirstBatch](https://www.firstbatch.xyz/) | FirstBatch aids developers and enterprises in creating personalized, private, and distortion-free AI applications.
 - [Othent](https://othent.io/) | Web3 transactions with existing traditional social logins.
-- [BazAR](https://bazar.arweave.dev/) | Digital content marketplace with real-world rights.
-- [Alex the Archieve](https://alex.arweave.dev/) | A decentralized archival platform utilizing Arweave's immutable storage.
+- [BazAR](https://bazar.arweave.net/) | Digital content marketplace with real-world rights.
+- [Alex the Archieve](https://alex.arweave.net/) | A decentralized archival platform utilizing Arweave's immutable storage.
 
 and so much more.

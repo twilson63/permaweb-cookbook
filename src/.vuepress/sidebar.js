@@ -69,12 +69,16 @@ const getI18NSidebar = (langCode) => [
 			},
 			{
 				text: "Accessing Arweave Data",
-				link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/query-transactions.html"),
+				link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/index.html"),
 				collapsible: true,
 				children: [
 					{
 						text: "Gateways & Access",
 						link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/gateways.html"),
+					},
+					{
+						text: "GraphQL Queries",
+						link: get_i18n_link(langCode, "/fundamentals/accessing-arweave-data/graphql.html"),
 					},
 					{
 						text: "Manifests & Path Resolution",
@@ -94,13 +98,6 @@ const getI18NSidebar = (langCode) => [
 					{
 						text: "AO Processes",
 						link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html"),
-						collapsible: true,
-						children: [
-							{
-								text: "What are AO Processes",
-								link: get_i18n_link(langCode, "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html"),
-							},
-						],
 					},
 					{
 						text: "HyperBEAM",

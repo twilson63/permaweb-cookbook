@@ -84,6 +84,6 @@ Jika alamat sudah mendapatkan vouch, akan dikembalikan larik dari node-node yang
 ```
 
 ## Sumber Daya
-* [VouchDAO](https://vouch-dao.arweave.dev)
+* [VouchDAO](https://vouch-dao.arweave.net)
 * [Kontrak VouchDAO](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)
 * [Arweave/GraphQL Playground](https://arweave.net/graphql)

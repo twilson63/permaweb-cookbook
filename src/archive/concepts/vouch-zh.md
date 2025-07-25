@@ -44,5 +44,5 @@ VOUCH_USER_ADDRESS:[
 |User-Identifier|是|基于验证方法的用户标识符。例如 - `abhav@arweave.org`|
 
 ## 资源
-* [VouchDAO](https://vouch-dao.arweave.dev)
+* [VouchDAO](https://vouch-dao.arweave.net)
 * [VouchDAO 合约](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)

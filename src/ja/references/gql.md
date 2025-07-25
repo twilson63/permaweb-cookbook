@@ -152,7 +152,7 @@ query
 インデックスサービスは、攻撃やサービスの悪用を防ぐためにレート制限を実施します。`arweave.net/graphql`サービスは、GraphQLクエリを5分ごとに600クエリに制限しています（IPアドレスごと）。レスポンスを解析する前に、クエリの結果に200番台のステータスコードがあるかを必ず確認してください。HTTPステータスコード429は、レート制限が施行されていることを示します。HTTPステータスコード503は、クエリの結果セットが`arweave.net/graphql`にとって大きすぎることを示すことが一般的です。
 
 ## リソース
-* Arweave GraphQLスキーマのより完全なリストについては、[Arweave GraphQL Guide](https://gql-guide.arweave.dev)を参照してください。
+* Arweave GraphQLスキーマのより完全なリストについては、[Arweave GraphQL Guide](https://gql-guide.arweave.net)を参照してください。
 * [ArDBパッケージ](../guides/querying-arweave/ardb.md)
 * [ar-gqlパッケージ](../guides/querying-arweave/ar-gql.md)
 * GraphQLに関する一般的なガイドは、[graphql.org/learn](https://graphql.org/learn)が良い出発点です。

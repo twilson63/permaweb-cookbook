@@ -45,5 +45,5 @@ Pengguna yang diverifikasi akan menerima token ANS-109 yang dikirimkan ke dompet
 |User-Identifier|Ya|Identifier untuk pengguna berdasarkan Metode Verifikasi. Contoh - `abhav@arweave.org`|
 
 ## Sumber Daya
-* [VouchDAO](https://vouch-dao.arweave.dev)
+* [VouchDAO](https://vouch-dao.arweave.net)
 * [Kontrak VouchDAO](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)

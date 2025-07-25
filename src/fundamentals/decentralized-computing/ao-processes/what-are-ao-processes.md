@@ -634,7 +634,7 @@ Now that you understand AO processes fundamentals:
 
 ## Resources
 
-- **AO Documentation**: [Official AO Docs](https://ao.arweave.dev)
+- **AO Documentation**: [Official AO Docs](https://ao.arweave.net)
 - **AOS (AO Studio)**: [Development Environment](https://github.com/permaweb/aos)
 - **Code Examples**: [AO Cookbook Repository](https://github.com/permaweb/ao-cookbook)
 - **Community**: [AO Discord Channel](https://discord.gg/arweave)

@@ -45,9 +45,9 @@ GraphQLに不慣れな場合、最初は少し圧倒されるかもしれませ�
 ```text:no-line-numbers
 query { <schema type> ( <filter criteria> ) { <data structure of the results> } }
 ```
-貼り付けた例のクエリでは、`<schema type>`が`transactions`ですが、`blocks`をクエリすることもできます。ArweaveのGraphQLスキーマの完全な説明は、[Arweave GraphQL Guide](https://gql-guide.arweave.dev)に書かれています。このガイドでは、`filter criteria`を「クエリ構造」と呼び、`transactions`および`blocks`の完全なデータ構造定義を「データ構造」と呼んでいます。
+貼り付けた例のクエリでは、`<schema type>`が`transactions`ですが、`blocks`をクエリすることもできます。ArweaveのGraphQLスキーマの完全な説明は、[Arweave GraphQL Guide](https://gql-guide.arweave.net)に書かれています。このガイドでは、`filter criteria`を「クエリ構造」と呼び、`transactions`および`blocks`の完全なデータ構造定義を「データ構造」と呼んでいます。
 
-`<data structure of the results>`に関して言えば、興味のあるデータ構造のサブセットを指定できることが重要です。たとえば、トランザクションスキーマの完全なデータ構造は[こちらにリストされています](https://gql-guide.arweave.dev/#full-data)。
+`<data structure of the results>`に関して言えば、興味のあるデータ構造のサブセットを指定できることが重要です。たとえば、トランザクションスキーマの完全なデータ構造は[こちらにリストされています](https://gql-guide.arweave.net/#full-data)。
 
 この場合、フィルタ基準に一致するトランザクションの`id`と完全な`tags`リストに興味があります。
 

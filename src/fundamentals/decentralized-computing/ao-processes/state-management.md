@@ -1103,7 +1103,7 @@ Master advanced AO concepts:
 
 ## Resources
 
-- **AO State Documentation**: [State Management Guide](https://ao.arweave.dev/state)
+- **AO State Documentation**: [State Management Guide](https://ao.arweave.net/state)
 - **Lua Programming**: [Lua Reference Manual](https://www.lua.org/manual/5.3/)
 - **Best Practices**: [AO Development Guidelines](https://github.com/permaweb/ao-cookbook)
 - **Community Support**: [AO Discord](https://discord.gg/arweave)

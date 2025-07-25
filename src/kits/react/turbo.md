@@ -320,7 +320,7 @@ TTL Seconds: 3600
 Deployed TxId [abc123def456ghi789jkl012mno345pqr678stu901v] to name [my-react-app] for ANT [xyz789abc012def345ghi678jkl901mno234pqr567s] using undername [@]
 ```
 
-Your React app can be found at `https://my-react-app.arweave.dev` (if using ArNS) or `https://arweave.net/abc123def456ghi789jkl012mno345pqr678stu901v`.
+Your React app can be found at `https://my-react-app.arweave.net` (if using ArNS) or `https://arweave.net/abc123def456ghi789jkl012mno345pqr678stu901v`.
 
 ::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!

@@ -79,6 +79,6 @@ query {
 ```
 
 ## 资源
-* [VouchDAO](https://vouch-dao.arweave.dev)
+* [VouchDAO](https://vouch-dao.arweave.net)
 * [VouchDAO 合约](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)
 * [Arweave/GraphQL Playground](https://arweave.net/graphql)

@@ -18,7 +18,7 @@ Buka [https://arweave.app/add](https://arweave.app/add) atau [https://wander.app
 
 ## Kirim data ke arweave
 
-Buka [https://hello_cookbook.arweave.dev](https://hello_cookbook.arweave.dev)
+Buka [https://hello_cookbook.arweave.net](https://hello_cookbook.arweave.net)
 
 Masukkan beberapa data dan klik "publish," sambungkan dompet Anda, dan "BAM"
 

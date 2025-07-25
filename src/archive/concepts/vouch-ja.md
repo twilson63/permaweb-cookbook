@@ -51,5 +51,5 @@ VOUCH_USER_ADDRESS:[
 |User-Identifier|オプション|確認方法に基づくユーザーの識別子。例 - `abhav@arweave.org`|
 
 ## リソース
-* [VouchDAO](https://vouch-dao.arweave.dev)
+* [VouchDAO](https://vouch-dao.arweave.net)
 * [VouchDAOコントラクト](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)

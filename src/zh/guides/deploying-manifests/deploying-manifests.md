@@ -9,4 +9,4 @@ locale: zh
 
 路径清单核心概念页面提供了更多关于清单的信息，以及为什么清单可能对您的项目有用。
 
-如果您按照本指南部署路径清单，它需要按照[核心概念](https://cookbook.arweave.dev/concepts/manifests.html)页面中列出的清单结构。
+如果您按照本指南部署路径清单，它需要按照[核心概念](https://cookbook.arweave.net/concepts/manifests.html)页面中列出的清单结构。

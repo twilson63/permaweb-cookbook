@@ -65,7 +65,7 @@ const response = await arweave.transactions.post(transaction);
 
 ## Mengirimkan Transaksi Data
 
-Contoh ini mengilustrasikan bagaimana memuat berkas dari disk dan membuat transaksi untuk menyimpan datanya di jaringan. Anda dapat menemukan harga saat ini yang dikenakan jaringan di [https://ar-fees.arweave.dev](https://ar-fees.arweave.dev)
+Contoh ini mengilustrasikan bagaimana memuat berkas dari disk dan membuat transaksi untuk menyimpan datanya di jaringan. Anda dapat menemukan harga saat ini yang dikenakan jaringan di [https://ar-fees.arweave.net](https://ar-fees.arweave.net)
 
 ```js:no-line-numbers
 // muat data dari disk

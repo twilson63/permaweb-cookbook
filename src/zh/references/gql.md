@@ -148,7 +148,7 @@ query
 索引服务将实施速率限制以防止攻击和滥用其服务。`arweave.net/graphql`服务将GraphQL查询限制为每5分钟的600个查询（每个IP地址）。在解析响应之前，始终检查查询结果是否具有200的状态代码。状态代码为429表示正在执行速率限制。状态代码为503通常表示查询结果集对于`arweave.net/graphql`来说太大。
 
 ## 资源
-* 有关更完整的Arweave GraphQL模式列表，请参阅[Arweave GraphQL指南](https://gql-guide.arweave.dev)
+* 有关更完整的Arweave GraphQL模式列表，请参阅[Arweave GraphQL指南](https://gql-guide.arweave.net)
 * [ArDB软件包](../guides/querying-arweave/ardb.md)
 * [ar-gql软件包](../guides/querying-arweave/ar-gql.md)
 * 对于GraphQL的一般指南，[graphql.org/learn](https://graphql.org/learn)是一个很好的起点

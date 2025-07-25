@@ -47,5 +47,5 @@ Los usuarios que se verifican recibirán el token ANS-109 en su billetera para i
 |Identificador de usuario|Verdadero|Un identificador para el usuario basado en el Método de Verificación. Ejemplo - `abhav@arweave.org`|
 
 ## Recursos
-* [VouchDAO](https://vouch-dao.arweave.dev)
+* [VouchDAO](https://vouch-dao.arweave.net)
 * [Contrato de VouchDAO](https://sonar.warp.cc/?#/app/contract/_z0ch80z_daDUFqC9jHjfOL8nekJcok4ZRkE_UesYsk)

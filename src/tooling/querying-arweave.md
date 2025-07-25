@@ -38,9 +38,9 @@ If you’re not familiar with GraphQL it can seem a little overwhelming at first
 ```text:no-line-numbers
 query { <schema type> ( <filter criteria> ) { <data structure of the results> } }
 ```
-In the example query we pasted our `<schema type>` is `transactions` but we could also query for `blocks`. A full description of Arweave's GraphQL schema is written up in the [Arweave GraphQL Guide](https://gql-guide.arweave.dev). The guide refers to the `filter criteria` as “Query Structures” and the complete data structure definition of `transactions` and `blocks` as “Data Structures”.
+In the example query we pasted our `<schema type>` is `transactions` but we could also query for `blocks`. A full description of Arweave's GraphQL schema is written up in the [Arweave GraphQL Guide](https://gql-guide.arweave.net). The guide refers to the `filter criteria` as “Query Structures” and the complete data structure definition of `transactions` and `blocks` as “Data Structures”.
 
-When it comes to the `<data structure of the results>`, the thing to note is that you can specify a subset of the complete data structure you’re interested in. For example, the complete data structure for a transactions schema is [listed here](https://gql-guide.arweave.dev/#full-data).
+When it comes to the `<data structure of the results>`, the thing to note is that you can specify a subset of the complete data structure you’re interested in. For example, the complete data structure for a transactions schema is [listed here](https://gql-guide.arweave.net/#full-data).
 
 In our case we’re interested in the `id` and complete list of `tags` for any transaction matching our filter criteria.
 

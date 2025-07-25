@@ -77,7 +77,7 @@ npx ts-node example.ts
 
 ## 概要
 
-这是一个部署原子资产的简单示例，想了解更详细的示例，请查看：[https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)
+这是一个部署原子资产的简单示例，想了解更详细的示例，请查看：[https://atomic-assets.arweave.net](https://atomic-assets.arweave.net)
 
 ## 与代币一起使用
 

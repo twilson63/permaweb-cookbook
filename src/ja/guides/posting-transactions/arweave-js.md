@@ -71,7 +71,7 @@ const response = await arweave.transactions.post(transaction);
 
 ## データトランザクションの投稿
 
-この例では、ディスクからファイルを読み込み、そのデータをネットワークに保存するためのトランザクションを作成する方法を示します。ネットワークが請求している現在の価格は、[https://ar-fees.arweave.dev](https://ar-fees.arweave.dev)で確認できます。
+この例では、ディスクからファイルを読み込み、そのデータをネットワークに保存するためのトランザクションを作成する方法を示します。ネットワークが請求している現在の価格は、[https://ar-fees.arweave.net](https://ar-fees.arweave.net)で確認できます。
 
 ```js:no-line-numbers
 // load the data from disk

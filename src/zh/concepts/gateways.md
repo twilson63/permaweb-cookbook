@@ -5,7 +5,7 @@ locale: zh
 
 ---
 
-上传到Arweave网络（或[永久网](https://cookbook.arweave.dev/concepts/permaweb.html)）的数据并不是立即可用的。
+上传到Arweave网络（或[永久网](https://cookbook.arweave.net/concepts/permaweb.html)）的数据并不是立即可用的。
 
 ### 什么是网关？
 

@@ -42,9 +42,9 @@ Jika Anda tidak terbiasa dengan GraphQL, pada awalnya mungkin terasa agak rumit,
 ```text:no-line-numbers
 query { <tipe skema> ( <kriteria filter> ) { <struktur data hasil> } }
 ```
-Dalam kueri contoh yang kami salin, `<tipe skema>` kami adalah `transactions`, tetapi kami juga dapat mengkueri `blocks`. Deskripsi lengkap skema GraphQL Arweave ditulis dalam [Panduan GraphQL Arweave](https://gql-guide.arweave.dev). Panduan ini mengacu pada `kriteria filter` sebagai "Struktur Kueri" dan definisi struktur data lengkap dari `transactions` dan `blocks` sebagai "Struktur Data".
+Dalam kueri contoh yang kami salin, `<tipe skema>` kami adalah `transactions`, tetapi kami juga dapat mengkueri `blocks`. Deskripsi lengkap skema GraphQL Arweave ditulis dalam [Panduan GraphQL Arweave](https://gql-guide.arweave.net). Panduan ini mengacu pada `kriteria filter` sebagai "Struktur Kueri" dan definisi struktur data lengkap dari `transactions` dan `blocks` sebagai "Struktur Data".
 
-Ketika sampai pada `<struktur data hasil>`, hal yang perlu diperhatikan adalah bahwa Anda dapat menentukan subset dari struktur data lengkap yang Anda minati. Sebagai contoh, struktur data lengkap untuk skema transaksi [tercantum di sini](https://gql-guide.arweave.dev/#full-data).
+Ketika sampai pada `<struktur data hasil>`, hal yang perlu diperhatikan adalah bahwa Anda dapat menentukan subset dari struktur data lengkap yang Anda minati. Sebagai contoh, struktur data lengkap untuk skema transaksi [tercantum di sini](https://gql-guide.arweave.net/#full-data).
 
 Tekan tombol "Play" besar di tengah playground untuk menjalankan kueri.
 

@@ -14,7 +14,7 @@ In this quick start we are going to upload an image to the Permaweb with no code
 
 ## Send some data to Arweave
 
-Go to [https://hello_cookbook.arweave.dev](https://hello_cookbook.arweave.dev)
+Go to [https://hello_cookbook.arweave.net](https://hello_cookbook.arweave.net)
 
 Enter some data and click publish, connect your wallet and "BAM"
 

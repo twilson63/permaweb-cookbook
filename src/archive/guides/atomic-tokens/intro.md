@@ -77,7 +77,7 @@ npx ts-node example.ts
 
 ## Summary
 
-This is a simple example of deploying an Atomic Asset, for more detailed examples check out: [https://atomic-assets.arweave.dev](https://atomic-assets.arweave.dev)
+This is a simple example of deploying an Atomic Asset, for more detailed examples check out: [https://atomic-assets.arweave.net](https://atomic-assets.arweave.net)
 
 ## Working with Tokens
 

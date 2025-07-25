@@ -120,7 +120,7 @@ SmartWeaveスマートコントラクトを活用しているエコシステム�
 - [Akord](https://akord.com/) | Arweave上の安全なストレージを提供するプロトコルで、シームレスなUXを実現します。
 - [FirstBatch](https://www.firstbatch.xyz/) | FirstBatchは、開発者や企業が個別化されたプライベート
 - [Othent](https://othent.io/) | Web3 transactions with existing traditional social logins.
-- [BazAR](https://bazar.arweave.dev/) | Digital content marketplace with real-world rights.
-- [Alex the Archieve](https://alex.arweave.dev/) | A decentralized archival platform utilizing Arweave's immutable storage.
+- [BazAR](https://bazar.arweave.net/) | Digital content marketplace with real-world rights.
+- [Alex the Archieve](https://alex.arweave.net/) | A decentralized archival platform utilizing Arweave's immutable storage.
 
 and so much more.

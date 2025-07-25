@@ -146,7 +146,7 @@ After a successful GitHub Action run:
 
 1. Check the action logs for the deployment transaction ID
 2. Wait 10-20 minutes for ArNS propagation
-3. Visit your ArNS name: `https://YOUR_ARNS_NAME.arweave.dev`
+3. Visit your ArNS name: `https://YOUR_ARNS_NAME.arweave.net`
 
 ## Troubleshooting
 
@@ -161,7 +161,7 @@ After a successful GitHub Action run:
 
 Monitor your deployments through:
 - GitHub Actions logs
-- ArNS resolver: `https://arns.arweave.dev/resolve/YOUR_ARNS_NAME`
+- ArNS resolver: `https://arns.arweave.net/resolve/YOUR_ARNS_NAME`
 
 :tada: You now have automated permaweb deployment with GitHub Actions!
 

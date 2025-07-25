@@ -6,7 +6,7 @@ locale: id
 
 ---
 
-Data yang diunggah ke jaringan Arweave (atau [permaweb](https://cookbook.arweave.dev/concepts/permaweb.html)) tidak selalu mudah untuk digunakan secara langsung.
+Data yang diunggah ke jaringan Arweave (atau [permaweb](https://cookbook.arweave.net/concepts/permaweb.html)) tidak selalu mudah untuk digunakan secara langsung.
 
 ### Apa Itu Gateway?
 

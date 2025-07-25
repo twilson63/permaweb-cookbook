@@ -5,7 +5,7 @@ locale: ja
 
 ---
 
-Arweaveネットワーク（または[パーマウェブ](https://cookbook.arweave.dev/concepts/permaweb.html)）にアップロードされたデータは、常にすぐに操作しやすいわけではありません。
+Arweaveネットワーク（または[パーマウェブ](https://cookbook.arweave.net/concepts/permaweb.html)）にアップロードされたデータは、常にすぐに操作しやすいわけではありません。
 
 ### ゲートウェイとは？
 

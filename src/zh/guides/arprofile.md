@@ -134,4 +134,4 @@ await account.search("cromatikap#aIUdog")
 ## 总结
 只需3行代码即可实现，ArProfile是一种简单直接的方式，用于向应用程序添加额外的Arweave用户信息，例如头像、简介和社交链接。
 
-[ArProfile](https://arprofile.arweave.dev)
+[ArProfile](https://arprofile.arweave.net)

@@ -40,5 +40,5 @@ Acabas de publicar algunos datos en Arweave sin escribir código.
 
 ## ¡Verlo en acción!
 
-- [Arcademy](https://arcademy.arweave.dev/#/AtomicPlayground/xMVuQ5BKy__EccnMu0Ji_0rPk3f6yCtIRdHwvjSweB4)
+- [Arcademy](https://arcademy.arweave.net/#/AtomicPlayground/xMVuQ5BKy__EccnMu0Ji_0rPk3f6yCtIRdHwvjSweB4)
 - [Youtube](https://youtu.be/T6wJ3m5ABSU)

@@ -6,7 +6,7 @@ locale: es
 
 ---
 
-Los datos cargados en la red de Arweave (o el [permaweb](https://cookbook.arweave.dev/concepts/permaweb.html)) no siempre son inmediatamente fáciles de trabajar.
+Los datos cargados en la red de Arweave (o el [permaweb](https://cookbook.arweave.net/concepts/permaweb.html)) no siempre son inmediatamente fáciles de trabajar.
 
 ### ¿Qué es una Puerta de Enlace?
 

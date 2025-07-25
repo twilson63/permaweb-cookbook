@@ -3,7 +3,7 @@ locale: ja
 ---
 # Akordを使ってアトミックアセットをミントする
 
-Akordは、[アトミックアセット標準](https://atomic-assets.arweave.dev/)に準拠したアトミックNFTの作成を可能にします。
+Akordは、[アトミックアセット標準](https://atomic-assets.arweave.net/)に準拠したアトミックNFTの作成を可能にします。
 
 アトミックアセットは、[ユニバーサルデータライセンス](https://arwiki.wiki/#/en/Universal-Data-License-How-to-use-it) (UDL) を添付するオプションでミントされ、[ユニバーサルコンテンツマーケットプレイス](https://docs.akord.com/nfts/minting-atomic-nfts/universal-content-marketplace) (UCM) にリストすることができます。
 

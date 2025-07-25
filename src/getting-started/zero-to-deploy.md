@@ -1045,7 +1045,7 @@ Congratulations! You've built and deployed a full-stack decentralized applicatio
 **Need Help?**
 - Join [Arweave Discord](https://discord.gg/arweave) `#ao-dev` channel
 - Check [AO Cookbook](https://cookbook_ao.ar.io) for advanced patterns
-- Browse [Permaweb Examples](https://cookbook.arweave.dev/references/gateways.html)
+- Browse [Permaweb Examples](https://cookbook.arweave.net/references/gateways.html)
 
 ## Resources
 

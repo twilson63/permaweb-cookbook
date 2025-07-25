@@ -65,7 +65,7 @@ const response = await arweave.transactions.post(transaction);
 
 ## Publicar una transacción de datos
 
-Este ejemplo ilustra cómo cargar un archivo desde el disco y crear una transacción para almacenar sus datos en la red. Puede encontrar el precio actual que la red está cobrando en [https://ar-fees.arweave.dev](https://ar-fees.arweave.dev)
+Este ejemplo ilustra cómo cargar un archivo desde el disco y crear una transacción para almacenar sus datos en la red. Puede encontrar el precio actual que la red está cobrando en [https://ar-fees.arweave.net](https://ar-fees.arweave.net)
 
 ```js:no-line-numbers
 // cargar los datos desde el disco

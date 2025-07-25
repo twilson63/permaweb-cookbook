@@ -42,9 +42,9 @@ query {
 ```text:no-line-numbers
 query { <schema type> ( <filter criteria> ) { <data structure of the results> } }
 ```
-在我们粘贴的示例查询中，我们的`<schema type>`是`transactions`，但我们也可以查询`blocks`。Arweave的GraphQL schema的完整描述在[Arweave GraphQL Guide](https://gql-guide.arweave.dev)中有详细说明。该指南将“过滤准则”称为“Query Structures”，将`transactions`和`blocks`的完整数据结构定义称为“Data Structures”。
+在我们粘贴的示例查询中，我们的`<schema type>`是`transactions`，但我们也可以查询`blocks`。Arweave的GraphQL schema的完整描述在[Arweave GraphQL Guide](https://gql-guide.arweave.net)中有详细说明。该指南将“过滤准则”称为“Query Structures”，将`transactions`和`blocks`的完整数据结构定义称为“Data Structures”。
 
-对于`<data structure of the results>`来说，需要注意的是您可以指定您感兴趣的完整数据结构的一个子集。例如，交易模式的完整数据结构在[此处列出](https://gql-guide.arweave.dev/#full-data)。
+对于`<data structure of the results>`来说，需要注意的是您可以指定您感兴趣的完整数据结构的一个子集。例如，交易模式的完整数据结构在[此处列出](https://gql-guide.arweave.net/#full-data)。
 
 在我们的案例中，我们对与我们的过滤准则匹配的任何交易感兴趣的是`id`和完整的`tags`列表。
 
