@@ -9,9 +9,9 @@ import PageNav from '@theme/PageNav.vue';
     <slot name="top" />
 
     <div class="cookbook-content row">
-      <div class="col-12 col-xl-9"> 
+      <div class="col-12 col-xl-9">
         <PageMeta />
-        
+
         <Content />
 
         <PageNav />

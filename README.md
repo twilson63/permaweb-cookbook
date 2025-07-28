@@ -40,8 +40,8 @@ You need to have Node v16 installed. You can get the latest version at https://n
 From the root directory, run:
 
 ```sh
-yarn
-yarn dev
+npm install
+npm run dev
 ```
 
 which will install all relevant dependencies and start the local development server.
@@ -85,5 +85,5 @@ Happy Cooking!
 ```sh
 touch wallet.json
 # add wallet info
-yarn deploy
+npm run deploy
 ```

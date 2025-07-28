@@ -1,24 +1,20 @@
 <script setup>
-import ToggleLanguageButton from "./ToggleLanguageButton.vue";
-import ToggleColorModeButton from "@theme/ToggleColorModeButton.vue";
-import SidebarItems from "@theme/SidebarItems.vue";
+import ToggleLanguageButton from './ToggleLanguageButton.vue';
+import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue';
+import SidebarItems from '@theme/SidebarItems.vue';
 </script>
 
 <script>
 export default {
-  emits: ["close-sidebar", "toggle-language"],
+  emits: ['close-sidebar', 'toggle-language']
 };
 </script>
 
 <template>
   <aside class="cookbook-sidebar">
     <div class="d-flex d-md-none my-4 justify-content-between">
-      <ToggleLanguageButton
-        @toggle="$emit('toggle-language')"
-      />
-      <ToggleColorModeButton
-        style="margin: 0 0.5rem 0 0; font-size: 0"
-      />
+      <ToggleLanguageButton @toggle="$emit('toggle-language')" />
+      <ToggleColorModeButton style="margin: 0 0.5rem 0 0; font-size: 0" />
     </div>
     <hr class="d-block d-md-none" />
     <SidebarItems />
@@ -27,7 +23,7 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../styles/bootstrap.scss";
+@import '../styles/bootstrap.scss';
 
 .cookbook-theme-container.sidebar-open {
   @include media-breakpoint-down(md) {

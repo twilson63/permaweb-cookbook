@@ -15,4 +15,4 @@ export const useContributors = () => {
     });
 
   return contributors;
-}
+};

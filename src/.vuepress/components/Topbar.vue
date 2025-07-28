@@ -1,27 +1,27 @@
 <script setup>
-import { useDarkMode } from "@vuepress/theme-default/lib/client/composables/index.js";
+import { useDarkMode } from '@vuepress/theme-default/lib/client/composables/index.js';
 
-import { useI18NStr } from "../composables/useI18N";
-import "add-to-calendar-button";
+import { useI18NStr } from '../composables/useI18N';
+import 'add-to-calendar-button';
 
 const darkMode = useDarkMode();
 const get_i18n_str = useI18NStr();
 </script>
 
 <template>
-  
   <a href="https://community.arweave.net/#/fullstack" target="_blank">
     <div class="topbar fullstack-hack">
       <p>
-        <span>Join the first Arweave Fullstack Hack for up to $50k in funding</span>
+        <span
+          >Join the first Arweave Fullstack Hack for up to $50k in funding</span
+        >
       </p>
     </div>
   </a>
-  
 </template>
 
 <style lang="scss" scoped>
-@import "../styles/bootstrap.scss";
+@import '../styles/bootstrap.scss';
 
 a {
   text-decoration: none !important;
@@ -86,14 +86,14 @@ a {
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>

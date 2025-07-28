@@ -29,7 +29,7 @@
         />
       </svg>
     </button>
-    
+
     <div
       :id="`collapsible-code-${id}`"
       class="collapsible-code__content"
@@ -60,14 +60,14 @@ export default {
     return {
       isExpanded: this.defaultExpanded,
       id: Math.random().toString(36).substr(2, 9)
-    }
+    };
   },
   methods: {
     toggle() {
-      this.isExpanded = !this.isExpanded
+      this.isExpanded = !this.isExpanded;
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -165,13 +165,13 @@ export default {
 }
 
 /* Flush code blocks with clean targeting */
-.collapsible-code div[class*="language-"] {
+.collapsible-code div[class*='language-'] {
   margin: 0 !important;
   border-radius: 0 !important;
   border: none !important;
 }
 
-.collapsible-code div[class*="language-"] pre {
+.collapsible-code div[class*='language-'] pre {
   margin: 0 !important;
   border-radius: 0 !important;
 }
@@ -205,15 +205,15 @@ export default {
   pointer-events: none;
 }
 
-/* Clean flush code blocks for container components */  
-.custom-container-collapsible-code div[class*="language-"] {
+/* Clean flush code blocks for container components */
+.custom-container-collapsible-code div[class*='language-'] {
   margin: 0 !important;
   border-radius: 0 !important;
   border: none !important;
 }
 
-.custom-container-collapsible-code div[class*="language-"] pre {
+.custom-container-collapsible-code div[class*='language-'] pre {
   margin: 0 !important;
   border-radius: 0 !important;
 }
-</style> 
+</style>
