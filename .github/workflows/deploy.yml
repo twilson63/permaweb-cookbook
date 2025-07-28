@@ -18,13 +18,10 @@ jobs:
         with:
           node-version: 18.x
       - name: 📥 Download deps
-        run: |
-          cd docs
-          yarn
+        run: yarn
       - name: 🛠 Build Docs
         id: build_artifacts
         run: |
-          cd docs
           yarn build
 
           echo "artifacts_output_dir=src/.vuepress/dist" >> $GITHUB_OUTPUT
@@ -34,7 +31,6 @@ jobs:
       - name: 💾 Publish to Arweave
         id: publish_artifacts
         run: |
-          cd docs
           npx permaweb-deploy \
             --ant-process=${ANT_PROCESS} \
             --undername=${UNDERNAME} \

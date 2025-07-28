@@ -1,6 +1,35 @@
 wallet.json
-package-lock.json
+# Keep package-lock.json (project uses npm), ignore others
 
+# OS
 .DS_Store
 
+# Environment
 .env
+.env*
+
+# IDEs
+.vscode
+.claude
+
+# Node.js / Build
+node_modules/
+npm-debug.log
+dist
+.cache
+.temp
+.yarn
+yarn.lock
+bun.lock
+pids
+logs
+coverage/
+run
+.nyc_output
+.basement
+basement_dist
+config.local.js
+
+# Error logs
+*-error.log
+yarn-error.log

@@ -1,8 +1,8 @@
 # Permaweb Cookbook
 
-The Permaweb Cookbook is meant to house small digestible code snippets
-for someone that has no experience with blockchain or Permaweb to be able
-to grab and go. 
+The Permaweb Cookbook is designed to house concepts, guides, and small digestible code snippets
+for someone that has no experience with blockchain or the Permaweb to be able to
+learn from and build with.
 
 ## Contributing
 
@@ -11,51 +11,46 @@ the project's style when contributing new snippets of code.
 
 ### Structure
 
-Currently we have "topics" under `/docs` and the code for those topics.
+The main content for the cookbook is under the `/src` directory and split into
+different sections.
 
-### References
+#### Fundamentals
 
-References are an overarching topic with a list of references of how to do
-things under that topic. The general structure is the following:
+These are the core concepts which underpin Arweave and the Permaweb.
 
-```
-Code Reference Title
+#### Guides
 
-Short Summary
+These are structured guides for building on the Permaweb, which assume
+no prior knowledge of Arweave or AO.
 
-Code Snippet
-```
+#### Tooling
 
-### Guides
+These are specific examples on how to use different tools to accomplish tasks on
+the Permaweb, such as deployment, uploading data, etc. You can think of them as
+smaller recipes compared to guides.
 
-Guides are longer form informational documentation on various topics.
-The general structure for writing a guide is the following:
+#### References
 
-```
-Brief Summary/TLDR
+References contain definitions and documentation for the Permaweb.
 
-Fact Sheet
+### Building the Permaweb Cookbook
 
-Deep Dive
+You need to have Node v16 installed. You can get the latest version at https://nodejs.org.
 
-Other Resources
-```
-
-### Building
-
-You need to have node v16 installed - https://nodejs.org
+From the root directory, run:
 
 ```sh
-cd docs
 yarn
 yarn dev
 ```
 
+which will install all relevant dependencies and start the local development server.
+
 ### Translation
 
-Learn more about translating the cookbook [here](./docs/languages/README.md)
+Learn more about translating the cookbook [here](./languages/README.md).
 
-### Audit 
+### Audit
 
 If you find a tool or guide out of date, please create an issue on the project board so that it can be removed or updated.
 
@@ -85,11 +80,10 @@ or create an issue and assign it to yourself.
 
 Happy Cooking!
 
-## Deploy Instructions
+### Deploy Instructions
 
 ```sh
 touch wallet.json
 # add wallet info
-cd docs
 yarn deploy
 ```
