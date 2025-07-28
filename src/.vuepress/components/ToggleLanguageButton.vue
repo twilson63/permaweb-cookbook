@@ -1,10 +1,15 @@
 <script setup>
-import { ref, watch } from "vue";
-import { useRoute } from 'vue-router'
-import { getLanguagePath, getCurrentLanguage, languages, useI18NStr } from '../composables/useI18N';
-import { useThemeLocaleData } from "@vuepress/theme-default/lib/client/composables/index.js";
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import {
+  getLanguagePath,
+  getCurrentLanguage,
+  languages,
+  useI18NStr
+} from '../composables/useI18N';
+import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js';
 
-defineEmits(["toggle"]);
+defineEmits(['toggle']);
 
 const route = useRoute();
 const themeLocale = useThemeLocaleData();
@@ -12,26 +17,30 @@ const get_i18n_str = useI18NStr();
 
 const isDropdownOpen = ref(false);
 const linkItems = ref({
-  English: "/",
-  Español: "/es/"
+  English: '/',
+  Español: '/es/'
 });
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
 
-watch(() => route.path, (path) => {
-  // update RouterLink destination after path change
-  const links = {};
-  for (let lang in languages) {
-    const newPath = getLanguagePath(path, lang, getCurrentLanguage(path));
-    links[lang] = newPath;
-  }
-  linkItems.value = links;
+watch(
+  () => route.path,
+  (path) => {
+    // update RouterLink destination after path change
+    const links = {};
+    for (let lang in languages) {
+      const newPath = getLanguagePath(path, lang, getCurrentLanguage(path));
+      links[lang] = newPath;
+    }
+    linkItems.value = links;
 
-  // collapse dropdown after path change
-  isDropdownOpen.value = false;
-}, { immediate: true });
+    // collapse dropdown after path change
+    isDropdownOpen.value = false;
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -43,13 +52,14 @@ watch(() => route.path, (path) => {
       tabindex="0"
       @click="toggleDropdown"
     >
-      {{ get_i18n_str("language", "Language") }}
+      {{ get_i18n_str('language', 'Language') }}
     </div>
     <ul v-if="isDropdownOpen" class="language-dropdown">
       <RouterLink
         v-for="lang in Object.keys(languages)"
         :key="lang"
-        :to="linkItems[lang]">
+        :to="linkItems[lang]"
+      >
         {{ lang }}
       </RouterLink>
     </ul>

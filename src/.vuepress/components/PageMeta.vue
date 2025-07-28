@@ -1,28 +1,28 @@
 <script setup lang="ts">
 import { usePageData, usePageFrontmatter } from '@vuepress/client';
 
-import { computed, ref } from 'vue'
-import type { ComputedRef } from 'vue'
+import { computed, ref } from 'vue';
+import type { ComputedRef } from 'vue';
 import type {
   DefaultThemeNormalPageFrontmatter,
   DefaultThemePageData,
-  NavLink,
-} from '@vuepress/theme-default/lib/shared/index.js'
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js'
-import { resolveEditLink } from '@vuepress/theme-default/lib/client/utils/index.js'
+  NavLink
+} from '@vuepress/theme-default/lib/shared/index.js';
+import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js';
+import { resolveEditLink } from '@vuepress/theme-default/lib/client/utils/index.js';
 
-import { useI18NStr } from "../composables/useI18N";
+import { useI18NStr } from '../composables/useI18N';
 
 const useEditNavLink = (): ComputedRef<null | NavLink> => {
-  const themeLocale = useThemeLocaleData()
-  const page = usePageData<DefaultThemePageData>()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const themeLocale = useThemeLocaleData();
+  const page = usePageData<DefaultThemePageData>();
+  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const showEditLink =
-      frontmatter.value.editLink ?? themeLocale.value.editLink ?? true
+      frontmatter.value.editLink ?? themeLocale.value.editLink ?? true;
     if (!showEditLink) {
-      return null
+      return null;
     }
 
     const {
@@ -30,10 +30,10 @@ const useEditNavLink = (): ComputedRef<null | NavLink> => {
       docsRepo = repo,
       docsBranch = 'main',
       docsDir = '',
-      editLinkText,
-    } = themeLocale.value
+      editLinkText
+    } = themeLocale.value;
 
-    if (!docsRepo) return null
+    if (!docsRepo) return null;
 
     const editLink = resolveEditLink({
       docsRepo,
@@ -41,47 +41,47 @@ const useEditNavLink = (): ComputedRef<null | NavLink> => {
       docsDir,
       filePathRelative: page.value.filePathRelative,
       editLinkPattern:
-        frontmatter.value.editLinkPattern ?? themeLocale.value.editLinkPattern,
-    })
+        frontmatter.value.editLinkPattern ?? themeLocale.value.editLinkPattern
+    });
 
-    if (!editLink) return null
+    if (!editLink) return null;
 
     return {
       text: editLinkText ?? 'Edit page',
-      link: editLink,
-    }
-  })
-}
+      link: editLink
+    };
+  });
+};
 
 const useLastUpdated = (): ComputedRef<null | string> => {
-  const themeLocale = useThemeLocaleData()
-  const page = usePageData<DefaultThemePageData>()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const themeLocale = useThemeLocaleData();
+  const page = usePageData<DefaultThemePageData>();
+  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const showLastUpdated =
-      frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true
+      frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true;
 
-    if (!showLastUpdated) return null
+    if (!showLastUpdated) return null;
 
-    if (!page.value.git?.updatedTime) return null
+    if (!page.value.git?.updatedTime) return null;
 
-    const updatedDate = new Date(page.value.git?.updatedTime)
+    const updatedDate = new Date(page.value.git?.updatedTime);
 
-    return updatedDate.toLocaleString()
-  })
-}
+    return updatedDate.toLocaleString();
+  });
+};
 
 const useContributors = () => {
-  const themeLocale = useThemeLocaleData()
-  const page = usePageData<DefaultThemePageData>()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const themeLocale = useThemeLocaleData();
+  const page = usePageData<DefaultThemePageData>();
+  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const showContributors =
-      frontmatter.value.contributors ?? themeLocale.value.contributors ?? true
+      frontmatter.value.contributors ?? themeLocale.value.contributors ?? true;
 
-    if (!showContributors) return null
+    if (!showContributors) return null;
 
     const contributors = page.value.git?.contributors ?? [];
     return contributors;
@@ -95,25 +95,29 @@ const useContributors = () => {
     //     ...githubContributor,
     //   };
     // });
-  })
-}
+  });
+};
 
 const get_i18n_str = useI18NStr();
-const themeLocale = useThemeLocaleData()
-const editNavLink = useEditNavLink()
-const lastUpdated = useLastUpdated()
-const contributors = useContributors()
+const themeLocale = useThemeLocaleData();
+const editNavLink = useEditNavLink();
+const lastUpdated = useLastUpdated();
+const contributors = useContributors();
 </script>
 
 <template>
   <footer class="page-meta">
     <div class="meta-item-container">
       <div class="meta-item contributors">
-        <span class="meta-item-label">{{ get_i18n_str("contributors", "Contributors") }}: </span>
+        <span class="meta-item-label"
+          >{{ get_i18n_str('contributors', 'Contributors') }}:
+        </span>
         <span class="meta-item-info">
           <template
             v-if="contributors && contributors.length"
-            v-for="(contributor, index) in contributors" :key="index">
+            v-for="(contributor, index) in contributors"
+            :key="index"
+          >
             <span class="contributor" :title="`email: ${contributor.email}`">
               {{ contributor.name }}
             </span>
@@ -123,7 +127,9 @@ const contributors = useContributors()
       </div>
 
       <div class="meta-item last-updated">
-        <span class="meta-item-label">{{ get_i18n_str("last-updated", "Last Updated") }}: </span>
+        <span class="meta-item-label"
+          >{{ get_i18n_str('last-updated', 'Last Updated') }}:
+        </span>
         <ClientOnly v-if="lastUpdated">
           <span class="meta-item-info">{{ lastUpdated }}</span>
         </ClientOnly>
@@ -132,8 +138,33 @@ const contributors = useContributors()
 
     <div v-if="editNavLink">
       <a :href="editNavLink.link" target="_blank" class="edit-link">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Edit / Edit_Pencil_01"> <path class="text-stroke" id="Vector" d="M12 8.00012L4 16.0001V20.0001L8 20.0001L16 12.0001M12 8.00012L14.8686 5.13146L14.8704 5.12976C15.2652 4.73488 15.463 4.53709 15.691 4.46301C15.8919 4.39775 16.1082 4.39775 16.3091 4.46301C16.5369 4.53704 16.7345 4.7346 17.1288 5.12892L18.8686 6.86872C19.2646 7.26474 19.4627 7.46284 19.5369 7.69117C19.6022 7.89201 19.6021 8.10835 19.5369 8.3092C19.4628 8.53736 19.265 8.73516 18.8695 9.13061L18.8686 9.13146L16 12.0001M12 8.00012L16 12.0001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
-        {{ get_i18n_str("edit", "Edit") }}
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <g id="Edit / Edit_Pencil_01">
+              <path
+                class="text-stroke"
+                id="Vector"
+                d="M12 8.00012L4 16.0001V20.0001L8 20.0001L16 12.0001M12 8.00012L14.8686 5.13146L14.8704 5.12976C15.2652 4.73488 15.463 4.53709 15.691 4.46301C15.8919 4.39775 16.1082 4.39775 16.3091 4.46301C16.5369 4.53704 16.7345 4.7346 17.1288 5.12892L18.8686 6.86872C19.2646 7.26474 19.4627 7.46284 19.5369 7.69117C19.6022 7.89201 19.6021 8.10835 19.5369 8.3092C19.4628 8.53736 19.265 8.73516 18.8695 9.13061L18.8686 9.13146L16 12.0001M12 8.00012L16 12.0001"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </g>
+        </svg>
+        {{ get_i18n_str('edit', 'Edit') }}
       </a>
     </div>
   </footer>

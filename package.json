@@ -27,24 +27,27 @@
 	"devDependencies": {
 		"@bundlr-network/client": "^0.9.11",
 		"@snippetors/vuepress-plugin-code-copy": "^1.2.3",
-		"@vuepress/plugin-container": "2.0.0-beta.61",
+		"@vuepress/plugin-container": "^2.0.0-beta.61",
 		"@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
-		"@vuepress/plugin-search": "2.0.0-beta.61",
+		"@vuepress/plugin-search": "^2.0.0-beta.61",
 		"arweave": "^1.11.8",
 		"htmlhint": "^1.6.3",
 		"markdown-link-check": "^3.13.7",
 		"prettier": "^2.8.4",
-		"vuepress": "2.0.0-beta.61",
+		"vuepress": "^2.0.0-beta.61",
 		"warp-contracts": "^1.2.37"
 	},
 	"dependencies": {
 		"@octokit/core": "^4.2.1",
-		"@vuepress/plugin-container": "2.0.0-beta.61",
+		"@vuepress/bundler-vite": "^2.0.0-beta.61",
+		"@vuepress/plugin-git": "^2.0.0-rc.112",
 		"@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
+		"@vuepress/theme-default": "^2.0.0-beta.61",
 		"add-to-calendar-button": "^2.2.5",
 		"bootstrap": "5.2.3",
 		"dotenv": "^16.1.4",
 		"openai": "^3.2.1",
+		"sass-embedded": "^1.89.2",
 		"vuepress-plugin-md-enhance": "^1.30.0"
 	}
 }

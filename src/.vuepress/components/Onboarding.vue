@@ -1,8 +1,8 @@
 <script setup>
-import I18NRouterLink from "./I18NRouterLink.vue";
-import FeaturedContributors from "./FeaturedContributors.vue";
-import { usePageFrontmatter } from "@vuepress/client";
-import { get_i18n_str } from "../composables/useI18N";
+import I18NRouterLink from './I18NRouterLink.vue';
+import FeaturedContributors from './FeaturedContributors.vue';
+import { usePageFrontmatter } from '@vuepress/client';
+import { get_i18n_str } from '../composables/useI18N';
 
 const frontmatter = usePageFrontmatter();
 </script>
@@ -12,17 +12,29 @@ const frontmatter = usePageFrontmatter();
       <div class="col-12 col-md-6 col-lg-5 order-2 order-md-1">
         <div class="hero-text">
           <h1 class="hero-title">
-            {{ get_i18n_str(frontmatter.locale, "onboarding-title", "Build on the Permaweb.") }}
+            {{
+              get_i18n_str(
+                frontmatter.locale,
+                'onboarding-title',
+                'Build on the Permaweb.'
+              )
+            }}
           </h1>
           <p class="hero-body-text">
-            {{ get_i18n_str(frontmatter.locale, "onboarding-desc", "A curated collection of developer guides & more to build on the Permaweb. All in one place.") }}
+            {{
+              get_i18n_str(
+                frontmatter.locale,
+                'onboarding-desc',
+                'A curated collection of developer guides & more to build on the Permaweb. All in one place.'
+              )
+            }}
           </p>
           <I18NRouterLink
             style="color: var(--c-accent-rose)"
             class="hero-body-text"
             to="/getting-started/index.html"
           >
-            {{ get_i18n_str(frontmatter.locale, "get-started", "Get Started") }}
+            {{ get_i18n_str(frontmatter.locale, 'get-started', 'Get Started') }}
           </I18NRouterLink>
         </div>
 
@@ -56,7 +68,7 @@ const frontmatter = usePageFrontmatter();
     <div class="row cards">
       <div class="col-12">
         <h2 class="header">
-          {{ get_i18n_str(frontmatter.locale, "first-time", "First Time?") }}
+          {{ get_i18n_str(frontmatter.locale, 'first-time', 'First Time?') }}
         </h2>
       </div>
 
@@ -160,20 +172,21 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{ get_i18n_str(frontmatter.locale, "hello-world", "Hello World") }}
+              {{
+                get_i18n_str(frontmatter.locale, 'hello-world', 'Hello World')
+              }}
             </h2>
             <p class="body-text">
-              {{ get_i18n_str(frontmatter.locale, "hello-world-card-desc") }}
+              {{ get_i18n_str(frontmatter.locale, 'hello-world-card-desc') }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-violet)"
             class="body-text card-action"
-            >
-            {{ get_i18n_str(frontmatter.locale, "hello-world-card-action") }}
-            </span
           >
+            {{ get_i18n_str(frontmatter.locale, 'hello-world-card-action') }}
+          </span>
         </I18NRouterLink>
       </div>
 
@@ -278,17 +291,19 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{ get_i18n_str(frontmatter.locale, "core-concepts") }}
+              {{ get_i18n_str(frontmatter.locale, 'core-concepts') }}
             </h2>
             <p class="body-text">
-              {{ get_i18n_str(frontmatter.locale, "core-concepts-card-desc") }}
+              {{ get_i18n_str(frontmatter.locale, 'core-concepts-card-desc') }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-sunny)"
             class="body-text card-action"
-            >{{ get_i18n_str(frontmatter.locale, "core-concepts-card-action") }}</span
+            >{{
+              get_i18n_str(frontmatter.locale, 'core-concepts-card-action')
+            }}</span
           >
         </I18NRouterLink>
       </div>
@@ -415,17 +430,17 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{ get_i18n_str(frontmatter.locale, "guides", "Guides") }}
+              {{ get_i18n_str(frontmatter.locale, 'guides', 'Guides') }}
             </h2>
             <p class="body-text">
-              {{ get_i18n_str(frontmatter.locale, "guides-card-desc") }}
+              {{ get_i18n_str(frontmatter.locale, 'guides-card-desc') }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-rose)"
             class="body-text card-action"
-            >{{ get_i18n_str(frontmatter.locale, "guides-card-action") }}</span
+            >{{ get_i18n_str(frontmatter.locale, 'guides-card-action') }}</span
           >
         </I18NRouterLink>
       </div>
@@ -550,17 +565,19 @@ const frontmatter = usePageFrontmatter();
             </div>
 
             <h2 class="title">
-              {{ get_i18n_str(frontmatter.locale, "contribute", "Contribute") }}
+              {{ get_i18n_str(frontmatter.locale, 'contribute', 'Contribute') }}
             </h2>
             <p class="body-text">
-              {{ get_i18n_str(frontmatter.locale, "contribute-card-desc") }}
+              {{ get_i18n_str(frontmatter.locale, 'contribute-card-desc') }}
             </p>
           </div>
 
           <span
             style="color: var(--c-accent-pinky)"
             class="body-text card-action"
-            >{{ get_i18n_str(frontmatter.locale, "contribute-card-action") }}</span
+            >{{
+              get_i18n_str(frontmatter.locale, 'contribute-card-action')
+            }}</span
           >
         </a>
       </div>
@@ -569,7 +586,7 @@ const frontmatter = usePageFrontmatter();
 </template>
 
 <style lang="scss">
-@import "../styles/bootstrap.scss";
+@import '../styles/bootstrap.scss';
 
 .onboarding {
   padding: 100px 0 60px;
@@ -606,7 +623,7 @@ const frontmatter = usePageFrontmatter();
 
     padding: 20px;
     margin-bottom: 30px;
-    
+
     .illustration {
       margin: 0 auto;
 
@@ -615,7 +632,7 @@ const frontmatter = usePageFrontmatter();
       aspect-ratio: 392 / 323;
 
       background: white;
-      mask: url("/cookbook.svg") no-repeat center;
+      mask: url('/cookbook.svg') no-repeat center;
       mask-size: contain;
 
       animation: gradientAnimation 20s infinite linear;
@@ -677,8 +694,11 @@ const frontmatter = usePageFrontmatter();
 
     background: var(--c-card-bg);
     border: 1px solid var(--c-card-border-color);
-    box-shadow: var(--c-card-shadow-inset), 0 14px 66px rgb(0 0 0 / 7%),
-      0 10px 17px rgb(0 0 0 / 3%), 0 4px 7px rgb(0 0 0 / 5%);
+    box-shadow:
+      var(--c-card-shadow-inset),
+      0 14px 66px rgb(0 0 0 / 7%),
+      0 10px 17px rgb(0 0 0 / 3%),
+      0 4px 7px rgb(0 0 0 / 5%);
     border-radius: 8px;
 
     padding: 36px 24px 24px;

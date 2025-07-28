@@ -1,6 +1,6 @@
 <script setup>
-import { ref, watch, defineProps } from "vue";
-import { useRoute } from 'vue-router'
+import { ref, watch, defineProps } from 'vue';
+import { useRoute } from 'vue-router';
 import { getCurrentLanguage, getLanguagePath } from '../composables/useI18N';
 
 const { to } = defineProps({
@@ -10,11 +10,15 @@ const { to } = defineProps({
 const route = useRoute();
 const updatedTo = ref(to);
 
-watch(() => route.path, (path) => {
-  if (!to) return;
+watch(
+  () => route.path,
+  (path) => {
+    if (!to) return;
 
-  updatedTo.value = getLanguagePath(to, getCurrentLanguage(path));
-}, { immediate: true });
+    updatedTo.value = getLanguagePath(to, getCurrentLanguage(path));
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
