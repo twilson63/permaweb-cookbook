@@ -30,7 +30,7 @@ For the above reasons, developers tend to configure `arweave-js` to point to a g
 
 Gateways sit between clients and Arweave's network of peers. One of the primary functions of the gateway is to index transactions and optimistically cache the data posted to the network while waiting for it to be included in a block. This makes the transaction queryable in a "Pending" state almost instantly which allows applications built on top of a gateway to be more responsive. There is still a risk of transactions dropping out of the optimistic cache if they are not mined in a block by the peers.
 
-An example of how to post a direct transaction using `arweave-js` can be found [in this guide](../guides/posting-transactions/arweave-js.md).
+An example of how to post a direct transaction using `arweave-js` can be found [in this guide](./arweave-js.md).
 
 ## Bundled Transactions
 
@@ -40,10 +40,10 @@ Services built on top of Arweave that provide additional utility for Permaweb bu
 
 Another way to post bundled transactions is from the browser. While browsers enforce some constraints around the size of data that can be uploaded, browser based wallets are able to post transactions to bundlers. Arweave browser wallets implement a `dispatch()` API method. If you are posting small transactions (100KB or less) you can use the wallets `dispatch()` method to take advantage of bundled transactions.
 
-An example of how to post a 100KB or less bundled transaction with an Arweave wallets `dispatch()` method can be found [in this guide](../guides/posting-transactions/dispatch.md).
+An example of how to post a 100KB or less bundled transaction with an Arweave wallets `dispatch()` method can be found [in this guide](./dispatch.md).
 
 ## Resources
 
--   [arweave-js](../guides/posting-transactions/arweave-js.md) example
--   [dispatch](../guides/posting-transactions/dispatch.md) example
--   [Turbo SDK](../guides/posting-transactions/turbo.md) example
+-   [arweave-js](./arweave-js.md) example
+-   [dispatch](./dispatch.md) example
+-   [Turbo SDK](./turbo.md) example

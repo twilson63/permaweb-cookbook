@@ -4,9 +4,9 @@ This guide will walk you through in a step by step flow to configure your develo
 
 ## Prerequisites
 
--   Basic Typescript Knowledge (Not Mandatory) - [https://www.typescriptlang.org/docs/](Learn Typescript)
--   NodeJS v16.15.0 or greater - [https://nodejs.org/en/download/](Download NodeJS)
--   Knowledge of ReactJS - [https://reactjs.org/](Learn ReactJS)
+-   Basic Typescript Knowledge (Not Mandatory): [Learn Typescript](https://www.typescriptlang.org/docs/)
+-   NodeJS v16.15.0 or greater: [Download NodeJS](https://nodejs.org/en/download/)
+-   Knowledge of ReactJS: [Learn ReactJS](https://reactjs.org/)
 -   Know git and common terminal commands
 
 ## Development Dependencies

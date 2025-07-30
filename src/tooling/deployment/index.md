@@ -51,6 +51,6 @@ Before deploying, ensure you have:
 ## Next Steps
 
 1. **Get Started**: [Permaweb Deploy](permaweb-deploy.md)
-2. **Learn ArNS**: [ArNS Names](/concepts/arns)
-3. **Understand Manifests**: [Manifests & Path Resolution](/concepts/manifests)
+2. **Learn ArNS**: [ArNS Names](../../fundamentals/accessing-arweave-data/arns.md)
+3. **Understand Manifests**: [Manifests & Path Resolution](../../fundamentals/accessing-arweave-data/manifests.md)
 4. **Explore Turbo**: [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html)

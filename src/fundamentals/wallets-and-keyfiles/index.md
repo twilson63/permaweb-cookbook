@@ -4,7 +4,7 @@ Arweave wallets serve as the gateway to interact with the Arweave blockchain net
 
 ## What is an Arweave wallet?
 
-A wallet on Arweave is a cryptographic tool that secures your unique blockchain address. This address tracks your $AR token balance and enables network interactions such as sending transactions or working with [AO Processes](https://ao.arweave.net).
+A wallet on Arweave is a cryptographic tool that secures your unique blockchain address. This address tracks your $AR token balance and enables network interactions such as sending transactions or working with [AO Processes](https://cookbook_ao.ar.io).
 
 It's important to understand that wallets don't actually "hold" tokens. Instead, they store the cryptographic public-private key pair that allows you to sign transactions and manage your on-chain assets. Token balances exist on the blockchain itself, linked to your wallet's address.
 

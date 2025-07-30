@@ -1,5 +1,5 @@
 # Querying Arweave with GraphQL
-Arweave provides a simple way of querying for transactions and filtering them by [tags](../concepts/tags.md). Arweave GraphQL-compatible indexing services provide endpoints users can post GraphQL queries to, and also provide a playground for trying queries.
+Arweave provides a simple way of querying for transactions and filtering them by tags. Arweave GraphQL-compatible indexing services provide endpoints users can post GraphQL queries to, and also provide a playground for trying queries.
 
 [GraphQL](https://graphql.org) is a flexible query language that services can use to build a customized data schema for clients to query. GraphQL also allows clients to specify which elements of the available data structure they would like to see in the results.
 
@@ -173,8 +173,6 @@ query {
 
 
 ## Resources
-* [Arweave GQL Reference](../../references/gql.md)
-* [ArDB package](./ardb.md)
-* [ar-gql package](./ar-gql.md)
-* [Search Indexing Service](./search-indexing-service.md)
+* [ar-gql package](./graphql/ar-gql.md)
+* [Search Indexing Service](./graphql/search-indexing-service.md)
 
