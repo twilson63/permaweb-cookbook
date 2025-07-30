@@ -8,7 +8,7 @@ timeEstimate: "25 minutes"
 
 # What are AO Processes
 
-AO processes are autonomous compute units that run on the Arweave network, enabling decentralized applications to execute complex logic permanently and trustlessly. Think of them as serverless functions that never go down and can maintain state across invocations.
+[AO processes](https://cookbook_ao.arweave.net/welcome/ao-processes.html) are autonomous compute units that run on the Arweave network, enabling decentralized applications to execute complex logic permanently and trustlessly. Think of them as serverless functions that never go down and can maintain state across invocations.
 
 ## Core Architecture
 
@@ -627,14 +627,11 @@ Handlers.add(
 
 Now that you understand AO processes fundamentals:
 
-1. **Learn process communication** - [Process Communication](/fundamentals/decentralized-computing/ao-processes/process-communication)
-2. **Master state management** - [State Management](/fundamentals/decentralized-computing/ao-processes/state-management)  
-3. **Explore HyperBEAM** - [HyperBEAM Introduction](/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction)
-4. **Build your first process** - [Builder's Journey](/guides/builder-journey/)
+1. **Master state management** - [State Management](./state-management.md)  
+2. **Explore HyperBEAM** - [HyperBEAM Introduction](../hyperbeam/hyperbeam-introduction.md)
 
 ## Resources
 
-- **AO Documentation**: [Official AO Docs](https://ao.arweave.net)
-- **AOS (AO Studio)**: [Development Environment](https://github.com/permaweb/aos)
+- **AO Documentation**: [Official AO Docs](https://cookbook_ao.arweave.net)
+- **AOS (AO CLI)**: [Development Environment](https://github.com/permaweb/aos)
 - **Code Examples**: [AO Cookbook Repository](https://github.com/permaweb/ao-cookbook)
-- **Community**: [AO Discord Channel](https://discord.gg/arweave)

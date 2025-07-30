@@ -95,5 +95,4 @@ All these access methods are provided by Arweave gateways. Gateways can be:
 
 ## Additional Resources
 
-- [Querying Arweave Guide](../../guides/querying-arweave/querying-arweave.md)
-- [GraphQL Reference](../../references/gql.md)
+- [Querying Arweave Guide](../../tooling/querying-arweave.md)

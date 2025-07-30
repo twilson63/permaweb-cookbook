@@ -100,24 +100,21 @@ HyperBEAM's device architecture allows different computational engines (Lua, Web
 ### 1. Start with AO Processes
 Understand the fundamental building blocks of decentralized computing:
 
-- **[What are AO Processes](/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes)** - Learn the core concepts and architecture
-- **[Process Communication](/fundamentals/decentralized-computing/ao-processes/process-communication)** - Master message passing and inter-process communication
-- **[State Management](/fundamentals/decentralized-computing/ao-processes/state-management)** - Understand persistent state and data consistency
+- **[What are AO Processes](./ao-processes/what-are-ao-processes.md)** - Learn the core concepts and architecture
+- **[State Management](./ao-processes/state-management.md)** - Understand persistent state and data consistency
 
 ### 2. Explore HyperBEAM
 Learn how to interact with and leverage the AO Computer:
 
-- **[HyperBEAM Introduction](/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction)** - Understand the HTTP gateway to AO
-- **[Querying AO Process State](/concepts/decentralized-computing/hyperbeam/querying-ao-state)** - Master the HTTP API for data access
-- **[Lua Serverless Functions](/concepts/decentralized-computing/hyperbeam/lua-serverless)** - Build serverless functions with permanent availability
-- **[HyperBEAM Devices](/concepts/decentralized-computing/hyperbeam/hyperbeam-devices)** - Understand the modular device architecture
+- **[HyperBEAM Introduction](./hyperbeam/hyperbeam-introduction.md)** - Understand the HTTP gateway to AO
+- **[Querying AO Process State](./hyperbeam/getting-ao-state.md)** - Master the HTTP API for data access
+- **[Lua Serverless Functions](./hyperbeam/lua-serverless.md)** - Build serverless functions with permanent availability
+- **[HyperBEAM Devices](./hyperbeam/hyperbeam-devices.md)** - Understand the modular device architecture
 
 ### 3. Build Applications
 Apply your knowledge to real-world projects:
 
-- **[Builder's Journey](/guides/builder-journey/)** - End-to-end development workflow
-- **[Zero-deployed Full Stack App](/getting-started/zero-to-deploy)** - Quick start guide
-- **[Advanced Patterns](/guides/advanced-patterns/)** - Sophisticated application architectures
+- **[Zero-deployed Full Stack App](../../getting-started/zero-to-deploy.md)** - Quick start guide
 
 ## Use Cases
 
@@ -173,9 +170,9 @@ Apply your knowledge to real-world projects:
 - Programming experience (JavaScript/Lua preferred)
 
 ### Quick Start
-1. **Deploy your first process** - [Zero-deployed App Guide](/getting-started/zero-to-deploy)
-2. **Query process state** - [HyperBEAM Querying](/concepts/decentralized-computing/hyperbeam/querying-ao-state)
-3. **Build serverless functions** - [Lua Functions Guide](/concepts/decentralized-computing/hyperbeam/lua-serverless)
+1. **Deploy your first process** - [Zero-deployed App Guide](../../getting-started/zero-to-deploy.md)
+2. **Query process state** - [HyperBEAM Querying](./hyperbeam/getting-ao-state.md)
+3. **Build serverless functions** - [Lua Functions Guide](./hyperbeam/lua-serverless.md)
 
 ### Development Tools
 - **AOS** - AO Studio development environment
@@ -223,4 +220,4 @@ Decentralized computing enables:
 
 ---
 
-**Ready to build?** Start with [What are AO Processes](/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes) to understand the fundamentals, then move to [HyperBEAM Introduction](/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction) to learn how to interact with the AO Computer.
+**Ready to build?** Start with [What are AO Processes](./ao-processes/what-are-ao-processes.md) to understand the fundamentals, then move to [HyperBEAM Introduction](./hyperbeam/hyperbeam-introduction.md) to learn how to interact with the AO Computer.

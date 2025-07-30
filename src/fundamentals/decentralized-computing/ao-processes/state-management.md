@@ -1096,8 +1096,8 @@ Users[address] = {
 
 Master advanced AO concepts:
 
-1. **HyperBEAM Integration** - [HyperBEAM Introduction](/concepts/decentralized-computing/hyperbeam/hyperbeam-introduction)
-2. **Lua Serverless Functions** - [Lua Serverless](/concepts/decentralized-computing/hyperbeam/lua-serverless)
+1. **HyperBEAM Integration** - [HyperBEAM Introduction](../hyperbeam/hyperbeam-introduction.md)
+2. **Lua Serverless Functions** - [Lua Serverless](../hyperbeam/lua-serverless.md)
 3. **Production Patterns** - [Builder's Journey](/guides/builder-journey/)
 4. **Performance Optimization** - [Advanced Optimization](/guides/performance-optimization/)
 

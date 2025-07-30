@@ -81,7 +81,31 @@ const getI18NSidebar = (langCode) => [
             link: get_i18n_link(
               langCode,
               '/fundamentals/transactions/post-transactions.html'
-            )
+            ),
+            collapsible: true,
+            children: [
+              {
+                text: 'arweave-js',
+                link: get_i18n_link(
+                  langCode,
+                  '/fundamentals/transactions/arweave-js.html'
+                )
+              },
+              {
+                text: 'dispatch',
+                link: get_i18n_link(
+                  langCode,
+                  '/fundamentals/transactions/dispatch.html'
+                )
+              },
+              {
+                text: 'Turbo SDK',
+                link: get_i18n_link(
+                  langCode,
+                  '/fundamentals/transactions/turbo.html'
+                )
+              }
+            ]
           },
           {
             text: get_i18n_str(langCode, 'concepts-tags'),

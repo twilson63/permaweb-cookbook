@@ -379,9 +379,9 @@ As more nodes join the HyperBEAM network:
 
 Explore HyperBEAM's capabilities in detail:
 
-1. **Learn Querying**: [Querying AO Process State](/concepts/decentralized-computing/hyperbeam/querying-ao-state)
-2. **Build Serverless Functions**: [Lua Serverless Functions](/concepts/decentralized-computing/hyperbeam/lua-serverless)  
-3. **Understand Devices**: [HyperBEAM Devices](/concepts/decentralized-computing/hyperbeam/hyperbeam-devices)
+1. **Learn Querying**: [Querying AO Process State](../hyperbeam/getting-ao-state.md)
+2. **Build Serverless Functions**: [Lua Serverless Functions](../hyperbeam/lua-serverless.md)  
+3. **Understand Devices**: [HyperBEAM Devices](../hyperbeam/hyperbeam-devices.md)
 4. **Start Building**: [Builder's Journey](/guides/builder-journey/)
 
 ## Resources
