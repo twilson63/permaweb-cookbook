@@ -10,22 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: ⎔ Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 20.x
       - name: 📥 Download deps
-        run: |
-          cd docs
-          yarn
+        run: npm ci
       - name: 🛠 Build Docs
         id: build_artifacts
         run: |
-          cd docs
-          yarn build
+          npm run build
 
           echo "artifacts_output_dir=src/.vuepress/dist" >> $GITHUB_OUTPUT
         env:
@@ -34,7 +31,6 @@ jobs:
       - name: 💾 Publish to Arweave
         id: publish_artifacts
         run: |
-          cd docs
           npx permaweb-deploy \
             --ant-process=${ANT_PROCESS} \
             --undername=${UNDERNAME} \

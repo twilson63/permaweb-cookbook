@@ -1,0 +1,53 @@
+{
+	"name": "cookbook",
+	"version": "0.0.1",
+	"description": "A collection of little developer guides to build on the permaweb",
+	"main": "index.js",
+	"authors": {
+		"name": "Permaweb Builders",
+		"email": "tom@hyper.io"
+	},
+	"repository": "twilson63/permaweb-cookbook/cookbook",
+	"scripts": {
+		"dev": "vuepress dev src",
+		"build": "vuepress build src",
+		"build:check": "npm run build && npm run check:links",
+		"check:links": "node scripts/check-links.js",
+		"check:links:fast": "node scripts/check-links.js --fast",
+		"check:links:internal": "node scripts/check-links.js --skip-external",
+		"fix:links": "node scripts/fix-common-links.js",
+		"fix:links:preview": "node scripts/fix-common-links.js --dry-run",
+		"standardize:files": "node scripts/standardize-filenames.js",
+		"standardize:check": "node scripts/standardize-filenames.js --check",
+		"deploy": "npm run build:check && node deploy.mjs",
+		"fmt": "prettier --single-quote --trailing-comma none --write src/.vuepress",
+		"lint": "prettier --single-quote --trailing-comma none --check src/.vuepress"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@bundlr-network/client": "^0.9.11",
+		"@snippetors/vuepress-plugin-code-copy": "^1.2.3",
+		"@vuepress/plugin-container": "^2.0.0-beta.61",
+		"@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
+		"@vuepress/plugin-search": "^2.0.0-beta.61",
+		"arweave": "^1.11.8",
+		"htmlhint": "^1.6.3",
+		"markdown-link-check": "^3.13.7",
+		"prettier": "^2.8.4",
+		"vuepress": "^2.0.0-beta.61",
+		"warp-contracts": "^1.2.37"
+	},
+	"dependencies": {
+		"@octokit/core": "^4.2.1",
+		"@vuepress/bundler-vite": "^2.0.0-beta.61",
+		"@vuepress/plugin-git": "2.0.0-beta.61",
+		"@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
+		"@vuepress/theme-default": "^2.0.0-beta.61",
+		"add-to-calendar-button": "^2.2.5",
+		"bootstrap": "5.2.3",
+		"dotenv": "^16.1.4",
+		"openai": "^3.2.1",
+		"sass-embedded": "^1.89.2",
+		"vuepress-plugin-md-enhance": "^1.30.0"
+	}
+}
