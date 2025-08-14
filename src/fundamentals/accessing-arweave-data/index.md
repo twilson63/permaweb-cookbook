@@ -13,19 +13,19 @@ All data on Arweave is accessible through **gateways** - HTTP endpoints that ser
 
 ## Access Methods
 
-### 1. HTTP API
-The simplest way to access Arweave data is through direct HTTP requests using a transaction ID:
+### 1. Data Retrieval Methods
+Once you have a transaction ID, there are several ways to fetch the actual data:
 
-```
-https://arweave.net/{transaction-id}
-```
+- **HTTP API** - Simple HTTP requests for basic data retrieval
+- **Arweave.js SDK** - Full-featured JavaScript/TypeScript SDK
+- **ARIO Wayfinder** - Intelligent gateway routing with verification
 
-This method is ideal for:
+This is ideal for:
 - Retrieving known data by ID
-- Simple integrations
-- Direct data access without queries
+- Building applications that need to fetch data
+- Choosing the right method for your use case
 
-[Learn more about Gateways & Access →](./gateways.md)
+[Learn more about Data Retrieval Methods →](./data-retrieval.md)
 
 ### 2. GraphQL Queries
 For more complex data discovery and filtering, Arweave gateways provide GraphQL endpoints that enable sophisticated queries based on:
@@ -73,7 +73,7 @@ ArNS is perfect for:
 
 | Method | Best For | Example Use Case |
 |--------|----------|------------------|
-| **HTTP API** | Direct access by ID | Loading a specific image or file |
+| **Data Retrieval** | Fetching data by ID | Loading content, building apps |
 | **GraphQL** | Data discovery and filtering | Finding all transactions with specific tags |
 | **Manifests** | Multi-file collections | Hosting a website or application |
 | **ArNS** | Human-readable addressing | Creating a permanent blog or dApp |
@@ -88,6 +88,7 @@ All these access methods are provided by Arweave gateways. Gateways can be:
 
 ## Next Steps
 
+- [Choose your data retrieval method](./data-retrieval.md) for fetching content
 - [Set up gateway access](./gateways.md) for your application
 - [Query data with GraphQL](./graphql.md) to build dynamic applications
 - [Create path manifests](./manifests.md) for organizing content
