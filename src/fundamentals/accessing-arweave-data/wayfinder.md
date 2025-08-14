@@ -129,7 +129,7 @@ import { ARIO } from "@ar.io/sdk";
 const staticGateways = new StaticGatewaysProvider({
   gateways: [
     "https://arweave.net",
-    "https://arweave.world",
+    "https://permagate.io",
     "https://g8way.io",
   ],
 });
