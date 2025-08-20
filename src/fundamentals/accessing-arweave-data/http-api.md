@@ -17,6 +17,11 @@ HTTP API requests are made directly to Arweave gateway endpoints. This method re
 - Simple and straightforward
 - Language agnostic
 
+**Disadvantages:**
+
+- Relies on a single gateway
+- No data verification
+
 **Use cases:**
 
 - Basic data retrieval
