@@ -1,4 +1,5 @@
 # Fetching Transaction Data
+
 While indexing services allow querying of transaction metadata they don't provide access to the transaction data itself. This is because caching transaction data and indexing metadata have different resource requirements. Indexing services primarily rely on compute resources to perform queries on a database while transaction data is better suited to deployment on a Content Delivery Network (CDN) to optimize storage and bandwidth.
 
 A Transaction data caching service is offered by most gateways though a set of HTTP endpoints. Any HTTP client/package can be used to request transaction data from these endpoints. For example Axios or Fetch for JavaScript, Guzzle for PHP, etc.
@@ -10,14 +11,15 @@ If you wanted to bypass a transaction data caching service and get data directly
 Transaction data is stored on Arweave as a contiguous sequence of 256KB chunks, from the very beginning of the network until the current block. This format is optimized to support the SPoRA mining mechanism miners participate in to prove they are storing Arweave data.
 
 ::: info
+
 1. Retrieve a list of peers from a well known peer.
 1. Ask the peer for the chunk offsets which contain your transactions data.
 1. Ask the peer to for the chunks.
-    1. If the peer provides the chunks, combine them back into their original format.
+   1. If the peer provides the chunks, combine them back into their original format.
 1. (If the peer does not have the chunks) walk the peer list asking for the chunks.
 1. For each peer you visit, check their peer list and add peers not already in your list.
 1. Repeat from step 3 until you have all of the chunks.
-:::
+   :::
 
 This is a fairly large amount of work to perform each time you want to retrieve data from the Arweave network. Imagine if you were trying to display a timeline of tweets like [https://public-square.arweave.net](https://public-square.arweave.net) does. The user experience would be terrible with long load times and spinners. Because data on Arweave is permanent, it's safe to cache in its original form to make retrieval of transaction data much quicker and easier.
 
@@ -26,13 +28,16 @@ The following HTTP endpoints are how how to access cached transaction data in th
 <hr />
 
 ### Get cached TX data
+
 This method retrieves the transaction data associated with the specified transaction id (TX_ID) from the cache.
 
 `https://arweave.net/TX_ID`
 
 ```js
-const res = await axios.get(`https://arweave.net/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8`)
-console.log(res)
+const res = await axios.get(
+  `https://arweave.net/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8`
+);
+console.log(res);
 ```
 
 <details>
@@ -40,68 +45,64 @@ console.log(res)
 
 ```json
 {
-    "data": {
-        "ticker": "ANT-PENDING",
-        "name": "pending",
-        "owner": "NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0",
-        "controller": "NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0",
-        "evolve": null,
-        "records": {
-            "@": "As-g0fqvO_ALZpSI8yKfCZaFtnmuwWasY83BQ520Duw"
-        },
-        "balances": {
-            "NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0": 1
-        }
+  "data": {
+    "ticker": "ANT-PENDING",
+    "name": "pending",
+    "owner": "NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0",
+    "controller": "NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0",
+    "evolve": null,
+    "records": {
+      "@": "As-g0fqvO_ALZpSI8yKfCZaFtnmuwWasY83BQ520Duw"
     },
-    "status": 200,
-    "statusText": "",
+    "balances": {
+      "NlNd_PcajvxAkOweo7rZHJKiIJ7vW1WXt9vb6CzGmC0": 1
+    }
+  },
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "cache-control": "public,must-revalidate,max-age=2592000",
+    "content-length": "291",
+    "content-type": "application/json; charset=utf-8"
+  },
+  "config": {
+    "transitional": {
+      "silentJSONParsing": true,
+      "forcedJSONParsing": true,
+      "clarifyTimeoutError": false
+    },
+    "adapter": ["xhr", "http"],
+    "transformRequest": [null],
+    "transformResponse": [null],
+    "timeout": 0,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "env": {},
     "headers": {
-        "cache-control": "public,must-revalidate,max-age=2592000",
-        "content-length": "291",
-        "content-type": "application/json; charset=utf-8"
+      "Accept": "application/json, text/plain, */*"
     },
-    "config": {
-        "transitional": {
-            "silentJSONParsing": true,
-            "forcedJSONParsing": true,
-            "clarifyTimeoutError": false
-        },
-        "adapter": [
-            "xhr",
-            "http"
-        ],
-        "transformRequest": [
-            null
-        ],
-        "transformResponse": [
-            null
-        ],
-        "timeout": 0,
-        "xsrfCookieName": "XSRF-TOKEN",
-        "xsrfHeaderName": "X-XSRF-TOKEN",
-        "maxContentLength": -1,
-        "maxBodyLength": -1,
-        "env": {},
-        "headers": {
-            "Accept": "application/json, text/plain, */*"
-        },
-        "method": "get",
-        "url": "https://arweave.net/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8"
-    },
-    "request": {}
+    "method": "get",
+    "url": "https://arweave.net/sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8"
+  },
+  "request": {}
 }
-
 ```
+
 </details>
 <hr />
 
 ### Get raw transaction
+
 The data for some [transaction types](manifests.md) follows different rules for rendering, this endpoint will return the raw untransformed data.
 `https://arweave.net/raw/TX_ID`
+
 ```js
-const result = await fetch('https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHbFMb24YTQHGe9geo')
-  .then(res => res.json())
-  console.log(JSON.stringify(result))
+const result = await fetch(
+  "https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHbFMb24YTQHGe9geo"
+).then((res) => res.json());
+console.log(JSON.stringify(result));
 ```
 
 <details>
@@ -126,3 +127,90 @@ const result = await fetch('https://arweave.net/raw/rLyni34aYMmliemI8OjqtkE_JHHb
 <hr/>
 
 Each Arweave peer/node also exposes some HTTP endpoints which are often replicated gateways. You can read more about Arweave peer's HTTP endpoints [here](/references/http-api.md).
+
+---
+
+## Fetching Data with Wayfinder
+
+[Wayfinder](https://docs.ar.io/wayfinder) is a protocol and set of libraries that provide decentralized, cryptographically verified access to data stored on Arweave via the AR.IO Network. Wayfinder automatically selects the best gateway for each request, verifies data integrity, and ensures reliable access to permaweb content.
+
+- **Intelligent routing**: Automatically chooses the fastest and most reliable gateway
+- **Data verification**: Ensures you receive authentic, unmodified content
+- **Decentralized access**: Distributes requests across the AR.IO gateway network
+
+### Installation
+
+```bash
+npm install @ar.io/wayfinder-core
+# or
+yarn add @ar.io/wayfinder-core
+```
+
+### Basic Usage (JavaScript/TypeScript)
+
+```js
+import { Wayfinder, NetworkGatewaysProvider } from "@ar.io/wayfinder-core";
+import { ARIO } from "@ar.io/sdk";
+
+const wayfinder = new Wayfinder({
+  gatewaysProvider: new NetworkGatewaysProvider({ ario: ARIO.mainnet() }),
+});
+
+// Replace with your transaction ID
+const txId = "sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8";
+
+(async () => {
+  try {
+    const response = await wayfinder.request(`ar://${txId}`);
+    const data = await response.text();
+    console.log("Data:", data);
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+  }
+})();
+```
+
+### React Usage
+
+Install both packages:
+
+```bash
+npm install @ar.io/wayfinder-react @ar.io/wayfinder-core
+# or
+yarn add @ar.io/wayfinder-react @ar.io/wayfinder-core
+```
+
+```jsx
+import { WayfinderProvider, useWayfinderRequest } from "@ar.io/wayfinder-react";
+import { NetworkGatewaysProvider } from "@ar.io/wayfinder-core";
+import { ARIO } from "@ar.io/sdk";
+
+function App() {
+  return (
+    <WayfinderProvider
+      gatewaysProvider={new NetworkGatewaysProvider({ ario: ARIO.mainnet() })}
+    >
+      <MyComponent />
+    </WayfinderProvider>
+  );
+}
+
+function MyComponent() {
+  const request = useWayfinderRequest();
+  const txId = "sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8";
+  const [data, setData] = React.useState(null);
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const response = await request(`ar://${txId}`);
+        setData(await response.text());
+      } catch (e) {
+        setData("Error: " + e.message);
+      }
+    })();
+  }, [request, txId]);
+  return <pre>{data}</pre>;
+}
+```
+
+For more advanced configuration and usage, see the [official Wayfinder documentation](https://docs.ar.io/wayfinder).
