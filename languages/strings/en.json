@@ -65,6 +65,7 @@
   "guides-warp-read-state": "Read Contract State",
   "guides-warp-write-interactions": "Write Contract Interactions",
   "guides-warp-evolve": "Evolve Contract",
+  "guides-fetching-arweave-data": "Fetching Arweave Data",
   "guides-api-token": "Api Token",
   "guides-testing": "Testing",
   "references": "References",
