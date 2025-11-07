@@ -106,7 +106,7 @@ export default {
   theme: defaultTheme({
     repo: 'https://github.com/twilson63/permaweb-cookbook',
     editLink: true,
-    editLinkPattern: ':repo/edit/:branch/docs/src/:path',
+    editLinkPattern: ':repo/edit/:branch/src/:path',
     colorMode: 'dark',
     sidebar: createSidebars(),
     sidebarDepth: 0,
