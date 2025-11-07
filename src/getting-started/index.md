@@ -24,6 +24,6 @@ Choose your path based on your experience level:
 ## Next Steps
 
 Once you've completed the getting started guide, explore:
-- [Core Concepts](../concepts/index.md) to understand how Arweave works
+- [Fundamentals](../fundamentals/index.md) to understand how Arweave works
 - [Guides](../guides/index.md) for step-by-step tutorials
-- [Tooling](../tooling/deployment.md) for development tools
+- [Tooling](../tooling/index.md) for development tools
