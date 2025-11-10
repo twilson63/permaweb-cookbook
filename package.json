@@ -20,7 +20,6 @@
 		"standardize:files": "node scripts/standardize-filenames.js",
 		"standardize:check": "node scripts/standardize-filenames.js --check",
 		"prepare": "husky",
-		"deploy": "npm run build:check && node deploy.mjs",
 		"fmt": "prettier --single-quote --trailing-comma none --write src/.vuepress",
 		"lint": "prettier --single-quote --trailing-comma none --check src/.vuepress"
 	},
