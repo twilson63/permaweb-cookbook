@@ -19,23 +19,26 @@
 		"fix:links:preview": "node scripts/fix-common-links.js --dry-run",
 		"standardize:files": "node scripts/standardize-filenames.js",
 		"standardize:check": "node scripts/standardize-filenames.js --check",
+		"prepare": "husky",
 		"deploy": "npm run build:check && node deploy.mjs",
 		"fmt": "prettier --single-quote --trailing-comma none --write src/.vuepress",
 		"lint": "prettier --single-quote --trailing-comma none --check src/.vuepress"
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"@bundlr-network/client": "^0.9.11",
+		"@commitlint/cli": "^20.1.0",
+		"@commitlint/config-conventional": "^20.0.0",
 		"@snippetors/vuepress-plugin-code-copy": "^1.2.3",
 		"@vuepress/plugin-container": "^2.0.0-beta.61",
 		"@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
 		"@vuepress/plugin-search": "^2.0.0-beta.61",
 		"arweave": "^1.11.8",
 		"htmlhint": "^1.6.3",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.6",
 		"markdown-link-check": "^3.13.7",
 		"prettier": "^2.8.4",
-		"vuepress": "^2.0.0-beta.61",
-		"warp-contracts": "^1.2.37"
+		"vuepress": "^2.0.0-beta.61"
 	},
 	"dependencies": {
 		"@octokit/core": "^4.2.1",
