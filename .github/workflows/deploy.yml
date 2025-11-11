@@ -35,7 +35,8 @@ jobs:
             --ant-process=${ANT_PROCESS} \
             --undername=${UNDERNAME} \
             --arns-name=cookbook \
-            --deploy-folder=${ARTIFACTS_OUTPUT_DIR}
+            --deploy-folder=${ARTIFACTS_OUTPUT_DIR} \
+            --ttl-seconds=900
         env: 
           DEPLOY_KEY: ${{ secrets.COOKBOOK }}
           ARTIFACTS_OUTPUT_DIR: ${{ steps.build_artifacts.outputs.artifacts_output_dir }}
