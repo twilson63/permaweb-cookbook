@@ -26,14 +26,14 @@ The Permaweb Cookbook is split into different sections, each aimed at a differen
 
 | Section       | Description                                                                         |
 | ------------- | ----------------------------------------------------------------------------------- |
-| Core Concepts | Building blocks of the Permaweb that are good to know for development               |
+| Fundamentals  | Building blocks of the Permaweb that are good to know for development               |
 | Guides        | Snack-sized guides about different tools for development                            |
 | References    | References to commonly needed code snippets                                         |
-| Starter Kits  | Front-end Framework Starters to get you started building on the Permaweb in no time |
 
 ## Quick Starts
 
 These are small guides to help developers from every experience level to ship code the the permaweb.
 
-- [Hello World (No Code)](getting-started/quick-starts/hw-no-code.md)
 - [Hello World (CLI)](getting-started/quick-starts/hw-cli.md)
+- [Hello World (Code)](getting-started/quick-starts/hw-code.md)
+- [Hello World (No Code)](getting-started/quick-starts/hw-no-code.md)

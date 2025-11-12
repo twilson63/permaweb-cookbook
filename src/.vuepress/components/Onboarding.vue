@@ -191,7 +191,7 @@ const frontmatter = usePageFrontmatter();
       </div>
 
       <div class="col-12 col-md-6 col-xl-3">
-        <I18NRouterLink to="/concepts/index.html" class="onboard-card">
+        <I18NRouterLink to="/fundamentals/index.html" class="onboard-card">
           <div class="card-content">
             <div class="icon-container">
               <div class="icon">
