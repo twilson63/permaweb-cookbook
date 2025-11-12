@@ -15,4 +15,5 @@ Overall, the experience of creating applications on the Permaweb can be challeng
 ## Hello Worlds
 
 * [Hello World (No Code)](./quick-starts/hw-no-code.md)
+* [Hello World (Code)](./quick-starts/hw-code.md)
 * [Hello World (CLI)](./quick-starts/hw-cli.md)
