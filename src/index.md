@@ -36,4 +36,3 @@ These are small guides to help developers from every experience level to ship co
 
 - [Hello World (CLI)](getting-started/quick-starts/hw-cli.md)
 - [Hello World (Code)](getting-started/quick-starts/hw-code.md)
-- [Hello World (No Code)](getting-started/quick-starts/hw-no-code.md)
