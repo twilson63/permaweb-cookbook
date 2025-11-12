@@ -35,13 +35,6 @@ const getI18NSidebar = (langCode) => [
               "/getting-started/quick-starts/hw-code.html"
             ),
           },
-          {
-            text: "No Code",
-            link: get_i18n_link(
-              langCode,
-              "/getting-started/quick-starts/hw-no-code.html"
-            ),
-          },
         ],
       },
     ],
