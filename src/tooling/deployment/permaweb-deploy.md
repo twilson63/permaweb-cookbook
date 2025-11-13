@@ -232,7 +232,7 @@ DEBUG=permaweb-deploy* npm run deploy
 
 ## Next Steps
 
-1. **ArNS Setup**: [ArNS Names](/concepts/arns)
+1. **ArNS Setup**: [ArNS Names](../fundamentals/accessing-arweave-data/arns.md)
 2. **Turbo Credits**: [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html)
 3. **GitHub Actions**: [CI/CD Integration](/tooling/deployment/github-action)
 
