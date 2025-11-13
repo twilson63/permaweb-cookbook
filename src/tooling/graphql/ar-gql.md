@@ -3,7 +3,7 @@ This package is a minimal layer on top of GraphQL, it supports parameterized que
 
 ## Installation
 
-To install `ar-gql run
+To install `ar-gql` run
 <CodeGroup>
  <CodeGroupItem title="NPM">
 
