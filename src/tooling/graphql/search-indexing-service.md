@@ -13,7 +13,7 @@ A specialized GraphQL gateway that extends Arweave's querying capabilities with 
 
 [Goldsky](https://goldsky.com)'s free search service is a GraphQL gateway that uses an optimized backend to provide faster searches for complex queries across arweave blocks and transactions, and also introduces additional querying syntax for fuzzy and wildcard search use-cases. 
 
-The Search GraphQL syntax is a superset of the [Arweave GraphQL syntax](./querying-arweave.md). It's fully backwards compatible and will return the same results for the same queries, but has some additional modifiers that can be useful. 
+The Search GraphQL syntax is a superset of the Arweave GraphQL syntax. It's fully backwards compatible and will return the same results for the same queries, but has some additional modifiers that can be useful. 
 
 - Flexible tag filters
   - Search for just a tag name or value
