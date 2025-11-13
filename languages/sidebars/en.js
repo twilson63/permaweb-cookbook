@@ -1,21 +1,12 @@
-const { get_i18n_str, languages } = require('../../languages/def');
-
-const get_i18n_link = (code, link) =>
-  `${code === 'en' ? '' : '/' + code}${link}`;
-
-const getI18NSidebar = (langCode) => [
+export default [
   {
     text: "Getting Started",
-    link: get_i18n_link(langCode, "/getting-started/index.html"),
+    link: "/getting-started/index.html",
     collapsible: true,
     children: [
       {
-        text: get_i18n_str(
-          langCode,
-          "getting-started-welcome",
-          "Welcome & Overview"
-        ),
-        link: get_i18n_link(langCode, "/getting-started/welcome.html"),
+        text: "Welcome & Overview",
+        link: "/getting-started/welcome.html",
       },
       {
         text: "Quick Starts",
@@ -23,17 +14,11 @@ const getI18NSidebar = (langCode) => [
         children: [
           {
             text: "CLI",
-            link: get_i18n_link(
-              langCode,
-              "/getting-started/quick-starts/hw-cli.html"
-            ),
+            link: "/getting-started/quick-starts/hw-cli.html",
           },
           {
             text: "Code",
-            link: get_i18n_link(
-              langCode,
-              "/getting-started/quick-starts/hw-code.html"
-            ),
+            link: "/getting-started/quick-starts/hw-code.html",
           },
         ],
       },
@@ -41,177 +26,111 @@ const getI18NSidebar = (langCode) => [
   },
   {
     text: "Fundamentals",
-    link: get_i18n_link(langCode, "/fundamentals/index.html"),
+    link: "/fundamentals/index.html",
     collapsible: true,
     children: [
       {
-        text: get_i18n_str(langCode, "concepts-wallets-and-keys"),
-        link: get_i18n_link(
-          langCode,
-          "/fundamentals/wallets-and-keyfiles/index.html"
-        ),
+        text: "Wallets and Keys",
+        link: "/fundamentals/wallets-and-keyfiles/index.html",
         collapsible: true,
         children: [
           {
             text: "Generating a wallet",
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/wallets-and-keyfiles/creating-a-wallet.html"
-            ),
+            link: "/fundamentals/wallets-and-keyfiles/creating-a-wallet.html",
           },
         ],
       },
       {
         text: "Transactions",
-        link: get_i18n_link(
-          langCode,
-          "/fundamentals/transactions/transaction-types.html"
-        ),
+        link: "/fundamentals/transactions/transaction-types.html",
         collapsible: true,
         children: [
           {
-            text: get_i18n_str(langCode, "concepts-post-transactions"),
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/transactions/post-transactions.html"
-            ),
+            text: "Post Transactions",
+            link: "/fundamentals/transactions/post-transactions.html",
           },
           {
-            text: get_i18n_str(langCode, "concepts-tags"),
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/transactions/tags.html"
-            ),
+            text: "Tags",
+            link: "/fundamentals/transactions/tags.html",
           },
           {
-            text: get_i18n_str(langCode, "concepts-bundles"),
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/transactions/bundles.html"
-            ),
+            text: "Bundles",
+            link: "/fundamentals/transactions/bundles.html",
           },
         ],
       },
       {
         text: "Accessing Arweave Data",
-        link: get_i18n_link(
-          langCode,
-          "/fundamentals/accessing-arweave-data/index.html"
-        ),
+        link: "/fundamentals/accessing-arweave-data/index.html",
         collapsible: true,
         children: [
           {
             text: "Data Retrieval Methods",
             collapsible: true,
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/accessing-arweave-data/data-retrieval.html"
-            ),
+            link: "/fundamentals/accessing-arweave-data/data-retrieval.html",
             children: [
               {
                 text: "HTTP API",
-                link: get_i18n_link(
-                  langCode,
-                  "/fundamentals/accessing-arweave-data/http-api.html"
-                ),
+                link: "/fundamentals/accessing-arweave-data/http-api.html",
               },
               {
                 text: "Arweave.js SDK",
-                link: get_i18n_link(
-                  langCode,
-                  "/fundamentals/accessing-arweave-data/arweave-js.html"
-                ),
+                link: "/fundamentals/accessing-arweave-data/arweave-js.html",
               },
               {
                 text: "ARIO Wayfinder",
-                link: get_i18n_link(
-                  langCode,
-                  "/fundamentals/accessing-arweave-data/wayfinder.html"
-                ),
+                link: "/fundamentals/accessing-arweave-data/wayfinder.html",
               },
             ],
           },
 
           {
             text: "Gateways & Access",
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/accessing-arweave-data/gateways.html"
-            ),
+            link: "/fundamentals/accessing-arweave-data/gateways.html",
           },
           {
             text: "GraphQL Queries",
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/accessing-arweave-data/graphql.html"
-            ),
+            link: "/fundamentals/accessing-arweave-data/graphql.html",
           },
           {
             text: "Manifests & Path Resolution",
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/accessing-arweave-data/manifests.html"
-            ),
+            link: "/fundamentals/accessing-arweave-data/manifests.html",
           },
           {
             text: "ArNS Introduction",
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/accessing-arweave-data/arns.html"
-            ),
+            link: "/fundamentals/accessing-arweave-data/arns.html",
           },
         ],
       },
       {
         text: "Decentralized Computing",
-        link: get_i18n_link(
-          langCode,
-          "/fundamentals/decentralized-computing/index.html"
-        ),
+        link: "/fundamentals/decentralized-computing/index.html",
         collapsible: true,
         children: [
           {
             text: "AO Processes",
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html"
-            ),
+            link: "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html",
           },
           {
             text: "HyperBEAM",
-            link: get_i18n_link(
-              langCode,
-              "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html"
-            ),
+            link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html",
             collapsible: true,
             children: [
               {
                 text: "HyperBEAM Introduction",
-                link: get_i18n_link(
-                  langCode,
-                  "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html"
-                ),
+                link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html",
               },
               {
                 text: "Getting AO Process State",
-                link: get_i18n_link(
-                  langCode,
-                  "/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html"
-                ),
+                link: "/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html",
               },
               {
                 text: "Lua Serverless Functions",
-                link: get_i18n_link(
-                  langCode,
-                  "/fundamentals/decentralized-computing/hyperbeam/lua-serverless.html"
-                ),
+                link: "/fundamentals/decentralized-computing/hyperbeam/lua-serverless.html",
               },
               {
                 text: "HyperBEAM Devices",
-                link: get_i18n_link(
-                  langCode,
-                  "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html"
-                ),
+                link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html",
               },
             ],
           },
@@ -221,7 +140,7 @@ const getI18NSidebar = (langCode) => [
   },
   {
     text: "Guides",
-    link: get_i18n_link(langCode, "/guides/index.html"),
+    link: "/guides/index.html",
     collapsible: true,
     children: [
       {
@@ -230,45 +149,42 @@ const getI18NSidebar = (langCode) => [
         children: [
           {
             text: "React",
-            link: get_i18n_link(langCode, "/kits/react/index.html"),
+            link: "/kits/react/index.html",
             collapsible: true,
             children: [
               {
                 text: "Vite + permaweb-deploy",
-                link: get_i18n_link(langCode, "/kits/react/turbo.html"),
+                link: "/kits/react/turbo.html",
               },
               {
                 text: "Create React App",
-                link: get_i18n_link(
-                  langCode,
-                  "/kits/react/create-react-app.html"
-                ),
+                link: "/kits/react/create-react-app.html",
               },
             ],
           },
           {
             text: "Svelte",
-            link: get_i18n_link(langCode, "/kits/svelte/index.html"),
+            link: "/kits/svelte/index.html",
             collapsible: true,
             children: [
               {
                 text: "Minimal",
-                link: get_i18n_link(langCode, "/kits/svelte/minimal.html"),
+                link: "/kits/svelte/minimal.html",
               },
               {
                 text: "Vite",
-                link: get_i18n_link(langCode, "/kits/svelte/vite.html"),
+                link: "/kits/svelte/vite.html",
               },
             ],
           },
           {
             text: "Vue",
-            link: get_i18n_link(langCode, "/kits/vue/index.html"),
+            link: "/kits/vue/index.html",
             collapsible: true,
             children: [
               {
                 text: "Create Vue App",
-                link: get_i18n_link(langCode, "/kits/vue/create-vue.html"),
+                link: "/kits/vue/create-vue.html",
               },
             ],
           },
@@ -471,7 +387,7 @@ const getI18NSidebar = (langCode) => [
   },
   {
     text: "Tooling",
-    link: get_i18n_link(langCode, "/tooling/index.html"),
+    link: "/tooling/index.html",
     collapsible: true,
     children: [
       {
@@ -480,7 +396,7 @@ const getI18NSidebar = (langCode) => [
         children: [
           {
             text: "Turbo",
-            link: get_i18n_link(langCode, "/tooling/bundlers.html"),
+            link: "/tooling/bundlers.html",
           },
         ],
       },
@@ -490,23 +406,20 @@ const getI18NSidebar = (langCode) => [
         children: [
           {
             text: "GraphQL",
-            link: get_i18n_link(langCode, "/tooling/graphql/index.html"),
+            link: "/tooling/graphql/index.html",
             collapsible: true,
             children: [
               {
                 text: "Querying Arweave",
-                link: get_i18n_link(langCode, "/tooling/querying-arweave.html"),
+                link: "/tooling/querying-arweave.html",
               },
               {
                 text: "Goldsky Search Gateway",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/graphql/search-indexing-service.html"
-                ),
+                link: "/tooling/graphql/search-indexing-service.html",
               },
               {
                 text: "ar-gql (Library)",
-                link: get_i18n_link(langCode, "/tooling/graphql/ar-gql.html"),
+                link: "/tooling/graphql/ar-gql.html",
               },
             ],
           },
@@ -518,21 +431,15 @@ const getI18NSidebar = (langCode) => [
         children: [
           {
             text: "Permaweb Deploy",
-            link: get_i18n_link(
-              langCode,
-              "/tooling/deployment/permaweb-deploy.html"
-            ),
+            link: "/tooling/deployment/permaweb-deploy.html",
           },
           {
             text: "arkb (CLI)",
-            link: get_i18n_link(langCode, "/tooling/deployment/arkb.html"),
+            link: "/tooling/deployment/arkb.html",
           },
           {
             text: "GitHub Actions",
-            link: get_i18n_link(
-              langCode,
-              "/tooling/deployment/github-action.html"
-            ),
+            link: "/tooling/deployment/github-action.html",
           },
         ],
       },
@@ -546,101 +453,62 @@ const getI18NSidebar = (langCode) => [
             children: [
               {
                 text: "ANS-101: Gateway Capabilities",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/ans/ANS-101.html"
-                ),
+                link: "/tooling/specs/ans/ANS-101.html",
               },
               {
                 text: "ANS-102: Bundled Data - JSON",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/ans/ANS-102.html"
-                ),
+                link: "/tooling/specs/ans/ANS-102.html",
               },
               {
                 text: "ANS-103: Succinct Proofs",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/ans/ANS-103.html"
-                ),
+                link: "/tooling/specs/ans/ANS-103.html",
               },
               {
                 text: "ANS-104: Bundled Data - Binary",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/ans/ANS-104.html"
-                ),
+                link: "/tooling/specs/ans/ANS-104.html",
               },
               {
                 text: "ANS-105: License Tags",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/ans/ANS-105.html"
-                ),
+                link: "/tooling/specs/ans/ANS-105.html",
               },
               {
                 text: "ANS-106: Do-Not-Store",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/ans/ANS-106.html"
-                ),
+                link: "/tooling/specs/ans/ANS-106.html",
               },
               {
                 text: "ANS-109: Vouch-For",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/ans/ANS-109.html"
-                ),
+                link: "/tooling/specs/ans/ANS-109.html",
               },
               {
                 text: "ANS-110: Asset Discoverability",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/ans/ANS-110.html"
-                ),
+                link: "/tooling/specs/ans/ANS-110.html",
               },
             ],
           },
           {
             text: "ArFS",
-            link: get_i18n_link(langCode, "/tooling/specs/arfs/arfs.html"),
+            link: "/tooling/specs/arfs/arfs.html",
             collapsible: true,
             children: [
               {
                 text: "Data Model",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/arfs/data-model.html"
-                ),
+                link: "/tooling/specs/arfs/data-model.html",
               },
               {
                 text: "Entity Types",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/arfs/entity-types.html"
-                ),
+                link: "/tooling/specs/arfs/entity-types.html",
               },
               {
                 text: "Content Types",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/arfs/content-types.html"
-                ),
+                link: "/tooling/specs/arfs/content-types.html",
               },
               {
                 text: "Privacy",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/arfs/privacy.html"
-                ),
+                link: "/tooling/specs/arfs/privacy.html",
               },
               {
                 text: "Schema Diagrams",
-                link: get_i18n_link(
-                  langCode,
-                  "/tooling/specs/arfs/schema-diagrams.html"
-                ),
+                link: "/tooling/specs/arfs/schema-diagrams.html",
               },
             ],
           },
@@ -650,41 +518,23 @@ const getI18NSidebar = (langCode) => [
   },
   {
     text: "References",
-    link: get_i18n_link(langCode, "/references/index.html"),
+    link: "/references/index.html",
     collapsible: true,
     children: [
       {
         text: "Glossary",
         collapsible: false,
-        link: get_i18n_link(langCode, "/references/glossary.html"),
+        link: "/references/glossary.html",
       },
       {
         text: "LLMs.txt",
         collapsible: false,
-        link: get_i18n_link(langCode, "/references/llms-txt.html"),
+        link: "/references/llms-txt.html",
       },
       {
-        text: get_i18n_str(
-          langCode,
-          "getting-started-contributing",
-          "Contributing"
-        ),
-        link: get_i18n_link(langCode, "/getting-started/contributing.html"),
+        text: "Contributing",
+        link: "/getting-started/contributing.html",
       },
     ],
   },
 ];
-
-const createSidebars = () => {
-  return languages.reduce(
-    (sidebars, { code }) => {
-      sidebars[`/${code}/`] = getI18NSidebar(code);
-      return sidebars;
-    },
-    {
-      '/': getI18NSidebar('en')
-    }
-  );
-};
-
-module.exports = createSidebars;
