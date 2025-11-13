@@ -173,8 +173,6 @@ query {
 
 
 ## Resources
-* [Arweave GQL Reference](../../references/gql.md)
-* [ArDB package](./ardb.md)
-* [ar-gql package](./ar-gql.md)
-* [Search Indexing Service](./search-indexing-service.md)
+* [ar-gql package](https://github.com/johnletey/arGql)
+* [Search Indexing Service](./graphql/search-indexing-service.md)
 
