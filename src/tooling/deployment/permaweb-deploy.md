@@ -239,6 +239,6 @@ DEBUG=permaweb-deploy* npm run deploy
 ## Resources
 
 - **GitHub Repository**: [permaweb/permaweb-deploy](https://github.com/permaweb/permaweb-deploy)
-- **Turbo SDK Documentation**: [docs.ardrive.io/turbo](https://docs.ardrive.io/docs/turbo/what-is-turbo.html)
-- **ArNS Documentation**: [ar.io/arns](https://ar.io/arns/)
+- **Turbo SDK Documentation**: [docs.ardrive.io/turbo](https://docs.ar.io/build/upload/bundling-services)
+- **ArNS Documentation**: [ar.io/arns](https://docs.ar.io/learn/arns)
 - **Arweave Ecosystem**: [arweave.org](https://arweave.org)
