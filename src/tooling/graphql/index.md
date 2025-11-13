@@ -84,7 +84,6 @@ const query = gql`
 
 ## Next Steps
 
-1. **Start with ar-gql**: [ar-gql Library](ar-gql.md)
-2. **Learn Querying**: [Querying Arweave](/tooling/querying-arweave.md)
-3. **Advanced Search**: [Goldsky Search Gateway](search-indexing-service.md)
-4. **Explore Examples**: [Zero to Deployed App](/getting-started/zero-to-deploy)
+- **Start with ar-gql**: [ar-gql Library](ar-gql.md)
+-  **Learn Querying**: [Querying Arweave](/tooling/querying-arweave.md)
+-   **Advanced Search**: [Goldsky Search Gateway](search-indexing-service.md)
