@@ -74,7 +74,7 @@ const frontmatter = usePageFrontmatter();
 
       <div class="col-12 col-md-6 col-xl-3">
         <I18NRouterLink
-          to="/getting-started/quick-starts/hw-no-code.html"
+          to="/getting-started/quick-starts/hw-code.html"
           class="onboard-card"
         >
           <div class="card-content">

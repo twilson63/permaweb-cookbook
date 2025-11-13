@@ -4,7 +4,7 @@ With bundling services users can post their data transactions to a bundling serv
 
 ## What is a bundle?
 
-A description of transaction bundles and their benefits can be found [here](/concepts/bundles.md).
+A description of transaction bundles and their benefits can be found [here](../fundamentals/transactions/bundles.md).
 
 Bundles follow the [ANS-104 standard](https://specs.arweave.dev/?tx=xwOgX-MmqN5_-Ny_zNu2A8o-PnTGsoRb_3FrtiMAkuw), which defines how multiple data items can be efficiently packaged together into a single Arweave transaction. This enables:
 

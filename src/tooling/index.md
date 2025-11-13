@@ -15,7 +15,7 @@ Tools for discovering and retrieving data:
 ## Deployment & Publishing
 
 Tools for deploying applications to the Permaweb:
-- **[CLI Tools](./deployment.md)** - Command-line deployment utilities
+- **[Permaweb Deploy](./deployment/permaweb-deploy.md)** - Command-line deployment utilities
 
 ## Framework Integration
 
