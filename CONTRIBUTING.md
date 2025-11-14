@@ -13,12 +13,12 @@ The cookbook is layed out in 5 different sections.
 | Section         | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
 | Getting Started | Resources for starting development on Permaweb                    |
-| Core Concepts   | Building blocks of Permaweb that are good to know for development |
+| Fundamentals    | Building blocks of Permaweb that are good to know for development |
 | Guides          | Snack-sized guides about different tools for development          |
 | References      | References to commonly needed code snippets                       |
 | Kits            | Starter Kits with development frameworks                          |
 
-Depending on what you are writing, it will live in one of these sections
+Depending on what you are writing, it will live in one of these sections.
 
 #### References
 
@@ -54,8 +54,8 @@ Other Resources
 
 ```
 cd docs
-yarn
-yarn dev
+npm install
+npm run dev
 ```
 
 It will take some time to start, the documentation can then be viewed
@@ -65,8 +65,7 @@ at (http://localhost:8080/)
 
 ### Adding Content
 
-There's a list of needed content tracked on the [project board](https://github.com/users/twilson63/projects/2) of this repository.
-The board is kept up to date with all work being worked on.
+There's a list of needed content tracked on the [issues](https://github.com/twilson63/permaweb-cookbook/issues) list of this repository.
 
 To start work, do the following:
 
