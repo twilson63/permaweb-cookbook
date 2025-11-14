@@ -15,4 +15,3 @@ Transactions can be posted directly to the network or bundled together through b
 - **[Posting Transactions](./post-transactions.md)** - Learn the different ways to post transactions to Arweave
 - **[Bundles](./bundles.md)** - Understand how multiple transactions can be bundled together
 - **[Tags](./tags.md)** - Transaction metadata system for organizing and querying data
-- 
