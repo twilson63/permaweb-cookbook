@@ -93,8 +93,3 @@ All these access methods are provided by Arweave gateways. Gateways can be:
 - [Query data with GraphQL](./graphql.md) to build dynamic applications
 - [Create path manifests](./manifests.md) for organizing content
 - [Register ArNS names](./arns.md) for user-friendly addressing
-
-## Additional Resources
-
-- [Querying Arweave Guide](../../guides/querying-arweave/querying-arweave.md)
-- [GraphQL Reference](../../references/gql.md)
