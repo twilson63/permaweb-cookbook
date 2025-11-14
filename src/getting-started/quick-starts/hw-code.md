@@ -1,6 +1,6 @@
 # Hello World (Code)
 
-This guide walks you through a quick way to get a static HTML, CSS and JavaScript webpage onto the Permaweb using a few lines of code and a [command-line interface (CLI)](./hw-cli.md).
+This guide walks you through a quick way to get a static HTML, CSS and JavaScript webpage onto the Permaweb using a few lines of code and a command-line interface (CLI).
 
 ## Requirements
 
@@ -8,41 +8,39 @@ This guide walks you through a quick way to get a static HTML, CSS and JavaScrip
 - Basic knowledge of HTML, CSS and JavaScript
 - A text editor (VS Code, Sublime, or similar)
 
-## Description
-
-Using a terminal/console window create a new folder called `hello-world`.
-
 ## Setup
 
+Open up a terminal, and create a new folder called `hello-world`.
+
+From within the new directory, run the following commands:
+
 ```sh
-cd hello-world
 npm init -y
 mkdir src && cd src
 touch index.js index.html style.css
 ```
 
-Next open your text editor and import the `hello-world` directory.
+To set up a Node project and create the boilerplate files for creating a website. 
 
 ## Generate a wallet
+
+To upload files to Arweave, you will need an Arweave wallet. Run the following command from within your `hello-world` directory to generate a wallet:
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
 :::info
-The wallet.json file must be in the root of the `hello-world` folder and not inside of your `src` folder.
+The `wallet.json` file must be in the root of the `hello-world` folder and not inside of your `src` folder.
 :::
 
 ## Create a webpage
 
-This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using permaweb-deploy and our previously generated wallet to deploy a fully functioning, static and permanent webpage to Arweave.
+This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using `permaweb-deploy` and our previously generated wallet to deploy a fully functioning, static webpage to Arweave.
 
 Paste the code from the following code blocks into their files:
 
-**index.html**
-
-<details>
-<summary>Click to view HTML</summary>
+### index.html
 
 ```html
 <!DOCTYPE html>
@@ -62,14 +60,9 @@ Paste the code from the following code blocks into their files:
   </body>
 </html>
 ```
-
-</details>
 <hr />
 
-**style.css**
-
-<details>
-<summary>Click to view CSS</summary>
+### style.css
 
 ```css
 .button {
@@ -78,13 +71,9 @@ Paste the code from the following code blocks into their files:
 }
 ```
 
-</details>
 <hr />
 
-**index.js**
-
-<details>
-<summary>Click to view JS</summary>
+### index.js
 
 ```javascript
 function changeColor() {
@@ -95,15 +84,15 @@ function changeColor() {
 }
 ```
 
-</details>
-
 <hr />
 
-Now that there is a static site to deploy, it can be checked to ensure it all functions properly by typing `open src/index.html` in your console/terminal. If everything is working as expected it is time to deploy to Arweave!
+Now that there is a static site to deploy, you can check it functions as expected by typing `open src/index.html` in your terminal. 
+
+If everything is working as expected, it is time to deploy to Arweave!
 
 ## Upload using permaweb-deploy
 
-Install and configure permaweb-deploy for deployment:
+Install and configure `permaweb-deploy` for deployment:
 
 ```bash
 npm install --save-dev permaweb-deploy
@@ -127,6 +116,6 @@ DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy
 
 For detailed deployment instructions, see [Permaweb Deploy](/tooling/deployment/permaweb-deploy).
 
-## Congrats!!
+## Congratulations!
 
 You just published a static site on Arweave using a few commands and a few lines of code!
