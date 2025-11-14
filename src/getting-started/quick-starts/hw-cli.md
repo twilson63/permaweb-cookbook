@@ -6,14 +6,13 @@ This guide walks you through the most simple way to get data on to the Permaweb 
 
 -   [NodeJS](https://nodejs.org) LTS or greater
 
-## Description
-
-Using a terminal/console window create a new folder called `hw-permaweb-1`.
-
 ## Setup
 
+Open up a terminal on your computer, and create a new folder called `hello-permaweb`.
+
+Then, `cd` into the `hello-permaweb` directory, and setup a new project with:
+
 ```sh
-cd hw-permaweb-1
 npm init -y
 npm install arweave ardrive-cli
 ```
@@ -42,3 +41,4 @@ TX_ID=$(npx ardrive upload-file -l index.html --content-type text/html -w ~/.dem
 open https://arweave.net/${TX_ID}
 ```
 
+Congratulations, you've put some data on Arweave!
