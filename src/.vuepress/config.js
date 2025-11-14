@@ -27,6 +27,7 @@ const locales = languages.reduce((acc, lang) => {
 const themeLocales = languages.reduce((acc, lang) => {
   acc[lang.path] = {
     sidebar: lang.sidebar,
+    home: lang.path,
     notFound: [get_i18n_str(lang.code, "not-found", "Not Found")],
     backToHome: get_i18n_str(lang.code, "back-to-home", "Back to Home"),
   };
