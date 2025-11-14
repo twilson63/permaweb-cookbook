@@ -38,7 +38,8 @@ Arweave utilizes *4096-bit* RSA-PSS key-pairs stored in the JWK (JSON Web Keys) 
 In this JWK file:
 - The `n` value represents your wallet's **public key**, which can be safely shared
 - The `d` value (along with other fields) comprises your wallet's **private key**, which must be kept confidential
-- These JWK files can be created and exported from wallet applications like [Arweave.app](https://arweave.app) or generated programmatically using [arweave-js](https://github.com/ArweaveTeam/arweave-js)
+
+These JWK files can be created and exported from wallet applications like [Arweave.app](https://arweave.app), or generated programmatically using [arweave-js](https://github.com/ArweaveTeam/arweave-js)
 
 When using certain wallet applications, your **private key** may also be represented as a mnemonic **seed phrase**, which can be used to sign transactions or recover your wallet.
 
