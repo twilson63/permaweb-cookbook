@@ -47,11 +47,7 @@ module.exports = [
           {
             text: "dispatch",
             link: "/zh/guides/posting-transactions/dispatch.html",
-          },
-          {
-            text: "Irys",
-            link: "/zh/guides/posting-transactions/irys.html",
-          },
+          }
         ],
       },
       {
@@ -138,11 +134,7 @@ module.exports = [
           {
             text: "Github 行动",
             link: "/zh/guides/deployment/github-action.html",
-          },
-          {
-            text: "Irys CLI",
-            link: "/zh/guides/deployment/irys-cli.html",
-          },
+          }
         ],
       },
       {
@@ -157,11 +149,7 @@ module.exports = [
           {
             text: "ardrive",
             link: "/zh/guides/deploying-manifests/ardrive.html",
-          },
-          {
-            text: "Irys",
-            link: "/zh/guides/deploying-manifests/irys.html",
-          },
+          }
         ],
       },
       {
