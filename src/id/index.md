@@ -3,6 +3,11 @@ locale: id
 onboarding: true
 ---
 
+::: warning
+Terjemahan ini mungkin sudah usang atau tidak akurat. Kami menyarankan untuk membaca versi bahasa Inggris dari buku panduan,
+atau mengajukan isu maupun berkontribusi dengan perubahan untuk membantu meningkatkan terjemahan ini di repositori GitHub.
+:::
+
 # Cooking dengan Permaweb
 
 Cookbook Permaweb adalah sumber daya pengembang yang menyediakan konsep-konsep penting dan referensi untuk membangun aplikasi di Permaweb. Setiap konsep dan referensi akan berfokus pada aspek-aspek tertentu dari ekosistem pengembangan Permaweb sambil memberikan rincian tambahan dan contoh penggunaan.
