@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import {
   getLanguagePath,
@@ -16,31 +16,25 @@ const themeLocale = useThemeLocaleData();
 const get_i18n_str = useI18NStr();
 
 const isDropdownOpen = ref(false);
-const linkItems = ref({
-  English: "/",
-  Español: "/es/",
-});
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
 
-watch(
-  () => route.path,
-  (path) => {
-    // update RouterLink destination after path change
-    const links = {};
-    for (let lang in languages) {
-      const newPath = getLanguagePath(path, lang, getCurrentLanguage(path));
-      links[lang] = newPath;
-    }
-    linkItems.value = links;
-
-    // collapse dropdown after path change
-    isDropdownOpen.value = false;
-  },
-  { immediate: true }
-);
+const languageLinks = computed(() => {
+  const links = {};
+  for (let lang in languages) {
+    const langDisplay = languages[lang].display;
+    console.log(route.path);
+    const path = getLanguagePath(
+      route.path,
+      lang,
+      getCurrentLanguage(route.path)
+    );
+    links[langDisplay] = path;
+  }
+  return links;
+});
 </script>
 
 <template>
@@ -55,11 +49,7 @@ watch(
       {{ get_i18n_str("language", "Language") }}
     </div>
     <ul v-if="isDropdownOpen" class="language-dropdown">
-      <a
-        v-for="lang in Object.keys(languages)"
-        :key="lang"
-        :href="linkItems[lang]"
-      >
+      <a v-for="(link, lang) in languageLinks" :key="lang" :href="link">
         {{ lang }}
       </a>
     </ul>

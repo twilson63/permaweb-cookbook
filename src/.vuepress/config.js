@@ -1,4 +1,3 @@
-import { description } from "../../package";
 import { viteBundler } from "@vuepress/bundler-vite";
 
 import { defaultTheme } from "@vuepress/theme-default";
@@ -9,13 +8,30 @@ import codeCopyPlugin from "@snippetors/vuepress-plugin-code-copy";
 
 import { languages, get_i18n_str } from "../../languages/def";
 import enStrings from "../../languages/strings/en.json";
-import {
-  enSidebar,
-  jaSidebar,
-  zhSidebar,
-  esSidebar,
-  idSidebar,
-} from "../../languages/sidebars";
+
+// construct vue press locales object from languages def
+const locales = languages.reduce((acc, lang) => {
+  acc[lang.path] = {
+    lang: lang.code,
+    title: get_i18n_str(lang.code, "page-title", "Cooking with the Permaweb"),
+    description: get_i18n_str(
+      lang.code,
+      "page-description",
+      "A collection of little developer guides to build on the permaweb"
+    ),
+  };
+  return acc;
+}, {});
+
+// construct vue press theme locales object from languages def
+const themeLocales = languages.reduce((acc, lang) => {
+  acc[lang.path] = {
+    sidebar: lang.sidebar,
+    notFound: [get_i18n_str(lang.code, "not-found", "Not Found")],
+    backToHome: get_i18n_str(lang.code, "back-to-home", "Back to Home"),
+  };
+  return acc;
+}, {});
 
 export default {
   bundler: viteBundler({
@@ -55,35 +71,7 @@ export default {
     },
   }),
 
-  locales: {
-    // The key is the path for the locale to be nested under.
-    // As a special case, the default locale can use '/' as its path.
-    "/": {
-      lang: "en", // this will be set as the lang attribute on <html>
-      title: "Cooking with the Permaweb",
-      description: description,
-    },
-    "/ja/": {
-      lang: "ja",
-      title: "Cocinando con la Permaweb",
-      description: description,
-    },
-    "/zh/": {
-      lang: "zh",
-      title: "在 Permaweb 上烹饪",
-      description: description,
-    },
-    "/es/": {
-      lang: "es",
-      title: "Cocinando con la Permaweb",
-      description: description,
-    },
-    "/id/": {
-      lang: "id",
-      title: "Memasak dengan Permaweb",
-      description: description,
-    },
-  },
+  locales,
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -142,33 +130,7 @@ export default {
     colorMode: "dark",
     sidebarDepth: 0,
     backToTop: false,
-    locales: {
-      "/": {
-        sidebar: enSidebar,
-        notFound: [get_i18n_str("en", "not-found", "Not Found")],
-        backToHome: get_i18n_str("en", "back-to-home", "Back to Home"),
-      },
-      "/ja/": {
-        sidebar: jaSidebar,
-        notFound: [get_i18n_str("ja", "not-found", "Not Found")],
-        backToHome: get_i18n_str("ja", "back-to-home", "Back to Home"),
-      },
-      "/zh/": {
-        sidebar: zhSidebar,
-        notFound: [get_i18n_str("zh", "not-found", "Not Found")],
-        backToHome: get_i18n_str("zh", "back-to-home", "Back to Home"),
-      },
-      "/es/": {
-        sidebar: esSidebar,
-        notFound: [get_i18n_str("es", "not-found", "Not Found")],
-        backToHome: get_i18n_str("es", "back-to-home", "Back to Home"),
-      },
-      "/id/": {
-        sidebar: idSidebar,
-        notFound: [get_i18n_str("id", "not-found", "Not Found")],
-        backToHome: get_i18n_str("id", "back-to-home", "Back to Home"),
-      },
-    },
+    locales: themeLocales,
   }),
 
   /**

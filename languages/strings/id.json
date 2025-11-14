@@ -1,6 +1,7 @@
 {
     "cookbook-meetup-notification": "Pertemuan Komunitas Cookbook - Setiap minggu pada hari Rabu pukul 22:00 WIB / 17:00 GMT",
-    
+    "page-title": "Build di Permaweb",
+    "page-description": "Kumpulan panduan pengembang kecil untuk membangun di permaweb",
     "edit": "Edit",
     "language": "Bahasa",
     "docs": "Dokumentasi",
