@@ -1,15 +1,15 @@
 <script setup>
-import { ref, watch } from 'vue';
-import { useRoute } from 'vue-router';
+import { ref, watch } from "vue";
+import { useRoute } from "vue-router";
 import {
   getLanguagePath,
   getCurrentLanguage,
   languages,
-  useI18NStr
-} from '../composables/useI18N';
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js';
+  useI18NStr,
+} from "../composables/useI18N";
+import { useThemeLocaleData } from "@vuepress/theme-default/lib/client/composables/index.js";
 
-defineEmits(['toggle']);
+defineEmits(["toggle"]);
 
 const route = useRoute();
 const themeLocale = useThemeLocaleData();
@@ -17,8 +17,8 @@ const get_i18n_str = useI18NStr();
 
 const isDropdownOpen = ref(false);
 const linkItems = ref({
-  English: '/',
-  Español: '/es/'
+  English: "/",
+  Español: "/es/",
 });
 
 const toggleDropdown = () => {
@@ -52,16 +52,16 @@ watch(
       tabindex="0"
       @click="toggleDropdown"
     >
-      {{ get_i18n_str('language', 'Language') }}
+      {{ get_i18n_str("language", "Language") }}
     </div>
     <ul v-if="isDropdownOpen" class="language-dropdown">
-      <RouterLink
+      <a
         v-for="lang in Object.keys(languages)"
         :key="lang"
-        :to="linkItems[lang]"
+        :href="linkItems[lang]"
       >
         {{ lang }}
-      </RouterLink>
+      </a>
     </ul>
   </div>
 </template>
