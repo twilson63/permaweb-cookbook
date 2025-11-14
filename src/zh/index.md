@@ -3,6 +3,11 @@ locale: zh
 onboarding: true
 ---
 
+::: warning
+此翻译可能已过时或不准确。我们建议阅读英文版的手册，
+或在 GitHub 代码库中提交问题或贡献修改以帮助改进此翻译。
+:::
+
 # 在Permaweb上烹饪
 
 Permaweb Cookbook 是一个开发者资源，提供了在Permaweb上构建应用程序的基本概念和参考资料。每个概念和参考都将专注于Permaweb开发生态系统的特定方面，并提供额外的详细信息和使用示例。
