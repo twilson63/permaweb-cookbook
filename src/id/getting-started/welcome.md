@@ -2,6 +2,11 @@
 locale: id
 ---
 
+::: warning
+Terjemahan ini mungkin sudah usang atau tidak akurat. Kami menyarankan untuk membaca versi bahasa Inggris dari buku panduan,
+atau mengajukan isu maupun berkontribusi dengan perubahan untuk membantu meningkatkan terjemahan ini di repositori GitHub.
+:::
+
 # Pengembangan di Permaweb
 
 ## Selamat datang di Permaweb
