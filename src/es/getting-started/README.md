@@ -2,6 +2,11 @@
 locale: es
 ---
 
+::: warning
+Es probable que esta traducción esté desactualizada o sea incorrecta. Recomendamos leer la versión en inglés del libro de cocina,
+o plantear problemas o contribuir con cambios para ayudar a mejorar esta traducción en el repositorio de GitHub.
+:::
+
 # Cocinar con el Permaweb
 
 La cocina Permaweb es un recurso para desarrolladores que ofrece los conceptos y referencias esenciales para construir aplicaciones en el Permaweb. Cada concepto y referencia se enfocará en aspectos específicos del ecosistema de desarrollo del Permaweb mientras proporciona detalles adicionales y ejemplos de uso.

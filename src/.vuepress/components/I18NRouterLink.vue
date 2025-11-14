@@ -1,10 +1,10 @@
 <script setup>
-import { ref, watch, defineProps } from 'vue';
-import { useRoute } from 'vue-router';
-import { getCurrentLanguage, getLanguagePath } from '../composables/useI18N';
+import { ref, watch } from "vue";
+import { useRoute } from "vue-router";
+import { getCurrentLanguage, getLanguagePath } from "../composables/useI18N";
 
 const { to } = defineProps({
-  to: String
+  to: String,
 });
 
 const route = useRoute();

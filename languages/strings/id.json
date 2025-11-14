@@ -1,6 +1,7 @@
 {
     "cookbook-meetup-notification": "Pertemuan Komunitas Cookbook - Setiap minggu pada hari Rabu pukul 22:00 WIB / 17:00 GMT",
-    
+    "page-title": "Permaweb Cookbook",
+    "page-description": "Kumpulan panduan pengembang kecil untuk membangun di permaweb",
     "edit": "Edit",
     "language": "Bahasa",
     "docs": "Dokumentasi",
@@ -72,5 +73,7 @@
     "guides-api-token": "Token API",
     "guides-testing": "Pengujian",
     "references": "Referensi",
-    "kits": "Starter Kits"
+    "kits": "Starter Kits",
+    "not-found": "Halaman yang Anda cari tidak dapat ditemukan.",
+    "back-to-home": "Kembali ke Beranda"
 }

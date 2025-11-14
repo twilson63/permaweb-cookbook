@@ -1,5 +1,7 @@
 {
   "cookbook-meetup-notification": "Cookbook Community Meetup - 12pm ET / 5pm GMT every week on Wednesdays",
+  "page-title": "Permaweb Cookbook",
+  "page-description": "A collection of little developer guides to build on the permaweb",
   "edit": "Edit",
   "language": "Language",
   "docs": "Docs",
@@ -70,5 +72,7 @@
   "guides-testing": "Testing",
   "references": "References",
   "references-llms": "LLMs Documentation",
-  "kits": "Starter Kits"
+  "kits": "Starter Kits",
+  "not-found": "The page you are looking for could not be found.",
+  "back-to-home": "Back to Home"
 }
