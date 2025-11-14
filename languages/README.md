@@ -18,4 +18,4 @@ Create a folder with the name set as the 2 letter language code under the `src` 
 
 ## Sidebars
 
-Translated sidebars are stored in the `sidebars` folder. Create a new file with the name set as the 2 letter language code. To add a sidebar, you will need to export the sidebar object in `sidebars/index.js`. Afterwards, import the sidebar object in `config.js` and set it to the corresponding locale under `theme.locales['/langcode/'].sidebar`.
+Translated sidebars are stored in the `sidebars` folder. Create a new file with the name set as the 2 letter language code. Check out the [official vuepress documentation](https://ecosystem.vuejs.press/themes/default/config.html#sidebar) for more information about sidebars configuration.
