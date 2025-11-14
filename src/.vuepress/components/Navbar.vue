@@ -1,15 +1,15 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
-import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue';
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables/index.js';
-import I18NRouterLink from './I18NRouterLink.vue';
-import ToggleSidebarButton from './ToggleSidebarButton.vue';
-import ToggleLanguageButton from './ToggleLanguageButton.vue';
+import ToggleColorModeButton from "@theme/ToggleColorModeButton.vue";
+import { useThemeLocaleData } from "@vuepress/theme-default/lib/client/composables/index.js";
+import I18NRouterLink from "./I18NRouterLink.vue";
+import ToggleSidebarButton from "./ToggleSidebarButton.vue";
+import ToggleLanguageButton from "./ToggleLanguageButton.vue";
 
-import { useI18NStr } from '../composables/useI18N';
+import { useI18NStr } from "../composables/useI18N";
 
-defineEmits(['toggle-sidebar', 'toggle-language']);
+defineEmits(["toggle-sidebar", "toggle-language"]);
 
 const get_i18n_str = useI18NStr();
 const themeLocale = useThemeLocaleData();
@@ -102,7 +102,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@import '../styles/bootstrap.scss';
+@import "../styles/bootstrap.scss";
 
 :root {
   --nav-h: 100px;
@@ -159,8 +159,8 @@ onMounted(() => {
     }
 
     input {
+      transition: none;
       border-radius: 8px;
-
       background-position-y: 0.4rem;
     }
 
