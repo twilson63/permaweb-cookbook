@@ -42,7 +42,7 @@ module.exports = [
       },
       {
         text: "Transactions",
-        link: "/fundamentals/transactions/transaction-types.html",
+        link: "/fundamentals/transactions/index.html",
         collapsible: true,
         children: [
           {
