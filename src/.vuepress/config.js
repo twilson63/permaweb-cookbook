@@ -7,7 +7,7 @@ import { searchPlugin } from "@vuepress/plugin-search";
 import codeCopyPlugin from "@snippetors/vuepress-plugin-code-copy";
 // Using array syntax for VuePress 1 compatibility plugins
 
-import { languages } from "../../languages/def";
+import { languages, get_i18n_str } from "../../languages/def";
 import enStrings from "../../languages/strings/en.json";
 import {
   enSidebar,
@@ -145,18 +145,28 @@ export default {
     locales: {
       "/": {
         sidebar: enSidebar,
+        notFound: [get_i18n_str("en", "not-found", "Not Found")],
+        backToHome: get_i18n_str("en", "back-to-home", "Back to Home"),
       },
       "/ja/": {
         sidebar: jaSidebar,
+        notFound: [get_i18n_str("ja", "not-found", "Not Found")],
+        backToHome: get_i18n_str("ja", "back-to-home", "Back to Home"),
       },
       "/zh/": {
         sidebar: zhSidebar,
+        notFound: [get_i18n_str("zh", "not-found", "Not Found")],
+        backToHome: get_i18n_str("zh", "back-to-home", "Back to Home"),
       },
       "/es/": {
         sidebar: esSidebar,
+        notFound: [get_i18n_str("es", "not-found", "Not Found")],
+        backToHome: get_i18n_str("es", "back-to-home", "Back to Home"),
       },
       "/id/": {
         sidebar: idSidebar,
+        notFound: [get_i18n_str("id", "not-found", "Not Found")],
+        backToHome: get_i18n_str("id", "back-to-home", "Back to Home"),
       },
     },
   }),

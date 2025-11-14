@@ -68,5 +68,7 @@
   "guides-api-token": "APIトークン",
   "guides-testing": "テスト",
   "references": "リファレンス",
-  "kits": "スターターキット"
+  "kits": "スターターキット",
+  "not-found": "お探しのページは見つかりませんでした。",
+  "back-to-home": "ホームに戻る"
 }

@@ -69,5 +69,7 @@
   "references": "Referencias",
   "kits": "Kits de Inicio",
   "concepts-post-tags": "Metadatos (Etiquetas \"Tags\")",
-  "concepts-query-transactions": "Consultas"
+  "concepts-query-transactions": "Consultas",
+  "not-found": "La página que buscas no se pudo encontrar.",
+  "back-to-home": "Volver al inicio"
 }

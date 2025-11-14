@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   {
     text: "Getting Started",
     link: "/getting-started/index.html",

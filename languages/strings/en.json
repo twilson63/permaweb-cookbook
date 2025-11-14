@@ -70,5 +70,7 @@
   "guides-testing": "Testing",
   "references": "References",
   "references-llms": "LLMs Documentation",
-  "kits": "Starter Kits"
+  "kits": "Starter Kits",
+  "not-found": "The page you are looking for could not be found.",
+  "back-to-home": "Back to Home"
 }

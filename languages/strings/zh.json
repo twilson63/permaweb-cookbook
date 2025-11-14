@@ -67,5 +67,7 @@
   "guides-api-token": "Api令牌",
   "guides-testing": "测试",
   "references": "参考资料",
-  "kits": "入门套件"
+  "kits": "入门套件",
+  "not-found": "未找到您请求的页面。",
+  "back-to-home": "返回首页"
 }

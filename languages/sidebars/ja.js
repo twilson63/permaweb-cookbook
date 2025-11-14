@@ -1,4 +1,4 @@
-export default [
+module.exports = [
     {
         text: "はじめに",
         link: "/ja/getting-started/index.html",
