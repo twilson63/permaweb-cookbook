@@ -400,10 +400,6 @@ module.exports = [
             link: "/tooling/deployment/permaweb-deploy.html",
           },
           {
-            text: "arkb (CLI)",
-            link: "/tooling/deployment/arkb.html",
-          },
-          {
             text: "GitHub Actions",
             link: "/tooling/deployment/github-action.html",
           },
