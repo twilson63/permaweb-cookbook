@@ -372,10 +372,6 @@ module.exports = [
             collapsible: true,
             children: [
               {
-                text: "Querying Arweave",
-                link: "/tooling/querying-arweave.html",
-              },
-              {
                 text: "ar-gql (Library)",
                 link: "/tooling/graphql/ar-gql.html",
               },
