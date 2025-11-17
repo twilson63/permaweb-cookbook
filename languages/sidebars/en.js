@@ -122,10 +122,6 @@ module.exports = [
                 text: "Vite + permaweb-deploy",
                 link: "/kits/react/turbo.html",
               },
-              {
-                text: "Create React App",
-                link: "/kits/react/create-react-app.html",
-              },
             ],
           },
           {
