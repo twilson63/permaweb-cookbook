@@ -162,15 +162,15 @@ module.exports = [
         children: [
           {
             text: "arweave-js",
-            link: get_i18n_link(langCode, "/guides/posting-transactions/arweave-js.html"),
+            link: "/guides/posting-transactions/arweave-js.html",
           },
           {
             text: "Turbo-SDK",
-            link: get_i18n_link(langCode, "/guides/posting-transactions/turbo.html")
+            link: "/guides/posting-transactions/turbo.html",
           },
           {
             text: "dispatch",
-            link: get_i18n_link(langCode, "/guides/posting-transactions/dispatch.html"),
+            link: "/guides/posting-transactions/dispatch.html",
           },
         ],
       },
