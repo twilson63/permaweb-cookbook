@@ -5,10 +5,6 @@ module.exports = [
     collapsible: true,
     children: [
       {
-        text: "Welcome & Overview",
-        link: "/getting-started/welcome.html",
-      },
-      {
         text: "Quick Starts",
         collapsible: true,
         children: [
