@@ -36,7 +36,7 @@ Nested bundles have no theoretical limit on nesting depth, meaning that transact
 
 Nested bundles might be useful for when you have different groups of bundled data that you want to guarantee reach Arweave altogether, and at the same time.
 
-Sources and Further Reading:
+## Sources and Further Reading:
 
 [ArDrive Turbo](https://ardrive.io/turbo-bundler/)
 
