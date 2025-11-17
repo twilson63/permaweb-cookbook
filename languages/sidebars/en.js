@@ -130,10 +130,6 @@ module.exports = [
             collapsible: true,
             children: [
               {
-                text: "Minimal",
-                link: "/kits/svelte/minimal.html",
-              },
-              {
                 text: "Vite",
                 link: "/kits/svelte/vite.html",
               },
