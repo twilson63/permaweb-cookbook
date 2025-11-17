@@ -325,7 +325,8 @@ Your React app can be found at `https://my-react-app.arweave.net` (if using ArNS
 ::: tip SUCCESS
 You should now have a React Application on the Permaweb! Great Job!
 :::
-### Congrats!
 
-You just published a react application on the Permaweb! This app will be hosted forever!
+## Congratulations!
+
+You just published a React application on the Permaweb!
 
