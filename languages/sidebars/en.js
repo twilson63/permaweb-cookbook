@@ -161,15 +161,15 @@ module.exports = [
         collapsible: true,
         children: [
           {
-            text: "arweave-js",
+            text: "Arweave JS",
             link: "/guides/posting-transactions/arweave-js.html",
           },
           {
-            text: "Turbo-SDK",
+            text: "Turbo SDK",
             link: "/guides/posting-transactions/turbo.html",
           },
           {
-            text: "dispatch",
+            text: "Dispatch",
             link: "/guides/posting-transactions/dispatch.html",
           },
         ],
