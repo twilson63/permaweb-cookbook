@@ -38,6 +38,6 @@ Nested bundles might be useful for when you have different groups of bundled dat
 
 Sources and Further Reading:
 
-[Ardrive Turbo](https://ardrive.io/turbo-bundler/)
+[ArDrive Turbo](https://ardrive.io/turbo-bundler/)
 
 [ANS-104 Standard](https://github.com/ArweaveTeam/arweave-standards/blob/master/ans/ANS-104.md)
