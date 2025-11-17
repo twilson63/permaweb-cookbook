@@ -409,6 +409,27 @@ module.exports = [
           },
         ],
       },
+    ],
+  },
+  {
+    text: "References",
+    link: "/references/index.html",
+    collapsible: true,
+    children: [
+      {
+        text: "Glossary",
+        collapsible: false,
+        link: "/references/glossary.html",
+      },
+      {
+        text: "LLMs.txt",
+        collapsible: false,
+        link: "/references/llms-txt.html",
+      },
+      {
+        text: "Contributing",
+        link: "/getting-started/contributing.html",
+      },
       {
         text: "Specs",
         collapsible: true,
@@ -479,27 +500,6 @@ module.exports = [
             ],
           },
         ],
-      },
-    ],
-  },
-  {
-    text: "References",
-    link: "/references/index.html",
-    collapsible: true,
-    children: [
-      {
-        text: "Glossary",
-        collapsible: false,
-        link: "/references/glossary.html",
-      },
-      {
-        text: "LLMs.txt",
-        collapsible: false,
-        link: "/references/llms-txt.html",
-      },
-      {
-        text: "Contributing",
-        link: "/getting-started/contributing.html",
       },
     ],
   },
