@@ -174,6 +174,25 @@ module.exports = [
           },
         ],
       },
+      {
+        text: "Manifests & Bundling",
+        link: "/guides/deploying-manifests/deploying-manifests.html",
+        collapsible: true,
+        children: [
+          {
+            text: "arweave.app",
+            link: "/guides/deploying-manifests/arweave-app.html",
+          },
+          {
+            text: "ArDrive",
+            link: "/guides/deploying-manifests/ardrive.html",
+          },
+          {
+            text: "Turbo",
+            link: "/guides/deploying-manifests/turbo",
+          },
+        ],
+      },
     ],
     // children: [
     // 	{
@@ -242,29 +261,6 @@ module.exports = [
     // 					{
     // 						text: get_i18n_str(langCode, "guides-github-action"),
     // 						link: get_i18n_link(langCode, "/guides/deployment/github-action.html"),
-    // 					},
-    // 				],
-    // 			},
-    // 			{
-    // 				text: "Manifests & Bundling",
-    // 				link: get_i18n_link(langCode, "/guides/deploying-manifests/deploying-manifests.html"),
-    // 				collapsible: true,
-    // 				children: [
-    // 					{
-    // 						text: "arweave.app",
-    // 						link: get_i18n_link(langCode, "/guides/deploying-manifests/arweave-app.html"),
-    // 					},
-    // 					{
-    // 						text: "ArDrive",
-    // 						link: get_i18n_link(langCode, "/guides/deploying-manifests/ardrive.html"),
-    // 					},
-    // 					{
-    // 						text: "arseeding-js",
-    // 						link: get_i18n_link(langCode, "/guides/deploying-manifests/arseeding-js.html"),
-    // 					},
-    // 					{
-    // 						text: "Turbo",
-    // 						link: get_i18n_link(langCode, "/guides/deploying-manifests/turbo"),
     // 					},
     // 				],
     // 			},
