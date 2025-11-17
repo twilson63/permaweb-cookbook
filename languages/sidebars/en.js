@@ -440,62 +440,62 @@ module.exports = [
             children: [
               {
                 text: "ANS-101: Gateway Capabilities",
-                link: "/tooling/specs/ans/ANS-101.html",
+                link: "/references/specs/ans/ANS-101.html",
               },
               {
                 text: "ANS-102: Bundled Data - JSON",
-                link: "/tooling/specs/ans/ANS-102.html",
+                link: "/references/specs/ans/ANS-102.html",
               },
               {
                 text: "ANS-103: Succinct Proofs",
-                link: "/tooling/specs/ans/ANS-103.html",
+                link: "/references/specs/ans/ANS-103.html",
               },
               {
                 text: "ANS-104: Bundled Data - Binary",
-                link: "/tooling/specs/ans/ANS-104.html",
+                link: "/references/specs/ans/ANS-104.html",
               },
               {
                 text: "ANS-105: License Tags",
-                link: "/tooling/specs/ans/ANS-105.html",
+                link: "/references/specs/ans/ANS-105.html",
               },
               {
                 text: "ANS-106: Do-Not-Store",
-                link: "/tooling/specs/ans/ANS-106.html",
+                link: "/references/specs/ans/ANS-106.html",
               },
               {
                 text: "ANS-109: Vouch-For",
-                link: "/tooling/specs/ans/ANS-109.html",
+                link: "/references/specs/ans/ANS-109.html",
               },
               {
                 text: "ANS-110: Asset Discoverability",
-                link: "/tooling/specs/ans/ANS-110.html",
+                link: "/references/specs/ans/ANS-110.html",
               },
             ],
           },
           {
             text: "ArFS",
-            link: "/tooling/specs/arfs/arfs.html",
+            link: "/references/specs/arfs/arfs.html",
             collapsible: true,
             children: [
               {
                 text: "Data Model",
-                link: "/tooling/specs/arfs/data-model.html",
+                link: "/references/specs/arfs/data-model.html",
               },
               {
                 text: "Entity Types",
-                link: "/tooling/specs/arfs/entity-types.html",
+                link: "/references/specs/arfs/entity-types.html",
               },
               {
                 text: "Content Types",
-                link: "/tooling/specs/arfs/content-types.html",
+                link: "/references/specs/arfs/content-types.html",
               },
               {
                 text: "Privacy",
-                link: "/tooling/specs/arfs/privacy.html",
+                link: "/references/specs/arfs/privacy.html",
               },
               {
                 text: "Schema Diagrams",
-                link: "/tooling/specs/arfs/schema-diagrams.html",
+                link: "/references/specs/arfs/schema-diagrams.html",
               },
             ],
           },
