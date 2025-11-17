@@ -168,7 +168,6 @@ module.exports = [
       },
       {
         text: "Manifests & Bundling",
-        link: "/guides/deploying-manifests/deploying-manifests.html",
         collapsible: true,
         children: [
           {
