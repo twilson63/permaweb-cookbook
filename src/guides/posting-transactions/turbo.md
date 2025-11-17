@@ -1,6 +1,6 @@
-# Posting Transactions using Ardrive Turbo
+# Posting Transactions using ArDrive Turbo
 
-Posting transactions using Turbo can be accomplished using the `@ardrive/turbo-sdk` JavaScript package.
+Posting bundled transactions can be accomplished by using a third-party package, such as `@ardrive/turbo-sdk`.
 
 ## Installing the @ardrive/turbo-sdk
 
@@ -117,5 +117,5 @@ async function uploadWithTurbo() {
 
 ## Resources
 
-- Dive into the [Code](https://github.com/ardriveapp/turbo-sdk)
+- [Turbo SDK GitHub Repository](https://github.com/ardriveapp/turbo-sdk)
 - Join the discussion in the [ArDrive Discord](https://discord.com/invite/ya4hf2H)

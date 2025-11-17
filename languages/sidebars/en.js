@@ -5,10 +5,6 @@ module.exports = [
     collapsible: true,
     children: [
       {
-        text: "Welcome & Overview",
-        link: "/getting-started/welcome.html",
-      },
-      {
         text: "Quick Starts",
         collapsible: true,
         children: [
@@ -57,6 +53,10 @@ module.exports = [
             text: "Bundles",
             link: "/fundamentals/transactions/bundles.html",
           },
+          {
+            text: "Manifests & Path Resolution",
+            link: "/fundamentals/transactions/manifests.html",
+          },
         ],
       },
       {
@@ -93,10 +93,6 @@ module.exports = [
             link: "/fundamentals/accessing-arweave-data/graphql.html",
           },
           {
-            text: "Manifests & Path Resolution",
-            link: "/fundamentals/accessing-arweave-data/manifests.html",
-          },
-          {
             text: "ArNS Introduction",
             link: "/fundamentals/accessing-arweave-data/arns.html",
           },
@@ -105,36 +101,6 @@ module.exports = [
       {
         text: "Decentralized Computing",
         link: "/fundamentals/decentralized-computing/index.html",
-        collapsible: true,
-        children: [
-          {
-            text: "AO Processes",
-            link: "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html",
-          },
-          {
-            text: "HyperBEAM",
-            link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html",
-            collapsible: true,
-            children: [
-              {
-                text: "HyperBEAM Introduction",
-                link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html",
-              },
-              {
-                text: "Getting AO Process State",
-                link: "/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html",
-              },
-              {
-                text: "Lua Serverless Functions",
-                link: "/fundamentals/decentralized-computing/hyperbeam/lua-serverless.html",
-              },
-              {
-                text: "HyperBEAM Devices",
-                link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html",
-              },
-            ],
-          },
-        ],
       },
     ],
   },
@@ -156,10 +122,6 @@ module.exports = [
                 text: "Vite + permaweb-deploy",
                 link: "/kits/react/turbo.html",
               },
-              {
-                text: "Create React App",
-                link: "/kits/react/create-react-app.html",
-              },
             ],
           },
           {
@@ -167,10 +129,6 @@ module.exports = [
             link: "/kits/svelte/index.html",
             collapsible: true,
             children: [
-              {
-                text: "Minimal",
-                link: "/kits/svelte/minimal.html",
-              },
               {
                 text: "Vite",
                 link: "/kits/svelte/vite.html",
@@ -187,6 +145,43 @@ module.exports = [
                 link: "/kits/vue/create-vue.html",
               },
             ],
+          },
+        ],
+      },
+      {
+        text: "Posting Transactions",
+        collapsible: true,
+        children: [
+          {
+            text: "Arweave JS",
+            link: "/guides/posting-transactions/arweave-js.html",
+          },
+          {
+            text: "Turbo SDK",
+            link: "/guides/posting-transactions/turbo.html",
+          },
+          {
+            text: "Dispatch",
+            link: "/guides/posting-transactions/dispatch.html",
+          },
+        ],
+      },
+      {
+        text: "Manifests & Bundling",
+        link: "/guides/deploying-manifests/deploying-manifests.html",
+        collapsible: true,
+        children: [
+          {
+            text: "arweave.app",
+            link: "/guides/deploying-manifests/arweave-app.html",
+          },
+          {
+            text: "ArDrive",
+            link: "/guides/deploying-manifests/ardrive.html",
+          },
+          {
+            text: "Turbo",
+            link: "/guides/deploying-manifests/turbo",
           },
         ],
       },
@@ -248,28 +243,6 @@ module.exports = [
     // 				],
     // 			},
     // 			{
-    // 				text: "Posting Transactions",
-    // 				collapsible: true,
-    // 				children: [
-    // 					{
-    // 						text: "arweave-js",
-    // 						link: get_i18n_link(langCode, "/guides/posting-transactions/arweave-js.html"),
-    // 					},
-    // 					{
-    // 						text: "Turbo-SDK",
-    // 						link: get_i18n_link(langCode, "/guides/posting-transactions/turbo.html")
-    // 					},
-    // 					{
-    // 						text: "dispatch",
-    // 						link: get_i18n_link(langCode, "/guides/posting-transactions/dispatch.html"),
-    // 					},
-    // 					{
-    // 						text: "arseeding-js",
-    // 						link: get_i18n_link(langCode, "/guides/posting-transactions/arseeding-js.html"),
-    // 					},
-    // 				],
-    // 			},
-    // 			{
     // 				text: "Deployment Tools",
     // 				collapsible: true,
     // 				children: [
@@ -280,29 +253,6 @@ module.exports = [
     // 					{
     // 						text: get_i18n_str(langCode, "guides-github-action"),
     // 						link: get_i18n_link(langCode, "/guides/deployment/github-action.html"),
-    // 					},
-    // 				],
-    // 			},
-    // 			{
-    // 				text: "Manifests & Bundling",
-    // 				link: get_i18n_link(langCode, "/guides/deploying-manifests/deploying-manifests.html"),
-    // 				collapsible: true,
-    // 				children: [
-    // 					{
-    // 						text: "arweave.app",
-    // 						link: get_i18n_link(langCode, "/guides/deploying-manifests/arweave-app.html"),
-    // 					},
-    // 					{
-    // 						text: "ArDrive",
-    // 						link: get_i18n_link(langCode, "/guides/deploying-manifests/ardrive.html"),
-    // 					},
-    // 					{
-    // 						text: "arseeding-js",
-    // 						link: get_i18n_link(langCode, "/guides/deploying-manifests/arseeding-js.html"),
-    // 					},
-    // 					{
-    // 						text: "Turbo",
-    // 						link: get_i18n_link(langCode, "/guides/deploying-manifests/turbo"),
     // 					},
     // 				],
     // 			},
@@ -410,14 +360,6 @@ module.exports = [
             collapsible: true,
             children: [
               {
-                text: "Querying Arweave",
-                link: "/tooling/querying-arweave.html",
-              },
-              {
-                text: "Goldsky Search Gateway",
-                link: "/tooling/graphql/search-indexing-service.html",
-              },
-              {
                 text: "ar-gql (Library)",
                 link: "/tooling/graphql/ar-gql.html",
               },
@@ -432,85 +374,6 @@ module.exports = [
           {
             text: "Permaweb Deploy",
             link: "/tooling/deployment/permaweb-deploy.html",
-          },
-          {
-            text: "arkb (CLI)",
-            link: "/tooling/deployment/arkb.html",
-          },
-          {
-            text: "GitHub Actions",
-            link: "/tooling/deployment/github-action.html",
-          },
-        ],
-      },
-      {
-        text: "Specs",
-        collapsible: true,
-        children: [
-          {
-            text: "ANS",
-            collapsible: true,
-            children: [
-              {
-                text: "ANS-101: Gateway Capabilities",
-                link: "/tooling/specs/ans/ANS-101.html",
-              },
-              {
-                text: "ANS-102: Bundled Data - JSON",
-                link: "/tooling/specs/ans/ANS-102.html",
-              },
-              {
-                text: "ANS-103: Succinct Proofs",
-                link: "/tooling/specs/ans/ANS-103.html",
-              },
-              {
-                text: "ANS-104: Bundled Data - Binary",
-                link: "/tooling/specs/ans/ANS-104.html",
-              },
-              {
-                text: "ANS-105: License Tags",
-                link: "/tooling/specs/ans/ANS-105.html",
-              },
-              {
-                text: "ANS-106: Do-Not-Store",
-                link: "/tooling/specs/ans/ANS-106.html",
-              },
-              {
-                text: "ANS-109: Vouch-For",
-                link: "/tooling/specs/ans/ANS-109.html",
-              },
-              {
-                text: "ANS-110: Asset Discoverability",
-                link: "/tooling/specs/ans/ANS-110.html",
-              },
-            ],
-          },
-          {
-            text: "ArFS",
-            link: "/tooling/specs/arfs/arfs.html",
-            collapsible: true,
-            children: [
-              {
-                text: "Data Model",
-                link: "/tooling/specs/arfs/data-model.html",
-              },
-              {
-                text: "Entity Types",
-                link: "/tooling/specs/arfs/entity-types.html",
-              },
-              {
-                text: "Content Types",
-                link: "/tooling/specs/arfs/content-types.html",
-              },
-              {
-                text: "Privacy",
-                link: "/tooling/specs/arfs/privacy.html",
-              },
-              {
-                text: "Schema Diagrams",
-                link: "/tooling/specs/arfs/schema-diagrams.html",
-              },
-            ],
           },
         ],
       },
@@ -534,6 +397,77 @@ module.exports = [
       {
         text: "Contributing",
         link: "/getting-started/contributing.html",
+      },
+      {
+        text: "Specs",
+        collapsible: true,
+        children: [
+          {
+            text: "ANS",
+            collapsible: true,
+            children: [
+              {
+                text: "ANS-101: Gateway Capabilities",
+                link: "/references/specs/ans/ANS-101.html",
+              },
+              {
+                text: "ANS-102: Bundled Data - JSON",
+                link: "/references/specs/ans/ANS-102.html",
+              },
+              {
+                text: "ANS-103: Succinct Proofs",
+                link: "/references/specs/ans/ANS-103.html",
+              },
+              {
+                text: "ANS-104: Bundled Data - Binary",
+                link: "/references/specs/ans/ANS-104.html",
+              },
+              {
+                text: "ANS-105: License Tags",
+                link: "/references/specs/ans/ANS-105.html",
+              },
+              {
+                text: "ANS-106: Do-Not-Store",
+                link: "/references/specs/ans/ANS-106.html",
+              },
+              {
+                text: "ANS-109: Vouch-For",
+                link: "/references/specs/ans/ANS-109.html",
+              },
+              {
+                text: "ANS-110: Asset Discoverability",
+                link: "/references/specs/ans/ANS-110.html",
+              },
+            ],
+          },
+          {
+            text: "ArFS",
+            link: "/references/specs/arfs/arfs.html",
+            collapsible: true,
+            children: [
+              {
+                text: "Data Model",
+                link: "/references/specs/arfs/data-model.html",
+              },
+              {
+                text: "Entity Types",
+                link: "/references/specs/arfs/entity-types.html",
+              },
+              {
+                text: "Content Types",
+                link: "/references/specs/arfs/content-types.html",
+              },
+              {
+                text: "Privacy",
+                link: "/references/specs/arfs/privacy.html",
+              },
+              {
+                text: "Schema Diagrams",
+                link: "/references/specs/arfs/schema-diagrams.html",
+              },
+            ],
+          },
+        ],
       },
     ],
   },
