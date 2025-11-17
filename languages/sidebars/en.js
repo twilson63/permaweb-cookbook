@@ -391,10 +391,6 @@ module.exports = [
             text: "Permaweb Deploy",
             link: "/tooling/deployment/permaweb-deploy.html",
           },
-          {
-            text: "GitHub Actions",
-            link: "/tooling/deployment/github-action.html",
-          },
         ],
       },
     ],
