@@ -101,36 +101,6 @@ module.exports = [
       {
         text: "Decentralized Computing",
         link: "/fundamentals/decentralized-computing/index.html",
-        collapsible: true,
-        children: [
-          {
-            text: "AO Processes",
-            link: "/fundamentals/decentralized-computing/ao-processes/what-are-ao-processes.html",
-          },
-          {
-            text: "HyperBEAM",
-            link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html",
-            collapsible: true,
-            children: [
-              {
-                text: "HyperBEAM Introduction",
-                link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-introduction.html",
-              },
-              {
-                text: "Getting AO Process State",
-                link: "/fundamentals/decentralized-computing/hyperbeam/getting-ao-state.html",
-              },
-              {
-                text: "Lua Serverless Functions",
-                link: "/fundamentals/decentralized-computing/hyperbeam/lua-serverless.html",
-              },
-              {
-                text: "HyperBEAM Devices",
-                link: "/fundamentals/decentralized-computing/hyperbeam/hyperbeam-devices.html",
-              },
-            ],
-          },
-        ],
       },
     ],
   },
