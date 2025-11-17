@@ -53,6 +53,10 @@ module.exports = [
             text: "Bundles",
             link: "/fundamentals/transactions/bundles.html",
           },
+          {
+            text: "Manifests & Path Resolution",
+            link: "/fundamentals/transactions/manifests.html",
+          },
         ],
       },
       {
@@ -87,10 +91,6 @@ module.exports = [
           {
             text: "GraphQL Queries",
             link: "/fundamentals/accessing-arweave-data/graphql.html",
-          },
-          {
-            text: "Manifests & Path Resolution",
-            link: "/fundamentals/accessing-arweave-data/manifests.html",
           },
           {
             text: "ArNS Introduction",
