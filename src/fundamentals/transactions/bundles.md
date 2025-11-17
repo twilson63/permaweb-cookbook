@@ -2,8 +2,6 @@
 
 ## What is a Bundle?
 
----
-
 A transaction bundle is a special type of Arweave transaction which enables multiple other transactions and/or data items to be grouped inside it. 
 
 Because transaction bundles contain many nested transactions, they are key to Arweave's ability to scale to thousands of transactions per second.
@@ -11,8 +9,6 @@ Because transaction bundles contain many nested transactions, they are key to Ar
 Users submit transactions to a bundling service, such as [Turbo](https://ardrive.io/turbo-bundler/), which combines them into a 'bundle' with other transactions and posts them to the network.
 
 ## How Do Bundles Help Arweave?
-
----
 
 ### Availability
 
@@ -31,8 +27,6 @@ Bundlers solve this problem by continually attempting to post bundled data to Ar
 Bundles can store up to 2<sup>256</sup> transactions, each of which are settled as a single transaction on Arweave. This makes Arweave blockspace scale to support almost any use case.
 
 ## What are Nested Bundles?
-
----
 
 Bundles can include data items for uploading to Arweave and those data item can themselves be a bundle.
 
