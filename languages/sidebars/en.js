@@ -376,10 +376,6 @@ module.exports = [
                 link: "/tooling/querying-arweave.html",
               },
               {
-                text: "Goldsky Search Gateway",
-                link: "/tooling/graphql/search-indexing-service.html",
-              },
-              {
                 text: "ar-gql (Library)",
                 link: "/tooling/graphql/ar-gql.html",
               },
