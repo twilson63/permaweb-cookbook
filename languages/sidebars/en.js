@@ -156,6 +156,24 @@ module.exports = [
           },
         ],
       },
+      {
+        text: "Posting Transactions",
+        collapsible: true,
+        children: [
+          {
+            text: "arweave-js",
+            link: get_i18n_link(langCode, "/guides/posting-transactions/arweave-js.html"),
+          },
+          {
+            text: "Turbo-SDK",
+            link: get_i18n_link(langCode, "/guides/posting-transactions/turbo.html")
+          },
+          {
+            text: "dispatch",
+            link: get_i18n_link(langCode, "/guides/posting-transactions/dispatch.html"),
+          },
+        ],
+      },
     ],
     // children: [
     // 	{
@@ -210,28 +228,6 @@ module.exports = [
     // 								link: get_i18n_link(langCode, "/kits/vue/create-vue.html"),
     // 							},
     // 						],
-    // 					},
-    // 				],
-    // 			},
-    // 			{
-    // 				text: "Posting Transactions",
-    // 				collapsible: true,
-    // 				children: [
-    // 					{
-    // 						text: "arweave-js",
-    // 						link: get_i18n_link(langCode, "/guides/posting-transactions/arweave-js.html"),
-    // 					},
-    // 					{
-    // 						text: "Turbo-SDK",
-    // 						link: get_i18n_link(langCode, "/guides/posting-transactions/turbo.html")
-    // 					},
-    // 					{
-    // 						text: "dispatch",
-    // 						link: get_i18n_link(langCode, "/guides/posting-transactions/dispatch.html"),
-    // 					},
-    // 					{
-    // 						text: "arseeding-js",
-    // 						link: get_i18n_link(langCode, "/guides/posting-transactions/arseeding-js.html"),
     // 					},
     // 				],
     // 			},
