@@ -26,6 +26,10 @@ module.exports = [
     collapsible: true,
     children: [
       {
+        text: "Wallets and Keys",
+        link: "/fundamentals/wallets-and-keyfiles/index.html",
+      },
+      {
         text: "Transactions",
         link: "/fundamentals/transactions/index.html",
         collapsible: true,
