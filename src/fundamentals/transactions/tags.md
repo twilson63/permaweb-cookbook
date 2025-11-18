@@ -33,6 +33,7 @@ Transaction tags can be used in GraphQL queries to return a filtered set of tran
 
 ```ts
 const tx = await arweave.createTransaction({ data: mydata });
+
 tx.addTag("Content-Type", "text/html");
 tx.addTag("Title", "My incredible post about Transaction Tags");
 tx.addTag("Description", "This is one post you do not want to miss!");
