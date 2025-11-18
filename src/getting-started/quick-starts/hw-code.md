@@ -20,11 +20,13 @@ mkdir src && cd src
 touch index.js index.html style.css
 ```
 
-To set up a Node project and create the boilerplate files for creating a website. 
+This sets up a Node project, and creates the boilerplate files for creating a website. 
 
 ## Generate a wallet
 
-To upload files to Arweave, you will need an Arweave wallet. Run the following command from within your `hello-world` directory to generate a wallet:
+To upload files to Arweave, you will need an Arweave wallet. 
+
+Run the following command from within your `hello-world` directory to generate a wallet:
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
@@ -36,7 +38,9 @@ The `wallet.json` file must be in the root of the `hello-world` folder and not i
 
 ## Create a webpage
 
-This webpage is using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. Once finished, we will be using `permaweb-deploy` and our previously generated wallet to deploy a fully functioning, static webpage to Arweave.
+Next, we will create a webpage which using basic HTML, CSS and JavaScript to create a styled button that when you click it the header text changes color. 
+
+Once finished, we will be using `permaweb-deploy` and our previously generated wallet to deploy a fully functioning, static webpage to Arweave.
 
 Paste the code from the following code blocks into their files:
 
