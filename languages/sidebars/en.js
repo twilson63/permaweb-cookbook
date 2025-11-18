@@ -26,17 +26,6 @@ module.exports = [
     collapsible: true,
     children: [
       {
-        text: "Wallets and Keys",
-        link: "/fundamentals/wallets-and-keyfiles/index.html",
-        collapsible: true,
-        children: [
-          {
-            text: "Generating a wallet",
-            link: "/fundamentals/wallets-and-keyfiles/creating-a-wallet.html",
-          },
-        ],
-      },
-      {
         text: "Transactions",
         link: "/fundamentals/transactions/index.html",
         collapsible: true,
@@ -109,6 +98,16 @@ module.exports = [
     link: "/guides/index.html",
     collapsible: true,
     children: [
+      {
+        text: "Wallets and Keys",
+        collapsible: true,
+        children: [
+          {
+            text: "Generating a wallet",
+            link: "/guides/wallets-and-keyfiles/creating-a-wallet.html",
+          },
+        ],
+      },
       {
         text: "Frontend",
         collapsible: true,
