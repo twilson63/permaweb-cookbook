@@ -49,41 +49,36 @@ module.exports = [
         ],
       },
       {
-        text: "Accessing Arweave Data",
-        link: "/fundamentals/accessing-arweave-data/index.html",
+        text: "Gateways",
+        link: "/fundamentals/gateways/index.html",
         collapsible: true,
         children: [
           {
             text: "Data Retrieval Methods",
             collapsible: true,
-            link: "/fundamentals/accessing-arweave-data/data-retrieval.html",
+            link: "/fundamentals/gateways/data-retrieval.html",
             children: [
               {
                 text: "HTTP API",
-                link: "/fundamentals/accessing-arweave-data/http-api.html",
+                link: "/fundamentals/gateways/http-api.html",
               },
               {
                 text: "Arweave.js SDK",
-                link: "/fundamentals/accessing-arweave-data/arweave-js.html",
+                link: "/fundamentals/gateways/arweave-js.html",
               },
               {
                 text: "ARIO Wayfinder",
-                link: "/fundamentals/accessing-arweave-data/wayfinder.html",
+                link: "/fundamentals/gateways/wayfinder.html",
               },
             ],
           },
-
-          {
-            text: "Gateways & Access",
-            link: "/fundamentals/accessing-arweave-data/gateways.html",
-          },
           {
             text: "GraphQL Queries",
-            link: "/fundamentals/accessing-arweave-data/graphql.html",
+            link: "/fundamentals/gateways/graphql.html",
           },
           {
             text: "ArNS Introduction",
-            link: "/fundamentals/accessing-arweave-data/arns.html",
+            link: "/fundamentals/gateways/arns.html",
           },
         ],
       },
