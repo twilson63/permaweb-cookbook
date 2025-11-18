@@ -1,7 +1,5 @@
 # Transaction Bundles
 
-## What is a Bundle?
-
 A transaction bundle is a special type of Arweave transaction which enables multiple other transactions and/or data items to be grouped inside it. 
 
 Because transaction bundles contain many nested transactions, they are key to Arweave's ability to scale to thousands of transactions per second.
