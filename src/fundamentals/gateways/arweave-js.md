@@ -1,47 +1,19 @@
 ---
-title: Fetching Data with Arweave.js
+title: Fetching Data with Arweave JS
 ---
 
-# Fetching Data with Arweave.js
+# Fetching Data with Arweave JS
 
-Arweave.js is the official JavaScript/TypeScript SDK for interacting with the Arweave network. This guide covers the basics of fetching data from known transaction IDs.
+Arweave JS is the official JavaScript/TypeScript SDK for interacting with the Arweave network. 
 
-## Overview
-
-Arweave.js provides a simple and reliable way to fetch transaction data from Arweave when you already have the transaction ID.
-
-**Advantages:**
-
-- Official SDK with comprehensive features
-- Built-in data decoding and validation
-- Support for both Node.js and browser environments
-- Active maintenance and community support
-
-**Use cases:**
-
-- JavaScript/TypeScript applications
-- Fetching data from known transaction IDs
-- When you need transaction metadata
+This guide covers the basics of fetching data from known transaction IDs.
 
 ## Installation
 
 ### NPM
 
-```bash
+```sh
 npm install --save arweave
-```
-
-### Yarn
-
-```bash
-yarn add arweave
-```
-
-### Browser Bundle
-
-```html
-<!-- Latest version -->
-<script src="https://unpkg.com/arweave/bundles/web.bundle.js"></script>
 ```
 
 ## Initialization
@@ -55,18 +27,6 @@ import Arweave from "arweave";
 const arweave = Arweave.init({});
 
 // Or specify a custom gateway
-const arweave = Arweave.init({
-  host: "arweave.net",
-  port: 443,
-  protocol: "https",
-});
-```
-
-### Node.js Initialization
-
-```js
-const Arweave = require("arweave");
-
 const arweave = Arweave.init({
   host: "arweave.net",
   port: 443,
@@ -121,26 +81,6 @@ arweave.transactions.get(txId).then((transaction) => {
 });
 ```
 
-### Get Transaction Status
-
-Check if a transaction has been confirmed:
-
-```js
-const txId = "sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8";
-
-arweave.transactions.getStatus(txId).then((status) => {
-  console.log("Status:", status);
-  // {
-  //   status: 200,
-  //   confirmed: {
-  //     block_height: 140151,
-  //     block_indep_hash: 'OR1wue3oBSg3XWvH0GBlauAtAjBICVs2F_8YLYQ3aoAR7q6_3fFeuBOw7d-JTEdR',
-  //     number_of_confirmations: 20
-  //   }
-  // }
-});
-```
-
 ## Working with Tags
 
 ### Decode Transaction Tags
@@ -190,28 +130,6 @@ arweave.transactions.getData(txId, { decode: true }).then((data) => {
 });
 ```
 
-## Basic Error Handling
-
-```js
-async function fetchArweaveData(txId) {
-  try {
-    const data = await arweave.transactions.getData(txId, {
-      decode: true,
-      string: true,
-    });
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch data:", error);
-    throw error;
-  }
-}
-
-// Usage
-fetchArweaveData("sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8")
-  .then((data) => console.log("Success:", data))
-  .catch((error) => console.error("Error:", error.message));
-```
-
 ## Best Practices
 
 - Use `getData()` instead of `get()` when you only need the data
@@ -221,7 +139,5 @@ fetchArweaveData("sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8")
 
 ## Resources
 
-- [Arweave.js GitHub Repository](https://github.com/ArweaveTeam/arweave-js)
-- [Arweave.js Documentation](https://docs.arweave.org/developers/client-sdk/arweave-js)
+- [Arweave JS GitHub Repository](https://github.com/ArweaveTeam/arweave-js)
 - [GraphQL Guide](/guides/querying-arweave/queryingArweave.md) - For finding transactions
-- [Transaction Data Concepts](/concepts/transaction-data.md)
