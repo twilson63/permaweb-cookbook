@@ -35,19 +35,15 @@ module.exports = [
         collapsible: true,
         children: [
           {
-            text: "Post Transactions",
-            link: "/fundamentals/transactions/post-transactions.html",
-          },
-          {
-            text: "Tags",
-            link: "/fundamentals/transactions/tags.html",
-          },
-          {
-            text: "Bundles",
+            text: "Bundled Transactions",
             link: "/fundamentals/transactions/bundles.html",
           },
           {
-            text: "Manifests & Path Resolution",
+            text: "Transaction Tags",
+            link: "/fundamentals/transactions/tags.html",
+          },
+          {
+            text: "Path Manifests",
             link: "/fundamentals/transactions/manifests.html",
           },
         ],
