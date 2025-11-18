@@ -73,7 +73,7 @@ module.exports = [
             ],
           },
           {
-            text: "GraphQL Queries",
+            text: "GraphQL Endpoints",
             link: "/fundamentals/gateways/graphql.html",
           },
           {
