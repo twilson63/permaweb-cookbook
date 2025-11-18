@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans:wght@400;500;600&display=swap');
 
 @import './bootstrap.scss';
-@import 'bootstrap/scss/bootstrap-grid';
 
 // theme variables
 :root {
@@ -75,7 +74,7 @@ html {
   }
 }
 
-body {
+html, body {
   transition: none;
 }
 
