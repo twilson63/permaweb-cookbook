@@ -326,7 +326,6 @@ module.exports = [
   },
   {
     text: "Tooling",
-    link: "/tooling/index.html",
     collapsible: true,
     children: [
       {
