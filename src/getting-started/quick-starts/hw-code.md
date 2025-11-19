@@ -118,7 +118,7 @@ Deploy your application:
 DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy
 ```
 
-For detailed deployment instructions, see [Permaweb Deploy](/tooling/deployment/permaweb-deploy).
+For detailed deployment instructions, see [Permaweb Deploy](/guides/deployment/permaweb-deploy).
 
 ## Congratulations!
 
