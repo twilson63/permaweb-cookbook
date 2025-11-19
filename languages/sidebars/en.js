@@ -174,6 +174,33 @@ module.exports = [
           },
         ],
       },
+      {
+        text: "Querying & Indexing",
+        collapsible: true,
+        children: [
+          {
+            text: "GraphQL",
+            link: "/tooling/graphql/index.html",
+            collapsible: true,
+            children: [
+              {
+                text: "ar-gql (Library)",
+                link: "/tooling/graphql/ar-gql.html",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        text: "Deployment",
+        collapsible: true,
+        children: [
+          {
+            text: "Permaweb Deploy",
+            link: "/tooling/deployment/permaweb-deploy.html",
+          },
+        ],
+      },
     ],
     // children: [
     // 	{
@@ -323,39 +350,6 @@ module.exports = [
     // 		],
     // 	},
     // ],
-  },
-  {
-    text: "Tooling",
-    collapsible: true,
-    children: [
-      {
-        text: "Querying & Indexing",
-        collapsible: true,
-        children: [
-          {
-            text: "GraphQL",
-            link: "/tooling/graphql/index.html",
-            collapsible: true,
-            children: [
-              {
-                text: "ar-gql (Library)",
-                link: "/tooling/graphql/ar-gql.html",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        text: "Deployment",
-        collapsible: true,
-        children: [
-          {
-            text: "Permaweb Deploy",
-            link: "/tooling/deployment/permaweb-deploy.html",
-          },
-        ],
-      },
-    ],
   },
   {
     text: "References",
