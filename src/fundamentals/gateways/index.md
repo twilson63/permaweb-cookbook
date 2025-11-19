@@ -1,7 +1,9 @@
 
 # Gateways in the Arweave Network
 
-Gateways serve as the interface between the Arweave network and end-users, making permaweb data easily accessible through standard web browsers. Often described as the "front door to the permaweb," these services allow users to interact with blockchain-stored content in a familiar web-like experience.
+Gateways serve as the interface between the Arweave network and end-users, making Permaweb data easily accessible through standard web browsers. 
+
+Often described as the "front door to the Permaweb," these services allow users to interact with blockchain-stored content in a familiar web-like experience.
 
 When you access content on Arweave, you typically use a URL structure like:
 
@@ -41,7 +43,7 @@ Several gateway services currently serve the Arweave ecosystem:
 - [arweave.live](https://arweave.live/)
 - [g8way.io](https://g8way.io)
 
-The AR.IO project is working to make gateway operation more accessible, potentially increasing the decentralization of access points to the network.
+The [AR.IO](https://ar.io/) project is working to make gateway operation more accessible, potentially increasing the decentralization of access points to the network.
 
 ## Further Reading
 

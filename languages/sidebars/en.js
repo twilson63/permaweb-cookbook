@@ -28,13 +28,6 @@ module.exports = [
       {
         text: "Wallets and Keys",
         link: "/fundamentals/wallets-and-keyfiles/index.html",
-        collapsible: true,
-        children: [
-          {
-            text: "Generating a wallet",
-            link: "/fundamentals/wallets-and-keyfiles/creating-a-wallet.html",
-          },
-        ],
       },
       {
         text: "Transactions",
@@ -42,59 +35,46 @@ module.exports = [
         collapsible: true,
         children: [
           {
-            text: "Post Transactions",
-            link: "/fundamentals/transactions/post-transactions.html",
-          },
-          {
-            text: "Tags",
-            link: "/fundamentals/transactions/tags.html",
-          },
-          {
-            text: "Bundles",
+            text: "Bundled Transactions",
             link: "/fundamentals/transactions/bundles.html",
           },
           {
-            text: "Manifests & Path Resolution",
+            text: "Transaction Tags",
+            link: "/fundamentals/transactions/tags.html",
+          },
+          {
+            text: "Path Manifests",
             link: "/fundamentals/transactions/manifests.html",
           },
         ],
       },
       {
-        text: "Accessing Arweave Data",
-        link: "/fundamentals/accessing-arweave-data/index.html",
+        text: "Gateways",
+        link: "/fundamentals/gateways/index.html",
         collapsible: true,
         children: [
           {
             text: "Data Retrieval Methods",
             collapsible: true,
-            link: "/fundamentals/accessing-arweave-data/data-retrieval.html",
+            link: "/fundamentals/gateways/data-retrieval.html",
             children: [
               {
                 text: "HTTP API",
-                link: "/fundamentals/accessing-arweave-data/http-api.html",
+                link: "/fundamentals/gateways/http-api.html",
               },
               {
                 text: "Arweave.js SDK",
-                link: "/fundamentals/accessing-arweave-data/arweave-js.html",
+                link: "/fundamentals/gateways/arweave-js.html",
               },
               {
                 text: "ARIO Wayfinder",
-                link: "/fundamentals/accessing-arweave-data/wayfinder.html",
+                link: "/fundamentals/gateways/wayfinder.html",
               },
             ],
           },
-
           {
-            text: "Gateways & Access",
-            link: "/fundamentals/accessing-arweave-data/gateways.html",
-          },
-          {
-            text: "GraphQL Queries",
-            link: "/fundamentals/accessing-arweave-data/graphql.html",
-          },
-          {
-            text: "ArNS Introduction",
-            link: "/fundamentals/accessing-arweave-data/arns.html",
+            text: "GraphQL Endpoints",
+            link: "/fundamentals/gateways/graphql.html",
           },
         ],
       },
@@ -109,6 +89,16 @@ module.exports = [
     link: "/guides/index.html",
     collapsible: true,
     children: [
+      {
+        text: "Wallets and Keys",
+        collapsible: true,
+        children: [
+          {
+            text: "Generating a wallet",
+            link: "/guides/wallets-and-keyfiles/creating-a-wallet.html",
+          },
+        ],
+      },
       {
         text: "Frontend",
         collapsible: true,
@@ -168,7 +158,6 @@ module.exports = [
       },
       {
         text: "Manifests & Bundling",
-        link: "/guides/deploying-manifests/deploying-manifests.html",
         collapsible: true,
         children: [
           {
@@ -185,183 +174,18 @@ module.exports = [
           },
         ],
       },
-    ],
-    // children: [
-    // 	{
-    // 		text: "Builder",
-    // 		collapsible: true,
-    // 		children: [
-    // 			{
-    // 				text: "Quick Start: Deploy Your First App",
-    // 				link: get_i18n_link(langCode, "/getting-started/quick-starts/hw-cli.html"),
-    // 			},
-    // 			{
-    // 				text: "Framework Kits",
-    // 				collapsible: true,
-    // 				children: [
-    // 					{
-    // 						text: "React",
-    // 						link: get_i18n_link(langCode, "/kits/react/index.html"),
-    // 						collapsible: true,
-    // 						children: [
-    // 							{
-    // 								text: "Vite + permaweb-deploy",
-    // 								link: get_i18n_link(langCode, "/kits/react/turbo.html"),
-    // 							},
-    // 							{
-    // 								text: "Create React App",
-    // 								link: get_i18n_link(langCode, "/kits/react/create-react-app.html"),
-    // 							},
-    // 						],
-    // 					},
-    // 					{
-    // 						text: "Svelte",
-    // 						link: get_i18n_link(langCode, "/kits/svelte/index.html"),
-    // 						collapsible: true,
-    // 						children: [
-    // 							{
-    // 								text: "Minimal",
-    // 								link: get_i18n_link(langCode, "/kits/svelte/minimal.html"),
-    // 							},
-    // 							{
-    // 								text: "Vite",
-    // 								link: get_i18n_link(langCode, "/kits/svelte/vite.html"),
-    // 							},
-    // 						],
-    // 					},
-    // 					{
-    // 						text: "Vue",
-    // 						link: get_i18n_link(langCode, "/kits/vue/index.html"),
-    // 						collapsible: true,
-    // 						children: [
-    // 							{
-    // 								text: "Create Vue App",
-    // 								link: get_i18n_link(langCode, "/kits/vue/create-vue.html"),
-    // 							},
-    // 						],
-    // 					},
-    // 				],
-    // 			},
-    // 			{
-    // 				text: "Deployment Tools",
-    // 				collapsible: true,
-    // 				children: [
-    // 					{
-    // 						text: "arkb",
-    // 						link: get_i18n_link(langCode, "/guides/deployment/arkb.html"),
-    // 					},
-    // 					{
-    // 						text: get_i18n_str(langCode, "guides-github-action"),
-    // 						link: get_i18n_link(langCode, "/guides/deployment/github-action.html"),
-    // 					},
-    // 				],
-    // 			},
-    // 			{
-    // 				text: "DNS Integration",
-    // 				collapsible: true,
-    // 				children: [
-    // 					{
-    // 						text: get_i18n_str(langCode, "guides-server-side"),
-    // 						link: get_i18n_link(langCode, "/guides/dns-integration/server-side.html"),
-    // 					},
-    // 				],
-    // 			},
-    // 		],
-    // 	},
-    // 	{
-    // 		text: "Explorer",
-    // 		collapsible: true,
-    // 		children: [
-    // 			{
-    // 				text: "GraphQL Querying",
-    // 				link: get_i18n_link(langCode, "/guides/querying-arweave/querying-arweave.html"),
-    // 				collapsible: true,
-    // 				children: [
-    // 					{
-    // 						text: "ar-gql",
-    // 						link: get_i18n_link(langCode, "/guides/querying-arweave/ar-gql.html"),
-    // 					},
-    // 					{
-    // 						text: get_i18n_str(langCode, "guides-search-indexing-service"),
-    // 						link: get_i18n_link(langCode, "/guides/querying-arweave/search-indexing-service.html"),
-    // 					},
-    // 				],
-    // 			},
-    // 			{
-    // 				text: "HTTP API Usage",
-    // 				link: get_i18n_link(langCode, "/guides/http-api.html"),
-    // 			},
-    // 		],
-    // 	},
-    // 	{
-    // 		text: "Gamer",
-    // 		collapsible: true,
-    // 		children: [
-    // 			{
-    // 				text: "Atomic Tokens for Gaming (Legacy)",
-    // 				link: get_i18n_link(langCode, "/archive/guides/atomic-tokens/intro.html"),
-    // 			},
-    // 		],
-    // 	},
-    // 	{
-    // 		text: "Quant",
-    // 		collapsible: true,
-    // 		children: [
-    // 			{
-    // 				text: "Advanced Querying Techniques",
-    // 				link: get_i18n_link(langCode, "/guides/querying-arweave/querying-arweave.html"),
-    // 			},
-    // 		],
-    // 	},
-    // 	{
-    // 		text: "Node Operator",
-    // 		collapsible: true,
-    // 		children: [
-    // 			{
-    // 				text: "Vouch Protocol",
-    // 				link: get_i18n_link(langCode, "/guides/vouch-system.html"),
-    // 			},
-    // 		],
-    // 	},
-    // 	{
-    // 		text: "Jack of All Trades",
-    // 		collapsible: true,
-    // 		children: [
-    // 			{
-    // 				text: "ArDrive & No-Code Solutions",
-    // 				link: get_i18n_link(langCode, "/guides/deploying-manifests/ardrive.html"),
-    // 			},
-    // 		],
-    // 	},
-    // ],
-  },
-  {
-    text: "Tooling",
-    link: "/tooling/index.html",
-    collapsible: true,
-    children: [
-      {
-        text: "Upload & Bundling",
-        collapsible: true,
-        children: [
-          {
-            text: "Turbo",
-            link: "/tooling/bundlers.html",
-          },
-        ],
-      },
       {
         text: "Querying & Indexing",
         collapsible: true,
         children: [
           {
             text: "GraphQL",
-            link: "/tooling/graphql/index.html",
+            link: "/guides/graphql/index.html",
             collapsible: true,
             children: [
               {
                 text: "ar-gql (Library)",
-                link: "/tooling/graphql/ar-gql.html",
+                link: "/guides/graphql/ar-gql.html",
               },
             ],
           },
@@ -373,7 +197,7 @@ module.exports = [
         children: [
           {
             text: "Permaweb Deploy",
-            link: "/tooling/deployment/permaweb-deploy.html",
+            link: "/guides/deployment/permaweb-deploy.html",
           },
         ],
       },
@@ -466,6 +290,10 @@ module.exports = [
                 link: "/references/specs/arfs/schema-diagrams.html",
               },
             ],
+          },
+          {
+            text: "ArNS",
+            link: "/references/arns.html",
           },
         ],
       },

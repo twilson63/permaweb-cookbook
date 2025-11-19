@@ -1,4 +1,4 @@
-# ArNS - Arweave Name System
+# Arweave Name System (ArNS)
 
 ## Overview
 The Arweave Name System (ArNS) is the phonebook of the Permaweb.  

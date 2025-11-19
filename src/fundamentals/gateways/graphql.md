@@ -1,5 +1,9 @@
 # GraphQL Queries
 
+GraphQL is particularly useful when needing to find the **metadata** of transactions or blocks, such as transaction IDs, tags, and more. 
+
+When you need to access the actual data associated with a transaction, use the HTTP API or other relevant APIs/SDKs.
+
 ## Overview
 
 Over time, indexing services that implement a GraphQL interface have became the preferred method for querying transaction data on Arweave. An indexing service reads transaction and block headers as they are added to the network (usually from a full Arweave node which the service operates). Once read, the header info is inserted into a database where it can be indexed and efficiently queried. The indexing service uses this database to provide a GraphQL endpoint for clients to query.

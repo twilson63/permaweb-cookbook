@@ -23,13 +23,13 @@ npm install arweave ardrive-cli
 npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json
 ```
 
-## Create a web page
+## Create a webpage
 
 ```sh
 echo "<h1>Hello Permaweb</h1>" > index.html
 ```
 
-## Upload using Ardrive CLI
+## Upload using ArDrive CLI
 
 ```sh
 # Create a Drive
