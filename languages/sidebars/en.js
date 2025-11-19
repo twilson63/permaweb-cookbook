@@ -76,10 +76,6 @@ module.exports = [
             text: "GraphQL Endpoints",
             link: "/fundamentals/gateways/graphql.html",
           },
-          {
-            text: "ArNS Introduction",
-            link: "/fundamentals/gateways/arns.html",
-          },
         ],
       },
       {
@@ -459,6 +455,10 @@ module.exports = [
                 link: "/references/specs/arfs/schema-diagrams.html",
               },
             ],
+          },
+          {
+            text: "ArNS",
+            link: "/references/arns.html",
           },
         ],
       },
