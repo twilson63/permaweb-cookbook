@@ -330,16 +330,6 @@ module.exports = [
     collapsible: true,
     children: [
       {
-        text: "Upload & Bundling",
-        collapsible: true,
-        children: [
-          {
-            text: "Turbo",
-            link: "/tooling/bundlers.html",
-          },
-        ],
-      },
-      {
         text: "Querying & Indexing",
         collapsible: true,
         children: [
