@@ -180,12 +180,12 @@ module.exports = [
         children: [
           {
             text: "GraphQL",
-            link: "/tooling/graphql/index.html",
+            link: "/guides/graphql/index.html",
             collapsible: true,
             children: [
               {
                 text: "ar-gql (Library)",
-                link: "/tooling/graphql/ar-gql.html",
+                link: "/guides/graphql/ar-gql.html",
               },
             ],
           },
@@ -197,7 +197,7 @@ module.exports = [
         children: [
           {
             text: "Permaweb Deploy",
-            link: "/tooling/deployment/permaweb-deploy.html",
+            link: "/guides/deployment/permaweb-deploy.html",
           },
         ],
       },
