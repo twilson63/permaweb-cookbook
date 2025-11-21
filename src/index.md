@@ -10,7 +10,7 @@ The Permaweb Cookbook is a developer resource that provides the essential concep
 
 Welcome to the Arweave development community, where the past is forever etched in the blockchain and the future is full of endless possibilities. Let's build the decentralized web together!
 
-[Read More](getting-started/welcome.md)
+[Read More](getting-started/quick-starts/hw-cli.html)
 
 ## Contributing
 
