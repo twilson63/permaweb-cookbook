@@ -36,6 +36,12 @@ const languages = [
     sidebar: esSidebar,
   },
   {
+    display: "繁體中文",
+    name: "Traditional Chinese",
+    code: "zhTW",
+    path: "/zhTW/",
+  },
+  {
     display: "简体中文",
     name: "Mandarin Chinese",
     code: "zh",
