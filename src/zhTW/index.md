@@ -1,4 +1,5 @@
 ---
+locale: zhTW
 onboarding: true
 ---
 
