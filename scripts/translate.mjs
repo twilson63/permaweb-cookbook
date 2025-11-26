@@ -26,7 +26,9 @@ const BLACKLIST = [
   '.docusaurus',
   'build',
   '.vuepress',
-  'utils'
+  'utils',
+  'components',
+  'images',
 ];
 
 // Initialize OpenAI client for OpenRouter
@@ -37,7 +39,7 @@ const openai = new OpenAI({
 
 async function translateText(text, targetLanguage) {
   const response = await openai.chat.completions.create({
-    model: 'anthropic/claude-3.5-sonnet',
+    model: 'openai/gpt-5-mini',
     messages: [
       {
         role: 'system',
@@ -137,19 +139,22 @@ async function translateFile(filePath, targetLang, outputPath) {
   await fs.writeFile(outputPath, translated, 'utf-8');
 }
 
-async function translateDirectory(dirPath, targetLang, outputDir, existingLangCodes) {
+async function translateDirectory(dirPath, targetLang, existingLangCodes) {
   const entries = await fs.readdir(dirPath, { withFileTypes: true });
 
   for (const entry of entries) {
     const fullPath = path.join(dirPath, entry.name);
-    const relativePath = path.relative(docsDir, fullPath);
-    const outputPath = path.join(outputDir, relativePath);
 
     if (entry.isDirectory()) {
       if (await shouldTranslatePath(fullPath, existingLangCodes)) {
-        await translateDirectory(fullPath, targetLang, outputDir, existingLangCodes);
+        await translateDirectory(fullPath, targetLang, existingLangCodes);
       }
     } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
+      // Calculate relative path from src directory
+      const relativePath = path.relative(docsDir, fullPath);
+      // Create output path in language subfolder
+      const outputPath = path.join(docsDir, targetLang.code, relativePath);
+      
       await translateFile(fullPath, targetLang, outputPath);
     }
   }
@@ -159,15 +164,12 @@ async function translateStrings(targetLang) {
   const enStringsPath = path.join(rootDir, 'languages', 'strings', 'en.json');
   const targetStringsPath = path.join(rootDir, 'languages', 'strings', `${targetLang.code}.json`);
 
-  const enStrings = JSON.parse(await fs.readFile(enStringsPath, 'utf-8'));
-  const translated = {};
-
-  for (const [key, value] of Object.entries(enStrings)) {
-    console.log(`Translating string: ${key}`);
-    translated[key] = await translateText(value, targetLang.display);
-  }
-
-  await fs.writeFile(targetStringsPath, JSON.stringify(translated, null, 2), 'utf-8');
+  console.log('Translating entire strings file...');
+  const enStrings = await fs.readFile(enStringsPath, 'utf-8');
+  
+  const translatedContent = await translateText(enStrings, targetLang.display);
+  
+  await fs.writeFile(targetStringsPath, translatedContent, 'utf-8');
   console.log(`Translated strings saved to ${targetStringsPath}`);
 }
 
@@ -175,8 +177,17 @@ async function translateSidebar(targetLang) {
   const enSidebarPath = path.join(rootDir, 'languages', 'sidebars', 'en.js');
   const targetSidebarPath = path.join(rootDir, 'languages', 'sidebars', `${targetLang.code}.js`);
 
+  console.log('Translating entire sidebar file...');
   const content = await fs.readFile(enSidebarPath, 'utf-8');
-  const translated = await translateText(content, targetLang.display);
+  
+  // First, update all paths to include the language code
+  const updatedPaths = content.replace(
+    /link: "\/([^"]+)"/g,
+    `link: "/${targetLang.code}/$1"`
+  );
+  
+  // Then translate the content
+  const translated = await translateText(updatedPaths, targetLang.display);
 
   await fs.writeFile(targetSidebarPath, translated, 'utf-8');
   console.log(`Translated sidebar saved to ${targetSidebarPath}`);
@@ -214,17 +225,17 @@ async function main() {
     const outputDir = path.join(docsDir, targetLang.code);
     await fs.mkdir(outputDir, { recursive: true });
 
-    // Translate documentation files
-    console.log('\nTranslating documentation files...');
-    await translateDirectory(docsDir, targetLang, docsDir, existingLangCodes);
-
-    // Translate strings
+    // Translate strings first
     console.log('\nTranslating UI strings...');
     await translateStrings(targetLang);
 
-    // Translate sidebar
+    // Translate sidebar second
     console.log('\nTranslating sidebar...');
     await translateSidebar(targetLang);
+
+    // Translate documentation files last
+    console.log('\nTranslating documentation files...');
+    await translateDirectory(docsDir, targetLang, existingLangCodes);
 
     console.log('\n✅ Translation complete!');
   } catch (error) {
