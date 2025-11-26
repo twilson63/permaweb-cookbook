@@ -69,6 +69,12 @@ const languages = [
     strings: jaStrings,
     sidebar: jaSidebar,
   },
+  // { 
+  //   name: "Korean",
+  //   display: "한국어",
+  //   code: "ko",
+  //   path: "/ko/"
+  // }
 ];
 
 const i18n_strs = languages.reduce((langs, currentLang) => {
