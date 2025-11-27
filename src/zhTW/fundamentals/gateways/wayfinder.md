@@ -1,21 +1,21 @@
 ---
-title: Fetching Data with ARIO Wayfinder
+title: 使用 ARIO Wayfinder 擷取資料
 ---
 
-# 使用 ARIO Wayfinder 抓取資料
+# Fetching Data with ARIO Wayfinder
 
-ARIO Wayfinder 是一個協定，透過 AR.IO 網路提供去中心化且經過密碼學驗證的存取 Arweave 上資料的方式。它會為每個請求自動選擇最佳閘道並確保資料完整性。
+ARIO Wayfinder 是一個協定，透過 AR.IO Network 提供去中心化且經加密驗證的方式存取儲存在 Arweave 上的資料。它會為每個請求自動選擇最佳閘道並確保資料完整性。
 
 ## 概覽
 
-Wayfinder 解決了在 permaweb 上可靠存取資料的挑戰，提供：
+Wayfinder 解決了在 permaweb（永久網路）上可靠存取資料的挑戰，提供：
 
 - **智慧路由**：根據效能與可用性自動選擇最佳閘道
 - **資料驗證**：以密碼學方式驗證資料完整性
-- **去中心化存取**：在多個 AR.IO 閘道之間分散請求
-- **無縫整合**：在背景運作以提供快速且可靠的存取
+- **去中心化存取**：將請求分散到多個 AR.IO 閘道
+- **無縫整合**：在背景運作提供快速、可靠的存取
 
-**優點：**
+優勢：
 
 - 生產等級的可靠性
 - 自動閘道選擇
@@ -23,12 +23,12 @@ Wayfinder 解決了在 permaweb 上可靠存取資料的挑戰，提供：
 - 效能監控
 - 開發者友好的 API
 
-**使用情境：**
+使用情境：
 
 - 生產環境應用程式
-- 需要保證資料完整性的情況
+- 需要保證資料完整性的情境
 - 需要高可用性的應用程式
-- 建構健壯的去中心化應用程式
+- 建構健全的去中心化應用程式
 
 ## 安裝
 
@@ -325,31 +325,31 @@ async function fetchWithRetry(txId, maxRetries = 3) {
 }
 ```
 
-## 最佳做法
+## 最佳實務
 
 ### 效能
 
-- 為你的使用情境設定適當的逾時值
-- 對常用資料實作快取
+- 根據使用情境設定適當的逾時值
+- 對常被存取的資料實作快取
 - 監控遙測資料以優化效能
 
 ### 可靠性
 
 - 對於關鍵應用啟用資料驗證
-- 使用多個閘道提供者以提高冗餘
-- 實作適當的錯誤處理與重試邏輯
+- 使用多個閘道提供者以提升冗餘
+- 實作妥善的錯誤處理與重試機制
 
 ### 安全性
 
 - 對敏感內容務必驗證資料完整性
-- 在可能的情況下使用受信任的閘道清單
+- 盡可能使用受信任的閘道清單
 - 監控驗證事件以偵測異常
 
-## 疑難排解
+## 故障排除
 
 ### 常見問題
 
-**閘道選擇失敗：**
+閘道選擇失敗：
 
 ```js
 // Check if gateways are available
@@ -367,7 +367,7 @@ const wayfinder = new Wayfinder({
 });
 ```
 
-**驗證失敗：**
+驗證失敗：
 
 ```js
 // Disable verification temporarily for debugging
@@ -381,7 +381,7 @@ const wayfinder = new Wayfinder({
 
 ## 資源
 
-- [官方 Wayfinder 文件](https://docs.ar.io/wayfinder)
-- [Wayfinder GitHub 倉庫](https://github.com/ar-io/wayfinder)
-- [AR.IO 網路](https://ar.io)
-- [交易資料概念](/concepts/transaction-data.md)
+- [Official Wayfinder Documentation](https://docs.ar.io/wayfinder)
+- [Wayfinder GitHub Repository](https://github.com/ar-io/wayfinder)
+- [AR.IO Network](https://ar.io)
+- [Transaction Data Concepts](/concepts/transaction-data.md)

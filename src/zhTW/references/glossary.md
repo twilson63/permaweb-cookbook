@@ -1,6 +1,6 @@
 # 詞彙表
 
-下列為嵌入於 permaweb 生態系統的 [詞彙工具](https://glossary.arweave.net/)。
+下列為內嵌的 [詞彙表工具](https://glossary.arweave.net/)，用於 permaweb 生態系統。
 
 <style>
   .glossary-iframe {

@@ -1,16 +1,16 @@
 # 哈囉世界（CLI）
 
-本指南將引導你使用命令列介面 (CLI) 將資料放到 Permaweb 上的最簡單方式。
+本指南將引導你使用命令列介面（CLI）將資料最簡單地上傳到 Permaweb。
 
-## 需求
+## 系統需求
 
-- [NodeJS](https://nodejs.org) LTS 或以上版本
+- [NodeJS](https://nodejs.org) LTS 或更新版本
 
 ## 設定
 
-在你的電腦上開啟終端機，然後建立一個名為 `hello-permaweb` 的新資料夾。
+在你的電腦上開啟終端機，並建立一個名為 `hello-permaweb` 的新資料夾。
 
-接著，`cd` 到 `hello-permaweb` 目錄，並用以下指令設定一個新專案：
+接著切換到 `hello-permaweb` 目錄，並以以下指令建立一個新專案：
 
 ```sh
 npm init -y
@@ -23,7 +23,7 @@ npm install arweave ardrive-cli
 npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json
 ```
 
-## 建立網頁
+## 建立一個網頁
 
 ```sh
 echo "<h1>Hello Permaweb</h1>" > index.html
@@ -41,4 +41,4 @@ TX_ID=$(npx ardrive upload-file -l index.html --content-type text/html -w ~/.dem
 open https://arweave.net/${TX_ID}
 ```
 
-恭喜，你已把資料放到 Arweave！
+恭喜，你已經將一些資料放到 Arweave！

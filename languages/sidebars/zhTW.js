@@ -1,11 +1,11 @@
 module.exports = [
   {
-    text: "開始使用",
+    text: "快速開始",
     link: "/zhTW/getting-started/index.html",
     collapsible: true,
     children: [
       {
-        text: "快速開始",
+        text: "快速入門",
         collapsible: true,
         children: [
           {
@@ -13,7 +13,7 @@ module.exports = [
             link: "/zhTW/getting-started/quick-starts/hw-cli.html",
           },
           {
-            text: "程式碼",
+            text: "Code",
             link: "/zhTW/getting-started/quick-starts/hw-code.html",
           },
         ],
@@ -21,7 +21,7 @@ module.exports = [
     ],
   },
   {
-    text: "基礎知識",
+    text: "基礎",
     link: "/zhTW/fundamentals/index.html",
     collapsible: true,
     children: [
@@ -54,7 +54,7 @@ module.exports = [
         collapsible: true,
         children: [
           {
-            text: "資料擷取方法",
+            text: "資料檢索方法",
             collapsible: true,
             link: "/zhTW/fundamentals/gateways/data-retrieval.html",
             children: [
@@ -85,7 +85,7 @@ module.exports = [
     ],
   },
   {
-    text: "教學指南",
+    text: "指南",
     link: "/zhTW/guides/index.html",
     collapsible: true,
     children: [
@@ -204,7 +204,7 @@ module.exports = [
     ],
   },
   {
-    text: "參考資料",
+    text: "參考",
     link: "/zhTW/references/index.html",
     collapsible: true,
     children: [

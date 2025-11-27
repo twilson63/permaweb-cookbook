@@ -1,12 +1,12 @@
 ---
-title: Fetching Data with Arweave JS
+title: 使用 Arweave JS 擷取資料
 ---
 
 # 使用 Arweave JS 擷取資料
 
-Arweave JS 是用來與 Arweave 網路互動的官方 JavaScript/TypeScript SDK。
+Arweave JS 是與 Arweave 網路互動的官方 JavaScript/TypeScript SDK。
 
-本指南涵蓋如何從已知交易 ID 擷取資料的基本用法。
+本指南涵蓋如何從已知交易 ID 擷取資料的基礎內容。
 
 ## 安裝
 
@@ -18,7 +18,7 @@ npm install --save arweave
 
 ## 初始化
 
-### 基本初始化
+### 基礎初始化
 
 ```js
 import Arweave from "arweave";
@@ -38,7 +38,7 @@ const arweave = Arweave.init({
 
 ### 取得交易資料
 
-建議的交易資料擷取方式：
+推薦的取得交易資料方式：
 
 ```js
 const txId = "sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8";
@@ -61,9 +61,9 @@ arweave.transactions
   });
 ```
 
-### 取得完整交易資料
+### 取得完整交易資訊
 
-擷取完整的交易資訊（包含 metadata）：
+擷取包含 metadata 的完整交易資訊：
 
 ```js
 const txId = "sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8";
@@ -85,7 +85,7 @@ arweave.transactions.get(txId).then((transaction) => {
 
 ### 解碼交易標籤
 
-標籤預設以 base64url 編碼。使用內建的解碼器：
+標籤預設為 base64url 編碼。使用內建解碼器：
 
 ```js
 const txId = "sHqUBKFeS42-CMCvNqPR31yEP63qSJG3ImshfwzJJF8";
@@ -132,12 +132,12 @@ arweave.transactions.getData(txId, { decode: true }).then((data) => {
 
 ## 最佳實務
 
-- 當您只需要資料時，使用 `getData()` 而非 `get()`
-- 在擷取資料時務必處理可能發生的錯誤
-- 在處理關鍵操作的資料前，先檢查交易狀態
+- 當只需要資料時，使用 `getData()` 而非 `get()`
+- 在擷取資料時，務必處理潛在錯誤
+- 在處理關鍵操作的資料前，檢查交易狀態
 - 根據預期的資料類型使用適當的解碼選項
 
 ## 資源
 
-- [Arweave JS GitHub 倉庫](https://github.com/ArweaveTeam/arweave-js)
+- [Arweave JS GitHub Repository](https://github.com/ArweaveTeam/arweave-js)
 - [GraphQL 指南](/guides/querying-arweave/queryingArweave.md) - 用於尋找交易

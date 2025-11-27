@@ -1,6 +1,6 @@
 # LLMs.txt
 
-下列是一個[工具](https://fuel_permawebllms.arweave.net)，可讓您根據 permaweb 生態系統的文件建立自己的 LLMs.txt 檔案。
+下方是一個 [工具](https://fuel_permawebllms.arweave.net)，可讓您根據 permaweb 生態系統的文件建立自己的 LLMs.txt 檔案。
 
 <style>
   .llms-iframe {

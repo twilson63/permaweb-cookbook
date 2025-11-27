@@ -23,9 +23,9 @@ yarn add @ardrive/turbo-sdk
 
 ## 上傳資料夾
 
-預設情況下，Turbo SDK 的 `uploadFolder` 方法會為資料夾產生並部署一個 manifest。除非指定其他檔案，`index` 與 `fallback` 屬性將分別設定為上傳資料夾中的 `index.html` 與 `404.html` 檔案。
+預設情況下，Turbo SDK 中的 `uploadFolder` 方法會為該資料夾產生並部署 manifest。除非另有指定，`index` 與 `fallback` 屬性將分別設定為上傳資料夾內的 `index.html` 與 `404.html` 檔案。
 
-`uploadFolder` 方法會回傳 manifest 的完整 JSON，以及 manifest 上傳的交易 ID。
+`uploadFolder` 方法會回傳 manifest 的完整 JSON 以及該 manifest 上傳的交易 ID。
 
 ```javascript
 import { TurboFactory } from "@ardrive/turbo-sdk";
@@ -62,7 +62,7 @@ const { manifest, fileResponses, manifestResponse } = await turbo.uploadFolder({
 
 ## 手動建立並上傳 Manifest
 
-也可以手動建立並上傳 manifest。manifest 是符合特定 schema 的 JSON 物件，並且需以 `Content-Type` 標籤設定為 `application/x.arweave-manifest+json` 來上傳。
+也可以手動建立並上傳 manifest。manifest 是符合特定 schema 的 JSON 物件，上傳時需帶有 `Content-Type` 標籤 `application/x.arweave-manifest+json`。
 
 ```js
 import { TurboFactory } from "@ardrive/turbo-sdk";

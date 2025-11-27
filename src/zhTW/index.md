@@ -1,39 +1,38 @@
 ---
-locale: zhTW
 onboarding: true
 ---
 
-# 與 Permaweb 一起烹飪
+# 在 Permaweb 上開發
 
-Permaweb Cookbook 是一份開發者資源，提供在 Permaweb 上建立應用程式所需的基本概念與參考。每個概念與參考都會聚焦於 Permaweb 開發生態系的特定面向，同時提供額外細節與使用範例。
+Permaweb 食譜是為開發者準備的資源，提供在 Permaweb 上構建應用程式所需的核心概念與參考。每個概念與參考都會聚焦 Permaweb 開發生態系的特定面向，同時提供額外的細節與使用範例。
 
 ## 開發者
 
-歡迎加入 Arweave 開發社群，在這裡過去永遠被刻錄在區塊鏈上，未來充滿無限可能。讓我們一起建構去中心化的網路吧！
+歡迎加入 Arweave 開發者社群，在這裡過去會永遠刻印在區塊鏈上，未來充滿無限可能。讓我們一起打造去中心化的網路！
 
 [閱讀更多](getting-started/quick-starts/hw-cli.html)
 
 ## 貢獻
 
-本 Cookbook 的設計使新進 Permaweb 開發者也容易參與貢獻。即使你不太會某些事情，為 cookbook 貢獻也是很好的學習方式！
+本食譜的設計考量讓新進 Permaweb 開發者也能輕鬆參與貢獻。即使你不確定如何做，向本食譜貢獻也是學習的好方法！
 
-在此查看所有開放議題。貢獻指南在此。如果你發現 cookbook 缺少某個概念、指南或參考，請新增一個議題。
+在此查看所有開啟的 issues。貢獻指南在此。如果你發現食譜缺少某個概念、指南或參考，請新增一個議題。
 
 [閱讀更多](getting-started/contributing.md)
 
-## 如何閱讀本 Cookbook
+## 如何閱讀本食譜
 
-Permaweb Cookbook 被分為不同章節，每個章節針對不同的目標。
+Permaweb 食譜分為不同章節，每個章節針對不同目標。
 
-| 章節     | 說明                              |
-| -------- | --------------------------------- |
-| 基礎概念 | Permaweb 的構成要素，對開發有幫助 |
-| 指南     | 有關各種開發工具的短小指南        |
-| 參考     | 常用程式片段的參考                |
+| 章節     | 說明                                |
+| -------- | ----------------------------------- |
+| 基礎概念 | Permaweb 的構建基礎，對開發很有幫助 |
+| 指南     | 關於不同開發工具的精簡指南          |
+| 參考     | 常用程式碼片段的參考                |
 
 ## 快速開始
 
-這些是幫助各種經驗層級的開發者將程式碼部署到 Permaweb 的小型指南。
+這些是小型指南，可協助各種經驗程度的開發者在 Permaweb 上部署程式碼。
 
-- [哈囉世界（CLI）](getting-started/quick-starts/hw-cli.md)
-- [哈囉世界（程式碼）](getting-started/quick-starts/hw-code.md)
+- [Hello World (CLI)](getting-started/quick-starts/hw-cli.md)
+- [Hello World (Code)](getting-started/quick-starts/hw-code.md)

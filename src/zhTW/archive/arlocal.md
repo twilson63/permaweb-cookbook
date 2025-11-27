@@ -1,26 +1,26 @@
 # arlocal
 
-`arlocal` 是一個用於快速建立與執行本地 Arweave 測試環境的工具。它允許你在類似 Arweave gateway 的伺服器上測試交易，讓開發者在將應用部署到 Arweave 網路之前，可先在模擬環境中測試。
+`arlocal` 是一個用於快速建立和運行本地 Arweave 測試環境的工具。它允許您在類似 Arweave 閘道的伺服器上測試交易，讓開發者能在部署到 Arweave 網路之前於模擬環境中測試應用程式。
 
-使用時不需要 $AR 代幣，且交易為即時。
+使用時不需要 $AR 代幣，且交易為即時完成。
 
 ## CLI
 
-在你的機器上必須安裝 node 與 npm 才能使用 arlocal CLI
+您必須在機器上安裝 node 與 npm 才能使用 arlocal CLI
 
-要啟動本地 gateway，執行 `npx arlocal`
+要啟動本地閘道，執行 `npx arlocal`
 
 ::: tip
-你可以透過傳入埠號作為參數來指定 slim gateway 要監聽的埠，例如
+您可以透過傳遞埠號作為參數來指定精簡閘道要運行的埠
 `npx arlocal 8080`
 :::
 
-若要隱藏日誌，在啟動 gateway 時加上旗標 `--hidelogs`
+若要隱藏日誌，啟動閘道時加入旗標 `--hidelogs`
 `npx arlocal --hidelogs`
 
 ## Node
 
-將套件安裝為開發相依性，執行
+將此套件作為開發相依安裝，執行
 `yarn add arlocal -D` 或 `npm install arlocal --save-dev`
 
 ```js
@@ -39,21 +39,21 @@ import ArLocal from "arlocal";
 })();
 ```
 
-可以使用下列選項來建立 `ArLocal` 實例
+可以使用選項建立 `ArLocal` 實例
 | Option | Description |
 | ---- | ----------- |
-| port | 要使用的埠 |
-| showLogs | 顯示日誌 |
-| dbPath | 臨時資料庫目錄 |
-| persist | 在伺服器重啟時保留資料
+| port | 使用的埠 |
+| showLogs | 是否顯示日誌 |
+| dbPath | 臨時資料庫的目錄 |
+| persist | 在伺服器重啟間保留資料 |
 
-### Example
+### 範例
 
-要讓此範例運作，程式需使用產生的測試錢包。為此，專案中必須同時安裝 `arweave` 與 `arlocal` 套件
+此範例要運作，程式需使用產生的測試錢包。為此，專案必須同時安裝 `arweave` 與 `arlocal` 套件
 
 `yarn add arweave arlocal -D` 或 `npm install --save-dev arweave arlocal`
 
-以下是一個使用 arlocal 在 Arweave 上建立資料交易並張貼的基本 JavaScript 測試範例：
+下面是一個使用 arlocal 在 Arweave 上建立資料交易並發布的基本 JavaScript 測試範例：
 
 ```js
 import ArLocal from "arlocal";
@@ -98,9 +98,9 @@ test("test transaction", async () => {
 ```
 
 ::: warning
-L1 交易的測試結果可能會與 L2 交易有所不同
+來自 L1 交易的測試結果可能會與 L2 交易有所不同
 :::
 
-## Resources
+## 資源
 
-[arlocal docs](https://github.com/textury/arlocal)
+[arlocal 文件](https://github.com/textury/arlocal)

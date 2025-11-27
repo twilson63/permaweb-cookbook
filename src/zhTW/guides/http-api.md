@@ -1,27 +1,27 @@
-# 取得交易資料
+# 擷取交易資料
 
-雖然索引服務允許查詢交易的 metadata，但它們並不提供交易資料本身的存取。這是因為快取交易資料與索引 metadata 所需的資源不同。索引服務主要依賴計算資源來對資料庫進行查詢，而交易資料則較適合部署在內容傳遞網路（CDN）上以優化儲存與頻寬。
+雖然索引服務允許查詢交易的 metadata，但它們不提供交易資料本身的存取。這是因為快取交易資料與建立索引 metadata 所需的資源不同。索引服務主要依賴運算資源對資料庫進行查詢，而交易資料較適合部署在內容傳遞網路 (CDN) 上，以優化儲存與頻寬。
 
-大多數 gateway 透過一組 HTTP 端點提供交易資料快取服務。任何 HTTP 用戶端/套件都可以用來向這些端點請求交易資料。例如 JavaScript 的 Axios 或 Fetch、PHP 的 Guzzle 等。
+大多數網關都會透過一組 HTTP 端點提供交易資料快取服務。任何 HTTP 用戶端/套件都可以用來從這些端點請求交易資料，例如 JavaScript 的 Axios 或 Fetch、PHP 的 Guzzle 等等。
 
-如果你想繞過交易資料快取服務，直接從 Arweave peers/nodes 取得資料也是可以的，但會非常花工夫！
+如果你想繞過交易資料快取服務，直接從 Arweave 的同儕/節點抓取資料也是可以的，但會非常麻煩！
 
-交易資料在 Arweave 上以連續的 256KB 區塊序列儲存，從網路一開始一直到目前的區塊。此格式經過優化以支援 SPoRA 採礦機制，礦工參與此機制以證明他們正在儲存 Arweave 的資料。
+交易資料在 Arweave 上以從網路起始到當前區塊的一連續 256KB 區塊（chunk）序列儲存。此格式是為了支援礦工用以證明他們正在儲存 Arweave 資料的 SPoRA 挖礦機制所優化。
 
 ::: info
 
-1. 從一個已知的 peer 取回 peers 列表。
-1. 向該 peer 詢問包含你交易資料的 chunk 偏移（chunk offsets）。
-1. 向該 peer 要求那些 chunks。
-   1. 如果 peer 提供了 chunks，將它們合併回原始格式。
-1. （如果該 peer 沒有 chunks）逐一向 peers 列表中的其他 peer 詢問 chunks。
-1. 對每個你拜訪的 peer，檢查它們的 peers 列表並將尚未在你的清單中的 peers 新增進去。
-1. 重複第 3 步直到取得所有 chunks。
+1. 從一個知名的同儕取得同儕名單。
+1. 向該同儕詢問包含你欲取回的交易資料之 chunk 的位移（offsets）。
+1. 向該同儕請求那些 chunk。
+   1. 如果該同儕提供了 chunk，將它們合併回原始格式。
+1. （如果該同儕沒有那些 chunk）遍歷同儕名單並向其他同儕索取 chunk。
+1. 對於每個拜訪過的同儕，檢查其同儕名單並將尚未在你名單中的同儕加入。
+1. 重複從步驟 3 開始直到取得所有 chunk。
    :::
 
-每次要從 Arweave 網路檢索資料時都要做這些事情，工作量相當大。想像如果你想像 [https://public-square.arweave.net](https://public-square.arweave.net) 那樣顯示推文時間軸，使用者體驗會因為長時間載入和等待轉圈而非常糟糕。由於 Arweave 上的資料是永久性的，以原始形式快取是安全的，且能讓檢索交易資料變得更快、更簡單。
+每次要從 Arweave 網路取回資料時都要執行上述流程相當耗時。試想如果你要像 https://public-square.arweave.net 那樣顯示一個推文時間軸，用戶體驗會因為漫長的載入時間與等待指示而變差。由於 Arweave 上的資料是永久性的，將原始資料快取下來以加快交易資料的擷取是安全且實用的作法。
 
-以下說明如何在 arweave.net 的交易資料快取服務中存取快取的交易資料。
+以下說明如何在 arweave.net 的交易資料快取服務存取快取的交易資料。
 
 ### 取得快取的交易資料
 
@@ -35,7 +35,7 @@ console.log(res);
 ```
 
 <details>
-<summary><b>點擊查看範例結果</b></summary>
+<summary><b>點擊以檢視範例結果</b></summary>
 
 ```json
 {
@@ -87,7 +87,7 @@ console.log(res);
 </details>
 <hr />
 
-每個 Arweave peer/node 通常也會暴露一些 HTTP 端點，這些端點常被複製成 gateway。你可以在此處閱讀更多有關 Arweave peer 的 HTTP 端點資訊。
+每個 Arweave 同儕/節點也會公開一些 HTTP 端點，這些端點常被重複部署為網關。你可以在這裡閱讀更多關於 Arweave 同儕的 HTTP 端點的資訊。
 
 ### 取得原始交易
 
@@ -101,7 +101,7 @@ console.log(JSON.stringify(result));
 ```
 
 <details>
-<summary><b>點擊查看範例結果</b></summary>
+<summary><b>點擊以檢視範例結果</b></summary>
 
 ```json
 {
@@ -135,7 +135,7 @@ console.log(JSON.stringify(result));
 ```
 
 <details>
-<summary><b>點擊查看範例結果</b></summary>
+<summary><b>點擊以檢視範例結果</b></summary>
 
 ```json
 {
@@ -156,7 +156,7 @@ console.log(JSON.stringify(result));
 
 ### 取得錢包餘額
 
-回傳的餘額單位為 Winston。要取得 $AR，請將餘額除以 1000000000000
+回傳的餘額單位為 Winston。若要取得 $AR，請將餘額除以 1000000000000
 `https://arweave.net/wallet/ADDRESS/balance`
 
 ```js
@@ -174,7 +174,7 @@ console.log(res.data / 1000000000000);
 
 `https://arweave.net/tx/TX_ID/status`
 ::: tip
-此端點僅支援原生 Arweave 交易。交易必須已被確認後才會得到成功回應。
+此端點僅支援原生 Arweave 交易。交易必須被確認後才能取得成功的回應。
 :::
 
 ```js
@@ -185,7 +185,7 @@ console.log(JSON.stringify(result));
 ```
 
 <details>
-<summary><b>點擊查看範例結果</b></summary>
+<summary><b>點擊以檢視範例結果</b></summary>
 
 ```json
 {
@@ -206,7 +206,7 @@ console.log(res.data);
 ```
 
 <details>
-<summary><b>點擊查看範例結果</b></summary>
+<summary><b>點擊以檢視範例結果</b></summary>
 
 ```json
 {
@@ -227,13 +227,13 @@ console.log(res.data);
 
 ---
 
-## 使用 Wayfinder 取得資料
+## 使用 Wayfinder 擷取資料
 
-[Wayfinder](https://docs.ar.io/wayfinder) 是一套協定與程式庫，透過 AR.IO Network 提供去中心化且經密碼學驗證的 Arweave 資料存取。Wayfinder 會自動為每個請求選擇最佳的 gateway，驗證資料完整性，並確保能可靠存取永久網（permaweb）內容。
+[Wayfinder](https://docs.ar.io/wayfinder) 是一個協定與一組函式庫，透過 AR.IO 網路提供去中心化、具密碼學驗證的 Arweave 資料存取。Wayfinder 會自動為每次請求選擇最佳網關、驗證資料完整性，並確保可靠地存取永久網（permaweb）內容。
 
-- 智慧路由：自動選擇最快且最可靠的 gateway
-- 資料驗證：確保你收到的是原始且未被更改的內容
-- 去中心化存取：將請求分散到 AR.IO 的 gateway 網路
+- 智能路由：自動選擇最快且最可靠的網關
+- 資料驗證：確保收到的是真實、未被修改的內容
+- 去中心化存取：將請求分散到 AR.IO 的網關網路
 
 ### 安裝
 
@@ -310,4 +310,4 @@ function MyComponent() {
 }
 ```
 
-如需更進階的設定與使用方式，請參閱 [官方 Wayfinder 文件](https://docs.ar.io/wayfinder)。
+如需進階設定與使用，請參閱 [官方 Wayfinder 文件](https://docs.ar.io/wayfinder)。

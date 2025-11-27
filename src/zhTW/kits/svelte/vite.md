@@ -1,8 +1,8 @@
-# Svelte/Vite Starter Kit
+# Svelte/Vite 入門套件
 
-Svelte 是一個會在編譯時「消失」的框架，產生的小套件體積很小，非常適合用在 Permaweb。作為開發者，我們同樣重視開發體驗（Dev Experience）與使用者體驗（User Experience）。此套件使用 `vite` 打包系統，為開發者提供良好的 DX 體驗。
+Svelte 是一個會把框架編譯移除的框架，產生的小型封包非常適合 Permaweb。身為開發者，我們同等重視開發體驗（Dev Experience）與使用者體驗（User Experience）。本套件使用 `vite` 打包系統，提供開發者出色的開發體驗（DX）。
 
-## Installing vite with svelte and typescript
+## 使用 Svelte 與 TypeScript 安裝 vite
 
 <CodeGroup>
   <CodeGroupItem title="NPM v6">
@@ -37,11 +37,11 @@ pnpm create vite my-perma-app --template svelte-ts
 
 ## 專案資訊
 
-vite 的建置系統會將你的 index.html 檔放在專案根目錄，若需要，你可以在那裡包含任何 CSS 或全域腳本相依性。想了解更多 vite 的專案佈局，請參考 [vite 文件](https://vitejs.dev/guide/#index-html-and-project-root)
+vite 建構系統會將你的 index.html 檔案放在專案根目錄；若需要，可在此加入任何 CSS 或全域腳本依賴。欲了解更多有關 vite 專案結構的資訊，請參閱 [vite 文件](https://vitejs.dev/guide/#index-html-and-project-root)
 
-## 設定 hash-router
+## 設定 hash 路由
 
-要設定 hash-router 我們會使用 [tinro](https://github.com/AlexxNB/tinro)。`tinro` 是一個輕量的聲明式路由庫，類似於 React Router。
+要設定 hash 路由我們會使用 [tinro](https://github.com/AlexxNB/tinro)。`tinro` 是一個輕量的宣告式路由庫，類似於 React Router。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -60,9 +60,9 @@ yarn add -D tinro
   </CodeGroupItem>
 </CodeGroup>
 
-## 告訴 Svelte 使用 hash routing
+## 告訴 Svelte 使用 hash 路由
 
-在 `src/App.svelte` 檔案中，你要將路由器設定為使用 hash routing 模式。
+在 `src/App.svelte` 檔案中，將路由器設定為使用 hash 路由模式。
 
 ```html
 <script lang="ts">
@@ -73,14 +73,13 @@ yarn add -D tinro
 <main></main>
 ```
 
-`router.mode.hash` 函式會啟用 hash 路由模式。
-`router.subscribe` 的回呼在頁面轉換時將頁面捲動回頂端，體驗較佳。
+`router.mode.hash` 函式會啟用 hash 路由模式。`router.subscribe` 的回呼用來在頁面切換時將頁面捲動回頂端。
 
-## 新增一些過場元件
+## 新增過渡（transition）元件
 
-這些元件會在路由切換時管理頁面之間的過場動畫。
+這些元件會在路由切換時管理頁面之間的過渡效果。
 
-在 `src` 目錄下建立一個 components 目錄，然後新增以下兩個檔案：
+在 `src` 目錄下建立一個名為 components 的資料夾，並加入以下兩個檔案：
 
 ### announcer.svelte
 
@@ -109,7 +108,7 @@ yarn add -D tinro
 </style>
 ```
 
-> 這個元件用於讓螢幕閱讀器在頁面變換時發出通知
+> 此元件用於讓螢幕閱讀器在頁面變更時進行宣告
 
 ### transition.svelte
 
@@ -126,9 +125,9 @@ yarn add -D tinro
 {/key}
 ```
 
-> 這個元件為頁面過場加入淡入淡出的效果
+> 此元件為頁面切換新增淡入淡出過渡效果
 
-## 將路由加入應用程式
+## 為應用程式新增路由
 
 ```html
 <script lang="ts">
@@ -148,7 +147,7 @@ yarn add -D tinro
 </Transition>
 ```
 
-將 Announcer 與 Transition 元件加入路由系統會處理頁面轉換時的通報與過場動畫。
+將 Announcer 和 Transition 元件加入路由系統後，會同時處理頁面切換的宣告以及切換動畫。
 
 ## 建立一些頁面
 
@@ -187,11 +186,11 @@ yarn add -D tinro
 ...
 ```
 
-## 永久部署
+## 部署到 Permaweb
 
 ### 產生錢包
 
-我們需要使用 `arweave` 套件來產生錢包
+我們需要 `arweave` 套件來產生錢包
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -210,15 +209,15 @@ yarn add arweave -D
   </CodeGroupItem>
 </CodeGroup>
 
-接著在終端機執行此指令
+接著在終端機執行以下指令
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### 為錢包充值
+### 為錢包加值
 
-你需要使用 ArDrive Turbo 點數為錢包充值。前往 [ArDrive](https://app.ardrive.io) 並匯入你的錢包，然後為你的錢包購買 turbo 點數。
+您需要為錢包加值 ArDrive Turbo 點數。請前往 [ArDrive](https://app.ardrive.io) 並匯入您的錢包，接著即可為該錢包購買 Turbo 點數。
 
 ### 設定 Permaweb-Deploy
 
@@ -267,12 +266,12 @@ export default defineConfig({
 ```
 
 ::: info
-將 << ANT-PROCESS >> 替換為你的 ANT process id。
+請將 << ANT-PROCESS >> 替換為您的 ANT process id。
 :::
 
-### 執行 build
+### 執行建置
 
-現在該產生建置了，執行
+現在開始產生建置，執行
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -293,7 +292,7 @@ yarn build
 
 ### 執行部署
 
-最後我們可以部署第一個 Permaweb 應用程式了
+最後，我們已準備好部署第一個 Permaweb 應用程式
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -313,23 +312,23 @@ yarn deploy
 </CodeGroup>
 
 ::: info ERROR
-如果你收到錯誤 `Insufficient funds`，請確認你是否已經使用 ArDrive Turbo 點數為部署用錢包充值。
+如果收到 `Insufficient funds` 錯誤，請確認已為部署錢包加值 ArDrive Turbo 點數。
 :::
 
 ### 回應
 
-你會看到類似以下的回應：
+您應該會看到類似以下的回應：
 
 ```shell
 Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
 ```
 
-你的 Svelte 應用程式可以在 `https://arweave.net/<< tx-id >>` 找到。
+您的 Svelte 應用程式可在 `https://arweave.net/<< tx-id >>` 存取。
 
 ::: tip SUCCESS
-你現在應該已經在 Permaweb 上擁有一個 Svelte 應用程式！做得好！
+您現在應該已在 Permaweb 上擁有一個 Svelte 應用程式！做得好！
 :::
 
 ## 總結
 
-這是將 Svelte 應用發布到 Permaweb 的一個最小版本教學，但你可能會想要更多功能，例如熱重載或 tailwind 等。可以查看 `hypar` 以獲得一個開箱即用的入門套件。 [HypAR](https://github.com/twilson63/hypar)
+這是在 Permaweb 上發佈 Svelte 應用程式的最小流程範例，但你或許會想要更多功能，例如熱重載（hot-reloading）與 Tailwind 等。可參考 `hypar` 作為開箱即用的起始套件。詳見 [HypAR](https://github.com/twilson63/hypar)

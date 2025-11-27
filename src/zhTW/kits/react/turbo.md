@@ -1,13 +1,13 @@
-# React Starter Kit w/vite & ArDrive
+# React 入門範本 w/vite 與 ArDrive
 
-本指南將一步步引導你設定開發環境，以建置並部署一個 Permaweb 的 React 應用程式。
+本指南將逐步帶您配置開發環境，以建立並部署一個 Permaweb React 應用程式。
 
 ## 先決條件
 
-- 基本 Typescript 知識（非必須） - [學習 Typescript](https://www.typescriptlang.org/docs/)
-- NodeJS v16.15.0 或更新版本 - [下載 NodeJS](https://nodejs.org/en/download/)
-- ReactJS 知識 - [學習 ReactJS](https://reactjs.org/)
-- 熟悉 Git 與常見終端機指令
+- 基本 TypeScript 知識（非必須）- [Learn Typescript](https://www.typescriptlang.org/docs/)
+- NodeJS v16.15.0 或更新版本 - [Download NodeJS](https://nodejs.org/en/download/)
+- ReactJS 知識 - [Learn ReactJS](https://reactjs.org/)
+- 熟悉 Git 與常用終端機指令
 
 ## 開發相依套件
 
@@ -39,7 +39,7 @@ yarn
 </CodeGroupItem>
 </CodeGroup>
 
-### 新增 React Router DOM
+### 加入 React Router DOM
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -74,9 +74,9 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
-      Welcome to the Permaweb!
+      歡迎來到 Permaweb！
       <Link to={"/about/"}>
-        <div>About</div>
+        <div>關於</div>
       </Link>
     </div>
   );
@@ -93,9 +93,9 @@ import { Link } from "react-router-dom";
 function About() {
   return (
     <div>
-      Welcome to the About page!
+      歡迎來到關於頁面！
       <Link to={"/"}>
-        <div>Home</div>
+        <div>首頁</div>
       </Link>
     </div>
   );
@@ -106,7 +106,7 @@ export default About;
 
 #### 修改 App.tsx
 
-我們需要更新 App.tsx 以管理不同頁面
+我們需要更新 App.tsx 來管理不同頁面
 
 ```tsx
 import { HashRouter } from "react-router-dom";
@@ -131,7 +131,7 @@ export default App;
 
 #### 修改 index.css
 
-調整 `body` 選取器
+變更 `body` 選擇器
 
 ```css
 body {
@@ -188,7 +188,7 @@ yarn build
 
 #### 產生錢包
 
-我們需要 `arweave` 套件來產生錢包
+我們需要安裝 `arweave` 套件來產生錢包
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -215,7 +215,7 @@ node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).the
 
 #### 為錢包充值
 
-你需要為你的錢包加值 ArDrive Turbo 點數。為此，前往 [ArDrive](https://app.ardrive.io) 並匯入你的錢包。之後，你可以為錢包購買 turbo 點數。
+您需要為錢包充值 ArDrive Turbo 點數。為此，前往 [ArDrive](https://app.ardrive.io) 匯入您的錢包，然後為該錢包購買 Turbo 點數。
 
 #### 設定 Permaweb-Deploy
 
@@ -237,7 +237,7 @@ yarn add permaweb-deploy --dev --ignore-engines
 </CodeGroup>
 
 ::: info
-你需要在錢包中加入 AR 並以 Turbo 點數為其充值，才能上傳此應用。欲了解更多資訊，請參閱 [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html)。
+您需要在錢包中加入 AR 並為其充值 Turbo 點數，才能上傳此應用。詳情請參閱 [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html)。
 :::
 
 #### 更新 package.json
@@ -254,12 +254,12 @@ yarn add permaweb-deploy --dev --ignore-engines
 ```
 
 ::: info
-請將 `my-react-app` 替換為你實際的 ArNS 名稱。你也可以加入其他選項，例如用於暫存部署的 `--undername staging`。
+將 `my-react-app` 替換為您實際的 ArNS 名稱。您也可以加入其他選項，例如用於測試部署的 `--undername staging`。
 :::
 
 #### 執行建置
 
-現在是產生建置的時候了，執行
+現在是產生建置的時候，執行
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -280,7 +280,7 @@ yarn build
 
 #### 執行部署
 
-最後，我們準備好部署我們的第一個 Permaweb 應用程式
+最後我們可以部署第一個 Permaweb 應用程式了
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -300,31 +300,31 @@ yarn deploy
 </CodeGroup>
 
 ::: warning 資金不足
-如果你收到錯誤 `Insufficient funds`，請確認你已經記得為部署錢包充值 Turbo 點數。欲了解更多資訊，請參閱 [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html)。
+若收到 `Insufficient funds`（資金不足）錯誤，請確認您已為部署用錢包充值 Turbo 點數。詳情請參閱 [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html)。
 :::
 
 #### 回應
 
-你應該會看到類似以下的回應：
+您應該會看到類似以下的回應：
 
 ```shell
--------------------- DEPLOY DETAILS --------------------
+-------------------- 部署詳情 --------------------
 Tx ID: abc123def456ghi789jkl012mno345pqr678stu901v
-ArNS Name: my-react-app
+ArNS 名稱: my-react-app
 Undername: @
 ANT: xyz789abc012def345ghi678jkl901mno234pqr567s
 AR IO Process: bh9l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM
-TTL Seconds: 3600
+TTL 秒數: 3600
 --------------------------------------------------------
-Deployed TxId [abc123def456ghi789jkl012mno345pqr678stu901v] to name [my-react-app] for ANT [xyz789abc012def345ghi678jkl901mno234pqr567s] using undername [@]
+已將 TxId [abc123def456ghi789jkl012mno345pqr678stu901v] 部署至名稱 [my-react-app]，ANT 為 [xyz789abc012def345ghi678jkl901mno234pqr567s]，使用 undername [@]
 ```
 
-你的 React 應用可以透過 `https://my-react-app.arweave.net`（如果使用 ArNS）或 `https://arweave.net/abc123def456ghi789jkl012mno345pqr678stu901v` 存取。
+您的 React 應用可在 `https://my-react-app.arweave.net`（若使用 ArNS）或 `https://arweave.net/abc123def456ghi789jkl012mno345pqr678stu901v` 找到。
 
 ::: tip 成功
-你現在應該已經在 Permaweb 上擁有一個 React 應用程式！幹得好！
+您現在應該已經在 Permaweb 上有一個 React 應用！做得很好！
 :::
 
 ## 恭喜！
 
-你已經成功在 Permaweb 上發佈了一個 React 應用程式！
+您已成功在 Permaweb 上發佈一個 React 應用！

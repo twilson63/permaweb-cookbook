@@ -1,4 +1,4 @@
-# 基本概念
+# 基礎
 
 理解 Arweave 與 Permaweb 的基本概念，對於構建健全的去中心化應用程式至關重要。
 
@@ -10,7 +10,7 @@
 
 - **[交易](./transactions/index.md)**
   - [發佈交易](./transactions/post-transactions.md)
-  - [捆綁](./transactions/bundles.md)
+  - [交易捆綁](./transactions/bundles.md)
   - [交易類型](./transactions/transaction-types.md)
   - [清單與路徑解析](./transactions/manifests.md)
 
@@ -22,6 +22,6 @@
   - **[閘道與存取](./accessing-arweave-data/gateways.md)** - 如何存取網路
   - **[Arweave 名稱系統 (ArNS)](./accessing-arweave-data/arns.md)**
 
-## 去中心化計算
+## 去中心化運算
 
-- **[去中心化計算](./decentralized-computing/index.md)**
+- **[去中心化運算](./decentralized-computing/index.md)**
