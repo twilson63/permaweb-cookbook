@@ -46,6 +46,7 @@ const languageLinks = computed(() => {
       tabindex="0"
       @click="toggleDropdown"
     >
+      <div class="cb-icon language"></div>
       {{ get_i18n_str("language", "Language") }}
     </div>
     <ul v-if="isDropdownOpen" class="language-dropdown">
@@ -65,10 +66,20 @@ const languageLinks = computed(() => {
 
 .toggle-button {
   cursor: pointer;
-}
+  display: flex;
+  align-items: center;
+  gap: 5px;
 
-.toggle-button:hover {
-  text-decoration: underline;
+  .lang-icon {
+    width: 20px;
+    height: 20px;
+    mask: url("/icons/language.svg") no-repeat center;
+    background-color: var(--c-text);
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .language-dropdown {

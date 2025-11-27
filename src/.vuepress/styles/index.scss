@@ -251,3 +251,30 @@ a:hover {
 .back-to-top {
   display: none !important;
 }
+
+.cb-icon {
+  width: 20px;
+  height: 20px;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--c-text);
+
+  &.sm {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.lg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.github {
+    mask-image: url('/icons/github.svg');
+  }
+
+  &.language {
+    mask-image: url('/icons/language.svg');
+  }
+}
