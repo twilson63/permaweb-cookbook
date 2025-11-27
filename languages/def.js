@@ -5,6 +5,7 @@ const zhStrings = require("./strings/zh.json");
 const idStrings = require("./strings/id.json");
 const jaStrings = require("./strings/ja.json");
 const zhTWStrings = require("./strings/zhTW.json");
+const koStrings = require("./strings/ko.json");
 
 const enSidebar = require("./sidebars/en.js");
 const esSidebar = require("./sidebars/es.js");
@@ -12,6 +13,7 @@ const jaSidebar = require("./sidebars/ja.js");
 const idSidebar = require("./sidebars/id.js");
 const zhSidebar = require("./sidebars/zh.js");
 const zhTWSidebar = require("./sidebars/zhTW.js");
+const koSidebar = require("./sidebars/ko.js");
 
 // Start adding new languages by making a new language object inside the array
 // display: Name of the language displayed in UI
@@ -69,12 +71,14 @@ const languages = [
     strings: jaStrings,
     sidebar: jaSidebar,
   },
-  // { 
-  //   name: "Korean",
-  //   display: "한국어",
-  //   code: "ko",
-  //   path: "/ko/"
-  // }
+  { 
+    name: "Korean",
+    display: "한국어",
+    code: "ko",
+    path: "/ko/",
+    strings: koStrings,
+    sidebar: koSidebar,
+  }
 ];
 
 const i18n_strs = languages.reduce((langs, currentLang) => {
