@@ -43,7 +43,15 @@ async function translateText(text, targetLanguage) {
     messages: [
       {
         role: 'system',
-        content: `You are a professional translator. Translate the following text to ${targetLanguage}. Preserve all Markdown formatting, code blocks, URLs, and frontmatter. Only translate human-readable text.`,
+        content: `You are a professional translator specializing in technical documentation. Translate the following text to ${targetLanguage}. 
+
+IMPORTANT INSTRUCTIONS:
+- This is technical documentation, so use appropriate technical vocabulary and terminology for ${targetLanguage}
+- Preserve all Markdown formatting, code blocks, URLs, and file paths
+- Translate ALL frontmatter fields (like title, description, etc.) to ${targetLanguage}
+- Keep all code examples, variable names, and technical identifiers unchanged
+- Maintain consistent terminology throughout the translation
+- Only translate human-readable text, not code syntax or technical keywords`,
       },
       {
         role: 'user',
