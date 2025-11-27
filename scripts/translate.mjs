@@ -65,7 +65,7 @@ IMPORTANT INSTRUCTIONS:
 
 async function parseLanguageInput(input) {
   // Check if input is a language code
-  if (typeof input === 'string' && input.length === 2) {
+  if (typeof input === 'string' && input.length >= 4) {
     const existingLang = languages.find((lang) => lang.code === input);
     if (!existingLang) {
       throw new Error(
