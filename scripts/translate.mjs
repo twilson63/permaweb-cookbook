@@ -272,12 +272,12 @@ async function main() {
     await fs.mkdir(outputDir, { recursive: true });
 
     // Translate strings first
-    // console.log('\nTranslating UI strings...');
-    // await translateStrings(targetLang);
+    console.log('\nTranslating UI strings...');
+    await translateStrings(targetLang);
 
-    // // Translate sidebar second
-    // console.log('\nTranslating sidebar...');
-    // await translateSidebar(targetLang);
+    // Translate sidebar second
+    console.log('\nTranslating sidebar...');
+    await translateSidebar(targetLang);
 
     // Translate documentation files last
     console.log('\nTranslating documentation files...');
