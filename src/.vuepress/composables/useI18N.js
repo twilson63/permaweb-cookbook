@@ -1,4 +1,5 @@
 import { usePageFrontmatter } from "@vuepress/client";
+import { useRoute } from "vue-router";
 
 /**
  * An object containing language information excluding strings and sidebar.
@@ -26,14 +27,18 @@ export const get_i18n_str = (langCode = "en", key, fallbackStr) => {
 
 export const useI18NStr = () => {
   const frontmatter = usePageFrontmatter();
-  return (key, fallbackStr) =>
-    get_i18n_str(frontmatter.value.locale, key, fallbackStr);
+  const route = useRoute();
+
+  // If frontmatter locale is not set, determine language from route path
+  const langCode = frontmatter.value.locale || getCurrentLanguage(route.path);
+
+  return (key, fallbackStr) => get_i18n_str(langCode, key, fallbackStr);
 };
 
 /**
  * Get the current language based on the path.
  * @param {string} path - The current path.
- * @returns {string} The current language display name.
+ * @returns {string} The current language code.
  */
 export const getCurrentLanguage = (path) => {
   if (!path) return "en";
