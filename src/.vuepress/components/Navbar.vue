@@ -53,14 +53,9 @@ onMounted(() => {
 
         <div class="col-3 col-md-8 col-lg-9">
           <div class="cookbook-navbar-items">
-            <ToggleLanguageButton
-              class="d-none d-md-block"
-              @toggle="$emit('toggle-language')"
-            />
-
             <ToggleColorModeButton
               class="d-none d-md-block"
-              style="margin: 0 42px; font-size: 0"
+              style="margin: 0; font-size: 0"
               v-if="themeLocale.colorModeSwitch"
             />
 
@@ -72,6 +67,11 @@ onMounted(() => {
             >
               <div class="cb-icon github"></div>
             </a>
+
+            <ToggleLanguageButton
+              class="d-none d-md-block"
+              @toggle="$emit('toggle-language')"
+            />
 
             <SearchBox ref="searchBox" />
           </div>
@@ -114,6 +114,7 @@ onMounted(() => {
 
     align-items: center;
     justify-content: flex-end;
+    gap: 40px;
   }
 
   &.fixed {
@@ -130,12 +131,11 @@ onMounted(() => {
   }
 
   .search-box {
+    margin: 0;
     --search-input-width: 10rem;
-    margin-left: 2.5rem;
 
     @include media-breakpoint-down(md) {
       --search-input-width: 100%;
-      margin-left: 1.5rem;
     }
 
     input {
