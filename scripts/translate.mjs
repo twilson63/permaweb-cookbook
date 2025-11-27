@@ -147,7 +147,38 @@ async function translateFile(filePath, targetLang, outputPath) {
   await fs.writeFile(outputPath, translated, 'utf-8');
 }
 
+async function getExistingFiles(dirPath, basePath = dirPath) {
+  const files = new Set();
+  
+  try {
+    const entries = await fs.readdir(dirPath, { withFileTypes: true });
+    
+    for (const entry of entries) {
+      const fullPath = path.join(dirPath, entry.name);
+      
+      if (entry.isDirectory()) {
+        const subFiles = await getExistingFiles(fullPath, basePath);
+        subFiles.forEach(f => files.add(f));
+      } else if (entry.name.endsWith('.md') || entry.name.endsWith('.mdx')) {
+        const relativePath = path.relative(basePath, fullPath);
+        files.add(relativePath);
+      }
+    }
+  } catch (error) {
+    // Directory doesn't exist yet
+    return files;
+  }
+  
+  return files;
+}
+
 async function translateDirectory(dirPath, targetLang, existingLangCodes) {
+  // Get list of existing files in target language
+  const targetDir = path.join(docsDir, targetLang.code);
+  const existingTargetFiles = await getExistingFiles(targetDir, targetDir);
+  
+  console.log(`Found ${existingTargetFiles.size} existing translated files`);
+
   const entries = await fs.readdir(dirPath, { withFileTypes: true });
 
   for (const entry of entries) {
@@ -160,6 +191,13 @@ async function translateDirectory(dirPath, targetLang, existingLangCodes) {
     } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
       // Calculate relative path from src directory
       const relativePath = path.relative(docsDir, fullPath);
+      
+      // Check if this file already exists in target language
+      if (existingTargetFiles.has(relativePath)) {
+        console.log(`⏭️  Skipping (already exists): ${relativePath}`);
+        continue;
+      }
+      
       // Create output path in language subfolder
       const outputPath = path.join(docsDir, targetLang.code, relativePath);
       
@@ -234,12 +272,12 @@ async function main() {
     await fs.mkdir(outputDir, { recursive: true });
 
     // Translate strings first
-    console.log('\nTranslating UI strings...');
-    await translateStrings(targetLang);
+    // console.log('\nTranslating UI strings...');
+    // await translateStrings(targetLang);
 
-    // Translate sidebar second
-    console.log('\nTranslating sidebar...');
-    await translateSidebar(targetLang);
+    // // Translate sidebar second
+    // console.log('\nTranslating sidebar...');
+    // await translateSidebar(targetLang);
 
     // Translate documentation files last
     console.log('\nTranslating documentation files...');
