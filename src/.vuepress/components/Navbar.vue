@@ -115,6 +115,10 @@ onMounted(() => {
     align-items: center;
     justify-content: flex-end;
     gap: 40px;
+
+    @include media-breakpoint-down(md) {
+      gap: 12px;
+    }
   }
 
   &.fixed {
