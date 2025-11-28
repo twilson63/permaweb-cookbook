@@ -194,7 +194,7 @@ async function translateDirectory(dirPath, targetLang, existingLangCodes) {
       
       // Check if this file already exists in target language
       if (existingTargetFiles.has(relativePath)) {
-        console.log(`⏭️  Skipping (already exists): ${relativePath}`);
+        console.log(`Skipping (already exists): ${relativePath}`);
         continue;
       }
       
