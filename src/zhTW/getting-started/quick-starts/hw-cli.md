@@ -1,4 +1,4 @@
-# 哈囉世界（CLI）
+# Hello World（CLI）
 
 本指南將引導你使用命令列介面（CLI）將資料最簡單地上傳到 Permaweb。
 
