@@ -19,3 +19,31 @@ Create a folder with the name set as the 2 letter language code under the `src` 
 ## Sidebars
 
 Translated sidebars are stored in the `sidebars` folder. Create a new file with the name set as the 2 letter language code. Check out the [official vuepress documentation](https://ecosystem.vuejs.press/themes/default/config.html#sidebar) for more information about sidebars configuration.
+
+## Translate script
+
+A convenience script at `languages/translate.mjs` can auto-translate UI strings, sidebars, and documentation files using OpenRouter / GPT. It will also add a language definition to `languages/def.js` if the language is new.
+
+### Prerequisites
+
+Set your API key as OPENROUTER_API_KEY (env or .env file at repo root).
+  
+### Usage
+
+With language code:
+
+```
+npm run translate -- es
+```
+
+Or with full language object:
+
+```
+npm run translate -- '{"name":"Spanish","display":"Español","code":"es","path":"/es/"}'
+```
+
+Behavior:
+- Translates `languages/strings/en.json` → `languages/strings/<code>.json`
+- Translates `languages/sidebars/en.js` → `languages/sidebars/<code>.js` (updates links to include language path)
+- Walks `src/` and writes translated markdown to `src/<code>/...`, skipping blacklisted folders and files that already exist in the target language
+- Adds the new language to `languages/def.js` if not present
