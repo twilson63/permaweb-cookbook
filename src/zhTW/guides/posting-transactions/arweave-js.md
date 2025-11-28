@@ -93,6 +93,6 @@ while (!uploader.isComplete) {
 
 ## 資源
 
-- 欲瞭解所有可用的發佈交易方式，請參閱食譜中的 [Posting Transactions](../../fundamentals/transactions/post-transactions.md) 區段。
+- 欲瞭解所有可用的發佈交易方式，請參 [Posting Transactions](../../fundamentals/transactions/post-transactions.md) 區段。
 
 - 欲瞭解 `arweave-js` 的詳細功能說明，請參閱 [GitHub 上的文件](https://github.com/ArweaveTeam/arweave-js)。

@@ -3,7 +3,7 @@
 
 # 在 Permaweb 上烹飪
 
-Permaweb 食譜是一個開發者資源，提供在 Arweave 上構建應用程式所需的核心概念與參考資料。每個概念與參考將聚焦於 Permaweb 開發生態系統的特定面向，同時提供額外細節與使用範例。
+Permaweb Cookbook 是一個開發者資源，提供在 Arweave 上構建應用程式所需的核心概念與參考資料。每個概念與參考將聚焦於 Permaweb 開發生態系統的特定面向，同時提供額外細節與使用範例。
 
 如果您特別有興趣建立智慧合約，建議查看 [AO Cookbook](https://cookbook_ao.arweave.net)，該手冊涵蓋建立於 AO 之上的去中心化運算平台。
 
@@ -15,15 +15,15 @@ Permaweb 食譜是一個開發者資源，提供在 Arweave 上構建應用程�
 
 ## 貢獻
 
-本食譜的設計使得新的 Permaweb 開發者能輕鬆貢獻。即便您不知道如何做某件事，為食譜貢獻也是學習的好方法！
+本 Cookbook 的設計使得新的 Permaweb 開發者能輕鬆貢獻。即便您不知道如何做某件事， Cookbook 貢獻也是學習的好方法！
 
-查看所有開放議題 [這裡](https://github.com/twilson63/permaweb-cookbook/issues)。貢獻指南 [這裡](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md)。如果您發現本食譜缺少某個概念、指南或參考，請新增一個議題。
+查看所有開放議題 [這裡](https://github.com/twilson63/permaweb-cookbook/issues)。貢獻指南 [這裡](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md)。如果您發現本 Cookbook 缺少某個概念、指南或參考，請新增一個議題。
 
 [閱讀更多](contributing.md)
 
-## 如何閱讀本食譜
+## 如何閱讀 Cookbook
 
-Permaweb 食譜被分成不同章節，每個章節以不同的目標為導向。
+Permaweb Cookbook 被分成不同章節，每個章節以不同的目標為導向。
 
 | 區段     | 說明                                               |
 | -------- | -------------------------------------------------- |
