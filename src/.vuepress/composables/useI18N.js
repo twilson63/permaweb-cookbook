@@ -7,30 +7,29 @@ import { useRoute } from "vue-router";
  * @property {string} name - The language name.
  * @property {string} display - The display name for the language.
  * @property {string} path - The base path for the language.
+ *
+ * @typedef {Object} Languages
+ * @property {Object.<string, LanguageInfo>} languages - An object mapping language codes to their info.
  */
 export const languages = __LANGUAGES__.reduce((langs, lang) => {
-  const { code, strings, sidebar, ...langInfo } = lang;
+  const { code, ...langInfo } = lang;
   langs[lang.code] = langInfo;
   return langs;
 }, {});
 
-const i18n_strs = __LANGUAGES__.reduce((langs, currentLang) => {
-  langs[currentLang.code] = currentLang.strings;
+const i18n_strs = Object.keys(languages).reduce((langs, langCode) => {
+  langs[langCode] = languages[langCode].strings;
   return langs;
 }, {});
 
-export const get_i18n_str = (langCode = "en", key, fallbackStr) => {
-  const engStr = __ENSTRS__[key] || fallbackStr;
-  if (langCode === "en") return engStr;
-  return i18n_strs[langCode][key] || engStr;
-};
+export const get_i18n_str = (langCode = "en", key, fallbackStr) =>
+  i18n_strs[langCode][key] || fallbackStr;
 
 export const useI18NStr = () => {
-  const frontmatter = usePageFrontmatter();
   const route = useRoute();
 
-  // If frontmatter locale is not set, determine language from route path
-  const langCode = frontmatter.value.locale || getCurrentLanguage(route.path);
+  // Use path to determine language
+  const langCode = getCurrentLanguage(route.path);
 
   return (key, fallbackStr) => get_i18n_str(langCode, key, fallbackStr);
 };

@@ -7,7 +7,6 @@ import codeCopyPlugin from "@snippetors/vuepress-plugin-code-copy";
 // Using array syntax for VuePress 1 compatibility plugins
 
 import { languages, get_i18n_str } from "../../languages/def";
-import enStrings from "../../languages/strings/en.json";
 
 // construct vue press locales object from languages def
 const locales = languages.reduce((acc, lang) => {
@@ -163,7 +162,6 @@ export default {
   // passing languages def to client side
   define: {
     __LANGUAGES__: languages,
-    __ENSTRS__: enStrings,
   },
 
   async onInitialized(app) {
