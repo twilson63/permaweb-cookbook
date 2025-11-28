@@ -1,7 +1,3 @@
----
-locale: zh-Hant
----
-
 # Vouch（背書）
 
 ## 概述
