@@ -1,5 +1,5 @@
 ---
-온보딩: true
+onboarding: true
 ---
 
 # Permaweb로 개발하기
