@@ -59,12 +59,13 @@ defineEmits(["close-sidebar", "toggle-language"]);
     z-index: 10;
     overflow-y: auto;
 
+    width: 60vw;
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
 
-    padding: calc(var(--navbar-height) + 53px) 20px 20px;
+    padding: 60px 20px 20px;
     background: var(--c-bg);
 
     transition: transform 0.3s;
