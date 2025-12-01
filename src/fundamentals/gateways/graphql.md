@@ -46,6 +46,5 @@ const results = await arweave.api.post('/graphql', queryObject);
 
 ## Resources
 
--   [Querying Arweave Guide](../../guides/querying-arweave/querying-arweave.md)
--   [ar-gql package](../../guides/querying-arweave/ar-gql.md)
--   [GraphQL Reference](../../references/gql.md)
+-   [Querying Arweave Guide](../../guides/graphql/index.md)
+-   [ar-gql package](../../guides/graphql/ar-gql.md)
