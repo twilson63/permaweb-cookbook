@@ -9,18 +9,15 @@ Understanding the fundamental concepts of Arweave and the Permaweb is essential 
 ## Transactions
 
 - **[Transactions](./transactions/index.md)**
-  - [Posting Transactions](./transactions/post-transactions.md)
   - [Bundles](./transactions/bundles.md) 
   - [Transaction Types](./transactions/transaction-types.md)
   - [Manifests & Path Resolution](./transactions/manifests.md)
 
 ## Accessing Arweave Data
 
-- **[Accessing Arweave Data](./accessing-arweave-data/index.md)**
-    - **[Data Retrieval Methods](./accessing-arweave-data/data-retrieval.md)**
-    - **[Querying & GraphQL](./accessing-arweave-data/graphql.md)** - How to find and retrieve data
-    - **[Gateways & Access](./accessing-arweave-data/gateways.md)** - How to access the network
-    - **[Arweave Name System (ArNS)](./accessing-arweave-data/arns.md)**
+- **[Gateways](./gateways/index.md)**
+    - **[Data Retrieval Methods](./gateways/data-retrieval.md)**
+    - **[Querying & GraphQL](./gateways/graphql.md)** - How to find and retrieve data
 
 ## Decentralized Computing
 
