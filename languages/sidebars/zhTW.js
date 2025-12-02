@@ -209,7 +209,7 @@ module.exports = [
     collapsible: true,
     children: [
       {
-        text: "術語表",
+        text: "詞彙表",
         collapsible: false,
         link: "/zhTW/references/glossary.html",
       },
