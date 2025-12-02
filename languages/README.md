@@ -22,7 +22,9 @@ Translated sidebars are stored in the `sidebars` folder. Create a new file with 
 
 ## Translate script
 
-A convenience script at `languages/translate.mjs` can auto-translate UI strings, sidebars, and documentation files using OpenRouter / GPT. It will also add a language definition to `languages/def.js` if the language is new.
+A convenience script at `languages/translate.mjs` can auto-translate UI strings, sidebars, and documentation files using OpenRouter / GPT. 
+
+> :warning: This script is intended to help bootstrap a new language, but the output will likely need manual review and editing. Please do not use the machine translation for production use without reviewing the output first.
 
 ### Prerequisites
 
