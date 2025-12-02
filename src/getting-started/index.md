@@ -19,7 +19,7 @@ The [Quick Start guides](./quick-starts/hw-cli.md) in the next chapter aim to gi
 Once you've completed the getting started guide, explore:
 - [Fundamentals](../fundamentals/index.md) to understand how Arweave works
 - [Guides](../guides/index.md) for step-by-step tutorials
-- [Tooling](../tooling/index.md) for development tools
+- [References](../references/index.md) for references and specifications
 
 ## Contributing 
 

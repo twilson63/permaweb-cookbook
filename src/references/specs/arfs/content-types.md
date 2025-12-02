@@ -25,7 +25,7 @@ All private drive, folder, and file entity transactions must have the following 
 Content-Type: '<application/octet-stream>'
 ```
 
-[ArDrive-Core](https://docs.ardrive.io/docs/core-sdk.html) includes methods to determine a file's content type.
+[ArDrive-Core](https://github.com/ardriveapp/ardrive-core-js) includes methods to determine a file's content type.
 
 
 ## Other Tags
@@ -35,8 +35,5 @@ ArFS enabled clients should include the following tags on their transactions to 
 ```json
 App-Name: "<defined application name eg. ArDrive"
 App-Version: "<defined version of the app eg. 0.5.0"
-Client?: "<if the application has multiple clients, they should be specified here eg. Web" 
+Client?: "<if the application has multiple clients, they should be specified here eg. Web"
 ```
-
-
-

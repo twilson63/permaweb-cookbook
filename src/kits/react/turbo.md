@@ -238,7 +238,7 @@ yarn add permaweb-deploy --dev --ignore-engines
 </CodeGroup>
 
 ::: info
-You will need to add AR to your wallet and fund it with Turbo credits to be able to upload this app. See [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html) for more information.
+You will need to add AR to your wallet and fund it with Turbo credits to be able to upload this app. See [Turbo SDK](https://github.com/ardriveapp/turbo-sdk) for more information.
 :::
 
 #### Update package.json
@@ -301,7 +301,7 @@ yarn deploy
 </CodeGroup>
 
 ::: warning Insufficient Funds
-If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with Turbo credits. See [Turbo SDK](https://docs.ardrive.io/docs/turbo/what-is-turbo.html) for more information.
+If you receive an error `Insufficient funds`, make sure you remembered to fund your deployment wallet with Turbo credits. See [Turbo SDK](https://github.com/ardriveapp/turbo-sdk) for more information.
 :::
 
 #### Response

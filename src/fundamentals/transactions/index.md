@@ -8,7 +8,7 @@ This section covers the different types of transactions, and introduces the ways
 
 Like most blockchains, Arweave requires transactions to be created, signed, and then posted to the network. 
 
-Arweave has multiple ways to post a transaction - but generally speaking, they fall into the category of direct transactions to a [gateway](), using a [bundler](), or dispatching a transaction.
+Arweave has multiple ways to post a transaction - but generally speaking, they fall into the category of direct transactions to a [Gateway](../gateways/index.md), using a [Bundler](./bundles.md), or dispatching a transaction.
 
 ## Transaction types
 

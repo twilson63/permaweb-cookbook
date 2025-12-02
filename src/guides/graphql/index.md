@@ -2,7 +2,7 @@
 
 This section covers the tools and libraries available for querying Arweave data using GraphQL. GraphQL provides a powerful and flexible way to retrieve exactly the data you need from the Arweave network.
 
-Arweave provides a simple way of querying for transactions and filtering them by [tags](../fundamentals/transactions/tags.md).
+Arweave provides a simple way of querying for transactions and filtering them by [tags](../../fundamentals/transactions/tags.md).
 
 Arweave GraphQL-compatible indexing services provide endpoints users can post GraphQL queries to, and also provide a playground for trying queries.
 

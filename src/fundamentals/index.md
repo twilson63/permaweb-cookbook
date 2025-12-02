@@ -10,7 +10,7 @@ Understanding the fundamental concepts of Arweave and the Permaweb is essential 
 
 - **[Transactions](./transactions/index.md)**
   - [Bundles](./transactions/bundles.md) 
-  - [Transaction Types](./transactions/transaction-types.md)
+  - [Transaction Tags](./transactions/tags.md)
   - [Manifests & Path Resolution](./transactions/manifests.md)
 
 ## Accessing Arweave Data

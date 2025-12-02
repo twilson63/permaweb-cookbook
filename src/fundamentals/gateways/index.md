@@ -38,9 +38,6 @@ This separation allows for a more flexible and decentralized ecosystem where dif
 Several gateway services currently serve the Arweave ecosystem:
 
 - [arweave.net](https://arweave.net/) - Operated by the Arweave team
-- [arweave.world](https://cookbook.arweave.world/)
-- [arweave.asia](https://cookbook.arweave.asia)
-- [arweave.live](https://arweave.live/)
 - [g8way.io](https://g8way.io)
 
 The [AR.IO](https://ar.io/) project is working to make gateway operation more accessible, potentially increasing the decentralization of access points to the network.
