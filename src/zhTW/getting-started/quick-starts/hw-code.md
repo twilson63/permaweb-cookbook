@@ -20,7 +20,7 @@ mkdir src && cd src
 touch index.js index.html style.css
 ```
 
-這會建立一個 Node 專案，並建立用來建立網站的樣板檔案。
+這會建立一個 Node 專案，並新增用來建立網站的樣板檔案。
 
 ## 產生錢包
 
@@ -29,7 +29,7 @@ touch index.js index.html style.css
 在你的 `hello-world` 目錄內執行下列指令來產生錢包：
 
 ```sh
-node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
+npx -y @permaweb/wallet > ./wallet.json
 ```
 
 :::info
@@ -119,7 +119,7 @@ npm install --save-dev permaweb-deploy
 DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy
 ```
 
-有關詳細部署說明，請參閱 [Permaweb Deploy](/guides/deployment/permaweb-deploy)。
+有關詳細部署說明，請參閱 [Permaweb Deploy](/zhTW/guides/deployment/permaweb-deploy)。
 
 ## 恭喜！
 

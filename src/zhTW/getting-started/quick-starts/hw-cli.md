@@ -1,6 +1,6 @@
 # Hello World（CLI）
 
-本指南將引導你使用命令列介面（CLI）將資料最簡單地上傳到 Permaweb。
+本指南將引導你使用命令列介面（CLI）簡單地將資料上傳到 Permaweb。
 
 ## 系統需求
 
