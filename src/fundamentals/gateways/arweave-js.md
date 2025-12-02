@@ -140,4 +140,4 @@ arweave.transactions.getData(txId, { decode: true }).then((data) => {
 ## Resources
 
 - [Arweave JS GitHub Repository](https://github.com/ArweaveTeam/arweave-js)
-- [GraphQL Guide](/guides/querying-arweave/queryingArweave.md) - For finding transactions
+- [GraphQL Guide](../../guides/graphql/index.md) - For finding transactions
