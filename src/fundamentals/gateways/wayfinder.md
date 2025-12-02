@@ -388,4 +388,3 @@ const wayfinder = new Wayfinder({
 - [Official Wayfinder Documentation](https://docs.ar.io/wayfinder)
 - [Wayfinder GitHub Repository](https://github.com/ar-io/wayfinder)
 - [AR.IO Network](https://ar.io)
-- [Transaction Data Concepts](/concepts/transaction-data.md)
