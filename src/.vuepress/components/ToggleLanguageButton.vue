@@ -86,6 +86,7 @@ const languageLinks = computed(() => {
   position: absolute;
   top: 100%;
   left: 0;
+  min-width: 130px;
   margin-top: 10px;
   padding: 5px;
   color: #000;
