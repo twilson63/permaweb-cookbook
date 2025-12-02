@@ -50,5 +50,3 @@ For more information, documentation, and community support, refer to the followi
 
 - [Arweave Official Website](https://www.arweave.org/)
 - [Arweave Developer Documentation](https://docs.arweave.org/)
-- [Arweave Community Forums](https://community.arweave.org/)
-
