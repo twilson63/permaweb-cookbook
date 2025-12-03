@@ -12,15 +12,13 @@
   - [發佈交易](./transactions/post-transactions.md)
   - [交易捆綁](./transactions/bundles.md)
   - [交易類型](./transactions/transaction-types.md)
-  - [清單與路徑解析](./transactions/manifests.md)
+  - [路徑清單](./transactions/manifests.md)
 
-## 存取 Arweave 資料
+## 閘道與存取
 
-- **[存取 Arweave 資料](./accessing-arweave-data/index.md)**
-  - **[資料擷取方法](./accessing-arweave-data/data-retrieval.md)**
-  - **[查詢與 GraphQL](./accessing-arweave-data/graphql.md)** - 如何查找與擷取資料
-  - **[閘道與存取](./accessing-arweave-data/gateways.md)** - 如何存取網路
-  - **[Arweave 名稱系統 (ArNS)](./accessing-arweave-data/arns.md)**
+- **[存取 Arweave 資料](./gateways/index.md)**
+  - **[資料擷取方法](./gateways/data-retrieval.md)**
+  - **[查詢與 GraphQL](./gateways/graphql.md)** - 如何查找與擷取資料
 
 ## 去中心化運算
 

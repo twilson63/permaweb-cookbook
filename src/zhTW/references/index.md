@@ -9,8 +9,8 @@
 
 ## 技術規格
 
-- **[ANS](../tooling/specs/ans/ANS-101.md)**
-- **[ArFS Specification](../tooling/specs/arfs/arfs.md)** - Arweave 檔案系統標準
+- **[ANS](./specs/ans/ANS-101.md)**
+- **[ArFS Specification](./specs/arfs/arfs.md)** - Arweave 檔案系統標準
 
 ## API 參考
 

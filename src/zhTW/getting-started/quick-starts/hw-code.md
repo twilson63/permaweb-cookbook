@@ -119,7 +119,7 @@ npm install --save-dev permaweb-deploy
 DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy
 ```
 
-有關詳細部署說明，請參閱 [Permaweb Deploy](/zhTW/guides/deployment/permaweb-deploy)。
+有關詳細部署說明，請參閱 [Permaweb Deploy](../../guides/deployment/permaweb-deploy.md)。
 
 ## 恭喜！
 

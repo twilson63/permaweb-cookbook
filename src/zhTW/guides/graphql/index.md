@@ -2,7 +2,7 @@
 
 本節說明可用於使用 GraphQL 查詢 Arweave 資料的工具與函式庫。GraphQL 提供了一種強大且靈活的方式，讓你從 Arweave 網路中精確擷取所需的資料。
 
-Arweave 提供了一種簡單的方法來查詢交易並以 [標籤](../fundamentals/transactions/tags.md) 進行篩選。
+Arweave 提供了一種簡單的方法來查詢交易並以 [標籤](../../fundamentals/transactions/tags.md) 進行篩選。
 
 相容於 Arweave GraphQL 的索引服務提供可供使用者發送 GraphQL 查詢的端點，並且通常也提供一個可試用查詢的 playground（互動測試環境）。
 
