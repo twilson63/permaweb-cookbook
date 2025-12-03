@@ -18,9 +18,9 @@ Permaweb（永久網）是一個全球性的、由社群擁有的網路，任何
 
 完成入門指南後，您可以進一步探索：
 
-- [Fundamentals](../fundamentals/index.md) 以了解 Arweave 的運作原理
-- [Guides](../guides/index.md) 取得逐步教學
-- [Tooling](../tooling/index.md) 了解開發工具
+- [基礎](../fundamentals/index.md) 以了解 Arweave 的運作原理
+- [指南](../guides/index.md) 取得逐步教學
+- [參考資料](../references/index.md) 閱讀 Permaweb 的參考文件
 
 ## 參與貢獻
 
