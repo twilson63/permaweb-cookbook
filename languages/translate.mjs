@@ -40,6 +40,7 @@ const openai = new OpenAI({
 async function translateText(text, targetLanguage) {
   const response = await openai.chat.completions.create({
     model: 'openai/gpt-5-mini',
+    max_completion_tokens: 8192,
     messages: [
       {
         role: 'system',
@@ -172,7 +173,7 @@ async function getExistingFiles(dirPath, basePath = dirPath) {
   return files;
 }
 
-async function translateDirectory(dirPath, targetLang, existingLangCodes) {
+async function translateDirectory(dirPath, targetLang, inputLangCode, existingLangCodes) {
   // Get list of existing files in target language
   const targetDir = path.join(docsDir, targetLang.code);
   const existingTargetFiles = await getExistingFiles(targetDir, targetDir);
@@ -186,11 +187,12 @@ async function translateDirectory(dirPath, targetLang, existingLangCodes) {
 
     if (entry.isDirectory()) {
       if (await shouldTranslatePath(fullPath, existingLangCodes)) {
-        await translateDirectory(fullPath, targetLang, existingLangCodes);
+        await translateDirectory(fullPath, targetLang, inputLangCode, existingLangCodes);
       }
     } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
-      // Calculate relative path from src directory
-      const relativePath = path.relative(docsDir, fullPath);
+      // Calculate relative path from input language directory
+      const docsRoot = inputLangCode === 'en' ? docsDir : path.join(docsDir, inputLangCode);
+      const relativePath = path.relative(docsRoot, fullPath);
       
       // Check if this file already exists in target language
       if (existingTargetFiles.has(relativePath)) {
@@ -206,11 +208,11 @@ async function translateDirectory(dirPath, targetLang, existingLangCodes) {
   }
 }
 
-async function translateStrings(targetLang) {
-  const enStringsPath = path.join(rootDir, 'languages', 'strings', 'en.json');
+async function translateStrings(targetLang, inputLangCode = 'en') {
+  const enStringsPath = path.join(rootDir, 'languages', 'strings', `${inputLangCode}.json`);
   const targetStringsPath = path.join(rootDir, 'languages', 'strings', `${targetLang.code}.json`);
 
-  console.log('Translating entire strings file...');
+  console.log(`Translating entire strings file from ${inputLangCode} -> ${targetLang.code}...`);
   const enStrings = await fs.readFile(enStringsPath, 'utf-8');
   
   const translatedContent = await translateText(enStrings, targetLang.display);
@@ -219,11 +221,11 @@ async function translateStrings(targetLang) {
   console.log(`Translated strings saved to ${targetStringsPath}`);
 }
 
-async function translateSidebar(targetLang) {
-  const enSidebarPath = path.join(rootDir, 'languages', 'sidebars', 'en.js');
+async function translateSidebar(targetLang, inputLangCode = 'en') {
+  const enSidebarPath = path.join(rootDir, 'languages', 'sidebars', `${inputLangCode}.js`);
   const targetSidebarPath = path.join(rootDir, 'languages', 'sidebars', `${targetLang.code}.js`);
 
-  console.log('Translating entire sidebar file...');
+  console.log(`Translating entire sidebar file from ${inputLangCode} -> ${targetLang.code}...`);
   const content = await fs.readFile(enSidebarPath, 'utf-8');
   
   // First, update all paths to include the language code
@@ -241,22 +243,47 @@ async function translateSidebar(targetLang) {
 
 async function main() {
   try {
-    // Get input from command line arguments
-    const inputArg = process.argv[2];
-    if (!inputArg) {
-      throw new Error('Please provide a language code or object.');
+    // Support flags and a positional target language argument.
+    // Usage examples:
+    //   node translate.mjs --input-language fr en
+    //   node translate.mjs -i fr en
+    //   node translate.mjs en
+    const argv = process.argv.slice(2);
+    if (argv.length === 0) {
+      throw new Error('Please provide a target language (code or JSON object). Optionally use --input-language or -i to set the source language (default "en").');
+    }
+
+    let inputLanguage = 'en';
+    let rawTargetArg = null;
+
+    for (let i = 0; i < argv.length; i++) {
+      const a = argv[i];
+      if (a.startsWith('--input-language=')) {
+        inputLanguage = a.split('=')[1] || inputLanguage;
+      } else if (a === '--input-language' || a === '-i') {
+        i++;
+        inputLanguage = argv[i] || inputLanguage;
+      } else if (!rawTargetArg) {
+        rawTargetArg = a;
+      } else {
+        // ignore additional args
+      }
+    }
+
+    if (!rawTargetArg) {
+      throw new Error('Please provide a target language (code or JSON object).');
     }
 
     let langInput;
     try {
-      langInput = JSON.parse(inputArg);
+      langInput = JSON.parse(rawTargetArg);
     } catch {
-      langInput = inputArg;
+      langInput = rawTargetArg;
     }
 
     // Parse and validate language
     const targetLang = await parseLanguageInput(langInput);
-    console.log(`Translating to ${targetLang.name} (${targetLang.code})`);
+    console.log(`Translating to ${targetLang.name} (${targetLang.code}) from input language "${inputLanguage}"`);
 
     // Add language definition if new
     const existingLang = languages.find((lang) => lang.code === targetLang.code);
@@ -271,17 +298,20 @@ async function main() {
     const outputDir = path.join(docsDir, targetLang.code);
     await fs.mkdir(outputDir, { recursive: true });
 
-    // Translate strings first
+    // Translate strings first (use inputLanguage instead of hardcoded 'en')
     console.log('\nTranslating UI strings...');
-    await translateStrings(targetLang);
+    await translateStrings(targetLang, inputLanguage);
 
     // Translate sidebar second
     console.log('\nTranslating sidebar...');
-    await translateSidebar(targetLang);
+    await translateSidebar(targetLang, inputLanguage);
+
+    // Determine source docs directory based on inputLanguage
+    const sourceDocsDir = inputLanguage === 'en' ? docsDir : path.join(docsDir, inputLanguage);
 
     // Translate documentation files last
     console.log('\nTranslating documentation files...');
-    await translateDirectory(docsDir, targetLang, existingLangCodes);
+    await translateDirectory(sourceDocsDir, targetLang, inputLanguage, existingLangCodes);
 
     console.log('\n✅ Translation complete!');
   } catch (error) {
