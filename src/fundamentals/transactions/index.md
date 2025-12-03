@@ -50,6 +50,6 @@ An example of how to post a 100KB or less bundled transaction with an Arweave wa
 
 ## Resources
 
--   [arweave-js](../../guides/posting-transactions/arweave-js.md) example
--   [dispatch](../../guides/posting-transactions/dispatch.md) example
+-   [Arweave JS](../../guides/posting-transactions/arweave-js.md) example
+-   [Dispatch](../../guides/posting-transactions/dispatch.md) example
 -   [Turbo SDK](../../guides/posting-transactions/turbo.md) example
