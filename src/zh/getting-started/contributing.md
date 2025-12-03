@@ -1,62 +1,50 @@
----
-locale: zh
----
-# 贡献流程
+# 贡献工作流程
 
-我们欢迎社区中的任何人为Permaweb Cookbook做出贡献，作为社区成员，我们希望有一个高质量的参考指南，其中包含了一些小块的信息片段。以下是如何为这个项目做出贡献的流程。
+任何社区成员都欢迎为 Permaweb Cookbook 做出贡献；作为社区成员，我们希望建立一份高质量的参考指南，由许多小而精的信息片段组成。以下说明任何人如何逐步为此项目贡献的工作流程。
 
-## 需要了解什么？
+## 你需要知道什么？
 
-* Git和Github - 将内容发布到github.com。
-* Markdown - Markdown是一种基于文本的标记语言，可以转换为HTML。
-* Arweave和Permaweb - 对Permaweb有一些了解。
+- Git 和 GitHub — 将内容发布到 github.com。
+- Markdown — Markdown 是一种以纯文本为基础的标记语言，可转换为 HTML。
+- Arweave 与 Permaweb — 对 Permaweb 有一定了解并愿意分享。
 
 ## 贡献步骤
 
-
-![diagram](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ29udHJpYnV0aW5nIHRvIFBlcm1hd2ViIENvb2tib29rCgoAGglvciAtPiBSZXBvIDogQ2hlY2sgT3V0IG9mIEZvcmsAFAVzaXRvcnkKbm90ZSBvdmVyAFYKb3IgOiBDcmVhdGUgTWFya2Rvd24gRG9jdW1lbnQAFxpvbW1pdCBDaGFuZ2VzAHQXUHVzaCBCcmFuY2gAYRljAHQGUHVsbCBSZXF1ZXMAWxphc3NpZ24gcmV2aWV3ZXIocykKUgAFBwCBdgsADQYAOhgAKAk6IEFwcHJvdmUgUFIAgjQXbWVyZ2UgdG8gbWFpbg&s=mscgen)
-
-## 需要帮助吗？
-
-加入我们的[Discord频道](https://discord.gg/haCAX3shxF)并发布一条消息。
+![流程图](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ29udHJpYnV0aW5nIHRvIFBlcm1hd2ViIENvb2tib29rCgoAGglvciAtPiBSZXBvIDogQ2hlY2sgT3V0IG9mIEZvcmsAFAVzaXRvcnkKbm90ZSBvdmVyAFYKb3IgOiBDcmVhdGUgTWFya2Rvd24gRG9jdW1lbnQAFxpvbW1pdCBDaGFuZ2VzAHQXUHVzaCBCcmFuY2gAYRljAHQGUHVsbCBSZXF1ZXMAWxphc3NpZ24gcmV2aWV3ZXIocykKUgAFBwCBdgsADQYAOhgAKAk6IEFwcHJvdmUgUFIAgjQXbWVyZ2UgdG8gbWFpbg&s=mscgen)
 
 ## 提交工作
 
-我们在这个仓库中使用[约定式提交](https://www.conventionalcommits.org/en/v1.0.0/)来提交工作。
+本仓库采用 [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) 规范。
 
-进行贡献的一般流程：
+一般贡献流程：
 
-1. 在GitHub上Fork这个仓库
-2. 将项目克隆到自己的机器上
-3. 将更改提交到自己的分支
-4. 将你的工作推送到你的Fork
-5. 提交一个Pull请求以便我们审查你的更改
+1. 在 GitHub 上 fork（派生）该仓库
+2. 将项目 clone（克隆）到你的机器
+3. 在你自己的分支上提交变更
+4. 将你的工作推回到你的 fork
+5. 提交 Pull Request，让我们能够审查你的变更
 
-**注意**：在发起pull请求之前，一定要合并"upstream"最新的内容！
+**注意**：在创建 Pull Request 之前，务必从 upstream 合并最新更改！
 
 ## 风格
 
-以下是一些建议的语气和风格：
+以下是部分贡献者对语气与风格的一些建议：
 
-::: 提示
-在编写它们时，我对每个部分适合的语气有了一个感觉。
-核心概念应该比较像课本，是中立、客观的。"这就是Arweave的工作原理"
-对于指南，我认为使用更个人化的语言是可以的。用"你"来称呼读者，并以合作的语音说"接下来我们将来看一下..."
-这可能只是个人偏好，但总的来说，我觉得这种语气在长形式指南中更具支持性和易接近性。
-确实，这是其他生态系统中大多数流行教程所使用的声音。
-对于资源，我认为它与核心概念声音相同，更偏向简洁。
-
+::: tip
+在撰写这些内容时，我开始对每种类型适合的语气有些感觉。  
+CoreConcepts 应该比较像教科书式，采用中性语气、客观陈述。 “这就是 Arweave 的工作方式”  
+对于 Guides，我觉得使用较具个人风格的语气是可以的。以“你”称呼读者，并以协作的语调来写，例如“接下来我们会看看...”  
+这可能只是个人偏好，但整体而言，我觉得这种语气在阅读较长的教学时，更能给读者支持感并降低阅读障碍。  
+事实上，这也是其他生态中大多数受欢迎教学使用的语气。  
+至于 Resources，我认为其语气应与 CoreConcepts 类似，并偏好简洁。  
 dmac
 :::
 
-
-::: 提示
-概念和参考数据应该具有更严谨科学的语气，指南应该是一种支持性甚至幽默的语气。长形式的内容需要吸引读者，不要让他们走神。
-
+::: tip
+概念性与参考性资料应采用较冷静、科学化的语调；指南类则应采取支持性甚至带点幽默的语气。较长篇的内容需要吸引读者，避免让读者走神。  
 Arch_Druid
 :::
 
-## 关于贡献的更多信息，请查阅仓库的风格指南
+## 想了解更多关于贡献的信息，请查看仓库风格指南
 
 [CONTRIBUTING](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md)
-

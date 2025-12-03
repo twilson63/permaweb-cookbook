@@ -1,16 +1,13 @@
----
-locale: zh
----
 ### ArDrive
 
 ---
 
-您可以使用[ArDrive CLI](https://github.com/ardriveapp/ardrive-cli)的`ardrive create-manifest`命令为文件夹或一组文件夹创建清单。
+您可以使用 [ArDrive CLI](https://github.com/ardriveapp/ardrive-cli)，通过 `ardrive create-manifest` 为一个文件夹或一组文件夹创建 manifest 文件。
 
-进一步阅读：[ArDrive CLI文档](https://github.com/ardriveapp/ardrive-cli)
+进一步阅读: [ArDrive CLI Docs](https://github.com/ardriveapp/ardrive-cli)
 
 ---
 
-或者，您还可以在[ArDrive](https://ardrive.io)的Web应用程序中选择New → Create manifest来创建清单。
+或者，您也可以在 [ArDrive](https://ardrive.io) 网页应用中，进入某个 drive 后选择“New → Create manifest”来创建 manifest。
 
-![ArDrive Web App清单](~@source/images/ardrive-manifests.png)
+![ArDrive 网页应用 Manifest](~@source/images/ardrive-manifests.png)

@@ -1,38 +1,40 @@
 ---
-locale: zh
 ---
-# Permaweb中的烹饪
 
-Permaweb Cookbook 是一个开发者资源，提供了在长久网络（Permaweb）上构建应用所需的基本概念和参考资料。每个概念和参考资料都将重点介绍 Permaweb 开发生态系统的特定方面，并提供额外的细节和用法示例。
+# 在 Permaweb 上烹饪
 
-## 开发者们
+Permaweb Cookbook 是一个开发者资源，提供在 Arweave 上构建应用程序所需的核心概念与参考资料。每个概念与参考将聚焦于 Permaweb 开发生态系统的特定面向，同时提供额外细节与使用示例。
 
-欢迎来到 Arweave 开发社区，在这里历史会永远镌刻在区块链中，未来充满了无限可能。让我们一起构建去中心化的网络！
+如果您特别有兴趣创建智能合约，建议查看 [AO Cookbook](https://cookbook_ao.arweave.net)，该手册涵盖构建在 AO 之上的去中心化计算平台。
 
-[了解更多](welcome.md)
+## 开发者
+
+欢迎加入 Arweave 开发者社区，在这里过去被永远刻录于区块链，未来充满无限可能。让我们一起构建去中心化的网络！
+
+[阅读更多](welcome.md)
 
 ## 贡献
 
-Cookbook 使新进入 Permaweb 的开发者可以更轻松的构建应用并做出贡献。即使您不知道如何做某件事，贡献Cookbook 也是学习的好方法！
+本 Cookbook 的设计使新的 Permaweb 开发者能够轻松贡献。即使您不知道如何做某件事，为 Cookbook 做贡献也是学习的好方法！
 
-在此查看所有开放问题。在此查看贡献指南。如果您发现烹饪书缺少某个概念、指南或参考资料，请添加一个问题。
+查看所有开放议题 [这里](https://github.com/twilson63/permaweb-cookbook/issues)。贡献指南 [这里](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md)。如果您发现本 Cookbook 缺少某个概念、指南或参考，请新增一个议题。
 
-[了解更多](contributing.md)
+[阅读更多](contributing.md)
 
+## 如何阅读 Cookbook
 
-## 如何阅读烹饪书
+Permaweb Cookbook 被分成不同章节，每个章节以不同的目标为导向。
 
-Permaweb Cookbook分为不同的部分，每个部分旨在实现不同的目标。
+| 部分     | 说明                                               |
+| -------- | -------------------------------------------------- |
+| 核心概念 | Permaweb 的构建要素，对开发很实用                  |
+| 指南     | 关于各种开发工具的简要指南                         |
+| 参考     | 常用代码片段的参考                                 |
+| 入门套件 | 前端框架起始模板，帮助您快速在 Permaweb 上开始开发 |
 
-| 部分 | 描述 |
-| ---- | ---- |
-| 核心概念 | Permaweb的构建块，对开发有益的基本概念 |
-| 指南 | 关于不同开发工具的简单指南 |
-| 参考 | 常用代码片段参考 |
-| 入门套件 | 前端框架入门套件，可帮助您在长久网络上快速开始构建 | 
+## 快速入门
 
-## 快速开始
+这些是小型指南，协助不同经验层级的开发者将代码部署到 Permaweb。
 
-这些是小型指南，可以帮助开发者从任何经验水平上构建代码到 Permaweb 中。
-
-- [Hello World (NodeJS)](quick-starts/hw-nodejs.md)
+- [Hello World（无代码）](quick-starts/hw-no-code.md)
+- [Hello World（CLI）](quick-starts/hw-cli.md)

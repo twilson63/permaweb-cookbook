@@ -1,81 +1,77 @@
----
-locale: zh
----
-# 服务器端DNS集成
+# 服务器端 DNS 集成
 
-所以你有一个永久网(permaweb)应用，并且它在永久网(permaweb)上，但你也有一个特定的域名，你希望用户使用该域名来访问此应用。mydomain.com，为了将你的域名连接到永久网(permaweb)应用，你有几个选择，我们将在这里展示的选项被称为服务器端重定向。重定向发生在反向代理中，以便用户在他们的浏览器中仍然停留在mydomain.com，而应用则是从永久网(permaweb)上提供服务。
+假设您已有一个部署在 permaweb 的应用，但您也希望使用特定域名让用户访问该应用（例如 mydomain.com）。要将您的域名连接到 permaweb 应用，有几种选项；本文示范的方式称为服务器端重定向（server-side redirect）。此重定向以反向代理（reverse proxy）方式运作，用户在浏览器中仍会停留于 mydomain.com，但背后实际由 permaweb 提供应用内容。
 
 ::: tip
-您可以使用任何反向代理来设置服务器端重定向，在本指南中，我们将使用Deno和deno.com作为一个轻量级的边缘托管服务。
+您可以使用任何反向代理来设置服务器端重定向；本指南示范使用 deno 与 deno.com —— 一个轻量的边缘托管服务。
 :::
 
-## 设置反向代理的所需材料使用Deno.com
+## 使用 deno.com 设置反向代理所需项
 
-* 一个Deno.com帐户，在写作本文时是免费的。
-* 一个具有访问DNS设置的域名
-* 一个永久网(permaweb)应用的标识符并且已经部署在永久网(permaweb)上
+- 一组 deno.com 帐号（撰写本文时为免费）
+- 可管理 DNS 设置的域名
+- 已部署在 permaweb 且有识别码的 permaweb 应用
 
-## 在Deno.com上创建代理
+## 在 Deno.com 建立代理
 
-Deno Deploy是一个分布式系统，在全球有35个地区。将浏览器打开到[https://deno.com](https://deno.com)，然后点击登录或注册，如果您没有帐户。
+Deno Deploy 是一个在边缘（edge）执行的分布式系统，在全球 35 个区域运行。打开浏览器并前往 [https://deno.com](https://deno.com)，若尚无帐号请点击注册或登入。
 
-点击`新项目`，然后点击`Play`
+点击 `New Project`，然后点击 `Play`
 
-Deno Playground将允许我们在不离开浏览器的情况下创建一个代理。
+Deno 的 playground 允许我们在浏览器内直接创建代理，无需离开页面。
 
-复制以下代码：
+复制以下程式码：
 
 ```ts
 import { serve } from "https://deno.land/std/http/mod.ts";
 
-const APP_ID = "你的Arweave应用标识符"
+const APP_ID = "YOUR AREWEAVE IDENTIFIER";
 
 const fileService = `https://arweave.net/${APP_ID}`;
 
-// 处理请求
+// handle requests
 async function reqHandler(req: Request) {
   const path = new URL(req.url).pathname;
-  // 代理到arweave.net
-  return await fetch(fileService + path).then(res => {
-    const headers = new Headers(res.headers)
-    // 指示服务器利用边缘缓存
-    headers.set('cache-control', 's-max-age=600, stale-while-revalidate=6000')
+  // proxy to arweave.net
+  return await fetch(fileService + path).then((res) => {
+    const headers = new Headers(res.headers);
+    // instruct server to leverage the edge cache
+    headers.set("cache-control", "s-max-age=600, stale-while-revalidate=6000");
 
-    // 返回arweave.net的响应
+    // return response from arweave.net
     return new Response(res.body, {
       status: res.status,
-      headers
-    })
+      headers,
+    });
   });
 }
 
-// 监听请求
+// listen for requests
 serve(reqHandler, { port: 8100 });
 ```
 
-该代理服务器将接收来自mydomain.com的请求，并将请求代理到arweave.net/APP_ID，然后将响应作为mydomain.com返回。你的APP_ID是你永久网(permaweb)应用的TX_ID标识符。
+此代理服务器会接收来自 mydomain.com 的请求，将请求代理转发到 arweave.net/APP_ID，然后以 mydomain.com 的形式返回响应。您的 APP_ID 即为您 permaweb 应用的 TX_ID 识别码。
 
-点击`保存并部署`
+点击 `Save and Deploy`
 
-## 连接到DNS
+## 连接到 DNS
 
-在项目设置中，进入域部分，然后点击添加域。
+在 Project Settings 中前往 domains 区段，点击新增域名。
 
-输入`mydomain.com`域名，然后根据说明修改你的DNS设置，将其指向Deno Deploy边缘网络。
+输入 `mydomain.com`，并按照指示修改您的 DNS 设置，使其指向 deno deploy 的边缘网络。
 
-可能需要几分钟才能解析到DNS，但一旦解析成功，你的应用将从mydomain.com渲染。
+DNS 解析可能需要几分钟，但解析完成后，您的应用将开始以 mydomain.com 呈现。
 
-:tada: 祝贺你已经发布了一个服务器端重定向到你的永久网(permaweb)应用。
+:tada: 恭喜 — 您已将 permaweb 应用发布为服务器端重定向。
 
 ::: warning
-请注意，对应用的任何更改将生成一个新的TX_ID，您需要修改该TX_ID以将新更改发布到您的域名。
+请注意：任何对应用的更改都会产生新的 TX_ID，因此您需修改对应的 TX_ID 才能将新版本发布到您的域名上。
 :::
 
 ## 自动化部署
 
-如果你想要自动部署你的永久网(permaweb)应用的新版本，请查看GitHub Actions，并使用Deno Deploy GitHub Action：[https://github.com/denoland/deployctl/blob/main/action/README.md](https://github.com/denoland/deployctl/blob/main/action/README.md)
-
+如果您希望自动化 permaweb 应用的新版本部署，可参考 GitHub Actions 并使用 deno deploy 的 GitHub Action： [https://github.com/denoland/deployctl/blob/main/action/README.md](https://github.com/denoland/deployctl/blob/main/action/README.md)
 
 ## 总结
 
-服务器端重定向非常适合为用户提供域名系统 URL 以访问你的永久网(permaweb)应用。我们希望你在永久网(permaweb)开发之旅中找到这个指南有用！
+服务器端重定向（反向代理）是为用户提供通过域名访问 permaweb 应用的绝佳方案。希望本指南能在您的 permaweb 开发过程中有所帮助！

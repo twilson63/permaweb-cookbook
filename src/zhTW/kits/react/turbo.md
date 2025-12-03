@@ -308,15 +308,15 @@ yarn deploy
 您應該會看到類似以下的回應：
 
 ```shell
--------------------- 部署詳情 --------------------
+-------------------- DEPLOY DETAILS --------------------
 Tx ID: abc123def456ghi789jkl012mno345pqr678stu901v
-ArNS 名稱: my-react-app
+ArNS Name: my-react-app
 Undername: @
 ANT: xyz789abc012def345ghi678jkl901mno234pqr567s
 AR IO Process: bh9l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM
-TTL 秒數: 3600
+TTL Seconds: 3600
 --------------------------------------------------------
-已將 TxId [abc123def456ghi789jkl012mno345pqr678stu901v] 部署至名稱 [my-react-app]，ANT 為 [xyz789abc012def345ghi678jkl901mno234pqr567s]，使用 undername [@]
+Deployed TxId [abc123def456ghi789jkl012mno345pqr678stu901v] to name [my-react-app] for ANT [xyz789abc012def345ghi678jkl901mno234pqr567s] using undername [@]
 ```
 
 您的 React 應用可在 `https://my-react-app.arweave.net`（若使用 ArNS）或 `https://arweave.net/abc123def456ghi789jkl012mno345pqr678stu901v` 找到。

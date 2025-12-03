@@ -1,102 +1,86 @@
 module.exports = [
   {
-    text: "入门指南",
+    text: "快速开始",
     link: "/zh/getting-started/index.html",
     collapsible: true,
     children: [
       {
-        text: "欢迎",
-        link: "/zh/getting-started/welcome.html",
-      },
-      {
-        text: "Hello World (无代码)",
-        link: "/zh/getting-started/quick-starts/hw-no-code.html",
-      },
-      {
-        text: "Hello World (命令行)",
-        link: "/zh/getting-started/quick-starts/hw-cli.html",
-      },
-      {
-        text: "Hello World (代码)",
-        link: "/zh/getting-started/quick-starts/hw-code.html",
-      },
-      {
-        text: "Hello World (NodeJS)",
-        link: "/zh/getting-started/quick-starts/hw-nodejs.html",
-      },
-      {
-        text: "贡献",
-        link: "/zh/getting-started/contributing.html",
+        text: "快速入门",
+        collapsible: true,
+        children: [
+          {
+            text: "CLI",
+            link: "/zh/getting-started/quick-starts/hw-cli.html",
+          },
+          {
+            text: "代码",
+            link: "/zh/getting-started/quick-starts/hw-code.html",
+          },
+        ],
       },
     ],
   },
   {
-    text: "核心概念",
-    link: "/zh/concepts/index.html",
+    text: "基础",
+    link: "/zh/fundamentals/index.html",
     collapsible: true,
     children: [
       {
-        text: "发布交易",
-        link: "/zh/concepts/post-transactions.html",
+        text: "钱包与密钥文件",
+        link: "/zh/fundamentals/wallets-and-keyfiles/index.html",
+      },
+      {
+        text: "交易",
+        link: "/zh/fundamentals/transactions/index.html",
         collapsible: true,
         children: [
           {
-            text: "arweave-js",
-            link: "/zh/guides/posting-transactions/arweave-js.html",
+            text: "交易打包",
+            link: "/zh/fundamentals/transactions/bundles.html",
           },
           {
-            text: "dispatch",
-            link: "/zh/guides/posting-transactions/dispatch.html",
-          }
-        ],
-      },
-      {
-        text: "元数据（标签）",
-        link: "/zh/concepts/tags.html",
-      },
-      {
-        text: "查询",
-        link: "/zh/concepts/query-transactions.html",
-      },
-      {
-        text: "获取数据",
-        link: "/zh/guides/http-api.html",
-      },
-      {
-        text: "交易类型",
-        children: [
-          {
-            text: "捆绑",
-            link: "/zh/concepts/bundles.html",
+            text: "交易标签",
+            link: "/zh/fundamentals/transactions/tags.html",
           },
           {
             text: "路径清单",
-            link: "/zh/concepts/manifests.html",
+            link: "/zh/fundamentals/transactions/manifests.html",
           },
         ],
       },
       {
-        text: "钱包和密钥",
-        link: "/zh/concepts/keyfiles-and-wallets.html",
-      },
-      {
-        text: "Permaweb",
-        link: "/zh/concepts/permaweb.html",
-        collapsible: false,
+        text: "网关",
+        link: "/zh/fundamentals/gateways/index.html",
+        collapsible: true,
         children: [
           {
-            text: "Permaweb 应用",
-            link: "/zh/concepts/permaweb-applications.html",
+            text: "数据检索方法",
+            collapsible: true,
+            link: "/zh/fundamentals/gateways/data-retrieval.html",
+            children: [
+              {
+                text: "HTTP API",
+                link: "/zh/fundamentals/gateways/http-api.html",
+              },
+              {
+                text: "Arweave.js SDK",
+                link: "/zh/fundamentals/gateways/arweave-js.html",
+              },
+              {
+                text: "ARIO Wayfinder",
+                link: "/zh/fundamentals/gateways/wayfinder.html",
+              },
+            ],
           },
           {
-            text: "网关服务",
-            link: "/zh/concepts/gateways.html",
-          },
-          {
-            text: "捆绑服务",
-            link: "/zh/concepts/bundlers.html",
+            text: "GraphQL 端点",
+            link: "/zh/fundamentals/gateways/graphql.html",
           },
         ],
+      },
+      {
+        text: "去中心化计算",
+        link: "/zh/fundamentals/decentralized-computing/index.html",
       },
     ],
   },
@@ -106,265 +90,210 @@ module.exports = [
     collapsible: true,
     children: [
       {
-        text: "ArProfile",
-        link: "/zh/guides/arprofile.html",
-      },
-      {
-        text: "DNS集成",
+        text: "钱包与密钥文件",
         collapsible: true,
         children: [
           {
-            text: "服务端",
-            link: "/zh/guides/dns-integration/server-side.html",
-          },
-          {
-            text: "Spheron",
-            link: "/zh/guides/dns-integration/spheron.html",
+            text: "创建钱包",
+            link: "/zh/guides/wallets-and-keyfiles/creating-a-wallet.html",
           },
         ],
       },
       {
-        text: "部署应用",
+        text: "前端",
         collapsible: true,
         children: [
           {
-            text: "arkb",
-            link: "/zh/guides/deployment/arkb.html",
+            text: "React",
+            link: "/zh/kits/react/index.html",
+            collapsible: true,
+            children: [
+              {
+                text: "Vite + permaweb-deploy",
+                link: "/zh/kits/react/turbo.html",
+              },
+            ],
           },
           {
-            text: "Github 行动",
-            link: "/zh/guides/deployment/github-action.html",
-          }
+            text: "Svelte",
+            link: "/zh/kits/svelte/index.html",
+            collapsible: true,
+            children: [
+              {
+                text: "Vite",
+                link: "/zh/kits/svelte/vite.html",
+              },
+            ],
+          },
+          {
+            text: "Vue",
+            link: "/zh/kits/vue/index.html",
+            collapsible: true,
+            children: [
+              {
+                text: "创建 Vue 应用程序",
+                link: "/zh/kits/vue/create-vue.html",
+              },
+            ],
+          },
         ],
       },
       {
-        text: "部署路径清单",
-        link: "/zh/guides/deploying-manifests/deploying-manifests.html",
-        collapsible: false,
+        text: "发布交易",
+        collapsible: true,
+        children: [
+          {
+            text: "Arweave JS",
+            link: "/zh/guides/posting-transactions/arweave-js.html",
+          },
+          {
+            text: "Turbo SDK",
+            link: "/zh/guides/posting-transactions/turbo.html",
+          },
+          {
+            text: "Dispatch",
+            link: "/zh/guides/posting-transactions/dispatch.html",
+          },
+        ],
+      },
+      {
+        text: "清单与打包",
+        collapsible: true,
         children: [
           {
             text: "arweave.app",
             link: "/zh/guides/deploying-manifests/arweave-app.html",
           },
           {
-            text: "ardrive",
+            text: "ArDrive",
             link: "/zh/guides/deploying-manifests/ardrive.html",
-          }
+          },
+          {
+            text: "Turbo",
+            link: "/zh/guides/deploying-manifests/turbo",
+          },
         ],
       },
       {
-        text: "部署PSTs",
-        collapsible: false,
-        link: "/zh/guides/deploying-psts.html",
-      },
-      {
-        text: "执行机制",
+        text: "查询与索引",
         collapsible: true,
         children: [
           {
-            text: "介绍",
-            link: "/zh/guides/exm/intro.html",
-          },
-          {
-            text: "Api令牌",
-            link: "/zh/guides/exm/api.html",
-          },
-          {
-            text: "JS SDK",
+            text: "GraphQL",
+            link: "/zh/guides/graphql/index.html",
             collapsible: true,
             children: [
               {
-                text: "执行机器 SDK",
-                link: "/zh/guides/exm/js-sdk/sdk-intro.html",
-              },
-              {
-                text: "使用 SDK 进行部署",
-                link: "/zh/guides/exm/js-sdk/sdk-deploy.html",
-              },
-              {
-                text: "使用 SDK 编写",
-                link: "/zh/guides/exm/js-sdk/sdk-write.html",
-              },
-              {
-                text: "使用 SDK 阅读",
-                link: "/zh/guides/exm/js-sdk/sdk-read.html",
+                text: "ar-gql（库）",
+                link: "/zh/guides/graphql/ar-gql.html",
               },
             ],
           },
         ],
       },
       {
-        text: "GraphQL",
-        link: "/zh/guides/querying-arweave/querying-arweave.html",
-        collapsible: false,
-        children: [
-          {
-            text: "ArDB",
-            link: "/zh/guides/querying-arweave/ardb.html",
-          },
-          {
-            text: "ar-gql",
-            link: "/zh/guides/querying-arweave/ar-gql.html",
-          },
-          {
-            text: "搜索索引服务",
-            link: "/zh/guides/querying-arweave/search-indexing-service.html",
-          },
-        ],
-      },
-      {
-        text: "测试",
+        text: "部署",
         collapsible: true,
         children: [
           {
-            text: "arlocal",
-            collapsible: false,
-            link: "/zh/guides/testing/arlocal.html",
+            text: "Permaweb Deploy",
+            link: "/zh/guides/deployment/permaweb-deploy.html",
           },
         ],
       },
     ],
   },
   {
-    text: "参考资料",
+    text: "参考",
     link: "/zh/references/index.html",
     collapsible: true,
     children: [
       {
-        text: "Bundling",
+        text: "词汇表",
         collapsible: false,
-        link: "/zh/references/bundling.html",
+        link: "/zh/references/glossary.html",
       },
       {
-        text: "GraphQL",
+        text: "LLMs.txt",
         collapsible: false,
-        link: "/zh/references/gql.html",
+        link: "/zh/references/llms-txt.html",
       },
       {
-        text: "HTTP API",
-        collapsible: false,
-        link: "/zh/references/http-api.html",
+        text: "贡献",
+        link: "/zh/getting-started/contributing.html",
       },
-    ],
-  },
-  {
-    text: "入门套件",
-    link: "/zh/kits/index.html",
-    collapsible: true,
-    children: [
       {
-        text: "React",
-        link: "/zh/kits/react/index.html",
+        text: "规范",
         collapsible: true,
         children: [
           {
-            text: "Create React App",
-            link: "/zh/kits/react/create-react-app.html",
-          },
-          {
-            text: "Vite",
-            link: "/zh/kits/react/vite.html",
-          },
-        ],
-      },
-      {
-        text: "Svelte",
-        link: "/zh/kits/svelte/index.html",
-        collapsible: true,
-        children: [
-          {
-            text: "Minimal",
-            link: "/zh/kits/svelte/minimal.html",
-          },
-          {
-            text: "Vite",
-            link: "/zh/kits/svelte/vite.html",
-          },
-        ],
-      },
-      {
-        text: "Vue",
-        link: "/zh/kits/vue/index.html",
-        collapsible: true,
-        children: [
-          {
-            text: "Create Vue",
-            link: "/zh/kits/vue/create-vue.html",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    text: "社区",
-    collapsible: true,
-    children: [
-      {
-        text: "Arweave Name System (ArNS)",
-        link: "/zh/concepts/arns.html",
-      },
-      {
-        text: "原子代币",
-        link: "/zh/guides/atomic-tokens/intro.html",
-      },
-    ]
-  },
-  {
-    text: "Legacy",
-    collapsible: true,
-    children: [
-      {
-        text: "Concepts",
-        collapsible: true,
-        children: [
-          {
-            text: "SmartWeave",
-            link: "/zh/concepts/smartweave.html",
-            collapsible: false,
-            children: [
-              {
-                text: "Profit Sharing Tokens (PSTs)",
-                link: "/zh/concepts/psts.html",
-              },
-            ],
-          },
-        ]
-      },
-      {
-        text: "Guides",
-        collapsible: true,
-        children: [
-          {
-            text: "SmartWeave",
+            text: "ANS",
             collapsible: true,
             children: [
               {
-                text: "Warp",
-                collapsible: false,
-                children: [
-                  {
-                    text: "介绍",
-                    link: "/zh/guides/smartweave/warp/intro.html",
-                  },
-                  {
-                    text: "部署合约",
-                    link: "/zh/guides/smartweave/warp/deploying-contracts.html",
-                  },
-                  {
-                    text: "读取合约状态",
-                    link: "/zh/guides/smartweave/warp/readstate.html",
-                  },
-                  {
-                    text: "编写合约互动",
-                    link: "/zh/guides/smartweave/warp/write-interactions.html",
-                  },
-                  {
-                    text: "演化合约",
-                    link: "/zh/guides/smartweave/warp/evolve.html",
-                  },
-                ],
+                text: "ANS-101: Gateway Capabilities",
+                link: "/zh/references/specs/ans/ANS-101.html",
+              },
+              {
+                text: "ANS-102: Bundled Data - JSON",
+                link: "/zh/references/specs/ans/ANS-102.html",
+              },
+              {
+                text: "ANS-103: Succinct Proofs",
+                link: "/zh/references/specs/ans/ANS-103.html",
+              },
+              {
+                text: "ANS-104: Bundled Data - Binary",
+                link: "/zh/references/specs/ans/ANS-104.html",
+              },
+              {
+                text: "ANS-105: License Tags",
+                link: "/zh/references/specs/ans/ANS-105.html",
+              },
+              {
+                text: "ANS-106: Do-Not-Store",
+                link: "/zh/references/specs/ans/ANS-106.html",
+              },
+              {
+                text: "ANS-109: Vouch-For",
+                link: "/zh/references/specs/ans/ANS-109.html",
+              },
+              {
+                text: "ANS-110: Asset Discoverability",
+                link: "/zh/references/specs/ans/ANS-110.html",
               },
             ],
+          },
+          {
+            text: "ArFS",
+            link: "/zh/references/specs/arfs/arfs.html",
+            collapsible: true,
+            children: [
+              {
+                text: "数据模型",
+                link: "/zh/references/specs/arfs/data-model.html",
+              },
+              {
+                text: "实体类型",
+                link: "/zh/references/specs/arfs/entity-types.html",
+              },
+              {
+                text: "内容类型",
+                link: "/zh/references/specs/arfs/content-types.html",
+              },
+              {
+                text: "隐私",
+                link: "/zh/references/specs/arfs/privacy.html",
+              },
+              {
+                text: "架构图",
+                link: "/zh/references/specs/arfs/schema-diagrams.html",
+              },
+            ],
+          },
+          {
+            text: "ArNS",
+            link: "/zh/references/arns.html",
           },
         ],
       },
