@@ -35,7 +35,7 @@ module.exports = [
         collapsible: true,
         children: [
           {
-            text: "打包交易",
+            text: "交易打包",
             link: "/zhTW/fundamentals/transactions/bundles.html",
           },
           {
