@@ -4,9 +4,9 @@ Users should do their due diligence and research before deciding how to interact
 
 Users can create Arweave and AO wallets without requiring any technical knowledge by using wallets like [Wander](https://wander.app) or [Beacon](https://beaconwallet.app). 
 
-Arweave wallets can also be generated programatically, using libraries such as `arweave-js` or CLI tools such as `ardrive-cli`. 
+Arweave wallets can also be generated programatically, using libraries such as Arweave JS or CLI tools such as `ardrive-cli`.
 
-## Creating a wallet with arweave-js
+## Creating a wallet with Arweave JS
 
 ```sh
 npm install arweave
