@@ -110,13 +110,6 @@ module.exports = [
           {
             text: "Svelte",
             link: "/kits/svelte/index.html",
-            collapsible: true,
-            children: [
-              {
-                text: "Vite",
-                link: "/kits/svelte/vite.html",
-              },
-            ],
           },
           {
             text: "Vue",
