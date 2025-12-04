@@ -1,59 +1,51 @@
----
-locale: ja
----
 # 貢献ワークフロー
 
-コミュニティの誰もがパーマウェブクックブックに貢献することを歓迎します。私たちは、質の高いリファレンスガイドを提供することを目指しており、小さなスナックサイズの情報の塊を集めています。以下は、誰でもこのプロジェクトに貢献できる手順を示したワークフローです。
+コミュニティの誰でも Permaweb クックブック に貢献できます。コミュニティメンバーとして、私たちはスナックサイズの情報の高品質なリファレンスガイドを目指しています。以下は誰でもこのプロジェクトに貢献できる手順のワークフローです。
 
 ## 知っておくべきことは？
 
-* GitとGithub - コンテンツをgithub.comに公開します。
-* Markdown - Markdownは、HTMLに変換できるテキストベースのマークアップ言語です。
-* Arweaveとパーマウェブ - 共有すべきパーマウェブについての知識を持っていること。
+- Git and Github - publishes content to github.com.
+- Markdown - Markdown is a text based markup language that can be transformed into HTML
+- Arweave and the Permaweb - Have some knowledge about the Permaweb that should be shared
 
 ## 貢献のステップ
 
-![diagram](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ29udHJpYnV0aW5nIHRvIFBlcm1hd2ViIENvb2tib29rCgoAGglvciAtPiBSZXBvIDogQ2hlY2sgT3V0IG9mIEZvcmsAFAVzaXRvcnkKbm90ZSBvdmVyAFYKb3IgOiBDcmVhdGUgTWFya2Rvd24gRG9jdW1lbnQAFxpvbW1pdCBDaGFuZ2VzAHQXUHVzaCBCcmFuY2gAYRljAHQGUHVsbCBSZXF1ZXMAWxphc3NpZ24gcmV2aWV3ZXIocykKUgAFBwCBdgsADQYAOhgAKAk6IEFwcHJvdmUgUFIAgjQXbWVyZ2UgdG8gbWFpbg&s=mscgen)
+![図](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ29udHJpYnV0aW5nIHRvIFBlcm1hd2ViIENvb2tib29rCgoAGglvciAtPiBSZXBvIDogQ2hlY2sgT3V0IG9mIEZvcmsAFAVzaXRvcnkKbm90ZSBvdmVyAFYKb3IgOiBDcmVhdGUgTWFya2Rvd24gRG9jdW1lbnQAFxpvbW1pdCBDaGFuZ2VzAHQXUHVzaCBCcmFuY2gAYRljAHQGUHVsbCBSZXF1ZXMAWxphc3NpZ24gcmV2aWV3ZXIocykKUgAFBwCBdgsADQYAOhgAKAk6IEFwcHJvdmUgUFIAgjQXbWVyZ2UgdG8gbWFpbg&s=mscgen)
 
-## 助けが必要ですか？
+## コミット作業
 
-私たちの[Discordチャンネル](https://discord.gg/haCAX3shxF)に参加してメッセージを投稿してください。
+このリポジトリでは [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) を使用しています。
 
-## 作業のコミット
+貢献のための一般的なフロー:
 
-このリポジトリでは[従来のコミット](https://www.conventionalcommits.org/en/v1.0.0/)を使用しています。
-
-貢献を行うための一般的な流れ：
-
-1. GitHubでリポジトリをフォークする
+1. GitHub でリポジトリをフォークする
 2. プロジェクトを自分のマシンにクローンする
 3. 自分のブランチに変更をコミットする
-4. フォークに作業をプッシュする
+4. 作業をフォークにプッシュする
 5. 変更をレビューできるようにプルリクエストを提出する
 
-**注意**: プルリクエストを作成する前に、「アップストリーム」から最新のものをマージしてください！
+**注意**: プルリクエストを作成する前に、"upstream" から最新をマージしておいてください！
 
-## スタイル
+## Style
 
-いくつかの貢献者からのトーンやスタイルに関する提案です：
+トーンとスタイルに関する寄稿者からの提案をいくつか紹介します:
 
 ::: tip
-それらを書くことで、それぞれに適切なトーンを感じ取っています。
-コアコンセプトは、教科書のように中立的で客観的な声であるべきです。「これがArweaveの動作です」
-ガイドについては、より個人的な声を持つことが良いと思います。読者を「あなた」と呼び、共同の声で「次は…を見てみましょう」と話します。
-これは個人的な好みかもしれませんが、一般的に長い形式のガイドを追っているときは、このトーンがより支援的でアクセスしやすいと感じます。
-実際、これは他のエコシステムの人気のあるチュートリアルが書かれている声です。
-リソースについては、コアコンセプトと同じ声を持ち、簡潔さを重視します。
+執筆するうちに、各セクションに適したトーンの感覚がつかめてきています。  
+CoreConcepts は教科書的で中立的、客観的な声が適していると思います。 "This is how Arweave works" のように。  
+Guides については、より個人的な語り口でも良いと考えています。読者を "you" と呼び、協調的な声で "次に見ていきましょう…" のように進めるスタイルです。  
+これは個人的な好みかもしれませんが、一般に長めのガイドを追う際にはこのトーンの方が支援的でアクセスしやすく感じます。実際、多くの人気チュートリアルがこの語り口で書かれています。  
+Resources は CoreConcepts と同じ声を共有しつつ、簡潔さを優先するのが良いと思います。
 
 dmac
 :::
 
 ::: tip
-概念的および参照データは、より冷たい科学的トーンを持つべきで、ガイドは支援的またはユーモラスなトーンを持つべきです。長い形式のコンテンツは、読者を引き込む必要がありますが、彼らをぼーっとさせないようにする必要があります。
+概念的・参照的なデータはより冷静で科学的な口調にし、ガイドは支援的またはユーモラスな口調が良いでしょう。長めのコンテンツは、読者がぼーっとしないように引き込む必要があります。
 
 Arch_Druid
 :::
 
-## 貢献に関する詳細はリポジトリのスタイルガイドを参照してください
+## 詳細や貢献方法についてはリポジトリのスタイルガイドを参照してください
 
 [CONTRIBUTING](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md)

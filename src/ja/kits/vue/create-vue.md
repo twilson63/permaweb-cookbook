@@ -1,27 +1,24 @@
----
-locale: ja
----
-# Vue スターターキットの作成
+# Create Vue スターターキット
 
-このガイドでは、開発環境を設定し、パーマウェブ Vue アプリケーションを構築するための手順を提供します。
+このガイドでは、開発環境を設定し、Permaweb 用の Vue アプリケーションをビルドするための手順を段階的に説明します。
 
 ## 前提条件
 
 - 基本的な TypeScript の知識（必須ではありません） - [TypeScript を学ぶ](https://www.typescriptlang.org/docs/)
 - NodeJS v16.15.0 以上 - [NodeJS をダウンロード](https://nodejs.org/en/download/)
-- Vue.js（できれば Vue 3）の知識 - [Vue.js を学ぶ](https://vuejs.org/)
-- Git と一般的なターミナルコマンドを知っていること
+- Vue.js の知識（できれば Vue 3） - [Vue.js を学ぶ](https://vuejs.org/)
+- git と一般的なターミナルコマンドの知識
 
-## 開発依存関係
+## 開発依存
 
-- TypeScript（オプション）
+- TypeScript（任意）
 - NPM または Yarn パッケージマネージャ
 
 ## 手順
 
-### プロジェクトを作成する
+### プロジェクトの作成
 
-次のコマンドは、Vue プロジェクト用の公式スキャフォールディングツールである create-vue をインストールして起動します。
+以下のコマンドは、公式の Vue プロジェクトスキャフォールディングツール create-vue をインストールして起動します。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -40,8 +37,7 @@ yarn create vue
   </CodeGroupItem>
 </CodeGroup>
 
-プロセス中に、TypeScriptやテストサポートなどのオプション機能を選択するように求められます。`Vue Router`を「はい」で選択することをお勧めします。他はお好みに応じて選択してください。
-
+処理の途中で、TypeScript やテストサポートなどのオプション機能を選択するよう求められます。`Vue Router` は yes を選択することを推奨します。その他はお好みで選択してください。
 
 ```console:no-line-numbers
 ✔ Project name: … <your-project-name>
@@ -55,13 +51,13 @@ yarn create vue
 ✔ Add Prettier for code formatting? … No / Yes
 ```
 
-### Change into the Project Directory
+### プロジェクトディレクトリへ移動
 
 ```sh
 cd <your-project-name>
 ```
 
-### Install Dependencies
+### 依存関係をインストール
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -82,35 +78,34 @@ yarn
 
 ### ルーターの設定
 
-Vue RouterはVue.jsの公式ルーターで、Vueとシームレスに統合されます。パーマウェブで機能させるために、ブラウザの履歴ルーターからハッシュルーターに切り替えます。URLはサーバーに送信できないため、`src/router/index.ts`または`src/router/index.js`ファイルで`createWebHistory`を`createWebHashHistory`に変更します。
+Vue Router は Vue.js の公式ルーターで、Vue とシームレスに統合されます。Permaweb で動作させるには、URL をサーバーに送信できないため、ブラウザヒストリールーターからハッシュルーターに切り替えてください。`src/router/index.ts` または `src/router/index.js` ファイル内で `createWebHistory` を `createWebHashHistory` に変更します。
 
 ```ts
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
-	history: createWebHashHistory(import.meta.env.BASE_URL),
-	routes: [
-		{
-			path: "/",
-			name: "home",
-			component: HomeView,
-		},
-		{
-			path: "/about",
-			name: "about",
-			component: () => import("../views/AboutView.vue"),
-		},
-	],
+  history: createWebHashHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: "/",
+      name: "home",
+      component: HomeView,
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: () => import("../views/AboutView.vue"),
+    },
+  ],
 });
 
 export default router;
 ```
 
-### ビルドの設定
+### ビルド設定
 
-`vite.config.ts`または`vite.config.js`ファイルでビルドプロセスを設定します。パーマウェブアプリをサブパス（https://[gateway]/[TX_ID]）から提供するために、設定ファイルのbaseプロパティを./に更新します。
-
+`vite.config.ts` または `vite.config.js` ファイルでビルドプロセスを設定します。サブパス（https://[gateway]/[TX_ID]）から Permaweb アプリを配信するには、config ファイルの base プロパティを ./ に更新します。
 
 ```ts
 export default defineConfig({
@@ -119,9 +114,9 @@ export default defineConfig({
 })
 ```
 
-### アプリを実行する
+### アプリを実行
 
-先に進む前に、すべてが正しく機能していることを確認することが重要です。スムーズに進行するためにチェックを実行してください。
+先に進む前に、すべてが正しく動作していることを確認することが重要です。問題なく進めるようにチェックを実行します。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -139,13 +134,14 @@ yarn dev
 
   </CodeGroupItem>
 </CodeGroup>
-デフォルトでは、ローカルで新しい開発サーバーが開始され、`PORT 5173`を使用します。このポートがすでに使用されている場合、ポート番号を1増やして（`PORT 5174`）再試行します。
 
-## 永続的にデプロイ
+デフォルトではローカルマシン上で新しい開発サーバーが起動します。既定の使用ポートは `PORT 5173` です。このポートが既に使用中の場合、ポート番号を 1 増やして（`PORT 5174`）再試行することがあります。
 
-### ウォレットを生成する
+## 永続的にデプロイする
 
-ウォレットを生成するために`arweave`パッケージが必要です。
+### ウォレットの生成
+
+ウォレットを生成するために `arweave` パッケージが必要です。
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -164,18 +160,17 @@ yarn add arweave -D
   </CodeGroupItem>
 </CodeGroup>
 
-then run this command in the terminal
+その後、ターミナルで次のコマンドを実行します。
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### ウォレットに資金を供給する
+### ウォレットに資金を追加
 
-ウォレットにArDrive Turboクレジットを供給する必要があります。これを行うには、[ArDrive](https://app.ardrive.io)にアクセスし、ウォレットをインポートします。次に、ウォレットのためにターボクレジットを購入できます。
+ArDrive Turbo クレジットでウォレットに資金を追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスしてウォレットをインポートしてください。その後、ウォレット用の turbo クレジットを購入できます。
 
-### Permaweb-Deployを設定する
-
+### Permaweb-Deploy の設定
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -194,7 +189,18 @@ yarn global add permaweb-deploy
   </CodeGroupItem>
 </CodeGroup>
 
-### Update package.json
+### ウォレットへのチャージ
+
+Turbo はデータを Arweave にアップロードするために Turbo Credits を使用します。Turbo Credits は複数の法定通貨や暗号トークンで購入できます。以下はウォレットに 10 USD をチャージする例です。購入手続きを完了するためにブラウザウィンドウが開き、Stripe を使用して支払いを完了します。
+
+```console:no-line-numbers
+npm install @ardrive/turbo-sdk
+turbo top-up --wallet-file wallet.json --currency USD --value 10
+```
+
+`wallet.json` はあなたの Arweave ウォレットへのパスに置き換えてください。
+
+### package.json の更新
 
 ```json
 {
@@ -208,12 +214,12 @@ yarn global add permaweb-deploy
 ```
 
 ::: info
-Replace << ANT-PROCESS >> with your ANT process id.
+<< ANT-PROCESS >> をあなたの ANT プロセス ID に置き換えてください。
 :::
 
-### ビルドを実行する
+### ビルドを実行
 
-今、ビルドを生成する時が来ました。次のコマンドを実行します。
+ビルドを生成する時です。次を実行します。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -232,9 +238,9 @@ yarn build
   </CodeGroupItem>
 </CodeGroup>
 
-### デプロイを実行する
+### デプロイを実行
 
-最後に、最初のパーマウェブアプリケーションをデプロイします。
+最後に、Permaweb アプリケーションをデプロイします。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -254,30 +260,23 @@ yarn deploy
 </CodeGroup>
 
 ::: info ERROR
-`Insufficient funds`というエラーが表示された場合は、デプロイ用のウォレットにArDrive Turboクレジットを供給するのを忘れていないことを確認してください。
+`Insufficient funds` エラーが表示された場合は、デプロイ用ウォレットに ArDrive Turbo クレジットをチャージしたことを確認してください。
 :::
 
-### 応答
+### レスポンス
 
-次のような応答が表示されるはずです。
-
+次のようなレスポンスが表示されるはずです。
 
 ```shell
 Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
 ```
 
-あなたのVueアプリは`https://arweave.net/<< tx-id >>`で見つけることができます。
+あなたの Vue アプリは `https://arweave.net/<< tx-id >>` で見つけることができます。
 
 ::: tip SUCCESS
-これで、パーマウェブ上にVueアプリケーションができました！お疲れ様です！
+これで Permaweb 上に Vue アプリケーションが公開されているはずです。お疲れさまでした！
 :::
-
-## リポジトリ
-
-JavaScriptまたはTypeScriptでの完全な機能例は、以下の場所で見つけることができます。
-
-- リポジトリ: [https://github.com/ItsAnunesS/permaweb-create-vue-starter](https://github.com/ItsAnunesS/permaweb-create-vue-starter)
 
 ## まとめ
 
-このガイドでは、Create Vueを使用してパーマウェブにVue.jsアプリを公開するためのシンプルな手順を提供します。追加機能が必要な場合は、ガイドにリストされている代替スターターキットを探索して、要件に合ったソリューションを見つけることを検討してください。
+このガイドは Create Vue を使用して Vue.js アプリを Permaweb に公開するためのシンプルな手順を提供します。Tailwind などの追加機能が必要な場合は、ガイド内で紹介されている代替のスターターキットを検討し、要件に合ったソリューションを見つけてください。

@@ -1,13 +1,8 @@
----
-locale: ja
----
 # Svelte/Vite スターターキット
 
-Svelte は、余計なものをコンパイルし、コンパクトなパッケージを生成するフレームワークで、Permaweb に最適です。開発者として、私たちはユーザーエクスペリエンスと同じくらい、開発エクスペリエンス (DX) を重視しています。このキットは、開発者に素晴らしい DX 経験を提供するために `vite` バンドルシステムを使用しています。
+Svelte はコンパイル時にフレームワークが取り除かれ、小さなパッケージになるフレームワークで、Permaweb に最適です。開発者として、我々はユーザー体験（UX）と同様に開発者体験（Dev Experience / DX）を重視します。このキットは開発者に優れた DX を提供するために `vite` バンドルシステムを使用しています。
 
-## Svelte と TypeScript を使用した vite のインストール
-
-
+## `vite` を `svelte` と `typescript` でインストールする
 
 <CodeGroup>
   <CodeGroupItem title="NPM v6">
@@ -42,11 +37,11 @@ pnpm create vite my-perma-app --template svelte-ts
 
 ## プロジェクト情報
 
-vite のビルドシステムは、index.html ファイルをルートディレクトリに配置します。ここに必要に応じて CSS やグローバルスクリプトの依存関係を含めることができます。vite プロジェクトのレイアウトに関する詳細は、[vite ドキュメント](https://vitejs.dev/guide/#index-html-and-project-root)を参照してください。
+`vite` ビルドシステムは `index.html` ファイルをルートディレクトリに配置します。ここに必要に応じて CSS やグローバルなスクリプト依存関係を含めます。`vite` のプロジェクトレイアウトの詳細は [vite のドキュメント](https://vitejs.dev/guide/#index-html-and-project-root) を参照してください。
 
 ## ハッシュルーターのセットアップ
 
-ハッシュルーターをセットアップするために、[tinro](https://github.com/AlexxNB/tinro)を使用します。`tinro` は、React Router に似た小さな宣言型ルーティングライブラリです。
+ハッシュルーターをセットアップするために [tinro](https://github.com/AlexxNB/tinro) を使用します。`tinro` は React Router に似た小さな宣言的ルーティングライブラリです。
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -65,54 +60,56 @@ yarn add -D tinro
   </CodeGroupItem>
 </CodeGroup>
 
-## Svelte にハッシュルーティングを使用するよう指示する
+## Svelte にハッシュルーティングを使わせる
 
-`src/App.svelte` ファイルで、ルーターをハッシュルーティングモードを使用するように設定します。
+`src/App.svelte` ファイルで、ルーターをハッシュルーティングモードに設定します。
 
 ```html
 <script lang="ts">
-	import { Route, router } from "tinro";
-	router.mode.hash();
-	router.subscribe((_) => window.scrollTo(0, 0));
+  import { Route, router } from "tinro";
+  router.mode.hash();
+  router.subscribe((_) => window.scrollTo(0, 0));
 </script>
 <main></main>
 ```
 
-`router.mode.hash` 関数は、ハッシュルーター モードをオンにします。
-`router.subscribe` コールバックは、ページ遷移時にページを最上部にリセットするのに便利です。
+`router.mode.hash` 関数はハッシュルーターモードを有効にします。  
+`router.subscribe` のコールバックはページ遷移時にページをトップにリセットするために便利です。
 
-## トランジション コンポーネントの追加
+## トランジションコンポーネントの追加
 
-これらのコンポーネントは、ルーティング時に1ページから別のページへの遷移を管理します。
+これらのコンポーネントはルーティング時にあるページから別のページへ移動する際のトランジションを管理します。
 
-`src` ディレクトリの下に `components` というディレクトリを作成し、次の2つのファイルを追加します。
+`src` ディレクトリの下に `components` というディレクトリを作成し、以下の 2 つのファイルを追加してください。
 
 ### announcer.svelte
 
 ```html
 <script>
-	import { router } from "tinro";
-	$: current = $router.path === "/" ? "Home" : $router.path.slice(1);
+  import { router } from "tinro";
+  $: current = $router.path === "/" ? "Home" : $router.path.slice(1);
 </script>
 
-<div aria-live="assertive" aria-atomic="true">{#key current} Navigated to {current} {/key}</div>
+<div aria-live="assertive" aria-atomic="true">
+  {#key current} Navigated to {current} {/key}
+</div>
 
 <style>
-	div {
-		position: absolute;
-		left: 0;
-		top: 0;
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		overflow: hidden;
-		white-space: nowrap;
-		width: 1px;
-		height: 1px;
-	}
+  div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+  }
 </style>
 ```
 
-> This component is for screen readers announcing when a page changes
+> このコンポーネントはページが変更されたときにスクリーンリーダー向けにアナウンスするためのものです
 
 ### transition.svelte
 
@@ -129,29 +126,29 @@ yarn add -D tinro
 {/key}
 ```
 
-> This component adds a fade to the page transition
+> このコンポーネントはページ遷移にフェードを追加します
 
-## Adding Routes to the app
+## アプリにルートを追加する
 
 ```html
 <script lang="ts">
-	...
-	import Announcer from "./components/announcer.svelte";
-	import Transition from "./components/transition.svelte";
-	...
+  ...
+  import Announcer from "./components/announcer.svelte";
+  import Transition from "./components/transition.svelte";
+  ...
 </script>
 <Announcer />
 <Transition>
-	<Route path="/">
-		<Home />
-	</Route>
-	<Route path="/about">
-		<About />
-	</Route>
+  <Route path="/">
+    <Home />
+  </Route>
+  <Route path="/about">
+    <About />
+  </Route>
 </Transition>
 ```
 
-アナウンサーおよびトランジションコンポーネントをルーティングシステムに追加することで、ページ遷移のアナウンスと遷移のアニメーションを処理します。
+Announcer と Transition コンポーネントをルーティングシステムに追加することで、ページ遷移のアナウンスと遷移アニメーションを処理します。
 
 ## ページを作成する
 
@@ -159,11 +156,11 @@ yarn add -D tinro
 
 ```html
 <script lang="ts">
-	let count = 0;
+  let count = 0;
 
-	function inc() {
-		count += 1;
-	}
+  function inc() {
+    count += 1;
+  }
 </script>
 <h1>Hello Permaweb</h1>
 <button on:click="{inc}">Inc</button>
@@ -179,13 +176,13 @@ yarn add -D tinro
 <a href="/">Home</a>
 ```
 
-### Modify `App.svelte`
+### `App.svelte` を修正する
 
 ```html
 <script lang="ts">
-	...
-	import Home from './home.svelte'
-	import About from './about.svelte'
+  ...
+  import Home from './home.svelte'
+  import About from './about.svelte'
 </script>
 ...
 ```
@@ -194,7 +191,7 @@ yarn add -D tinro
 
 ### ウォレットを生成する
 
-`arweave` パッケージを使用してウォレットを生成する必要があります。
+ウォレットを生成するには `arweave` パッケージが必要です
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -213,17 +210,18 @@ yarn add arweave -D
   </CodeGroupItem>
 </CodeGroup>
 
-then run this command in the terminal
+その後、ターミナルで次のコマンドを実行します
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
 ### ウォレットに資金を追加する
-ウォレットに ArDrive Turbo クレジットを追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスしてウォレットをインポートします。
-その後、ウォレットのためにターボクレジットを購入できます。
 
-### Permaweb-Deployの設定
+ウォレットに ArDrive Turbo クレジットで資金を追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスしてウォレットをインポートしてください。  
+その後、ウォレット用に Turbo クレジットを購入できます。
+
+### Permaweb-Deploy をセットアップする
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -242,19 +240,21 @@ yarn global add permaweb-deploy
   </CodeGroupItem>
 </CodeGroup>
 
-### Update vite.config.ts
+### vite.config.ts を更新する
 
 ```ts
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 export default defineConfig({
   plugins: [svelte()],
-  base: './'
-})
+  base: "./",
+});
 ```
 
-### Update package.json
+### package.json を更新する
+
+### package.json を更新する
 
 ```json
 {
@@ -268,12 +268,12 @@ export default defineConfig({
 ```
 
 ::: info
-Replace << ANT-PROCESS >> with your ANT process id.
+<< ANT-PROCESS >> をあなたの ANT プロセス ID に置き換えてください。
 :::
 
 ### ビルドを実行する
 
-今こそビルドを生成する時です。以下のコマンドを実行します。
+ビルドを生成する準備ができました。次を実行します
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -294,7 +294,8 @@ yarn build
 
 ### デプロイを実行する
 
-最終的に、私たちは初めてのPermawebアプリケーションをデプロイする準備が整いました。
+最後に、最初の Permaweb アプリケーションをデプロイします
+
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
@@ -312,28 +313,24 @@ yarn deploy
   </CodeGroupItem>
 </CodeGroup>
 
-::: info ERROR
-`Insufficient funds`というエラーが発生した場合は、デプロイ用のウォレットにArDrive Turboクレジットを資金供給したことを確認してください。
+::: info エラー
+`Insufficient funds` エラーが発生した場合は、デプロイ用ウォレットに ArDrive Turbo クレジットをチャージしたことを確認してください。
 :::
 
 ### レスポンス
 
-次のようなレスポンスが表示されるはずです：
+次のような応答が表示されます：
 
 ```shell
 Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
 ```
 
-Your Svelte app can be found at `https://arweave.net/<< tx-id >>`.
+あなたの Svelte アプリは `https://arweave.net/<< tx-id >>` で見つけることができます。
 
-::: tip SUCCESS
-あなたは今、PermawebにSvelteアプリケーションを持っています！素晴らしい仕事です！
+::: tip 成功
+これで Permaweb 上に Svelte アプリケーションが存在するはずです！おめでとうございます！
 :::
-
-## リポジトリ
-
-この例の完成版は以下で入手できます: [https://github.com/twilson63/svelte-ts-vite-example](https://github.com/twilson63/svelte-ts-vite-example)
 
 ## まとめ
 
-これはPermawebにSvelteアプリケーションを公開するための最小限のバージョンですが、ホットリロードやTailwindなど、さらに多くの機能が欲しいかもしれません。ターンキーのスターターキットとして`hypar`をチェックしてください。 [HypAR](https://github.com/twilson63/hypar)
+これは Permaweb に Svelte アプリケーションを公開するための最小限の手順ですが、ホットリロードや Tailwind などのより多くの機能が必要になる場合があります。ターンキーのスターターキットとして `hypar` をチェックしてください。 [HypAR](https://github.com/twilson63/hypar)

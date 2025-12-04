@@ -1,34 +1,31 @@
----
-locale: ja
----
-# サーバーサイドDNS統合
+# サーバーサイド DNS 統合
 
-あなたのパーマウェブアプリケーションはパーマウェブ上にありますが、ユーザーがこのアプリにアクセスするために使用したい特定のドメイン（mydomain.com）を持っています。このドメインをパーマウェブアプリに接続するためのオプションはいくつかありますが、ここで示すオプションはサーバーサイドリダイレクトと呼ばれます。リダイレクトはリバースプロキシとして行われ、ユーザーはブラウザでmydomain.comのままで、背後ではアプリケーションがパーマウェブから提供されています。
+permaweb アプリケーションが permaweb 上にあり、ユーザーに特定のドメイン（例: mydomain.com）でこのアプリにアクセスさせたい場合、ドメインを permaweb アプリに接続するためのいくつかのオプションがあります。本ガイドで示すオプションは「サーバーサイドリダイレクト」と呼ばれるものです。リダイレクトはリバースプロキシとして動作するため、ユーザーのブラウザは mydomain.com のままで、裏側ではアプリケーションが permaweb から配信されます。
 
 ::: tip
-任意のリバースプロキシを使用してサーバーサイドリダイレクトを設定できます。このガイドでは、軽量のエッジホスティングサービスであるdenoとdeno.comを使用します。
+任意のリバースプロキシを使用してサーバーサイドリダイレクトを設定できます。本ガイドでは deno と deno.com を使用します。deno.com は軽量なエッジホスティングサービスです。
 :::
 
-## deno.comを使用したリバースプロキシの設定に必要なもの
+## deno.com を使用してリバースプロキシを設定するために必要なもの
 
-* Deno.comアカウント（この時点では無料です）。
-* DNS設定にアクセスできるドメイン。
-* パーマウェブにデプロイされたパーマウェブアプリケーションの識別子。
+- 無料で利用できる deno.com アカウント（執筆時点で無料）
+- DNS 設定にアクセスできるドメイン
+- permaweb アプリケーションの識別子（permaweb にデプロイされていること）
 
-## Deno.comでプロキシを作成する
+## Deno.com でプロキシを作成する
 
-Deno Deployは、エッジで動作する分散システムです。世界中に35の地域があります。ブラウザを開いて[https://deno.com](https://deno.com)にアクセスし、サインインするか、アカウントを持っていない場合はサインアップします。
+Deno Deploy はエッジで動作する分散システムです。世界中に 35 のリージョンがあります。ブラウザで [https://deno.com](https://deno.com) を開き、アカウントをお持ちでなければサインインまたはサインアップしてください。
 
-`New Project`をクリックし、`Play`をクリックします。
+`New Project` をクリックし、`Play` をクリックします。
 
-Denoプレイグラウンドでは、ブラウザを離れることなくプロキシを作成できます。
+deno のプレイグラウンドでは、ブラウザを離れることなくプロキシを作成できます。
 
 以下のコードをコピーしてください：
 
 ```ts
 import { serve } from "https://deno.land/std/http/mod.ts";
 
-const APP_ID = "YOUR AREWEAVE IDENTIFIER"
+const APP_ID = "YOUR AREWEAVE IDENTIFIER";
 
 const fileService = `https://arweave.net/${APP_ID}`;
 
@@ -36,16 +33,16 @@ const fileService = `https://arweave.net/${APP_ID}`;
 async function reqHandler(req: Request) {
   const path = new URL(req.url).pathname;
   // proxy to arweave.net
-  return await fetch(fileService + path).then(res => {
-    const headers = new Headers(res.headers)
+  return await fetch(fileService + path).then((res) => {
+    const headers = new Headers(res.headers);
     // instruct server to leverage the edge cache
-    headers.set('cache-control', 's-max-age=600, stale-while-revalidate=6000')
+    headers.set("cache-control", "s-max-age=600, stale-while-revalidate=6000");
 
     // return response from arweave.net
     return new Response(res.body, {
       status: res.status,
-      headers
-    })
+      headers,
+    });
   });
 }
 
@@ -53,28 +50,28 @@ async function reqHandler(req: Request) {
 serve(reqHandler, { port: 8100 });
 ```
 
-このプロキシサーバーは、mydomain.comからのリクエストを受信し、そのリクエストをarweave.net/APP_IDにプロキシし、レスポンスをmydomain.comとして返します。あなたのAPP_IDは、パーマウェブアプリケーションのTX_ID識別子です。
+このプロキシサーバーは mydomain.com からのリクエストを受け取り、arweave.net/APP_ID にプロキシし、そのレスポンスを mydomain.com として返します。Your APP_ID はあなたの permaweb アプリケーションの TX_ID 識別子です。
 
-`Save and Deploy`をクリックします。
+`Save and Deploy` をクリックしてください。
 
-## DNSへの接続
+## DNS の接続
 
-プロジェクト設定でドメインセクションに移動し、ドメインを追加するためのクリックします。
+Project Settings の domains セクションに移動し、ドメインを追加してください。
 
-`mydomain.com`ドメインを入力し、DNS設定を変更してdeno deployエッジネットワークを指すようにする手順に従います。
+`mydomain.com` を入力し、deno deploy のエッジネットワークを指すように DNS 設定を変更する手順に従ってください。
 
-DNSが解決されるまで数分かかることがありますが、一旦解決されれば、アプリはmydomain.comからレンダリングされます。
+DNS に反映されるまで数分かかる場合があります。反映されると、あなたのアプリは mydomain.com からレンダリングされます。
 
-:tada: おめでとうございます！あなたのパーマウェブアプリケーションへのサーバーサイドリダイレクトを公開しました。
+:tada: おめでとうございます。permaweb アプリケーションへのサーバーサイドリダイレクトを公開できました。
 
 ::: warning
-アプリケーションの変更は新しいTX_IDを生成し、そのTX_IDを変更して新しい変更をドメインに公開する必要があることに注意してください。
+アプリケーションに変更を加えると新しい TX_ID が生成されます。その場合、ドメインに公開するためにその TX_ID を更新する必要があることに注意してください。
 :::
 
 ## デプロイの自動化
 
-パーマウェブアプリの新しいデプロイを自動化したい場合は、GitHub Actionsとdeno deploy GitHub Actionの使用を検討してください: [https://github.com/denoland/deployctl/blob/main/action/README.md](https://github.com/denoland/deployctl/blob/main/action/README.md)
+permaweb アプリの新しいデプロイを自動化したい場合は、GitHub Actions と deno deploy 用の GitHub Action を検討してください: [https://github.com/denoland/deployctl/blob/main/action/README.md](https://github.com/denoland/deployctl/blob/main/action/README.md)
 
 ## まとめ
 
-サーバーサイドリダイレクトは、ユーザーにドメイン名システムのURLを提供してパーマウェブアプリケーションにアクセスさせるのに優れています。このガイドがあなたのパーマウェブ開発の旅に役立つことを願っています！
+サーバーサイドリダイレクトは、ユーザーに対してドメイン名（DNS）経由で permaweb アプリケーションへアクセスさせるのに最適な方法です。本ガイドがあなたの permaweb 開発の旅に役立つことを願っています！

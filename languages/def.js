@@ -63,14 +63,14 @@ const languages = [
   //   strings: idStrings,
   //   sidebar: idSidebar,
   // },
-  // {
-  //   display: "日本語",
-  //   name: "Japanese",
-  //   code: "ja",
-  //   path: "/ja/",
-  //   strings: jaStrings,
-  //   sidebar: jaSidebar,
-  // },
+  {
+    display: "日本語",
+    name: "Japanese",
+    code: "ja",
+    path: "/ja/",
+    strings: jaStrings,
+    sidebar: jaSidebar,
+  },
   { 
     name: "Korean",
     display: "한국어",

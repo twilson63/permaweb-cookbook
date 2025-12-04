@@ -1,26 +1,23 @@
----
-locale: ja
----
 # Minimal Svelte Starter Kit
 
-このガイドでは、Permaweb アプリケーションを構築しデプロイするための開発環境を構成する手順を説明します。
+このガイドでは、Permaweb アプリケーションを構築してデプロイするための開発環境をステップバイステップで設定する方法を説明します。
 
 ## 前提条件
 
--   TypeScript の知識
--   NodeJS v18 以上
--   Svelte の知識 - [https://svelte.dev](https://svelte.dev)
--   Git と一般的なターミナルコマンドの知識
+- TypeScript の知識
+- NodeJS v18 以上
+- Svelte の知識 - [https://svelte.dev](https://svelte.dev)
+- git と一般的なターミナルコマンドの知識
 
 ## 開発依存関係
 
--   TypeScript
--   esbuild
--   w3
+- TypeScript
+- esbuild
+- w3
 
 ## 手順
 
-### プロジェクトの作成
+### プロジェクト作成
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -31,7 +28,6 @@ cd myproject
 npm init -y
 npm install -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess
 ```
-
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
@@ -56,36 +52,36 @@ import sveltePreprocess from "svelte-preprocess";
 
 //make sure the directoy exists before stuff gets put into it
 if (!fs.existsSync("./dist/")) {
-	fs.mkdirSync("./dist/");
+  fs.mkdirSync("./dist/");
 }
 esbuild
-	.build({
-		entryPoints: [`./src/main.ts`],
-		bundle: true,
-		outdir: `./dist`,
-		mainFields: ["svelte", "browser", "module", "main"],
-		// logLevel: `info`,
-		splitting: true,
-		write: true,
-		format: `esm`,
-		plugins: [
-			esbuildSvelte({
-				preprocess: sveltePreprocess(),
-			}),
-		],
-	})
-	.catch((error, location) => {
-		console.warn(`Errors: `, error, location);
-		process.exit(1);
-	});
+  .build({
+    entryPoints: [`./src/main.ts`],
+    bundle: true,
+    outdir: `./dist`,
+    mainFields: ["svelte", "browser", "module", "main"],
+    // logLevel: `info`,
+    splitting: true,
+    write: true,
+    format: `esm`,
+    plugins: [
+      esbuildSvelte({
+        preprocess: sveltePreprocess(),
+      }),
+    ],
+  })
+  .catch((error, location) => {
+    console.warn(`Errors: `, error, location);
+    process.exit(1);
+  });
 
 //use a basic html file to test with
 fs.copyFileSync("./index.html", "./dist/index.html");
 ```
 
-## Modify package.json
+## package.json を変更
 
-Set `type` to `module`, add a build script
+`type` を `module` に設定し、build スクリプトを追加します
 
 ```json
 {
@@ -97,7 +93,7 @@ Set `type` to `module`, add a build script
 }
 ```
 
-## Create `src` directory and some src files
+## `src` ディレクトリとソースファイルを作成
 
 ```sh
 mkdir src
@@ -113,7 +109,7 @@ touch src/about.svelte
 import App from "./app.svelte";
 
 new App({
-	target: document.body,
+  target: document.body,
 });
 ```
 
@@ -121,12 +117,12 @@ new App({
 
 ```html
 <script lang="ts">
-	import { Route, router } from "tinro";
-	import Counter from "./counter.svelte";
-	import About from "./about.svelte";
+  import { Route, router } from "tinro";
+  import Counter from "./counter.svelte";
+  import About from "./about.svelte";
 
-	// add hash routing for permaweb support
-	router.mode.hash();
+  // add hash routing for permaweb support
+  router.mode.hash();
 </script>
 <nav><a href="/">Home</a> | <a href="/about">About</a></nav>
 <Route path="/"><Counter /></Route>
@@ -134,18 +130,18 @@ new App({
 ```
 
 ::: info Hash Routing
-スクリプトセッションにある `router.mode.hash()` 設定に注意してください。これは、アプリケーションをハッシュベースのルーティングを使用するように構成するために重要です。これにより、アプリケーションを `https://[gateway]/[TX]` のようなパスで実行する際の URL サポートが可能になります。
+スクリプト内の `router.mode.hash()` 設定に注目してください。これはハッシュベースのルーティングを使用するようアプリケーションを設定するために重要です。これにより、`https://[gateway]/[TX]` のようなパス上でアプリケーションを実行した場合でも URL サポートが有効になります。
 :::
 
 ### counter.svelte
 
 ```html
 <script lang="ts">
-	let count = 0;
+  let count = 0;
 
-	function inc() {
-		count += 1;
-	}
+  function inc() {
+    count += 1;
+  }
 </script>
 <h1>Hello Permaweb</h1>
 <button on:click="{inc}">Inc</button>
@@ -160,10 +156,10 @@ new App({
 <a href="/">Home</a>
 ```
 
-## Add index.html
+## index.html を追加
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -178,11 +174,11 @@ new App({
 </html>
 ```
 
-## 永続的なデプロイ
+## 永続的にデプロイ
 
-### ウォレットの生成
+### ウォレット生成
 
-ウォレットを生成するために `arweave` パッケージが必要です。
+ウォレットを生成するには `arweave` パッケージが必要です
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -201,15 +197,16 @@ yarn add arweave -D
   </CodeGroupItem>
 </CodeGroup>
 
-then run this command in the terminal
+その後、ターミナルで次のコマンドを実行します
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
 ### ウォレットに資金を追加
-ウォレットに ArDrive Turbo クレジットを追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスし、ウォレットをインポートします。
-その後、ウォレットのためにターボクレジットを購入できます。
+
+ウォレットに ArDrive Turbo クレジットをチャージする必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスしてウォレットをインポートしてください。
+その後、ウォレット用に Turbo クレジットを購入できます。
 
 ### Permaweb-Deploy のセットアップ
 
@@ -230,19 +227,19 @@ yarn global add permaweb-deploy
   </CodeGroupItem>
 </CodeGroup>
 
-### Update vite.config.ts
+### vite.config.ts を更新
 
 ```ts
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 export default defineConfig({
   plugins: [svelte()],
-  base: './'
-})
+  base: "./",
+});
 ```
 
-### Update package.json
+### package.json を更新
 
 ```json
 {
@@ -256,12 +253,12 @@ export default defineConfig({
 ```
 
 ::: info
-Replace << ANT-PROCESS >> with your ANT process id.
+<< ANT-PROCESS >> をあなたの ANT プロセス ID に置き換えてください。
 :::
 
-### Run build
+### ビルドを実行
 
-Now it is time to generate a build, run
+ビルドを生成します。次を実行してください
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -280,9 +277,9 @@ yarn build
   </CodeGroupItem>
 </CodeGroup>
 
-### Run deploy
+### デプロイを実行
 
-Finally we are good to deploy our first Permaweb Application
+最後に、Permaweb アプリケーションをデプロイします
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -302,12 +299,12 @@ yarn deploy
 </CodeGroup>
 
 ::: info ERROR
-資金不足のエラー `Insufficient funds` が表示された場合は、デプロイ用のウォレットに ArDrive Turbo クレジットを追加したことを確認してください。
+`Insufficient funds` エラーが発生した場合は、デプロイ用ウォレットに ArDrive Turbo クレジットをチャージしたことを確認してください。
 :::
 
-### 応答
+### レスポンス
 
-次のような応答が表示されるはずです：
+次のようなレスポンスが表示されるはずです:
 
 ```shell
 Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
@@ -316,13 +313,9 @@ Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>
 あなたの Svelte アプリは `https://arweave.net/<< tx-id >>` で見つけることができます。
 
 ::: tip SUCCESS
-これで Permaweb に Svelte アプリケーションを持つことができました！素晴らしい仕事です！
+これで Permaweb 上に Svelte アプリケーションが公開されました。おめでとうございます！
 :::
-
-## リポジトリ
-
-この例の完全なバージョンは、こちらで利用できます: [https://github.com/twilson63/permaweb-minimal-svelte-starter](https://github.com/twilson63/permaweb-minimal-svelte-starter)
 
 ## まとめ
 
-これは Permaweb に Svelte アプリケーションを公開するための最小限のバージョンですが、ホットリロードや Tailwind などの機能を追加したいかもしれません。その場合は、ターンキーのスターターキットである `hypar` をチェックしてください。 [HypAR](https://github.com/twilson63/hypar)
+これは Permaweb に Svelte アプリケーションを公開するための最小構成の手順です。ホットリロードや Tailwind など、より多くの機能が必要な場合は、ターンキーのスターターキットである `hypar` をチェックしてください。 [HypAR](https://github.com/twilson63/hypar)
