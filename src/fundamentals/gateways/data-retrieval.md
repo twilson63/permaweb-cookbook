@@ -26,7 +26,7 @@ The simplest approach using standard HTTP requests to Arweave gateways. Perfect 
 - Server-side applications
 - When you want to avoid additional packages
 
-### [Arweave.js](./arweave-js.md)
+### [Arweave JS](./arweave-js.md)
 
 The official JavaScript/TypeScript SDK that provides a comprehensive interface to the Arweave network.
 

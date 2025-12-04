@@ -106,24 +106,10 @@ module.exports = [
           {
             text: "React",
             link: "/kits/react/index.html",
-            collapsible: true,
-            children: [
-              {
-                text: "Vite + permaweb-deploy",
-                link: "/kits/react/turbo.html",
-              },
-            ],
           },
           {
             text: "Svelte",
             link: "/kits/svelte/index.html",
-            collapsible: true,
-            children: [
-              {
-                text: "Vite",
-                link: "/kits/svelte/vite.html",
-              },
-            ],
           },
           {
             text: "Vue",

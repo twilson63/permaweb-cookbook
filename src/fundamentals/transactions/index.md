@@ -22,7 +22,7 @@ All transactions allow the user to specify up to 2KB worth of metadata in the fo
 
 Gateways sit between clients and Arweave's network of peers. One of the primary functions of the gateway is to index transactions and optimistically cache the data posted to the network while waiting for it to be included in a block. This makes the transaction queryable in a "Pending" state almost instantly which allows applications built on top of a gateway to be more responsive. There is still a risk of transactions dropping out of the optimistic cache if they are not mined in a block by the peers.
 
-An example of how to post a direct transaction using `arweave-js` can be found [in this guide](../../guides/posting-transactions/arweave-js).
+An example of how to post a direct transaction using Arweave JS can be found [in this guide](../../guides/posting-transactions/arweave-js).
 
 ::: tip Guaranteed Transactions
 When posting a large quantity of transactions or when fast settlement time is desireable consider using a bundling service.
@@ -50,6 +50,6 @@ An example of how to post a 100KB or less bundled transaction with an Arweave wa
 
 ## Resources
 
--   [arweave-js](../../guides/posting-transactions/arweave-js.md) example
--   [dispatch](../../guides/posting-transactions/dispatch.md) example
+-   [Arweave JS](../../guides/posting-transactions/arweave-js.md) example
+-   [Dispatch](../../guides/posting-transactions/dispatch.md) example
 -   [Turbo SDK](../../guides/posting-transactions/turbo.md) example
