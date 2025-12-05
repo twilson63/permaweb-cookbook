@@ -114,13 +114,6 @@ module.exports = [
           {
             text: "Vue",
             link: "/kits/vue/index.html",
-            collapsible: true,
-            children: [
-              {
-                text: "Create Vue App",
-                link: "/kits/vue/create-vue.html",
-              },
-            ],
           },
         ],
       },
