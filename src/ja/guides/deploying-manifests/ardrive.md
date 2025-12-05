@@ -2,12 +2,12 @@
 
 ---
 
-`ardrive create-manifest` コマンドを使用して、フォルダーまたはフォルダーのグループのマニフェストを作成できます。このコマンドは [ArDrive CLI](https://github.com/ardriveapp/ardrive-cli) に含まれています。
+`ardrive create-manifest` コマンドを使用して、[ArDrive CLI](https://github.com/ardriveapp/ardrive-cli) でフォルダまたは複数フォルダのグループ用のマニフェストを作成できます。
 
-さらに詳しい情報: [ArDrive CLI ドキュメント](https://github.com/ardriveapp/ardrive-cli)
+さらに詳しくは: [ArDrive CLI ドキュメント](https://github.com/ardriveapp/ardrive-cli)
 
 ---
 
-また、[ArDrive](https://ardrive.io) ウェブアプリを使用して、ドライブ内で「新規」→「マニフェストを作成」を選択することでマニフェストを作成することもできます。
+または、[ArDrive](https://ardrive.io) のウェブアプリで、ドライブ内で「New」→「Create manifest」を選択してマニフェストを作成できます。
 
-![ArDrive ウェブアプリ マニフェスト](~@source/images/ardrive-manifests.png)
+![ArDrive ウェブアプリのマニフェスト](~@source/images/ardrive-manifests.png)

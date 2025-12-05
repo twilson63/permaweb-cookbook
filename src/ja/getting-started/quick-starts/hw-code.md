@@ -1,52 +1,50 @@
----
-locale: ja
----
+# Hello World（コード）
 
-# Hello World (コード)
+このガイドでは、数行のコードとコマンドラインインターフェース（CLI）を使って、静的な HTML、CSS、JavaScript のウェブページを Permaweb に公開する簡単な方法を説明します。
 
-このガイドでは、数行のコードと[コマンドラインインターフェース (CLI)](./hw-cli.md)を使用して、静的なHTML、CSS、JavaScriptのウェブページをパーマウェブにアップロードする簡単な方法を説明します。
+## 前提条件
 
-## 要件
-
-- [NodeJS](https://nodejs.org) LTS以上
-- HTML、CSS、JavaScriptの基本的な知識
-- テキストエディタ（VS Code、Sublime、または同様のもの）
-
-## 説明
-
-ターミナル/コンソールウィンドウを使用して、`hello-world`という新しいフォルダを作成します。
+- [NodeJS](https://nodejs.org) LTS 以上
+- HTML、CSS、JavaScript の基本知識
+- テキストエディタ（VS Code、Sublime、または同等のもの）
 
 ## セットアップ
 
+ターミナルを開き、`hello-world` という名前の新しいフォルダを作成します。
+
+新しいディレクトリ内で、次のコマンドを実行します：
+
 ```sh
-cd hello-world
 npm init -y
 mkdir src && cd src
 touch index.js index.html style.css
 ```
 
-次に、テキストエディタを開き、`hello-world`ディレクトリをインポートします。
+これにより Node プロジェクトがセットアップされ、ウェブサイト作成のための定型ファイルが作成されます。
 
 ## ウォレットの生成
+
+ファイルを Arweave にアップロードするには、Arweave ウォレットが必要です。
+
+`hello-world` ディレクトリ内で次のコマンドを実行してウォレットを生成します：
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
 :::info
-wallet.jsonファイルは、`hello-world`フォルダのルートに配置する必要があり、`src`フォルダの中には置かないでください。
+`wallet.json` ファイルは `hello-world` フォルダのルートに配置し、`src` フォルダの中に入れないでください。
 :::
 
 ## ウェブページの作成
 
-このウェブページでは、基本的なHTML、CSS、JavaScriptを使用して、クリックするとヘッダーのテキストの色が変わるスタイル付きボタンを作成します。完成後、Irysと以前に生成したウォレットを使用して、完全に機能する静的かつ永続的なウェブページをArweaveにデプロイします。
+次に、基本的な HTML、CSS、JavaScript を使って、クリックするとヘッダーテキストの色が変わるスタイリングされたボタンを持つウェブページを作成します。
 
-次のコードブロックからコードをそれぞれのファイルに貼り付けてください：
+完成したら、`permaweb-deploy` と先ほど生成したウォレットを使用して、静的なウェブページを Arweave にデプロイします。
 
-**index.html**
+以下のコードブロックの内容をそれぞれ対応するファイルに貼り付けてください：
 
-<details>
-<summary>Click to view HTML</summary>
+### index.html
 
 ```html
 <!DOCTYPE html>
@@ -67,13 +65,9 @@ wallet.jsonファイルは、`hello-world`フォルダのルートに配置す�
 </html>
 ```
 
-</details>
 <hr />
 
-**style.css**
-
-<details>
-<summary>Click to view CSS</summary>
+### style.css
 
 ```css
 .button {
@@ -82,13 +76,9 @@ wallet.jsonファイルは、`hello-world`フォルダのルートに配置す�
 }
 ```
 
-</details>
 <hr />
 
-**index.js**
-
-<details>
-<summary>Click to view JS</summary>
+### index.js
 
 ```javascript
 function changeColor() {
@@ -99,15 +89,38 @@ function changeColor() {
 }
 ```
 
-</details>
-
 <hr />
-静的サイトをデプロイする準備が整ったら、コンソール/ターミナルで`open src/index.html`と入力して、すべてが正しく機能しているか確認できます。すべてが期待通りに動作している場合、Arweaveにデプロイする時が来ました！
 
-## permaweb-deployを使用したアップロード
+これでデプロイする静的サイトができたので、ターミナルで `open src/index.html` を実行して期待通りに動作するか確認できます。
 
-詳細はこちら: [https://github.com/permaweb/permaweb-deploy](https://github.com/permaweb/permaweb-deploy)
+すべて問題なければ、Arweave にデプロイする準備が整いました！
 
-## おめでとう！！
+## permaweb-deploy を使ってアップロード
 
-わずか数コマンドと数行のコードで、Arweaveに静的サイトを公開しました！
+デプロイのために `permaweb-deploy` をインストールして設定します：
+
+```bash
+npm install --save-dev permaweb-deploy
+```
+
+`package.json` にデプロイスクリプトを追加します：
+
+```json
+{
+  "scripts": {
+    "deploy": "permaweb-deploy --arns-name my-hello-world --deploy-folder src"
+  }
+}
+```
+
+アプリケーションをデプロイします：
+
+```bash
+DEPLOY_KEY=$(base64 -i wallet.json) npm run deploy
+```
+
+詳しいデプロイ手順については [Permaweb Deploy](/guides/deployment/permaweb-deploy) を参照してください。
+
+## おめでとうございます！
+
+数コマンドと数行のコードで、Arweave 上に静的サイトを公開しました！

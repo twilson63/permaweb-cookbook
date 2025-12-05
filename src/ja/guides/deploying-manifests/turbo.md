@@ -1,11 +1,8 @@
----
-locale: ja
----
-# Turboを使ったマニフェストのデプロイ
+# Turbo でのマニフェストのデプロイ
 
-## Turboのインストール
+## Turbo のインストール
 
-> Requires NodeJS - https://nodejs.org
+> NodeJS が必要 - https://nodejs.org
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -26,9 +23,9 @@ yarn add @ardrive/turbo-sdk
 
 ## フォルダのアップロード
 
-デフォルトでは、Turbo SDKの`uploadFolder`メソッドは、フォルダ用のマニフェストを生成してデプロイします。`index`および`fallback`属性は、それぞれアップロードされたフォルダ内の`index.html`および`404.html`ファイルに設定されますが、他のファイルが指定された場合はそれに従います。
+デフォルトでは、Turbo SDK の `uploadFolder` メソッドはフォルダ用のマニフェストを生成してデプロイします。`index` および `fallback` 属性は、他のファイルが指定されない限り、アップロードされたフォルダ内のそれぞれ `index.html` と `404.html` に設定されます。
 
-`uploadFolder`メソッドは、マニフェストの完全なJSONと、マニフェストアップロードのトランザクションIDの両方を返します。
+`uploadFolder` メソッドは、マニフェストの完全な JSON と、マニフェストアップロードのトランザクション ID の両方を返します。
 
 ```javascript
 import { TurboFactory } from "@ardrive/turbo-sdk";
@@ -62,9 +59,10 @@ const { manifest, fileResponses, manifestResponse } = await turbo.uploadFolder({
   },
 });
 ```
-## マニフェストを手動で作成およびアップロード
 
-マニフェストは手動で作成してアップロードすることもできます。マニフェストは特定のスキーマを持つJSONオブジェクトで、`Content-Type`タグ`application/x.arweave-manifest+json`を使用してアップロードされます。
+## マニフェストの手動作成とアップロード
+
+マニフェストは手動で作成してアップロードすることもできます。マニフェストは特定のスキーマを持つ JSON オブジェクトで、`Content-Type` タグに `application/x.arweave-manifest+json` を付けてアップロードします。
 
 ```js
 import { TurboFactory } from "@ardrive/turbo-sdk";

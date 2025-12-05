@@ -1,25 +1,23 @@
----
-locale: ja
----
 # React Starter Kit w/vite & ArDrive
 
-このガイドでは、Permaweb React アプリケーションを構築してデプロイするための開発環境を構成する手順を説明します。
+このガイドでは、permaweb React アプリケーションを構築およびデプロイするための開発環境をステップバイステップで設定する方法を説明します。
 
 ## 前提条件
 
--   基本的な TypeScript の知識（必須ではありません） - [https://www.typescriptlang.org/docs/](TypeScriptを学ぶ)
--   NodeJS v16.15.0 以上 - [https://nodejs.org/en/download/](NodeJSをダウンロード)
--   ReactJS の知識 - [https://reactjs.org/](ReactJSを学ぶ)
--   git と一般的なターミナルコマンドの知識
+- 基本的な TypeScript の知識（必須ではありません） - [Learn Typescript](https://www.typescriptlang.org/docs/)
+- NodeJS v16.15.0 以上 - [Download NodeJS](https://nodejs.org/en/download/)
+- ReactJS の知識 - [Learn ReactJS](https://reactjs.org/)
+- Git と一般的なターミナルコマンドの知識
 
-## 開発依存関係
+## 開発用依存関係
 
--   TypeScript
--   NPM または Yarn パッケージマネージャ
+- TypeScript
+- NPM または Yarn パッケージマネージャ
 
 ## 手順
 
-### React アプリを作成する
+### Create React App
+
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -41,7 +39,7 @@ yarn
 </CodeGroupItem>
 </CodeGroup>
 
-### Add React Router DOM
+### React Router DOM を追加
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -60,8 +58,7 @@ yarn add react-router-dom
 </CodeGroupItem>
 </CodeGroup>
 
-
-Arweave で動作するアプリを作成するには、ハッシュルーターを使用する必要があります。
+Arweave 上で動作するアプリを作るために、hash-router を使用する必要があります。
 
 ### ページコンポーネント
 
@@ -75,14 +72,14 @@ src/Home.tsx
 import { Link } from "react-router-dom";
 
 function Home() {
-	return (
-		<div>
-			Welcome to the Permaweb!
-			<Link to={"/about/"}>
-				<div>About</div>
-			</Link>
-		</div>
-	);
+  return (
+    <div>
+      Welcome to the Permaweb!
+      <Link to={"/about/"}>
+        <div>About</div>
+      </Link>
+    </div>
+  );
 }
 
 export default Home;
@@ -94,23 +91,22 @@ src/About.tsx
 import { Link } from "react-router-dom";
 
 function About() {
-	return (
-		<div>
-			Welcome to the About page!
-			<Link to={"/"}>
-				<div>Home</div>
-			</Link>
-		</div>
-	);
+  return (
+    <div>
+      Welcome to the About page!
+      <Link to={"/"}>
+        <div>Home</div>
+      </Link>
+    </div>
+  );
 }
 
 export default About;
 ```
 
-#### App.tsx を修正する
+#### App.tsx の修正
 
-異なるページを管理できるように App.tsx を更新する必要があります。
-
+異なるページを管理するために App.tsx を更新する必要があります
 
 ```tsx
 import { HashRouter } from "react-router-dom";
@@ -120,22 +116,22 @@ import Home from "./Home";
 import About from "./About";
 
 function App() {
-	return (
-		<HashRouter>
-			<Routes>
-				<Route path={"/"} element={<Home />} />
-				<Route path={"/about/"} element={<About />} />
-			</Routes>
-		</HashRouter>
-	);
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path={"/"} element={<Home />} />
+        <Route path={"/about/"} element={<About />} />
+      </Routes>
+    </HashRouter>
+  );
 }
 
 export default App;
 ```
 
-#### index.css を修正する
+#### index.css の修正
 
-`body` セレクタを変更します。
+`body` セレクタを変更します
 
 ```css
 body {
@@ -149,7 +145,7 @@ body {
 }
 ```
 
-Run the project
+プロジェクトを実行
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -167,23 +163,22 @@ yarn dev
 </CodeGroupItem>
 </CodeGroup>
 
-
 ### React アプリをビルドする
 
-#### vite.config.ts を修正する
-
+#### vite.config.ts の修正
 
 ```ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "",
   plugins: [react()],
-})
+});
 ```
-#### Build App
+
+#### アプリをビルド
 
 ```sh
 yarn build
@@ -191,9 +186,9 @@ yarn build
 
 ### 永続的にデプロイする
 
-#### ウォレットを生成する
+#### ウォレットの生成
 
-ウォレットを生成するために `arweave` パッケージが必要です。
+ウォレットを生成するために `arweave` パッケージが必要です
 
 <CodeGroup>
 <CodeGroupItem title="NPM">
@@ -212,58 +207,60 @@ yarn add arweave -D
   </CodeGroupItem>
 </CodeGroup>
 
-then run this command in the terminal
+その後、ターミナルで以下のコマンドを実行します
 
 ```sh
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-#### ウォレットに資金を追加する
-ArDrive Turbo クレジットでウォレットに資金を追加する必要があります。これを行うには、[ArDrive](https://app.ardrive.io) にアクセスし、ウォレットをインポートします。その後、ウォレットのために Turbo クレジットを購入できます。
+#### ウォレットに資金を入れる
 
-#### Permaweb-Deploy を設定する
+ArDrive Turbo クレジットでウォレットに資金を入れる必要があります。これを行うには、[ArDrive](https://app.ardrive.io) に入り、ウォレットをインポートしてください。
+その後、ウォレット用に Turbo クレジットを購入できます。
+
+#### Permaweb-Deploy の設定
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
   
 ```console:no-line-numbers
-npm install --global permaweb-deploy
+npm install --save-dev permaweb-deploy
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="YARN">
   
 ```console:no-line-numbers
-yarn global add permaweb-deploy
+yarn add permaweb-deploy --dev --ignore-engines
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-<!-- ::: info
-You will need to add AR to this wallet and fund your Irys wallet to be able to upload this app. See [https://irys.xyz](https://irys.xyz) and [https://www.arweave.org/](https://www.arweave.org/) for more information.
-::: -->
+::: info
+ウォレットに AR を追加し、Turbo クレジットで資金を供給する必要があります。これによりアプリをアップロードできるようになります。詳細は [Turbo SDK](https://github.com/ardriveapp/turbo-sdk) を参照してください。
+:::
 
-#### Update package.json
+#### package.json の更新
 
 ```json
 {
   ...
   "scripts": {
     ...
-    "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> "
+    "deploy": "npm run build && permaweb-deploy --arns-name my-react-app"
   }
   ...
 }
 ```
 
 ::: info
-Replace << ANT-PROCESS >> with your ANT process id.
+`my-react-app` を実際の ArNS 名に置き換えてください。`--undername staging` のような追加オプションをステージング用に追加することもできます。
 :::
 
-#### Run build
+#### ビルドを実行
 
-Now it is time to generate a build, run
+ビルドを生成する時です、以下を実行します
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -282,11 +279,9 @@ yarn build
   </CodeGroupItem>
 </CodeGroup>
 
-#### デプロイを実行する
+#### デプロイを実行
 
-最後に、最初の Permaweb アプリケーションをデプロイします。
-
-
+最後に、Permaweb アプリケーションの最初のデプロイを行います
 
 <CodeGroup>
   <CodeGroupItem title="NPM">
@@ -305,23 +300,32 @@ yarn deploy
   </CodeGroupItem>
 </CodeGroup>
 
-::: info ERROR
-`Insufficient funds` エラーが表示された場合は、デプロイメント用のウォレットに ArDrive Turbo クレジットを追加したことを確認してください。
+::: warning 資金不足
+もし `Insufficient funds` エラーが発生した場合は、デプロイ用ウォレットに Turbo クレジットを入金したか確認してください。詳細は [Turbo SDK](https://github.com/ardriveapp/turbo-sdk) を参照してください。
 :::
 
-#### 応答
+#### レスポンス
 
-以下のような応答が表示されるはずです：
+以下のようなレスポンスが表示されるはずです:
 
 ```shell
-Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
+-------------------- DEPLOY DETAILS --------------------
+Tx ID: abc123def456ghi789jkl012mno345pqr678stu901v
+ArNS Name: my-react-app
+Undername: @
+ANT: xyz789abc012def345ghi678jkl901mno234pqr567s
+AR IO Process: bh9l1cy0aksiL_x9M359faGzM_yjralacHIUo8_nQXM
+TTL Seconds: 3600
+--------------------------------------------------------
+Deployed TxId [abc123def456ghi789jkl012mno345pqr678stu901v] to name [my-react-app] for ANT [xyz789abc012def345ghi678jkl901mno234pqr567s] using undername [@]
 ```
 
-あなたの React アプリは `https://arweave.net/<< tx-id >>` で見つけることができます。
+あなたの React アプリは `https://my-react-app.arweave.net`（ArNS を使用している場合）または `https://arweave.net/abc123def456ghi789jkl012mno345pqr678stu901v` で確認できます。
 
-::: tip SUCCESS
-これで、Permaweb 上に React アプリケーションを持っていることになります！素晴らしい仕事です！
+::: tip 成功
+これで Permaweb 上に React アプリケーションが公開されました！おめでとうございます！
 :::
-### おめでとうございます！
 
-あなたは Permaweb に React アプリケーションを公開しました！このアプリは永遠にホストされます！
+## おめでとうございます！
+
+Permaweb 上に React アプリケーションを公開しました！

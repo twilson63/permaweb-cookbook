@@ -1,41 +1,44 @@
----
-locale: zh
----
-
 # Hello World（CLI）
 
-本指南将引导您通过命令行界面（CLI）以最简单的方式将数据上传到永久网络（permaweb）。
+本指南将引导你使用命令行界面（CLI）将数据简单地上传到 Permaweb。
 
-## 要求
+## 系统需求
 
--   [NodeJS](https://nodejs.org) LTS 或更高版本
-
-## 描述
-
-使用终端/控制台窗口创建一个名为 `hw-permaweb-1` 的新文件夹。
+- [NodeJS](https://nodejs.org) LTS 或更新版本
 
 ## 设置
 
+在你的电脑上打开终端，并创建一个名为 `hello-permaweb` 的新文件夹。
+
+接着切换到 `hello-permaweb` 目录，并使用以下指令创建一个新项目：
+
 ```sh
-cd hw-permaweb-1
 npm init -y
-npm install arweave @irys/sdk
+npm install arweave ardrive-cli
 ```
 
 ## 生成钱包
 
 ```sh
-node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
+npx -y @permaweb/wallet > ~/.demo-arweave-wallet.json
 ```
 
-## 创建网页
+## 创建一个网页
 
 ```sh
 echo "<h1>Hello Permaweb</h1>" > index.html
 ```
 
-## 使用 Irys 上传
+## 使用 ArDrive CLI 上传
 
 ```sh
-irys upload index.html -c arweave -h https://node2.irys.xyz -w ./wallet.json
+# Create a Drive
+FOLDER_ID=$(npx ardrive create-drive -n public -w ~/.demo-arwe-wallet.json --turbo | jq -r '.created[] | select(.type == "folder") | .entityId')
+# Upload file
+TX_ID=$(npx ardrive upload-file -l index.html --content-type text/html -w ~/.demo-arwe-wallet.json --turbo -F ${FOLDER_ID} | jq -r '.created[] | select(.type == "file
+") | .dataTxId')
+# open file from ar.io gateway
+open https://arweave.net/${TX_ID}
 ```
+
+恭喜，你已经将数据上传到 Arweave！

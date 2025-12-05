@@ -1,10 +1,7 @@
----
-locale: zh
----
 # 入门套件
 
-入门套件是针对特定框架配置好并准备好进行构建的示例代码库，可用于搭建永久网络。
+入门套件是为特定框架准备的样板仓库，已完成配置并可立即使用，以便在 permaweb 上进行开发。
 
-- [Svelte](./svelte/index.md)
 - [React](./react/index.md)
+- [Svelte](./svelte/index.md)
 - [Vue](./vue/index.md)

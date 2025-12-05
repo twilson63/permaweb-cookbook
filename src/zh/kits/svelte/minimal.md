@@ -1,35 +1,46 @@
----
-locale: zh
----
+# 极简 Svelte 启动套件
 
-# 极简的 Svelte 入门套件
-
-本指南将逐步指导您配置开发环境，以构建和部署一个永久网络应用程序。
+本指南将逐步引导您设置开发环境，以构建并部署一个 Permaweb 应用程序。
 
 ## 先决条件
 
--   熟悉 Typescript
--   NodeJS v18 或更高版本
--   了解 Svelte - [https://svelte.dev](https://svelte.dev)
--   了解 git 和常用终端命令
+- 熟悉 TypeScript
+- NodeJS v18 或以上
+- 熟悉 Svelte - [https://svelte.dev](https://svelte.dev)
+- 熟悉 git 与常用终端命令
 
 ## 开发依赖
 
--   TypeScript
--   esbuild
--   w3
--   yarn `npm i -g yarn`
+- TypeScript
+- esbuild
+- w3
 
 ## 步骤
 
 ### 创建项目
 
-```sh
+<CodeGroup>
+<CodeGroupItem title="NPM">
+
+```console:no-line-numbers
+mkdir myproject
+cd myproject
+npm init -y
+npm install -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
 mkdir myproject
 cd myproject
 yarn init -y
 yarn add -D svelte esbuild typescript esbuild-svelte tinro svelte-preprocess
 ```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 ## 创建 buildscript.js
 
@@ -39,39 +50,38 @@ import esbuild from "esbuild";
 import esbuildSvelte from "esbuild-svelte";
 import sveltePreprocess from "svelte-preprocess";
 
-//确保目录存在，以便在文件放入其中之前创建目录
+//make sure the directoy exists before stuff gets put into it
 if (!fs.existsSync("./dist/")) {
-	fs.mkdirSync("./dist/");
+  fs.mkdirSync("./dist/");
 }
 esbuild
-	.build({
-		entryPoints: [`./src/main.ts`],
-		bundle: true,
-		outdir: `./dist`,
-		mainFields: ["svelte", "browser", "module", "main"],
-		// logLevel: `info`,
-		splitting: true,
-		write: true,
-		format: `esm`,
-		plugins: [
-			esbuildSvelte({
-				preprocess: sveltePreprocess(),
-			}),
-		],
-	})
-	.catch((error, location) => {
-		console.warn(`Errors: `, error, location);
-		process.exit(1);
-	});
+  .build({
+    entryPoints: [`./src/main.ts`],
+    bundle: true,
+    outdir: `./dist`,
+    mainFields: ["svelte", "browser", "module", "main"],
+    // logLevel: `info`,
+    splitting: true,
+    write: true,
+    format: `esm`,
+    plugins: [
+      esbuildSvelte({
+        preprocess: sveltePreprocess(),
+      }),
+    ],
+  })
+  .catch((error, location) => {
+    console.warn(`Errors: `, error, location);
+    process.exit(1);
+  });
 
-//使用基本html文件进行测试
+//use a basic html file to test with
 fs.copyFileSync("./index.html", "./dist/index.html");
 ```
 
 ## 修改 package.json
 
-将`type`设置为`module`
-添加构建脚本
+将 `type` 设置为 `module`，并新增 build 脚本
 
 ```json
 {
@@ -83,7 +93,7 @@ fs.copyFileSync("./index.html", "./dist/index.html");
 }
 ```
 
-## 创建`src`目录和一些源文件
+## 创建 `src` 目录与一些 src 文件
 
 ```sh
 mkdir src
@@ -93,52 +103,52 @@ touch src/counter.svelte
 touch src/about.svelte
 ```
 
-## Main.ts
+### Main.ts
 
 ```ts
 import App from "./app.svelte";
 
 new App({
-	target: document.body,
+  target: document.body,
 });
 ```
 
-## app.svelte
+### app.svelte
 
 ```html
 <script lang="ts">
-	import { Route, router } from "tinro";
-	import Counter from "./counter.svelte";
-	import About from "./about.svelte";
+  import { Route, router } from "tinro";
+  import Counter from "./counter.svelte";
+  import About from "./about.svelte";
 
-	//添加用于永久网络支持的哈希路由
-	router.mode.hash();
+  // add hash routing for permaweb support
+  router.mode.hash();
 </script>
 <nav><a href="/">Home</a> | <a href="/about">About</a></nav>
 <Route path="/"><Counter /></Route>
 <Route path="/about"><About /></Route>
 ```
 
-::: info **哈希路由**
-您会注意到脚本会话中的`router.mode.hash()`设置，这在配置应用程序使用基于哈希的路由时是很重要的。这使得将应用程序运行时能够支持 URL 路径（如`https://[gateway]/[TX]`）。
+::: info 哈希路由
+您会在 script 段中看到 `router.mode.hash()` 设置，这一设置对于将应用程序配置为基于 hash 的路由非常重要，能在应用程序部署到如 `https://[gateway]/[TX]` 的路径时启用 URL 支持。
 :::
 
-## counter.svelte
+### counter.svelte
 
 ```html
 <script lang="ts">
-	let count = 0;
+  let count = 0;
 
-	function inc() {
-		count += 1;
-	}
+  function inc() {
+    count += 1;
+  }
 </script>
 <h1>Hello Permaweb</h1>
 <button on:click="{inc}">Inc</button>
 <p>Count: {count}</p>
 ```
 
-## about.svelte
+### about.svelte
 
 ```html
 <h1>About Page</h1>
@@ -146,19 +156,86 @@ new App({
 <a href="/">Home</a>
 ```
 
-## 部署
+## 添加 index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Svelte + TS</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
+```
+
+## 永久部署 (Deploy Permanently)
 
 ### 生成钱包
 
+我们需要使用 `arweave` 包来生成钱包
+
+<CodeGroup>
+<CodeGroupItem title="NPM">
+
+```console:no-line-numbers
+npm install --save arweave
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn add arweave -D
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+然后在终端执行下列指令
+
 ```sh
-yarn add -D arweave
 node -e "require('arweave').init({}).wallets.generate().then(JSON.stringify).then(console.log.bind(console))" > wallet.json
 ```
 
-### 安装 Irys
+### 为钱包充值
 
-```sh
-yarn add -D @irys/sdk
+您需要为钱包购买 ArDrive Turbo 点数。请前往 [ArDrive](https://app.ardrive.io) 导入您的钱包，然后为该钱包购买 turbo 点数。
+
+### 设置 Permaweb-Deploy
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm install --global permaweb-deploy
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn global add permaweb-deploy
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+### 更新 vite.config.ts
+
+```ts
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
+
+export default defineConfig({
+  plugins: [svelte()],
+  base: "./",
+});
 ```
 
 ### 更新 package.json
@@ -168,29 +245,76 @@ yarn add -D @irys/sdk
   ...
   "scripts": {
     ...
-    "deploy": "irys upload-dir dist -h https://node2.irys.xyz --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation"
+    "deploy": "DEPLOY_KEY=$(base64 -i wallet.json) permaweb-deploy --ant-process << ANT-PROCESS >> --deploy-folder build"
   }
+  ...
 }
 ```
 
-### 运行部署
+::: info
+请将 << ANT-PROCESS >> 替换为您的 ANT process id。
+:::
 
-```sh
+### 执行构建
+
+现在开始生成 build，执行
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm run build
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
+yarn build
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+### 执行部署
+
+最后，我们可以部署第一个 Permaweb 应用程序了
+
+<CodeGroup>
+  <CodeGroupItem title="NPM">
+  
+```console:no-line-numbers
+npm run deploy
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="YARN">
+  
+```console:no-line-numbers
 yarn deploy
 ```
 
-::: tip **成功**
-您现在应该在永久网络上拥有一个 Svelte 应用程序！做得好！
+  </CodeGroupItem>
+</CodeGroup>
+
+::: info 错误
+如果收到 `Insufficient funds` 错误，请确认您已为部署用的钱包充值 ArDrive Turbo 点数。
 :::
 
-::: warning **资金钱包**
-如果您的应用程序大于 120 KB，您将需要为您的 Irys 钱包提供资金。请参阅[https://irys.xyz](https://irys.xyz)获取更多信息。
+### 响应
+
+您应该会看到类似以下的响应：
+
+```shell
+Deployed TxId [<<tx-id>>] to ANT [<<ant-process>>] using undername [<<undername>>]
+```
+
+您的 Svelte 应用程序可以通过 `https://arweave.net/<< tx-id >>` 访问。
+
+::: tip 成功
+恭喜！您现在应该已经在 Permaweb 上部署了一个 Svelte 应用程序！
 :::
-
-## 代码库
-
-这个示例的完整版本在这里可用：[https://github.com/twilson63/permaweb-minimal-svelte-starter](https://github.com/twilson63/permaweb-minimal-svelte-starter)
 
 ## 总结
 
-这是一个在永久网络上发布 Svelte 应用程序的最简版本，但您可能想要更多功能，比如热重载和 tailwind 等。请参考`hypar`，了解即插即用的入门套件。[HypAR](https://github.com/twilson63/hypar)
+这是一个在 Permaweb 上发布 Svelte 应用的极简说明；如果您想要更多功能，例如热重载 (hot-reloading)、Tailwind 等，建议查看 `hypar` 作为一个开箱即用的起始模板。 [HypAR](https://github.com/twilson63/hypar)

@@ -19,6 +19,7 @@
 		"fix:links:preview": "node scripts/fix-common-links.js --dry-run",
 		"standardize:files": "node scripts/standardize-filenames.js",
 		"standardize:check": "node scripts/standardize-filenames.js --check",
+		"translate": "node languages/translate.mjs",
 		"prepare": "husky",
 		"fmt": "prettier --single-quote --trailing-comma none --write src/.vuepress",
 		"lint": "prettier --single-quote --trailing-comma none --check src/.vuepress"
@@ -32,6 +33,7 @@
 		"@vuepress/plugin-medium-zoom": "2.0.0-beta.61",
 		"@vuepress/plugin-search": "^2.0.0-beta.61",
 		"arweave": "^1.11.8",
+		"dotenv": "^17.2.3",
 		"htmlhint": "^1.6.3",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.2.6",
@@ -47,8 +49,7 @@
 		"@vuepress/theme-default": "^2.0.0-beta.61",
 		"add-to-calendar-button": "^2.2.5",
 		"bootstrap": "5.2.3",
-		"dotenv": "^16.1.4",
-		"openai": "^3.2.1",
+		"openai": "^6.9.1",
 		"sass-embedded": "^1.89.2",
 		"vuepress-plugin-md-enhance": "^1.30.0"
 	}

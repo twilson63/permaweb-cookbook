@@ -1,18 +1,16 @@
----
-locale: ja
----
-# arweave-jsを使用したトランザクションの投稿
+# arweave-js を使用したトランザクションの投稿
 
-Arweaveのネイティブトランザクションは、`arweave-js`パッケージを使用してノードまたはゲートウェイに直接投稿できます。
+Arweave のネイティブトランザクションは `arweave-js` パッケージを使用して、ノードまたはゲートウェイに直接投稿できます。
 
 ::: info
-Arweaveはトランザクションバンドルを使用することでスケールします。これにより、各ブロックにほぼ無制限のトランザクションを含めることが可能になります。バンドルを使用しない場合、Arweaveブロックは1ブロックあたり最大1000トランザクションに制限されます（新しいブロックは約2分ごとに生成されます）。あなたのユースケースがこの容量を超える場合、トランザクションがドロップされることがあります。このような場合は、[irys.xyz](./irys.md)や類似のサービスを使用してトランザクションをバンドルすることを検討してください。
+Arweave はトランザクションバンドル（transaction bundles）を用いることでスケールします。これらのバンドルにより、各ブロックがほぼ無制限の数のトランザクションを含めることが可能になります。
+
+信頼性のため、ほとんどのトランザクションはバンドラー経由で Arweave に投稿されます — `arweave-js` を使用するとバンドラーを介さずに直接 Arweave にトランザクションを投稿します。  
 :::
 
-## arweave-jsパッケージのインストール
+## `arweave-js` パッケージのインストール
 
-`arweave-js`をインストールするには、次のコマンドを実行します。
-
+`arweave-js` をインストールするには次を実行します
 <CodeGroup>
 <CodeGroupItem title="NPM">
 
@@ -30,15 +28,11 @@ yarn add arweave
   </CodeGroupItem>
 </CodeGroup>
 
-
-
 ::: info
-NodeJSを使用する場合、NodeJSの最小バージョンは18以上が必要です。
+NodeJS 環境で作業する場合、最低でも NodeJS 18 以上が必要です。
 :::
 
-## arweave-jsの初期化
-
-Layer 1トランザクションは、`arweave-js`ライブラリを使用して投稿されます。
+## `arweave-js` の初期化
 
 ```js:no-line-numbers
 import Arweave from 'arweave';
@@ -53,7 +47,7 @@ const arweave = Arweave.init({});
 
 ## ウォレット間トランザクションの投稿
 
-ARトークンを1つのウォレットアドレスから別のウォレットアドレスに移動する基本的なトランザクション。
+あるウォレットアドレスから別のウォレットアドレスへ AR トークンを移動する基本的なトランザクション。
 
 ```js:no-line-numbers
 //  create a wallet-to-wallet transaction sending 10.5AR to the target address
@@ -71,7 +65,7 @@ const response = await arweave.transactions.post(transaction);
 
 ## データトランザクションの投稿
 
-この例では、ディスクからファイルを読み込み、そのデータをネットワークに保存するためのトランザクションを作成する方法を示します。ネットワークが請求している現在の価格は、[https://ar-fees.arweave.net](https://ar-fees.arweave.net)で確認できます。
+この例は、ディスクからファイルを読み込み、そのデータをネットワークに保存するトランザクションを作成する方法を示します。ネットワークが現在課している価格は [https://ar-fees.arweave.net](https://ar-fees.arweave.net) で確認できます。
 
 ```js:no-line-numbers
 // load the data from disk
@@ -99,6 +93,6 @@ while (!uploader.isComplete) {
 
 ## リソース
 
--   トランザクションを投稿するためのすべての方法の概要については、操作マニュアルの[Posting Transactions](../../concepts/post-transactions.md)セクションを参照してください。
+- トランザクションを投稿するあらゆる方法の概要については、クックブックの [Transactions](../../fundamentals/transactions/index.md) セクションを参照してください。
 
--   `arweave-js`のすべての機能の詳細な説明については、[GitHubのドキュメント](https://github.com/ArweaveTeam/arweave-js)をご覧ください。
+- `arweave-js` のすべての機能の詳細な説明については、GitHub 上のドキュメントを参照してください: https://github.com/ArweaveTeam/arweave-js 。
