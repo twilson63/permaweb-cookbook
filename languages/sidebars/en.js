@@ -198,10 +198,6 @@ module.exports = [
         link: "/references/llms-txt.html",
       },
       {
-        text: "Contributing",
-        link: "/getting-started/contributing.html",
-      },
-      {
         text: "Specs",
         collapsible: true,
         children: [
