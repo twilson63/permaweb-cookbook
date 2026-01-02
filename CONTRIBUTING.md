@@ -1,14 +1,14 @@
 # Contributing to the Cookbook
 
-👍🎉First off, thanks for taking the time to contribute🎉👍
+Thanks for taking the time to contribute 🎉👍
 
-The following is a set of guidelines on how to contribute
+The following is a set of guidelines on how to contribute to the Permaweb Cookbook.
 
 ## What should I know before I get started?
 
 ### Permaweb Cookbook Layout
 
-The cookbook is layed out in 5 different sections.
+The cookbook is laid out in 4 different sections.
 
 | Section         | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
@@ -16,11 +16,10 @@ The cookbook is layed out in 5 different sections.
 | Fundamentals    | Building blocks of Permaweb that are good to know for development |
 | Guides          | Snack-sized guides about different tools for development          |
 | References      | References to commonly needed code snippets                       |
-| Kits            | Starter Kits with development frameworks                          |
 
 Depending on what you are writing, it will live in one of these sections.
 
-#### References
+### References
 
 References are an overarching topic with a list of references of how to do
 things under that topic. The general structure is the following:
@@ -33,7 +32,7 @@ Short Summary (Include why to use this ref)
 Code Snippet
 ```
 
-#### Guides
+### Guides
 
 Guides are longer form informational documentation on various topics.
 The general structure for writing a guide is the following:
@@ -57,8 +56,7 @@ npm install
 npm run dev
 ```
 
-It will take some time to start, the documentation can then be viewed
-at (http://localhost:8080/)
+The documentation can then be viewed at (http://localhost:8080/).
 
 ## How Can I Contribute?
 
