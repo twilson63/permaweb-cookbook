@@ -1,5 +1,9 @@
 module.exports = [
   {
+    text: "Introduction",
+    link: "/introduction/index.html",
+  },
+  {
     text: "Getting Started",
     link: "/getting-started/index.html",
     collapsible: true,
