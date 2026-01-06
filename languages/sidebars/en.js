@@ -4,6 +4,10 @@ module.exports = [
     link: "/introduction/index.html",
   },
   {
+    text: "The Arweave Protocol",
+    link: "/protocol/index.html",
+  },
+  {
     text: "Getting Started",
     link: "/getting-started/index.html",
     collapsible: true,
