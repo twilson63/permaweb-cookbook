@@ -6,6 +6,20 @@ module.exports = [
   {
     text: "The Arweave Protocol",
     link: "/protocol/index.html",
+    children: [
+      {
+        text: "What is Arweave?",
+        link: "/protocol/what-is-arweave.html",
+      },
+      {
+        text: "The $AR Token",
+        link: "/protocol/what-is-ar.html",
+      },
+      {
+        text: "The Endowment Fund",
+        link: "/protocol/endowment-fund.html",
+      },
+    ],
   },
   {
     text: "Getting Started",
