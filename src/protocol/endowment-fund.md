@@ -1,0 +1,12 @@
+# The Endowment Fund
+
+Arweave has a protocol-enforced endowment fund, which is a long-term storage mechanism holding $AR accrued from transaction fees.
+
+Whenever data is uploaded to Arweave, a portion of the transaction fee goes directly to miners, while the remaining amount
+goes into the endowment fund.
+
+These tokens are not immediately distributed, but rather held to be distributed to miners as an economic incentive if needed, based on declining block rewards and the current cost of data storage.
+
+The endowment fund is enforced at a protocol level, so it isn't controlled by an entity such as a DAO.
+
+As a developer, you do not need to interact with the endowment directly - however it is good to understand that transaction fees from you or your users are split between miners and the endowment fund.
