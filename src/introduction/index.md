@@ -23,7 +23,7 @@ The third section gets into the nitty-gritty of building on (and using) Arweave 
 The final section is a set of [references](../references/index.md) that may be useful for developers. This includes a glossary, protocol specifications, and links to relevant APIs/SDKs.
 
 :::info Skip to the good bit!
-Want to start building immediately? If you already have a wallet and know the theory, you can head straight to our [Quick Start Guides](../getting-started/).
+Want to start building immediately? If you already have a wallet and know the theory, you can head straight to our [Quick Starts](../getting-started/quick-starts/hw-code.md).
 :::
 
 # Contributing
