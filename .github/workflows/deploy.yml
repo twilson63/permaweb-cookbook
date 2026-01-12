@@ -31,7 +31,7 @@ jobs:
       - name: 💾 Publish to Arweave
         id: publish_artifacts
         run: |
-          npx permaweb-deploy \
+          npx permaweb-deploy@2.5.1 \
             --ant-process=${ANT_PROCESS} \
             --undername=${UNDERNAME} \
             --arns-name=cookbook \
