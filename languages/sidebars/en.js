@@ -220,6 +220,24 @@ module.exports = [
         link: "/references/llms-txt.html",
       },
       {
+        text: "APIs/SDKs",
+        collapsible: true,
+        children: [
+          {
+            text: "Arweave HTTP API",
+            link: "https://docs.arweave.org/developers/arweave-node-server/http-api"
+          },
+          {
+            text: "Arweave JS",
+            link: "https://github.com/ArweaveTeam/arweave-js"
+          },
+          {
+            text: "Python API",
+            link: "https://github.com/MikeHibbert/arweave-python-client"
+          },
+        ]
+      },
+      {
         text: "Specs",
         collapsible: true,
         children: [
