@@ -28,6 +28,6 @@ Want to start building immediately? If you already have a wallet and know the th
 
 # Contributing
 
-The cookbook is open source, and open to contributions.
+The cookbook is open source.
 
-If you want to contribute content, fix a typo, work on a translation, or something else entirely, you can get started contributing [here](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md).
+If you would like to contribute content, fix a typo, work on a translation, or something else entirely, you can get started with our [Contributing Guidelines](https://github.com/twilson63/permaweb-cookbook/blob/main/CONTRIBUTING.md).
