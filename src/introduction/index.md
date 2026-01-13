@@ -2,7 +2,7 @@
 
 Welcome to the Arweave cookbook!
 
-This is a comprehensive guide for developers on how Arweave works, how to generate wallets and upload data, and how to create applications. 
+This is a comprehensive guide for developers on how Arweave works, how to generate wallets and upload data, and how to create applications.
 
 # Who is the cookbook for? 
 
@@ -18,7 +18,7 @@ The first section of the cookbook is focused on the [Arweave Protocol](../protoc
 
 The second section covers the fundamental concepts and building blocks necessary for developers. This includes [Accounts](../fundamentals/wallets-and-keyfiles/index.md), [Transactions](../fundamentals/transactions/index.md), and more.
 
-The third section gets into the nitty-gritty of building on (and using) Arweave as a developer. This is the largest and most granular part of the cookbook, and includes detailed guides to achieve specific tasks on Arweave. Some examples include publishing websites, using CI/CD tooling, and setting up wallet connections for applications. 
+The third section, [Guides](../guides/index.md), gets into the nitty-gritty of building on (and using) Arweave as a developer. This is the largest and most granular part of the cookbook, and includes detailed guides to achieve specific tasks on Arweave. Some examples include publishing websites, using CI/CD tooling, and setting up wallet connections for applications. 
 
 The final section is a set of [references](../references/index.md) that developers will find useful. This includes a glossary, protocol specifications, and links to relevant APIs/SDKs.
 
