@@ -20,7 +20,7 @@ The second section covers the fundamental concepts and building blocks necessary
 
 The third section gets into the nitty-gritty of building on (and using) Arweave as a developer. This is the largest and most granular part of the cookbook, and includes detailed guides to achieve specific tasks on Arweave. Some examples include publishing websites, using CI/CD tooling, and setting up wallet connections for applications. 
 
-The final section is a set of [references](../references/index.md) that may be useful for developers. This includes a glossary, protocol specifications, and links to relevant APIs/SDKs.
+The final section is a set of [references](../references/index.md) that developers will find useful. This includes a glossary, protocol specifications, and links to relevant APIs/SDKs.
 
 :::info Skip to the good bit!
 Want to start building immediately? If you already have a wallet and know the theory, you can head straight to our [Quick Starts](../getting-started/quick-starts/hw-code.md).
