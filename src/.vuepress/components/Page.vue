@@ -1,7 +1,7 @@
 <script setup>
 import PageMeta from './PageMeta.vue';
 // import PageMeta from '@theme/PageMeta.vue';
-import PageNav from '@theme/PageNav.vue';
+import PageNav from '../theme/client/components/PageNav.vue';
 </script>
 
 <template>
