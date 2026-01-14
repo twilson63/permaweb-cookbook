@@ -27,9 +27,7 @@ Transactions are immutable, verifiable, and tamper-proof. Together these form a 
 
 Uploaded transactions are periodically grouped into **blocks**.
 
-Miners (node runners) "mine" or add new blocks to be confirmed and added to the Arweave ledger.
-
-Arweave uses a structure called **blockweave**.
+Miners (node runners) "mine" or add new blocks to be confirmed and added to the Arweave ledger. Arweave uses a structure called **blockweave**.
 
 Arweave uses a "Proof-of-Access" based consensus algorithm, more accurately described as [SPoRA](https://coinmarketcap.com/academy/glossary/succinct-proofs-of-random-access-spora) (Succinct Proofs of Random Access). 
 
@@ -41,6 +39,6 @@ To mine new blocks, miners on the Arweave network must prove they are storing th
 
 ## Accounts and state
 
-Users pay for these uploads using a currency called $AR.
+Users pay for data uploads using a currency called $AR.
 
 Arweave keeps track of all of these uploads, including the **account** that users upload files from, any attached metadata, and their account balance in $AR.
