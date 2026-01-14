@@ -4,13 +4,13 @@ Decentralized networks such as Arweave often need an incentive mechanism.
 
 Nodes need a reason to store data, mine blocks, and process transactions.
 
-The main incentive mechanism for storing data is Arweave's native token - **$AR**.
+The main incentive mechanism for storing data is Arweave's native currency - **$AR**.
 
 ## Transactions
 
-$AR is to facilitate transactions on Arweave.
+$AR is used to facilitate transactions on Arweave.
 
-Every transaction on Arweave costs some amount of $AR. This could be to pay for a data upload to the network, or to send $AR from one account to another (also known as wallet-to-wallet transactions). 
+Every transaction on Arweave costs some amount of $AR. This could be to pay for a data upload to the network, or to send $AR from one account to another (also known as wallet-to-wallet transactions).
 
 $AR is also emitted to miners as block rewards.
 
