@@ -3,7 +3,7 @@
 Arweave has a protocol-enforced endowment fund, which is a long-term storage mechanism holding $AR accrued from transaction fees.
 
 Whenever data is uploaded to Arweave, a portion of the transaction fee goes directly to miners, while the remaining amount
-goes into the endowment fund.
+goes into the endowment fund. You can find the current amount of $AR stored in the endowment on [ViewBlock](https://viewblock.io/arweave/stat/cumulativeEndowmentSize) and other Arweave block explorers.
 
 These tokens are not immediately distributed, but rather held to be distributed to miners as an economic incentive if needed, based on declining block rewards and the current cost of data storage.
 
