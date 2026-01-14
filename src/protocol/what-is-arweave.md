@@ -23,7 +23,7 @@ Users (or developers) send **transactions** to these nodes which contain data (o
 
 Transactions are immutable, verifiable, and tamper-proof. Together these form a public dataset that users can read and write to. Users pay for these uploads using a currency called $AR.
 
-## Blocks and Consensus
+## Blocks and consensus
 
 Uploaded transactions are periodically grouped into **blocks**.
 
@@ -39,7 +39,7 @@ On Arweave, each new block references:
 
 To mine new blocks, miners on the Arweave network must prove they are storing the previous block and one random other Arweave block. This encourages miners to store as much of the Arweave dataset as possible.
 
-## Accounts and State
+## Accounts and state
 
 Users pay for these uploads using a currency called $AR.
 
