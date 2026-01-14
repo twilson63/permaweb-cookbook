@@ -9,4 +9,6 @@ In this section, we will discuss:
 - The properties and purpose of $AR
 - The role of the endowment fund
 
+:::tip
 If you already know how Arweave works, you may find skipping to [Fundamentals](../fundamentals/index.md) or [Guides](../guides/index.md) more useful.
+:::
